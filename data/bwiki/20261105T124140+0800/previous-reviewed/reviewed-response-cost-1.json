@@ -1,0 +1,265 @@
+{
+  "schema": "reviewed-response-cost-1",
+  "policy": "source_bound_response_cost_ledger_v1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db"
+  },
+  "installation_sources": {
+    "SKILL_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+    },
+    "EFFECT_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    "BUFF_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    }
+  },
+  "skills": {
+    "7140170": {
+      "record_hash": "f31f2616353a3438ae1d63f6fda6b54e2c082d49e2062c389cbf40f7c358d4ac",
+      "record": {
+        "id": 7140170,
+        "wiki_id": "skill_000671",
+        "name": {
+          "zh": "气沉丹田"
+        },
+        "type": "武系",
+        "kind": "status",
+        "energy": 10,
+        "desc": {
+          "zh": "自己回复60%生命，获得物攻+130%，每次应对后本技能能耗-3，使用后能耗重置。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B0%94%E6%B2%89%E4%B8%B9%E7%94%B0",
+        "source_module": "Skills"
+      },
+      "components": {
+        "heal": {
+          "percent": {
+            "numerator": 60,
+            "denominator": 100
+          },
+          "effect_id": 1005060,
+          "buff_group_level": 1
+        },
+        "stat": {
+          "attribute": "patk",
+          "layers": 13,
+          "percent_per_layer": 10,
+          "buff_id": 20010010,
+          "effect_id": 20010010
+        },
+        "cost": {
+          "per_response": -3,
+          "floor": 0,
+          "reset": "on_use",
+          "energy_rule": 9
+        }
+      },
+      "installation_evidence": {
+        "skill_full": {
+          "id": 7140170,
+          "name": {
+            "localization_id": 2913,
+            "text": "气沉丹田"
+          },
+          "desc": {
+            "localization_id": 2914,
+            "text": "自己回复60%生命，获得物攻+130%，每次应对后本技能能耗-3，使用后能耗重置。"
+          },
+          "flavor_text": {
+            "localization_id": 2915,
+            "text": "学院的助教老师盘腿示范这从东方流传过来的武学，却不小心睡着了。"
+          },
+          "can_changed": 1,
+          "energy_rule": 9,
+          "energy_cost": [
+            10,
+            -3,
+            1,
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 14,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "contact_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 1005060,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            },
+            {
+              "effect_id": 20010010,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 13
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Mar_QCDT_213020",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/213020.213020'",
+          "describe_type": [
+            12,
+            3,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "skill_parsed": {
+          "id": 7140170,
+          "name": {
+            "localization_id": 3024,
+            "text": "气沉丹田"
+          },
+          "desc": {
+            "localization_id": 3025,
+            "text": "自己回复60%生命，获得物攻+130%，每次应对后本技能能耗-3，使用后能耗重置。"
+          },
+          "flavor_text": {
+            "localization_id": 3026,
+            "text": "学院的助教老师盘腿示范这从东方流传过来的武学，却不小心睡着了。"
+          },
+          "energy_rule": 9,
+          "energy_cost": [
+            10,
+            -3,
+            1,
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 14,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1005060,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20010010,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Mar_QCDT_213020",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/213020.213020'",
+          "describe_type": [
+            12,
+            3,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "effects": {
+          "1005060": {
+            "id": 1005060,
+            "effect_order": 5,
+            "add_des": "恢复",
+            "add_icon": 6,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  6000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  600
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buffs": {
+          "20010010": {
+            "id": 20010010,
+            "buff_base_ids": [
+              2001001
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              1,
+              31
+            ],
+            "name": "物攻等级提升",
+            "type_id": "1",
+            "add_des": "物理攻击",
+            "add_icon": 1,
+            "type": 1,
+            "add_max": 99,
+            "desc": "物攻+<span color=\"#73c715\">10%</>。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800001_png.800001_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+            "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        }
+      },
+      "installation_uncertainty": "回复比例 60% 与物攻 13 层（+130%）来自完整表 skill_result.buff_group_level；百分比按 declared_max_hp 取整方式未在客户端表中出现，本实现显式声明为 floor 并在事件中记录 policy；“每次应对后-3”的应对判定沿用成功响应防御；能耗下限 0；重置时机取“使用后”，跨回合/换位后是否保留尚未实战校准。"
+    }
+  }
+}

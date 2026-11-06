@@ -1,0 +1,73 @@
+{
+  "status": "source_fixed_protected_candidate_built",
+  "scope": "incomplete live overexposure history only",
+  "user_rule": "upper bound is distinct non-light types in the other currently carried slots; use confirmed own history as lower bound",
+  "four_slots_preserved": true,
+  "unknown_slots": "explicit blocker; never fill all elemental types",
+  "conflicting_known_history": "retained; explicit conflict rather than clamping",
+  "complete_history_and_simulated_execution": "unchanged",
+  "recording_id": "f5784f2b77548830318da725c95e57a8933ce8fff2f8fcf7922556f28679217b",
+  "packets": 64,
+  "replay": {
+    "carried_skill_ids": [
+      7040370,
+      7030440,
+      7110200,
+      7060120
+    ],
+    "known_types": [
+      "火系",
+      "电系"
+    ],
+    "upper_types": [
+      "火系",
+      "草系",
+      "电系"
+    ],
+    "power_range": [
+      120,
+      150
+    ],
+    "old_damage_range": [
+      98,
+      931
+    ],
+    "new_damage_range": [
+      196,
+      245
+    ],
+    "retained_after_knockout": true
+  },
+  "validation": {
+    "targeted_tests": 3,
+    "capture_replay": true,
+    "state_unchanged_check": true
+  },
+  "build_id": "20261101-overexposure-v6",
+  "replay_report": "artifacts/overexposure_scope_20261101/after.json",
+  "training_changed": false,
+  "source_hash": "a08a7e6f9f63b862ab25fb7e16c1667eaf0c6038879d70cf4685d491da87143f",
+  "protected_zip": {
+    "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\dist\\RocoPVP-20261101-overexposure-v6.zip",
+    "bytes": 306823508,
+    "sha256": "50f2c08c23b9108084b36204a801982c0f20be1872076c6bf6fbc010480c4203",
+    "entries": 392,
+    "crc_verified": true
+  },
+  "native_self_test_passed": true,
+  "desktop_verification": {
+    "title": "洛克PVP · 连接控制台",
+    "server": {
+      "available": true,
+      "owned": true,
+      "port": 18870,
+      "revision": "composable-battle-20261031-selected-cost-1"
+    },
+    "rendererIpc": true,
+    "icon": true,
+    "workbenchReady": true,
+    "timestamp": "2026-11-01T11:55:22.886Z"
+  },
+  "public_release_approved": false,
+  "private_source_scan_passed": true
+}

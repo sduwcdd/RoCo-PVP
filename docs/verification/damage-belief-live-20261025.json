@@ -1,0 +1,364 @@
+{
+  "case_kind": "synthetic Bayesian arithmetic regression; not real-game damage evidence",
+  "snapshot_id": "20261025T013619+0800",
+  "request": {
+    "candidates": [
+      {
+        "id": "a",
+        "nature_id": 1,
+        "talents": {
+          "hp": 10,
+          "patk": 10,
+          "matk": 10,
+          "pdef": 10,
+          "mdef": 10,
+          "spd": 10
+        },
+        "moves": [
+          7020360,
+          0,
+          7030220,
+          0
+        ],
+        "prior": 3
+      },
+      {
+        "id": "b",
+        "nature_id": 2,
+        "talents": {
+          "hp": 10,
+          "patk": 10,
+          "matk": 10,
+          "pdef": 10,
+          "mdef": 10,
+          "spd": 10
+        },
+        "moves": [
+          7020360,
+          0,
+          7030220,
+          0
+        ],
+        "prior": 1
+      }
+    ],
+    "event": {
+      "id": "synthetic-hit",
+      "kind": "damage_distribution",
+      "damage": 10,
+      "prediction_source": {
+        "id": "synthetic-live-pmf",
+        "snapshot_id": "20261025T013619+0800"
+      },
+      "predictions": {
+        "a": [
+          {
+            "damage": 10,
+            "probability": 0.1
+          },
+          {
+            "damage": 20,
+            "probability": 0.9
+          }
+        ],
+        "b": [
+          {
+            "damage": 10,
+            "probability": 0.9
+          },
+          {
+            "damage": 20,
+            "probability": 0.1
+          }
+        ]
+      }
+    }
+  },
+  "response": {
+    "belief": {
+      "schema_version": 3,
+      "candidates": [
+        {
+          "id": "a",
+          "nature_id": 1,
+          "talents": {
+            "hp": 10,
+            "patk": 10,
+            "matk": 10,
+            "pdef": 10,
+            "mdef": 10,
+            "spd": 10
+          },
+          "moves": [
+            7020360,
+            0,
+            7030220,
+            0
+          ],
+          "move_slots_known": true,
+          "prior": 3
+        },
+        {
+          "id": "b",
+          "nature_id": 2,
+          "talents": {
+            "hp": 10,
+            "patk": 10,
+            "matk": 10,
+            "pdef": 10,
+            "mdef": 10,
+            "spd": 10
+          },
+          "moves": [
+            7020360,
+            0,
+            7030220,
+            0
+          ],
+          "move_slots_known": true,
+          "prior": 1
+        }
+      ],
+      "events": [
+        {
+          "event_id": "synthetic-hit",
+          "kind": "damage_distribution",
+          "damage": 10,
+          "predictions": {
+            "a": [
+              {
+                "damage": 10,
+                "probability": 0.1
+              },
+              {
+                "damage": 20,
+                "probability": 0.9
+              }
+            ],
+            "b": [
+              {
+                "damage": 10,
+                "probability": 0.9
+              },
+              {
+                "damage": 20,
+                "probability": 0.1
+              }
+            ]
+          },
+          "measurement_tolerance": 0,
+          "prediction_source": {
+            "id": "synthetic-live-pmf",
+            "snapshot_id": "20261025T013619+0800"
+          },
+          "prediction_verified": false,
+          "likelihood_model": "explicit_discrete_pmf"
+        }
+      ]
+    },
+    "summary": {
+      "status": "ok",
+      "probability_source": "candidate_prior",
+      "population_statistics": false,
+      "posterior_scope": "all_evidence",
+      "candidates": [
+        {
+          "id": "a",
+          "nature_id": 1,
+          "talents": {
+            "hp": 10,
+            "patk": 10,
+            "matk": 10,
+            "pdef": 10,
+            "mdef": 10,
+            "spd": 10
+          },
+          "moves": [
+            7020360,
+            0,
+            7030220,
+            0
+          ],
+          "move_slots_known": true,
+          "prior": 3,
+          "posterior": 0.25000000000000006
+        },
+        {
+          "id": "b",
+          "nature_id": 2,
+          "talents": {
+            "hp": 10,
+            "patk": 10,
+            "matk": 10,
+            "pdef": 10,
+            "mdef": 10,
+            "spd": 10
+          },
+          "moves": [
+            7020360,
+            0,
+            7030220,
+            0
+          ],
+          "move_slots_known": true,
+          "prior": 1,
+          "posterior": 0.7499999999999999
+        }
+      ],
+      "nature_marginal": [
+        {
+          "nature_id": 1,
+          "probability": 0.25000000000000006
+        },
+        {
+          "nature_id": 2,
+          "probability": 0.7499999999999999
+        }
+      ],
+      "talent_marginals": {
+        "hp": [
+          {
+            "value": 10,
+            "probability": 1
+          }
+        ],
+        "patk": [
+          {
+            "value": 10,
+            "probability": 1
+          }
+        ],
+        "matk": [
+          {
+            "value": 10,
+            "probability": 1
+          }
+        ],
+        "pdef": [
+          {
+            "value": 10,
+            "probability": 1
+          }
+        ],
+        "mdef": [
+          {
+            "value": 10,
+            "probability": 1
+          }
+        ],
+        "spd": [
+          {
+            "value": 10,
+            "probability": 1
+          }
+        ]
+      },
+      "move_marginals": [
+        {
+          "move_id": 7020360,
+          "probability": 1
+        },
+        {
+          "move_id": 7030220,
+          "probability": 1
+        }
+      ],
+      "move_slots_known": true,
+      "move_slot_marginals": [
+        {
+          "slot": 0,
+          "options": [
+            {
+              "move_id": 7020360,
+              "probability": 1
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "options": [
+            {
+              "move_id": 0,
+              "probability": 1
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "options": [
+            {
+              "move_id": 7030220,
+              "probability": 1
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "options": [
+            {
+              "move_id": 0,
+              "probability": 1
+            }
+          ]
+        }
+      ],
+      "underflowed_candidate_ids": [],
+      "damage_prediction_sources": [
+        {
+          "id": "synthetic-live-pmf",
+          "snapshot_id": "20261025T013619+0800",
+          "verified": false
+        }
+      ],
+      "damage_likelihood_models": [
+        "explicit_discrete_pmf"
+      ],
+      "prediction_verified": false,
+      "events": [
+        {
+          "event_id": "synthetic-hit",
+          "kind": "damage_distribution",
+          "damage": 10,
+          "predictions": {
+            "a": [
+              {
+                "damage": 10,
+                "probability": 0.1
+              },
+              {
+                "damage": 20,
+                "probability": 0.9
+              }
+            ],
+            "b": [
+              {
+                "damage": 10,
+                "probability": 0.9
+              },
+              {
+                "damage": 20,
+                "probability": 0.1
+              }
+            ]
+          },
+          "measurement_tolerance": 0,
+          "prediction_source": {
+            "id": "synthetic-live-pmf",
+            "snapshot_id": "20261025T013619+0800"
+          },
+          "prediction_verified": false,
+          "likelihood_model": "explicit_discrete_pmf"
+        }
+      ],
+      "unresolved_event_id": null,
+      "note": "概率仅条件于显式候选及所给先验，不代表玩家人群统计；候选集合可能不完整。"
+    },
+    "prediction_verified": false,
+    "training_allowed": false,
+    "notice": "候选条件概率，不是天梯使用率；伤害预测由调用者提供，未核实其游戏准确性。"
+  },
+  "live_replay_equal": true,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "web_summary_roundtrip_verified": true
+}

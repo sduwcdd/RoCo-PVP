@@ -1,0 +1,23 @@
+{
+  "modules": [
+    "tests.test_skill_execution",
+    "tests.test_rule_config",
+    "tests.test_event_scheduler",
+    "tests.test_rule_expressions",
+    "tests.test_action_runtime",
+    "tests.test_switch_runtime",
+    "tests.test_switch_integration",
+    "tests.test_prepared_rules",
+    "tests.test_lab_server"
+  ],
+  "run": 145,
+  "passed": 145,
+  "errors": 0,
+  "failures": 0,
+  "seconds": 126.455,
+  "reason": "After final native envelope identity/source validation; earlier broad 475 remain separately recorded",
+  "files_sha256": {
+    "lab/skill_execution.py": "e2222d6c4c5734425e328e42320693617e819c3d7c60fe79a2dd9ff93f600200",
+    "tests/test_skill_execution.py": "ef581b4aa0808159b175eb1dc8c1c9e0b6c687fe49b4e8b91573d8d425e37941"
+  }
+}

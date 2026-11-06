@@ -1,0 +1,9 @@
+{
+  "method": "lossless_components_no_nlp",
+  "real_game_calibrated": false,
+  "schema_version": "roco-rule-config-1",
+  "sha256": "c190c98d3a2e67153ac1c77f96adc2018e1ea6a3198880e5343451a7f87871cf",
+  "snapshot_id": "20261025T013619+0800",
+  "source_artifact": "bwiki-declarative-6.json",
+  "source_sha256": "8720e2dd67bb0f4e06fda0f2f28f0167d0f514933c0f2cd24e501e19654a12d9"
+}

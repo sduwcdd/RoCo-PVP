@@ -1,0 +1,3 @@
+[submodule "roco-mobile-hev"]
+	path = mobile/vendor/hev-socks5-tunnel
+	url = https://github.com/heiher/hev-socks5-tunnel.git

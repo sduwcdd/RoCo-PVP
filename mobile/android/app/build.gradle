@@ -1,0 +1,50 @@
+plugins { id 'com.android.application'; id 'com.chaquo.python' }
+android {
+    namespace 'cn.roco.mobile'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'cn.roco.mobile'
+        minSdk 29
+        targetSdk 35
+        versionCode 2
+        versionName '0.2-internal'
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    sourceSets.main.assets.srcDirs = ['src/main/assets', '../../build/generated/assets']
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    buildTypes { release { minifyEnabled true; proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' } }
+}
+chaquopy {
+    defaultConfig {
+        version '3.13'
+        buildPython System.getenv('ROCO_BUILD_PYTHON') ?: 'E:/miniconda3/python.exe'
+        pip {
+            install 'scapy==2.6.1'
+            install 'pycryptodome==3.21.0'
+            install 'protobuf==6.33.0'
+            install 'libs/msgpack-1.1.2-py3-none-any.whl'
+            install 'cryptography==42.0.8'
+        }
+        pyc { src = true }
+    }
+    sourceSets.main.srcDirs = ['../../build/generated/android-python']
+}
+dependencies {
+    implementation files('libs/hev-socks5-tunnel-2.19.3.aar')
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'junit:junit:4.13.2'
+}
+tasks.named('preBuild').configure {
+    doFirst {
+        if (!file('../../build/generated/android-python/roco_mobile.py').isFile() || !file('../../build/generated/assets/resources.rpk').isFile())
+            throw new GradleException('Run scripts/build_mobile_resources.py --android-source-stage before building. Private compiler inputs are required; precompiled .pyc inputs are ignored by Chaquopy.')
+        def artifact = file('libs/hev-socks5-tunnel-2.19.3.aar')
+        def hash = java.security.MessageDigest.getInstance('SHA-256').digest(artifact.bytes).encodeHex().toString()
+        if (hash != 'ab6c581e6157680cfe5687ee7bbdcf95405c006c2db3701879ec44b9e5f83836')
+            throw new GradleException('Pinned native transport artifact checksum mismatch')
+    }
+}
+tasks.matching { it.name == 'preReleaseBuild' }.configureEach {
+    doFirst { throw new GradleException('Public release disabled: this internal build uses recoverable Python bytecode. Native source-protection packaging and review are required before release.') }
+}

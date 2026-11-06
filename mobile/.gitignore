@@ -1,0 +1,7 @@
+# Build outputs include private compiler inputs and generated resource keys.
+/build/
+/dist/
+*.jks
+*.keystore
+*.p12
+*.mobileprovision

@@ -1,0 +1,230 @@
+{
+  "schema": "derived-power-1",
+  "snapshot_id": "20261025T013619+0800",
+  "policy": "source_base_cost_vs_final_total_cost_before_hp_conversion_nonnegative_delta_v1",
+  "skills": {
+    "7021150": {
+      "record": {
+        "id": 7021150,
+        "wiki_id": "skill_000331",
+        "name": {
+          "zh": "逆袭"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 1,
+        "desc": {
+          "zh": "造成物伤，本技能能耗每+1，威力+50。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%80%86%E8%A2%AD",
+        "source_module": "Skills",
+        "power": 55
+      },
+      "record_hash": "5ce50f7865caa28d66068aef42935fbbef6284d7eb88f26023b6203b3620d900",
+      "direction": 1,
+      "power_per_cost": 50,
+      "hits": null,
+      "game_skill": {
+        "id": 7021150,
+        "name": {
+          "localization_id": 1930,
+          "text": "逆袭"
+        },
+        "desc": {
+          "localization_id": 1931,
+          "text": "造成物伤，本技能能耗每+1，威力+50。"
+        },
+        "energy_cost": [
+          1
+        ],
+        "damage_rule": 36,
+        "dam_para": [
+          55,
+          0,
+          0,
+          50,
+          100,
+          150,
+          200,
+          250,
+          300,
+          350,
+          400,
+          450
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 2,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_NX_201100",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/201100.201100'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "uncertainties": [
+        "Cost baseline is snapshot base energy; final total includes all cost modifiers before HP conversion. Online ordering and whether free casts count as reductions are uncalibrated."
+      ]
+    },
+    "7050390": {
+      "record": {
+        "id": 7050390,
+        "wiki_id": "skill_000441",
+        "name": {
+          "zh": "涌泉"
+        },
+        "type": "水系",
+        "kind": "magical",
+        "energy": 6,
+        "desc": {
+          "zh": "造成魔伤，本技能能耗每-1，威力+10。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B6%8C%E6%B3%89",
+        "source_module": "Skills",
+        "power": 90
+      },
+      "record_hash": "4767b5b24afb5c4ec784e3c08e34e17f6a48f3543b1cea705b8c3295dc19dc00",
+      "direction": -1,
+      "power_per_cost": 10,
+      "hits": null,
+      "game_skill": {
+        "id": 7050390,
+        "name": {
+          "localization_id": 2269,
+          "text": "涌泉"
+        },
+        "desc": {
+          "localization_id": 2270,
+          "text": "造成魔伤，本技能能耗每-1，威力+10。"
+        },
+        "energy_cost": [
+          6
+        ],
+        "damage_rule": 36,
+        "dam_para": [
+          90,
+          60,
+          50,
+          40,
+          30,
+          20,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 5,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_JXQ_104028",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/104028.104028'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "uncertainties": [
+        "Cost baseline is snapshot base energy; final total includes all cost modifiers before HP conversion. Online ordering and whether free casts count as reductions are uncalibrated."
+      ]
+    },
+    "7050480": {
+      "record": {
+        "id": 7050480,
+        "wiki_id": "skill_000445",
+        "name": {
+          "zh": "叠浪"
+        },
+        "type": "水系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，3连击，本技能能耗每-1，威力+10。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8F%A0%E6%B5%AA",
+        "source_module": "Skills",
+        "power": 10
+      },
+      "record_hash": "4539de0f2a5b9ee7a14d4d5ae4c31fbe7f22c24f1cc304837f2ab469df85bf55",
+      "direction": -1,
+      "power_per_cost": 10,
+      "hits": 3,
+      "game_skill": {
+        "id": 7050480,
+        "name": {
+          "localization_id": 2297,
+          "text": "叠浪"
+        },
+        "desc": {
+          "localization_id": 2298,
+          "text": "造成物伤，3连击，本技能能耗每-1，威力+10。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "damage_rule": 36,
+        "dam_para": [
+          10,
+          30,
+          20,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 5,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1032003,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_PL_104035",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/104035.104035'",
+        "describe_type": [
+          5,
+          15
+        ]
+      },
+      "uncertainties": [
+        "Cost baseline is snapshot base energy; final total includes all cost modifiers before HP conversion. Online ordering and whether free casts count as reductions are uncalibrated."
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-29T15:37:17.751721+00:00",
+  "source": "https://roco-showdown.com/teams",
+  "independent_source": true,
+  "page_status": 200,
+  "complete_team_records_obtained": 0,
+  "observations": [
+    "The public page describes a six-pet team repository and personal/shared team filters.",
+    "Server-rendered page has no saved team cards or complete build records.",
+    "Page entry script and two directly referenced team UI modules were inspected; no direct public API URL or full team data was found within this bounded check."
+  ],
+  "status": "no_usable_data_found_in_bounded_public_check",
+  "limitations": [
+    "This does not establish that the site has no public shared teams; dynamic requests may provide data, but were not investigated further.",
+    "No login, authentication bypass, broad search, or fake lineup generation was performed."
+  ],
+  "files": [
+    "roco-showdown-popular-page.raw.html",
+    "roco-showdown-popular-fetch.json",
+    "roco-showdown-popular-page.source.js",
+    "roco-showdown-popular-library.source.js",
+    "roco-showdown-popular-teams.source.js"
+  ]
+}

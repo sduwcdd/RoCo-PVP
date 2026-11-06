@@ -1,0 +1,342 @@
+{
+  "trait_id": 200230,
+  "chain": [
+    "200230",
+    "20730130",
+    "2073013",
+    "21130010",
+    "2113001",
+    "1065002/1081004/1004081/20171580"
+  ],
+  "confirmed": [
+    "BWIKI and installed description: revive four rounds after exhaustion",
+    "BUFFBASE2113001 first parameter4",
+    "ET_REVIVE_BAG_PET=65;1065002 params [[0],[0],[1],[10000],[1]]",
+    "Client BPT_REVIVE consumes synchronized target_id; does not calculate restored HP here"
+  ],
+  "unresolved": [
+    "Revival param operand units and restored HP/energy/status fields are not declared by an executable client calculation in inspected files",
+    "When four rounds are counted and whether trainer magic/score are restored",
+    "Follow-up buff20171580->2017158->1019027 semantics and eligibility after battle terminal"
+  ],
+  "records": {
+    "skill": {
+      "id": 200230,
+      "name": {
+        "localization_id": 461,
+        "text": "不朽"
+      },
+      "desc": {
+        "localization_id": 462,
+        "text": "力竭4回合后复活。"
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 2,
+      "skill_dam_type": 1,
+      "damage_type": 1,
+      "skill_priority": 1,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20730130,
+          "cast_moment": 26
+        },
+        {
+          "effect_id": 20730130,
+          "cast_moment": 11
+        },
+        {},
+        {},
+        {},
+        {
+          "effect_id": 1004117,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200230.200230'",
+      "describe_type": [
+        0
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "buffs": {
+      "20730130": {
+        "id": 20730130,
+        "buff_base_ids": [
+          2073013
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "type": 3,
+        "add_max": 1,
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 2
+      },
+      "21130010": {
+        "id": 21130010,
+        "buff_base_ids": [
+          2113001
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "type": 3,
+        "add_max": 1,
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 2,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ]
+      },
+      "20171580": {
+        "id": 20171580,
+        "buff_base_ids": [
+          2017158
+        ],
+        "buff_list_priority": 4,
+        "buff_groupsigns": [
+          0
+        ],
+        "type": 3,
+        "add_max": 1,
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 2,
+            "reduce_param": [
+              1,
+              99
+            ]
+          },
+          {
+            "reduce_type": 7,
+            "reduce_param": [
+              1,
+              99
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      }
+    },
+    "bases": {
+      "2073013": {
+        "id": 2073013,
+        "buffbase_order": 73,
+        "show_letters": [
+          0
+        ],
+        "buffbase_param": [
+          {
+            "params": [
+              21130010
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              2
+            ]
+          }
+        ]
+      },
+      "2113001": {
+        "id": 2113001,
+        "buffbase_order": 113,
+        "show_letters": [
+          1
+        ],
+        "buffbase_param": [
+          {
+            "params": [
+              4
+            ]
+          },
+          {
+            "params": [
+              1065002,
+              1081004,
+              1004081,
+              20171580
+            ]
+          },
+          {
+            "params": [
+              2
+            ]
+          }
+        ]
+      },
+      "2017158": {
+        "id": 2017158,
+        "buffbase_order": 17,
+        "show_letters": [
+          0
+        ],
+        "buffbase_param": [
+          {
+            "params": [
+              1019027
+            ]
+          },
+          {
+            "params": [
+              10000
+            ]
+          },
+          {
+            "params": [
+              1
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      }
+    },
+    "effects": {
+      "1065002": {
+        "id": 1065002,
+        "effect_order": 65,
+        "type": 3,
+        "effect_param": [
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              1
+            ]
+          },
+          {
+            "params": [
+              10000
+            ]
+          },
+          {
+            "params": [
+              1
+            ]
+          }
+        ]
+      },
+      "1081004": {
+        "id": 1081004,
+        "effect_order": 81,
+        "type": 3,
+        "effect_param": [
+          {
+            "params": [
+              1004
+            ]
+          }
+        ]
+      },
+      "1004081": {
+        "id": 1004081,
+        "effect_order": 4,
+        "is_special": 1,
+        "name": "不朽",
+        "type": 1,
+        "effect_param": [
+          {
+            "params": [
+              3
+            ]
+          },
+          {
+            "params": [
+              21130010
+            ]
+          },
+          {
+            "params": [
+              99
+            ]
+          },
+          {
+            "params": [
+              99
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      },
+      "1019027": {
+        "id": 1019027,
+        "effect_order": 19,
+        "type": 3,
+        "effect_param": [
+          {
+            "params": [
+              99
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "source_hashes": {
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\tables\\parsed\\SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\tables\\parsed\\BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\tables\\parsed\\BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\tables\\parsed\\EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+  }
+}

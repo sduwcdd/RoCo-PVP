@@ -1,0 +1,18 @@
+{
+  "modules": [
+    "tests.test_skill_execution",
+    "tests.test_turn_plan",
+    "tests.test_action_runtime"
+  ],
+  "run": 59,
+  "passed": 59,
+  "errors": 0,
+  "failures": 0,
+  "seconds": 83.701,
+  "reason": "Final native conditional defense ordering guard; earlier broad and envelope checks separate",
+  "files_sha256": {
+    "lab/skill_execution.py": "e2222d6c4c5734425e328e42320693617e819c3d7c60fe79a2dd9ff93f600200",
+    "lab/turn_plan.py": "30276bee0bbde6f6faf08297221e3ffc06678a0ab46665fd757f3912089b36de",
+    "tests/test_skill_execution.py": "ef581b4aa0808159b175eb1dc8c1c9e0b6c687fe49b4e8b91573d8d425e37941"
+  }
+}

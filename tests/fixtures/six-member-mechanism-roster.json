@@ -1,0 +1,201 @@
+{
+  "source": {
+    "original_path": "data/external/multiconfig-20261030/amago-current/train_seen.json",
+    "sha256": "a65833ef4126939b9a6fd6834f584a4d65596f60142ccc943608fe2118c25a00",
+    "purpose": "six-member mechanics regression fixture"
+  },
+  "roster": [
+    {
+      "form_id": 3008,
+      "level": 60,
+      "move_ids": [
+        7030190,
+        7030240,
+        7140060,
+        7020620
+      ],
+      "bloodline_id": 0,
+      "nature_id": 1,
+      "nature_modifiers": {
+        "up_id": 0,
+        "down_id": 0
+      },
+      "nature_directions": {
+        "up": "patk",
+        "down": "pdef"
+      },
+      "talent_selection": {
+        "selected": [
+          "hp",
+          "patk",
+          "spd"
+        ],
+        "values": {
+          "hp": 10,
+          "patk": 10,
+          "spd": 10
+        }
+      }
+    },
+    {
+      "form_id": 3007,
+      "level": 60,
+      "move_ids": [
+        7020360,
+        7020640,
+        7030440,
+        7020390
+      ],
+      "bloodline_id": 0,
+      "nature_id": 1,
+      "nature_modifiers": {
+        "up_id": 0,
+        "down_id": 0
+      },
+      "nature_directions": {
+        "up": "patk",
+        "down": "pdef"
+      },
+      "talent_selection": {
+        "selected": [
+          "hp",
+          "patk",
+          "spd"
+        ],
+        "values": {
+          "hp": 10,
+          "patk": 10,
+          "spd": 10
+        }
+      }
+    },
+    {
+      "form_id": 3001,
+      "level": 60,
+      "move_ids": [
+        7020360,
+        7020640,
+        7030440,
+        7020390
+      ],
+      "bloodline_id": 0,
+      "nature_id": 1,
+      "nature_modifiers": {
+        "up_id": 0,
+        "down_id": 0
+      },
+      "nature_directions": {
+        "up": "patk",
+        "down": "pdef"
+      },
+      "talent_selection": {
+        "selected": [
+          "hp",
+          "patk",
+          "spd"
+        ],
+        "values": {
+          "hp": 8,
+          "patk": 8,
+          "spd": 8
+        }
+      }
+    },
+    {
+      "form_id": 3011,
+      "level": 60,
+      "move_ids": [
+        7180090,
+        7180160,
+        7180110,
+        7020620
+      ],
+      "bloodline_id": 0,
+      "nature_id": 11,
+      "nature_modifiers": {
+        "up_id": 0,
+        "down_id": 0
+      },
+      "nature_directions": {
+        "up": "matk",
+        "down": "patk"
+      },
+      "talent_selection": {
+        "selected": [
+          "hp",
+          "matk",
+          "spd"
+        ],
+        "values": {
+          "hp": 8,
+          "matk": 8,
+          "spd": 8
+        }
+      }
+    },
+    {
+      "form_id": 3004,
+      "level": 60,
+      "move_ids": [
+        7020370,
+        7060090,
+        7020780,
+        7020630
+      ],
+      "bloodline_id": 0,
+      "nature_id": 1,
+      "nature_modifiers": {
+        "up_id": 0,
+        "down_id": 0
+      },
+      "nature_directions": {
+        "up": "patk",
+        "down": "pdef"
+      },
+      "talent_selection": {
+        "selected": [
+          "hp",
+          "patk",
+          "spd"
+        ],
+        "values": {
+          "hp": 10,
+          "patk": 10,
+          "spd": 10
+        }
+      }
+    },
+    {
+      "form_id": 3006,
+      "level": 60,
+      "move_ids": [
+        7020370,
+        7040170,
+        7020620,
+        7040390
+      ],
+      "bloodline_id": 0,
+      "nature_id": 1,
+      "nature_modifiers": {
+        "up_id": 0,
+        "down_id": 0
+      },
+      "nature_directions": {
+        "up": "patk",
+        "down": "pdef"
+      },
+      "talent_selection": {
+        "selected": [
+          "hp",
+          "patk",
+          "spd"
+        ],
+        "values": {
+          "hp": 10,
+          "patk": 10,
+          "spd": 10
+        }
+      }
+    }
+  ]
+}

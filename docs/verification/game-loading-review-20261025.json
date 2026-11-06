@@ -1,0 +1,759 @@
+{
+  "date": "2026-10-25",
+  "scope": "read-only verification of existing extraction and table parse; no game script executed",
+  "files": {
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\analysis_manifest.json": "5e6f266e028c41c9f82b9831d7f150313bd2b1765c8980e0dcbe12c01c266500",
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\dependency_manifest.json": "686d333c175de70313d5b3e82897aecff0480f6df93b357f8d88bba4dcac8674",
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\table_manifest.json": "23686179662dd26e1f0de332ef251df3afbf2b6af56e19cbc574ca40bd723fda",
+    "artifacts\\unpack_probe_20261025\\battle_analysis\\effect_table_manifest.json": "9c61a896e30ffde74fb0806449f5a5067b6dae56633bcac79bb9a3eaa67da4df",
+    "artifacts\\unpack_probe_20261025\\parse_roco_tables.py": "49eac8b1c84335bf4f1a8d84a1a88805a435e2a2d8739cb51f6357222cdd5473",
+    "artifacts\\unpack_probe_20261025\\extract_targeted.py": "40f5906a324492c35b03214605dcc60bc4491614e41fbe093b5156b0c247b8d9",
+    "artifacts\\unpack_probe_20261025\\search_directories.py": "7b847cf1e809d7b32cbf748da894c309ae84c8a4b1d1e97c071ec2bc0c717dc1",
+    "artifacts\\unpack_probe_20261025\\sources\\FRocoBinData.cs": "4a50994f22229c9c4d04209ba69dfc455211e6b05304bfb839674057464524f5",
+    "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/DataConfigManagerNew.luac.decompiled.lua": "4216f7a6b7ae6226a6e84e6cbb613236e953855a78c610fad863dced0af1820f",
+    "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/DataConfigManagerEx.luac.decompiled.lua": "c2cd1fbad6c042838bb036da634370e0325febde7c2df1704f907f903f544975",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/GlobalConfig.luac.decompiled.lua": "9223a4e78984ba8424c02046e48577210896de2f976ac958802f5a0ce204a0d0",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BinDataManager.luac.decompiled.lua": "9fccd9ba2f9322c900997fd6edc07d4cbe2359be5ad3960305073b40ba145b32",
+    "tests/test_game_table_probe.py": "17d9fd35caf757e72c70f55aae402f35dcfeaee76b6f1551e4dbb766fb94e37c"
+  },
+  "tables": [
+    {
+      "name": "BATTLE_CONF",
+      "rows": 7313,
+      "declared_rows": 7313,
+      "reparse_equal": true,
+      "schema_sha256": "9f115108f6ffa16d15d39f03f2e8b5833912cb1771f92bfce93865ae0392b068",
+      "binary_sha256": "905e540e8d592b25124356772a9d1a2386f90d471f18eb932b1e8d8612f441eb",
+      "parsed_json_sha256": "6ce385575f8faa39be236c4f517aa3ffed4fca7ce4249cb924d17a46ec451c3e",
+      "localization_sha256": "71aa5d464343a432072413a5f3771904bf115379ee8cb7946e4aae48d9953f10",
+      "missing_counts": {
+        "id": 0,
+        "name": 1,
+        "background": 7190,
+        "type": 0,
+        "opposite_type": 6041,
+        "show_availableHP_rule": 6132,
+        "role_available_HP": 6850,
+        "rival_available_HP": 6805,
+        "screen_show_res": 7311,
+        "show_res": 7276,
+        "challanger_unit_num": 0,
+        "bechallanger_unit_num": 0,
+        "exchange_cold": 7313,
+        "exchange_initial_cold": 7313,
+        "max_round": 0,
+        "background_music": 20,
+        "bgm_battle_state": 5472,
+        "can_catch_or_not": 3012,
+        "can_escape": 10,
+        "can_changepet": 3,
+        "use_ball_time": 1475,
+        "round_pet_timeout": 0,
+        "npc_battle_list": 8,
+        "special_battle_start_time": 7311,
+        "local_point": 6623,
+        "teamB_prohibit_buff": 5623,
+        "available_hp_rule": 7140,
+        "battle_rule": 6016,
+        "legendary_sub_type": 7307,
+        "die_show": 7277,
+        "transiton": 7277,
+        "transiton_blackboard": 7289,
+        "task_battle_performance_control": 7135,
+        "npc_round_scale": 1189,
+        "npc_round_tip_scale": 1189,
+        "cancel_watch": 7255,
+        "feature_resonance": 7303,
+        "battle_end_no_npc": 7292,
+        "npc_battle_ally_list": 7243,
+        "petbase_required": 7313,
+        "is_pvp_season_music": 7312
+      },
+      "unresolved_localization_ids": []
+    },
+    {
+      "name": "BATTLE_GLOBAL_CONFIG",
+      "rows": 620,
+      "declared_rows": 620,
+      "reparse_equal": true,
+      "schema_sha256": "94a196e2ead56e164c7ded6a53eead0467ae7b47fd191be8149c3cdb8de444c9",
+      "binary_sha256": "8fc7dfcc41c132ffc36aacd2b03702e00dda12096912caeb8f033d7664d818fc",
+      "parsed_json_sha256": "0e43b58db5cc6cf04771c6e17af7c5a4564b3bee671da236706c3667dd9a527e",
+      "localization_sha256": "728fdf3c257c271c89054fa73f3d488c9493dfb6defe856771088a43b5a84bb6",
+      "missing_counts": {
+        "id": 0,
+        "key": 0,
+        "num": 304,
+        "numList": 529,
+        "str": 420
+      },
+      "unresolved_localization_ids": []
+    },
+    {
+      "name": "BATTLE_RULE_CONF",
+      "rows": 263,
+      "declared_rows": 263,
+      "reparse_equal": true,
+      "schema_sha256": "a9b73dde510c565f1a4d7654a2b30bd22b2d8387fc2902464fd15c5cb61240fc",
+      "binary_sha256": "bab141f2c9ab4956bc29778e04354977253a100d9d777af983ea418dea93a9be",
+      "parsed_json_sha256": "a3252f8f6786cbd40ed4185fecb7bdc5d6432b485aa7bf1542338e76ad8cf2a3",
+      "localization_sha256": "33bf1e3f121e064c8863a8ec930ab858a589a2da453977465ce04f1e009e9ac7",
+      "missing_counts": {
+        "id": 0,
+        "title": 7,
+        "desc": 6,
+        "target": 140,
+        "rank": 1,
+        "buff": 2,
+        "icon": 190,
+        "season_title": 258,
+        "season_desc": 258
+      },
+      "unresolved_localization_ids": []
+    },
+    {
+      "name": "BUFF_CONF",
+      "rows": 3312,
+      "declared_rows": 3312,
+      "reparse_equal": true,
+      "schema_sha256": "af2f346cda7372f7ec1f404f28db0c187b53aaf271be32825733afb3e13e9f8e",
+      "binary_sha256": "fbfdf28f4e425480d90ad204a949ab35cf484826b24fec9babd0d08f90c52aee",
+      "parsed_json_sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+      "localization_sha256": null,
+      "missing_counts": {
+        "id": 0,
+        "buff_base_ids": 1,
+        "buff_list_priority": 0,
+        "buff_groupsigns": 3,
+        "name": 2270,
+        "type_id": 2507,
+        "add_des": 2976,
+        "add_icon": 2996,
+        "trigger_des": 3285,
+        "trigger_icon": 3303,
+        "type": 0,
+        "cover_id": 3209,
+        "add_max": 1,
+        "desc": 2577,
+        "icon": 453,
+        "corner_markers": 3260,
+        "res_id_0": 3042,
+        "res_id_1": 3121,
+        "res_id_2": 3312,
+        "buff_group_reduce": 0,
+        "is_clean_when_rest": 877,
+        "buff_can_react": 3312
+      },
+      "unresolved_localization_ids": []
+    },
+    {
+      "name": "BUFFBASE_CONF",
+      "rows": 2813,
+      "declared_rows": 2813,
+      "reparse_equal": true,
+      "schema_sha256": "addd54f944d30b819d0a3e3315edec58908bc7c574b2d1aa43c876bca8634d91",
+      "binary_sha256": "924eb181564f3e5e6da10843c4af9950c7f6df2c19e5113fe30d2465c153d39d",
+      "parsed_json_sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+      "localization_sha256": null,
+      "missing_counts": {
+        "id": 0,
+        "buffbase_order": 0,
+        "trigger_type": 2428,
+        "show_letters": 0,
+        "buffbase_param": 6
+      },
+      "unresolved_localization_ids": []
+    },
+    {
+      "name": "EFFECT_CONF",
+      "rows": 1259,
+      "declared_rows": 1259,
+      "reparse_equal": true,
+      "schema_sha256": "11da8a5939f5e702fa2eaa30aad0d3319409e61024416aaa16f6c3abf37de9bb",
+      "binary_sha256": "c4294bb3687fb9bad72241ffc22b94c7b8755bd629c6049ff1e98301a911ea49",
+      "parsed_json_sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+      "localization_sha256": null,
+      "missing_counts": {
+        "id": 0,
+        "effect_order": 0,
+        "is_special": 1183,
+        "name": 1182,
+        "add_des": 1166,
+        "add_icon": 1172,
+        "trigger_des": 1259,
+        "trigger_icon": 1259,
+        "type": 0,
+        "effect_param": 13
+      },
+      "unresolved_localization_ids": []
+    },
+    {
+      "name": "PVP_CONF",
+      "rows": 10,
+      "declared_rows": 10,
+      "reparse_equal": true,
+      "schema_sha256": "a077d36989af0223a828208461f2dfc2077c2a8df77c854726d409f6a541c87e",
+      "binary_sha256": "457abef4cf979062097927f309db2ffdc80c858cd2f43d9197188c4ee71e8048",
+      "parsed_json_sha256": "2d434e55969132f82bcbefdf77bebd930c86c280ee53d86d853086187b0945cd",
+      "localization_sha256": "a9846059c6bbeef4672b04e07af0ab9957b386e7d1847a038ff95e195c2ac374",
+      "missing_counts": {
+        "id": 0,
+        "sequence": 0,
+        "name": 0,
+        "des": 0,
+        "npcid": 0,
+        "npc_icon": 0,
+        "banner": 0,
+        "icon": 0,
+        "icon_color": 0,
+        "ticket_stub": 0,
+        "award_list": 4,
+        "time": 0,
+        "battle_config": 0,
+        "team_type": 0,
+        "air_wall": 0,
+        "hide_npc_area": 8,
+        "is_show": 6,
+        "team_num": 0,
+        "pvp_rank_is_open_limit_fantastic": 9,
+        "mappoint": 0,
+        "daily_first_win_award_list": 10,
+        "rule_tips": 7,
+        "rule_num": 6,
+        "rule_list": 4,
+        "start_time": 6,
+        "end_time": 6
+      },
+      "unresolved_localization_ids": []
+    },
+    {
+      "name": "SKILL_CONF",
+      "rows": 1988,
+      "declared_rows": 1988,
+      "reparse_equal": true,
+      "schema_sha256": "09baca31a786bfb7324a46b6bd65f9acef33da4c72c687093888591fc0fc8fe0",
+      "binary_sha256": "a9db197c48764d3a0e92c98f361f6ef2498333f388ac9c29d5e3d2a6794ae4c6",
+      "parsed_json_sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+      "localization_sha256": "ff8fc6ac6afc934bb58d3b64a5fc5a4fcdc4e8fac1f98f872c3ded526857cf28",
+      "missing_counts": {
+        "id": 0,
+        "name": 0,
+        "desc": 6,
+        "flavor_text": 1653,
+        "energy_rule": 1950,
+        "energy_cost": 0,
+        "damage_rule": 1896,
+        "dam_para": 0,
+        "type": 0,
+        "Skill_Type": 801,
+        "skill_dam_type": 0,
+        "skill_feature": 480,
+        "damage_type": 0,
+        "skill_priority": 10,
+        "target_type": 0,
+        "cd_round": 1,
+        "skill_result": 272,
+        "res_id": 36,
+        "icon": 37,
+        "field_belong": 1988,
+        "target_field": 1988,
+        "field_skill": 1988,
+        "is_show": 1921,
+        "describe_type": 60,
+        "env_ban": 1988,
+        "target_blood_limit": 148,
+        "worldbuff_res_id": 1940,
+        "is_showlens": 1984
+      },
+      "unresolved_localization_ids": []
+    }
+  ],
+  "extraction": [
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/BattleDataCenter.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/BattleEventCenter.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/BattleCmdQueue.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/BattleRequest.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleNetManager.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleModuleData.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Fsm/Actions/Round/BattleRoundAction.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Fsm/Actions/Round/RoundSkillAction.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Fsm/Actions/Round/RoundSwapAction.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Skill/RocoBuffAction.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Skill/RocoDispatchSkillEventAction.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/Skill/SkillUtils.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 5
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/Skill/RocoSkillObject.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/Skill/BattlePlayerSkill.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/BattleCore/Skill/BattleSkillManager.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/System/PVPQualifier/PVPRankedMatchModuleData.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "analysis_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_15_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/System/PVPQualifier/PVPRankedMatchModuleUtils.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 8
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_26_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Common/DataConfigManager.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Common/DataConfigManagerEx.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Common/DataConfigManagerNew.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Common/BattleConst.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Common/BattleEnum.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_14_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Common/BattleUtils.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Entity/Components/Buff/BuffUtils.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Entity/Components/Skill/SkillComponent.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "decompiled_sha256_verified": true
+    },
+    {
+      "manifest": "dependency_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_27_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/PB/ProtoEnum.luac",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BATTLE_CONF.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BATTLE_GLOBAL_CONFIG.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/PVP_CONF.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILL_CONF.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_27_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BATTLE_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 9
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_10_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BATTLE_GLOBAL_CONFIG.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 5
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_27_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 11
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_27_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/PVP_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 7
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_26_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILL_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 12
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_8_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/SKILL_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 6
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_35_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN//BATTLE_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 9
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/BATTLE_GLOBAL_CONFIG.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_11_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/PVP_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "effect_table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BATTLE_RULE_CONF.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "effect_table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    },
+    {
+      "manifest": "effect_table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "effect_table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BATTLE_RULE_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 4
+    },
+    {
+      "manifest": "effect_table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_26_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 10
+    },
+    {
+      "manifest": "effect_table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_26_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 8
+    },
+    {
+      "manifest": "effect_table_manifest.json",
+      "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/BATTLE_RULE_CONF.bytes",
+      "payload_sha256_verified": true,
+      "source_ranges_verified": true,
+      "numeric_candidate_is_highest": true,
+      "available_count": 3
+    }
+  ],
+  "source_range_bytes_read": 4254768,
+  "source_ranges_checked": 47,
+  "errors": [],
+  "saved_directory_audit": {
+    "packages": 330,
+    "primary_sha1_ok": 330,
+    "directory_sha1_ok": 330,
+    "current_full_index_rescan": false
+  },
+  "confirmed": [
+    "All eight tables reparse identically; missing fields remain absent",
+    "All selected payload/source ranges and recorded decompilation hashes verified",
+    "Array order and nested field presence are retained",
+    "Native manager chooses compressed or uncompressed data and can fall back to Lua",
+    "Lua helper uses caller default only when exposed value is nil/false; native materialization for absent serialized fields remains unknown"
+  ],
+  "unresolved": [
+    "Actual PAK mount order and virtual path lookup precedence",
+    "Runtime flags IsCompressedBinDataEnabled and DisableBinData in online PVP",
+    "C++ FBinData/UBinDataManager missing-field materialization",
+    "Online config override and selected-mode applicability",
+    "Meaning of table fields/enums is separate from parsing"
+  ],
+  "tests": {
+    "module": "tests.test_game_table_probe",
+    "passed": 6,
+    "failed": 0,
+    "seconds": 1.161,
+    "scope": "serialized representation and existing parser; not runtime default-value or mount-order calibration"
+  },
+  "additional_file_evidence": {
+    "GlobalConfig.DisableBinData": {
+      "raw_value": false,
+      "line": 99,
+      "online_applicability_verified": false
+    },
+    "BinDataManager": "Lua methods delegate to native Overridden methods; no missing-field or compression-flag implementation in this wrapper"
+  },
+  "parser_hardening_issue": {
+    "id": "negative_cursor_not_rejected",
+    "file": "artifacts/unpack_probe_20261025/parse_roco_tables.py",
+    "read_current_check": "n<0 or p+n>len(b); no p<0 check",
+    "minimal_probe": "reader.b=b\"abcd\"; reader.p=-2; read(1) returns b\"c\"",
+    "impact": "Malformed future offsets can read using Python negative indexing; no observed misparse in verified eight tables",
+    "old_parser_modified": false,
+    "minimal_probe_verified": true
+  },
+  "loading_review": {
+    "highest_numeric_suffix_checked": 38,
+    "all_checked_candidates_highest": true,
+    "actual_runtime_mount_priority_proven": false,
+    "installation_bounded_inventory": "Win64/NRC has Binaries, Config, Content, Plugins; no Saved directory at that path; no game process launched",
+    "configuration_file_route": "DataConfigManagerNew checks IsCompressedBinDataEnabled for BinDataCompressed versus BinData; DisableBinData routes to base Lua config",
+    "editor_override": "GetData checks editor_override only within IS_EDITOR branch; not evidence of online override",
+    "reload": "ReloadTable method exists but its presence does not prove online override or ordering"
+  }
+}

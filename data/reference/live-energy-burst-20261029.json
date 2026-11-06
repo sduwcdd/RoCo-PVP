@@ -1,0 +1,1241 @@
+{
+  "schema": "live-energy-burst-20261029-1",
+  "source_csv": "synthetic-capture-1.csv",
+  "record_numbering": "1-based data records after CSV header",
+  "battle_id": "90000000000000001",
+  "policy": "Raw evidence and source-bound vendor A-table candidates; not full-tier live calibration; no defense inferred from these hits",
+  "skill_parameters": [
+    {
+      "source_record": 133459,
+      "pet_id": 2,
+      "slot": 3,
+      "skill_id": 7020550,
+      "source_id": 702055000,
+      "cost_energy": 8,
+      "damage_params": [
+        {
+          "pet_id": 404,
+          "damage_param": 238
+        }
+      ]
+    },
+    {
+      "source_record": 133492,
+      "pet_id": 2,
+      "slot": 3,
+      "skill_id": 7020550,
+      "source_id": 702055000,
+      "cost_energy": 8,
+      "damage_params": [
+        {
+          "pet_id": 404,
+          "damage_param": 334
+        }
+      ]
+    },
+    {
+      "source_record": 133564,
+      "pet_id": 2,
+      "slot": 3,
+      "skill_id": 7020550,
+      "source_id": 702055000,
+      "cost_energy": 0,
+      "damage_params": [
+        {
+          "pet_id": 406,
+          "damage_param": 40
+        }
+      ]
+    }
+  ],
+  "raw_cast_and_damage": [
+    {
+      "source_record": 133508,
+      "skill_cast": {
+        "caster_id": 2,
+        "target_id": [
+          404
+        ],
+        "skill_id": 702055000,
+        "restraint_type": [
+          0
+        ],
+        "type": 1,
+        "skill_name": "魔能爆"
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 2,
+            "energy_change": 18446744073709551608,
+            "energy_result": 0
+          }
+        ]
+      }
+    },
+    {
+      "source_record": 133508,
+      "damage_info": {
+        "caster_id": 2,
+        "target_id": 404,
+        "source_id": 702055000,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": 0,
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 404,
+            "original_damage": 536,
+            "damage_change": 18446744073709551446,
+            "damage_result": 536
+          },
+          {
+            "pet_id": 404,
+            "hp_change": 18446744073709551250,
+            "hp_result": 0
+          }
+        ]
+      }
+    },
+    {
+      "source_record": 133588,
+      "skill_cast": {
+        "caster_id": 2,
+        "target_id": [
+          406
+        ],
+        "skill_id": 702055000,
+        "restraint_type": [
+          18446744073709551615
+        ],
+        "type": 1,
+        "skill_name": "魔能爆"
+      }
+    },
+    {
+      "source_record": 133588,
+      "damage_info": {
+        "caster_id": 2,
+        "target_id": 406,
+        "source_id": 702055000,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": 18446744073709551615,
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "original_damage": 52,
+            "damage_change": 0,
+            "damage_result": 52
+          },
+          {
+            "pet_id": 406,
+            "hp_change": 18446744073709551564,
+            "hp_result": 322
+          }
+        ]
+      }
+    }
+  ],
+  "observations": [
+    {
+      "source_record": 133508,
+      "round": 2,
+      "caster_id": 2,
+      "target_id": 404,
+      "damage": 536,
+      "critical": false,
+      "context": {
+        "attacker": {
+          "petBaseId": 3742,
+          "level": 60,
+          "currentHp": 351,
+          "maxHp": 403,
+          "energy": 0,
+          "maxEnergy": 10,
+          "initialStats": {
+            "hp": 403,
+            "phyAtk": 118,
+            "magAtk": 231,
+            "phyDef": 181,
+            "magDef": 184,
+            "spd": 170
+          },
+          "battleStats": {
+            "hp": 403,
+            "phyAtk": 111,
+            "magAtk": 267,
+            "phyDef": 181,
+            "magDef": 184,
+            "spd": 170
+          },
+          "battleStatsBasis": "natured_base",
+          "talentEvidence": {
+            "source": "battle_common_pet_info.attribute_info",
+            "selected_ids": [
+              4,
+              1,
+              3
+            ],
+            "dimensions": {
+              "hp": {
+                "talent": 60,
+                "talent_add_value": 10,
+                "base_value": 303,
+                "effort_add": 100,
+                "total_race": 107
+              },
+              "phyAtk": {
+                "talent": 0,
+                "talent_add_value": 0,
+                "base_value": 68,
+                "effort_add": 50,
+                "total_race": 53
+              },
+              "magAtk": {
+                "talent": 60,
+                "talent_add_value": 10,
+                "base_value": 181,
+                "effort_add": 50,
+                "total_race": 125
+              },
+              "phyDef": {
+                "talent": 60,
+                "talent_add_value": 10,
+                "base_value": 131,
+                "effort_add": 50,
+                "total_race": 80
+              },
+              "magDef": {
+                "talent": 0,
+                "talent_add_value": 0,
+                "base_value": 134,
+                "effort_add": 50,
+                "total_race": 113
+              },
+              "spd": {
+                "talent": 0,
+                "talent_add_value": 0,
+                "base_value": 120,
+                "effort_add": 50,
+                "total_race": 100
+              }
+            }
+          },
+          "buffs": [
+            {
+              "id": 20010816,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20530020,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20350760,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 21080172,
+              "layers": 1,
+              "leftRounds": 2,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20010010,
+              "layers": 4,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20010020,
+              "layers": 4,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            }
+          ],
+          "battleBuffs": [
+            {
+              "id": 20010816,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20530020,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20350760,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 21080172,
+              "layers": 1,
+              "leftRounds": 2,
+              "hidden": false
+            },
+            {
+              "id": 20010010,
+              "layers": 4,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20010020,
+              "layers": 4,
+              "leftRounds": 998,
+              "hidden": false
+            }
+          ],
+          "effectiveTraitId": 200088,
+          "entryActionCount": 0,
+          "skillUseCounts": {
+            "7020550": 0
+          },
+          "skillUseHistoryComplete": false,
+          "carriedSkillIds": [
+            7020600,
+            7020630,
+            7020550,
+            7021120
+          ],
+          "carriedSkillCosts": [
+            4,
+            0,
+            8,
+            2
+          ],
+          "bloodId": 1,
+          "nature": 15,
+          "naturePosOverride": 0,
+          "natureNegOverride": 2,
+          "liveContext": {
+            "turn": 2,
+            "weather": null,
+            "rosters": {
+              "self": [
+                {
+                  "member_id": "1",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 358
+                },
+                {
+                  "member_id": "2",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 351
+                },
+                {
+                  "member_id": "3",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 464
+                },
+                {
+                  "member_id": "4",
+                  "types": [
+                    "冰系",
+                    "萌系"
+                  ],
+                  "hp": 492
+                },
+                {
+                  "member_id": "5",
+                  "types": [
+                    "冰系"
+                  ],
+                  "hp": 345
+                },
+                {
+                  "member_id": "6",
+                  "types": [
+                    "普通系",
+                    "幻系"
+                  ],
+                  "hp": 410
+                }
+              ],
+              "opponent": [
+                {
+                  "member_id": "404",
+                  "types": [
+                    "火系"
+                  ],
+                  "hp": 366
+                },
+                {
+                  "member_id": "401",
+                  "types": [
+                    "恶系"
+                  ],
+                  "hp": 417
+                },
+                {
+                  "member_id": "402",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 304
+                },
+                {
+                  "member_id": "403",
+                  "types": [
+                    "草系",
+                    "冰系"
+                  ],
+                  "hp": 352
+                },
+                {
+                  "member_id": "405",
+                  "types": [
+                    "幻系",
+                    "光系"
+                  ],
+                  "hp": 362
+                },
+                {
+                  "member_id": "406",
+                  "types": [
+                    "水系",
+                    "幽系"
+                  ],
+                  "hp": 374
+                }
+              ]
+            }
+          },
+          "energyBeforeCast": 8
+        },
+        "defender": {
+          "petBaseId": 3071,
+          "level": 60,
+          "currentHp": 366,
+          "maxHp": 366,
+          "energy": 10,
+          "maxEnergy": 10,
+          "initialStats": {},
+          "battleStats": {
+            "hp": 366,
+            "phyAtk": 0,
+            "magAtk": 0,
+            "phyDef": 0,
+            "magDef": 0,
+            "spd": 0
+          },
+          "battleStatsBasis": "natured_base",
+          "talentEvidence": {},
+          "buffs": [
+            {
+              "id": 20010819,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20030030,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20930120,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20010030,
+              "layers": 5,
+              "leftRounds": 998,
+              "hidden": false,
+              "passive": true
+            }
+          ],
+          "battleBuffs": [
+            {
+              "id": 20010819,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20030030,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20930120,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 998,
+              "hidden": false
+            },
+            {
+              "id": 20010030,
+              "layers": 5,
+              "leftRounds": 998,
+              "hidden": false
+            }
+          ],
+          "effectiveTraitId": 200149,
+          "entryActionCount": 0,
+          "skillUseCounts": {},
+          "skillUseHistoryComplete": false,
+          "carriedSkillIds": null,
+          "carriedSkillCosts": null,
+          "bloodId": 19,
+          "nature": 22,
+          "naturePosOverride": 0,
+          "natureNegOverride": 0,
+          "liveContext": {
+            "turn": 2,
+            "weather": null,
+            "rosters": {
+              "self": [
+                {
+                  "member_id": "404",
+                  "types": [
+                    "火系"
+                  ],
+                  "hp": 366
+                },
+                {
+                  "member_id": "401",
+                  "types": [
+                    "恶系"
+                  ],
+                  "hp": 417
+                },
+                {
+                  "member_id": "402",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 304
+                },
+                {
+                  "member_id": "403",
+                  "types": [
+                    "草系",
+                    "冰系"
+                  ],
+                  "hp": 352
+                },
+                {
+                  "member_id": "405",
+                  "types": [
+                    "幻系",
+                    "光系"
+                  ],
+                  "hp": 362
+                },
+                {
+                  "member_id": "406",
+                  "types": [
+                    "水系",
+                    "幽系"
+                  ],
+                  "hp": 374
+                }
+              ],
+              "opponent": [
+                {
+                  "member_id": "1",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 358
+                },
+                {
+                  "member_id": "2",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 351
+                },
+                {
+                  "member_id": "3",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 464
+                },
+                {
+                  "member_id": "4",
+                  "types": [
+                    "冰系",
+                    "萌系"
+                  ],
+                  "hp": 492
+                },
+                {
+                  "member_id": "5",
+                  "types": [
+                    "冰系"
+                  ],
+                  "hp": 345
+                },
+                {
+                  "member_id": "6",
+                  "types": [
+                    "普通系",
+                    "幻系"
+                  ],
+                  "hp": 410
+                }
+              ]
+            }
+          }
+        }
+      },
+      "preview_check": {
+        "normalMin": 440,
+        "normalMax": 536,
+        "calibrated": false
+      },
+      "energy_payment": {
+        "before_cast": 8,
+        "after_cast": 0,
+        "change_signed": -8,
+        "raw_energy_change": 18446744073709551608,
+        "source": "cast sync_data.pet_sync_info"
+      }
+    },
+    {
+      "source_record": 133588,
+      "round": 3,
+      "caster_id": 2,
+      "target_id": 406,
+      "damage": 52,
+      "critical": false,
+      "context": {
+        "attacker": {
+          "petBaseId": 3742,
+          "level": 60,
+          "currentHp": 129,
+          "maxHp": 403,
+          "energy": 0,
+          "maxEnergy": 10,
+          "initialStats": {
+            "hp": 403,
+            "phyAtk": 118,
+            "magAtk": 231,
+            "phyDef": 181,
+            "magDef": 184,
+            "spd": 170
+          },
+          "battleStats": {
+            "hp": 403,
+            "phyAtk": 111,
+            "magAtk": 267,
+            "phyDef": 181,
+            "magDef": 184,
+            "spd": 170
+          },
+          "battleStatsBasis": "natured_base",
+          "talentEvidence": {
+            "source": "battle_common_pet_info.attribute_info",
+            "selected_ids": [
+              4,
+              1,
+              3
+            ],
+            "dimensions": {
+              "hp": {
+                "talent": 60,
+                "talent_add_value": 10,
+                "base_value": 303,
+                "effort_add": 100,
+                "total_race": 107
+              },
+              "phyAtk": {
+                "talent": 0,
+                "talent_add_value": 0,
+                "base_value": 68,
+                "effort_add": 50,
+                "total_race": 53
+              },
+              "magAtk": {
+                "talent": 60,
+                "talent_add_value": 10,
+                "base_value": 181,
+                "effort_add": 50,
+                "total_race": 125
+              },
+              "phyDef": {
+                "talent": 60,
+                "talent_add_value": 10,
+                "base_value": 131,
+                "effort_add": 50,
+                "total_race": 80
+              },
+              "magDef": {
+                "talent": 0,
+                "talent_add_value": 0,
+                "base_value": 134,
+                "effort_add": 50,
+                "total_race": 113
+              },
+              "spd": {
+                "talent": 0,
+                "talent_add_value": 0,
+                "base_value": 120,
+                "effort_add": 50,
+                "total_race": 100
+              }
+            }
+          },
+          "buffs": [
+            {
+              "id": 20010816,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20530020,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20350760,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20010010,
+              "layers": 4,
+              "leftRounds": 997,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20010020,
+              "layers": 4,
+              "leftRounds": 997,
+              "hidden": false,
+              "passive": true
+            },
+            {
+              "id": 20730150,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false,
+              "passive": false
+            }
+          ],
+          "battleBuffs": [
+            {
+              "id": 20010816,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false
+            },
+            {
+              "id": 20530020,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false
+            },
+            {
+              "id": 20350760,
+              "layers": 1,
+              "leftRounds": 997,
+              "hidden": false
+            },
+            {
+              "id": 20010010,
+              "layers": 4,
+              "leftRounds": 997,
+              "hidden": false
+            },
+            {
+              "id": 20010020,
+              "layers": 4,
+              "leftRounds": 997,
+              "hidden": false
+            },
+            {
+              "id": 20730150,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false
+            }
+          ],
+          "effectiveTraitId": 200088,
+          "entryActionCount": 1,
+          "skillUseCounts": {
+            "7020550": 1
+          },
+          "skillUseHistoryComplete": false,
+          "carriedSkillIds": [
+            7020600,
+            7020630,
+            7020550,
+            7021120
+          ],
+          "carriedSkillCosts": [
+            2,
+            0,
+            0,
+            2
+          ],
+          "bloodId": 1,
+          "nature": 15,
+          "naturePosOverride": 0,
+          "natureNegOverride": 2,
+          "liveContext": {
+            "turn": 3,
+            "weather": null,
+            "rosters": {
+              "self": [
+                {
+                  "member_id": "1",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 358
+                },
+                {
+                  "member_id": "2",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 129
+                },
+                {
+                  "member_id": "3",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 464
+                },
+                {
+                  "member_id": "4",
+                  "types": [
+                    "冰系",
+                    "萌系"
+                  ],
+                  "hp": 492
+                },
+                {
+                  "member_id": "5",
+                  "types": [
+                    "冰系"
+                  ],
+                  "hp": 345
+                },
+                {
+                  "member_id": "6",
+                  "types": [
+                    "普通系",
+                    "幻系"
+                  ],
+                  "hp": 410
+                }
+              ],
+              "opponent": [
+                {
+                  "member_id": "404",
+                  "types": [
+                    "火系"
+                  ],
+                  "hp": 0
+                },
+                {
+                  "member_id": "401",
+                  "types": [
+                    "恶系"
+                  ],
+                  "hp": 417
+                },
+                {
+                  "member_id": "402",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 304
+                },
+                {
+                  "member_id": "403",
+                  "types": [
+                    "草系",
+                    "冰系"
+                  ],
+                  "hp": 352
+                },
+                {
+                  "member_id": "405",
+                  "types": [
+                    "幻系",
+                    "光系"
+                  ],
+                  "hp": 362
+                },
+                {
+                  "member_id": "406",
+                  "types": [
+                    "水系",
+                    "幽系"
+                  ],
+                  "hp": 374
+                }
+              ]
+            }
+          },
+          "energyBeforeCast": 0
+        },
+        "defender": {
+          "petBaseId": 3433,
+          "level": 60,
+          "currentHp": 374,
+          "maxHp": 374,
+          "energy": 3,
+          "maxEnergy": 10,
+          "initialStats": {},
+          "battleStats": {
+            "hp": 374,
+            "phyAtk": 0,
+            "magAtk": 0,
+            "phyDef": 0,
+            "magDef": 0,
+            "spd": 0
+          },
+          "battleStatsBasis": "natured_base",
+          "talentEvidence": {},
+          "buffs": [
+            {
+              "id": 20010818,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false,
+              "passive": false
+            },
+            {
+              "id": 20010831,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false,
+              "passive": false
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false,
+              "passive": false
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false,
+              "passive": false
+            },
+            {
+              "id": 20920100,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false,
+              "passive": false
+            }
+          ],
+          "battleBuffs": [
+            {
+              "id": 20010818,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false
+            },
+            {
+              "id": 20010831,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false
+            },
+            {
+              "id": 20860020,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false
+            },
+            {
+              "id": 20170880,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false
+            },
+            {
+              "id": 20920100,
+              "layers": 1,
+              "leftRounds": 999,
+              "hidden": false
+            }
+          ],
+          "effectiveTraitId": 200216,
+          "entryActionCount": 1,
+          "skillUseCounts": {
+            "7050210": 1
+          },
+          "skillUseHistoryComplete": false,
+          "carriedSkillIds": null,
+          "carriedSkillCosts": null,
+          "bloodId": 15,
+          "nature": 22,
+          "naturePosOverride": 0,
+          "natureNegOverride": 0,
+          "liveContext": {
+            "turn": 3,
+            "weather": null,
+            "rosters": {
+              "self": [
+                {
+                  "member_id": "404",
+                  "types": [
+                    "火系"
+                  ],
+                  "hp": 0
+                },
+                {
+                  "member_id": "401",
+                  "types": [
+                    "恶系"
+                  ],
+                  "hp": 417
+                },
+                {
+                  "member_id": "402",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 304
+                },
+                {
+                  "member_id": "403",
+                  "types": [
+                    "草系",
+                    "冰系"
+                  ],
+                  "hp": 352
+                },
+                {
+                  "member_id": "405",
+                  "types": [
+                    "幻系",
+                    "光系"
+                  ],
+                  "hp": 362
+                },
+                {
+                  "member_id": "406",
+                  "types": [
+                    "水系",
+                    "幽系"
+                  ],
+                  "hp": 374
+                }
+              ],
+              "opponent": [
+                {
+                  "member_id": "1",
+                  "types": [
+                    "虫系",
+                    "萌系"
+                  ],
+                  "hp": 358
+                },
+                {
+                  "member_id": "2",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 129
+                },
+                {
+                  "member_id": "3",
+                  "types": [
+                    "普通系"
+                  ],
+                  "hp": 464
+                },
+                {
+                  "member_id": "4",
+                  "types": [
+                    "冰系",
+                    "萌系"
+                  ],
+                  "hp": 492
+                },
+                {
+                  "member_id": "5",
+                  "types": [
+                    "冰系"
+                  ],
+                  "hp": 345
+                },
+                {
+                  "member_id": "6",
+                  "types": [
+                    "普通系",
+                    "幻系"
+                  ],
+                  "hp": 410
+                }
+              ]
+            }
+          }
+        }
+      },
+      "preview_check": {
+        "normalMin": 44,
+        "normalMax": 52,
+        "calibrated": false
+      },
+      "energy_payment": {
+        "before_cast": 0,
+        "after_cast": 0,
+        "change_signed": 0,
+        "raw_energy_change": null,
+        "source": "no energy-change sync on this cast; captured pre-cast and current energy both zero"
+      }
+    }
+  ],
+  "anonymization": {
+    "version": 1,
+    "purpose": "Public regression fixture with synthetic identities and capture labels",
+    "method": "Deterministic consistent substitution across the four fixtures; numeric identifier types and digit lengths retained",
+    "scope": [
+      "battle identifiers",
+      "nonlocal individual or account identifiers when present",
+      "custom pet nicknames",
+      "capture file labels"
+    ],
+    "mechanics_preserved": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "Software regression comparison; not real-game calibration",
+  "baseline": "HEAD:src/models.py loaded in memory; new clone tests excluded",
+  "results": {
+    "current": {
+      "failed_tests": [
+        "tests/test_effect_generic_mechanics.py::test_cleanse_can_remove_buffs_and_debuffs",
+        "tests/test_generate_skill_effects_patterns.py::test_cleanse_buff_and_switch_patterns",
+        "tests/test_generate_skill_effects_patterns.py::test_conditional_and_per_use_patterns_are_generated",
+        "tests/test_generate_skill_effects_patterns.py::test_hp_threshold_and_cost_reset_patterns_are_generated",
+        "tests/test_skill_runtime_mappings.py::test_quick_move_upgrades_speed_when_countering_defense",
+        "tests/test_skill_runtime_mappings.py::test_switch_sensitive_power_bonus_applies_when_enemy_switches",
+        "tests/test_skill_runtime_mappings.py::test_prev_status_power_bonus_applies_on_following_turn",
+        "tests/test_skill_runtime_mappings.py::test_per_use_modifiers_persist_for_power_and_hit_count",
+        "tests/test_skill_runtime_mappings.py::test_energy_cost_scaled_power_uses_current_skill_cost",
+        "tests/test_skill_runtime_mappings.py::test_enemy_switch_hit_count_bonus_applies_to_ambush",
+        "tests/test_skill_runtime_mappings.py::test_ambush_bonus_only_applies_when_enemy_switches"
+      ],
+      "summary": "11 failed, 257 passed, 1 skipped, 34 subtests passed in 8.91s"
+    },
+    "baseline": {
+      "failed_tests": [
+        "tests/test_effect_generic_mechanics.py::test_cleanse_can_remove_buffs_and_debuffs",
+        "tests/test_generate_skill_effects_patterns.py::test_cleanse_buff_and_switch_patterns",
+        "tests/test_generate_skill_effects_patterns.py::test_conditional_and_per_use_patterns_are_generated",
+        "tests/test_generate_skill_effects_patterns.py::test_hp_threshold_and_cost_reset_patterns_are_generated",
+        "tests/test_skill_runtime_mappings.py::test_quick_move_upgrades_speed_when_countering_defense",
+        "tests/test_skill_runtime_mappings.py::test_switch_sensitive_power_bonus_applies_when_enemy_switches",
+        "tests/test_skill_runtime_mappings.py::test_prev_status_power_bonus_applies_on_following_turn",
+        "tests/test_skill_runtime_mappings.py::test_per_use_modifiers_persist_for_power_and_hit_count",
+        "tests/test_skill_runtime_mappings.py::test_energy_cost_scaled_power_uses_current_skill_cost",
+        "tests/test_skill_runtime_mappings.py::test_enemy_switch_hit_count_bonus_applies_to_ambush",
+        "tests/test_skill_runtime_mappings.py::test_ambush_bonus_only_applies_when_enemy_switches"
+      ],
+      "summary": "11 failed, 247 passed, 1 skipped, 32 subtests passed in 4.39s"
+    }
+  },
+  "new_failing_tests": []
+}

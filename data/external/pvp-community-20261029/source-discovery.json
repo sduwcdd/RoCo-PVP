@@ -1,0 +1,95 @@
+{
+  "checked_at": "2026-10-29T15:33:13.692449+00:00",
+  "status": "blocked_no_complete_teams_obtained",
+  "complete_six_pet_build_count": 0,
+  "source_dll": "E:\\洛克PVP助手\\app\\RocoSandbox.Native.dll",
+  "source_dll_sha256": "99b13757d0aadf02dfc054556c9ea8f0777fcca8b7df76d8c415bd3ed46d3611",
+  "source_method": "Static metadata and IL using installed System.Reflection.Metadata; application not executed",
+  "api": {
+    "base_url": "http://server.hairuosky.cn:30006/",
+    "popular_path": "api/popular-teams?limit=80",
+    "community_path": "api/recommendations",
+    "version": "1.0.54",
+    "response_status": 426,
+    "error": "client_integrity_failed",
+    "authenticated": false,
+    "actual_file_hash_sent": true
+  },
+  "request_evidence": {
+    "headers": "RocoAuthClient::.ctor offsets 0056-008B",
+    "version": "Native.dll FileVersion 1.0.54.0 / ProductVersion 1.0.54; ResolveClientVersion normal path uses entry assembly informational version",
+    "sha256": "ResolveClientSha256 normal IL path 000D-005B reads EntryAssembly.Location, OpenRead, HashData, ToHexString, ToLowerInvariant; actual DLL hash used; network-test branch not used",
+    "direct": "Constructor uses UseProxy=false; direct request independently reproduced same error"
+  },
+  "local_cache": {
+    "name": "popular_teams_cache.json",
+    "found": false,
+    "searched": [
+      "E:/洛克PVP助手/app filenames",
+      "E:/洛克PVP助手/app/user-data/WebView2 exact data fields excluding credential-related filenames",
+      "E:/洛克PVP助手/app/user-data/pokedex-api-cache JSON exact data fields",
+      "E:/洛克PVP助手/app/logs and user-data/logs exact data fields",
+      "project vendor/洛克PVP助手 filenames and JSON/log/text/dat exact data fields"
+    ]
+  },
+  "cache_reader_schema": {
+    "root": "array OR object with items array",
+    "item": {
+      "id": "ReadJsonString",
+      "favoriteCount": "TryReadInt; fallback likes; default 1",
+      "likes": "TryReadInt fallback",
+      "snapshot": {
+        "team": {
+          "name": "ReadJsonString; blank rejected",
+          "description": "ReadJsonString",
+          "gameTeamCode": "ReadJsonString",
+          "tags": "ReadJsonStringArray"
+        },
+        "builds": "array; each BuildPopularTeamPet; reader takes at most 6, does not establish exactly 6"
+      }
+    },
+    "build": {
+      "name": "ReadJsonString",
+      "petbaseId": "ReadJsonString",
+      "creatureId": "ReadJsonString",
+      "bloodline": {
+        "name": "ReadJsonString; empty if bloodline not object"
+      },
+      "level": "ReadJsonString",
+      "selectedSkillNames": "ReadJsonStringArray",
+      "selectedSkillIds": "ReadJsonLongArray; if empty name lookup attempted",
+      "statMarks": {
+        "extremeStat": "ReadJsonString then TranslateTeamStat",
+        "minusStat": "ReadJsonString then TranslateTeamStat",
+        "plusStats": "ReadJsonStringArray then TranslateTeamStat"
+      }
+    }
+  },
+  "remote_mapping_schema": {
+    "evidence": "MainWindow::MapServerPopularTeam and lambda b__0; these are CLR property names, raw server JSON schema unverified",
+    "fields": [
+      "Key",
+      "Rank",
+      "Appearances",
+      "Pets",
+      "PetIds"
+    ],
+    "pet_mapping": "Only Name and AvatarUri set; skills, bloodline, level, statMarks and gameTeamCode not supplied by this mapping"
+  },
+  "limitations": [
+    "HTTP errors are not training data; raw.json files contain error objects.",
+    "No successful remote response or cached full team/build record obtained.",
+    "Local reader schema proves accepted fields, not populated samples or complete six-pet builds.",
+    "plusStats lists marked stat names, not explicit numeric allocation amounts in the inspected reader.",
+    "No authentication tokens accessed, no test branch enabled, no fabricated accepted hash used.",
+    "Single-pet usage statistics and skill candidates are insufficient to reconstruct actual teams and four skill slots."
+  ],
+  "artifacts": [
+    "popular-teams.raw.json",
+    "popular-teams-fetch.json",
+    "popular-teams-direct-fetch.json",
+    "popular-community-recommendations.raw.json",
+    "popular-community-recommendations-fetch.json",
+    "source-discovery.il.txt"
+  ]
+}

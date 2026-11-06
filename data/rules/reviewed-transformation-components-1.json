@@ -1,0 +1,4302 @@
+{
+  "schema": "reviewed-transformation-components-1",
+  "policy": "source_bound_transformations_experiment_v1",
+  "policies": {
+    "generation": "after_successful_skill_sequence_even_if_target_exhausted_experiment",
+    "return": "after_successful_generated_use_return_without_nested_clever_generation_experiment",
+    "replacement": "battle_only_until_overwritten_experiment",
+    "locked_action": "committed_skill_id_program_cost_remain_locked_even_if_its_slot_changes_experiment",
+    "generator_copy": "copied_generator_is_blocked_no_recursive_generation_experiment",
+    "pool": "unfiltered_distinct_current_catalog_metadata_candidates_experiment",
+    "cost": "clever_output_minus_one_replaces_prior_generation_discount_experiment"
+  },
+  "snapshot_id": "20261105T124140+0800",
+  "skill_source": {
+    "Index": {
+      "title": "Module:Pets/data/Index",
+      "page_id": 6394,
+      "revision_id": 20329,
+      "revision_timestamp": "2026-10-31T19:43:14Z",
+      "content_sha256": "426d2f0a7dd4dd48c0550713f60a0b81eb5995e2485840a5ed713fdedec43adf",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Index&oldid=20329"
+    },
+    "Catalog": {
+      "title": "Module:Pets/data/Catalog",
+      "page_id": 6395,
+      "revision_id": 20330,
+      "revision_timestamp": "2026-10-31T19:43:16Z",
+      "content_sha256": "5b43a4f7285545330ac9be6f21efa50ea14f4c56afa72f2dfe934ae4c38f9498",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Catalog&oldid=20330"
+    },
+    "Skills": {
+      "title": "Module:Pets/data/Skills",
+      "page_id": 6396,
+      "revision_id": 20323,
+      "revision_timestamp": "2026-10-31T19:43:04Z",
+      "content_sha256": "58ec4e67d14ff9bdaab615e2b32d8bede0fd3b7180dc2e33179047bcd8803de5",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=20323"
+    },
+    "Learnsets": {
+      "title": "Module:Pets/data/Learnsets",
+      "page_id": 6397,
+      "revision_id": 20320,
+      "revision_timestamp": "2026-10-31T19:43:00Z",
+      "content_sha256": "b01632daa18ed7ff030e1f221a1ff55f23fb61ca48a0ae0d82ede252913fead3",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Learnsets&oldid=20320"
+    },
+    "Terms": {
+      "title": "Module:Pets/data/Terms",
+      "page_id": 6401,
+      "revision_id": 20325,
+      "revision_timestamp": "2026-10-31T19:43:07Z",
+      "content_sha256": "a7a4ad3bc1e30e154cdbc52b9e350ec75cbca04bb39e1b9e7012fa4a220ca822",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=20325"
+    },
+    "Types": {
+      "title": "Module:Pets/data/Types",
+      "page_id": 6400,
+      "revision_id": 20326,
+      "revision_timestamp": "2026-10-31T19:43:08Z",
+      "content_sha256": "ad792e060a5ded0b23c371a48fca79045099facbeb12079077b6227a76644906",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Types&oldid=20326"
+    },
+    "Config": {
+      "title": "Module:Pets/data/Config",
+      "page_id": 6393,
+      "revision_id": 20328,
+      "revision_timestamp": "2026-10-31T19:43:12Z",
+      "content_sha256": "d9ce91d84f5c727710145cab3dbb2e5a770de5f565e7493cd009fb749131aaf0",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Config&oldid=20328"
+    },
+    "Natures": {
+      "title": "Module:Natures/data",
+      "page_id": 16020,
+      "revision_id": 18014,
+      "revision_timestamp": "2026-10-07T17:38:42Z",
+      "content_sha256": "0905c9d2f90fac953f7297714525b90b4fac96f4a24a50905f20755bcafd093e",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Natures/data&oldid=18014"
+    }
+  },
+  "term": {
+    "key": 3011,
+    "zh": "巧变",
+    "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+  },
+  "evidence": {
+    "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
+    "sha256": "8ae0633941a90ece239de814811327ac8b03e563dbf87c11948215dde5282e01",
+    "binding_sources": [
+      {
+        "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+        "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+      },
+      {
+        "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+        "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+      },
+      {
+        "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+        "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab"
+      }
+    ],
+    "slot_update": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/BattleDataCenter.luac.decompiled.lua",
+      "sha256": "5b2bc97ad34bd8d6f7373998111574114e64296640c1ccf3ad84d267e7eea25c",
+      "line": 853,
+      "raw": "function BattleDataCenter:WriteSkillChangeInfo(skill_change_sync_info)\n  if skill_change_sync_info then\n    for _, info in pairs(skill_change_sync_info) do\n      local petId = info.pet_id\n      local battleCard = _G.BattleManager.battlePawnManager:GetCardByGuid(petId)\n      if battleCard and battleCard.skillRoundData then\n        for key, data in ipairs(battleCard.skillRoundData) do\n          if data.id == info.skill_id then\n            battleCard.skillRoundData[key] = info.skill_data\n            local skillComponent = battleCard.BattlePet and battleCard.BattlePet.skillComponent\n            if skillComponent and UE.UObject.IsValid(skillComponent) then\n              skillComponent:UpdateByCard(battleCard)\n            end\n            break\n          end\n        end\n      end\n    end\n  end\nend\n"
+    }
+  },
+  "skills": {
+    "7021220": {
+      "skill_id": 7021220,
+      "record_hash": "e54a5cb63e1ec72b83b34c02aae85d5126c3b430d49ef4e715b18eefb7f9021b",
+      "raw": {
+        "id": 7021220,
+        "wiki_id": "skill_000336",
+        "name": {
+          "zh": "同频"
+        },
+        "type": "普通系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔法伤害，巧变：魔攻技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%90%8C%E9%A2%91",
+        "source_module": "Skills",
+        "power": 125,
+        "desc_notes": [
+          3011
+        ]
+      },
+      "components": {
+        "hits": 1,
+        "reduction_percent": null,
+        "transformation": "clever_change"
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7021220,
+          "name": {
+            "localization_id": 1949,
+            "text": "同频"
+          },
+          "desc": {
+            "localization_id": 1950,
+            "text": "造成魔法伤害，<desc_id=3011>巧变</>：魔攻技能。"
+          },
+          "flavor_text": {
+            "localization_id": 1951,
+            "text": "和鸭吉吉聊着聊着，说话方式就变成这样了嘎。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            125
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 3,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21460320,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_GZ_101103",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/101103.101103'",
+          "describe_type": [
+            5
+          ]
+        },
+        "clever_bindings": {
+          "21460320": {
+            "raw_buff": {
+              "id": 21460320,
+              "buff_base_ids": [
+                2146032
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                0
+              ],
+              "type": 3,
+              "add_max": 1,
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 2
+            },
+            "raw_buffbase": {
+              "id": 2146032,
+              "buffbase_order": 146,
+              "show_letters": [
+                1
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    23
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    3,
+                    20
+                  ]
+                },
+                {
+                  "params": [
+                    -1
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7020410,
+          7020440,
+          7020450,
+          7020470,
+          7020500,
+          7020520,
+          7020550,
+          7020600,
+          7020880,
+          7020890,
+          7020900,
+          7020910,
+          7020920,
+          7020950,
+          7020960,
+          7021060,
+          7021070,
+          7021140,
+          7021170,
+          7021190,
+          7021210,
+          7021220,
+          7021230,
+          7030210,
+          7030340,
+          7030430,
+          7030440,
+          7030460,
+          7030560,
+          7030570,
+          7030580,
+          7030640,
+          7030650,
+          7040160,
+          7040220,
+          7040230,
+          7040240,
+          7040330,
+          7040340,
+          7040350,
+          7040360,
+          7040380,
+          7040400,
+          7040430,
+          7040460,
+          7040470,
+          7040610,
+          7040620,
+          7050160,
+          7050170,
+          7050180,
+          7050190,
+          7050210,
+          7050290,
+          7050300,
+          7050320,
+          7050340,
+          7050350,
+          7050380,
+          7050390,
+          7060090,
+          7060120,
+          7060130,
+          7060160,
+          7060190,
+          7060200,
+          7060220,
+          7060270,
+          7070110,
+          7070130,
+          7070140,
+          7070200,
+          7070230,
+          7070240,
+          7070280,
+          7070330,
+          7080270,
+          7080280,
+          7080300,
+          7080310,
+          7080450,
+          7080480,
+          7090100,
+          7090140,
+          7090150,
+          7090240,
+          7090260,
+          7090290,
+          7090310,
+          7090360,
+          7090440,
+          7100140,
+          7100150,
+          7100200,
+          7100210,
+          7100260,
+          7110190,
+          7110200,
+          7110210,
+          7110230,
+          7110240,
+          7110290,
+          7110310,
+          7110340,
+          7110350,
+          7110380,
+          7110390,
+          7120070,
+          7120100,
+          7120110,
+          7120180,
+          7120210,
+          7120220,
+          7120280,
+          7130140,
+          7130160,
+          7130250,
+          7130280,
+          7130340,
+          7140210,
+          7140240,
+          7140270,
+          7140340,
+          7150080,
+          7150180,
+          7150220,
+          7150350,
+          7150380,
+          7160130,
+          7160210,
+          7160230,
+          7160250,
+          7160350,
+          7160360,
+          7160370,
+          7160400,
+          7160440,
+          7170090,
+          7170110,
+          7170160,
+          7170170,
+          7170210,
+          7170220,
+          7170230,
+          7170310,
+          7170340,
+          7180250,
+          7180260,
+          7180280,
+          7180300,
+          7180310,
+          7180380,
+          7180430,
+          7180460,
+          7190230,
+          7190240,
+          7190260,
+          7190270,
+          7190380,
+          7190390,
+          7190410,
+          7190420,
+          7190510,
+          7190530
+        ],
+        "filter": {
+          "type": null,
+          "kinds": [
+            "magical"
+          ]
+        }
+      },
+      "unpacked_pool": {
+        "pool_id": 23,
+        "versions": [
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 23,
+              "skillid": [
+                7020410,
+                7020440,
+                7020450,
+                7020470,
+                7020500,
+                7020520,
+                7020550,
+                7020600,
+                7020880,
+                7020890,
+                7020900,
+                7020910,
+                7020920,
+                7020950,
+                7020960,
+                7021060,
+                7021070,
+                7021140,
+                7021170,
+                7021220,
+                7030210,
+                7030340,
+                7030430,
+                7030440,
+                7030460,
+                7040160,
+                7040220,
+                7040230,
+                7040240,
+                7040330,
+                7040340,
+                7040350,
+                7040360,
+                7040380,
+                7040400,
+                7040430,
+                7040460,
+                7040470,
+                7040610,
+                7040620,
+                7050160,
+                7050170,
+                7050180,
+                7050190,
+                7050210,
+                7050290,
+                7050300,
+                7050320,
+                7050340,
+                7050350,
+                7050380,
+                7050390,
+                7060090,
+                7060120,
+                7060130,
+                7060160,
+                7060190,
+                7060200,
+                7060220,
+                7060270,
+                7070110,
+                7070130,
+                7070140,
+                7070240,
+                7070280,
+                7080270,
+                7080280,
+                7080300,
+                7080310,
+                7090100,
+                7090140,
+                7090150,
+                7090240,
+                7090260,
+                7090290,
+                7090310,
+                7090360,
+                7090440,
+                7100140,
+                7100150,
+                7100200,
+                7100210,
+                7100260,
+                7110190,
+                7110200,
+                7110210,
+                7110230,
+                7110240,
+                7110290,
+                7110310,
+                7110340,
+                7110350,
+                7110380,
+                7110390,
+                7120070,
+                7120100,
+                7120110,
+                7120180,
+                7120210,
+                7120220,
+                7130140,
+                7130160,
+                7130250,
+                7130280,
+                7140210,
+                7140240,
+                7140270,
+                7150080,
+                7150180,
+                7150220,
+                7150380,
+                7160130,
+                7160210,
+                7160230,
+                7160250,
+                7170090,
+                7170110,
+                7170160,
+                7170170,
+                7170210,
+                7170220,
+                7170230,
+                7180250,
+                7180260,
+                7180280,
+                7180300,
+                7180310,
+                7180430,
+                7190230,
+                7190240,
+                7190260,
+                7190270,
+                7190380,
+                7190390
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 14856192,
+                "declared_size": 3772,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "12385c2f941a9a1b3172bf5ed52f33a1e1653f837e572a7235a506ccf9d05985",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 14856265,
+                    "size": 1472,
+                    "sha256": "3a7acbd27c792b3d0e3e6c6ef5b42a73fd2ea12cb9e911e69bedd90625f7e02b"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 23,
+              "skillid": [
+                7020410,
+                7020440,
+                7020450,
+                7020470,
+                7020500,
+                7020520,
+                7020550,
+                7020600,
+                7020880,
+                7020890,
+                7020900,
+                7020910,
+                7020920,
+                7020950,
+                7020960,
+                7021060,
+                7021070,
+                7021140,
+                7021170,
+                7021220,
+                7030210,
+                7030340,
+                7030430,
+                7030440,
+                7030460,
+                7040160,
+                7040220,
+                7040230,
+                7040240,
+                7040330,
+                7040340,
+                7040350,
+                7040360,
+                7040380,
+                7040400,
+                7040430,
+                7040460,
+                7040470,
+                7040610,
+                7040620,
+                7050160,
+                7050170,
+                7050180,
+                7050190,
+                7050210,
+                7050290,
+                7050300,
+                7050320,
+                7050340,
+                7050350,
+                7050380,
+                7050390,
+                7060090,
+                7060120,
+                7060130,
+                7060160,
+                7060190,
+                7060200,
+                7060220,
+                7060270,
+                7070110,
+                7070130,
+                7070140,
+                7070240,
+                7070280,
+                7080270,
+                7080280,
+                7080300,
+                7080310,
+                7090100,
+                7090140,
+                7090150,
+                7090240,
+                7090260,
+                7090290,
+                7090310,
+                7090360,
+                7090440,
+                7100140,
+                7100150,
+                7100200,
+                7100210,
+                7100260,
+                7110190,
+                7110200,
+                7110210,
+                7110230,
+                7110240,
+                7110290,
+                7110310,
+                7110340,
+                7110350,
+                7110380,
+                7110390,
+                7120070,
+                7120100,
+                7120110,
+                7120180,
+                7120210,
+                7120220,
+                7130140,
+                7130160,
+                7130250,
+                7130280,
+                7140210,
+                7140240,
+                7140270,
+                7150080,
+                7150180,
+                7150220,
+                7150380,
+                7160130,
+                7160210,
+                7160230,
+                7160250,
+                7170090,
+                7170110,
+                7170160,
+                7170170,
+                7170210,
+                7170220,
+                7170230,
+                7180250,
+                7180260,
+                7180280,
+                7180300,
+                7180310,
+                7180430,
+                7190230,
+                7190240,
+                7190260,
+                7190270,
+                7190380,
+                7190390
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 15566848,
+                "declared_size": 5621,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "f4a509bb25b65e2c9c91fa2b18f96dc9c953968b6ac665c190735b1c5e7a1ce5",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 15566921,
+                    "size": 2048,
+                    "sha256": "b60dc19dd1cf23a4f11946c1ec1eb1513631e0f9a2f84087e982d6edf9e61ac0"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "historical_binary_with_prior_same_structure_schema"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                }
+              ]
+            },
+            "raw": {
+              "id": 23
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 3940352,
+                "declared_size": 272,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "367d18b36de2e227d57064ca92245805dfbc8153dca5bf9723482f0c36d03722",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 3940405,
+                    "size": 272,
+                    "sha256": "43ca3a9417b74c30f95f5c2037fb0155d912aa3d21291dd2260e2a84ae0da486"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 56891392,
+                "declared_size": 704,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "27feb975fc857f4cde8c6ef2ae43566e23ec6d49de5ff324a82710ce64772258",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 56891445,
+                    "size": 704,
+                    "sha256": "463788196671087d96fc36fdd8aff3edaa14106b1830a86e792602bc7fe269e5"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          }
+        ]
+      },
+      "metadata": {
+        "id": 7021220,
+        "name": "同频",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E5%90%8C%E9%A2%91",
+          "source_module": "Skills",
+          "wiki_id": "skill_000336"
+        },
+        "source_hash": "e54a5cb63e1ec72b83b34c02aae85d5126c3b430d49ef4e715b18eefb7f9021b",
+        "raw": {
+          "id": 7021220,
+          "wiki_id": "skill_000336",
+          "name": {
+            "zh": "同频"
+          },
+          "type": "普通系",
+          "kind": "magical",
+          "energy": 3,
+          "desc": {
+            "zh": "造成魔法伤害，巧变：魔攻技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%90%8C%E9%A2%91",
+          "source_module": "Skills",
+          "power": 125,
+          "desc_notes": [
+            3011
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7020410,
+          7020440,
+          7020450,
+          7020470,
+          7020500,
+          7020520,
+          7020550,
+          7020600,
+          7020880,
+          7020890,
+          7020900,
+          7020910,
+          7020920,
+          7020950,
+          7020960,
+          7021060,
+          7021070,
+          7021140,
+          7021170,
+          7021190,
+          7021210,
+          7021220,
+          7021230,
+          7030210,
+          7030340,
+          7030430,
+          7030440,
+          7030460,
+          7030560,
+          7030570,
+          7030580,
+          7030640,
+          7030650,
+          7040160,
+          7040220,
+          7040230,
+          7040240,
+          7040330,
+          7040340,
+          7040350,
+          7040360,
+          7040380,
+          7040400,
+          7040430,
+          7040460,
+          7040470,
+          7040610,
+          7040620,
+          7050160,
+          7050170,
+          7050180,
+          7050190,
+          7050210,
+          7050290,
+          7050300,
+          7050320,
+          7050340,
+          7050350,
+          7050380,
+          7050390,
+          7060090,
+          7060120,
+          7060130,
+          7060160,
+          7060190,
+          7060200,
+          7060220,
+          7060270,
+          7070110,
+          7070130,
+          7070140,
+          7070200,
+          7070230,
+          7070240,
+          7070280,
+          7070330,
+          7080270,
+          7080280,
+          7080300,
+          7080310,
+          7080450,
+          7080480,
+          7090100,
+          7090140,
+          7090150,
+          7090240,
+          7090260,
+          7090290,
+          7090310,
+          7090360,
+          7090440,
+          7100140,
+          7100150,
+          7100200,
+          7100210,
+          7100260,
+          7110190,
+          7110200,
+          7110210,
+          7110230,
+          7110240,
+          7110290,
+          7110310,
+          7110340,
+          7110350,
+          7110380,
+          7110390,
+          7120070,
+          7120100,
+          7120110,
+          7120180,
+          7120210,
+          7120220,
+          7120280,
+          7130140,
+          7130160,
+          7130250,
+          7130280,
+          7130340,
+          7140210,
+          7140240,
+          7140270,
+          7140340,
+          7150080,
+          7150180,
+          7150220,
+          7150350,
+          7150380,
+          7160130,
+          7160210,
+          7160230,
+          7160250,
+          7160350,
+          7160360,
+          7160370,
+          7160400,
+          7160440,
+          7170090,
+          7170110,
+          7170160,
+          7170170,
+          7170210,
+          7170220,
+          7170230,
+          7170310,
+          7170340,
+          7180250,
+          7180260,
+          7180280,
+          7180300,
+          7180310,
+          7180380,
+          7180430,
+          7180460,
+          7190230,
+          7190240,
+          7190260,
+          7190270,
+          7190380,
+          7190390,
+          7190410,
+          7190420,
+          7190510,
+          7190530
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "魔攻技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": null,
+          "kinds": [
+            "magical"
+          ]
+        }
+      }
+    },
+    "7150380": {
+      "skill_id": 7150380,
+      "record_hash": "939c6446308b2f24d1c2217603abae738e14589d974775000c4f30a0e6a96874",
+      "raw": {
+        "id": 7150380,
+        "wiki_id": "skill_000712",
+        "name": {
+          "zh": "飞箭"
+        },
+        "type": "翼系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，3连击。巧变：翼系防御技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%A3%9E%E7%AE%AD",
+        "source_module": "Skills",
+        "power": 40,
+        "desc_notes": [
+          3011
+        ]
+      },
+      "components": {
+        "hits": 3,
+        "reduction_percent": null,
+        "transformation": "clever_change"
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7150380,
+          "name": {
+            "localization_id": 3158,
+            "text": "飞箭"
+          },
+          "desc": {
+            "localization_id": 3159,
+            "text": "造成魔伤，3连击。<desc_id=3011>巧变</>：翼系防御技能。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            40
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 3,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1032003,
+              "cast_moment": 6
+            },
+            {
+              "effect_id": 21460260,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_QS_214033",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/214033.214033'",
+          "describe_type": [
+            5,
+            15
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "clever_bindings": {
+          "21460260": {
+            "raw_buff": {
+              "id": 21460260,
+              "buff_base_ids": [
+                2146026
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                0
+              ],
+              "type": 3,
+              "add_max": 1,
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 2
+            },
+            "raw_buffbase": {
+              "id": 2146026,
+              "buffbase_order": 146,
+              "show_letters": [
+                1
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    14
+                  ]
+                },
+                {
+                  "params": [
+                    3
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    3,
+                    20
+                  ]
+                },
+                {
+                  "params": [
+                    -1
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7150150,
+          7150310,
+          7150420
+        ],
+        "filter": {
+          "type": "翼系",
+          "kinds": [
+            "defense"
+          ]
+        }
+      },
+      "unpacked_pool": {
+        "pool_id": 14,
+        "versions": [
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 14,
+              "skillid": [
+                7150050,
+                7150060,
+                7150080,
+                7150090,
+                7150110,
+                7150120,
+                7150130,
+                7150140,
+                7150150,
+                7150180,
+                7150190,
+                7150200,
+                7150210,
+                7150220,
+                7150240,
+                7150250,
+                7150260,
+                7150270,
+                7150300,
+                7150310,
+                7150380
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 14856192,
+                "declared_size": 3772,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "12385c2f941a9a1b3172bf5ed52f33a1e1653f837e572a7235a506ccf9d05985",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 14856265,
+                    "size": 1472,
+                    "sha256": "3a7acbd27c792b3d0e3e6c6ef5b42a73fd2ea12cb9e911e69bedd90625f7e02b"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 14,
+              "skillid": [
+                7150050,
+                7150060,
+                7150080,
+                7150090,
+                7150110,
+                7150120,
+                7150130,
+                7150140,
+                7150150,
+                7150180,
+                7150190,
+                7150200,
+                7150210,
+                7150220,
+                7150240,
+                7150250,
+                7150260,
+                7150270,
+                7150300,
+                7150310,
+                7150380
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 15566848,
+                "declared_size": 5621,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "f4a509bb25b65e2c9c91fa2b18f96dc9c953968b6ac665c190735b1c5e7a1ce5",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 15566921,
+                    "size": 2048,
+                    "sha256": "b60dc19dd1cf23a4f11946c1ec1eb1513631e0f9a2f84087e982d6edf9e61ac0"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "historical_binary_with_prior_same_structure_schema"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                }
+              ]
+            },
+            "raw": {
+              "id": 14
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 3940352,
+                "declared_size": 272,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "367d18b36de2e227d57064ca92245805dfbc8153dca5bf9723482f0c36d03722",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 3940405,
+                    "size": 272,
+                    "sha256": "43ca3a9417b74c30f95f5c2037fb0155d912aa3d21291dd2260e2a84ae0da486"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 56891392,
+                "declared_size": 704,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "27feb975fc857f4cde8c6ef2ae43566e23ec6d49de5ff324a82710ce64772258",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 56891445,
+                    "size": 704,
+                    "sha256": "463788196671087d96fc36fdd8aff3edaa14106b1830a86e792602bc7fe269e5"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          }
+        ]
+      },
+      "metadata": {
+        "id": 7150380,
+        "name": "飞箭",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E9%A3%9E%E7%AE%AD",
+          "source_module": "Skills",
+          "wiki_id": "skill_000712"
+        },
+        "source_hash": "939c6446308b2f24d1c2217603abae738e14589d974775000c4f30a0e6a96874",
+        "raw": {
+          "id": 7150380,
+          "wiki_id": "skill_000712",
+          "name": {
+            "zh": "飞箭"
+          },
+          "type": "翼系",
+          "kind": "magical",
+          "energy": 3,
+          "desc": {
+            "zh": "造成魔伤，3连击。巧变：翼系防御技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E9%A3%9E%E7%AE%AD",
+          "source_module": "Skills",
+          "power": 40,
+          "desc_notes": [
+            3011
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7150150,
+          7150310,
+          7150420
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "翼系防御技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": "翼系",
+          "kinds": [
+            "defense"
+          ]
+        }
+      }
+    },
+    "7100320": {
+      "skill_id": 7100320,
+      "record_hash": "aabb596b39a57bdf6a717982a10aea3af931bfb8a5e7defd8381d79a5dca5900",
+      "raw": {
+        "id": 7100320,
+        "wiki_id": "skill_000580",
+        "name": {
+          "zh": "守护咒"
+        },
+        "type": "龙系",
+        "kind": "defense",
+        "energy": 1,
+        "desc": {
+          "zh": "减伤90%，应对攻击。巧变：龙系状态技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%AE%88%E6%8A%A4%E5%92%92",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016,
+          3011
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": 90,
+        "transformation": "clever_change"
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7100320,
+          "name": {
+            "localization_id": 2737,
+            "text": "守护咒"
+          },
+          "desc": {
+            "localization_id": 2738,
+            "text": "减伤90%，<desc_id=1016>应对攻击</>。<desc_id=3011>巧变</>：龙系状态技能。"
+          },
+          "flavor_text": {
+            "localization_id": 2739,
+            "text": "老龙给幼崽念的睡前故事，谁都无法打扰它们的好梦。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 10,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20110230,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1031560,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21460230,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_LY_109018",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/109018.109018'",
+          "describe_type": [
+            1,
+            11
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "clever_bindings": {
+          "21460230": {
+            "raw_buff": {
+              "id": 21460230,
+              "buff_base_ids": [
+                2146023
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                0
+              ],
+              "type": 3,
+              "add_max": 1,
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 2
+            },
+            "raw_buffbase": {
+              "id": 2146023,
+              "buffbase_order": 146,
+              "show_letters": [
+                1
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    9
+                  ]
+                },
+                {
+                  "params": [
+                    2
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    3,
+                    20
+                  ]
+                },
+                {
+                  "params": [
+                    -1
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7100170,
+          7100180,
+          7100240,
+          7100300,
+          7100360,
+          7100380
+        ],
+        "filter": {
+          "type": "龙系",
+          "kinds": [
+            "status"
+          ]
+        }
+      },
+      "unpacked_pool": {
+        "pool_id": 9,
+        "versions": [
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 9,
+              "skillid": [
+                7100120,
+                7100130,
+                7100140,
+                7100150,
+                7100160,
+                7100170,
+                7100180,
+                7100190,
+                7100200,
+                7100210,
+                7100220,
+                7100230,
+                7100240,
+                7100250,
+                7100260,
+                7100320
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 14856192,
+                "declared_size": 3772,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "12385c2f941a9a1b3172bf5ed52f33a1e1653f837e572a7235a506ccf9d05985",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 14856265,
+                    "size": 1472,
+                    "sha256": "3a7acbd27c792b3d0e3e6c6ef5b42a73fd2ea12cb9e911e69bedd90625f7e02b"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 9,
+              "skillid": [
+                7100120,
+                7100130,
+                7100140,
+                7100150,
+                7100160,
+                7100170,
+                7100180,
+                7100190,
+                7100200,
+                7100210,
+                7100220,
+                7100230,
+                7100240,
+                7100250,
+                7100260,
+                7100320
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 15566848,
+                "declared_size": 5621,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "f4a509bb25b65e2c9c91fa2b18f96dc9c953968b6ac665c190735b1c5e7a1ce5",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 15566921,
+                    "size": 2048,
+                    "sha256": "b60dc19dd1cf23a4f11946c1ec1eb1513631e0f9a2f84087e982d6edf9e61ac0"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "historical_binary_with_prior_same_structure_schema"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                }
+              ]
+            },
+            "raw": {
+              "id": 9
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 3940352,
+                "declared_size": 272,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "367d18b36de2e227d57064ca92245805dfbc8153dca5bf9723482f0c36d03722",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 3940405,
+                    "size": 272,
+                    "sha256": "43ca3a9417b74c30f95f5c2037fb0155d912aa3d21291dd2260e2a84ae0da486"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 56891392,
+                "declared_size": 704,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "27feb975fc857f4cde8c6ef2ae43566e23ec6d49de5ff324a82710ce64772258",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 56891445,
+                    "size": 704,
+                    "sha256": "463788196671087d96fc36fdd8aff3edaa14106b1830a86e792602bc7fe269e5"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          }
+        ]
+      },
+      "metadata": {
+        "id": 7100320,
+        "name": "守护咒",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E5%AE%88%E6%8A%A4%E5%92%92",
+          "source_module": "Skills",
+          "wiki_id": "skill_000580"
+        },
+        "source_hash": "aabb596b39a57bdf6a717982a10aea3af931bfb8a5e7defd8381d79a5dca5900",
+        "raw": {
+          "id": 7100320,
+          "wiki_id": "skill_000580",
+          "name": {
+            "zh": "守护咒"
+          },
+          "type": "龙系",
+          "kind": "defense",
+          "energy": 1,
+          "desc": {
+            "zh": "减伤90%，应对攻击。巧变：龙系状态技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%AE%88%E6%8A%A4%E5%92%92",
+          "source_module": "Skills",
+          "desc_notes": [
+            1016,
+            3011
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7100170,
+          7100180,
+          7100240,
+          7100300,
+          7100360,
+          7100380
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "龙系状态技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": "龙系",
+          "kinds": [
+            "status"
+          ]
+        }
+      }
+    },
+    "7120300": {
+      "skill_id": 7120300,
+      "record_hash": "74a08afd2e2625d2d0d96ed20f4e7df2a865314c51bc5de8e6523aed611f81ae",
+      "raw": {
+        "id": 7120300,
+        "wiki_id": "skill_000632",
+        "name": {
+          "zh": "毒肽"
+        },
+        "type": "毒系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤70%，巧变：毒系状态技能，应对攻击。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%AF%92%E8%82%BD",
+        "source_module": "Skills",
+        "desc_notes": [
+          3011,
+          1016
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": 70,
+        "transformation": "clever_change"
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7120300,
+          "name": {
+            "localization_id": 2900,
+            "text": "毒肽"
+          },
+          "desc": {
+            "localization_id": 2901,
+            "text": "减伤70%，<desc_id=3011>巧变</>：毒系状态技能，<desc_id=1016>应对攻击</>。"
+          },
+          "flavor_text": {
+            "localization_id": 2902,
+            "text": "啊——阿嚏——\n没关系，喝下之后，就可以拥抱。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 12,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20110190,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1031563,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21460310,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Poi_DY_111026",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/111026.111026'",
+          "describe_type": [
+            1,
+            11
+          ]
+        },
+        "clever_bindings": {
+          "21460310": {
+            "raw_buff": {
+              "id": 21460310,
+              "buff_base_ids": [
+                2146031
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                0
+              ],
+              "type": 3,
+              "add_max": 1,
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 2
+            },
+            "raw_buffbase": {
+              "id": 2146031,
+              "buffbase_order": 146,
+              "show_letters": [
+                1
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    11
+                  ]
+                },
+                {
+                  "params": [
+                    2
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    3,
+                    20
+                  ]
+                },
+                {
+                  "params": [
+                    -1
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7120120,
+          7120130,
+          7120140,
+          7120150,
+          7120160,
+          7120230,
+          7120240,
+          7120290
+        ],
+        "filter": {
+          "type": "毒系",
+          "kinds": [
+            "status"
+          ]
+        }
+      },
+      "unpacked_pool": {
+        "pool_id": 11,
+        "versions": [
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 11,
+              "skillid": [
+                7120060,
+                7120070,
+                7120080,
+                7120090,
+                7120100,
+                7120110,
+                7120120,
+                7120130,
+                7120140,
+                7120150,
+                7120160,
+                7120180,
+                7120190,
+                7120200,
+                7120210,
+                7120220,
+                7120230,
+                7120240,
+                7120250,
+                7120290,
+                7120300
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 14856192,
+                "declared_size": 3772,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "12385c2f941a9a1b3172bf5ed52f33a1e1653f837e572a7235a506ccf9d05985",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 14856265,
+                    "size": 1472,
+                    "sha256": "3a7acbd27c792b3d0e3e6c6ef5b42a73fd2ea12cb9e911e69bedd90625f7e02b"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                },
+                {
+                  "Name": "skillid",
+                  "Type": "EUint32",
+                  "Offset": 4,
+                  "Size": 4,
+                  "CompressedSize": 4,
+                  "DynamicArray": true
+                }
+              ]
+            },
+            "raw": {
+              "id": 11,
+              "skillid": [
+                7120060,
+                7120070,
+                7120080,
+                7120090,
+                7120100,
+                7120110,
+                7120120,
+                7120130,
+                7120140,
+                7120150,
+                7120160,
+                7120180,
+                7120190,
+                7120200,
+                7120210,
+                7120220,
+                7120230,
+                7120240,
+                7120250,
+                7120290,
+                7120300
+              ]
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 2087554,
+                "declared_size": 456,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "5c9e1b82ea663455c28d359809fe97d36a4ee1e221c632e10c2a9f9f55481bb3",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 2087627,
+                    "size": 192,
+                    "sha256": "3e63e4ab8571441ba9d293373741bae1a40b7763b3389c21e4a8ab158999c96a"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 15566848,
+                "declared_size": 5621,
+                "compression": 1,
+                "payload_strategy": 0,
+                "payload_sha256": "f4a509bb25b65e2c9c91fa2b18f96dc9c953968b6ac665c190735b1c5e7a1ce5",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 15566921,
+                    "size": 2048,
+                    "sha256": "b60dc19dd1cf23a4f11946c1ec1eb1513631e0f9a2f84087e982d6edf9e61ac0"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "historical_binary_with_prior_same_structure_schema"
+          },
+          {
+            "schema_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "binary_pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "schema": {
+              "Name": "SKILLFULLY_EXCHANGE_CONF",
+              "Type": "EStruct",
+              "UniqueKey": "id",
+              "Properties": [
+                {
+                  "Name": "id",
+                  "Type": "EUint32",
+                  "Offset": 0,
+                  "Size": 4
+                }
+              ]
+            },
+            "raw": {
+              "id": 11
+            },
+            "source": [
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILLFULLY_EXCHANGE_CONF.non",
+                "offset": 3940352,
+                "declared_size": 272,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "367d18b36de2e227d57064ca92245805dfbc8153dca5bf9723482f0c36d03722",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 3940405,
+                    "size": 272,
+                    "sha256": "43ca3a9417b74c30f95f5c2037fb0155d912aa3d21291dd2260e2a84ae0da486"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              },
+              {
+                "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+                "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILLFULLY_EXCHANGE_CONF.bytes",
+                "offset": 56891392,
+                "declared_size": 704,
+                "compression": 0,
+                "payload_strategy": 13,
+                "payload_sha256": "27feb975fc857f4cde8c6ef2ae43566e23ec6d49de5ff324a82710ce64772258",
+                "source_ranges_sha256": [
+                  {
+                    "offset": 56891445,
+                    "size": 704,
+                    "sha256": "463788196671087d96fc36fdd8aff3edaa14106b1830a86e792602bc7fe269e5"
+                  }
+                ],
+                "source_ranges_unchanged": true,
+                "stat_unchanged": true
+              }
+            ],
+            "schema_pairing": "same_package"
+          }
+        ]
+      },
+      "metadata": {
+        "id": 7120300,
+        "name": "毒肽",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E6%AF%92%E8%82%BD",
+          "source_module": "Skills",
+          "wiki_id": "skill_000632"
+        },
+        "source_hash": "74a08afd2e2625d2d0d96ed20f4e7df2a865314c51bc5de8e6523aed611f81ae",
+        "raw": {
+          "id": 7120300,
+          "wiki_id": "skill_000632",
+          "name": {
+            "zh": "毒肽"
+          },
+          "type": "毒系",
+          "kind": "defense",
+          "energy": 2,
+          "desc": {
+            "zh": "减伤70%，巧变：毒系状态技能，应对攻击。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E6%AF%92%E8%82%BD",
+          "source_module": "Skills",
+          "desc_notes": [
+            3011,
+            1016
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7120120,
+          7120130,
+          7120140,
+          7120150,
+          7120160,
+          7120230,
+          7120240,
+          7120290
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "毒系状态技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": "毒系",
+          "kinds": [
+            "status"
+          ]
+        }
+      }
+    },
+    "7060150": {
+      "skill_id": 7060150,
+      "record_hash": "1755ba0eb0c6d59ab3c3d95c97752b4c5debb7cc2870222537d961465ec3b20c",
+      "raw": {
+        "id": 7060150,
+        "wiki_id": "skill_000454",
+        "name": {
+          "zh": "镜像反射"
+        },
+        "type": "光系",
+        "kind": "defense",
+        "energy": 1,
+        "desc": {
+          "zh": "减伤70%，应对攻击：本技能变为被应对的技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%95%9C%E5%83%8F%E5%8F%8D%E5%B0%84",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": 70,
+        "transformation": "slot_replace"
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7060150,
+          "name": {
+            "localization_id": 2324,
+            "text": "镜像反射"
+          },
+          "desc": {
+            "localization_id": 2325,
+            "text": "减伤70%，<desc_id=1016>应对攻击</>：本技能变为被应对的技能。"
+          },
+          "flavor_text": {
+            "localization_id": 2326,
+            "text": "镜面无法吞噬光，光只会变得面目模糊。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 6,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20110190,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1031112,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Lig_JXFS_305006",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/305006.305006'",
+          "describe_type": [
+            1,
+            11
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "clever_bindings": {}
+      },
+      "pool": null,
+      "metadata": {
+        "id": 7060150,
+        "name": "镜像反射",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "描述未明说永久时长；客户端确认收到替换数据后直接更新本局技能槽，不足以推断服务器时序或持续性。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E9%95%9C%E5%83%8F%E5%8F%8D%E5%B0%84",
+          "source_module": "Skills",
+          "wiki_id": "skill_000454"
+        },
+        "source_hash": "1755ba0eb0c6d59ab3c3d95c97752b4c5debb7cc2870222537d961465ec3b20c",
+        "raw": {
+          "id": 7060150,
+          "wiki_id": "skill_000454",
+          "name": {
+            "zh": "镜像反射"
+          },
+          "type": "光系",
+          "kind": "defense",
+          "energy": 1,
+          "desc": {
+            "zh": "减伤70%，应对攻击：本技能变为被应对的技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E9%95%9C%E5%83%8F%E5%8F%8D%E5%B0%84",
+          "source_module": "Skills",
+          "desc_notes": [
+            1016
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "slot_replace",
+        "scope": "self_slot",
+        "pool_ids": [],
+        "trigger": {
+          "event": "response_success",
+          "response_kind": "attack",
+          "choice_required": false
+        },
+        "temporary_return": false,
+        "permanence": "not_explicitly_stated",
+        "record_policy": "update_battle_slot_only_after_confirmed_response",
+        "replacement_source": "opponent_selected_skill",
+        "slot_update_source": {
+          "path": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/BattleDataCenter.luac.decompiled.lua",
+          "sha256": "5b2bc97ad34bd8d6f7373998111574114e64296640c1ccf3ad84d267e7eea25c",
+          "line": 853,
+          "raw": "function BattleDataCenter:WriteSkillChangeInfo(skill_change_sync_info)\n  if skill_change_sync_info then\n    for _, info in pairs(skill_change_sync_info) do\n      local petId = info.pet_id\n      local battleCard = _G.BattleManager.battlePawnManager:GetCardByGuid(petId)\n      if battleCard and battleCard.skillRoundData then\n        for key, data in ipairs(battleCard.skillRoundData) do\n          if data.id == info.skill_id then\n            battleCard.skillRoundData[key] = info.skill_data\n            local skillComponent = battleCard.BattlePet and battleCard.BattlePet.skillComponent\n            if skillComponent and UE.UObject.IsValid(skillComponent) then\n              skillComponent:UpdateByCard(battleCard)\n            end\n            break\n          end\n        end\n      end\n    end\n  end\nend\n"
+        }
+      }
+    },
+    "7150150": {
+      "skill_id": 7150150,
+      "record_hash": "84f42e24d21599bb84e8e19319d2ba5d9443427c15f3da7595bb818de2046e97",
+      "raw": {
+        "id": 7150150,
+        "wiki_id": "skill_000695",
+        "name": {
+          "zh": "风墙"
+        },
+        "type": "翼系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤50%，迅捷，应对攻击。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%A3%8E%E5%A2%99",
+        "source_module": "Skills",
+        "desc_notes": [
+          1005,
+          1016
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": 50,
+        "transformation": null
+      },
+      "installation_binding": {},
+      "pool": null,
+      "metadata": null
+    },
+    "7040680": {
+      "skill_id": 7040680,
+      "record_hash": "a61cd991e263fd57c34b4105b45972e1cc3e56e748a8622594c5914296d8b5ec",
+      "raw": {
+        "id": 7040680,
+        "wiki_id": "skill_000416",
+        "name": {
+          "zh": "焚尽"
+        },
+        "type": "火系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "驱散自己所有印记，每驱散1层，获得物攻+50%。巧变：火系攻击技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%84%9A%E5%B0%BD",
+        "source_module": "Skills",
+        "desc_notes": [
+          3010,
+          3011
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": null,
+        "transformation": "clever_change",
+        "operations": [
+          {
+            "op": "mark.clear_reward",
+            "params": {
+              "target": "self",
+              "targets": [
+                "self"
+              ],
+              "eligible_buff_ids": [
+                20230022,
+                20490031,
+                20210042,
+                20210061,
+                20530071,
+                20490021,
+                20170012,
+                20320071,
+                20010092,
+                20930081,
+                20070012,
+                20940011,
+                20230020,
+                20490030,
+                20210040,
+                20210060,
+                20530070,
+                20490020,
+                20170011,
+                20320070,
+                20010090,
+                20930080,
+                20070011,
+                20940010,
+                20370200,
+                20370201,
+                20490390,
+                20490391
+              ],
+              "reward": {
+                "attribute": "patk",
+                "percent_per_layer": 50
+              }
+            }
+          }
+        ]
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7040680,
+          "name": {
+            "localization_id": 2194,
+            "text": "焚尽"
+          },
+          "desc": {
+            "localization_id": 2195,
+            "text": "驱散自己所有<desc_id=3010>印记</>，每驱散1层，获得物攻+50%。<desc_id=3011>巧变</>：火系攻击技能。"
+          },
+          "flavor_text": {
+            "localization_id": 2196,
+            "text": "火系部族的一种战术——烧掉自己身上的一切，包括名字和旗帜，直到只剩下战意。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21460200,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1042015,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_MR_103046",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/103046.103046'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "clever_bindings": {
+          "21460200": {
+            "raw_buff": {
+              "id": 21460200,
+              "buff_base_ids": [
+                2146020
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                0
+              ],
+              "type": 3,
+              "add_max": 1,
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 2
+            },
+            "raw_buffbase": {
+              "id": 2146020,
+              "buffbase_order": 146,
+              "show_letters": [
+                1
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    4
+                  ]
+                },
+                {
+                  "params": [
+                    1
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    3,
+                    20
+                  ]
+                },
+                {
+                  "params": [
+                    -1
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7040150,
+          7040160,
+          7040170,
+          7040180,
+          7040190,
+          7040200,
+          7040210,
+          7040220,
+          7040230,
+          7040240,
+          7040250,
+          7040320,
+          7040330,
+          7040340,
+          7040350,
+          7040360,
+          7040370,
+          7040380,
+          7040390,
+          7040400,
+          7040410,
+          7040420,
+          7040430,
+          7040460,
+          7040470,
+          7040610,
+          7040620,
+          7040630,
+          7040650,
+          7040690
+        ],
+        "filter": {
+          "type": "火系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      },
+      "metadata": {
+        "id": 7040680,
+        "name": "焚尽",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E7%84%9A%E5%B0%BD",
+          "source_module": "Skills",
+          "wiki_id": "skill_000416"
+        },
+        "source_hash": "a61cd991e263fd57c34b4105b45972e1cc3e56e748a8622594c5914296d8b5ec",
+        "raw": {
+          "id": 7040680,
+          "wiki_id": "skill_000416",
+          "name": {
+            "zh": "焚尽"
+          },
+          "type": "火系",
+          "kind": "status",
+          "energy": 1,
+          "desc": {
+            "zh": "驱散自己所有印记，每驱散1层，获得物攻+50%。巧变：火系攻击技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E7%84%9A%E5%B0%BD",
+          "source_module": "Skills",
+          "desc_notes": [
+            3010,
+            3011
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7040150,
+          7040160,
+          7040170,
+          7040180,
+          7040190,
+          7040200,
+          7040210,
+          7040220,
+          7040230,
+          7040240,
+          7040250,
+          7040320,
+          7040330,
+          7040340,
+          7040350,
+          7040360,
+          7040370,
+          7040380,
+          7040390,
+          7040400,
+          7040410,
+          7040420,
+          7040430,
+          7040460,
+          7040470,
+          7040610,
+          7040620,
+          7040630,
+          7040650,
+          7040690
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "火系攻击技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": "火系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      },
+      "unpacked_pool": {
+        "policy": "catalog_candidates_with_source_bound_type_filter; not calibrated exact live pool"
+      },
+      "additional_effect_source": {
+        "id": 1042015,
+        "effect_order": 42,
+        "type": 1,
+        "effect_param": [
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              20230022,
+              20490031,
+              20210042,
+              20210061,
+              20530071,
+              20490021,
+              20170012,
+              20320071,
+              20010092,
+              20930081,
+              20070012,
+              20940011,
+              20230020,
+              20490030,
+              20210040,
+              20210060,
+              20530070,
+              20490020,
+              20170011,
+              20320070,
+              20010090,
+              20930080,
+              20070011,
+              20940010,
+              20370200,
+              20370201,
+              20490390,
+              20490391
+            ]
+          },
+          {
+            "params": [
+              20010010,
+              20010010,
+              20010010,
+              20010010,
+              20010010
+            ]
+          },
+          {
+            "params": [
+              99
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      }
+    },
+    "7050510": {
+      "skill_id": 7050510,
+      "record_hash": "318d3e499e415dd11c073f10635521f92f599bd19dce36f235bfd18860860366",
+      "raw": {
+        "id": 7050510,
+        "wiki_id": "skill_000447",
+        "name": {
+          "zh": "清洗"
+        },
+        "type": "水系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "驱散自己的减益，自己每有1层减益，本技能能耗-1，巧变：水系攻击技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B8%85%E6%B4%97",
+        "source_module": "Skills",
+        "desc_notes": [
+          1013,
+          1013,
+          3011
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": null,
+        "transformation": "clever_change",
+        "operations": [
+          {
+            "op": "modifier.dispel",
+            "params": {
+              "target": "self",
+              "selection": "debuff"
+            }
+          }
+        ]
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7050510,
+          "name": {
+            "localization_id": 2303,
+            "text": "清洗"
+          },
+          "desc": {
+            "localization_id": 2304,
+            "text": "驱散自己的<desc_id=1013>减益</>，自己每有1层<desc_id=1013>减益</>，本技能能耗-1，<desc_id=3011>巧变</>：水系攻击技能。"
+          },
+          "flavor_text": {
+            "localization_id": 2305,
+            "text": "把「不开心」放在这里吧，我帮你带到很远很远的海里去。"
+          },
+          "energy_rule": 19,
+          "energy_cost": [
+            0,
+            3,
+            0,
+            2,
+            0,
+            -1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 5,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1004002,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21460210,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_JS_104034",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/104034.104034'",
+          "describe_type": [
+            12
+          ]
+        },
+        "clever_bindings": {
+          "21460210": {
+            "raw_buff": {
+              "id": 21460210,
+              "buff_base_ids": [
+                2146021
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                0
+              ],
+              "type": 3,
+              "add_max": 1,
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 2
+            },
+            "raw_buffbase": {
+              "id": 2146021,
+              "buffbase_order": 146,
+              "show_letters": [
+                1
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    5
+                  ]
+                },
+                {
+                  "params": [
+                    1
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    3,
+                    20
+                  ]
+                },
+                {
+                  "params": [
+                    -1
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7050160,
+          7050170,
+          7050180,
+          7050190,
+          7050200,
+          7050210,
+          7050290,
+          7050300,
+          7050320,
+          7050330,
+          7050340,
+          7050350,
+          7050360,
+          7050370,
+          7050380,
+          7050390,
+          7050480,
+          7050490,
+          7050550,
+          7050570
+        ],
+        "filter": {
+          "type": "水系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      },
+      "metadata": {
+        "id": 7050510,
+        "name": "清洗",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E6%B8%85%E6%B4%97",
+          "source_module": "Skills",
+          "wiki_id": "skill_000447"
+        },
+        "source_hash": "318d3e499e415dd11c073f10635521f92f599bd19dce36f235bfd18860860366",
+        "raw": {
+          "id": 7050510,
+          "wiki_id": "skill_000447",
+          "name": {
+            "zh": "清洗"
+          },
+          "type": "水系",
+          "kind": "status",
+          "energy": 0,
+          "desc": {
+            "zh": "驱散自己的减益，自己每有1层减益，本技能能耗-1，巧变：水系攻击技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E6%B8%85%E6%B4%97",
+          "source_module": "Skills",
+          "desc_notes": [
+            1013,
+            1013,
+            3011
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7050160,
+          7050170,
+          7050180,
+          7050190,
+          7050200,
+          7050210,
+          7050290,
+          7050300,
+          7050320,
+          7050330,
+          7050340,
+          7050350,
+          7050360,
+          7050370,
+          7050380,
+          7050390,
+          7050480,
+          7050490,
+          7050550,
+          7050570
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "水系攻击技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": "水系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      },
+      "unpacked_pool": {
+        "policy": "catalog_candidates_with_source_bound_type_filter; not calibrated exact live pool"
+      },
+      "additional_effect_source": {
+        "id": 1004002,
+        "effect_order": 4,
+        "type": 1,
+        "effect_param": [
+          {
+            "params": [
+              1
+            ]
+          },
+          {
+            "params": [
+              2
+            ]
+          },
+          {
+            "params": [
+              99
+            ]
+          },
+          {
+            "params": [
+              99
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      }
+    },
+    "7180440": {
+      "skill_id": 7180440,
+      "record_hash": "eb315f99e9ea29f12852a02f3ab313dd10be91d60da9c7e6e660f03e5e185f5b",
+      "raw": {
+        "id": 7180440,
+        "wiki_id": "skill_000801",
+        "name": {
+          "zh": "假冒"
+        },
+        "type": "恶系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己的生命比例变为与敌方生命比例相同，巧变：恶系攻击技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%81%87%E5%86%92",
+        "source_module": "Skills",
+        "desc_notes": [
+          3011
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": null,
+        "transformation": "clever_change",
+        "operations": [
+          {
+            "op": "hp.copy_ratio",
+            "params": {
+              "target": "self",
+              "policy": "simultaneous_max_hp_ratio_floor_min_one_living_experiment_v1"
+            }
+          }
+        ]
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7180440,
+          "name": {
+            "localization_id": 3446,
+            "text": "假冒"
+          },
+          "desc": {
+            "localization_id": 3447,
+            "text": "自己的生命比例变为与敌方生命比例相同，<desc_id=3011>巧变</>：恶系攻击技能。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1088001,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21460280,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_YY_217035",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/217035.217035'",
+          "describe_type": [
+            12
+          ]
+        },
+        "clever_bindings": {
+          "21460280": {
+            "raw_buff": {
+              "id": 21460280,
+              "buff_base_ids": [
+                2146028
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                0
+              ],
+              "type": 3,
+              "add_max": 1,
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 2
+            },
+            "raw_buffbase": {
+              "id": 2146028,
+              "buffbase_order": 146,
+              "show_letters": [
+                1
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    17
+                  ]
+                },
+                {
+                  "params": [
+                    1
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    3,
+                    20
+                  ]
+                },
+                {
+                  "params": [
+                    -1
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7180070,
+          7180080,
+          7180090,
+          7180100,
+          7180110,
+          7180120,
+          7180130,
+          7180140,
+          7180150,
+          7180240,
+          7180250,
+          7180260,
+          7180270,
+          7180280,
+          7180290,
+          7180300,
+          7180310,
+          7180340,
+          7180380,
+          7180400,
+          7180410,
+          7180420,
+          7180430,
+          7180460
+        ],
+        "filter": {
+          "type": "恶系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      },
+      "metadata": {
+        "id": 7180440,
+        "name": "假冒",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E5%81%87%E5%86%92",
+          "source_module": "Skills",
+          "wiki_id": "skill_000801"
+        },
+        "source_hash": "eb315f99e9ea29f12852a02f3ab313dd10be91d60da9c7e6e660f03e5e185f5b",
+        "raw": {
+          "id": 7180440,
+          "wiki_id": "skill_000801",
+          "name": {
+            "zh": "假冒"
+          },
+          "type": "恶系",
+          "kind": "status",
+          "energy": 2,
+          "desc": {
+            "zh": "自己的生命比例变为与敌方生命比例相同，巧变：恶系攻击技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%81%87%E5%86%92",
+          "source_module": "Skills",
+          "desc_notes": [
+            3011
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7180070,
+          7180080,
+          7180090,
+          7180100,
+          7180110,
+          7180120,
+          7180130,
+          7180140,
+          7180150,
+          7180240,
+          7180250,
+          7180260,
+          7180270,
+          7180280,
+          7180290,
+          7180300,
+          7180310,
+          7180340,
+          7180380,
+          7180400,
+          7180410,
+          7180420,
+          7180430,
+          7180460
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "恶系攻击技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": "恶系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      },
+      "unpacked_pool": {
+        "policy": "catalog_candidates_with_source_bound_type_filter; not calibrated exact live pool"
+      },
+      "additional_effect_source": {
+        "id": 1088001,
+        "effect_order": 88,
+        "type": 3,
+        "effect_param": [
+          {
+            "params": [
+              1
+            ]
+          },
+          {
+            "params": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    "7190430": {
+      "skill_id": 7190430,
+      "record_hash": "df9c147495c694c5bd1462c3336dc424d7c04d401075a333d4737a28b35ebb0f",
+      "raw": {
+        "id": 7190430,
+        "wiki_id": "skill_000825",
+        "name": {
+          "zh": "叠加态"
+        },
+        "type": "幻系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "自己获得随机16层属性增益，巧变：幻系攻击技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8F%A0%E5%8A%A0%E6%80%81",
+        "source_module": "Skills",
+        "desc_notes": [
+          3014,
+          3011
+        ]
+      },
+      "components": {
+        "hits": 0,
+        "reduction_percent": null,
+        "transformation": "clever_change",
+        "operations": [],
+        "random_stat_components": [
+          {
+            "op": "random.stats",
+            "count": 16,
+            "sampling": "uniform_independent_with_replacement",
+            "cap_behavior": "waste_no_redraw"
+          }
+        ]
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7190430,
+          "name": {
+            "localization_id": 3510,
+            "text": "叠加态"
+          },
+          "desc": {
+            "localization_id": 3511,
+            "text": "自己获得随机16层<desc_id=3014>属性增益</>，<desc_id=3011>巧变</>：幻系攻击技能。"
+          },
+          "flavor_text": {
+            "localization_id": 3512,
+            "text": "宇宙是无尽梦，尚未醒来的时候，什么都可能发生。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 20,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1016021,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21460290,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Cha_CZ_118033",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/118033.118033'",
+          "describe_type": [
+            12,
+            6
+          ]
+        },
+        "random_effect": {
+          "id": 1016021,
+          "effect_order": 16,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                16
+              ]
+            },
+            {
+              "params": [
+                20010010
+              ]
+            },
+            {
+              "params": [
+                20010020
+              ]
+            },
+            {
+              "params": [
+                20010050
+              ]
+            },
+            {
+              "params": [
+                20010060
+              ]
+            },
+            {
+              "params": [
+                20010100
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "clever_buff": {
+          "id": 21460290,
+          "buff_base_ids": [
+            2146029
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "clever_base": {
+          "id": 2146029,
+          "buffbase_order": 146,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                19
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3,
+                20
+              ]
+            },
+            {
+              "params": [
+                -1
+              ]
+            }
+          ]
+        }
+      },
+      "pool": {
+        "basis": "catalog_metadata_candidates",
+        "ids": [
+          7190210,
+          7190220,
+          7190230,
+          7190240,
+          7190250,
+          7190260,
+          7190270,
+          7190350,
+          7190360,
+          7190370,
+          7190380,
+          7190390,
+          7190410,
+          7190420,
+          7190440,
+          7190470,
+          7190500,
+          7190510,
+          7190530
+        ],
+        "filter": {
+          "type": "幻系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      },
+      "unpacked_pool": null,
+      "metadata": {
+        "id": 7190430,
+        "name": "叠加态",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E5%8F%A0%E5%8A%A0%E6%80%81",
+          "source_module": "Skills",
+          "wiki_id": "skill_000825"
+        },
+        "source_hash": "df9c147495c694c5bd1462c3336dc424d7c04d401075a333d4737a28b35ebb0f",
+        "raw": {
+          "id": 7190430,
+          "wiki_id": "skill_000825",
+          "name": {
+            "zh": "叠加态"
+          },
+          "type": "幻系",
+          "kind": "status",
+          "energy": 1,
+          "desc": {
+            "zh": "自己获得随机16层属性增益，巧变：幻系攻击技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%8F%A0%E5%8A%A0%E6%80%81",
+          "source_module": "Skills",
+          "desc_notes": [
+            3014,
+            3011
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7190210,
+          7190220,
+          7190230,
+          7190240,
+          7190250,
+          7190260,
+          7190270,
+          7190350,
+          7190360,
+          7190370,
+          7190380,
+          7190390,
+          7190410,
+          7190420,
+          7190440,
+          7190470,
+          7190500,
+          7190510,
+          7190530
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "幻系攻击技能",
+        "pool_basis": "catalog_metadata_candidates",
+        "pool_authority": "catalog_metadata_candidates",
+        "pool_filter": {
+          "type": "幻系",
+          "kinds": [
+            "magical",
+            "physical"
+          ]
+        }
+      }
+    },
+    "7180430": {
+      "skill_id": 7180430,
+      "record_hash": "dee48e1cda50b3af109c56a709c78c570b50e247966851e14a52083fcbb25ff5",
+      "raw": {
+        "id": 7180430,
+        "wiki_id": "skill_000800",
+        "name": {
+          "zh": "杂耍"
+        },
+        "type": "恶系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，巧变：吸血相关技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%9D%82%E8%80%8D",
+        "source_module": "Skills",
+        "power": 115,
+        "desc_notes": [
+          3011,
+          1029
+        ]
+      },
+      "components": {
+        "hits": 1,
+        "reduction_percent": null,
+        "transformation": "clever_change"
+      },
+      "installation_binding": {
+        "raw_skill": {
+          "id": 7180430,
+          "name": {
+            "localization_id": 3444,
+            "text": "杂耍"
+          },
+          "desc": {
+            "localization_id": 3445,
+            "text": "造成魔伤，<desc_id=3011>巧变</>：<desc_id=1029>吸血</>相关技能。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            115
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21460330,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_ZS_117036",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/117036.117036'",
+          "describe_type": [
+            5
+          ]
+        },
+        "clever_buff": {
+          "id": 21460330,
+          "buff_base_ids": [
+            2146033
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "clever_base": {
+          "id": 2146033,
+          "buffbase_order": 146,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                24
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3,
+                20
+              ]
+            },
+            {
+              "params": [
+                -1
+              ]
+            }
+          ]
+        }
+      },
+      "pool": {
+        "basis": "unavailable_current_special_pool",
+        "ids": [
+          7030340,
+          7100160,
+          7130190,
+          7180090,
+          7180100,
+          7180120,
+          7180160,
+          7180210
+        ],
+        "filter": {
+          "type": null,
+          "kinds": null
+        }
+      },
+      "unpacked_pool": {
+        "table": "SKILLFULLY_EXCHANGE_CONF",
+        "pool_id": 24,
+        "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+        "binary_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "raw": {
+          "id": 24,
+          "skillid": [
+            7030340,
+            7100160,
+            7130190,
+            7180090,
+            7180100,
+            7180120,
+            7180160,
+            7180210
+          ]
+        },
+        "source": {
+          "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
+          "sha256": "8ae0633941a90ece239de814811327ac8b03e563dbf87c11948215dde5282e01"
+        },
+        "historical_only": true
+      },
+      "metadata": {
+        "id": 7180430,
+        "name": "杂耍",
+        "status": "supported",
+        "blockers": [],
+        "uncertainty": [
+          "当前提取的SKILLFULLY_EXCHANGE_CONF _3_P仅有id，缺skillid；无法确认当前相关技能完整池。",
+          "历史_2_P精确表项只能作为历史候选参考，不能冒充当前完整池。"
+        ],
+        "snapshot_id": "20261105T124140+0800",
+        "source_version": "s5-2026-10-31",
+        "source": {
+          "source_url": "https://wiki.biligame.com/nrc/%E6%9D%82%E8%80%8D",
+          "source_module": "Skills",
+          "wiki_id": "skill_000800"
+        },
+        "source_hash": "dee48e1cda50b3af109c56a709c78c570b50e247966851e14a52083fcbb25ff5",
+        "raw": {
+          "id": 7180430,
+          "wiki_id": "skill_000800",
+          "name": {
+            "zh": "杂耍"
+          },
+          "type": "恶系",
+          "kind": "magical",
+          "energy": 3,
+          "desc": {
+            "zh": "造成魔伤，巧变：吸血相关技能。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E6%9D%82%E8%80%8D",
+          "source_module": "Skills",
+          "power": 115,
+          "desc_notes": [
+            3011,
+            1029
+          ]
+        },
+        "server_semantics_verified": false,
+        "automatic_resolution": false,
+        "kind": "clever_change",
+        "scope": "catalog_filtered",
+        "pool_ids": [
+          7030340,
+          7100160,
+          7130190,
+          7180090,
+          7180100,
+          7180120,
+          7180160,
+          7180210
+        ],
+        "trigger": {
+          "event": "after_use"
+        },
+        "temporary_return": true,
+        "energy_delta": -1,
+        "return_trigger": {
+          "event": "after_generated_skill_use"
+        },
+        "other_effects": "retained_in_raw_not_resolved",
+        "term": {
+          "key": 3011,
+          "zh": "巧变",
+          "definition": "使用后会变为指定范围内的随机技能，且能耗-1。使用该随机技能后会变回原技能。"
+        },
+        "pool_label": "吸血相关技能",
+        "pool_basis": "unavailable_current_special_pool",
+        "historical_pool_ids": [
+          7030340,
+          7100160,
+          7130190,
+          7180090,
+          7180100,
+          7180120,
+          7180160,
+          7180210
+        ],
+        "pool_authority": "historical_game_file_candidates",
+        "historical_pool": {
+          "table": "SKILLFULLY_EXCHANGE_CONF",
+          "pool_id": 24,
+          "schema_pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+          "binary_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+          "raw": {
+            "id": 24,
+            "skillid": [
+              7030340,
+              7100160,
+              7130190,
+              7180090,
+              7180100,
+              7180120,
+              7180160,
+              7180210
+            ]
+          },
+          "source": {
+            "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
+            "sha256": "8ae0633941a90ece239de814811327ac8b03e563dbf87c11948215dde5282e01"
+          }
+        }
+      }
+    }
+  },
+  "uncertainties": [
+    "Client tables and wiki text bind skill identity; timing, pool equality to current server and battle-only permanence remain experiments.",
+    "Unimplemented sampled candidates retain their actual slots and block on use; no support-filtering or reroll.",
+    "7150150 intrinsic Swift is retained in the whole source and existing entry planner; this runtime only executes its defense fragment."
+  ],
+  "swift_term": {
+    "key": 1005,
+    "zh": "迅捷",
+    "definition": "通过主动更换精灵的方式入场时，使用第一个能量满足要求，并带有迅捷的技能。"
+  }
+}

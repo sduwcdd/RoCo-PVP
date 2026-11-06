@@ -1,0 +1,151 @@
+{
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "schema": "reviewed-status-skill-components-1",
+  "policy": "source_bound_normal_status_with_shared_conductive_lifecycle_v1",
+  "terms": [
+    {
+      "key": 3022,
+      "zh": "引电",
+      "definition": "获得2层引电时，立即受到25%生命的电系伤害，并失去2层引电。（电系精灵免疫此效果）"
+    }
+  ],
+  "skills": {
+    "7110450": {
+      "record": {
+        "id": 7110450,
+        "wiki_id": "skill_000607",
+        "name": {
+          "zh": "通电"
+        },
+        "type": "电系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，敌方获得1层引电。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%80%9A%E7%94%B5",
+        "source_module": "Skills",
+        "power": 75,
+        "desc_notes": [
+          3022
+        ]
+      },
+      "record_hash": "0ee0ec58bf5e3036cd875767ea3839acf163c8be2c12c07e7cbde47bb872e6da",
+      "components": [
+        {
+          "op": "status.add",
+          "target": "opponent",
+          "status": "conductive",
+          "stacks": 1
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7110450,
+          "name": {
+            "localization_id": 2817,
+            "text": "通电"
+          },
+          "desc": {
+            "localization_id": 2818,
+            "text": "造成物伤，敌方获得1层<desc_id=3022>引电</>。"
+          },
+          "flavor_text": {
+            "localization_id": 2819,
+            "text": "\"安全须知第一条：不要摸它。第二条：它摸了你的话，不要摸别人。\""
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 11,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20011586,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_TD_110032",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110032.110032'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff_raw": {
+          "id": 20011586,
+          "buff_base_ids": [
+            2001081
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "name": "引电",
+          "type_id": "2",
+          "type": 2,
+          "add_max": 2,
+          "desc": "累计2层后，受到25%最大生命值的电系伤害",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830143_png.830143_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base_raw": {
+          "id": 2001081,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                29
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "life_and_threshold_owned_by_existing_weather_status_rules": true
+      }
+    }
+  }
+}

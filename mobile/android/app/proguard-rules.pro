@@ -1,0 +1,2 @@
+-keep class hev.htproxy.** { *; }
+-keepclassmembers class cn.roco.mobile.MainActivity$Bridge { @android.webkit.JavascriptInterface <methods>; }

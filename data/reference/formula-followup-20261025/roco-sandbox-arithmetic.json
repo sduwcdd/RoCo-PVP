@@ -1,0 +1,32 @@
+{
+  "kind": "source-expression arithmetic, not observed game data",
+  "runtime": "Node.js Math.round and Math.floor",
+  "inputs": {
+    "attack": 100,
+    "defense": 102,
+    "power": 75,
+    "stab": true,
+    "effectiveness": 1
+  },
+  "display_power": 94,
+  "damage": 83,
+  "reported_reverse_attack_range": [
+    99,
+    101
+  ],
+  "forward_checks": [
+    {
+      "attack": 99,
+      "damage": 82
+    },
+    {
+      "attack": 100,
+      "damage": 83
+    },
+    {
+      "attack": 101,
+      "damage": 84
+    }
+  ],
+  "neutral_stat_R105_talent0": 176
+}

@@ -1,0 +1,1605 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full Battle HUD</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --panel: rgba(214, 240, 252, 0.94);
+      --panel-strong: rgba(235, 249, 255, 0.96);
+      --line: rgba(112, 177, 218, 0.78);
+      --blue: #3e8fc3;
+      --cream: #fff8e4;
+      --brown: #8a6f43;
+      --text: #2f2b24;
+      --muted: #716a5c;
+    }
+
+    * {
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: transparent;
+      font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 8px;
+    }
+
+    .hud {
+      width: min(100%, 1024px);
+      height: 224px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 8px;
+      padding: 10px;
+      border: 1px solid rgba(112, 177, 218, 0.92);
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(207, 236, 250, 0.98), rgba(235, 249, 255, 0.94)),
+        var(--panel);
+      box-shadow: 0 14px 34px rgba(50, 112, 154, 0.22);
+      cursor: move;
+    }
+
+    .region {
+      position: relative;
+      display: grid;
+      grid-template-columns: 126px 150px 1fr;
+      gap: 12px;
+      align-items: center;
+      min-height: 0;
+      padding: 8px 14px 8px 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(197, 232, 249, 0.96), rgba(235, 249, 255, 0.9) 44%, rgba(255, 248, 228, 0.54)),
+        var(--panel-strong);
+    }
+
+    .region::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.72);
+      pointer-events: none;
+    }
+
+    .avatar-stack {
+      position: relative;
+      z-index: 1;
+      width: 112px;
+      display: grid;
+      justify-items: center;
+      gap: 5px;
+    }
+
+    .avatar-box {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(255, 248, 228, 0.96);
+      border-radius: 10px;
+      background:
+        radial-gradient(circle at 42% 28%, rgba(255, 255, 255, 0.62), transparent 36%),
+        linear-gradient(135deg, #bce7fb, #e9f8ff 52%, #fff8e4);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82), 0 7px 16px rgba(50, 112, 154, 0.16);
+    }
+
+    .avatar {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      image-rendering: auto;
+      filter: drop-shadow(0 3px 5px rgba(74, 55, 32, 0.2));
+    }
+
+    .avatar[hidden],
+    .avatar-fallback[hidden] {
+      display: none;
+    }
+
+    .avatar-fallback {
+      color: rgba(77, 60, 17, 0.74);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .bench {
+      width: 112px;
+      height: 22px;
+      display: grid;
+      grid-template-columns: repeat(5, 20px);
+      gap: 3px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mini-avatar {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      border: 1px solid rgba(255, 248, 228, 0.9);
+      border-radius: 5px;
+      background:
+        radial-gradient(circle at 42% 28%, rgba(255, 255, 255, 0.56), transparent 34%),
+        linear-gradient(135deg, #bce7fb, #e9f8ff 58%, #fff8e4);
+      box-shadow: 0 2px 5px rgba(50, 112, 154, 0.14);
+    }
+
+    .mini-avatar[hidden] {
+      display: none;
+    }
+
+    .main {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 76px 176px minmax(232px, 1fr);
+      gap: 8px;
+      align-content: stretch;
+    }
+
+    .info-panel {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: 20px 1fr;
+      gap: 4px;
+      padding: 8px 10px;
+      overflow: hidden;
+      border: 1px solid rgba(112, 177, 218, 0.5);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(235, 249, 255, 0.9), rgba(207, 236, 250, 0.72));
+    }
+
+    .info-title {
+      display: inline-flex;
+      align-items: center;
+      color: #3e78a8;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .info-value {
+      min-width: 0;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.22;
+      overflow: hidden;
+      text-shadow: none;
+    }
+
+    .trait-panel {
+      grid-template-rows: 1fr;
+      align-items: center;
+      justify-items: center;
+      padding: 6px 8px;
+    }
+
+    .trait-panel .info-title {
+      display: none;
+    }
+
+    .trait-panel .info-value {
+      width: 100%;
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .skill-panel {
+      grid-template-rows: 1fr;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .skill-panel .info-title {
+      display: none;
+    }
+
+    .skill-panel .buff-list {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 112px);
+      grid-auto-rows: 28px;
+      justify-content: start;
+      align-content: center;
+      gap: 4px;
+    }
+
+    .buff-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 4px;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .buff-chip {
+      max-width: 100%;
+      padding: 3px 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(234, 216, 181, 0.92);
+      color: #4a3720;
+      background: rgba(255, 247, 222, 0.88);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .skill-chip {
+      width: 112px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 5px 2px 3px;
+      border-radius: 7px;
+      border: 1px solid rgba(234, 216, 181, 0.92);
+      color: #4a3720;
+      background: rgba(255, 247, 222, 0.9);
+      line-height: 1;
+      overflow: hidden;
+    }
+
+    .skill-icon {
+      position: relative;
+      width: 48px;
+      height: 22px;
+      flex: 0 0 48px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.55);
+      color: #fffdf8;
+    }
+
+    .skill-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .skill-icon-label {
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      padding: 1px 2px;
+      overflow: hidden;
+      border-radius: 4px;
+      background: rgba(29, 26, 20, 0.72);
+      color: #fff8e4;
+      font-size: 8px;
+      font-weight: 900;
+      line-height: 1.05;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .skill-copy {
+      min-width: 0;
+      display: grid;
+      align-items: center;
+    }
+
+    .skill-damage {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #8a6f43;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .stats {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 5px;
+      align-content: center;
+    }
+
+    .stat-cell {
+      height: 24px;
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      align-items: center;
+      gap: 6px;
+      padding: 0 8px;
+      overflow: hidden;
+      border-radius: 7px;
+      border: 1px solid rgba(112, 177, 218, 0.5);
+      background: linear-gradient(135deg, rgba(235, 249, 255, 0.92), rgba(255, 248, 228, 0.5));
+    }
+
+    .stat-label {
+      color: #716a5c;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .stat-value {
+      min-width: 0;
+      color: #4a3720;
+      font-size: 14px;
+      font-weight: 900;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    /* qk-full-hud-six-stats-skills-v40: compact six-dimensional stats; all remaining room belongs to skills. */
+    .region {
+      grid-template-columns: 110px 244px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .main {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+      height: 100%;
+    }
+
+    .stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(4, 18px);
+      gap: 3px 4px;
+    }
+
+    .stats .stat-cell {
+      height: 18px;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 4px;
+      padding: 0 6px;
+      border-radius: 5px;
+    }
+
+    .stats .stat-label {
+      font-size: 9px;
+    }
+
+    .stats .stat-value {
+      font-size: 12px;
+    }
+
+    .stats .stat-speed {
+      grid-column: 1 / -1;
+      grid-template-columns: 48px minmax(0, 1fr);
+    }
+
+    .skill-panel {
+      width: 100%;
+      height: 100%;
+    }
+
+    .skill-panel .buff-list {
+      width: 100%;
+      height: 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: 24px;
+      align-content: center;
+      gap: 4px;
+    }
+
+    .skill-chip {
+      width: 100%;
+      height: 24px;
+    }
+
+    .skill-icon {
+      height: 20px;
+    }
+
+    /* qk-full-hud-large-stable-skills-v41: larger skill cards and icons for the wider full HUD. */
+    .skill-panel .buff-list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: 72px;
+      gap: 4px 6px;
+    }
+
+    .skill-chip {
+      height: 72px;
+      gap: 4px;
+      padding: 2px 4px 2px 3px;
+      border-radius: 8px;
+    }
+
+    .skill-icon {
+      width: 66px;
+      height: 26px;
+      flex-basis: 66px;
+      border-radius: 6px;
+    }
+
+    .skill-icon-label {
+      font-size: 11px;
+    }
+
+    .skill-damage {
+      font-size: 13px;
+    }
+    .skill-chip {
+      position: relative;
+    }
+
+    .skill-icon {
+      position: relative;
+      inset: auto;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      flex: 0 0 72px;
+    }
+
+    .skill-icon img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .skill-icon-label {
+      z-index: 1;
+    }
+
+    .skill-copy {
+      min-width: 0;
+      margin-left: auto;
+    }
+
+    .skill-damage {
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    /* qk-full-hud-shared-data-v42: four equal 72px square skill slots. */
+  </style>
+</head>
+<body>
+  <main class="hud" id="hud" data-qk-hud-panel="full" title="drag">
+        <section class="region" data-side="my">
+      <div class="avatar-stack">
+        <div class="avatar-box">
+          <img class="avatar" data-role="avatar" alt="" hidden />
+          <div class="avatar-fallback" data-role="fallback">?</div>
+        </div>
+        <div class="bench" data-role="bench"></div>
+      </div>
+      <div class="stats" data-role="stats">
+        <div class="stat-cell"><span class="stat-label">&#29983;&#21629;&#33539;&#22260;</span><span class="stat-value" data-stat="hpRange">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#24403;&#21069;&#34880;&#37327;</span><span class="stat-value" data-stat="currentHp">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#29289;&#25915;</span><span class="stat-value" data-stat="phyAtk">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#39764;&#25915;</span><span class="stat-value" data-stat="magAtk">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#29289;&#38450;</span><span class="stat-value" data-stat="phyDef">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#39764;&#38450;</span><span class="stat-value" data-stat="magDef">--</span></div>
+        <div class="stat-cell stat-speed"><span class="stat-label">&#36895;&#24230;</span><span class="stat-value" data-stat="speed">--</span></div>
+      </div>
+      <div class="main">
+        <div class="info-panel skill-panel">
+          <div class="info-title">&#25216;&#33021;</div>
+          <div class="buff-list" data-role="skills"></div>
+        </div>
+      </div>
+    </section>
+        <section class="region" data-side="enemy">
+      <div class="avatar-stack">
+        <div class="avatar-box">
+          <img class="avatar" data-role="avatar" alt="" hidden />
+          <div class="avatar-fallback" data-role="fallback">?</div>
+        </div>
+        <div class="bench" data-role="bench"></div>
+      </div>
+      <div class="stats" data-role="stats">
+        <div class="stat-cell"><span class="stat-label">&#29983;&#21629;&#33539;&#22260;</span><span class="stat-value" data-stat="hpRange">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#24403;&#21069;&#34880;&#37327;</span><span class="stat-value" data-stat="currentHp">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#29289;&#25915;</span><span class="stat-value" data-stat="phyAtk">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#39764;&#25915;</span><span class="stat-value" data-stat="magAtk">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#29289;&#38450;</span><span class="stat-value" data-stat="phyDef">--</span></div>
+        <div class="stat-cell"><span class="stat-label">&#39764;&#38450;</span><span class="stat-value" data-stat="magDef">--</span></div>
+        <div class="stat-cell stat-speed"><span class="stat-label">&#36895;&#24230;</span><span class="stat-value" data-stat="speed">--</span></div>
+      </div>
+      <div class="main">
+        <div class="info-panel skill-panel">
+          <div class="info-title">&#25216;&#33021;</div>
+          <div class="buff-list" data-role="skills"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const runtimeKeys = [
+      "roco.battleHud.combatRuntime.v71",
+      "roco.battleHud.combatRuntime.v62"
+    ];
+    const stateKeys = [
+      "roco.battleHud.state.v52",
+      "roco.battleHud.state.v50"
+    ];
+    let buffCalcMap = {};
+    let rawBuffMap = {};
+    Promise.all([
+      fetch('/native-data/roco_buff_calc_map.json').then((response) => response.ok ? response.json() : {}),
+      fetch('/native-data/authority/buff.json').then((response) => response.ok ? response.json() : {})
+    ]).then(([calc, raw]) => {
+      buffCalcMap = calc && typeof calc === 'object' ? calc : {};
+      rawBuffMap = raw && typeof raw === 'object' ? raw : {};
+      renderHud();
+    }).catch(() => { buffCalcMap = {}; rawBuffMap = {}; });
+    const enemyPreviewKey = "roco.battleHud.recognizedEnemyTeam.v52";
+    const hpLockKey = "roco.fullHud.lockedMaxHp.v1";
+    const sharedDamageKey = "roco.battleHud.damagePreviewSnapshot.v1";
+    /* qk-full-hud-shared-index-v375: parse shared damage once per snapshot; query indexed buckets. */
+    const sharedDamageCache = {
+      rawText: null,
+      byMoveId: new Map(),
+      byMoveName: new Map(),
+      order: new Map()
+    };
+    const pendingNative = new Map();
+    const lastAvatarNames = { my: "", enemy: "" };
+    const lastBenchSign = { my: "", enemy: "" };
+
+    function parseJson(text) {
+      if (!text) return null;
+      try { return JSON.parse(text); } catch { return null; }
+    }
+
+    function readFirst(keys) {
+      for (const key of keys) {
+        const value = parseJson(localStorage.getItem(key));
+        if (value) return value;
+      }
+      return null;
+    }
+
+    function cleanName(value) {
+      return String(value || "")
+        .replace(/\s+/g, "")
+        .replace(/[0-9０-９]+级?$/g, "")
+        .replace(/^【.*?】/, "")
+        .trim();
+    }
+
+    function petNameFromEntry(entry) {
+      if (!entry) return "";
+      return cleanName(
+        entry.petName ||
+        entry.monsterName ||
+        entry.displayName ||
+        entry.avatar_name ||
+        entry.name ||
+        entry.localized?.zh?.name ||
+        entry.monster?.localized?.zh?.name ||
+        entry.monster?.name ||
+        ""
+      );
+    }
+
+    function numberValue(value) {
+      const number = Number(value);
+      return Number.isFinite(number) ? Math.round(number) : null;
+    }
+
+    function latestTimelinePet(runtime, side) {
+      const list = Array.isArray(runtime?.battleTimeline) ? runtime.battleTimeline : [];
+      for (let i = list.length - 1; i >= 0; i -= 1) {
+        const item = list[i];
+        if (item?.side !== side || item?.kind === "faint") continue;
+        const name = cleanName(item.activePetName || item.petName || item.actorName);
+        if (name) return name;
+      }
+      return "";
+    }
+
+    function stateTeamPet(state, side) {
+      const team = side === "my" ? state?.myTeam : state?.enemyTeam;
+      const index = side === "my" ? state?.myActiveIndex : state?.enemyActiveIndex;
+      const safeIndex = Number.isInteger(index) ? Math.max(0, index) : 0;
+      return petNameFromEntry(Array.isArray(team) ? team[safeIndex] || team[0] : null);
+    }
+
+    function activeEntry(runtime, state, side) {
+      const team = teamEntries(runtime, state, side);
+      const index = activeIndex(runtime, state, side);
+      return team[index] || team[0] || null;
+    }
+
+    function activeIndex(runtime, state, side) {
+      const stateIndex = side === "my" ? state?.myActiveIndex : state?.enemyActiveIndex;
+      if (Number.isInteger(stateIndex)) return Math.max(0, stateIndex);
+      const active = runtime?.active?.[side] || runtime?.[`${side}Active`] || runtime?.[`${side}Field`];
+      if (Number.isInteger(active?.rosterIndex)) return Math.max(0, active.rosterIndex);
+      return 0;
+    }
+
+    function teamEntries(runtime, state, side) {
+      const stateTeam = side === "my" ? state?.myTeam : state?.enemyTeam;
+      if (Array.isArray(stateTeam) && stateTeam.length) return stateTeam;
+      const runtimeTeam = side === "my" ? runtime?.myTeam : runtime?.enemyTeam;
+      if (Array.isArray(runtimeTeam) && runtimeTeam.length) return runtimeTeam;
+      if (side === "enemy") {
+        const preview = parseJson(localStorage.getItem(enemyPreviewKey));
+        if (Array.isArray(preview?.enemyTeam) && preview.enemyTeam.length) return preview.enemyTeam;
+      }
+      return [];
+    }
+
+    function currentPetName(runtime, state, side) {
+      const stateName = stateTeamPet(state, side);
+      if (stateName) return stateName;
+
+      const active = runtime?.active?.[side] || runtime?.[`${side}Active`] || runtime?.[`${side}Field`];
+      const activeName = cleanName(
+        active?.monsterName ||
+        active?.petName ||
+        active?.displayName ||
+        active?.activePetName ||
+        active?.rawProtocolName ||
+        ""
+      );
+      if (activeName) return activeName;
+
+      const timelineName = latestTimelinePet(runtime, side);
+      if (timelineName) return timelineName;
+
+      const team = side === "my" ? runtime?.myTeam : runtime?.enemyTeam;
+      const index = Number.isInteger(active?.rosterIndex) ? active.rosterIndex : 0;
+      const teamName = petNameFromEntry(Array.isArray(team) ? team[index] || team[0] : null);
+      if (teamName) return teamName;
+
+      if (side === "enemy") {
+        const preview = parseJson(localStorage.getItem(enemyPreviewKey));
+        const previewName = petNameFromEntry(Array.isArray(preview?.enemyTeam) ? preview.enemyTeam[0] : null);
+        if (previewName) return previewName;
+      }
+      return "";
+    }
+
+    function hpText(runtime, side) {
+      const hp = runtime?.hp?.[side];
+      if (typeof hp?.hpAfter === "number") return `${Math.max(0, Math.round(hp.hpAfter))} HP`;
+      if (typeof hp?.percent === "number") return `${Math.round(hp.percent)}%`;
+      return "--";
+    }
+
+    function baseMonster(entry) {
+      const monster = entry?.monster || entry;
+      return monster && numberValue(monster.base_hp) != null && numberValue(monster.base_spd) != null ? monster : null;
+    }
+
+    function exactStats(entry) {
+      return entry?.rkppStats?.stats || entry?.stats || null;
+    }
+
+    function calcHp(baseHp, boost = 0, mod = 0) {
+      const first = Math.round(170 * (baseHp + 3 * boost) / 100 + 70);
+      return Math.round(first * (1 + mod) + 100);
+    }
+
+    function calcSpeed(baseSpd, boost = 0, mod = 0) {
+      const first = Math.round(110 * (baseSpd + 3 * boost) / 100 + 10);
+      return Math.round(first * (1 + mod) + 50);
+    }
+
+    function formatRange(values) {
+      const numbers = values.map(numberValue).filter((value) => value != null).sort((a, b) => a - b);
+      if (!numbers.length) return "--";
+      const min = numbers[0];
+      const max = numbers[numbers.length - 1];
+      return min === max ? String(min) : `${min}-${max}`;
+    }
+
+    function hpRangeFromEntry(entry) {
+      const stats = exactStats(entry);
+      const exactHp = numberValue(stats?.hp ?? entry?.maxHp ?? entry?.battleMaxHp);
+      if (exactHp != null) return String(exactHp);
+      const monster = baseMonster(entry);
+      if (!monster) return "--";
+      const baseHp = numberValue(monster.base_hp);
+      return formatRange([calcHp(baseHp, 0, 0), calcHp(baseHp, 10, 0)]);
+    }
+
+    function speedFromEntry(entry) {
+      const stats = exactStats(entry);
+      const exactSpeed = numberValue(stats?.spd ?? stats?.speed);
+      if (exactSpeed != null) return String(exactSpeed);
+      const monster = baseMonster(entry);
+      if (!monster) return "--";
+      const baseSpd = numberValue(monster.base_spd);
+      return formatRange([
+        calcSpeed(baseSpd, 0, -0.1),
+        calcSpeed(baseSpd, 0, 0),
+        calcSpeed(baseSpd, 10, 0),
+        calcSpeed(baseSpd, 10, 0.1)
+      ]);
+    }
+
+    function latestHpData(runtime, side) {
+      const current = runtime?.hp?.[side];
+      if (current) return current;
+      const events = Array.isArray(runtime?.hpEvents) ? runtime.hpEvents : [];
+      for (let i = events.length - 1; i >= 0; i -= 1) {
+        if (events[i]?.side === side) return events[i];
+      }
+      return null;
+    }
+
+    function readHpLocks() {
+      return parseJson(localStorage.getItem(hpLockKey)) || {};
+    }
+
+    function writeHpLock(side, name, maxHp) {
+      if (!name || maxHp == null) return;
+      const locks = readHpLocks();
+      const key = `${side}:${name}`;
+      if (locks[key]) return;
+      locks[key] = { maxHp, ts: Date.now() };
+      try { localStorage.setItem(hpLockKey, JSON.stringify(locks)); } catch {}
+    }
+
+    function lockedMaxHp(side, name) {
+      const value = readHpLocks()[`${side}:${name}`]?.maxHp;
+      return numberValue(value);
+    }
+
+    function statTexts(runtime, state, side, name) {
+      const entry = activeEntry(runtime, state, side);
+      const stats = exactStats(entry) || {};
+      const hpData = latestHpData(runtime, side);
+      const damage = numberValue(hpData?.damage);
+      const hpAfter = numberValue(hpData?.hpAfter);
+      if (damage != null && damage > 0 && hpAfter != null) {
+        writeHpLock(side, name, damage + hpAfter);
+      }
+      const locked = lockedMaxHp(side, name);
+      const range = locked != null ? String(locked) : hpRangeFromEntry(entry);
+      let current = hpAfter != null ? String(Math.max(0, hpAfter)) : "--";
+      if (current === "--") {
+        const entryCurrent = numberValue(entry?.currentHp ?? entry?.remainHp ?? entry?.current_hp);
+        if (entryCurrent != null) current = String(entryCurrent);
+      }
+      if (current === "--" && locked != null && typeof hpData?.percent === "number") {
+        current = String(Math.max(0, Math.round(locked * hpData.percent / 100)));
+      }
+      if (current === "--" && stats?.hp != null && side === "my") {
+        current = String(numberValue(stats.hp));
+      }
+      const statRange = (names, baseName) => {
+        const exact = statNumber(stats, names);
+        if (exact != null) return String(exact);
+        const base = numberValue(entryMonster(entry)?.[baseName]);
+        if (base == null) return "--";
+        const values = [];
+        for (const boost of [0, 7, 8, 9, 10]) {
+          for (const modifier of [-0.1, 0, 0.2]) values.push(calcBattleStat(base, boost, modifier));
+        }
+        return formatRange(values);
+      };
+      return {
+        hpRange: range,
+        currentHp: current,
+        phyAtk: statRange(["phyAtk", "phy_atk", "physicalAttack"], "base_phy_atk"),
+        magAtk: statRange(["magAtk", "mag_atk", "magicAttack"], "base_mag_atk"),
+        phyDef: statRange(["phyDef", "phy_def", "physicalDefense"], "base_phy_def"),
+        magDef: statRange(["magDef", "mag_def", "magicDefense"], "base_mag_def"),
+        speed: statRange(["spd", "speed"], "base_spd")
+      };
+    }
+
+    function textValue(value) {
+      if (value == null) return "";
+      if (typeof value === "string" || typeof value === "number") return String(value).trim();
+      return String(value.localized?.zh?.name || value.localized?.zh || value.name || value.text || value.value || "").trim();
+    }
+
+    function normalizeTraitName(name) {
+      const text = String(name || "").trim();
+      if (text.startsWith("\u5408\u62cd")) return "\u5408\u62cd";
+      return text;
+    }
+
+    function traitText(runtime, state, side) {
+      const activeTraits = (runtime?.active?.[side]?.traits || []).map((item) => normalizeTraitName(textValue(item))).filter(Boolean);
+      if (activeTraits.length) return activeTraits[0];
+      const entry = activeEntry(runtime, state, side);
+      const monster = baseMonster(entry) || entry?.monster || entry;
+      return normalizeTraitName(textValue(monster?.trait)) || "--";
+    }
+
+    function buffItems(runtime, side) {
+      const effects = runtime?.active?.[side]?.effects || {};
+      const groups = [
+        effects.buffs || [],
+        effects.debuffs || [],
+        effects.marks || [],
+        effects.specialStacks || []
+      ];
+      return groups
+        .flat()
+        .map((item) => {
+          const name = textValue(item);
+          if (!name) return "";
+          const stacks = numberValue(item?.stacks);
+          return stacks != null && stacks > 1 ? `${name}x${stacks}` : name;
+        })
+        .filter(Boolean)
+        .slice(0, 6);
+    }
+
+    function renderBuffs(region, runtime, side) {
+      const host = region.querySelector('[data-role="buffs"]');
+      const items = buffItems(runtime, side);
+      renderChipList(host, items);
+    }
+
+    function renderChipList(host, items) {
+      host.replaceChildren();
+      if (!items.length) {
+        const empty = document.createElement("span");
+        empty.className = "buff-chip";
+        empty.textContent = "--";
+        host.appendChild(empty);
+        return;
+      }
+      for (const item of items) {
+        const chip = document.createElement("span");
+        chip.className = "buff-chip";
+        chip.textContent = item;
+        host.appendChild(chip);
+      }
+    }
+
+    function samePetName(left, right) {
+      const normalize = (value) => String(value || "").replace(/[\s\u00a0·・,，。.!！?？:：;；()（）\[\]【】<>《》「」'"“”‘’_-]/g, "").toLowerCase();
+      const a = normalize(left);
+      const b = normalize(right);
+      return !!a && !!b && a === b;
+    }
+
+    function skillNameFromMove(move) {
+      return textValue(move) ||
+        textValue(move?.localized?.zh?.name) ||
+        textValue(move?.localized?.zh) ||
+        textValue(move?.skillName) ||
+        textValue(move?.moveName) ||
+        textValue(move?.name);
+    }
+
+    function addSkillNames(target, values) {
+      if (!Array.isArray(values)) return;
+      for (const value of values) {
+        const name = skillNameFromMove(value);
+        if (name) target.add(name);
+      }
+    }
+
+    function configuredSkillsFromEntry(entry, includeFallbackPool) {
+      const skills = new Set();
+      addSkillNames(skills, entry?.selectedMoves);
+      addSkillNames(skills, entry?.selectedSkillNames);
+      addSkillNames(skills, entry?.skillNames);
+      addSkillNames(skills, entry?.SkillNames);
+      addSkillNames(skills, entry?.skills);
+      addSkillNames(skills, entry?.moves);
+      if (!skills.size && includeFallbackPool) {
+        addSkillNames(skills, entry?.monster?.move_pool);
+        addSkillNames(skills, entry?.move_pool);
+      }
+      return Array.from(skills).filter(Boolean).slice(0, 4);
+    }
+
+    function findMoveByName(entry, name) {
+      const pools = [
+        entry?.selectedMoves,
+        entry?.moves,
+        entry?.skills,
+        entry?.monster?.move_pool,
+        entry?.move_pool
+      ];
+      for (const pool of pools) {
+        if (!Array.isArray(pool)) continue;
+        const match = pool.find((move) => samePetName(skillNameFromMove(move), name));
+        if (match) return match;
+      }
+      return null;
+    }
+
+    function addSkillItems(target, seen, entry, values) {
+      if (!Array.isArray(values)) return;
+      for (const value of values) {
+        const name = skillNameFromMove(value);
+        if (!name || seen.has(name)) continue;
+        seen.add(name);
+        target.push({
+          name,
+          move: typeof value === "object" && value ? value : findMoveByName(entry, name)
+        });
+      }
+    }
+
+    function configuredSkillItemsFromEntry(entry, includeFallbackPool) {
+      const items = [];
+      const seen = new Set();
+      addSkillItems(items, seen, entry, entry?.selectedMoves);
+      addSkillItems(items, seen, entry, entry?.selectedSkillNames);
+      addSkillItems(items, seen, entry, entry?.skillNames);
+      addSkillItems(items, seen, entry, entry?.SkillNames);
+      addSkillItems(items, seen, entry, entry?.skills);
+      addSkillItems(items, seen, entry, entry?.moves);
+      if (!items.length && includeFallbackPool) {
+        addSkillItems(items, seen, entry, entry?.monster?.move_pool);
+        addSkillItems(items, seen, entry, entry?.move_pool);
+      }
+      return items.slice(0, 4);
+    }
+
+    function isExcludedEnemyKnownSkill(name) {
+      const clean = String(name || "").replace(/\(\d+\)\s*$/g, "").replace(/[\s\u00a0·・,，。.!！?？:：;；()（）\[\]【】<>《》「」'"“”‘’_-]/g, "");
+      return clean === "聚能" || clean === "蓄力";
+    }
+
+    function knownSkills(runtime, state, side, activeName) {
+      const skills = new Set();
+      if (side === "my") {
+        for (const name of configuredSkillsFromEntry(activeEntry(runtime, state, side), true)) skills.add(name);
+      }
+      const observed = runtime?.observedEnemyMoves || {};
+      if (side === "enemy") {
+        for (const [petName, moves] of Object.entries(observed)) {
+          if (!samePetName(petName, activeName)) continue;
+          for (const move of moves || []) {
+            const name = textValue(move);
+            if (name && !isExcludedEnemyKnownSkill(name)) skills.add(name);
+          }
+        }
+      }
+      const timeline = Array.isArray(runtime?.battleTimeline) ? runtime.battleTimeline : [];
+      for (const item of timeline) {
+        if (item?.side !== side) continue;
+        const actor = item.activePetName || item.actorName || item.petName;
+        if (activeName && actor && !samePetName(actor, activeName)) continue;
+        const directName = textValue(item.skillName || item.moveName || item.skill?.name || item.move?.name);
+        if (directName && !(side === "enemy" && isExcludedEnemyKnownSkill(directName))) skills.add(directName);
+        if (item?.rawKind === "used_original_skill" || item?.type === "original_skills_snapshot") {
+          const text = textValue(item.text);
+          const payload = text.replace(/^.*?(?:：|:)/, "");
+          for (const rawName of payload.split(/[、,，|/]+/)) {
+            const name = textValue(rawName);
+            if (name && !(side === "enemy" && isExcludedEnemyKnownSkill(name))) skills.add(name);
+          }
+        }
+      }
+      return Array.from(skills).filter(Boolean);
+    }
+
+    const typeChart = {
+      Normal: [],
+      Grass: ["Water", "Ground"],
+      Fire: ["Grass", "Ice", "Bug", "Mechanical"],
+      Water: ["Fire", "Ground"],
+      Light: ["Ghost", "Dark"],
+      Electric: ["Water", "Flying"],
+      Ground: ["Fire", "Electric", "Poison", "Mechanical"],
+      Ice: ["Grass", "Ground", "Flying", "Dragon"],
+      Poison: ["Grass", "Cute"],
+      Bug: ["Grass", "Dark", "Illusion"],
+      Fighting: ["Normal", "Ice", "Dark", "Mechanical"],
+      Dragon: ["Dragon"],
+      Flying: ["Grass", "Fighting", "Bug"],
+      Cute: ["Fighting", "Dragon"],
+      Ghost: ["Ghost", "Illusion"],
+      Dark: ["Ghost", "Illusion"],
+      Mechanical: ["Ice", "Cute", "Illusion"],
+      Illusion: ["Fighting", "Cute"]
+    };
+
+    function cleanAssetName(name) {
+      return String(name || "").replace(/[\\/:*?"<>|]/g, "").replace(/\s+/g, "").trim();
+    }
+
+    function pushSkillAssetName(target, value) {
+      const clean = cleanAssetName(value);
+      if (clean && !target.includes(clean)) target.push(clean);
+    }
+
+    function pushSkillAssetFile(target, value) {
+      let text = textValue(value);
+      if (!text) return;
+      text = text.replace(/\\/g, "/").replace(/^Texture2D'/, "").replace(/'$/g, "");
+      let leaf = text.split("/").pop() || text;
+      leaf = leaf.replace(/\.(png|jpg|jpeg|webp)$/i, "");
+      if (leaf.includes(".")) leaf = leaf.split(".").pop() || leaf;
+      pushSkillAssetName(target, leaf);
+    }
+
+    function skillIconUrls(item) {
+      const move = item?.move && typeof item.move === "object" ? item.move : (item && typeof item === "object" ? item : null);
+      const name = typeof item === "string" ? item : item?.name;
+      const candidates = [];
+      for (const value of [
+        move?.id,
+        move?.skill_id,
+        move?.skillId,
+        move?.conf_id,
+        move?.confId,
+        move?.skillConfId
+      ]) {
+        pushSkillAssetName(candidates, value);
+      }
+      pushSkillAssetFile(candidates, move?.rawIconFile);
+      pushSkillAssetFile(candidates, move?.namedIconFile);
+      pushSkillAssetFile(candidates, move?.iconId);
+      pushSkillAssetFile(candidates, move?.icon);
+      pushSkillAssetName(candidates, name);
+      return candidates.map((candidate) => `/roco-skill-icons/${encodeURIComponent(candidate)}.png`);
+    }
+
+    function typeName(value) {
+      return textValue(value?.name || value);
+    }
+
+    function entryMonster(entry) {
+      return entry?.monster || entry || null;
+    }
+
+    function calcBattleStat(base, boost = 0, mod = 0) {
+      if (base == null) return null;
+      const raw = 110 * (base + 3 * boost) / 100 + 10;
+      const base105Neutral = Number(base) === 105 && Number(boost) === 0 && Number(mod) === 0;
+      const first = base105Neutral ? Math.floor(raw) : Math.round(raw);
+      return Math.round(first * (1 + mod) + 50);
+    }
+
+    function statNumber(stats, names) {
+      for (const name of names) {
+        const value = numberValue(stats?.[name]);
+        if (value != null) return value;
+      }
+      return null;
+    }
+
+    function battleStats(entry, rawSource) {
+      const stats = exactStats(entry) || {};
+      const monster = entryMonster(entry);
+      const effects = rawBuffTotals(rawBuffEntries(rawSource || entry));
+      const scale = (value) => 1 + (value || 0) / 100;
+      return {
+        phyAtk: (statNumber(stats, ["phyAtk", "phy_atk", "physicalAttack"]) ?? calcBattleStat(numberValue(monster?.base_phy_atk))) * scale(effects.phyAtkPercent),
+        magAtk: (statNumber(stats, ["magAtk", "mag_atk", "magicAttack"]) ?? calcBattleStat(numberValue(monster?.base_mag_atk))) * scale(effects.magAtkPercent),
+        phyDef: (statNumber(stats, ["phyDef", "phy_def", "physicalDefense"]) ?? calcBattleStat(numberValue(monster?.base_phy_def))) * scale(effects.phyDefPercent),
+        magDef: (statNumber(stats, ["magDef", "mag_def", "magicDefense"]) ?? calcBattleStat(numberValue(monster?.base_mag_def))) * scale(effects.magDefPercent),
+        powerPercent: effects.powerPercent || 0,
+        damageTakenPercent: effects.damageTakenPercent || 0,
+        flatPowerBonus: effects.flatPowerBonus || 0
+      };
+    }
+
+    function rawBuffEntries(source) {
+      const effects = source?.rawEffects || source?.effects || source?.activeEffects || source?.raw?.effects || {};
+      const values = [];
+      const collect = (value, key = null) => {
+        if (Array.isArray(value)) { value.forEach((item) => collect(item)); return; }
+        if (!value || typeof value !== "object") return;
+        const id = numberValue(value.id ?? value.buffId ?? value.effectId ?? value.buff_id ?? value.effect_id ?? key);
+        if (id != null) { values.push({ ...value, __rawBuffId: id }); return; }
+        Object.entries(value).forEach(([childKey, child]) => collect(child, childKey));
+      };
+      collect(effects);
+      return values.map((item) => {
+        const id = numberValue(item.__rawBuffId);
+        const stacks = Math.max(1, numberValue(item?.stacks ?? item?.count ?? item?.layer ?? item?.level) || 1);
+        return id == null ? null : { id: String(id), stacks };
+      }).filter(Boolean);
+    }
+
+    function rawBaseRule(raw) {
+      const ids = raw?.buff_base_ids || raw?.buffBaseIds || [];
+      const count = (id) => ids.filter((value) => Number(value) === id).length * 10;
+      return {
+        phyAtkPercent: count(2001001) - count(2001003),
+        magAtkPercent: count(2001002) - count(2001004),
+        phyDefPercent: count(2001005) - count(2001007),
+        magDefPercent: count(2001006) - count(2001008)
+      };
+    }
+
+    function rawBuffTotals(entries) {
+      const totals = { phyAtkPercent: 0, magAtkPercent: 0, phyDefPercent: 0, magDefPercent: 0, powerPercent: 0, damageTakenPercent: 0, flatPowerBonus: 0 };
+      for (const item of entries) {
+        const rule = buffCalcMap[item.id] || rawBaseRule(rawBuffMap[item.id]);
+        if (!rule) continue;
+        for (const key of Object.keys(totals)) totals[key] += (numberValue(rule[key]) || 0) * item.stacks;
+      }
+      return totals;
+    }
+
+    function buffAdjustedCandidates(entry, category, defense, rawSource) {
+      const values = defense ? defenseCandidates(entry, category) : attackCandidates(entry, category);
+      const totals = rawBuffTotals(rawBuffEntries(rawSource));
+      const percent = category === "Physical Attack"
+        ? (defense ? totals.phyDefPercent : totals.phyAtkPercent)
+        : (defense ? totals.magDefPercent : totals.magAtkPercent);
+      return values.map((value) => value * (1 + percent / 100));
+    }
+
+    function statCandidates(entry, exactNames, baseName, boostRange) {
+      const stats = exactStats(entry) || {};
+      const exact = statNumber(stats, exactNames);
+      if (exact != null) return [exact];
+      const base = numberValue(entryMonster(entry)?.[baseName]);
+      if (base == null) return [];
+      const boosts = boostRange ? [0, 10] : [0];
+      return [...new Set(boosts.map((boost) => calcBattleStat(base, boost)).filter((value) => value != null))].sort((a, b) => a - b);
+    }
+
+    function attackCandidates(entry, category) {
+      return category === "Physical Attack"
+        ? statCandidates(entry, ["phyAtk", "phy_atk", "physicalAttack"], "base_phy_atk", false)
+        : statCandidates(entry, ["magAtk", "mag_atk", "magicAttack"], "base_mag_atk", false);
+    }
+
+    function defenseCandidates(entry, category) {
+      return category === "Physical Attack"
+        ? statCandidates(entry, ["phyDef", "phy_def", "physicalDefense"], "base_phy_def", true)
+        : statCandidates(entry, ["magDef", "mag_def", "magicDefense"], "base_mag_def", true);
+    }
+
+    function movePower(move) {
+      return numberValue(move?.power ?? move?.skillPower);
+    }
+
+    function moveEnergy(move) {
+      return numberValue(move?.energy_cost ?? move?.energyCost ?? move?.cost);
+    }
+
+    function moveType(move) {
+      return typeName(move?.move_type) || typeName(move?.type);
+    }
+
+    function moveCategory(move) {
+      const value = textValue(move?.move_category || move?.category || move?.damageType);
+      if (/Physical/i.test(value) || value.includes("\u7269")) return "Physical Attack";
+      if (/Magic/i.test(value) || value.includes("\u9b54")) return "Magic Attack";
+      return value;
+    }
+
+    function nonDamageSkillText(move) {
+      const category = textValue(move?.move_category || move?.category || move?.damageType || move?.categoryText);
+      if (/Defense/i.test(category) || category.includes("\u9632\u5fa1")) return "\u9632\u5fa1";
+      if (/Status/i.test(category) || category.includes("\u72b6\u6001")) return "\u72b6\u6001";
+      return "\u8f85\u52a9";
+    }
+
+    function defenderTypes(entry) {
+      const monster = entryMonster(entry);
+      return [typeName(monster?.main_type), typeName(monster?.sub_type)].filter(Boolean);
+    }
+
+    function effectiveness(moveTypeName, targetTypes) {
+      if (!moveTypeName) return 1;
+      let value = 1;
+      for (const target of targetTypes) {
+        if ((typeChart[moveTypeName] || []).includes(target)) value *= 2;
+      }
+      return value;
+    }
+
+    function sameTypeAttackBonus(moveTypeName, attackerEntry) {
+      const monster = entryMonster(attackerEntry);
+      const types = [typeName(monster?.main_type), typeName(monster?.sub_type)];
+      return moveTypeName && types.includes(moveTypeName);
+    }
+
+    function sharedDamageMoveNameKey(value) {
+      return String(value || "")
+        .replace(/[\s\u00a0·・,，。.!！?？:：;；()（）\[\]【】<>《》「」'"“”‘’_-]/g, "")
+        .toLowerCase();
+    }
+
+    function appendSharedDamageIndex(map, key, entry) {
+      if (!key) return;
+      const bucket = map.get(key);
+      if (bucket) bucket.push(entry);
+      else map.set(key, [entry]);
+    }
+
+    function refreshSharedDamageIndex() {
+      let rawText = "";
+      try { rawText = localStorage.getItem(sharedDamageKey) || ""; } catch { return; }
+      if (rawText === sharedDamageCache.rawText) return;
+      sharedDamageCache.rawText = rawText;
+      sharedDamageCache.byMoveId = new Map();
+      sharedDamageCache.byMoveName = new Map();
+      sharedDamageCache.order = new Map();
+      const snapshot = parseJson(rawText);
+      const entries = snapshot?.entries && typeof snapshot.entries === "object" ? Object.values(snapshot.entries) : [];
+      entries.forEach((entry, index) => {
+        if (!entry) return;
+        sharedDamageCache.order.set(entry, index);
+        const scope = `${entry.attackerSide || ""}|${entry.surface || ""}|`;
+        const entryMoveId = numberValue(entry.move?.id);
+        if (entryMoveId != null) appendSharedDamageIndex(sharedDamageCache.byMoveId, `${scope}${entryMoveId}`, entry);
+        const entryMoveName = sharedDamageMoveNameKey(entry.move?.name);
+        if (entryMoveName) appendSharedDamageIndex(sharedDamageCache.byMoveName, `${scope}${entryMoveName}`, entry);
+      });
+    }
+
+    function sharedDamageText(runtime, attackerSide, attackerEntry, defenderEntry, move) {
+      const surface = attackerSide === "my" ? "my_attack_card" : "enemy_attack_card";
+      const scope = `${attackerSide}|${surface}|`;
+      const runtimeSession = textValue(runtime?.sessionId || runtime?.battleId).replace(/^battle-/, "");
+      const moveId = numberValue(move?.id ?? move?.moveId ?? move?.skill_id);
+      const moveName = skillNameFromMove(move);
+      const attackerId = numberValue(entryMonster(attackerEntry)?.id ?? entryMonster(attackerEntry)?.petBaseId);
+      const defenderId = numberValue(entryMonster(defenderEntry)?.id ?? entryMonster(defenderEntry)?.petBaseId);
+      const attackerName = petNameFromEntry(attackerEntry);
+      const defenderName = petNameFromEntry(defenderEntry);
+      const candidates = new Set();
+      if (moveId != null) {
+        for (const entry of sharedDamageCache.byMoveId.get(`${scope}${moveId}`) || []) candidates.add(entry);
+      }
+      const moveNameKey = sharedDamageMoveNameKey(moveName);
+      if (moveNameKey) {
+        for (const entry of sharedDamageCache.byMoveName.get(`${scope}${moveNameKey}`) || []) candidates.add(entry);
+      }
+      let latest = null;
+      let latestTs = -Infinity;
+      let latestOrder = Infinity;
+      for (const entry of candidates) {
+        if (!entry || entry.attackerSide !== attackerSide || entry.surface !== surface) continue;
+        const entrySession = textValue(entry.sessionId || entry.battleId).replace(/^battle-/, "");
+        if (runtimeSession && entrySession && runtimeSession !== entrySession) continue;
+        const entryMoveId = numberValue(entry.move?.id);
+        const sameMove = moveId != null && entryMoveId != null
+          ? moveId === entryMoveId
+          : samePetName(moveName, entry.move?.name);
+        if (!sameMove) continue;
+        const sameActor = attackerId != null && numberValue(entry.attacker?.id) != null
+          ? attackerId === numberValue(entry.attacker.id)
+          : !attackerName || !entry.attacker?.name || samePetName(attackerName, entry.attacker.name);
+        const sameTarget = defenderId != null && numberValue(entry.defender?.id) != null
+          ? defenderId === numberValue(entry.defender.id)
+          : !defenderName || !entry.defender?.name || samePetName(defenderName, entry.defender.name);
+        if (!sameActor || !sameTarget) continue;
+        const timestamp = Number(entry.updatedAt || entry.runtimeTs || 0);
+        const order = sharedDamageCache.order.get(entry) ?? Infinity;
+        if (latest == null || timestamp > latestTs || (timestamp === latestTs && order < latestOrder)) {
+          latest = entry;
+          latestTs = timestamp;
+          latestOrder = order;
+        }
+      }
+      return textValue(latest?.result?.displayText);
+    }
+
+    function skillDamageText(move, attackerEntry, defenderEntry, runtime, attackerSide) {
+      const shared = sharedDamageText(runtime, attackerSide, attackerEntry, defenderEntry, move);
+      if (shared) return shared;
+      const power = movePower(move);
+      if (!move || power == null || power <= 0) return nonDamageSkillText(move);
+      return "--";
+    }
+
+    function renderSkillList(host, items) {
+      const models = items.map((item) => {
+        const iconUrls = skillIconUrls(item);
+        return {
+          item,
+          iconUrls,
+          key: JSON.stringify([item.name || "", iconUrls])
+        };
+      });
+      const signature = JSON.stringify(models.map((model) => model.key));
+
+      if (host.dataset.skillSignature === signature) {
+        const chips = host.querySelectorAll(".skill-chip");
+        if (chips.length === models.length) {
+          models.forEach(({ item }, index) => {
+            const chip = chips[index];
+            const detail = item.detail || "--";
+            chip.title = `${item.name} ${item.detail || ""}`.trim();
+            const damage = chip.querySelector(".skill-damage");
+            if (damage && damage.textContent !== detail) damage.textContent = detail;
+          });
+          return;
+        }
+      }
+
+      host.dataset.skillSignature = signature;
+      host.replaceChildren();
+      if (!models.length) {
+        const empty = document.createElement("span");
+        empty.className = "buff-chip";
+        empty.textContent = "--";
+        host.appendChild(empty);
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      for (const { item, iconUrls } of models) {
+        const chip = document.createElement("span");
+        chip.className = "skill-chip";
+
+        const icon = document.createElement("span");
+        icon.className = "skill-icon";
+        const img = document.createElement("img");
+        img.alt = "";
+        img.draggable = false;
+        let iconIndex = 0;
+        img.onerror = () => {
+          iconIndex += 1;
+          if (iconIndex < iconUrls.length) img.src = iconUrls[iconIndex];
+          else img.remove();
+        };
+        if (iconUrls.length) img.src = iconUrls[0];
+        icon.appendChild(img);
+
+        const label = document.createElement("span");
+        label.className = "skill-icon-label";
+        label.textContent = item.name;
+        icon.appendChild(label);
+
+        const copy = document.createElement("span");
+        copy.className = "skill-copy";
+        const damage = document.createElement("span");
+        damage.className = "skill-damage";
+        damage.textContent = item.detail || "--";
+        copy.appendChild(damage);
+
+        chip.title = `${item.name} ${item.detail || ""}`.trim();
+        chip.appendChild(icon);
+        chip.appendChild(copy);
+        fragment.appendChild(chip);
+      }
+      host.appendChild(fragment);
+    }
+
+    function renderSkills(region, runtime, state, side, activeName) {
+      const host = region.querySelector('[data-role="skills"]');
+      const attackerEntry = activeEntry(runtime, state, side);
+      const defenderEntry = activeEntry(runtime, state, side === "my" ? "enemy" : "my");
+      const items = [];
+      const seen = new Set();
+      if (side === "my") {
+        for (const item of configuredSkillItemsFromEntry(attackerEntry, true)) {
+          if (!item.name || seen.has(item.name)) continue;
+          seen.add(item.name);
+          items.push({
+            name: item.name,
+            move: item.move,
+            detail: skillDamageText(item.move, attackerEntry, defenderEntry, runtime, side)
+          });
+        }
+      }
+      for (const name of knownSkills(runtime, state, side, activeName)) {
+        if (!name || seen.has(name)) continue;
+        seen.add(name);
+        const move = findMoveByName(attackerEntry, name);
+        items.push({
+          name,
+          move,
+          detail: move ? skillDamageText(move, attackerEntry, defenderEntry, runtime, side) : (side === "enemy" ? "已确认" : "--")
+        });
+      }
+      renderSkillList(host, items);
+    }
+
+    const petAvatarByName = {"喵喵":"/roco-pet-avatars-id/3001.png","水蓝蓝":"/roco-pet-avatars-id/3002.png","火花":"/roco-pet-avatars-id/3003.png","迪莫":"/roco-pet-avatars-id/3004.png","水灵":"/roco-pet-avatars-id/3005.png","火神":"/roco-pet-avatars-id/3006.png","魔力猫":"/roco-pet-avatars-id/3007.png","草头鸭":"/roco-pet-avatars-id/3008.png","赤毛鸡仔":"/roco-pet-avatars-id/3009.png","恶魔叮(异色)":"/roco-pet-avatars-id/3010_1.png","恶魔叮":"/roco-pet-avatars-id/3010.png","恶魔狼(异色)":"/roco-pet-avatars-id/3011_1.png","恶魔狼":"/roco-pet-avatars-id/3011.png","鸭吉吉(蓬松的样子)":"/roco-pet-avatars-id/3012.png","铠甲虫":"/roco-pet-avatars-id/3013.png","阿米亚特":"/roco-pet-avatars-id/3014.png","阿米樱":"/roco-pet-avatars-id/3015.png","罗隐":"/roco-pet-avatars-id/3016.png","蹦蹦种子(海神球形态)":"/roco-pet-avatars-id/3017.png","蹦蹦草(海神球形态)":"/roco-pet-avatars-id/3018.png","蹦蹦花(海神球形态)":"/roco-pet-avatars-id/3019.png","地鼠(枯水期的样子)(异色)":"/roco-pet-avatars-id/3020_1.png","地鼠(枯水期的样子)":"/roco-pet-avatars-id/3020.png","遁鼠(枯水期的样子)(异色)":"/roco-pet-avatars-id/3021_1.png","遁鼠(枯水期的样子)":"/roco-pet-avatars-id/3021.png","遁地鼠(枯水期的样子)(异色)":"/roco-pet-avatars-id/3022_1.png","遁地鼠(枯水期的样子)":"/roco-pet-avatars-id/3022.png","火云斗鸡":"/roco-pet-avatars-id/3023.png","伊丽莎白":"/roco-pet-avatars-id/3024.png","喵呜":"/roco-pet-avatars-id/3025.png","绿草精灵":"/roco-pet-avatars-id/3026.png","蒲公英娃娃":"/roco-pet-avatars-id/3027.png","冬羽雀(本来的样子)":"/roco-pet-avatars-id/3028.png","奇丽草(异色)":"/roco-pet-avatars-id/3029_1.png","奇丽草":"/roco-pet-avatars-id/3029.png","奇丽叶(异色)":"/roco-pet-avatars-id/3030_1.png","奇丽叶":"/roco-pet-avatars-id/3030.png","奇丽花(异色)":"/roco-pet-avatars-id/3031_1.png","奇丽花":"/roco-pet-avatars-id/3031.png","焰火":"/roco-pet-avatars-id/3032.png","波波拉":"/roco-pet-avatars-id/3033.png","蒲公英":"/roco-pet-avatars-id/3034.png","魔草巫灵":"/roco-pet-avatars-id/3035.png","鸭吉吉(紧实的样子)":"/roco-pet-avatars-id/3036.png","岚鸟(本来的样子)":"/roco-pet-avatars-id/3037.png","小甲虫":"/roco-pet-avatars-id/3038.png","叮叮恶魔(异色)":"/roco-pet-avatars-id/3039_1.png","叮叮恶魔":"/roco-pet-avatars-id/3039.png","丢丢(草地附近的样子)":"/roco-pet-avatars-id/3040.png","卡卡虫(草地附近的样子)":"/roco-pet-avatars-id/3041.png","卡瓦重(草地附近的样子)":"/roco-pet-avatars-id/3042.png","伊贝儿(异色)":"/roco-pet-avatars-id/3043_1.png","伊贝儿":"/roco-pet-avatars-id/3043.png","伊贝粉粉(异色)":"/roco-pet-avatars-id/3044_1.png","伊贝粉粉":"/roco-pet-avatars-id/3044.png","锥尾羊":"/roco-pet-avatars-id/3045.png","铃兰羊":"/roco-pet-avatars-id/3046.png","花影羚羊":"/roco-pet-avatars-id/3047.png","圣光迪莫":"/roco-pet-avatars-id/5025.png","白发懒人":"/roco-pet-avatars-id/3049.png","记忆石":"/roco-pet-avatars-id/3050.png","圣草迪莫":"/roco-pet-avatars-id/5026.png","板板壳(本来的样子)":"/roco-pet-avatars-id/3055.png","咔咔壳(本来的样子)":"/roco-pet-avatars-id/3056.png","水泡壳(本来的样子)":"/roco-pet-avatars-id/3057.png","一窝蜂":"/roco-pet-avatars-id/3058.png","黄蜂后":"/roco-pet-avatars-id/3059.png","小灵面":"/roco-pet-avatars-id/3060.png","暗影灵面(睁眼的样子)":"/roco-pet-avatars-id/3061.png","小独角兽(异色)":"/roco-pet-avatars-id/3062_1.png","小独角兽":"/roco-pet-avatars-id/3062.png","白金独角兽(异色)":"/roco-pet-avatars-id/3063_1.png","白金独角兽":"/roco-pet-avatars-id/3063.png","幽影树(异色)":"/roco-pet-avatars-id/3064_1.png","幽影树":"/roco-pet-avatars-id/3064.png","忽幽狸":"/roco-pet-avatars-id/3065.png","影狸":"/roco-pet-avatars-id/3066.png","卷毛鸭":"/roco-pet-avatars-id/3067.png","锤头鹳":"/roco-pet-avatars-id/3069.png","护主犬(异色)":"/roco-pet-avatars-id/3070_1.png","护主犬":"/roco-pet-avatars-id/3070.png","音速犬(异色)":"/roco-pet-avatars-id/3071_1.png","音速犬":"/roco-pet-avatars-id/3071.png","格兰种子(异色)":"/roco-pet-avatars-id/3072_1.png","格兰种子":"/roco-pet-avatars-id/3072.png","格兰花(异色)":"/roco-pet-avatars-id/3073_1.png","格兰花":"/roco-pet-avatars-id/3073.png","格兰球(异色)":"/roco-pet-avatars-id/3074_1.png","格兰球":"/roco-pet-avatars-id/3074.png","灵狐(异色)":"/roco-pet-avatars-id/3075_1.png","灵狐":"/roco-pet-avatars-id/3075.png","九尾狐(异色)":"/roco-pet-avatars-id/3076_1.png","九尾狐":"/roco-pet-avatars-id/3076.png","尖嘴狐仙(异色)":"/roco-pet-avatars-id/3077_1.png","尖嘴狐仙":"/roco-pet-avatars-id/3077.png","烈钻鸟":"/roco-pet-avatars-id/3078.png","长尾火鸟":"/roco-pet-avatars-id/3079.png","火羽":"/roco-pet-avatars-id/3080.png","治愈兔(异色)":"/roco-pet-avatars-id/3081_1.png","治愈兔":"/roco-pet-avatars-id/3081.png","红丝绒(异色)":"/roco-pet-avatars-id/3082_1.png","红丝绒":"/roco-pet-avatars-id/3082.png","可爱猿":"/roco-pet-avatars-id/3083.png","炽热猿":"/roco-pet-avatars-id/3084.png","火焰猿":"/roco-pet-avatars-id/3085.png","可立鸡(异色)":"/roco-pet-avatars-id/3086_1.png","可立鸡":"/roco-pet-avatars-id/3086.png","晕晕鸡(异色)":"/roco-pet-avatars-id/3087_1.png","晕晕鸡":"/roco-pet-avatars-id/3087.png","绅士鸡(异色)":"/roco-pet-avatars-id/3088_1.png","绅士鸡":"/roco-pet-avatars-id/3088.png","武者鸡(异色)":"/roco-pet-avatars-id/3089_1.png","武者鸡":"/roco-pet-avatars-id/3089.png","火尾瓦特":"/roco-pet-avatars-id/3090.png","火尾战士":"/roco-pet-avatars-id/3091.png","烈火守护":"/roco-pet-avatars-id/3092.png","呆小路":"/roco-pet-avatars-id/3093.png","舞动路路":"/roco-pet-avatars-id/3094.png","白发路路":"/roco-pet-avatars-id/3095.png","绿耳松鼠":"/roco-pet-avatars-id/3098.png","抱枕松鼠":"/roco-pet-avatars-id/3099.png","蹦床松鼠":"/roco-pet-avatars-id/3100.png","动力猿":"/roco-pet-avatars-id/3101.png","瞌睡王":"/roco-pet-avatars-id/3102.png","布是石":"/roco-pet-avatars-id/3103.png","布是岩":"/roco-pet-avatars-id/3104.png","布克棱岩":"/roco-pet-avatars-id/3105.png","石肤蜥(本来的样子)":"/roco-pet-avatars-id/3106.png","石刺蜥(本来的样子)":"/roco-pet-avatars-id/3107.png","石冠王蜥(本来的样子)":"/roco-pet-avatars-id/3108.png","仪使者":"/roco-pet-avatars-id/3109.png","仪式之星":"/roco-pet-avatars-id/3110.png","仪式巨像":"/roco-pet-avatars-id/3111.png","甜田螺":"/roco-pet-avatars-id/3112.png","壳乙螺":"/roco-pet-avatars-id/3113.png","卡洛儿":"/roco-pet-avatars-id/3114.png","风铃鲨":"/roco-pet-avatars-id/3115.png","蓝蝶鲨":"/roco-pet-avatars-id/3116.png","彩蝶鲨":"/roco-pet-avatars-id/3117.png","果冻":"/roco-pet-avatars-id/3118.png","翡翠水母":"/roco-pet-avatars-id/3119.png","琉璃水母":"/roco-pet-avatars-id/3120.png","大耳帽兜(异色)":"/roco-pet-avatars-id/3121_1.png","大耳帽兜":"/roco-pet-avatars-id/3121.png","帽兜娃娃(异色)":"/roco-pet-avatars-id/3122_1.png","帽兜娃娃":"/roco-pet-avatars-id/3122.png","雪影娃娃(异色)":"/roco-pet-avatars-id/3123_1.png","雪影娃娃":"/roco-pet-avatars-id/3123.png","脆筒甜甜":"/roco-pet-avatars-id/3124.png","香草甜甜":"/roco-pet-avatars-id/3125.png","圣代甜甜":"/roco-pet-avatars-id/3126.png","小狮鹫(崖间地的样子)":"/roco-pet-avatars-id/3127.png","神圣狮鹫(崖间地的样子)":"/roco-pet-avatars-id/3128.png","皇家狮鹫(崖间地的样子)":"/roco-pet-avatars-id/3129.png","圆眼蜘蛛":"/roco-pet-avatars-id/3130.png","尖角蜘蛛":"/roco-pet-avatars-id/3131.png","芋香巨角蛛":"/roco-pet-avatars-id/3132.png","毛毛":"/roco-pet-avatars-id/3136.png","爬爬":"/roco-pet-avatars-id/3137.png","化蝶(平常的样子)":"/roco-pet-avatars-id/3138.png","小草虫(异色)":"/roco-pet-avatars-id/3139_1.png","小草虫":"/roco-pet-avatars-id/3139.png","草衣虫(异色)":"/roco-pet-avatars-id/3140_1.png","草衣虫":"/roco-pet-avatars-id/3140.png","花衣蝶(异色)":"/roco-pet-avatars-id/3141_1.png","花衣蝶":"/roco-pet-avatars-id/3141.png","小夜(异色)":"/roco-pet-avatars-id/3142_1.png","小夜":"/roco-pet-avatars-id/3142.png","紫夜(异色)":"/roco-pet-avatars-id/3143_1.png","紫夜":"/roco-pet-avatars-id/3143.png","朔夜伊芙(异色)":"/roco-pet-avatars-id/3144_1.png","朔夜伊芙":"/roco-pet-avatars-id/3144.png","小灵菇":"/roco-pet-avatars-id/3145.png","幻灵菇":"/roco-pet-avatars-id/3146.png","幻影灵菇":"/roco-pet-avatars-id/3147.png","空空颅(异色)":"/roco-pet-avatars-id/3148_1.png","空空颅":"/roco-pet-avatars-id/3148.png","夜宿颅(异色)":"/roco-pet-avatars-id/3149_1.png","夜宿颅":"/roco-pet-avatars-id/3149.png","夜枭(异色)":"/roco-pet-avatars-id/3150_1.png","夜枭":"/roco-pet-avatars-id/3150.png","多多":"/roco-pet-avatars-id/3151.png","多啦多":"/roco-pet-avatars-id/3152.png","古啦多":"/roco-pet-avatars-id/3153.png","裘洛":"/roco-pet-avatars-id/3154.png","裘力":"/roco-pet-avatars-id/3155.png","裘卡":"/roco-pet-avatars-id/3156.png","花魁蜂后":"/roco-pet-avatars-id/3157.png","春团":"/roco-pet-avatars-id/3161.png","春兔":"/roco-pet-avatars-id/3162.png","伏地兽":"/roco-pet-avatars-id/3165.png","贪食鼹":"/roco-pet-avatars-id/3166.png","巨噬针鼹":"/roco-pet-avatars-id/3167.png","阿布":"/roco-pet-avatars-id/3168.png","超能阿布":"/roco-pet-avatars-id/3169.png","石石":"/roco-pet-avatars-id/3170.png","巨灵石":"/roco-pet-avatars-id/3171.png","雪豆丁":"/roco-pet-avatars-id/3172.png","雪蛮人":"/roco-pet-avatars-id/3173.png","雪巨人":"/roco-pet-avatars-id/3174.png","咔咔羽毛":"/roco-pet-avatars-id/3175.png","咔咔雀":"/roco-pet-avatars-id/3176.png","咔咔鸟":"/roco-pet-avatars-id/3177.png","矮脚爬爬":"/roco-pet-avatars-id/3178.png","恶魔红钻":"/roco-pet-avatars-id/3179.png","小帕尔":"/roco-pet-avatars-id/3180.png","帕尔萨斯":"/roco-pet-avatars-id/3181.png","龙息帕尔":"/roco-pet-avatars-id/3182.png","瑰眼仔":"/roco-pet-avatars-id/3183.png","耳翎瑰魅":"/roco-pet-avatars-id/3184.png","邪眼巨魔":"/roco-pet-avatars-id/3185.png","小光":"/roco-pet-avatars-id/3186.png","拉特(异色)":"/roco-pet-avatars-id/3188_1.png","拉特":"/roco-pet-avatars-id/3188.png","酷拉(异色)":"/roco-pet-avatars-id/3189_1.png","酷拉":"/roco-pet-avatars-id/3189.png","电咩咩":"/roco-pet-avatars-id/3190.png","粉咩咩":"/roco-pet-avatars-id/3191.png","电球咩咩":"/roco-pet-avatars-id/3192.png","小星光(异色)":"/roco-pet-avatars-id/3193_1.png","小星光(星光能量的样子)":"/roco-pet-avatars-id/3193.png","星光狮(星光能量的样子)":"/roco-pet-avatars-id/3194.png","闪电环":"/roco-pet-avatars-id/3195.png","刺电环":"/roco-pet-avatars-id/3196.png","荆棘电环":"/roco-pet-avatars-id/3197.png","粉粉星(异色)":"/roco-pet-avatars-id/3198_1.png","粉粉星":"/roco-pet-avatars-id/3198.png","小皮球(异色)":"/roco-pet-avatars-id/3199_1.png","小皮球":"/roco-pet-avatars-id/3199.png","机械方方(异色)":"/roco-pet-avatars-id/3200_1.png","机械方方":"/roco-pet-avatars-id/3200.png","多彩方方(异色)":"/roco-pet-avatars-id/3201_1.png","多彩方方":"/roco-pet-avatars-id/3201.png","立方人(异色)":"/roco-pet-avatars-id/3202_1.png","立方人":"/roco-pet-avatars-id/3202.png","贝瑟(异色)":"/roco-pet-avatars-id/3203_1.png","贝瑟":"/roco-pet-avatars-id/3203.png","贝加尔(异色)":"/roco-pet-avatars-id/3204_1.png","贝加尔":"/roco-pet-avatars-id/3204.png","贝古斯(异色)":"/roco-pet-avatars-id/3205_1.png","贝古斯":"/roco-pet-avatars-id/3205.png","多西":"/roco-pet-avatars-id/3206.png","库多西":"/roco-pet-avatars-id/3207.png","波多西":"/roco-pet-avatars-id/3208.png","小翼龙":"/roco-pet-avatars-id/3209.png","翼龙":"/roco-pet-avatars-id/3210.png","伊雷龙":"/roco-pet-avatars-id/3211.png","海豹战士":"/roco-pet-avatars-id/3215.png","海豹船长":"/roco-pet-avatars-id/3216.png","呼拉猫":"/roco-pet-avatars-id/3217.png","增肌猫":"/roco-pet-avatars-id/3218.png","古钟蛇":"/roco-pet-avatars-id/3225.png","寒音蛇(本来的样子)":"/roco-pet-avatars-id/3226.png","菊花梨(异色)":"/roco-pet-avatars-id/3227_1.png","菊花梨":"/roco-pet-avatars-id/3227.png","友爱天天":"/roco-pet-avatars-id/3228.png","友爱星飞":"/roco-pet-avatars-id/3229.png","加灵":"/roco-pet-avatars-id/3230.png","加益":"/roco-pet-avatars-id/3231.png","加尔":"/roco-pet-avatars-id/3232.png","黑化加尔":"/roco-pet-avatars-id/3233.png","牵线木偶(异色)":"/roco-pet-avatars-id/3234_1.png","牵线木偶":"/roco-pet-avatars-id/3234.png","帅帅魔偶(异色)":"/roco-pet-avatars-id/3235_1.png","帅帅魔偶":"/roco-pet-avatars-id/3235.png","小怂猫":"/roco-pet-avatars-id/3237.png","怒目怂猫":"/roco-pet-avatars-id/3238.png","哭哭菇":"/roco-pet-avatars-id/3239.png","怖须菇":"/roco-pet-avatars-id/3240.png","怖哭菇":"/roco-pet-avatars-id/3241.png","喷火鸟":"/roco-pet-avatars-id/3243.png","绒绒(异色)":"/roco-pet-avatars-id/3244_1.png","绒绒":"/roco-pet-avatars-id/3244.png","小绒茧(异色)":"/roco-pet-avatars-id/3245_1.png","小绒茧":"/roco-pet-avatars-id/3245.png","绒仙子(异色)":"/roco-pet-avatars-id/3246_1.png","绒仙子":"/roco-pet-avatars-id/3246.png","绿洲象":"/roco-pet-avatars-id/3248.png","流星猛犸":"/roco-pet-avatars-id/3249.png","小鹬(异色)":"/roco-pet-avatars-id/3250_1.png","小鹬":"/roco-pet-avatars-id/3250.png","鄙目鹬(异色)":"/roco-pet-avatars-id/3251_1.png","鄙目鹬":"/roco-pet-avatars-id/3251.png","高脚鹬(异色)":"/roco-pet-avatars-id/3252_1.png","高脚鹬":"/roco-pet-avatars-id/3252.png","奔波鼠":"/roco-pet-avatars-id/3255.png","流浪鼠":"/roco-pet-avatars-id/3256.png","布鲁斯":"/roco-pet-avatars-id/3257.png","雪顶布鲁斯":"/roco-pet-avatars-id/3258.png","冰钻布鲁斯":"/roco-pet-avatars-id/3259.png","呼呼猪(异色)":"/roco-pet-avatars-id/3262_1.png","呼呼猪":"/roco-pet-avatars-id/3262.png","獠牙猪(异色)":"/roco-pet-avatars-id/3263_1.png","獠牙猪":"/roco-pet-avatars-id/3263.png","卡波(异色)":"/roco-pet-avatars-id/3264_1.png","卡波":"/roco-pet-avatars-id/3264.png","卡拉波斯(异色)":"/roco-pet-avatars-id/3265_1.png","卡拉波斯":"/roco-pet-avatars-id/3265.png","胆小鳗鱼":"/roco-pet-avatars-id/3266.png","闪电鳗鱼":"/roco-pet-avatars-id/3267.png","大头骨龙":"/roco-pet-avatars-id/3268.png","寂灭骨龙":"/roco-pet-avatars-id/3269.png","绿翼鸟":"/roco-pet-avatars-id/3276.png","魔翼鸟":"/roco-pet-avatars-id/3277.png","魔眷鸟":"/roco-pet-avatars-id/3278.png","雪绒鸟(春天的样子)":"/roco-pet-avatars-id/3279.png","雪绒鸟(夏天的样子)":"/roco-pet-avatars-id/3280.png","雪绒鸟(秋天的样子)":"/roco-pet-avatars-id/3281.png","冬羽雀(秋天的样子)":"/roco-pet-avatars-id/3282.png","冬羽雀(夏天的样子)":"/roco-pet-avatars-id/3283.png","冬羽雀(秋天的样子)_3284":"/roco-pet-avatars-id/3284.png","岚鸟(春天的样子)":"/roco-pet-avatars-id/3285.png","岚鸟(夏天的样子)":"/roco-pet-avatars-id/3286.png","岚鸟(秋天的样子)":"/roco-pet-avatars-id/3287.png","丢丢(火山附近的样子)":"/roco-pet-avatars-id/3288.png","丢丢(沙地附近的样子)":"/roco-pet-avatars-id/3289.png","丢丢(雪山附近的样子)":"/roco-pet-avatars-id/3290.png","卡卡虫(火山附近的样子)":"/roco-pet-avatars-id/3291.png","卡卡虫(沙地附近的样子)":"/roco-pet-avatars-id/3292.png","卡卡虫(雪山附近的样子)":"/roco-pet-avatars-id/3293.png","卡瓦重(火山附近的样子)":"/roco-pet-avatars-id/3294.png","卡瓦重(沙地附近的样子)":"/roco-pet-avatars-id/3295.png","卡瓦重(雪山附近的样子)":"/roco-pet-avatars-id/3296.png","蹦蹦种子(彩玉球形态)":"/roco-pet-avatars-id/3297.png","蹦蹦种子(短毛球形态)":"/roco-pet-avatars-id/3298.png","蹦蹦种子(象牙球形态)":"/roco-pet-avatars-id/3299.png","蹦蹦草(彩玉球形态)":"/roco-pet-avatars-id/3300.png","蹦蹦草(短毛球形态)":"/roco-pet-avatars-id/3301.png","蹦蹦草(象牙球形态)":"/roco-pet-avatars-id/3302.png","蹦蹦花(彩玉球形态)":"/roco-pet-avatars-id/3303.png","蹦蹦花(短毛球形态)":"/roco-pet-avatars-id/3304.png","蹦蹦花(象牙球形态)":"/roco-pet-avatars-id/3305.png","矿晶虫":"/roco-pet-avatars-id/3307.png","晶石蜗(莲花刚玉的样子)":"/roco-pet-avatars-id/3308.png","犀角鸟(异色)":"/roco-pet-avatars-id/3309_1.png","犀角鸟":"/roco-pet-avatars-id/3309.png","光纤兽(异色)":"/roco-pet-avatars-id/3310_1.png","光纤兽":"/roco-pet-avatars-id/3310.png","疾光千兽(异色)":"/roco-pet-avatars-id/3311_1.png","疾光千兽":"/roco-pet-avatars-id/3311.png","小鼠獭":"/roco-pet-avatars-id/3315.png","燕尾獭":"/roco-pet-avatars-id/3316.png","卷胡巨獭":"/roco-pet-avatars-id/3317.png","粉星仔(异色)":"/roco-pet-avatars-id/3319_1.png","粉星仔":"/roco-pet-avatars-id/3319.png","粉耳星兔(异色)":"/roco-pet-avatars-id/3320_1.png","粉耳星兔":"/roco-pet-avatars-id/3320.png","觅觅蝠":"/roco-pet-avatars-id/3321.png","翻翻蝠":"/roco-pet-avatars-id/3322.png","夜游魔":"/roco-pet-avatars-id/3323.png","海盔虫(本来的样子)(异色)":"/roco-pet-avatars-id/3330_1.png","海盔虫(本来的样子)":"/roco-pet-avatars-id/3330.png","刺盔虫(本来的样子)(异色)":"/roco-pet-avatars-id/3331_1.png","刺盔虫(本来的样子)":"/roco-pet-avatars-id/3331.png","千棘盔(本来的样子)(异色)":"/roco-pet-avatars-id/3332_1.png","千棘盔(本来的样子)":"/roco-pet-avatars-id/3332.png","雪娃娃":"/roco-pet-avatars-id/3333.png","冰封怨灵":"/roco-pet-avatars-id/3334.png","雪灵":"/roco-pet-avatars-id/3335.png","冰虎宝":"/roco-pet-avatars-id/3338.png","冰晶虎":"/roco-pet-avatars-id/3339.png","冰晶古齿虎":"/roco-pet-avatars-id/3340.png","雪灵兽":"/roco-pet-avatars-id/3341.png","幻雪兽":"/roco-pet-avatars-id/3342.png","饮雪狂兽":"/roco-pet-avatars-id/3343.png","乖乖鹄":"/roco-pet-avatars-id/3344.png","蓝珠天鹅":"/roco-pet-avatars-id/3345.png","翠顶夫人":"/roco-pet-avatars-id/3346.png","芽眼魔":"/roco-pet-avatars-id/3347.png","叶眼魔":"/roco-pet-avatars-id/3348.png","障眼魔":"/roco-pet-avatars-id/3349.png","红绒十字(异色)":"/roco-pet-avatars-id/3350_1.png","红绒十字":"/roco-pet-avatars-id/3350.png","霹雳宝宝":"/roco-pet-avatars-id/3351.png","雷鸣小子":"/roco-pet-avatars-id/3352.png","雷神之子":"/roco-pet-avatars-id/3353.png","电动长颈鹿":"/roco-pet-avatars-id/3357.png","奔乐鹿":"/roco-pet-avatars-id/3358.png","爵士鹿":"/roco-pet-avatars-id/3359.png","蝴蝶陶陶(异色)":"/roco-pet-avatars-id/3360_1.png","蝴蝶陶陶":"/roco-pet-avatars-id/3360.png","铆钉毛毛(异色)":"/roco-pet-avatars-id/3361_1.png","铆钉毛毛":"/roco-pet-avatars-id/3361.png","徘徊爪爪(异色)":"/roco-pet-avatars-id/3362_1.png","徘徊爪爪":"/roco-pet-avatars-id/3362.png","路路":"/roco-pet-avatars-id/3363.png","路路尼":"/roco-pet-avatars-id/3364.png","古路尼":"/roco-pet-avatars-id/3365.png","嘟嘟煲(异色)":"/roco-pet-avatars-id/3367_1.png","嘟嘟煲":"/roco-pet-avatars-id/3367.png","嘟嘟锅(异色)":"/roco-pet-avatars-id/3368_1.png","嘟嘟锅":"/roco-pet-avatars-id/3368.png","幽星光":"/roco-pet-avatars-id/3369.png","曜星光":"/roco-pet-avatars-id/3370.png","暮星辰":"/roco-pet-avatars-id/3371.png","春花兔":"/roco-pet-avatars-id/3372.png","逗逗(异色)":"/roco-pet-avatars-id/3373_1.png","逗逗":"/roco-pet-avatars-id/3373.png","气球猫(异色)":"/roco-pet-avatars-id/3374_1.png","气球猫":"/roco-pet-avatars-id/3374.png","梦想三三(异色)":"/roco-pet-avatars-id/3375_1.png","梦想三三":"/roco-pet-avatars-id/3375.png","旋叶虫(金黄的样子)":"/roco-pet-avatars-id/3376.png","风滚暮虫(金黄的样子)":"/roco-pet-avatars-id/3377.png","菇菇丁":"/roco-pet-avatars-id/3378.png","多菇丁":"/roco-pet-avatars-id/3379.png","九幽菇":"/roco-pet-avatars-id/3380.png","深蓝鲸":"/roco-pet-avatars-id/3381.png","双灯鱼(异色)":"/roco-pet-avatars-id/3382_1.png","双灯鱼":"/roco-pet-avatars-id/3382.png","利灯鱼(异色)":"/roco-pet-avatars-id/3383_1.png","利灯鱼":"/roco-pet-avatars-id/3383.png","豆丁鱼(异色)":"/roco-pet-avatars-id/3384_1.png","豆丁鱼":"/roco-pet-avatars-id/3384.png","快鳍鱼(异色)":"/roco-pet-avatars-id/3385_1.png","快鳍鱼":"/roco-pet-avatars-id/3385.png","龙鱼(异色)":"/roco-pet-avatars-id/3386_1.png","龙鱼":"/roco-pet-avatars-id/3386.png","凡雀":"/roco-pet-avatars-id/3392.png","紫翎鹰":"/roco-pet-avatars-id/3393.png","凡鹰":"/roco-pet-avatars-id/3394.png","里奥":"/roco-pet-avatars-id/3395.png","灵羽勇士":"/roco-pet-avatars-id/3396.png","圣羽翼王":"/roco-pet-avatars-id/3397.png","星尘虫":"/roco-pet-avatars-id/3398.png","落星虫":"/roco-pet-avatars-id/3399.png","陨星虫":"/roco-pet-avatars-id/3400.png","碎晶蝎":"/roco-pet-avatars-id/3402.png","晶尾蝎":"/roco-pet-avatars-id/3403.png","蝎子王":"/roco-pet-avatars-id/3404.png","幽冥眼(睁眼的样子)":"/roco-pet-avatars-id/3405.png","缇塔":"/roco-pet-avatars-id/3406.png","声波缇塔":"/roco-pet-avatars-id/3407.png","齿轮小子":"/roco-pet-avatars-id/3408.png","机甲小子":"/roco-pet-avatars-id/3409.png","权杖-Ⅱ":"/roco-pet-avatars-id/3410.png","权杖-V":"/roco-pet-avatars-id/3411.png","伊兰亚龙":"/roco-pet-avatars-id/3412.png","格斗小五":"/roco-pet-avatars-id/3416.png","格斗小六":"/roco-pet-avatars-id/3417.png","格斗小八":"/roco-pet-avatars-id/3418.png","厉毒小萝":"/roco-pet-avatars-id/3419.png","厉毒修萝":"/roco-pet-avatars-id/3420.png","海枝枝(碧蓝珊瑚)":"/roco-pet-avatars-id/3430.png","海枝枝(翠绿纶布)":"/roco-pet-avatars-id/3433.png","海枝枝(杏黄百合)":"/roco-pet-avatars-id/3431.png","海枝枝(洋红沙丁)":"/roco-pet-avatars-id/3432.png","小电企鹅":"/roco-pet-avatars-id/3434.png","电企鹅":"/roco-pet-avatars-id/3435.png","柴渣虫(异色)":"/roco-pet-avatars-id/3436_1.png","柴渣虫":"/roco-pet-avatars-id/3436.png","燃薪虫(异色)":"/roco-pet-avatars-id/3437_1.png","燃薪虫":"/roco-pet-avatars-id/3437.png","梦游(穿旧睡衣的样子)":"/roco-pet-avatars-id/3438.png","梦悠悠(穿旧睡衣的样子)":"/roco-pet-avatars-id/3439.png","梦游(穿星星睡衣的样子)":"/roco-pet-avatars-id/3440.png","梦悠悠(穿星星睡衣的样子)":"/roco-pet-avatars-id/3441.png","小星光(月光能量的样子)":"/roco-pet-avatars-id/3442.png","星光狮(月光能量的样子)":"/roco-pet-avatars-id/3443.png","噼啪鸟":"/roco-pet-avatars-id/3444.png","晶石蜗(西瓜碧玺的样子)":"/roco-pet-avatars-id/3448.png","晶石蜗(星彩榴石的样子)":"/roco-pet-avatars-id/3449.png","晶石蜗(火山琉璃的样子)":"/roco-pet-avatars-id/3450.png","晶石蜗(蓝锥矿的样子)":"/roco-pet-avatars-id/3451.png","鸭吉吉(急急急鸭)":"/roco-pet-avatars-id/3452.png","鸭吉吉(等一等鸭)":"/roco-pet-avatars-id/3453.png","地鼠(储水期的样子)(异色)":"/roco-pet-avatars-id/3454_1.png","地鼠(储水期的样子)":"/roco-pet-avatars-id/3454.png","遁鼠(储水期的样子)(异色)":"/roco-pet-avatars-id/3455_1.png","遁鼠(储水期的样子)":"/roco-pet-avatars-id/3455.png","遁地鼠(储水期的样子)(异色)":"/roco-pet-avatars-id/3456_1.png","遁地鼠(储水期的样子)":"/roco-pet-avatars-id/3456.png","月牙雪熊(异色)":"/roco-pet-avatars-id/3457_1.png","月牙雪熊":"/roco-pet-avatars-id/3457.png","圣代甜甜(蓝莓巧克力口味)":"/roco-pet-avatars-id/3460.png","圣代甜甜(杨桃巧克力口味)":"/roco-pet-avatars-id/3463.png","圣代甜甜(樱桃抹茶口味)":"/roco-pet-avatars-id/3459.png","圣代甜甜(蓝莓抹茶口味)":"/roco-pet-avatars-id/3462.png","圣代甜甜(杨桃抹茶口味)":"/roco-pet-avatars-id/3465.png","圣代甜甜(樱桃草莓口味)":"/roco-pet-avatars-id/3458.png","圣代甜甜(蓝莓草莓口味)":"/roco-pet-avatars-id/3461.png","圣代甜甜(杨桃草莓口味)":"/roco-pet-avatars-id/3464.png","星云旅者":"/roco-pet-avatars-id/3466.png","小狮鹫(高山地的样子)":"/roco-pet-avatars-id/3467.png","神圣狮鹫(高山地的样子)":"/roco-pet-avatars-id/3468.png","皇家狮鹫(高山地的样子)":"/roco-pet-avatars-id/3469.png","化蝶(幽冥眼的样子)":"/roco-pet-avatars-id/3470.png","化蝶(喵喵的样子)":"/roco-pet-avatars-id/3471.png","化蝶(奇丽花的样子)":"/roco-pet-avatars-id/3472.png","布瓜蝌":"/roco-pet-avatars-id/3473.png","上岸蛙":"/roco-pet-avatars-id/3474.png","海盔虫(磨损的样子)(异色)":"/roco-pet-avatars-id/3475_1.png","海盔虫(磨损的样子)":"/roco-pet-avatars-id/3475.png","刺盔虫(磨损的样子)(异色)":"/roco-pet-avatars-id/3476_1.png","刺盔虫(磨损的样子)":"/roco-pet-avatars-id/3476.png","千棘盔(磨损的样子)(异色)":"/roco-pet-avatars-id/3477_1.png","千棘盔(磨损的样子)":"/roco-pet-avatars-id/3477.png","香草甜甜(蓝莓饰品)":"/roco-pet-avatars-id/3479.png","香草甜甜(杨桃饰品)":"/roco-pet-avatars-id/3478.png","暗影灵面(闭眼的样子)":"/roco-pet-avatars-id/3481.png","幽冥眼(闭眼的样子)":"/roco-pet-avatars-id/3482.png","蓬叶虫(金黄的样子)":"/roco-pet-avatars-id/3483.png","螺旋帕帕":"/roco-pet-avatars-id/3484.png","落陨星兔(异色)":"/roco-pet-avatars-id/3485_1.png","落陨星兔":"/roco-pet-avatars-id/3485.png","晶石蜗(烧蓝黄金的样子)":"/roco-pet-avatars-id/3486.png","小丑豆豆(异色)":"/roco-pet-avatars-id/3487_1.png","小丑豆豆":"/roco-pet-avatars-id/3487.png","小丑兔(异色)":"/roco-pet-avatars-id/3488_1.png","小丑兔":"/roco-pet-avatars-id/3488.png","小丑公爵(异色)":"/roco-pet-avatars-id/3489_1.png","小丑公爵":"/roco-pet-avatars-id/3489.png","吸泥鸥":"/roco-pet-avatars-id/3490.png","泥吼牙":"/roco-pet-avatars-id/3491.png","兽花蕾":"/roco-pet-avatars-id/3492.png","肥草球":"/roco-pet-avatars-id/3493.png","赫拉":"/roco-pet-avatars-id/3494.png","鸭吉吉(燃了鸭)":"/roco-pet-avatars-id/3495.png","旋叶虫(枯叶的样子)":"/roco-pet-avatars-id/3496.png","蓬叶虫(枯叶的样子)":"/roco-pet-avatars-id/3497.png","风滚暮虫(枯叶的样子)":"/roco-pet-avatars-id/3498.png","公平鸽(异色)":"/roco-pet-avatars-id/3499_1.png","公平鸽":"/roco-pet-avatars-id/3499.png","石肤蜥(球球尾巴的样子)":"/roco-pet-avatars-id/3500.png","石刺蜥(球球尾巴的样子)":"/roco-pet-avatars-id/3501.png","石冠王蜥(球球尾巴的样子)":"/roco-pet-avatars-id/3502.png","花怨鳗":"/roco-pet-avatars-id/3506.png","鳗尾兽":"/roco-pet-avatars-id/3507.png","波波螺":"/roco-pet-avatars-id/3508.png","消波螺":"/roco-pet-avatars-id/3509.png","嗜波螺":"/roco-pet-avatars-id/3510.png","波波螺(被污染的样子)":"/roco-pet-avatars-id/3511.png","消波螺(被污染的样子)":"/roco-pet-avatars-id/3512.png","嗜波螺(被污染的样子)":"/roco-pet-avatars-id/3513.png","圣水迪莫":"/roco-pet-avatars-id/5028.png","圣火迪莫":"/roco-pet-avatars-id/5027.png","板板壳(蜕皮的样子)":"/roco-pet-avatars-id/3516.png","咔咔壳(蜕皮的样子)":"/roco-pet-avatars-id/3517.png","水泡壳(蜕皮的样子)":"/roco-pet-avatars-id/3518.png","里拉鳐":"/roco-pet-avatars-id/3521.png","阿瓦鲨(黄色的样子)":"/roco-pet-avatars-id/3524.png","阿瓦鲨(灰色的样子)":"/roco-pet-avatars-id/3525.png","抹茶布丁":"/roco-pet-avatars-id/3526.png","椰浆布丁":"/roco-pet-avatars-id/3527.png","熔岩布丁":"/roco-pet-avatars-id/3528.png","号儿鱼":"/roco-pet-avatars-id/3529.png","圆号鱼":"/roco-pet-avatars-id/3530.png","小雪人(异色)":"/roco-pet-avatars-id/3531_1.png","小雪人":"/roco-pet-avatars-id/3531.png","雪怪(异色)":"/roco-pet-avatars-id/3532_1.png","雪怪":"/roco-pet-avatars-id/3532.png","雪绒鸟(秋天的样子)_3533":"/roco-pet-avatars-id/3533.png","斑斑(异色)":"/roco-pet-avatars-id/3534_1.png","斑斑":"/roco-pet-avatars-id/3534.png","斑枭(异色)":"/roco-pet-avatars-id/3535_1.png","斑枭":"/roco-pet-avatars-id/3535.png","乌达(极昼的样子)":"/roco-pet-avatars-id/3536.png","迷你乌(极昼的样子)":"/roco-pet-avatars-id/3537.png","乌拉塔(极昼的样子)":"/roco-pet-avatars-id/3538.png","乌达(极夜的样子)":"/roco-pet-avatars-id/3539.png","迷你乌(极夜的样子)":"/roco-pet-avatars-id/3540.png","乌拉塔(极夜的样子)":"/roco-pet-avatars-id/3541.png","圣剑侍从":"/roco-pet-avatars-id/3545.png","圣剑-X":"/roco-pet-avatars-id/3546.png","帕帕斯卡":"/roco-pet-avatars-id/3547.png","棋棋(白子)":"/roco-pet-avatars-id/3550.png","棋骑士(白子)":"/roco-pet-avatars-id/3551.png","棋绮后(白子)":"/roco-pet-avatars-id/3552.png","棋齐垒(白子)":"/roco-pet-avatars-id/3553.png","棋祈督(白子)":"/roco-pet-avatars-id/3554.png","棋棋(黑子)":"/roco-pet-avatars-id/3555.png","棋骑士(黑子)":"/roco-pet-avatars-id/3556.png","棋绮后(黑子)":"/roco-pet-avatars-id/3557.png","棋齐垒(黑子)":"/roco-pet-avatars-id/3558.png","棋祈督(黑子)":"/roco-pet-avatars-id/3559.png","乌咩":"/roco-pet-avatars-id/3560.png","乌角驮驮":"/roco-pet-avatars-id/3561.png","堇楹苞":"/roco-pet-avatars-id/3562.png","蔓羽兽":"/roco-pet-avatars-id/3563.png","厉毒鸩兽":"/roco-pet-avatars-id/3564.png","栗鼠(异色)":"/roco-pet-avatars-id/3565_1.png","栗鼠":"/roco-pet-avatars-id/3565.png","壳栗丝鼠(异色)":"/roco-pet-avatars-id/3566_1.png","壳栗丝鼠":"/roco-pet-avatars-id/3566.png","小黑猫":"/roco-pet-avatars-id/3568.png","黑猫巫师":"/roco-pet-avatars-id/3569.png","黑羽夫人":"/roco-pet-avatars-id/3571.png","爆焰仔(异色)":"/roco-pet-avatars-id/3572_1.png","爆焰仔":"/roco-pet-avatars-id/3572.png","爆焰喷喷(异色)":"/roco-pet-avatars-id/3573_1.png","爆焰喷喷":"/roco-pet-avatars-id/3573.png","墨鱿士":"/roco-pet-avatars-id/3577.png","混乱鱿彩":"/roco-pet-avatars-id/3578.png","秩序鱿墨":"/roco-pet-avatars-id/3579.png","刺轮砣(下弦的样子)":"/roco-pet-avatars-id/3582.png","月亮砣(下弦的样子)":"/roco-pet-avatars-id/3583.png","刺轮砣(上弦的样子)":"/roco-pet-avatars-id/3584.png","月亮砣(上弦的样子)":"/roco-pet-avatars-id/3585.png","十字蝌蚪(异色)":"/roco-pet-avatars-id/3591_1.png","十字蝌蚪":"/roco-pet-avatars-id/3591.png","十字蛙(异色)":"/roco-pet-avatars-id/3592_1.png","十字蛙":"/roco-pet-avatars-id/3592.png","深渊蛙(异色)":"/roco-pet-avatars-id/3593_1.png","深渊蛙":"/roco-pet-avatars-id/3593.png","松仔":"/roco-pet-avatars-id/3594.png","松叶羊":"/roco-pet-avatars-id/3595.png","针叶巡林":"/roco-pet-avatars-id/3596.png","水滴蛇":"/roco-pet-avatars-id/3597.png","水蛇锁":"/roco-pet-avatars-id/3598.png","游蛇魔使":"/roco-pet-avatars-id/3599.png","小勇狮":"/roco-pet-avatars-id/3600.png","炽焰狮":"/roco-pet-avatars-id/3601.png","炽心勇狮":"/roco-pet-avatars-id/3602.png","毛头小蛛":"/roco-pet-avatars-id/3603.png","捕尘长绒":"/roco-pet-avatars-id/3604.png","食尘短绒":"/roco-pet-avatars-id/3605.png","画精灵":"/roco-pet-avatars-id/3606.png","画像守护":"/roco-pet-avatars-id/3607.png","画间法师手":"/roco-pet-avatars-id/3608.png","画间沉铁兽":"/roco-pet-avatars-id/3609.png","书魔虫":"/roco-pet-avatars-id/3610.png","书卷守护":"/roco-pet-avatars-id/3611.png","古卷执政官":"/roco-pet-avatars-id/3612.png","古卷匣魔像":"/roco-pet-avatars-id/3613.png","嗜光嗡嗡(异色)":"/roco-pet-avatars-id/3614_1.png","嗜光嗡嗡":"/roco-pet-avatars-id/3614.png","窃光蚊(异色)":"/roco-pet-avatars-id/3615_1.png","窃光蚊":"/roco-pet-avatars-id/3615.png","不咕钟":"/roco-pet-avatars-id/3616.png","溯源钟":"/roco-pet-avatars-id/3617.png","小箱怪":"/roco-pet-avatars-id/3618.png","迷迷箱怪":"/roco-pet-avatars-id/3619.png","学院呱呱":"/roco-pet-avatars-id/3620.png","古钟蛇_3621":"/roco-pet-avatars-id/3621.png","寒音蛇(新春的样子)":"/roco-pet-avatars-id/3622.png","噬影蚕":"/roco-pet-avatars-id/3623.png","吞噬":"/roco-pet-avatars-id/3624.png","小冥龙":"/roco-pet-avatars-id/3625.png","冥古龙":"/roco-pet-avatars-id/3626.png","矮核球":"/roco-pet-avatars-id/3627.png","星脉兽":"/roco-pet-avatars-id/3628.png","巡天幻星":"/roco-pet-avatars-id/3629.png","加油海葵(异色)":"/roco-pet-avatars-id/3659_1.png","加油海葵":"/roco-pet-avatars-id/3659.png","加油蟹(异色)":"/roco-pet-avatars-id/3660_1.png","加油蟹":"/roco-pet-avatars-id/3660.png","丁丁猫":"/roco-pet-avatars-id/3665.png","猫山咪钥":"/roco-pet-avatars-id/3666.png","守夜烛(异色)":"/roco-pet-avatars-id/3675_1.png","守夜烛":"/roco-pet-avatars-id/3675.png","流明坎德拉(异色)":"/roco-pet-avatars-id/3676_1.png","流明坎德拉":"/roco-pet-avatars-id/3676.png","烟花团(异色)":"/roco-pet-avatars-id/3677_1.png","烟花团":"/roco-pet-avatars-id/3677.png","烟花伯爵(异色)":"/roco-pet-avatars-id/3678_1.png","烟花伯爵":"/roco-pet-avatars-id/3678.png","咕咕帽(异色)":"/roco-pet-avatars-id/3683_1.png","咕咕帽":"/roco-pet-avatars-id/3683.png","咕德帽帽(异色)":"/roco-pet-avatars-id/3684_1.png","咕德帽帽":"/roco-pet-avatars-id/3684.png","稻草人(异色)":"/roco-pet-avatars-id/3697_1.png","稻草人":"/roco-pet-avatars-id/3697.png","稻草守护者(异色)":"/roco-pet-avatars-id/3698_1.png","稻草守护者":"/roco-pet-avatars-id/3698.png","优优":"/roco-pet-avatars-id/3704.png","绒光优优":"/roco-pet-avatars-id/3705.png","蜜果骸(异色)":"/roco-pet-avatars-id/3706_1.png","蜜果骸":"/roco-pet-avatars-id/3706.png","半朽蜜果灵(异色)":"/roco-pet-avatars-id/3707_1.png","半朽蜜果灵":"/roco-pet-avatars-id/3707.png","小鼓象(异色)":"/roco-pet-avatars-id/3708_1.png","小鼓象":"/roco-pet-avatars-id/3708.png","巨鼓象(异色)":"/roco-pet-avatars-id/3709_1.png","巨鼓象":"/roco-pet-avatars-id/3709.png","咬咬小子(异色)":"/roco-pet-avatars-id/3710_1.png","咬咬小子":"/roco-pet-avatars-id/3710.png","胡桃王子(异色)":"/roco-pet-avatars-id/3711_1.png","胡桃王子":"/roco-pet-avatars-id/3711.png","足尖元件(异色)":"/roco-pet-avatars-id/3718_1.png","足尖元件":"/roco-pet-avatars-id/3718.png","离心舞者(异色)":"/roco-pet-avatars-id/3719_1.png","离心舞者":"/roco-pet-avatars-id/3719.png","松仔(黑暗的样子)":"/roco-pet-avatars-id/3720.png","松叶羊(黑暗的样子)":"/roco-pet-avatars-id/3721.png","针叶巡林(黑暗的样子)":"/roco-pet-avatars-id/3722.png","水滴蛇(黑暗的样子)":"/roco-pet-avatars-id/3723.png","水蛇锁(黑暗的样子)":"/roco-pet-avatars-id/3724.png","游蛇魔使(黑暗的样子)":"/roco-pet-avatars-id/3725.png","小勇狮(黑暗的样子)":"/roco-pet-avatars-id/3726.png","炽焰狮(黑暗的样子)":"/roco-pet-avatars-id/3727.png","炽心勇狮(黑暗的样子)":"/roco-pet-avatars-id/3728.png","猴麦仔(异色)":"/roco-pet-avatars-id/3729_1.png","猴麦仔":"/roco-pet-avatars-id/3729.png","音碟吼(异色)":"/roco-pet-avatars-id/3730_1.png","音碟吼":"/roco-pet-avatars-id/3730.png","骨朵鸟":"/roco-pet-avatars-id/3731.png","紫花雀":"/roco-pet-avatars-id/3732.png","钨丝贝贝":"/roco-pet-avatars-id/3733.png","辉光幕机":"/roco-pet-avatars-id/3734.png","机幕方舟":"/roco-pet-avatars-id/3735.png","炫光迪迪(异色)":"/roco-pet-avatars-id/3736_1.png","炫光迪迪":"/roco-pet-avatars-id/3736.png","霹雳迪迪(异色)":"/roco-pet-avatars-id/3737_1.png","霹雳迪迪":"/roco-pet-avatars-id/3737.png","宝藏小狐":"/roco-pet-avatars-id/3740.png","宝藏沙狐":"/roco-pet-avatars-id/3741.png","鸭吉吉(起来鸭)":"/roco-pet-avatars-id/3742.png","加油蟹单只海葵的样子(异色)":"/roco-pet-avatars-id/3743_1.png","加油蟹(单只海葵的样子)":"/roco-pet-avatars-id/3743.png","火红尾(异色)":"/roco-pet-avatars-id/3744_1.png","火红尾":"/roco-pet-avatars-id/3744.png","雅丹鬃(异色)":"/roco-pet-avatars-id/3745_1.png","雅丹鬃":"/roco-pet-avatars-id/3745.png","睡铃雪影娃娃":"/roco-pet-avatars-id/3746.png","莫比乌乌":"/roco-pet-avatars-id/3747.png","克莱因龙":"/roco-pet-avatars-id/3748.png","森豆丁":"/roco-pet-avatars-id/3749.png","森蛮人":"/roco-pet-avatars-id/3750.png","森巨人":"/roco-pet-avatars-id/3751.png","叮叮卯":"/roco-pet-avatars-id/3752.png","飞飞钥":"/roco-pet-avatars-id/3753.png","火豆丁":"/roco-pet-avatars-id/3754.png","火蛮人":"/roco-pet-avatars-id/3755.png","火巨人":"/roco-pet-avatars-id/3756.png","点点":"/roco-pet-avatars-id/3757.png","珀尔鼬":"/roco-pet-avatars-id/3758.png","苞米仔(异色)":"/roco-pet-avatars-id/3759_1.png","苞米仔":"/roco-pet-avatars-id/3759.png","炮米花(异色)":"/roco-pet-avatars-id/3760_1.png","炮米花":"/roco-pet-avatars-id/3760.png","诅咒狼灵":"/roco-pet-avatars-id/3761.png","琉璃君主":"/roco-pet-avatars-id/4094.png","古齿帝牙":"/roco-pet-avatars-id/4100.png","卷发巨獭":"/roco-pet-avatars-id/4103.png","钻石蜗(西瓜碧玺)":"/roco-pet-avatars-id/5001.png","彩虹独角兽(异色)":"/roco-pet-avatars-id/5002_1.png","彩虹独角兽":"/roco-pet-avatars-id/5002.png","叶冕魔力猫":"/roco-pet-avatars-id/5003.png","蹦蹦果(海神球)":"/roco-pet-avatars-id/5004.png","奇丽果(异色)":"/roco-pet-avatars-id/5005_1.png","奇丽果":"/roco-pet-avatars-id/5005.png","鸭吉吉国王(蓬松)":"/roco-pet-avatars-id/5006.png","黑猫密探":"/roco-pet-avatars-id/5007.png","迷嶂布莱克":"/roco-pet-avatars-id/5008.png","祭礼巨像":"/roco-pet-avatars-id/5009.png","圣水守护":"/roco-pet-avatars-id/5010.png","神谕鲨":"/roco-pet-avatars-id/5011.png","千棘海针(异色)":"/roco-pet-avatars-id/5012_1.png","千棘海针":"/roco-pet-avatars-id/5012.png","雪影冰灵(异色)":"/roco-pet-avatars-id/5013_1.png","雪影冰灵":"/roco-pet-avatars-id/5013.png","霜翼领主(冬)":"/roco-pet-avatars-id/5014.png","女王蜂":"/roco-pet-avatars-id/5015.png","恶魔狼王(异色)":"/roco-pet-avatars-id/5016_1.png","恶魔狼王":"/roco-pet-avatars-id/5016.png","烈火战神":"/roco-pet-avatars-id/5017.png","风暴战犬":"/roco-pet-avatars-id/5018.png","幻影荆棘(异色)":"/roco-pet-avatars-id/5019_1.png","幻影荆棘":"/roco-pet-avatars-id/5019.png","波普鹿":"/roco-pet-avatars-id/5020.png","圣剑骑士":"/roco-pet-avatars-id/5021.png","伊兰龙":"/roco-pet-avatars-id/5022.png","棋契陛下(白棋骑士)":"/roco-pet-avatars-id/5023.png","奇梦咪(异色)":"/roco-pet-avatars-id/5024_1.png","奇梦咪":"/roco-pet-avatars-id/5024.png","霜翼领主(春)":"/roco-pet-avatars-id/5030.png","霜翼领主(夏)":"/roco-pet-avatars-id/5031.png","霜翼领主(秋)":"/roco-pet-avatars-id/5032.png","蹦蹦果(彩玉球)":"/roco-pet-avatars-id/5033.png","蹦蹦果(短毛球)":"/roco-pet-avatars-id/5034.png","蹦蹦果(象牙球)":"/roco-pet-avatars-id/5035.png","鸭吉吉国王(紧实)":"/roco-pet-avatars-id/5036.png","鸭吉吉国王(急急急)":"/roco-pet-avatars-id/5037.png","鸭吉吉国王(等一等)":"/roco-pet-avatars-id/5038.png","鸭吉吉国王(燃了鸭)":"/roco-pet-avatars-id/5039.png","棋契陛下(白棋绮后)":"/roco-pet-avatars-id/5040.png","棋契陛下(白棋齐垒)":"/roco-pet-avatars-id/5041.png","棋契陛下(白棋祈督)":"/roco-pet-avatars-id/5042.png","棋契陛下(黑棋骑士)":"/roco-pet-avatars-id/5043.png","棋契陛下(黑棋绮后)":"/roco-pet-avatars-id/5044.png","棋契陛下(黑棋齐垒)":"/roco-pet-avatars-id/5045.png","棋契陛下(黑棋祈督)":"/roco-pet-avatars-id/5046.png","钻石蜗(莲花刚玉)":"/roco-pet-avatars-id/5047.png","钻石蜗(星彩榴石)":"/roco-pet-avatars-id/5048.png","钻石蜗(火山琉璃)":"/roco-pet-avatars-id/5049.png","钻石蜗(蓝锥矿)":"/roco-pet-avatars-id/5050.png","钻石蜗(烧蓝黄金)":"/roco-pet-avatars-id/5051.png","鸭吉吉国王(起来鸭)":"/roco-pet-avatars-id/5052.png","深渊罗隐":"/roco-pet-avatars-id/5053.png","高帽鹬者(异色)":"/roco-pet-avatars-id/5054_1.png","高帽鹬者":"/roco-pet-avatars-id/5054.png","恶魔男爵(异色)":"/roco-pet-avatars-id/5055_1.png","恶魔男爵":"/roco-pet-avatars-id/5055.png","暮风隐者(金黄的样子)":"/roco-pet-avatars-id/5056.png","淤泥乌泽":"/roco-pet-avatars-id/5057.png","暗夜颅主(异色)":"/roco-pet-avatars-id/5059_1.png","暗夜颅主":"/roco-pet-avatars-id/5059.png","风暴酷拉(异色)":"/roco-pet-avatars-id/5060_1.png","风暴酷拉":"/roco-pet-avatars-id/5060.png","武斗酷猫":"/roco-pet-avatars-id/5061.png","暮风隐者(枯叶的样子)":"/roco-pet-avatars-id/5062.png","恶魔叮（异色）":"/roco-pet-avatars-id/3010_1.png","恶魔狼（异色）":"/roco-pet-avatars-id/3011_1.png","鸭吉吉（蓬松的样子）":"/roco-pet-avatars-id/3012.png","蹦蹦种子（海神球形态）":"/roco-pet-avatars-id/3017.png","蹦蹦草（海神球形态）":"/roco-pet-avatars-id/3018.png","蹦蹦花（海神球形态）":"/roco-pet-avatars-id/3019.png","地鼠（枯水期的样子）（异色）":"/roco-pet-avatars-id/3020_1.png","地鼠（枯水期的样子）(异色)":"/roco-pet-avatars-id/3020_1.png","地鼠（枯水期的样子）":"/roco-pet-avatars-id/3020.png","遁鼠（枯水期的样子）（异色）":"/roco-pet-avatars-id/3021_1.png","遁鼠（枯水期的样子）(异色)":"/roco-pet-avatars-id/3021_1.png","遁鼠（枯水期的样子）":"/roco-pet-avatars-id/3021.png","遁地鼠(枯水期的样子）（异色）":"/roco-pet-avatars-id/3022_1.png","遁地鼠(枯水期的样子）(异色)":"/roco-pet-avatars-id/3022_1.png","遁地鼠(枯水期的样子）":"/roco-pet-avatars-id/3022.png","冬羽雀（本来的样子）":"/roco-pet-avatars-id/3028.png","奇丽草（异色）":"/roco-pet-avatars-id/3029_1.png","奇丽叶（异色）":"/roco-pet-avatars-id/3030_1.png","奇丽花（异色）":"/roco-pet-avatars-id/3031_1.png","鸭吉吉（紧实的样子）":"/roco-pet-avatars-id/3036.png","岚鸟（本来的样子）":"/roco-pet-avatars-id/3037.png","叮叮恶魔（异色）":"/roco-pet-avatars-id/3039_1.png","丢丢（草地附近的样子）":"/roco-pet-avatars-id/3040.png","卡卡虫（草地附近的样子）":"/roco-pet-avatars-id/3041.png","卡瓦重（草地附近的样子）":"/roco-pet-avatars-id/3042.png","伊贝儿（异色）":"/roco-pet-avatars-id/3043_1.png","伊贝粉粉（异色）":"/roco-pet-avatars-id/3044_1.png","板板壳（本来的样子）":"/roco-pet-avatars-id/3055.png","咔咔壳（本来的样子）":"/roco-pet-avatars-id/3056.png","水泡壳（本来的样子）":"/roco-pet-avatars-id/3057.png","暗影灵面（睁眼的样子）":"/roco-pet-avatars-id/3061.png","小独角兽（异色）":"/roco-pet-avatars-id/3062_1.png","白金独角兽（异色）":"/roco-pet-avatars-id/3063_1.png","幽影树（异色）":"/roco-pet-avatars-id/3064_1.png","护主犬（异色）":"/roco-pet-avatars-id/3070_1.png","音速犬（异色）":"/roco-pet-avatars-id/3071_1.png","格兰种子（异色）":"/roco-pet-avatars-id/3072_1.png","格兰花（异色）":"/roco-pet-avatars-id/3073_1.png","格兰球（异色）":"/roco-pet-avatars-id/3074_1.png","灵狐（异色）":"/roco-pet-avatars-id/3075_1.png","九尾狐（异色）":"/roco-pet-avatars-id/3076_1.png","尖嘴狐仙（异色）":"/roco-pet-avatars-id/3077_1.png","治愈兔（异色）":"/roco-pet-avatars-id/3081_1.png","红丝绒（异色）":"/roco-pet-avatars-id/3082_1.png","可立鸡（异色）":"/roco-pet-avatars-id/3086_1.png","晕晕鸡（异色）":"/roco-pet-avatars-id/3087_1.png","绅士鸡（异色）":"/roco-pet-avatars-id/3088_1.png","武者鸡（异色）":"/roco-pet-avatars-id/3089_1.png","石肤蜥（本来的样子）":"/roco-pet-avatars-id/3106.png","石刺蜥（本来的样子）":"/roco-pet-avatars-id/3107.png","石冠王蜥（本来的样子）":"/roco-pet-avatars-id/3108.png","大耳帽兜（异色）":"/roco-pet-avatars-id/3121_1.png","帽兜娃娃（异色）":"/roco-pet-avatars-id/3122_1.png","雪影娃娃（异色）":"/roco-pet-avatars-id/3123_1.png","小狮鹫（崖间地的样子）":"/roco-pet-avatars-id/3127.png","神圣狮鹫（崖间地的样子）":"/roco-pet-avatars-id/3128.png","皇家狮鹫（崖间地的样子）":"/roco-pet-avatars-id/3129.png","化蝶（平常的样子）":"/roco-pet-avatars-id/3138.png","小草虫（异色）":"/roco-pet-avatars-id/3139_1.png","草衣虫（异色）":"/roco-pet-avatars-id/3140_1.png","花衣蝶（异色）":"/roco-pet-avatars-id/3141_1.png","小夜（异色）":"/roco-pet-avatars-id/3142_1.png","紫夜（异色）":"/roco-pet-avatars-id/3143_1.png","朔夜伊芙（异色）":"/roco-pet-avatars-id/3144_1.png","空空颅（异色）":"/roco-pet-avatars-id/3148_1.png","夜宿颅（异色）":"/roco-pet-avatars-id/3149_1.png","夜枭（异色）":"/roco-pet-avatars-id/3150_1.png","拉特（异色）":"/roco-pet-avatars-id/3188_1.png","酷拉（异色）":"/roco-pet-avatars-id/3189_1.png","小星光（异色）":"/roco-pet-avatars-id/3193_1.png","小星光（星光能量的样子）":"/roco-pet-avatars-id/3193.png","星光狮（星光能量的样子）":"/roco-pet-avatars-id/3194.png","粉粉星（异色）":"/roco-pet-avatars-id/3198_1.png","小皮球（异色）":"/roco-pet-avatars-id/3199_1.png","机械方方（异色）":"/roco-pet-avatars-id/3200_1.png","多彩方方（异色）":"/roco-pet-avatars-id/3201_1.png","立方人（异色）":"/roco-pet-avatars-id/3202_1.png","贝瑟（异色）":"/roco-pet-avatars-id/3203_1.png","贝加尔（异色）":"/roco-pet-avatars-id/3204_1.png","贝古斯（异色）":"/roco-pet-avatars-id/3205_1.png","寒音蛇（本来的样子）":"/roco-pet-avatars-id/3226.png","菊花梨（异色）":"/roco-pet-avatars-id/3227_1.png","牵线木偶（异色）":"/roco-pet-avatars-id/3234_1.png","帅帅魔偶（异色）":"/roco-pet-avatars-id/3235_1.png","绒绒（异色）":"/roco-pet-avatars-id/3244_1.png","小绒茧（异色）":"/roco-pet-avatars-id/3245_1.png","绒仙子（异色）":"/roco-pet-avatars-id/3246_1.png","小鹬（异色）":"/roco-pet-avatars-id/3250_1.png","鄙目鹬（异色）":"/roco-pet-avatars-id/3251_1.png","高脚鹬（异色）":"/roco-pet-avatars-id/3252_1.png","呼呼猪（异色）":"/roco-pet-avatars-id/3262_1.png","獠牙猪（异色）":"/roco-pet-avatars-id/3263_1.png","卡波（异色）":"/roco-pet-avatars-id/3264_1.png","卡拉波斯（异色）":"/roco-pet-avatars-id/3265_1.png","雪绒鸟（春天的样子）":"/roco-pet-avatars-id/3279.png","雪绒鸟（夏天的样子）":"/roco-pet-avatars-id/3280.png","雪绒鸟（秋天的样子）":"/roco-pet-avatars-id/3281.png","冬羽雀（秋天的样子）":"/roco-pet-avatars-id/3282.png","冬羽雀（夏天的样子）":"/roco-pet-avatars-id/3283.png","冬羽雀（秋天的样子）_3284":"/roco-pet-avatars-id/3284.png","岚鸟（春天的样子）":"/roco-pet-avatars-id/3285.png","岚鸟（夏天的样子）":"/roco-pet-avatars-id/3286.png","岚鸟（秋天的样子）":"/roco-pet-avatars-id/3287.png","丢丢（火山附近的样子）":"/roco-pet-avatars-id/3288.png","丢丢（沙地附近的样子）":"/roco-pet-avatars-id/3289.png","丢丢（雪山附近的样子）":"/roco-pet-avatars-id/3290.png","卡卡虫（火山附近的样子）":"/roco-pet-avatars-id/3291.png","卡卡虫（沙地附近的样子）":"/roco-pet-avatars-id/3292.png","卡卡虫（雪山附近的样子）":"/roco-pet-avatars-id/3293.png","卡瓦重（火山附近的样子）":"/roco-pet-avatars-id/3294.png","卡瓦重（沙地附近的样子）":"/roco-pet-avatars-id/3295.png","卡瓦重（雪山附近的样子）":"/roco-pet-avatars-id/3296.png","蹦蹦种子（彩玉球形态）":"/roco-pet-avatars-id/3297.png","蹦蹦种子（短毛球形态）":"/roco-pet-avatars-id/3298.png","蹦蹦种子（象牙球形态）":"/roco-pet-avatars-id/3299.png","蹦蹦草（彩玉球形态）":"/roco-pet-avatars-id/3300.png","蹦蹦草（短毛球形态）":"/roco-pet-avatars-id/3301.png","蹦蹦草（象牙球形态）":"/roco-pet-avatars-id/3302.png","蹦蹦花（彩玉球形态）":"/roco-pet-avatars-id/3303.png","蹦蹦花（短毛球形态）":"/roco-pet-avatars-id/3304.png","蹦蹦花（象牙球形态）":"/roco-pet-avatars-id/3305.png","晶石蜗（莲花刚玉的样子）":"/roco-pet-avatars-id/3308.png","犀角鸟（异色）":"/roco-pet-avatars-id/3309_1.png","光纤兽（异色）":"/roco-pet-avatars-id/3310_1.png","疾光千兽（异色）":"/roco-pet-avatars-id/3311_1.png","粉星仔（异色）":"/roco-pet-avatars-id/3319_1.png","粉耳星兔（异色）":"/roco-pet-avatars-id/3320_1.png","海盔虫（本来的样子）（异色）":"/roco-pet-avatars-id/3330_1.png","海盔虫（本来的样子）(异色)":"/roco-pet-avatars-id/3330_1.png","海盔虫（本来的样子）":"/roco-pet-avatars-id/3330.png","刺盔虫（本来的样子）（异色）":"/roco-pet-avatars-id/3331_1.png","刺盔虫（本来的样子）(异色)":"/roco-pet-avatars-id/3331_1.png","刺盔虫（本来的样子）":"/roco-pet-avatars-id/3331.png","千棘盔（本来的样子）（异色）":"/roco-pet-avatars-id/3332_1.png","千棘盔（本来的样子）(异色)":"/roco-pet-avatars-id/3332_1.png","千棘盔（本来的样子）":"/roco-pet-avatars-id/3332.png","红绒十字（异色）":"/roco-pet-avatars-id/3350_1.png","蝴蝶陶陶（异色）":"/roco-pet-avatars-id/3360_1.png","铆钉毛毛（异色）":"/roco-pet-avatars-id/3361_1.png","徘徊爪爪（异色）":"/roco-pet-avatars-id/3362_1.png","嘟嘟煲（异色）":"/roco-pet-avatars-id/3367_1.png","嘟嘟锅（异色）":"/roco-pet-avatars-id/3368_1.png","逗逗（异色）":"/roco-pet-avatars-id/3373_1.png","气球猫（异色）":"/roco-pet-avatars-id/3374_1.png","梦想三三（异色）":"/roco-pet-avatars-id/3375_1.png","旋叶虫（金黄的样子）":"/roco-pet-avatars-id/3376.png","风滚暮虫（金黄的样子）":"/roco-pet-avatars-id/3377.png","双灯鱼（异色）":"/roco-pet-avatars-id/3382_1.png","利灯鱼（异色）":"/roco-pet-avatars-id/3383_1.png","豆丁鱼（异色）":"/roco-pet-avatars-id/3384_1.png","快鳍鱼（异色）":"/roco-pet-avatars-id/3385_1.png","龙鱼（异色）":"/roco-pet-avatars-id/3386_1.png","幽冥眼（睁眼的样子）":"/roco-pet-avatars-id/3405.png","海枝枝（碧蓝珊瑚）":"/roco-pet-avatars-id/3430.png","海枝枝（杏黄百合）":"/roco-pet-avatars-id/3431.png","海枝枝（洋红沙丁）":"/roco-pet-avatars-id/3432.png","海枝枝（翠绿纶布）":"/roco-pet-avatars-id/3433.png","柴渣虫（异色）":"/roco-pet-avatars-id/3436_1.png","燃薪虫（异色）":"/roco-pet-avatars-id/3437_1.png","梦游（穿旧睡衣的样子）":"/roco-pet-avatars-id/3438.png","梦悠悠（穿旧睡衣的样子）":"/roco-pet-avatars-id/3439.png","梦游（穿星星睡衣的样子）":"/roco-pet-avatars-id/3440.png","梦悠悠（穿星星睡衣的样子）":"/roco-pet-avatars-id/3441.png","小星光（月光能量的样子）":"/roco-pet-avatars-id/3442.png","星光狮（月光能量的样子）":"/roco-pet-avatars-id/3443.png","晶石蜗（西瓜碧玺的样子）":"/roco-pet-avatars-id/3448.png","晶石蜗（星彩榴石的样子）":"/roco-pet-avatars-id/3449.png","晶石蜗（火山琉璃的样子）":"/roco-pet-avatars-id/3450.png","晶石蜗（蓝锥矿的样子）":"/roco-pet-avatars-id/3451.png","鸭吉吉（急急急鸭）":"/roco-pet-avatars-id/3452.png","鸭吉吉（等一等鸭）":"/roco-pet-avatars-id/3453.png","地鼠（储水期的样子）（异色）":"/roco-pet-avatars-id/3454_1.png","地鼠（储水期的样子）(异色)":"/roco-pet-avatars-id/3454_1.png","地鼠（储水期的样子）":"/roco-pet-avatars-id/3454.png","遁鼠（储水期的样子）（异色）":"/roco-pet-avatars-id/3455_1.png","遁鼠（储水期的样子）(异色)":"/roco-pet-avatars-id/3455_1.png","遁鼠（储水期的样子）":"/roco-pet-avatars-id/3455.png","遁地鼠（储水期的样子）（异色）":"/roco-pet-avatars-id/3456_1.png","遁地鼠（储水期的样子）(异色)":"/roco-pet-avatars-id/3456_1.png","遁地鼠（储水期的样子）":"/roco-pet-avatars-id/3456.png","月牙雪熊（异色）":"/roco-pet-avatars-id/3457_1.png","圣代甜甜（樱桃草莓口味）":"/roco-pet-avatars-id/3458.png","圣代甜甜（樱桃抹茶口味）":"/roco-pet-avatars-id/3459.png","圣代甜甜（蓝莓巧克力口味）":"/roco-pet-avatars-id/3460.png","圣代甜甜（蓝莓草莓口味）":"/roco-pet-avatars-id/3461.png","圣代甜甜（蓝莓抹茶口味）":"/roco-pet-avatars-id/3462.png","圣代甜甜（杨桃巧克力口味）":"/roco-pet-avatars-id/3463.png","圣代甜甜（杨桃草莓口味）":"/roco-pet-avatars-id/3464.png","圣代甜甜（杨桃抹茶口味）":"/roco-pet-avatars-id/3465.png","小狮鹫（高山地的样子）":"/roco-pet-avatars-id/3467.png","神圣狮鹫（高山地的样子）":"/roco-pet-avatars-id/3468.png","皇家狮鹫（高山地的样子）":"/roco-pet-avatars-id/3469.png","化蝶（幽冥眼的样子）":"/roco-pet-avatars-id/3470.png","化蝶（喵喵的样子）":"/roco-pet-avatars-id/3471.png","化蝶（奇丽花的样子）":"/roco-pet-avatars-id/3472.png","海盔虫（磨损的样子）（异色）":"/roco-pet-avatars-id/3475_1.png","海盔虫（磨损的样子）(异色)":"/roco-pet-avatars-id/3475_1.png","海盔虫（磨损的样子）":"/roco-pet-avatars-id/3475.png","刺盔虫（磨损的样子）（异色）":"/roco-pet-avatars-id/3476_1.png","刺盔虫（磨损的样子）(异色)":"/roco-pet-avatars-id/3476_1.png","刺盔虫（磨损的样子）":"/roco-pet-avatars-id/3476.png","千棘盔（磨损的样子）（异色）":"/roco-pet-avatars-id/3477_1.png","千棘盔（磨损的样子）(异色)":"/roco-pet-avatars-id/3477_1.png","千棘盔（磨损的样子）":"/roco-pet-avatars-id/3477.png","香草甜甜（杨桃饰品）":"/roco-pet-avatars-id/3478.png","香草甜甜（蓝莓饰品）":"/roco-pet-avatars-id/3479.png","暗影灵面（闭眼的样子）":"/roco-pet-avatars-id/3481.png","幽冥眼（闭眼的样子）":"/roco-pet-avatars-id/3482.png","蓬叶虫（金黄的样子）":"/roco-pet-avatars-id/3483.png","落陨星兔（异色）":"/roco-pet-avatars-id/3485_1.png","晶石蜗（烧蓝黄金的样子）":"/roco-pet-avatars-id/3486.png","小丑豆豆（异色）":"/roco-pet-avatars-id/3487_1.png","小丑兔（异色）":"/roco-pet-avatars-id/3488_1.png","小丑公爵（异色）":"/roco-pet-avatars-id/3489_1.png","鸭吉吉（燃了鸭）":"/roco-pet-avatars-id/3495.png","旋叶虫（枯叶的样子）":"/roco-pet-avatars-id/3496.png","蓬叶虫（枯叶的样子）":"/roco-pet-avatars-id/3497.png","风滚暮虫（枯叶的样子）":"/roco-pet-avatars-id/3498.png","公平鸽（异色）":"/roco-pet-avatars-id/3499_1.png","石肤蜥（球球尾巴的样子）":"/roco-pet-avatars-id/3500.png","石刺蜥（球球尾巴的样子）":"/roco-pet-avatars-id/3501.png","石冠王蜥（球球尾巴的样子）":"/roco-pet-avatars-id/3502.png","波波螺（被污染的样子）":"/roco-pet-avatars-id/3511.png","消波螺（被污染的样子）":"/roco-pet-avatars-id/3512.png","嗜波螺（被污染的样子）":"/roco-pet-avatars-id/3513.png","板板壳（蜕皮的样子）":"/roco-pet-avatars-id/3516.png","咔咔壳（蜕皮的样子）":"/roco-pet-avatars-id/3517.png","水泡壳（蜕皮的样子）":"/roco-pet-avatars-id/3518.png","阿瓦鲨（黄色的样子）":"/roco-pet-avatars-id/3524.png","阿瓦鲨（灰色的样子）":"/roco-pet-avatars-id/3525.png","小雪人（异色）":"/roco-pet-avatars-id/3531_1.png","雪怪（异色）":"/roco-pet-avatars-id/3532_1.png","雪绒鸟（秋天的样子）_3533":"/roco-pet-avatars-id/3533.png","斑斑（异色）":"/roco-pet-avatars-id/3534_1.png","斑枭（异色）":"/roco-pet-avatars-id/3535_1.png","乌达（极昼的样子）":"/roco-pet-avatars-id/3536.png","迷你乌（极昼的样子）":"/roco-pet-avatars-id/3537.png","乌拉塔（极昼的样子）":"/roco-pet-avatars-id/3538.png","乌达（极夜的样子）":"/roco-pet-avatars-id/3539.png","迷你乌（极夜的样子）":"/roco-pet-avatars-id/3540.png","乌拉塔（极夜的样子）":"/roco-pet-avatars-id/3541.png","棋棋（白子）":"/roco-pet-avatars-id/3550.png","棋骑士（白子）":"/roco-pet-avatars-id/3551.png","棋绮后（白子）":"/roco-pet-avatars-id/3552.png","棋齐垒（白子）":"/roco-pet-avatars-id/3553.png","棋祈督（白子）":"/roco-pet-avatars-id/3554.png","棋棋（黑子）":"/roco-pet-avatars-id/3555.png","棋骑士（黑子）":"/roco-pet-avatars-id/3556.png","棋绮后（黑子）":"/roco-pet-avatars-id/3557.png","棋齐垒（黑子）":"/roco-pet-avatars-id/3558.png","棋祈督（黑子）":"/roco-pet-avatars-id/3559.png","栗鼠（异色）":"/roco-pet-avatars-id/3565_1.png","壳栗丝鼠（异色）":"/roco-pet-avatars-id/3566_1.png","爆焰仔（异色）":"/roco-pet-avatars-id/3572_1.png","爆焰喷喷（异色）":"/roco-pet-avatars-id/3573_1.png","刺轮砣（下弦的样子）":"/roco-pet-avatars-id/3582.png","月亮砣（下弦的样子）":"/roco-pet-avatars-id/3583.png","刺轮砣（上弦的样子）":"/roco-pet-avatars-id/3584.png","月亮砣（上弦的样子）":"/roco-pet-avatars-id/3585.png","十字蝌蚪（异色）":"/roco-pet-avatars-id/3591_1.png","十字蛙（异色）":"/roco-pet-avatars-id/3592_1.png","深渊蛙（异色）":"/roco-pet-avatars-id/3593_1.png","嗜光嗡嗡（异色）":"/roco-pet-avatars-id/3614_1.png","窃光蚊（异色）":"/roco-pet-avatars-id/3615_1.png","寒音蛇（新春的样子）":"/roco-pet-avatars-id/3622.png","加油海葵（异色）":"/roco-pet-avatars-id/3659_1.png","加油蟹（异色）":"/roco-pet-avatars-id/3660_1.png","守夜烛（异色）":"/roco-pet-avatars-id/3675_1.png","流明坎德拉（异色）":"/roco-pet-avatars-id/3676_1.png","烟花团（异色）":"/roco-pet-avatars-id/3677_1.png","烟花伯爵（异色）":"/roco-pet-avatars-id/3678_1.png","咕咕帽（异色）":"/roco-pet-avatars-id/3683_1.png","咕德帽帽（异色）":"/roco-pet-avatars-id/3684_1.png","稻草人（异色）":"/roco-pet-avatars-id/3697_1.png","稻草守护者（异色）":"/roco-pet-avatars-id/3698_1.png","蜜果骸（异色）":"/roco-pet-avatars-id/3706_1.png","半朽蜜果灵（异色）":"/roco-pet-avatars-id/3707_1.png","小鼓象（异色）":"/roco-pet-avatars-id/3708_1.png","巨鼓象（异色）":"/roco-pet-avatars-id/3709_1.png","咬咬小子（异色）":"/roco-pet-avatars-id/3710_1.png","胡桃王子（异色）":"/roco-pet-avatars-id/3711_1.png","足尖元件（异色）":"/roco-pet-avatars-id/3718_1.png","离心舞者（异色）":"/roco-pet-avatars-id/3719_1.png","松仔（黑暗的样子）":"/roco-pet-avatars-id/3720.png","松叶羊（黑暗的样子）":"/roco-pet-avatars-id/3721.png","针叶巡林（黑暗的样子）":"/roco-pet-avatars-id/3722.png","水滴蛇（黑暗的样子）":"/roco-pet-avatars-id/3723.png","水蛇锁（黑暗的样子）":"/roco-pet-avatars-id/3724.png","游蛇魔使（黑暗的样子）":"/roco-pet-avatars-id/3725.png","小勇狮（黑暗的样子）":"/roco-pet-avatars-id/3726.png","炽焰狮（黑暗的样子）":"/roco-pet-avatars-id/3727.png","炽心勇狮（黑暗的样子）":"/roco-pet-avatars-id/3728.png","猴麦仔（异色）":"/roco-pet-avatars-id/3729_1.png","音碟吼（异色）":"/roco-pet-avatars-id/3730_1.png","炫光迪迪（异色）":"/roco-pet-avatars-id/3736_1.png","霹雳迪迪（异色）":"/roco-pet-avatars-id/3737_1.png","鸭吉吉（起来鸭）":"/roco-pet-avatars-id/3742.png","加油蟹单只海葵的样子（异色）":"/roco-pet-avatars-id/3743_1.png","加油蟹（单只海葵的样子）":"/roco-pet-avatars-id/3743.png","火红尾（异色）":"/roco-pet-avatars-id/3744_1.png","雅丹鬃（异色）":"/roco-pet-avatars-id/3745_1.png","炮米花（异色）":"/roco-pet-avatars-id/3760_1.png","苞米仔（异色）":"/roco-pet-avatars-id/3759_1.png","钻石蜗（西瓜碧玺）":"/roco-pet-avatars-id/5001.png","彩虹独角兽（异色）":"/roco-pet-avatars-id/5002_1.png","蹦蹦果（海神球）":"/roco-pet-avatars-id/5004.png","奇丽果（异色）":"/roco-pet-avatars-id/5005_1.png","千棘海针（异色）":"/roco-pet-avatars-id/5012_1.png","雪影冰灵（异色）":"/roco-pet-avatars-id/5013_1.png","霜翼领主（冬）":"/roco-pet-avatars-id/5014.png","恶魔狼王（异色）":"/roco-pet-avatars-id/5016_1.png","幻影荆棘（异色）":"/roco-pet-avatars-id/5019_1.png","棋契陛下（白棋骑士)":"/roco-pet-avatars-id/5023.png","奇梦咪（异色）":"/roco-pet-avatars-id/5024_1.png","霜翼领主（春）":"/roco-pet-avatars-id/5030.png","霜翼领主（夏）":"/roco-pet-avatars-id/5031.png","霜翼领主（秋）":"/roco-pet-avatars-id/5032.png","蹦蹦果（彩玉球）":"/roco-pet-avatars-id/5033.png","蹦蹦果（短毛球）":"/roco-pet-avatars-id/5034.png","蹦蹦果（象牙球）":"/roco-pet-avatars-id/5035.png","棋契陛下（白棋绮后)":"/roco-pet-avatars-id/5040.png","棋契陛下（白棋齐垒)":"/roco-pet-avatars-id/5041.png","棋契陛下（白棋祈督)":"/roco-pet-avatars-id/5042.png","棋契陛下（黑棋骑士)":"/roco-pet-avatars-id/5043.png","棋契陛下（黑棋绮后)":"/roco-pet-avatars-id/5044.png","棋契陛下（黑棋齐垒)":"/roco-pet-avatars-id/5045.png","棋契陛下（黑棋祈督)":"/roco-pet-avatars-id/5046.png","钻石蜗（莲花刚玉）":"/roco-pet-avatars-id/5047.png","钻石蜗（星彩榴石）":"/roco-pet-avatars-id/5048.png","钻石蜗（火山琉璃）":"/roco-pet-avatars-id/5049.png","钻石蜗（蓝锥矿）":"/roco-pet-avatars-id/5050.png","钻石蜗（烧蓝黄金）":"/roco-pet-avatars-id/5051.png","高帽鹬者（异色）":"/roco-pet-avatars-id/5054_1.png","恶魔男爵（异色）":"/roco-pet-avatars-id/5055_1.png","暮风隐者（金黄的样子）":"/roco-pet-avatars-id/5056.png","暗夜颅主（异色）":"/roco-pet-avatars-id/5059_1.png","风暴酷拉（异色）":"/roco-pet-avatars-id/5060_1.png","暮风隐者（枯叶的样子）":"/roco-pet-avatars-id/5062.png","星星眼":"/roco-pet-avatars-id/3236.png","未完虫":"/roco-pet-avatars-id/3542.png","热团团":"/roco-pet-avatars-id/3574.png","焰米龙":"/roco-pet-avatars-id/3575.png","圣凯布米龙":"/roco-pet-avatars-id/3576.png","玳龟":"/roco-pet-avatars-id/3589.png","玳塔":"/roco-pet-avatars-id/3590.png","量风碗":"/roco-pet-avatars-id/3663.png","测风蝉":"/roco-pet-avatars-id/3664.png","新月狼灵":"/roco-pet-avatars-id/3762.png","银月狼王":"/roco-pet-avatars-id/3763.png","新月鹭":"/roco-pet-avatars-id/3764.png","月辉鹭":"/roco-pet-avatars-id/3765.png","月使鹭纳":"/roco-pet-avatars-id/3766.png","章脑丸":"/roco-pet-avatars-id/3767.png","智辉章脑":"/roco-pet-avatars-id/3768.png","小浣蛋":"/roco-pet-avatars-id/3771.png","黑手浣熊":"/roco-pet-avatars-id/3772.png","幽铃":"/roco-pet-avatars-id/3773.png","摇铃魔偶":"/roco-pet-avatars-id/3774.png","布灵":"/roco-pet-avatars-id/3775.png","布灵布灵":"/roco-pet-avatars-id/3776.png","果实立方人":"/roco-pet-avatars-id/3796.png","幻影灵菇（异色）":"/roco-pet-avatars-id/3147_1.png","幻影灵菇(异色)":"/roco-pet-avatars-id/3147_1.png","小帕尔（异色）":"/roco-pet-avatars-id/3180_1.png","小帕尔(异色)":"/roco-pet-avatars-id/3180_1.png","帕尔萨斯（异色）":"/roco-pet-avatars-id/3181_1.png","帕尔萨斯(异色)":"/roco-pet-avatars-id/3181_1.png","龙息帕尔（异色）":"/roco-pet-avatars-id/3182_1.png","龙息帕尔(异色)":"/roco-pet-avatars-id/3182_1.png","瑰眼仔（异色）":"/roco-pet-avatars-id/3183_1.png","瑰眼仔(异色)":"/roco-pet-avatars-id/3183_1.png","耳翎瑰魅（异色）":"/roco-pet-avatars-id/3184_1.png","耳翎瑰魅(异色)":"/roco-pet-avatars-id/3184_1.png","邪眼巨魔（异色）":"/roco-pet-avatars-id/3185_1.png","邪眼巨魔(异色)":"/roco-pet-avatars-id/3185_1.png","星星眼（异色）":"/roco-pet-avatars-id/3236_1.png","星星眼(异色)":"/roco-pet-avatars-id/3236_1.png","觅觅蝠（异色）":"/roco-pet-avatars-id/3321_1.png","觅觅蝠(异色)":"/roco-pet-avatars-id/3321_1.png","翻翻蝠（异色）":"/roco-pet-avatars-id/3322_1.png","翻翻蝠(异色)":"/roco-pet-avatars-id/3322_1.png","夜游魔（异色）":"/roco-pet-avatars-id/3323_1.png","夜游魔(异色)":"/roco-pet-avatars-id/3323_1.png","芽眼魔（异色）":"/roco-pet-avatars-id/3347_1.png","芽眼魔(异色)":"/roco-pet-avatars-id/3347_1.png","叶眼魔（异色）":"/roco-pet-avatars-id/3348_1.png","叶眼魔(异色)":"/roco-pet-avatars-id/3348_1.png","障眼魔（异色）":"/roco-pet-avatars-id/3349_1.png","障眼魔(异色)":"/roco-pet-avatars-id/3349_1.png","未完虫（异色）":"/roco-pet-avatars-id/3542_1.png","未完虫(异色)":"/roco-pet-avatars-id/3542_1.png","小黑猫（异色）":"/roco-pet-avatars-id/3568_1.png","小黑猫(异色)":"/roco-pet-avatars-id/3568_1.png","黑猫巫师（异色）":"/roco-pet-avatars-id/3569_1.png","黑猫巫师(异色)":"/roco-pet-avatars-id/3569_1.png","热团团（异色）":"/roco-pet-avatars-id/3574_1.png","热团团(异色)":"/roco-pet-avatars-id/3574_1.png","焰米龙（异色）":"/roco-pet-avatars-id/3575_1.png","焰米龙(异色)":"/roco-pet-avatars-id/3575_1.png","圣凯布米龙（异色）":"/roco-pet-avatars-id/3576_1.png","圣凯布米龙(异色)":"/roco-pet-avatars-id/3576_1.png","刺轮砣（异色）":"/roco-pet-avatars-id/3582_1.png","刺轮砣(异色)":"/roco-pet-avatars-id/3582_1.png","月亮砣（异色）":"/roco-pet-avatars-id/3583_1.png","月亮砣(异色)":"/roco-pet-avatars-id/3583_1.png","玳龟（异色）":"/roco-pet-avatars-id/3589_1.png","玳龟(异色)":"/roco-pet-avatars-id/3589_1.png","玳塔（异色）":"/roco-pet-avatars-id/3590_1.png","玳塔(异色)":"/roco-pet-avatars-id/3590_1.png","量风碗（异色）":"/roco-pet-avatars-id/3663_1.png","量风碗(异色)":"/roco-pet-avatars-id/3663_1.png","测风蝉（异色）":"/roco-pet-avatars-id/3664_1.png","测风蝉(异色)":"/roco-pet-avatars-id/3664_1.png","叮叮卯（异色）":"/roco-pet-avatars-id/3752_1.png","叮叮卯(异色)":"/roco-pet-avatars-id/3752_1.png","飞飞钥（异色）":"/roco-pet-avatars-id/3753_1.png","飞飞钥(异色)":"/roco-pet-avatars-id/3753_1.png","新月鹭（异色）":"/roco-pet-avatars-id/3764_1.png","新月鹭(异色)":"/roco-pet-avatars-id/3764_1.png","月辉鹭（异色）":"/roco-pet-avatars-id/3765_1.png","月辉鹭(异色)":"/roco-pet-avatars-id/3765_1.png","月使鹭纳（异色）":"/roco-pet-avatars-id/3766_1.png","月使鹭纳(异色)":"/roco-pet-avatars-id/3766_1.png","章脑丸（异色）":"/roco-pet-avatars-id/3767_1.png","章脑丸(异色)":"/roco-pet-avatars-id/3767_1.png","智辉章脑（异色）":"/roco-pet-avatars-id/3768_1.png","智辉章脑(异色)":"/roco-pet-avatars-id/3768_1.png","小浣蛋（异色）":"/roco-pet-avatars-id/3771_1.png","小浣蛋(异色)":"/roco-pet-avatars-id/3771_1.png","黑手浣熊（异色）":"/roco-pet-avatars-id/3772_1.png","黑手浣熊(异色)":"/roco-pet-avatars-id/3772_1.png","幽铃（异色）":"/roco-pet-avatars-id/3773_1.png","幽铃(异色)":"/roco-pet-avatars-id/3773_1.png","摇铃魔偶（异色）":"/roco-pet-avatars-id/3774_1.png","摇铃魔偶(异色)":"/roco-pet-avatars-id/3774_1.png","布灵（异色）":"/roco-pet-avatars-id/3775_1.png","布灵(异色)":"/roco-pet-avatars-id/3775_1.png","布灵布灵（异色）":"/roco-pet-avatars-id/3776_1.png","布灵布灵(异色)":"/roco-pet-avatars-id/3776_1.png","黑猫密探（异色）":"/roco-pet-avatars-id/5007_1.png","黑猫密探(异色)":"/roco-pet-avatars-id/5007_1.png"};
+
+    function avatarCandidates(name, entry = null) {
+      const clean = cleanName(name);
+      if (!clean) return [];
+      const normalized = clean
+        .trim()
+        .replace(/（/g, "(")
+        .replace(/）/g, ")")
+        .replace(/[－—]/g, "-")
+        .replace(/\s+/g, "");
+      const candidates = [];
+      if (petAvatarByName[normalized]) candidates.push(petAvatarByName[normalized]);
+      for (const rawId of [
+        entry?.iconId, entry?.icon_id, entry?.monster?.iconId, entry?.monster?.icon_id,
+        entry?.monsterId, entry?.monster_id, entry?.id, entry?.baseConfId,
+        entry?.base_conf_id, entry?.petBaseId, entry?.petbase_id, entry?.petId, entry?.pet_id
+      ]) {
+        const id = String(rawId ?? "").trim();
+        if (/^\d+(?:_1)?$/.test(id)) {
+          candidates.push(`/roco-pet-avatars-id/${encodeURIComponent(id)}.png`);
+        }
+      }
+      return [...new Set(candidates)];
+    }
+
+    function setAvatar(region, side, name, entry = null) {
+      const img = region.querySelector('[data-role="avatar"]');
+      const fallback = region.querySelector('[data-role="fallback"]');
+      if (!name) {
+        img.hidden = true;
+        fallback.hidden = false;
+        fallback.textContent = "?";
+        lastAvatarNames[side] = "";
+        return;
+      }
+      fallback.textContent = name.slice(0, 1);
+      if (lastAvatarNames[side] === name && !img.hidden) return;
+      lastAvatarNames[side] = name;
+      const candidates = avatarCandidates(name, entry);
+      let index = 0;
+      img.onerror = () => {
+        index += 1;
+        if (index < candidates.length) {
+          img.src = candidates[index];
+          return;
+        }
+        img.hidden = true;
+        fallback.hidden = false;
+      };
+      img.onload = () => {
+        fallback.hidden = true;
+        img.hidden = false;
+      };
+      img.alt = name;
+      fallback.hidden = false;
+      img.hidden = true;
+      img.src = candidates[0] || "";
+    }
+
+    function setMiniAvatar(img, name, entry = null) {
+      const candidates = avatarCandidates(name, entry);
+      let index = 0;
+      img.hidden = true;
+      img.alt = name || "";
+      img.onerror = () => {
+        index += 1;
+        if (index < candidates.length) {
+          img.src = candidates[index];
+          return;
+        }
+        img.hidden = true;
+      };
+      img.onload = () => {
+        img.hidden = false;
+      };
+      img.src = candidates[0] || "";
+    }
+
+    function renderBench(region, runtime, state, side, activeName) {
+      const bench = region.querySelector('[data-role="bench"]');
+      const skipIndex = activeIndex(runtime, state, side);
+      const names = teamEntries(runtime, state, side)
+        .map((entry, index) => ({ name: petNameFromEntry(entry), index, entry }))
+        .filter((item) => item.name)
+        .filter((item) => item.index !== skipIndex && item.name !== activeName)
+        .slice(0, 5);
+      const signature = names.map((item) => `${item.index}:${item.name}`).join("|");
+      if (lastBenchSign[side] === signature) return;
+      lastBenchSign[side] = signature;
+      bench.replaceChildren();
+      for (const item of names) {
+        const img = document.createElement("img");
+        img.className = "mini-avatar";
+        setMiniAvatar(img, item.name, item.entry);
+        bench.appendChild(img);
+      }
+    }
+
+    function renderSide(runtime, state, side) {
+      const region = document.querySelector(`[data-side="${side}"]`);
+      const name = currentPetName(runtime, state, side);
+      const entry = activeEntry(runtime, state, side);
+      const stats = statTexts(runtime, state, side, name);
+      for (const [key, value] of Object.entries(stats)) {
+        const host = region.querySelector(`[data-stat="${key}"]`);
+        if (host) host.textContent = value;
+      }
+      renderSkills(region, runtime, state, side, name);
+      setAvatar(region, side, name, entry);
+      renderBench(region, runtime, state, side, name);
+    }
+
+    function renderHud() {
+      refreshSharedDamageIndex();
+      const runtime = readFirst(runtimeKeys);
+      const state = readFirst(stateKeys);
+      renderSide(runtime, state, "my");
+      renderSide(runtime, state, "enemy");
+    }
+
+    function nextId() {
+      return (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now() + Math.random());
+    }
+
+    function sendWindow(method, args = {}) {
+      const host = window.chrome && window.chrome.webview;
+      if (!host) return Promise.resolve(null);
+      const id = nextId();
+      const promise = new Promise((resolve) => {
+        pendingNative.set(id, resolve);
+        window.setTimeout(() => {
+          if (!pendingNative.has(id)) return;
+          pendingNative.delete(id);
+          resolve(null);
+        }, 1000);
+      });
+      host.postMessage({ id, kind: "window", method, args });
+      return promise;
+    }
+
+    if (window.chrome && window.chrome.webview) {
+      window.chrome.webview.addEventListener("message", (event) => {
+        const payload = event.data || {};
+        const resolve = pendingNative.get(payload.id);
+        if (!resolve) return;
+        pendingNative.delete(payload.id);
+        resolve(payload.ok ? payload.value : null);
+      });
+    }
+
+    const hud = document.getElementById("hud");
+    let drag = null;
+
+    hud.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0) return;
+      event.preventDefault();
+      hud.setPointerCapture(event.pointerId);
+      drag = {
+        pointerId: event.pointerId,
+        startScreenX: event.screenX,
+        startScreenY: event.screenY,
+        startX: window.screenX || 0,
+        startY: window.screenY || 0
+      };
+    });
+
+    hud.addEventListener("pointermove", (event) => {
+      if (!drag || event.pointerId !== drag.pointerId || (event.buttons & 1) !== 1) return;
+      const x = drag.startX + event.screenX - drag.startScreenX;
+      const y = drag.startY + event.screenY - drag.startScreenY;
+      sendWindow("setPosition", { x, y });
+    });
+
+    function stopDrag(event) {
+      if (drag && event.pointerId === drag.pointerId) {
+        drag = null;
+      }
+    }
+
+    hud.addEventListener("pointerup", stopDrag);
+    hud.addEventListener("pointercancel", stopDrag);
+    window.addEventListener("storage", renderHud);
+    renderHud();
+    window.setInterval(renderHud, 50);
+  </script>
+</body>
+</html>

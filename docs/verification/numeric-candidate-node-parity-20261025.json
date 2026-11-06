@@ -1,0 +1,14 @@
+{
+  "kind": "Python versus Node evaluation of stated community expressions; not game evidence",
+  "seed": 20261025,
+  "cases": 3200,
+  "per_candidate": 800,
+  "all_final_values_and_selected_intermediates_match": true,
+  "node_version": "v22.15.1",
+  "input_sha256": "6179db6fe14cd27bd223e2fb92c110c3cc364f488b0a073f9875d0fdcef07d41",
+  "javascript_expression_sha256": "67f7c1abdc259754677efc053eabbc698230bc6723a6b2431898b78a8637dbbd",
+  "javascript_expressions": "\nconst fs=require('fs');const rows=JSON.parse(fs.readFileSync(0,'utf8'));\nconst out=rows.map(c=>{const x=c.inputs;\n if(c.candidate_id==='arena_stat60_v1'){\n  let bg=Math.fround(x.base_stat*.01),g=bg+x.raw_iv*.005;\n  let raw=Math.fround((x.stat==='hp'?170:110)*g+(x.stat==='hp'?70:10));\n  let core=Math.round(raw),v=Math.round(core*x.nature_multiplier+(x.stat==='hp'?100:50));\n  return {value:v,trace:{base_growth_f32:bg,growth:g,core_f32:raw,core:core}};\n }\n if(c.candidate_id==='showdown_non_hp_stat60_v1'){\n  let scaled=1.1*(x.base_stat+3*x.display_iv),rounded=Math.round(scaled),core=rounded+10;\n  return {value:Math.round(core*x.nature_multiplier)+50,trace:{scaled_base:scaled,rounded_scaled_base:rounded,core:core}};\n }\n let coeff=37/41, q=x.effective_power*x.multiplier;\n let raw=c.candidate_id==='arena_documented_damage60_v1'?x.attack*x.effective_power*x.multiplier*coeff:x.attack*Math.round(q)*coeff;\n let num=Math.round(raw),div=num/x.defense;\n return {value:Math.floor(div),trace:{numerator_unrounded:raw,numerator_rounded:num,quotient:div}};\n});process.stdout.write(JSON.stringify(out));\n",
+  "python_implementation_sha256": "f7edb90ff9f2ca47d0c355baba7d11e6a34d5da0f28f275354bfbdb6a637d24c",
+  "real_game_calibration_cases": 0,
+  "training_eligible": false
+}

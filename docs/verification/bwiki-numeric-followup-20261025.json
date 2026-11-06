@@ -1,0 +1,221 @@
+{
+  "retrieved_at": "2026-10-24T19:12:04.584584+00:00",
+  "current_catalog_snapshot": "20261025T013619+0800",
+  "engine_modified": false,
+  "current_pvp_calibration_cases_added": 0,
+  "historical_burn_source": {
+    "title": "以燃薪虫灼烧为例解析洛克王国世界伤害计算机制",
+    "url": "https://wiki.biligame.com/rocom/api.php?action=query&prop=revisions&titles=%E4%BB%A5%E7%87%83%E8%96%AA%E8%99%AB%E7%81%BC%E7%83%A7%E4%B8%BA%E4%BE%8B%E8%A7%A3%E6%9E%90%E6%B4%9B%E5%85%8B%E7%8E%8B%E5%9B%BD%E4%B8%96%E7%95%8C%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%88%B6&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&rvstartid=33421&rvlimit=1",
+    "revision_id": 33421,
+    "revision_timestamp": "2026-05-08T11:51:57Z",
+    "raw_path": "data/reference/bwiki-numeric-20261025/burn-study.json",
+    "raw_sha256": "a9538efe94b6ad6b9384dc61dd4864612af030d98659759bb3be8549943f50e2",
+    "content_sha256": "4654f664e0bb370574e9feb7cc48bed91c7e1ed8c7c476dbce3fa97ae73b1cc2"
+  },
+  "burn_candidate": {
+    "source_scope": "BWIKI author PVE study, article date 2026-04-02, revision date 2026-05-08; not current S4 verified",
+    "max_hp_basis_cap": 1000,
+    "damage_per_stack_ratio": {
+      "numerator": 2,
+      "denominator": 100
+    },
+    "end_turn_type_multiplier_applies": "author claim supported by reported boss comparisons",
+    "within_turn_true_damage_scope": "充分燃烧 reported experiment only; do not generalize to every trigger",
+    "remaining_stack_halving": "author claims ceil",
+    "hp_damage_rounding": null,
+    "formal_training_eligible": false
+  },
+  "historical_boss_rows": [
+    {
+      "target_label_in_article": "千棘海针",
+      "author_inferred_max_hp": 4000,
+      "burn_stacks": 10,
+      "within_turn_damage": 0,
+      "end_turn_reported_damage": 80,
+      "author_type_multiplier": 0.5,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 80.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "千棘海针",
+      "author_inferred_max_hp": 4000,
+      "burn_stacks": 30,
+      "within_turn_damage": 600,
+      "end_turn_reported_damage": 240,
+      "author_type_multiplier": 0.5,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 240.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "千棘海针",
+      "author_inferred_max_hp": 4000,
+      "burn_stacks": 90,
+      "within_turn_damage": 1800,
+      "end_turn_reported_damage": 720,
+      "author_type_multiplier": 0.5,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 720.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "绮丽花",
+      "author_inferred_max_hp": 4000,
+      "burn_stacks": 10,
+      "within_turn_damage": 0,
+      "end_turn_reported_damage": 320,
+      "author_type_multiplier": 2,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 320.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "绮丽花",
+      "author_inferred_max_hp": 4000,
+      "burn_stacks": 30,
+      "within_turn_damage": 600,
+      "end_turn_reported_damage": 960,
+      "author_type_multiplier": 2,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 960.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "绮丽花",
+      "author_inferred_max_hp": 4000,
+      "burn_stacks": 90,
+      "within_turn_damage": 1800,
+      "end_turn_reported_damage": 2880,
+      "author_type_multiplier": 2,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 2880.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "圣剑骑士",
+      "author_inferred_max_hp": 4500,
+      "burn_stacks": 10,
+      "within_turn_damage": 0,
+      "end_turn_reported_damage": 320,
+      "author_type_multiplier": 2,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 320.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "圣剑骑士",
+      "author_inferred_max_hp": 4500,
+      "burn_stacks": 30,
+      "within_turn_damage": 600,
+      "end_turn_reported_damage": 960,
+      "author_type_multiplier": 2,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 960.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "圣剑骑士",
+      "author_inferred_max_hp": 4500,
+      "burn_stacks": 90,
+      "within_turn_damage": 1800,
+      "end_turn_reported_damage": 2880,
+      "author_type_multiplier": 2,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 2880.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "恶魔狼王",
+      "author_inferred_max_hp": 5500,
+      "burn_stacks": 10,
+      "within_turn_damage": 0,
+      "end_turn_reported_damage": 160,
+      "author_type_multiplier": 1,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 160.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "恶魔狼王",
+      "author_inferred_max_hp": 5500,
+      "burn_stacks": 30,
+      "within_turn_damage": 600,
+      "end_turn_reported_damage": 480,
+      "author_type_multiplier": 1,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 480.0,
+      "complete_battle_trace": false
+    },
+    {
+      "target_label_in_article": "恶魔狼王",
+      "author_inferred_max_hp": 5500,
+      "burn_stacks": 90,
+      "within_turn_damage": 1800,
+      "end_turn_reported_damage": 1440,
+      "author_type_multiplier": 1,
+      "author_boss_end_turn_reduction": 0.8,
+      "candidate_end_turn_unrounded": 1440.0,
+      "complete_battle_trace": false
+    }
+  ],
+  "arithmetic_check": {
+    "reported_rows": 12,
+    "matched_candidate_values": 12,
+    "scope": "arithmetic only; not independent real game replay",
+    "reported_damage_is_actual_hp_delta": false,
+    "overkill_note": "Reported table damage can exceed remaining HP; preserve as reported damage, not actual integer HP removed."
+  },
+  "speed_candidate": {
+    "title": "PVP一速榜",
+    "url": "https://wiki.biligame.com/rocom/index.php?title=PVP一速榜&oldid=29807",
+    "revision_id": 29807,
+    "article_date": "2026-04-15",
+    "formula": "(1.1 * (base_speed + 3 * individual_value) + 10) * nature_modifier + effort_value + trait_modifier",
+    "article_defaults": {
+      "individual_value": 10,
+      "speed_increasing_nature_modifier": 1.2,
+      "effort_value": 50
+    },
+    "raw_response_archived": false,
+    "raw_archive_failure": "HTTP 567 for both revisions API and raw content endpoint; page text obtained through web tool",
+    "damage_or_other_stat_formula": null,
+    "rounding": null,
+    "current_s4_verified": false
+  },
+  "searches": [
+    {
+      "site": "nrc",
+      "term": "公式",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%85%AC%E5%BC%8F&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "site": "nrc",
+      "term": "战斗机制",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E6%88%98%E6%96%97%E6%9C%BA%E5%88%B6&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "site": "rocom",
+      "term": "伤害计算",
+      "url": "https://wiki.biligame.com/rocom/api.php?action=query&list=search&srsearch=%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "site": "rocom",
+      "term": "魔力",
+      "url": "https://wiki.biligame.com/rocom/api.php?action=query&list=search&srsearch=%E9%AD%94%E5%8A%9B&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    }
+  ],
+  "unresolved": [
+    "ordinary attack damage formula",
+    "six-stat panel formula and rounding",
+    "ordinary initial energy and cap",
+    "ordinary initial magic and defeat deduction",
+    "same-priority speed and tie rule",
+    "revival and victory timing",
+    "historical burn and speed applicability to S4"
+  ]
+}

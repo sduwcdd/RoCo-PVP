@@ -1,0 +1,236 @@
+{
+  "schema": "reviewed-adjacent-power-1",
+  "snapshot_id": "20261025T013619+0800",
+  "catalog_path": "data/bwiki/20261025T013619+0800/catalog.json",
+  "catalog_file_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "skills": {
+    "7070030": {
+      "record": {
+        "id": 7070030,
+        "wiki_id": "skill_000471",
+        "name": {
+          "zh": "钢钻"
+        },
+        "type": "机械系",
+        "kind": "physical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成物伤，技能威力为两侧技能威力和的三分之一，传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%92%A2%E9%92%BB",
+        "source_module": "Skills",
+        "power": 1,
+        "desc_notes": [
+          1033
+        ]
+      },
+      "record_hash": "24384d3a0e538d450361347860a4577f7e296fe975bb90decfcf1ff8344d1aa5",
+      "component": {
+        "operator": "sum",
+        "base": 0,
+        "divisor": 3
+      },
+      "evidence": {
+        "skill": {
+          "id": 7070030,
+          "name": {
+            "localization_id": 2379,
+            "text": "钢钻"
+          },
+          "desc": {
+            "localization_id": 2380,
+            "text": "造成物伤，技能威力为两侧技能威力和的三分之一，<desc_id=1033>传动</>1。"
+          },
+          "energy_cost": [
+            4
+          ],
+          "damage_rule": 24,
+          "dam_para": [
+            0,
+            1,
+            33
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21150010,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_GZQ_720006",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/720006.720006'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "transmission_buff": {
+          "id": 21150010,
+          "buff_base_ids": [
+            2115001
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "transmission_bases": {
+          "2115001": {
+            "id": 2115001,
+            "buffbase_order": 115,
+            "show_letters": [
+              1
+            ]
+          }
+        },
+        "uncertainties": [
+          "Only proved internal left/right neighbors are selected; edge wrap blocks.",
+          "Current power means same pure history/mechanism/weather/trait/core/mark stage as damage, before hit distribution.",
+          "Exact BWIKI one-third is used under named research policy; current dam_para stores33.",
+          "Difference is absolute magnitude as an explicit research interpretation; source rule24 flag0 has no independently decoded orientation.",
+          "Rational decimal power snapshots are combined then floor once. Recursive, unresolved choice, and unsupported pure source adapters block."
+        ]
+      }
+    },
+    "7070200": {
+      "record": {
+        "id": 7070200,
+        "wiki_id": "skill_000485",
+        "name": {
+          "zh": "六自由度"
+        },
+        "type": "机械系",
+        "kind": "magical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成魔伤，威力额外增加两侧技能威力差的四分之一，传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%85%AD%E8%87%AA%E7%94%B1%E5%BA%A6",
+        "source_module": "Skills",
+        "power": 30,
+        "desc_notes": [
+          1033
+        ]
+      },
+      "record_hash": "3cbb71754d5b2fe5d27272427f038c7725b32678c194b75b42c4f3ecbf6c9399",
+      "component": {
+        "operator": "absolute_difference",
+        "base": 30,
+        "divisor": 4
+      },
+      "evidence": {
+        "skill": {
+          "id": 7070200,
+          "name": {
+            "localization_id": 2424,
+            "text": "六自由度"
+          },
+          "desc": {
+            "localization_id": 2425,
+            "text": "造成魔伤，威力额外增加两侧技能威力差的四分之一，<desc_id=1033>传动</>1。"
+          },
+          "flavor_text": {
+            "localization_id": 2426,
+            "text": "勇敢地走向任何想去的地方吧。"
+          },
+          "energy_cost": [
+            4
+          ],
+          "damage_rule": 24,
+          "dam_para": [
+            30,
+            0,
+            25
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21150010,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_LP_106024",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106024.106024'",
+          "describe_type": [
+            5
+          ]
+        },
+        "transmission_buff": {
+          "id": 21150010,
+          "buff_base_ids": [
+            2115001
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "transmission_bases": {
+          "2115001": {
+            "id": 2115001,
+            "buffbase_order": 115,
+            "show_letters": [
+              1
+            ]
+          }
+        },
+        "uncertainties": [
+          "Only proved internal left/right neighbors are selected; edge wrap blocks.",
+          "Current power means same pure history/mechanism/weather/trait/core/mark stage as damage, before hit distribution.",
+          "Exact BWIKI one-third is used under named research policy; current dam_para stores33.",
+          "Difference is absolute magnitude as an explicit research interpretation; source rule24 flag0 has no independently decoded orientation.",
+          "Rational decimal power snapshots are combined then floor once. Recursive, unresolved choice, and unsupported pure source adapters block."
+        ]
+      }
+    }
+  },
+  "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2"
+}

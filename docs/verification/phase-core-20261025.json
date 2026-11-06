@@ -1,0 +1,30 @@
+{
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "source_snapshot_id": "20261025T013619+0800",
+  "source_snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "related_python_tests_passed": 191,
+  "new_phase_tests_passed": 51,
+  "live_api_case_kind": "synthetic explicit-input protocol test, not real-game calibration",
+  "live_api_result": {
+    "status": "planned",
+    "possible_orders": [
+      [
+        "a",
+        "b"
+      ]
+    ],
+    "battle_executable": false
+  },
+  "full_simulator_completed": false,
+  "training_started": false,
+  "policy_available": false,
+  "source_files": {
+    "lab/switch_rules.py": "dda994d505663622b79342b5995027220171cbce5e987f26c192bd75e68529ea",
+    "lab/action_rules.py": "2a71d449ff75cfe7db697648ad0f64276bacfeb4d92675d1f3b419c2b5ef6284",
+    "lab/turn_plan.py": "1d98f2a0fe3b0907a17fc58a9cdc4c51c59b6a4f405d65c2ea39c32df1d0ef8c",
+    "tests/test_switch_rules.py": "52fbcb8f212bd92d7c5e99d200a82fb8afd5e20c03c8905d3d202bf72522580e",
+    "tests/test_action_rules.py": "ca83cec1ebece55ad73c2a80e060dcc5a3c7174179259b6f081232df74d93231",
+    "tests/test_turn_plan.py": "edbbb848145d5803792026be1ea6ca0826eb641d24992872916dde2296632734"
+  }
+}

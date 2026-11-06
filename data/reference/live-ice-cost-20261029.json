@@ -1,0 +1,717 @@
+{
+  "schema": "live-ice-cost-power-1",
+  "source": {
+    "relay_row": 161566,
+    "battle_id": "90000000000000001",
+    "round": 8,
+    "opponent_marker": 20340060,
+    "marker_layers": 13
+  },
+  "attacker": {
+    "memberId": "my-4",
+    "id": 410253,
+    "iconId": 3259,
+    "petBaseId": 3259,
+    "petId": 5,
+    "rosterIndex": 4,
+    "side": 0,
+    "petName": "冰钻布鲁斯",
+    "name": "冰钻布鲁斯",
+    "level": 60,
+    "currentHp": 187,
+    "hpSource": "battle_attr[25]",
+    "maxHp": 345,
+    "hpPercent": 54,
+    "energy": 6,
+    "maxEnergy": 10,
+    "stats": {
+      "hp": 345,
+      "phyAtk": 204,
+      "magAtk": 90,
+      "phyDef": 185,
+      "magDef": 157,
+      "spd": 192
+    },
+    "initialStats": {
+      "hp": 345,
+      "phyAtk": 204,
+      "magAtk": 90,
+      "phyDef": 185,
+      "magDef": 157,
+      "spd": 192
+    },
+    "battleStats": {
+      "hp": 345,
+      "phyAtk": 235,
+      "magAtk": 86,
+      "phyDef": 185,
+      "magDef": 157,
+      "spd": 192
+    },
+    "battleStatsBasis": "natured_base",
+    "revealedBaseStats": {
+      "hp": 345,
+      "phyAtk": 235,
+      "magAtk": 86,
+      "phyDef": 185,
+      "magDef": 157,
+      "spd": 192
+    },
+    "moves": [
+      {
+        "slot": 1,
+        "skill_id": 7020970,
+        "skillId": 7020970,
+        "skillName": "先发制人",
+        "moveName": "先发制人",
+        "name": "先发制人",
+        "energy_cost": 2,
+        "damage_type": 2,
+        "skill_desc": "造成物理伤害，<desc_id=1020>先手</>+1。",
+        "cd": 0,
+        "state": 1
+      },
+      {
+        "slot": 2,
+        "skill_id": 7020620,
+        "skillId": 7020620,
+        "skillName": "力量增效",
+        "moveName": "力量增效",
+        "name": "力量增效",
+        "energy_cost": 1,
+        "damage_type": 1,
+        "skill_desc": "自己获得物攻+100%。",
+        "cd": 0,
+        "state": 1
+      },
+      {
+        "slot": 3,
+        "skill_id": 7040150,
+        "skillId": 7040150,
+        "skillName": "火焰冲锋",
+        "moveName": "火焰冲锋",
+        "name": "火焰冲锋",
+        "energy_cost": 1,
+        "damage_type": 2,
+        "skill_desc": "对敌方精灵造成物理伤害。",
+        "cd": 0,
+        "state": 1
+      },
+      {
+        "slot": 4,
+        "skill_id": 7090280,
+        "skillId": 7090280,
+        "skillName": "丢冰块",
+        "moveName": "丢冰块",
+        "name": "丢冰块",
+        "energy_cost": 3,
+        "damage_type": 2,
+        "skill_desc": "造成物伤，敌方获得速度-30。",
+        "cd": 0,
+        "state": 1
+      }
+    ],
+    "selectedMoves": [
+      {
+        "slot": 1,
+        "skill_id": 7020970,
+        "skillId": 7020970,
+        "skillName": "先发制人",
+        "moveName": "先发制人",
+        "name": "先发制人",
+        "energy_cost": 2,
+        "damage_type": 2,
+        "skill_desc": "造成物理伤害，<desc_id=1020>先手</>+1。",
+        "cd": 0,
+        "state": 1
+      },
+      {
+        "slot": 2,
+        "skill_id": 7020620,
+        "skillId": 7020620,
+        "skillName": "力量增效",
+        "moveName": "力量增效",
+        "name": "力量增效",
+        "energy_cost": 1,
+        "damage_type": 1,
+        "skill_desc": "自己获得物攻+100%。",
+        "cd": 0,
+        "state": 1
+      },
+      {
+        "slot": 3,
+        "skill_id": 7040150,
+        "skillId": 7040150,
+        "skillName": "火焰冲锋",
+        "moveName": "火焰冲锋",
+        "name": "火焰冲锋",
+        "energy_cost": 1,
+        "damage_type": 2,
+        "skill_desc": "对敌方精灵造成物理伤害。",
+        "cd": 0,
+        "state": 1
+      },
+      {
+        "slot": 4,
+        "skill_id": 7090280,
+        "skillId": 7090280,
+        "skillName": "丢冰块",
+        "moveName": "丢冰块",
+        "name": "丢冰块",
+        "energy_cost": 3,
+        "damage_type": 2,
+        "skill_desc": "造成物伤，敌方获得速度-30。",
+        "cd": 0,
+        "state": 1
+      }
+    ],
+    "slotCount": 4,
+    "buffs": [
+      {
+        "id": 20010824,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": true,
+        "name": ""
+      },
+      {
+        "id": 20030050,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": true,
+        "name": "免疫"
+      },
+      {
+        "id": 20860020,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": true,
+        "name": ""
+      },
+      {
+        "id": 20170880,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": false,
+        "name": ""
+      },
+      {
+        "id": 20920260,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": false,
+        "name": ""
+      },
+      {
+        "id": 20630190,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": false,
+        "name": "冰钻"
+      },
+      {
+        "id": 20730280,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": false,
+        "name": ""
+      }
+    ],
+    "battleBuffs": [
+      {
+        "id": 20010824,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20030050,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20860020,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20170880,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20920260,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20630190,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20730280,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      }
+    ],
+    "effectiveTraitId": 200117,
+    "enteredTurn": 6,
+    "entryActionCount": 2,
+    "skillUseCounts": {
+      "7090280": 1,
+      "7040150": 1
+    },
+    "skillUseHistoryComplete": false,
+    "carriedSkillIds": [
+      7020970,
+      7020620,
+      7040150,
+      7090280
+    ],
+    "carriedSkillCosts": [
+      2,
+      1,
+      1,
+      3
+    ],
+    "bloodId": 3,
+    "nature": 4,
+    "naturePosOverride": 0,
+    "natureNegOverride": 3,
+    "alive": true,
+    "cuteStacks": 0,
+    "stage": 3,
+    "stageFrom": null,
+    "stageName": "",
+    "stageBaseConfId": null,
+    "stageLowered": false,
+    "stageRace": null,
+    "liveContext": {
+      "turn": 8,
+      "weather": null,
+      "rosters": {
+        "self": [
+          {
+            "member_id": "1",
+            "types": [
+              "虫系",
+              "萌系"
+            ],
+            "hp": 358
+          },
+          {
+            "member_id": "2",
+            "types": [
+              "普通系"
+            ],
+            "hp": 0
+          },
+          {
+            "member_id": "3",
+            "types": [
+              "普通系"
+            ],
+            "hp": 464
+          },
+          {
+            "member_id": "4",
+            "types": [
+              "冰系",
+              "萌系"
+            ],
+            "hp": 492
+          },
+          {
+            "member_id": "5",
+            "types": [
+              "冰系"
+            ],
+            "hp": 187
+          },
+          {
+            "member_id": "6",
+            "types": [
+              "普通系",
+              "幻系"
+            ],
+            "hp": 410
+          }
+        ],
+        "opponent": [
+          {
+            "member_id": "404",
+            "types": [
+              "火系"
+            ],
+            "hp": 0
+          },
+          {
+            "member_id": "401",
+            "types": [
+              "恶系"
+            ],
+            "hp": 417
+          },
+          {
+            "member_id": "402",
+            "types": [
+              "虫系",
+              "萌系"
+            ],
+            "hp": 304
+          },
+          {
+            "member_id": "403",
+            "types": [
+              "草系",
+              "冰系"
+            ],
+            "hp": 0
+          },
+          {
+            "member_id": "405",
+            "types": [
+              "幻系",
+              "光系"
+            ],
+            "hp": 362
+          },
+          {
+            "member_id": "406",
+            "types": [
+              "水系",
+              "幽系"
+            ],
+            "hp": 0
+          }
+        ]
+      }
+    }
+  },
+  "defender": {
+    "memberId": "enemy-1",
+    "id": 300011,
+    "iconId": 3011,
+    "petBaseId": 3011,
+    "petId": 401,
+    "rosterIndex": 1,
+    "side": 1,
+    "petName": "恶魔狼",
+    "name": "恶魔狼",
+    "level": 60,
+    "currentHp": 417,
+    "hpSource": "battle_attr[25]",
+    "maxHp": 417,
+    "hpPercent": 100,
+    "energy": 10,
+    "maxEnergy": 10,
+    "stats": {},
+    "initialStats": {},
+    "battleStats": {
+      "hp": 417,
+      "phyAtk": 0,
+      "magAtk": 0,
+      "phyDef": 0,
+      "magDef": 0,
+      "spd": 0
+    },
+    "battleStatsBasis": "natured_base",
+    "revealedBaseStats": {
+      "hp": 417
+    },
+    "moves": [],
+    "selectedMoves": [],
+    "slotCount": 4,
+    "buffs": [
+      {
+        "id": 20010832,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false,
+        "passive": false,
+        "name": ""
+      },
+      {
+        "id": 20860020,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false,
+        "passive": false,
+        "name": ""
+      },
+      {
+        "id": 20720020,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false,
+        "passive": false,
+        "name": ""
+      },
+      {
+        "id": 20340060,
+        "layers": 13,
+        "leftRounds": 999,
+        "hidden": false,
+        "passive": false,
+        "name": "冰钻"
+      },
+      {
+        "id": 20170880,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false,
+        "passive": false,
+        "name": ""
+      },
+      {
+        "id": 20011541,
+        "layers": 9,
+        "leftRounds": 999,
+        "hidden": false,
+        "passive": false,
+        "name": "悲悯"
+      }
+    ],
+    "battleBuffs": [
+      {
+        "id": 20010832,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20860020,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20720020,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20340060,
+        "layers": 13,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20170880,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20011541,
+        "layers": 9,
+        "leftRounds": 999,
+        "hidden": false
+      }
+    ],
+    "effectiveTraitId": 200140,
+    "enteredTurn": 8,
+    "entryActionCount": 0,
+    "skillUseCounts": {},
+    "skillUseHistoryComplete": false,
+    "carriedSkillIds": null,
+    "carriedSkillCosts": null,
+    "bloodId": 19,
+    "nature": 10,
+    "naturePosOverride": 0,
+    "natureNegOverride": 0,
+    "alive": true,
+    "cuteStacks": 0,
+    "stage": 1,
+    "stageFrom": null,
+    "stageName": "",
+    "stageBaseConfId": null,
+    "stageLowered": false,
+    "stageRace": null,
+    "liveContext": {
+      "turn": 8,
+      "weather": null,
+      "rosters": {
+        "self": [
+          {
+            "member_id": "404",
+            "types": [
+              "火系"
+            ],
+            "hp": 0
+          },
+          {
+            "member_id": "401",
+            "types": [
+              "恶系"
+            ],
+            "hp": 417
+          },
+          {
+            "member_id": "402",
+            "types": [
+              "虫系",
+              "萌系"
+            ],
+            "hp": 304
+          },
+          {
+            "member_id": "403",
+            "types": [
+              "草系",
+              "冰系"
+            ],
+            "hp": 0
+          },
+          {
+            "member_id": "405",
+            "types": [
+              "幻系",
+              "光系"
+            ],
+            "hp": 362
+          },
+          {
+            "member_id": "406",
+            "types": [
+              "水系",
+              "幽系"
+            ],
+            "hp": 0
+          }
+        ],
+        "opponent": [
+          {
+            "member_id": "1",
+            "types": [
+              "虫系",
+              "萌系"
+            ],
+            "hp": 358
+          },
+          {
+            "member_id": "2",
+            "types": [
+              "普通系"
+            ],
+            "hp": 0
+          },
+          {
+            "member_id": "3",
+            "types": [
+              "普通系"
+            ],
+            "hp": 464
+          },
+          {
+            "member_id": "4",
+            "types": [
+              "冰系",
+              "萌系"
+            ],
+            "hp": 492
+          },
+          {
+            "member_id": "5",
+            "types": [
+              "冰系"
+            ],
+            "hp": 187
+          },
+          {
+            "member_id": "6",
+            "types": [
+              "普通系",
+              "幻系"
+            ],
+            "hp": 410
+          }
+        ]
+      }
+    }
+  },
+  "before_fix": [
+    {
+      "skillId": 7020970,
+      "normalMin": 52,
+      "normalMax": 698
+    },
+    {
+      "skillId": 7020620,
+      "reason": "变化技能，不产生面板线索"
+    },
+    {
+      "skillId": 7040150,
+      "normalMin": 57,
+      "normalMax": 762
+    },
+    {
+      "skillId": 7090280,
+      "normalMin": 107,
+      "normalMax": 1428
+    }
+  ],
+  "after_fix": [
+    {
+      "skillId": 7020970,
+      "normalMin": 120,
+      "normalMax": 147
+    },
+    {
+      "skillId": 7020620,
+      "reason": "变化技能，不产生面板线索"
+    },
+    {
+      "skillId": 7040150,
+      "normalMin": 131,
+      "normalMax": 160
+    },
+    {
+      "skillId": 7090280,
+      "normalMin": 247,
+      "normalMax": 301
+    }
+  ],
+  "interpretation": {
+    "trait_id": 200117,
+    "synced_marker_on": "defender",
+    "marker_id": 20340060,
+    "marker_layers": 13,
+    "power_factor": {
+      "numerator": 23,
+      "denominator": 10
+    },
+    "remaining_defense_range": [
+      182,
+      222
+    ],
+    "full_live_calibration": false
+  },
+  "anonymization": {
+    "version": 1,
+    "purpose": "Public regression fixture with synthetic identities and capture labels",
+    "method": "Deterministic consistent substitution across the four fixtures; numeric identifier types and digit lengths retained",
+    "scope": [
+      "battle identifiers",
+      "nonlocal individual or account identifiers when present",
+      "custom pet nicknames",
+      "capture file labels"
+    ],
+    "mechanics_preserved": true
+  }
+}

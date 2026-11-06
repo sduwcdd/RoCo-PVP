@@ -1,0 +1,408 @@
+{
+  "schema": "reviewed-adjacent-power-aura-1",
+  "policy": "source_bound_adjacent_power_aura_v1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db"
+  },
+  "installation_sources": {
+    "SKILL_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+    },
+    "EFFECT_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    }
+  },
+  "skills": {
+    "7070250": {
+      "record_hash": "75ef10d07ad66fdedb73aa8a06a9eab6f89db1dc7f6ead6180bee68c76a99b72",
+      "record": {
+        "id": 7070250,
+        "wiki_id": "skill_000490",
+        "name": {
+          "zh": "减压阀"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "主动：本技能被动永久额外+20威力，被动：两侧技能威力+10，传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%87%8F%E5%8E%8B%E9%98%80",
+        "source_module": "Skills",
+        "desc_notes": [
+          1033
+        ]
+      },
+      "components": {
+        "base_power": 0,
+        "own_power": {
+          "per_use": 20,
+          "permanent": true,
+          "scope": "this_skill_only"
+        },
+        "adjacent_power": {
+          "amount": 10,
+          "targets": "both_immediate_slots_without_wrap"
+        },
+        "transmission": 1,
+        "effect_ids": [
+          21150010,
+          21200020,
+          20640970
+        ]
+      },
+      "installation_evidence": {
+        "skill_parsed": {
+          "id": 7070250,
+          "name": {
+            "localization_id": 2442,
+            "text": "减压阀"
+          },
+          "desc": {
+            "localization_id": 2443,
+            "text": "主动：本技能被动永久额外+20威力，被动：两侧技能威力+10，<desc_id=1033>传动</>1。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21150010,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21200020,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20640970,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_JYF_306023",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/306023.306023'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "skill_mirror": {
+          "id": 7070250,
+          "name": {
+            "localization_id": 2342,
+            "text": "减压阀"
+          },
+          "desc": {
+            "localization_id": 2343,
+            "text": "主动：​本技​能​被​动永久额​外​+20​威力，​被动：​两​侧​技​能​威力​+10，​<desc_id=1033>传动</>1。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 9,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 21150010,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            },
+            {
+              "effect_id": 21200020,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            },
+            {
+              "effect_id": 20640970,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_JYF_306023",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/306023.306023'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "catalog_record": {
+          "id": 7070250,
+          "wiki_id": "skill_000490",
+          "name": {
+            "zh": "减压阀"
+          },
+          "type": "机械系",
+          "kind": "status",
+          "energy": 1,
+          "desc": {
+            "zh": "主动：本技能被动永久额外+20威力，被动：两侧技能威力+10，传动1。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%87%8F%E5%8E%8B%E9%98%80",
+          "source_module": "Skills",
+          "desc_notes": [
+            1033
+          ]
+        },
+        "effects": {
+          "21150010": null,
+          "21200020": null,
+          "20640970": null
+        }
+      },
+      "installation_uncertainty": "“两侧技能威力+10”按按槽位序号相邻、不环绕实现；本技能自身永久+20 每次使用累加；环与退场后的保留规则、以及威力加总在其他修正中的先后顺序缺少客户端证据。"
+    },
+    "7070070": {
+      "record_hash": "a3802728137604dff00525d7cb84c2df9f23d80c1baca7b83593a69c51500006",
+      "record": {
+        "id": 7070070,
+        "wiki_id": "skill_000475",
+        "name": {
+          "zh": "联动装置"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "使用后两侧技能的威力永久+20，应对防御：变为威力永久+30。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%81%94%E5%8A%A8%E8%A3%85%E7%BD%AE",
+        "source_module": "Skills",
+        "desc_notes": [
+          1017
+        ]
+      },
+      "components": {
+        "neighbor_grant": {
+          "amount": 20,
+          "response_amount": 30,
+          "permanent": true,
+          "targets": "both_immediate_slots_without_wrap"
+        },
+        "transmission": 0,
+        "effect_ids": [
+          20640720,
+          1031131
+        ]
+      },
+      "installation_evidence": {
+        "skill_parsed": {
+          "id": 7070070,
+          "name": {
+            "localization_id": 2390,
+            "text": "联动装置"
+          },
+          "desc": {
+            "localization_id": 2391,
+            "text": "使用后两侧技能的威力永久+20，<desc_id=1017>应对防御</>：变为威力永久+30。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20640720,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1031131,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_LDZZ_106007",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106007.106007'",
+          "describe_type": [
+            12,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "skill_mirror": {
+          "id": 7070070,
+          "name": {
+            "localization_id": 2290,
+            "text": "联动装置"
+          },
+          "desc": {
+            "localization_id": 2291,
+            "text": "使用后两侧技能的威力永久+20，<desc_id=1017>应对防御</>：变为威力永久+30。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 20640720,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 2
+            },
+            {
+              "effect_id": 1031131,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_LDZZ_106007",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106007.106007'",
+          "describe_type": [
+            12,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "catalog_record": {
+          "id": 7070070,
+          "wiki_id": "skill_000475",
+          "name": {
+            "zh": "联动装置"
+          },
+          "type": "机械系",
+          "kind": "status",
+          "energy": 0,
+          "desc": {
+            "zh": "使用后两侧技能的威力永久+20，应对防御：变为威力永久+30。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E8%81%94%E5%8A%A8%E8%A3%85%E7%BD%AE",
+          "source_module": "Skills",
+          "desc_notes": [
+            1017
+          ]
+        },
+        "effects": {
+          "1031131": {
+            "id": 1031131,
+            "effect_order": 31,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  7070071
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "installation_uncertainty": "“应对防御”按本技能的使用被对手攻击命中并成功响应（response_success）判定，+30 走同一账本；“永久”按不因退场清除、每次使用叠加实现；effect 1031131 子技能 7070071 的逐字段语义未解码，因此只按描述结构实现并写入事件，未做实战校准。"
+    }
+  }
+}

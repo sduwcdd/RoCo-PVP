@@ -1,0 +1,1558 @@
+{
+  "scope": "release_count_source_semantics_not_executable",
+  "sources": {
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+    "artifacts/layer_reference_probe_20261025/parsed/pakchunk4-WindowsNoEditor/BUFFBASE_CONF.json": "effe698608e9ca984a494bed5dc83bf6eb4d0a47524b2bac4c46cea6c6d47d7b",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/Skill.luac.decompiled.lua": "0b145ca6aaadb716c1e650a20a941e3655c3c76c202a396b4bbb103d711f1604",
+    "artifacts/switch_source_followup_20261026/pakchunk4-WindowsNoEditor_3_P/BattleDataCenter.decompiled.lua": "5b2bc97ad34bd8d6f7373998111574114e64296640c1ccf3ad84d267e7eea25c"
+  },
+  "skills": {
+    "7110350": {
+      "skill": {
+        "id": 7110350,
+        "name": {
+          "localization_id": 2790,
+          "text": "双联脉冲"
+        },
+        "desc": {
+          "localization_id": 2791,
+          "text": "造成魔伤，<desc_id=1010>迸发</>：本技能使用次数+1。"
+        },
+        "energy_cost": [
+          4
+        ],
+        "dam_para": [
+          50
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 11,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20930100,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_XLDJ_110020",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110020.110020'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "skill_hash": "503efc45627da4e544b8633cd904b155f1270074f707e55bbba66888fc72dc0f",
+      "buffs": {
+        "20930100": {
+          "id": 20930100,
+          "buff_base_ids": [
+            2093010
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "21080090": {
+          "id": 21080090,
+          "buff_base_ids": [
+            2108009
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        }
+      },
+      "buff_bases": {
+        "2093010": {
+          "current": {
+            "id": 2093010,
+            "buffbase_order": 93,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  7110350
+                ]
+              },
+              {
+                "params": [
+                  4
+                ]
+              },
+              {
+                "params": [
+                  21080090
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2093010
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2093010,
+            "editor_name": "入场首回合，技能可以释放2次。",
+            "buffbase_order": 93,
+            "is_dam_param_change": 1,
+            "show_letters": [
+              0
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  7110350
+                ]
+              },
+              {
+                "params": [
+                  4
+                ]
+              },
+              {
+                "params": [
+                  21080090
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2093010
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "2108009": {
+          "current": {
+            "id": 2108009,
+            "buffbase_order": 108,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  5
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2108009,
+            "editor_name": "仅技能连续释放次数+1",
+            "buffbase_order": 108,
+            "show_letters": [
+              1
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  5
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "effects": {},
+      "runtime_status": "blocked_whole_release_dispatch_semantics"
+    },
+    "7110360": {
+      "skill": {
+        "id": 7110360,
+        "name": {
+          "localization_id": 2792,
+          "text": "过载回路"
+        },
+        "desc": {
+          "localization_id": 2793,
+          "text": "回合结束自己<desc_id=1024>返场</>，下回合所选技能使用次数+1。"
+        },
+        "energy_cost": [
+          1
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 11,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20171061,
+            "cast_moment": 6
+          },
+          {
+            "effect_id": 20171060,
+            "cast_moment": 12
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_DWHL_110021",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110021.110021'",
+        "describe_type": [
+          12,
+          6,
+          19
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "skill_hash": "3937e3e6b18f0cca5e2dd5165a22b1d2a8cfa336dddb07befe8c9e9c07bfd732",
+      "buffs": {
+        "20171061": {
+          "id": 20171061,
+          "buff_base_ids": [
+            2017181
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 99,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 7,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "20171060": {
+          "id": 20171060,
+          "buff_base_ids": [
+            2017106
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 99,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 7,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20150070": {
+          "id": 20150070,
+          "buff_base_ids": [
+            2015007
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "name": "过载",
+          "type_id": "1",
+          "type": 1,
+          "add_max": 10,
+          "desc": "下次技能可以额外释放1次",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830051_png.830051_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 7,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20480095": {
+          "id": 20480095,
+          "buff_base_ids": [
+            2048009
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "cover_id": 48,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "res_id_0": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_DWHL_110021_B",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 3,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        }
+      },
+      "buff_bases": {
+        "2017181": {
+          "current": {
+            "id": 2017181,
+            "buffbase_order": 17,
+            "trigger_type": 7,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20150070
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2017181,
+            "editor_name": "获得过载",
+            "buffbase_order": 17,
+            "trigger_type": 7,
+            "show_letters": [
+              0
+            ],
+            "client_trigger_type": [
+              15
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20150070
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "2017106": {
+          "current": {
+            "id": 2017106,
+            "buffbase_order": 17,
+            "trigger_type": 7,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20480095
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2017106,
+            "editor_name": "获得过载",
+            "buffbase_order": 17,
+            "trigger_type": 7,
+            "show_letters": [
+              0
+            ],
+            "client_trigger_type": [
+              15
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20480095
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "2015007": {
+          "current": {
+            "id": 2015007,
+            "buffbase_order": 15,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2015007,
+            "editor_name": "入场时可以行动两次",
+            "buffbase_order": 15,
+            "show_letters": [
+              1
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "2048009": {
+          "current": {
+            "id": 2048009,
+            "buffbase_order": 48,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  5
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2048009,
+            "editor_name": "快速折返",
+            "buffbase_order": 48,
+            "is_dam_param_change": 1,
+            "show_letters": [
+              1
+            ],
+            "client_trigger_type": [
+              11
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  5
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "effects": {},
+      "runtime_status": "blocked_whole_release_dispatch_semantics"
+    },
+    "7110380": {
+      "skill": {
+        "id": 7110380,
+        "name": {
+          "localization_id": 2796,
+          "text": "感电"
+        },
+        "desc": {
+          "localization_id": 2797,
+          "text": "造成魔伤，每<desc_id=3009>离场</>1次，本技能使用次数永久+1。"
+        },
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          60
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 11,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20730110,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_GD_110023",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110023.110023'",
+        "describe_type": [
+          5,
+          18
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "skill_hash": "19c8499cc5fe7ad7e6d8542c3710cfbe6bdd32d922605ceb5838e22b5572caa5",
+      "buffs": {
+        "20730110": {
+          "id": 20730110,
+          "buff_base_ids": [
+            2073011
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20640560": {
+          "id": 20640560,
+          "buff_base_ids": [
+            2064056
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 10,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ]
+        },
+        "21080091": {
+          "id": 21080091,
+          "buff_base_ids": [
+            2108009
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        }
+      },
+      "buff_bases": {
+        "2073011": {
+          "current": {
+            "id": 2073011,
+            "buffbase_order": 73,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20640560
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2073011,
+            "editor_name": "离场强化7110380",
+            "buffbase_order": 73,
+            "show_letters": [
+              0
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20640560
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        },
+        "2064056": {
+          "current": {
+            "id": 2064056,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7110380
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  21080091
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2064056,
+            "editor_name": "特定技能增加释放次数",
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7110380
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  21080091
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "2108009": {
+          "current": {
+            "id": 2108009,
+            "buffbase_order": 108,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  5
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2108009,
+            "editor_name": "仅技能连续释放次数+1",
+            "buffbase_order": 108,
+            "show_letters": [
+              1
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  5
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "effects": {},
+      "runtime_status": "blocked_whole_release_dispatch_semantics"
+    },
+    "7110420": {
+      "skill": {
+        "id": 7110420,
+        "name": {
+          "localization_id": 2806,
+          "text": "电磁偏转"
+        },
+        "desc": {
+          "localization_id": 2807,
+          "text": "减伤70%，<desc_id=1016>应对攻击</>：下回合所选技能使用次数+1。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 3,
+        "skill_dam_type": 11,
+        "skill_feature": 3,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20110190,
+            "cast_moment": 12
+          },
+          {
+            "effect_id": 1031140,
+            "cast_moment": 7
+          },
+          {
+            "effect_id": 20620060,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Elec_DCPZ_110028",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110029.110029'",
+        "describe_type": [
+          1,
+          11
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "skill_hash": "1179f6f89b9c94ceb9abde2c4470144870264f6a2f388ab1dd513dfaf6fcd069",
+      "buffs": {
+        "20110190": {
+          "id": 20110190,
+          "buff_base_ids": [
+            2011019
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            4
+          ],
+          "add_des": "减伤",
+          "add_icon": 6,
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800020_png.800020_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20620060": {
+          "id": 20620060,
+          "buff_base_ids": [
+            2062006
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 7,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "buff_bases": {
+        "2011019": {
+          "current": {
+            "id": 2011019,
+            "buffbase_order": 11,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  -7000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "historical": {
+            "id": 2011019,
+            "editor_name": "70减伤",
+            "buffbase_order": 11,
+            "show_letters": [
+              0
+            ],
+            "client_trigger_type": [
+              11
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  -7000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "2062006": {
+          "current": {
+            "id": 2062006,
+            "buffbase_order": 62,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          },
+          "historical": null
+        }
+      },
+      "effects": {
+        "1031140": {
+          "id": 1031140,
+          "effect_order": 31,
+          "type": 2,
+          "effect_param": [
+            {
+              "params": [
+                7110421
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "runtime_status": "blocked_whole_release_dispatch_semantics"
+    }
+  },
+  "confirmed": [
+    "GetCastCount returns server skillData.cast_cnt or default 1.",
+    "SyncSkill replaces cast_cnt_result independently of cost_energy_result.",
+    "108 historical editor_name is 仅技能连续释放次数+1; 15 is 入场时可以行动两次.",
+    "No use-count effect is treated as hit-count effect."
+  ],
+  "unresolved": [
+    "Whether extra consecutive release pays energy/HP again.",
+    "Which full skill effects, response conditions, after-use growth, kill/entry hooks repeat, and their ordering.",
+    "Whether action-twice opcode15 permits a new selection or duplicates selected skill; failure/no target/charge/defense semantics.",
+    "The dispatch distinction between consecutive skill releases108 and two actions15 is not established by a shared executable server resolver."
+  ]
+}

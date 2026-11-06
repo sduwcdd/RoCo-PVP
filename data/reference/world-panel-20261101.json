@@ -1,0 +1,450 @@
+{
+  "schema": "captured-world-zero-star-panels-1",
+  "recorded_on": "2026-11-01",
+  "training_eligible": false,
+  "source": {
+    "database": "data/replays/human-battles.sqlite3",
+    "recording_id": "a973830b94a704fed9dfc287c6296f94ec58c1b9a56d71e37870e340e6fa35e5",
+    "packet_row": 3001,
+    "opcode": "0x1316",
+    "packet_sha256_utf8": "1c8feff6943bcb21f2b2bf3ff1a4f42c97ff5ab9657b3cdf17b1e23b82283127",
+    "packet_hash_basis": "Exact stored content_json UTF-8 bytes, not transport bytes",
+    "catalog_path": "data/bwiki/20261025T013619+0800/catalog.json",
+    "catalog_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "pet_utils_path": "artifacts/strength_buff_probe_20261025/energy/utils/raw/pakchunk4-WindowsNoEditor_26_P/NRC/Content/ScriptC/NewRoco/Utils/PetUtils.decompiled.lua",
+    "pet_utils_sha256": "2df7b6a543534da21a402d143ec9f0232222790da2a026bbc1e9ef5dc5d41833"
+  },
+  "zero_star_basis": {
+    "explicit_star_field_present": false,
+    "policy": "User requests world pets below level 60 be treated as zero stars; sampled zero-star classification additionally requires grow_times=last_breakthrough_lv=inspire_lv=0, effort_add=0 and raw_talent=display_talent in all six dimensions.",
+    "observed_levels": [
+      56,
+      60
+    ],
+    "do_not_infer_five_stars_from_level_60": true
+  },
+  "candidate": {
+    "candidate_id": "captured_world_zero_star_stat_candidate_v1",
+    "hp": "round_nonnegative((2*level+50)*(race/100+raw_talent/200)+level+10)",
+    "other": "round_nonnegative((level+50)*(race/100+raw_talent/200)+10)",
+    "round_nonnegative": "floor(x+0.5), evaluated with Python binary64 in the written order",
+    "zero_star_raw_talent": "raw_talent=display_talent in these samples; do not multiply by six",
+    "nature": "round_nonnegative(base*1.1) for up; round_nonnegative(base*0.9) for down; otherwise base; effort_add is zero in these samples",
+    "universal_formula_confirmed": false,
+    "base_dimensions_matched": 24,
+    "natured_dimensions_matched": 24,
+    "dimensions_checked": 24,
+    "pet_samples": 4,
+    "distinct_world_entries": 1,
+    "below60_pet_samples": 1,
+    "below60_dimensions_checked": 6
+  },
+  "samples": [
+    {
+      "form": 3057,
+      "level": 60,
+      "nature": 1,
+      "grow_times": 0,
+      "last_breakthrough_lv": 0,
+      "inspire_lv": 0,
+      "assumed_stars": 0,
+      "selected_dimension_ids": [
+        2,
+        1,
+        4
+      ],
+      "dimensions": {
+        "hp": {
+          "race": 112,
+          "raw_talent": 10,
+          "display_talent": 10,
+          "base": 269,
+          "effort": 0,
+          "battle": 269,
+          "predicted_base": 269,
+          "predicted_battle": 269
+        },
+        "patk": {
+          "race": 46,
+          "raw_talent": 7,
+          "display_talent": 7,
+          "base": 64,
+          "effort": 0,
+          "battle": 70,
+          "predicted_base": 64,
+          "predicted_battle": 70
+        },
+        "matk": {
+          "race": 120,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 142,
+          "effort": 0,
+          "battle": 142,
+          "predicted_base": 142,
+          "predicted_battle": 142
+        },
+        "pdef": {
+          "race": 107,
+          "raw_talent": 10,
+          "display_talent": 10,
+          "base": 133,
+          "effort": 0,
+          "battle": 120,
+          "predicted_base": 133,
+          "predicted_battle": 120
+        },
+        "mdef": {
+          "race": 134,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 157,
+          "effort": 0,
+          "battle": 157,
+          "predicted_base": 157,
+          "predicted_battle": 157
+        },
+        "spd": {
+          "race": 75,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 93,
+          "effort": 0,
+          "battle": 93,
+          "predicted_base": 93,
+          "predicted_battle": 93
+        }
+      }
+    },
+    {
+      "form": 3031,
+      "level": 56,
+      "nature": 11,
+      "grow_times": 0,
+      "last_breakthrough_lv": 0,
+      "inspire_lv": 0,
+      "assumed_stars": 0,
+      "selected_dimension_ids": [
+        4,
+        2,
+        5
+      ],
+      "dimensions": {
+        "hp": {
+          "race": 112,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 247,
+          "effort": 0,
+          "battle": 247,
+          "predicted_base": 247,
+          "predicted_battle": 247
+        },
+        "patk": {
+          "race": 115,
+          "raw_talent": 7,
+          "display_talent": 7,
+          "base": 136,
+          "effort": 0,
+          "battle": 122,
+          "predicted_base": 136,
+          "predicted_battle": 122
+        },
+        "matk": {
+          "race": 115,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 132,
+          "effort": 0,
+          "battle": 145,
+          "predicted_base": 132,
+          "predicted_battle": 145
+        },
+        "pdef": {
+          "race": 121,
+          "raw_talent": 9,
+          "display_talent": 9,
+          "base": 143,
+          "effort": 0,
+          "battle": 143,
+          "predicted_base": 143,
+          "predicted_battle": 143
+        },
+        "mdef": {
+          "race": 95,
+          "raw_talent": 8,
+          "display_talent": 8,
+          "base": 115,
+          "effort": 0,
+          "battle": 115,
+          "predicted_base": 115,
+          "predicted_battle": 115
+        },
+        "spd": {
+          "race": 80,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 95,
+          "effort": 0,
+          "battle": 95,
+          "predicted_base": 95,
+          "predicted_battle": 95
+        }
+      }
+    },
+    {
+      "form": 3141,
+      "level": 60,
+      "nature": 28,
+      "grow_times": 0,
+      "last_breakthrough_lv": 0,
+      "inspire_lv": 0,
+      "assumed_stars": 0,
+      "selected_dimension_ids": [
+        1,
+        3,
+        6
+      ],
+      "dimensions": {
+        "hp": {
+          "race": 132,
+          "raw_talent": 7,
+          "display_talent": 7,
+          "base": 300,
+          "effort": 0,
+          "battle": 330,
+          "predicted_base": 300,
+          "predicted_battle": 330
+        },
+        "patk": {
+          "race": 72,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 89,
+          "effort": 0,
+          "battle": 89,
+          "predicted_base": 89,
+          "predicted_battle": 89
+        },
+        "matk": {
+          "race": 77,
+          "raw_talent": 10,
+          "display_talent": 10,
+          "base": 100,
+          "effort": 0,
+          "battle": 90,
+          "predicted_base": 100,
+          "predicted_battle": 90
+        },
+        "pdef": {
+          "race": 89,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 108,
+          "effort": 0,
+          "battle": 108,
+          "predicted_base": 108,
+          "predicted_battle": 108
+        },
+        "mdef": {
+          "race": 100,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 120,
+          "effort": 0,
+          "battle": 120,
+          "predicted_base": 120,
+          "predicted_battle": 120
+        },
+        "spd": {
+          "race": 100,
+          "raw_talent": 7,
+          "display_talent": 7,
+          "base": 124,
+          "effort": 0,
+          "battle": 124,
+          "predicted_base": 124,
+          "predicted_battle": 124
+        }
+      }
+    },
+    {
+      "form": 3785,
+      "level": 60,
+      "nature": 21,
+      "grow_times": 0,
+      "last_breakthrough_lv": 0,
+      "inspire_lv": 0,
+      "assumed_stars": 0,
+      "selected_dimension_ids": [
+        1,
+        3,
+        6
+      ],
+      "dimensions": {
+        "hp": {
+          "race": 96,
+          "raw_talent": 8,
+          "display_talent": 8,
+          "base": 240,
+          "effort": 0,
+          "battle": 240,
+          "predicted_base": 240,
+          "predicted_battle": 240
+        },
+        "patk": {
+          "race": 46,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 61,
+          "effort": 0,
+          "battle": 55,
+          "predicted_base": 61,
+          "predicted_battle": 55
+        },
+        "matk": {
+          "race": 126,
+          "raw_talent": 8,
+          "display_talent": 8,
+          "base": 153,
+          "effort": 0,
+          "battle": 153,
+          "predicted_base": 153,
+          "predicted_battle": 153
+        },
+        "pdef": {
+          "race": 109,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 130,
+          "effort": 0,
+          "battle": 130,
+          "predicted_base": 130,
+          "predicted_battle": 130
+        },
+        "mdef": {
+          "race": 117,
+          "raw_talent": 0,
+          "display_talent": 0,
+          "base": 139,
+          "effort": 0,
+          "battle": 139,
+          "predicted_base": 139,
+          "predicted_battle": 139
+        },
+        "spd": {
+          "race": 105,
+          "raw_talent": 8,
+          "display_talent": 8,
+          "base": 130,
+          "effort": 0,
+          "battle": 143,
+          "predicted_base": 130,
+          "predicted_battle": 143
+        }
+      }
+    }
+  ],
+  "growth_field_audit": {
+    "entry_packets_checked": 24,
+    "pet_appearances_with_attribute_info": 144,
+    "counts_are_repeated_appearances_not_independent_pets": true,
+    "observed_groups": [
+      {
+        "mode": "pvp",
+        "level": 60,
+        "grow_times": 50,
+        "last_breakthrough_lv": 60,
+        "inspire_lv": 0,
+        "nonzero_raw_to_display_ratios": [
+          6.0
+        ],
+        "effort_add_values": [
+          50,
+          100
+        ],
+        "pet_appearances": 138
+      },
+      {
+        "mode": "world",
+        "level": 56,
+        "grow_times": 0,
+        "last_breakthrough_lv": 0,
+        "inspire_lv": 0,
+        "nonzero_raw_to_display_ratios": [
+          1.0
+        ],
+        "effort_add_values": [
+          0
+        ],
+        "pet_appearances": 1
+      },
+      {
+        "mode": "world",
+        "level": 60,
+        "grow_times": 0,
+        "last_breakthrough_lv": 0,
+        "inspire_lv": 0,
+        "nonzero_raw_to_display_ratios": [
+          1.0
+        ],
+        "effort_add_values": [
+          0
+        ],
+        "pet_appearances": 3
+      },
+      {
+        "mode": "world",
+        "level": 60,
+        "grow_times": 50,
+        "last_breakthrough_lv": 60,
+        "inspire_lv": 0,
+        "nonzero_raw_to_display_ratios": [
+          6.0
+        ],
+        "effort_add_values": [
+          50,
+          100
+        ],
+        "pet_appearances": 2
+      }
+    ],
+    "numeric_field_counts": [
+      {
+        "field": "grow_times",
+        "value": 0,
+        "pet_appearances": 7
+      },
+      {
+        "field": "grow_times",
+        "value": 50,
+        "pet_appearances": 140
+      },
+      {
+        "field": "inspire_lv",
+        "value": 0,
+        "pet_appearances": 147
+      },
+      {
+        "field": "last_breakthrough_lv",
+        "value": 0,
+        "pet_appearances": 7
+      },
+      {
+        "field": "last_breakthrough_lv",
+        "value": 60,
+        "pet_appearances": 140
+      }
+    ],
+    "raw_equals_display_times_stars_plus_one": "Consistent only at the observed presumed zero/five-star endpoints (ratios 1 and 6); not established for stars 1-4 or 6-10.",
+    "nonzero_inspire_samples": 0,
+    "direct_star_field_found": false
+  },
+  "limitations": [
+    "One world entry with three level-60 and one level-56 zero-star-compatible owned pets; no general level range or boundary precision calibration.",
+    "The raw protocol panels and the zero-star candidate are distinct evidence from the preserved level-60 five-star captured_stat60 precision candidates.",
+    "PetUtils.CalcBasicProperty (lines 1854-1922) reads ATTR_GLOBAL_CONFIG coefficients; corresponding extracted coefficients are unavailable here, so it does not establish this candidate formula.",
+    "No observed intermediate-star or above-five-star panel supports generalizing talent scaling, effort bonuses or nature multipliers.",
+    "The entry contains three NPC enemies with HP only and no attribute_info; it does not validate their complete six-dimensional formula."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "configured-own-four-action-menu",
+  "cause": "team-code confirmed.moves empty caused full learnset menu",
+  "fix": "use configured four slots without promoting confirmation evidence; temporary moves explicit per-draft opt-in only",
+  "temporary_generators": {
+    "7020840": "借用",
+    "7020850": "取念",
+    "7020860": "复写"
+  },
+  "source": "data/bwiki/20261025T013619+0800/catalog.json",
+  "tests": {
+    "javascript_passed": 56,
+    "modules": [
+      "tests/test_battle_team_code.js",
+      "tests/test_simulation_ui.js"
+    ]
+  },
+  "browser": "isolated19389 actual provided six-member code imported with unconfirmed moves; SnowSpirit menu exactly IceSweep/Borrow/Blizzard/Control in source slot order",
+  "source_preserved": true,
+  "main8766_serves_fix": true,
+  "files": {
+    "web/battle.js": "edd7b4b6dfe93e9638609bb075352217841b33610729c598f0544ea7fa430a91",
+    "tests/test_battle_team_code.js": "498b383849c7999124e0876b2387363897e088bf9b009a5aeb36556c3b3209a4"
+  },
+  "screenshot": "docs/previews/carried-skills-fix-20261025.png"
+}

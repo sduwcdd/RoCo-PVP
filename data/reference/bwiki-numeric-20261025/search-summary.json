@@ -1,0 +1,26 @@
+[
+  {
+    "site": "nrc",
+    "term": "公式",
+    "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%85%AC%E5%BC%8F&srlimit=30&format=json",
+    "error": "HTTP Error 567: Unknown Status"
+  },
+  {
+    "site": "nrc",
+    "term": "战斗机制",
+    "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E6%88%98%E6%96%97%E6%9C%BA%E5%88%B6&srlimit=30&format=json",
+    "error": "HTTP Error 567: Unknown Status"
+  },
+  {
+    "site": "rocom",
+    "term": "伤害计算",
+    "url": "https://wiki.biligame.com/rocom/api.php?action=query&list=search&srsearch=%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97&srlimit=30&format=json",
+    "error": "HTTP Error 567: Unknown Status"
+  },
+  {
+    "site": "rocom",
+    "term": "魔力",
+    "url": "https://wiki.biligame.com/rocom/api.php?action=query&list=search&srsearch=%E9%AD%94%E5%8A%9B&srlimit=30&format=json",
+    "error": "HTTP Error 567: Unknown Status"
+  }
+]

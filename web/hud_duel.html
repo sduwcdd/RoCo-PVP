@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>洛克 PVP 对局面板</title>
+<style>
+  /* 一屏左右两条竖面板：?side=my 贴屏幕左侧，?side=enemy 贴右侧。
+     版式参照第三方原版：头像+名字+等级 → 血条 → 六维 → 状态 → 四个技能（竖排）。 */
+  :root {
+    --my-a: rgba(24, 74, 118, 0.60);
+    --my-b: rgba(14, 40, 66, 0.66);
+    --enemy-a: rgba(118, 40, 30, 0.60);
+    --enemy-b: rgba(66, 22, 16, 0.66);
+    --line: rgba(255, 255, 255, 0.16);
+    --text: #eef6ff;
+    --muted: #9fb6cc;
+    --warm: #ffd88a;
+    --frozen: #8edfff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; }
+  body {
+    font: 14px/1.35 "Microsoft YaHei", "Segoe UI", sans-serif;
+    color: var(--text);
+    padding: 18px 6px 6px;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel {
+    max-height: 100%;
+    overflow-y: auto;
+    flex: 0 0 auto;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: linear-gradient(160deg, var(--my-a), var(--my-b));
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(2px);
+  }
+  .panel > * { flex-shrink: 0; }
+  .panel[data-side="enemy"] { background: linear-gradient(160deg, var(--enemy-a), var(--enemy-b)); }
+  .panel[data-side="my"], .panel[data-side="enemy"] { user-select: none; -webkit-user-select: none; }
+  .panel input, .panel textarea { user-select: text; -webkit-user-select: text; }
+  .panel img { -webkit-user-drag: none; }
+  .panel[data-side="enemy"] { scrollbar-width: none; }
+  .panel[data-side="enemy"]::-webkit-scrollbar { display: none; }
+  .panel[data-side="enemy"] .skill-query-list { max-height: none; overflow: visible; }
+
+  .head { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 8px; align-items: center; position: relative; }
+  .avatar {
+    width: 46px; height: 46px; border-radius: 9px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--line);
+    object-fit: cover;
+  }
+  .name-row { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+  .name { font-size: 16px; font-weight: 900; letter-spacing: 0.5px; white-space: nowrap;
+          overflow: hidden; text-overflow: ellipsis; }
+  .lv { color: var(--muted); font-weight: 700; font-size: 13px; white-space: nowrap; }
+  .types { display: flex; gap: 4px; margin-top: 3px; }
+  .physical-info { display: flex; flex-wrap: wrap; gap: 2px 8px; margin-top: 3px; font-size: 12px; color: var(--muted); }
+  .physical-medal { margin-left: 4px; color: var(--warm); font-weight: 700; }
+  .type-chip {
+    padding: 1px 6px; border-radius: 999px; font-size: 12px; font-weight: 800;
+    background: rgba(255, 255, 255, 0.14); border: 1px solid var(--line);
+  }
+
+  .hp { margin-top: 2px; }
+  .hp-track { position: relative; height: 8px; border-radius: 999px; background: rgba(0, 0, 0, 0.45); overflow: hidden; }
+  .hp-frozen-fill { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, #d8fbff, var(--frozen)); border-right: 1px solid #e6fcff; transition: width 120ms linear; }
+  .hp-frozen { color: var(--frozen); }
+  .hp-track.unknown { background: repeating-linear-gradient(120deg, rgba(160,175,190,.2) 0 5px, rgba(160,175,190,.08) 5px 10px); }
+  .hp-fill { height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, #6ee7a8, #34d399); transition: width 120ms linear; }
+  .hp-fill.warn { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+  .hp-fill.danger { background: linear-gradient(90deg, #fb7185, #e11d48); }
+  .hp-text { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; margin-top: 3px; font-size: 13px; color: var(--muted); }
+  .hp-text b { color: var(--text); font-size: 14px; margin-left: auto; }
+  .hp-text .hp-pct { font-style: normal; font-weight: 900; font-size: 14px; color: var(--warm); }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .stats.stats-radar { display: block; padding: 0; background: none; }
+  .radar { display: block; width: 100%; height: auto; }
+  .radar-empty { font-size: 13px; color: var(--muted); padding: 8px 0; text-align: center; }
+  .radar-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: -2px; }
+  .dmg-note { font-size: 10.5px; line-height: 1.35; color: var(--muted); opacity: 0.85; margin-top: 2px; }
+  .stat {
+    display: flex; justify-content: space-between; gap: 4px;
+    padding: 2px 5px; border-radius: 5px;
+    background: rgba(255, 255, 255, 0.07); font-size: 13px;
+  }
+  .stat span:first-child { color: var(--muted); }
+  .stat span:last-child { font-weight: 800; }
+
+  .buffs { display: flex; flex-wrap: wrap; gap: 3px; min-height: 18px; }
+  .buff {
+    padding: 1px 5px; border-radius: 999px; font-size: 12px; font-weight: 800;
+    background: rgba(255, 255, 255, 0.12); border: 1px solid var(--line);
+  }
+  .buff.up { color: #a7f3d0; border-color: rgba(110, 231, 168, 0.5); }
+  .buff.down { color: #fecaca; border-color: rgba(248, 113, 113, 0.5); }
+  .buff.passive { color: var(--muted); border-color: rgba(255, 255, 255, 0.18); }
+
+  .skills { flex: 0 0 auto; display: flex; flex-direction: column; gap: 4px; }
+  .skill {
+    display: grid; grid-template-columns: 34px minmax(0, 1fr) auto 18px; gap: 4px; align-items: center;
+    padding: 4px 6px; border-radius: 7px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .skill-icon { width: 34px; height: 34px; border-radius: 7px; object-fit: cover; background: rgba(0, 0, 0, 0.35); }
+  .skill-main { min-width: 0; }
+  .skill-name { font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .skill-tag { font-size: 11px; font-weight: 700; padding: 0 3px; margin-left: 4px; border-radius: 3px;
+               border: 1px solid var(--line); vertical-align: middle; }
+  .skill-tag.feature { color: #9fe0a7; border-color: rgba(159, 224, 167, 0.45); }
+  .skill-tag.observed { color: #9fc4e0; border-color: rgba(159, 196, 224, 0.45); }
+  .skill-meta { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .skill-dmg { font-size: 13px; font-weight: 900; color: var(--warm); white-space: nowrap; text-align: right; }
+  .ohko { margin-left: 4px; font-weight: 900; color: #ff4545; }
+  .skill.empty { opacity: 0.4; grid-template-columns: minmax(0, 1fr); }
+  .skill.empty .skill-name { color: var(--muted); font-weight: 700; }
+
+  /* 萌化：精灵退化到上一阶，名字和种资质都变了，必须让玩家一眼看到为什么。 */
+  .tag-cute { font-size: 11px; font-weight: 800; padding: 0 4px; margin-left: 4px; border-radius: 3px;
+              color: #f0c2e0; border: 1px solid rgba(240, 194, 224, 0.5);
+              background: rgba(240, 194, 224, 0.12); vertical-align: middle; }
+  .tag-stage { font-size: 11px; font-weight: 700; padding: 0 4px; margin-left: 4px; border-radius: 3px;
+               color: var(--muted); border: 1px solid var(--line); vertical-align: middle; }
+  .tag-nature { font-size: 12px; font-weight: 700; color: #cdd6f4; vertical-align: middle; }
+  .tag-speciality { font-size: 12px; font-weight: 700; color: #f7df98; margin-left: 8px; vertical-align: middle; }
+  .buff.cute { color: #f0c2e0; border-color: rgba(240, 194, 224, 0.5);
+               background: rgba(240, 194, 224, 0.12); }
+  .buff.more { color: var(--muted); }
+
+  .bench { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 4px; min-height: 26px; }
+  .bench-pet { min-width: 0; text-align: center; display: flex; flex-direction: column; }
+  .bench-pet img { order: 1; align-self: center; }
+  .bench-pet .hp-track { order: 2; height: 5px; margin-top: 2px; }
+  .bench-energy { order: 4; margin-top: 3px; padding: 1px 2px; border-radius: 4px; background: #243d50; font-size: 11px; }
+  .bench-hp { order: 3; font-size: 11px; color: var(--text); }
+  .active-energy { color: var(--warm); font-size: 13px; text-align: right; }
+  .active-summary { display: flex; align-items: baseline; gap: 8px; }
+  .active-summary .active-energy { margin-left: auto; white-space: nowrap; }
+  .trait-damage { flex: 1; min-width: 0; color: var(--warm); font-size: 13px; line-height: 1.4; }
+  .target-toggle { width: 18px; padding: 2px 0; border: 1px solid var(--line); border-radius: 4px; color: var(--warm); background: transparent; cursor: pointer; font: inherit; }
+  .counter-toggle { padding: 3px 5px; border: 1px solid var(--line); border-radius: 4px; color: var(--warm); background: transparent; cursor: pointer; font: inherit; }
+  .target-panel { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 4px; }
+  .target-panel select { width: 100%; color: var(--text); background: #284252; border: 1px solid var(--line); border-radius: 4px; font: inherit; }
+  .target-result { color: var(--warm); text-align: right; }
+  .wish-line { display: flex; align-items: baseline; justify-content: space-between; gap: 4px; white-space: nowrap; }
+  .wish-line span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .wish-line b { flex-shrink: 0; color: var(--warm); }
+  .wish-scenarios { width: 100%; border-collapse: collapse; white-space: nowrap; font-size: 13px; }
+  .wish-scenarios td, .wish-scenarios th { padding: 1px 2px; text-align: right; }
+  .wish-scenarios td:first-child { text-align: left; }
+  .wish-scenarios th { color: var(--muted); font-weight: 400; }
+  .bench img { width: 26px; height: 26px; border-radius: 6px; object-fit: cover;
+               border: 1px solid var(--line); opacity: 0.9; }
+  .bench .none { font-size: 12px; color: var(--muted); align-self: center; }
+
+  .stale { position: absolute; left: 8px; right: 8px; bottom: 4px; font-size: 12px;
+           color: #fbbf24; text-align: center; }
+  .offline { margin: auto; padding: 18px 14px; text-align: center; color: var(--muted); line-height: 1.45; }
+  .offline .hint { display: inline-block; margin-top: 6px; font-size: 13px; opacity: 0.85; }
+  .skill-query { border-top: 1px solid var(--line); padding-top: 6px; }
+  .skill-query summary { cursor: pointer; color: var(--warm); }
+  .skill-query input { width: 100%; margin: 6px 0; padding: 5px; border: 1px solid var(--line);
+    border-radius: 5px; color: var(--text); background: rgba(0,0,0,.2); font: inherit; }
+  .skill-query-list { max-height: 240px; overflow-y: auto; }
+  .pool-skill { padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .pool-skill p { margin: 2px 0; font-size: 12px; overflow-wrap: anywhere; }
+  .pool-select { color: var(--text); background: transparent; border: 1px solid var(--line); border-radius: 4px; padding: 3px 6px; font: inherit; cursor: pointer; }
+  .pool-select[aria-pressed="true"] { color: var(--warm); border-color: var(--warm); }
+  .pool-source { color: var(--muted); font-size: 11px; }
+  .panel[data-side="history"] { flex: 1; background: rgba(22,42,40,.8); gap: 2px; }
+  .history-head { position: sticky; top: 0; background: #213c38; padding: 3px; color: var(--warm); }
+  .history-line { padding: 3px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  .history-my { color: #a7d9ff; } .history-enemy { color: #ffbfab; }
+  .history-damage { color: var(--warm); font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="panel" id="panel" data-side="my">
+  <div class="offline" id="offline">等待对局数据…</div>
+</div>
+<script>
+(function () {
+  "use strict";
+  var requestedSide = new URLSearchParams(location.search).get("side");
+  var side = requestedSide === "history" ? "history" : requestedSide === "enemy" ? "enemy" : "my";
+  var panel = document.getElementById("panel");
+  // 战斗模式：pvp / world。PVP 不触发暴击，所以只在 world 下才把暴击值摆出来。
+  var battleMode = "pvp";
+  panel.dataset.side = side;
+  var lastAt = 0;
+  var lastKey = "";
+  var diag = null;   // /api/live/battle 的 state：抓包健康度，用来解释"为什么没数据"
+  var snapshotAge = 0;
+  var cachedSnapshot = null;
+  var skillPoolCache = {}, skillPoolRequests = {}, skillPoolQueries = {};
+  var poolPreview = null;
+  var targetQueries = {}, targetSession = '';
+  var historyKey = '';
+  var historySession = '';
+  var worldStarError = '';
+
+  // 没数据时分三种情况说清楚，而不是一律"等待对局数据…"：
+  //   1) 中继没跑 → 让用户去启抓包
+  //   2) 抓到了包但 key_hits=0 → 会话密钥没拿到，必须重新建连（最常见）
+  //   3) 一切正常只是还没进对局
+  function offlineText() {
+    if (diag && diag.fetch_error) return '工作台连接暂缓，正在重试…';
+    if (!diag) return "等待对局数据…<br><span class=\"hint\">（还没连上本地服务）</span>";
+    if (!diag.relay_ok) {
+      return "中继没在运行<br><span class=\"hint\">请在 APP 中点击“启动抓包”</span>";
+    }
+    var cap = diag.capture || {};
+    if (diag.key_missing) {
+      return "抓到了 " + (cap.target_packets || 0) + " 个包，但没拿到本次会话密钥<br>" +
+        '<span class="hint">（key_hits=0，业务帧一条都解不开）<br>' +
+        "0x1002 密钥只在客户端建连时发一次。<br>" +
+        "请在游戏里退回登录界面重新进入，<br>或重启游戏客户端；密钥到手后会自动开始解码。</span>";
+    }
+    return "等待对局数据…<br><span class=\"hint\">已抓到 " + (cap.target_packets || 0) +
+      " 个包 / 解出 " + (cap.parsed_business_records || 0) + " 条业务记录<br>" +
+      "进对局后这里会自动填上</span>";
+  }
+
+  function esc(value) {
+    return String(value == null ? "" : value).replace(/[&<>"]/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch];
+    });
+  }
+
+  function pickTeam(snapshot) {
+    var runtime = snapshot.runtime || {};
+    var state = snapshot.state || {};
+    var team = (side === "my") ? (runtime.myTeam || state.myTeam)
+                              : (runtime.enemyTeam || state.enemyTeam);
+    if ((!team || !team.length) && side === "enemy") {
+      var preview = snapshot.enemyPreview || {};
+      team = preview.enemyTeam || [];
+    }
+    return team || [];
+  }
+
+  function activeIndex(snapshot) {
+    var runtime = snapshot.runtime || {};
+    var state = snapshot.state || {};
+    if (side === "my") {
+      if (runtime.active && runtime.active.my) return runtime.active.my.rosterIndex || 0;
+      return state.myActiveIndex || 0;
+    }
+    if (runtime.active && runtime.active.enemy) return runtime.active.enemy.rosterIndex || 0;
+    return state.enemyActiveIndex || 0;
+  }
+
+  function iconUrl(entry) {
+    var id = entry.stageBaseConfId || entry.petBaseId || entry.iconId || entry.id;
+    if (!id) return "";
+    return "/roco-pet-avatars-id/" + encodeURIComponent(id) + ".png";
+  }
+
+  function skillIconUrl(move) {
+    var id = move.skill_id || move.skillId || move.id;
+    if (!id) return "";
+    if (/^\d+$/.test(String(id)) && Number(id) > 9999999) id = Math.floor(Number(id) / 100);
+    return "/roco-skill-icons/" + encodeURIComponent(id) + ".png";
+  }
+
+  window.rocoImageError = function (img) {
+    var tries = Number(img.dataset.retry || 0);
+    if (tries >= 2 || !img.getAttribute('src')) { img.style.visibility = 'hidden'; return; }
+    img.dataset.retry = tries + 1;
+    var original = img.getAttribute('src').split('?')[0];
+    setTimeout(function () { if (img.isConnected) img.src = original + '?retry=' + (tries + 1); }, tries ? 2000 : 500);
+  };
+
+  function hpOf(entry, snapshot) {
+    var runtime = snapshot.runtime || {};
+    var hp = runtime.hp && runtime.hp[side];
+    var current = entry.currentHp == null ? NaN : Number(entry.currentHp);
+    if (!isFinite(current) && hp && hp.hpAfter != null && isFinite(hp.hpAfter)) current = Number(hp.hpAfter);
+    var max = Number(entry.maxHp) || Number(entry.stats && entry.stats.hp) || 0;
+    var percent = entry.hpPercent == null ? NaN : Number(entry.hpPercent);
+    if (!isFinite(percent) && max > 0 && isFinite(current)) percent = Math.round(current * 100 / max);
+    if (!isFinite(percent)) percent = hp && hp.percent != null && isFinite(hp.percent) ? Number(hp.percent) : NaN;
+    if (isFinite(percent)) percent = Math.max(current > 0 ? 1 : 0, Math.min(100, percent));
+    var frozen = entry.frozenHp == null ? 0 : Number(entry.frozenHp);
+    if (!isFinite(frozen) || frozen < 0) frozen = 0;
+    var frozenPercent = max > 0 && isFinite(max) && current !== 0 ? Math.max(0, Math.min(100, frozen * 100 / max)) : 0;
+    return { current: current, max: max, percent: percent, frozen: frozen, frozenPercent: frozenPercent };
+  }
+
+  function hpClass(percent) {
+    if (percent <= 25) return "hp-fill danger";
+    if (percent <= 55) return "hp-fill warn";
+    return "hp-fill";
+  }
+
+  var STAT_KEYS = { "生命": "hp", "物攻": "phyAtk", "魔攻": "magAtk",
+                    "物防": "phyDef", "魔防": "magDef", "速度": "spd" };
+  var NATURE_LABEL = { patk: "物攻", pdef: "物防", matk: "魔攻", mdef: "魔防", spd: "速度", hp: "生命" };
+
+  function statCells(entry) {
+    // 捕获面板的状态层数另算；伤害候选不冒充已下发的真实面板。
+    var live = entry.battleStats || {};
+    var stats = entry.stats || {};
+    var est = entry.battleStatsEstimated || {};
+    var mon = entry.monster || {};
+    var rows = [
+      ["生命", live.hp || stats.hp || mon.base_hp],
+      ["物攻", live.phyAtk || stats.phyAtk || stats.atk || mon.base_atk],
+      ["魔攻", live.magAtk || stats.magAtk || stats.spAtk || mon.base_sp_atk],
+      ["物防", live.phyDef || stats.phyDef || stats.def || mon.base_def],
+      ["魔防", live.magDef || stats.magDef || stats.spDef || mon.base_sp_def],
+      ["速度", live.spd || stats.spd || stats.speed || mon.base_spd]
+    ];
+    return rows.map(function (row) {
+      var key = STAT_KEYS[row[0]];
+      var estimated = key && est[key];
+      var value = (row[1] == null || row[1] === "") ? "--" : row[1];
+      if (estimated) value = "~" + value;
+      var title = estimated
+        ? ' title="对方报文没下发这一项，由实测伤害反解（误差约 ±1）"'
+        : "";
+      return '<div class="stat"' + title + '><span>' + esc(row[0]) + '</span><span>' + esc(value) + '</span></div>';
+    }).join("");
+  }
+
+  // 六维雷达图：照洛克王国背包里精灵详情那种六边形刻度。
+  // 数值用**含性格、不含战斗内 buff** 的 naturedStats（后端以进场面板 ×1.1/×0.9 算出）；
+  // 性格增益/减益用 ↑↓ 标在对应轴上；个体值已知时用黄色标注（+10 就是满值）。
+  var RADAR_AXES = [
+    { key: "hp",     label: "生命", cap: 600, angle: -90 },
+    { key: "phyAtk", label: "物攻", cap: 300, angle: 210 },
+    { key: "phyDef", label: "物防", cap: 300, angle: 150 },
+    { key: "magAtk", label: "魔攻", cap: 300, angle: -30 },
+    { key: "magDef", label: "魔防", cap: 300, angle: 30 },
+    { key: "spd",    label: "速度", cap: 250, angle: 90 }
+  ];
+  // 报文里的增减方向用短名（patk/pdef/...），雷达轴用长名。
+  var NATURE_TO_STAT = { patk: "phyAtk", pdef: "phyDef", matk: "magAtk",
+                         mdef: "magDef", spd: "spd", hp: "hp" };
+
+  function radarChart(entry) {
+    // naturedStats = 含性格、不含战斗内 buff；没有就退回裸面板 initialStats。
+    var initial = entry.naturedStats || entry.initialStats || entry.stats || {};
+    var live = entry.battleStats || {};
+    var est = entry.battleStatsEstimated || {};
+    var info = entry.configurationInference || {};
+    var selection = info.protocol_selection || entry.talent_selection;
+    var selected = selection && selection.selected ? selection.selected : null;
+    if (!selected && info.known_talents) selected = Object.keys(info.known_talents).filter(function (d) { return info.known_talents[d] && info.known_talents[d].selected; });
+    selected = selected || [];
+    var shortKey = { hp:'hp', phyAtk:'patk', magAtk:'matk', phyDef:'pdef', magDef:'mdef', spd:'spd' };
+    var knownNature = info.known_nature || {};
+    var upKey = NATURE_TO_STAT[entry.natureUp || knownNature.up] || null;
+    var downKey = NATURE_TO_STAT[entry.natureDown || knownNature.down] || null;
+
+    var values = {}, ranges = {};
+    var hasAny = false;
+    RADAR_AXES.forEach(function (ax) {
+      var v = initial[ax.key];
+      if (ax.key === "hp" && !(typeof v === "number" && v > 0)) v = live.hp;
+      var range = (info.panel_ranges || {})[ax.key] || (entry.naturedStatsRange || {})[ax.key];
+      if (!range && !(typeof v === "number" && v > 0)) range = (entry.panelStatRanges || {})[ax.key];
+      if (Array.isArray(range) && range.length === 2 && range[0] > 0 && range[1] >= range[0]) {
+        ranges[ax.key] = range; v = range[1];
+      }
+      if (v == null || v === 0) v = live[ax.key];
+      values[ax.key] = (typeof v === "number" && v > 0) ? v : null;
+      if (values[ax.key] != null) hasAny = true;
+    });
+    if (!hasAny) return '<div class="radar-empty">面板条件不足，暂不能估计</div>';
+
+    var cx = 118, cy = 74, R = 50;
+    function pt(angle, ratio) {
+      var rad = angle * Math.PI / 180;
+      return [cx + Math.cos(rad) * R * ratio, cy + Math.sin(rad) * R * ratio];
+    }
+    function polygon(ratio) {
+      return RADAR_AXES.slice().sort(function (a, b) { return a.angle - b.angle; }).map(function (ax) {
+        var p = pt(ax.angle, ratio);
+        return p[0].toFixed(1) + "," + p[1].toFixed(1);
+      }).join(" ");
+    }
+
+    var grid = "";
+    [0.34, 0.67, 1.0].forEach(function (ratio, i) {
+      grid += '<polygon points="' + polygon(ratio) + '" fill="none" stroke="rgba(255,255,255,' +
+              (i === 2 ? "0.28" : "0.13") + ')" stroke-width="1"/>';
+    });
+    RADAR_AXES.forEach(function (ax) {
+      var p = pt(ax.angle, 1.0);
+      grid += '<line x1="' + cx + '" y1="' + cy + '" x2="' + p[0].toFixed(1) + '" y2="' + p[1].toFixed(1) +
+              '" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>';
+    });
+
+    var shape = [], lowerShape = [];
+    // 多边形必须按角度递增连线，否则轴序一改（左上/左下对称）就会画成自交的星形。
+    RADAR_AXES.slice().sort(function (a, b) { return a.angle - b.angle; }).forEach(function (ax) {
+      var value = values[ax.key];
+      var ratio = value == null ? 0 : Math.max(0.04, Math.min(1, value / ax.cap));
+      var p = pt(ax.angle, ratio);
+      shape.push(p[0].toFixed(1) + "," + p[1].toFixed(1));
+      var lower = ranges[ax.key] ? ranges[ax.key][0] : value;
+      var q = pt(ax.angle, lower == null ? 0 : Math.max(0.04, Math.min(1, lower / ax.cap)));
+      lowerShape.push(q[0].toFixed(1) + "," + q[1].toFixed(1));
+    });
+    var dots = "";
+    var labels = "";
+    RADAR_AXES.forEach(function (ax) {
+      var value = values[ax.key];
+      var ratio = value == null ? 0 : Math.max(0.04, Math.min(1, value / ax.cap));
+      var p = pt(ax.angle, ratio);
+      var estimated = !!est[ax.key] || !!ranges[ax.key];
+      var dotColor = estimated ? "#f5c26b" : "#8fd3ff";
+      dots += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="2.6" fill="' + dotColor + '"/>';
+
+      var lp = pt(ax.angle, 1.30);
+      var anchor = Math.abs(lp[0] - cx) < 6 ? "middle" : (lp[0] > cx ? "start" : "end");
+      var arrow = "";
+      if (ax.key === upKey) arrow = '<tspan fill="#7ee787">↑</tspan>';
+      else if (ax.key === downKey) arrow = '<tspan fill="#ff7b72">↓</tspan>';
+      var shown = value == null ? "--" : String(value);
+      var statRange = ranges[ax.key];
+      if (statRange) shown = statRange[0] === statRange[1] ? String(statRange[0]) : statRange[0] + "–" + statRange[1];
+      var dim = shortKey[ax.key], hasTalent = selected.indexOf(dim) >= 0;
+      var iv = selection && selection.values ? selection.values[dim] : null;
+      var knownValues = ((info.known_talents || {})[dim] || {}).values;
+      if (iv == null && Array.isArray(knownValues) && knownValues.length === 1) iv = knownValues[0];
+      var talentTitle = hasTalent ? '已确定个体加点' + (iv == null ? '（数值见配置候选）' : ' ' + iv) : '未确定加点';
+      if (((info.known_talents || {})[dim] || {}).source === 'historical_npc_candidate') {
+        talentTitle = 'NPC历史成长配置下的相容加点候选，尚未全面校准' + (iv == null ? '' : ' ' + iv);
+      }
+      labels += '<text x="' + lp[0].toFixed(1) + '" y="' + (lp[1] + 3).toFixed(1) +
+                '" text-anchor="' + anchor + '" font-size="11.5" fill="' + (hasTalent ? '#ffd75e' : '#c8d3e6') + '">' +
+                '<title>' + esc(talentTitle) + '</title>' + esc(ax.label) + arrow + " " + esc(shown) + "</text>";
+    });
+
+    var hasRanges = Object.keys(ranges).length > 0;
+    var estNote = hasRanges
+      ? '<div class="radar-note">橙色点与虚线为估计范围</div>' : "";
+    var natureNote = entry.naturedStatsRange ? '<div class="radar-note">星级或性格方向未确认，保留相容面板范围</div>' : (upKey || downKey)
+      ? '<div class="radar-note">数值含性格加成，不含战斗内 buff</div>' : "";
+
+    return '<svg class="radar" viewBox="0 0 236 148" preserveAspectRatio="xMidYMid meet">' +
+             grid +
+             '<polygon points="' + shape.join(" ") +
+               '" fill="rgba(143,211,255,0.18)" stroke="' + (hasRanges ? '#f5c26b' : '#8fd3ff') + '" stroke-width="1.4"/>' +
+             (hasRanges ? '<polygon points="' + lowerShape.join(" ") + '" fill="none" stroke="#f5c26b" stroke-dasharray="3 2" stroke-width="1"/>' : "") +
+             dots + labels +
+           "</svg>" + natureNote + estNote;
+  }
+
+
+  function buffChips(entry) {
+    var all = entry.buffs || entry.statuses || [];
+    if (!Array.isArray(all) || !all.length) return "";
+    // 入场自带的那批被动，报文和 buff 表都只给 id 不给名字（游戏本身也就显示个图标），
+    // 所以「被动 ×9」这种占位毫无信息量 —— 无名的一律不显示，有名字的才列出来。
+    var shown = all.filter(function (buff) { return buff.name || buff.cute; });
+    if (!shown.length) return "";
+    var html = shown.slice(0, 8).map(function (buff) {
+      var label = buff.name || buff.skillName || buff.label || "状态";
+      var layers = buff.layers || buff.stack || 0;
+      var cls = "buff";
+      if (buff.cute) cls += " cute";
+      else if (buff.direction === "down") cls += " down";
+      else if (buff.direction === "up") cls += " up";
+      if (buff.passive && !buff.cute) cls += " passive";
+      var title = "状态 id " + (buff.id || "?") + (buff.desc ? "：" + buff.desc : "");
+      if (buff.independent) title += '；里拉鳐独立印记，与普通印记分开结算';
+      return '<span class="' + cls + '" title="' + esc(title) + '">'
+        + esc(label) + (layers > 1 ? " ×" + layers : "") + "</span>";
+    }).join("");
+    if (shown.length > 8) {
+      html += '<span class="buff more" title="只显示前 8 个">+' + (shown.length - 8) + "</span>";
+    }
+    return html;
+  }
+
+  function quoteText(quote) {
+    if (!quote || quote.reason) return '<span title="' + esc(quote && quote.reason || '缺少计算条件') + '">待核实</span>';
+    if (Array.isArray(quote.traitScenarios)) return quote.traitScenarios.map(function(branch) {
+      return '<div title="' + esc(branch.condition || '') + '"><small>' + esc(branch.label) + ' </small>' + quoteText(branch) + '</div>';
+    }).join('');
+    var low = quote.perHitMin != null ? quote.perHitMin : quote.normalMin != null ? quote.normalMin : quote.normal;
+    var high = quote.perHitMax != null ? quote.perHitMax : quote.normalMax != null ? quote.normalMax : quote.normal;
+    if (low == null || high == null) return '—';
+    var text = low === high ? String(low) : low + '–' + high;
+    if (quote.hits > 1) text = '(' + text + ')×' + quote.hits;
+    return esc(text) + (quote.oneShot ? '<span class="ohko">秒！</span>' : '');
+  }
+
+  function targetKey(move) {
+    var runtime = cachedSnapshot && cachedSnapshot.runtime || {}, team = runtime[side === 'my' ? 'myTeam' : 'enemyTeam'] || [];
+    var actor = team[activeIndex(cachedSnapshot || {})] || {};
+    return String(runtime.sessionId || '') + ':' + String(actor.petId || '') + ':' + move.slot + ':' + move.skillId;
+  }
+
+  function targetPanel(move) {
+    var key = targetKey(move), query = targetQueries[key];
+    if (!query || !query.open) return '';
+    var runtime = cachedSnapshot && cachedSnapshot.runtime || {}, opposite = side === 'my' ? 'enemy' : 'my';
+    var team = runtime[opposite === 'my' ? 'myTeam' : 'enemyTeam'] || [], active = ((runtime.active || {})[opposite] || {}).rosterIndex;
+    var options = team.filter(function(p,index) { return index !== active && p.alive !== false && p.currentHp !== 0; });
+    var fresh = query.token === runtime.snapshotToken;
+    var html = '<div class="target-panel"><select data-target-select="' + esc(key) + '" data-skill-id="' + move.skillId + '" data-slot="' + esc(move.slot) + '" aria-label="选择换入的精灵">' +
+      '<option value="">' + (options.length ? '选择场下精灵后计算' : '暂无已识别且存活的替补') + '</option>' + options.map(function(p) {
+        return '<option value="' + esc(p.petId) + '"' + (fresh && String(query.target) === String(p.petId) ? ' selected' : '') + '>' + esc(p.petName || p.name || '?') + '</option>';
+      }).join('') + '</select><div class="target-result">';
+    if (query.pending && fresh) html += '计算中…';
+    else if (query.error && fresh) html += esc(query.error);
+    else if (query.result && fresh) {
+      var estimate = query.result.estimate;
+      html += '<span title="' + esc(query.result.note) + '">' + esc(query.result.targetName) + ' · ';
+      if (estimate.choices) html += estimate.choices.map(function(c) { return '<div>' + esc(c.label) + ' ' + quoteText(c) + (c.response ? ' / 应对 ' + quoteText(c.response) : '') + '</div>'; }).join('');
+      else html += quoteText(estimate) + (estimate.response ? ' / 应对 ' + quoteText(estimate.response) : '');
+      html += '</span>';
+    } else if (query.result) html += '状态已更新，请重新选择';
+    return html + '</div></div>';
+  }
+
+  async function previewTarget(key, move, target) {
+    if (!target || !cachedSnapshot) return;
+    var runtime = cachedSnapshot.runtime || {}, team = runtime[side === 'my' ? 'myTeam' : 'enemyTeam'] || [], actor = team[activeIndex(cachedSnapshot)] || {};
+    var query = targetQueries[key] || (targetQueries[key] = {open:true});
+    var sequence = query.sequence = (query.sequence || 0) + 1;
+    query.target = target; query.token = runtime.snapshotToken; query.pending = true; query.error = ''; query.result = null;
+    render(cachedSnapshot);
+    try {
+      var response = await fetch('/api/hud/preview-target', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+        sessionId:runtime.sessionId,snapshotToken:runtime.snapshotToken,side:side,actorPetId:actor.petId,targetPetId:target,skillId:move.skillId,slot:move.slot})});
+      var result = await response.json();
+      if (query.sequence !== sequence) return;
+      if (!response.ok) throw Error(result.error || '计算失败');
+      query.result = result;
+    } catch(error) { if (query.sequence !== sequence) return; query.error = error.message; }
+    query.pending = false;
+    if (cachedSnapshot) render(cachedSnapshot);
+  }
+
+  function counterKey(move) {
+    var runtime = cachedSnapshot && cachedSnapshot.runtime || {}, opposite = side === 'my' ? 'enemy' : 'my';
+    var team = runtime[opposite === 'my' ? 'myTeam' : 'enemyTeam'] || [];
+    var index = ((runtime.active || {})[opposite] || {}).rosterIndex || 0;
+    return 'counter:' + targetKey(move) + ':' + String((team[index] || {}).petId || '');
+  }
+
+  function listeningPanel(move) {
+    var key = counterKey(move), query = targetQueries[key];
+    if (!query || !query.open) return '';
+    var fresh = query.token === (cachedSnapshot.runtime || {}).snapshotToken;
+    var html = '<div class="target-panel"><select data-counter-select="' + esc(key) + '" data-skill-id="' + move.skillId +
+      '" data-slot="' + esc(move.slot) + '" aria-label="选择被听桥的技能"><option value="">选择已观测技能或愿力情景</option>' +
+      (query.options || []).map(function(option) {
+        return '<option value="' + esc(option.value) + '" title="' + esc((option.types || []).join('、')) + '"' +
+          (option.disabled ? ' disabled' : '') + (fresh && query.selection === option.value ? ' selected' : '') + '>' +
+          esc(option.label) + (option.disabled ? '（不适用）' : '') + '</option>';
+      }).join('') + '</select><div class="target-result">';
+    if (query.pending && fresh) html += '计算中…';
+    else if (query.error && fresh) html += esc(query.error);
+    else if (!fresh) html += '状态已更新，请重新选择';
+    else if (query.result && query.result.estimate) html += '<span title="' + esc(query.result.note) + '">' +
+      esc(query.result.selectionLabel) + ' · 听桥反击 ' + quoteText(query.result.estimate) + '</span>';
+    else html += '仅试算应对攻击成功的反击，愿力选项为属性情景。';
+    return html + '</div></div>';
+  }
+
+  async function previewListening(move, selection) {
+    if (!cachedSnapshot) return;
+    var runtime = cachedSnapshot.runtime || {}, opposite = side === 'my' ? 'enemy' : 'my';
+    var own = runtime[side === 'my' ? 'myTeam' : 'enemyTeam'] || [], actor = own[activeIndex(cachedSnapshot)] || {};
+    var other = runtime[opposite === 'my' ? 'myTeam' : 'enemyTeam'] || [];
+    var target = other[((runtime.active || {})[opposite] || {}).rosterIndex || 0] || {};
+    var query = targetQueries[counterKey(move)] || (targetQueries[counterKey(move)] = {});
+    var sequence = query.sequence = (query.sequence || 0) + 1;
+    query.open = true; query.pending = true; query.token = runtime.snapshotToken;
+    query.selection = selection || ''; query.error = ''; query.result = null;
+    render(cachedSnapshot);
+    var request = {sessionId:runtime.sessionId,snapshotToken:runtime.snapshotToken,side:side,actorPetId:actor.petId,
+      targetPetId:target.petId,skillId:move.skillId,slot:move.slot,previewMode:'listening'};
+    if (selection && selection.startsWith('move:')) request.counterSkillId = Number(selection.slice(5));
+    else if (selection && selection.startsWith('wish:')) request.counterWishGroup = selection.slice(5);
+    try {
+      var response = await fetch('/api/hud/preview-target', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request)});
+      var result = await response.json();
+      if (query.sequence !== sequence) return;
+      if (!response.ok) throw Error(result.error || '计算失败');
+      query.options = result.counterOptions || []; query.result = result;
+    } catch(error) { if (query.sequence !== sequence) return; query.error = error.message; }
+    query.pending = false;
+    if (cachedSnapshot) render(cachedSnapshot);
+  }
+
+  function skillRows(entry) {
+    // 敌方只显示已经观测到的招式这件事，由后端保证（快照里敌方 moves 只会含打过的），
+    // 前端不能再清一遍 —— 之前这里二次过滤，把后端算好的观测结果又抹掉了，
+    // 结果敌方永远显示「未观测」。
+    var moves = entry.moves || entry.selectedMoves || entry.move_pool || [];
+    if (!Array.isArray(moves)) moves = [];
+    var rows = [];
+    for (var i = 0; i < 4; i += 1) {
+      var move = moves[i];
+      if (!move) {
+        rows.push('<div class="skill empty"><span class="skill-name">' +
+                  (side === "enemy" ? "未观测" : "空技能槽") + "</span></div>");
+        continue;
+      }
+      var power = move.power == null ? "" : ("威力 " + move.power);
+      var energy = move.energy_cost == null ? "" : ("能量 " + move.energy_cost);
+      var meta = [move.move_type || move.type || "", power, energy].filter(Boolean).join(" · ");
+      if (move.damageHits > 1) meta += " · " + move.damageHits + "连击";
+      // 后端已合并已知状态、特性和天气；印记伤害与愿力预览在四槽下单列。
+      // 本平台伤害**没有随机浮动**：同一个面板、威力、克制、本系只会得到唯一值。
+      // 仅展示普通伤害；暴击记录不作为本栏的估计输出。
+      var normal = move.damageNormal;
+      var range = move.damageRange || move.damage_range || null;
+      if (normal == null && Array.isArray(range) && range.length === 2) normal = range[0];
+      var dmg = "";
+      var dmgTitle = "";
+      if (normal != null) {
+        dmg = String(normal);
+        if (move.damageSource === "incoming") {
+          dmgTitle = "双方所需面板已确定，按当前伤害公式计算";
+        }
+      } else if (move.damageNormalMin != null && move.damageNormalMax != null) {
+        // 对方攻击面板没下发 → 按种族值 + 性格推的可能范围（个体未知，取 0~60 两端）。
+        dmg = move.damageNormalMin + " ~ " + move.damageNormalMax;
+        dmgTitle = "攻防面板存在未知项，按相容性格、个体或观测范围计算最低/最高伤害";
+        if (move.damageAtkRange && move.damageAtkRange.length === 2) {
+          dmgTitle += "（对方攻击 " + move.damageAtkRange[0] + "~" + move.damageAtkRange[1] + "）";
+        }
+      } else if (move.damageNonDamaging) {
+        dmg = "无直接伤害";
+        dmgTitle = "变化或防御技能，不产生直接攻击伤害";
+      } else if (move.damageNote) {
+        dmg = move.damageBeforeKnockoutMissing ? '无力竭前记录' : move.damageNote.includes('历史不完整') ?
+          (move.damageNote.includes('中途观战') ? '中途观战' : '历史不完整') : "待确认";
+        dmgTitle = move.damageNote;
+      } else if (move.estimatedDamage != null) {
+        dmg = "≈" + move.estimatedDamage;
+      }
+      if (move.damageHits > 1 && (normal != null || move.damageNormalMin != null)) {
+        var perMin = move.damagePerHitMin != null ? move.damagePerHitMin : (normal != null ? normal : move.damageNormalMin) / move.damageHits;
+        var perMax = move.damagePerHitMax != null ? move.damagePerHitMax : (normal != null ? normal : move.damageNormalMax) / move.damageHits;
+        dmg = (perMin === perMax ? String(perMin) : "(" + perMin + "–" + perMax + ")") + "×" + move.damageHits;
+        dmgTitle += "；每段伤害×固定连击数；合计 " + (normal != null ? normal : move.damageNormalMin + "–" + move.damageNormalMax);
+      }
+      if (move.damageBasis) dmgTitle += "；依据：" + move.damageBasis;
+      (move.damageEffects || []).forEach(function (effect) {
+        if (effect.attacker_trait) dmgTitle += '；攻击方特性：' + effect.attacker_trait;
+        if (effect.defender_trait) dmgTitle += '；受击方特性：' + effect.defender_trait;
+        if (effect.weather) dmgTitle += '；天气：' + effect.weather;
+        if (effect.power_range) dmgTitle += '；有效威力：' + effect.power_range.join('–');
+        if (effect.unreviewed_trait_ids && effect.unreviewed_trait_ids.length) dmgTitle += '；特性规则尚未完整覆盖：' + effect.unreviewed_trait_ids.join('、') + '，当前只计入已知/已同步效果';
+        if (effect.calendar_source) dmgTitle += '；日期依据：' + effect.calendar_source;
+        if (effect.intrinsic_power_uncertainty) dmgTitle += '；威力依据：' + effect.intrinsic_power_uncertainty;
+      });
+      if (move.damageBeforeKnockout) {
+        dmgTitle += '；保留同一组在场精灵力竭前最后一次伤害估计';
+      }
+      if (dmgTitle) dmg = '<span title="' + esc(dmgTitle) + '">' + dmg + "</span>";
+      if ((normal != null || move.damageNormalMin != null) && move.oneShot) {
+        dmg += '<span class="ohko" title="当前条件下最低估计伤害大于对方余血">秒！</span>';
+      }
+      var response = move.damageResponse;
+      if (response) {
+        var responseText = '待核实';
+        if (response.perHitMin != null && response.perHitMax != null) {
+          responseText = response.perHitMin === response.perHitMax ? String(response.perHitMin) : response.perHitMin + '–' + response.perHitMax;
+          if (response.hits > 1) responseText = '(' + responseText + ')×' + response.hits;
+        }
+        var responseTitle = response.reason || '仅在应对成功时成立；按当前状态独立计算，不代表对方必定选择被应对的行动';
+        dmg = '<div><small>未应对 </small>' + dmg + '</div><div title="' + esc(responseTitle) + '"><small>应对 </small>' +
+          esc(responseText) + (response.oneShot ? '<span class="ohko">秒！</span>' : '') + '</div>';
+      }
+      if (Array.isArray(move.damageChoices) && move.damageChoices.length) {
+        dmg = move.damageChoices.map(function(choice) {
+          function value(quote) {
+            if (quote.reason || quote.perHitMin == null || quote.perHitMax == null) return '待核实';
+            return quoteText(quote);
+          }
+          var title = [choice.note, choice.reason].filter(Boolean).join('；');
+          var html = '<div title="' + esc(title) + '"><small>' + esc(choice.label) + ' </small>' + value(choice) + '</div>';
+          if (choice.response) html += '<div><small>' + esc(choice.label) + '·应对 </small>' + value(choice.response) + '</div>';
+          return html;
+        }).join('');
+      }
+      if (Array.isArray(move.damageTraitScenarios)) {
+        dmg = move.damageTraitScenarios.map(function(branch) {
+          var text = '<div title="' + esc(branch.condition || '') + '"><small>' + esc(branch.label) + ' </small>' + quoteText(branch) + '</div>';
+          var matched = response && (response.traitScenarios || []).find(function(r) { return r.triggered === branch.triggered; });
+          if (matched) text += '<div><small>' + esc(branch.label) + '·应对 </small>' + quoteText(matched) + '</div>';
+          return text;
+        }).join('');
+      }
+      if (move.damageCounterPreview) dmg = '<button class="counter-toggle" data-counter-toggle="' + esc(counterKey(move)) +
+        '" data-skill-id="' + move.skillId + '" data-slot="' + esc(move.slot) + '" title="选择对方技能，估计听桥反击">选择技能</button>';
+      if (move.recentCastEstimate) {
+        var castEstimate = move.recentCastEstimate;
+        var castRange = castEstimate.normalMin === castEstimate.normalMax ? String(castEstimate.normalMin) :
+          castEstimate.normalMin + '–' + castEstimate.normalMax;
+        dmg = '<div title="施放前保存的预测；已消费的效果仅属于该次攻击"><small>最近R' +
+          esc(castEstimate.round) + '本次 </small>' + esc(castRange) + '</div><div title="' +
+          (move.damageBeforeKnockout ? '保留力竭前最后一次发布的预测' : '按当前状态计算下一次出手，已消费效果不再生效') +
+          '"><small>' + (move.damageBeforeKnockout ? '力竭前 ' : '当前/下次 ') + '</small>' + dmg + '</div>';
+      }
+      if (move.damageBeforeKnockout) dmg += '<small>（力竭前）</small>';
+      // 这两枚小标是「这行不是报文原样」的说明：特性替换出来的、只能靠观测到的。
+      var tag = "";
+      if (move.replacedByFeatureName) {
+        tag += '<span class="skill-tag feature" title="由特性「' + esc(move.replacedByFeatureName) +
+               '」替换（造成克制伤害后触发）">特性</span>';
+      }
+      if (move.observedOnly) {
+        tag += '<span class="skill-tag observed" title="敌方进场不下发配招，这一行来自它实际打出的招式">观测</span>';
+      }
+      rows.push(
+        '<div class="skill">' +
+          '<img class="skill-icon" src="' + esc(skillIconUrl(move)) + '" alt="" onerror="window.rocoImageError(this)" />' +
+          '<div class="skill-main">' +
+            '<div class="skill-name">' + esc(move.skillName || move.moveName || move.name || "") + tag + "</div>" +
+            '<div class="skill-meta">' + esc(meta) + "</div>" +
+          "</div>" +
+          '<div class="skill-dmg">' + dmg + "</div>" +
+          (typeof move.skillId === 'number' && !move.damageCounterPreview ? '<button class="target-toggle" data-target-toggle="' + esc(targetKey(move)) + '" aria-label="选择替补目标试算" title="替补目标试算">›</button>' : '') +
+          (move.damageCounterPreview ? listeningPanel(move) : targetPanel(move)) +
+        "</div>"
+      );
+    }
+    return rows.join("");
+  }
+
+  function traitDamageRow(entry) {
+    var quote = entry.traitDamagePreview;
+    if (!quote) return '';
+    var kinds = Object.keys(quote.damageByKind || {});
+    var text = kinds.map(function(kind) {
+      var c = quote.damageByKind[kind];
+      return (kinds.length > 1 ? (kind === 'physical' ? '物理 ' : '魔法 ') : '') +
+        (c.minimum === c.maximum ? c.minimum : c.minimum + '～' + c.maximum);
+    }).join(' / ');
+    return '<div class="trait-damage" title="' + esc(quote.reason || quote.trigger || '') +
+      '">特性伤害估计：<b>' + esc(text || '待确认') + '</b></div>';
+  }
+
+  function extraDamageRows(entry) {
+    var rows = [];
+    var weather = (entry.liveContext || {}).weather;
+    if (weather) rows.push('<div class="dmg-note">天气推演：' + esc(weather.name) + ' · 剩余' + esc(weather.remaining_rounds) + '回合</div>');
+    (entry.attackMarkDamage || []).forEach(function (row) {
+      if (row.markId === 1035 && !row.independent && entry.traitDamagePreview && !entry.traitDamagePreview.reason) return;
+      rows.push('<div class="dmg-note">命中敌方 · ' + esc(row.name) + '：' +
+        (row.damageText ? esc(row.damageText) : row.damage == null ? '待核实' : esc(row.damage)) +
+        '（非幻系攻击引爆一次，不随连击重复）</div>');
+    });
+    (entry.markDamage || []).forEach(function (row) {
+      rows.push('<div class="dmg-note">自身 · ' + esc(row.name) + '：' +
+        (row.reason ? esc(row.reason) : esc(row.trigger) + ' ' + (row.damageText ? esc(row.damageText) : row.damage == null ? '待核实' : esc(row.damage)) + '伤害' +
+         (row.layers ? '（' + esc(row.layers) + '层）' : '')) + '</div>');
+    });
+    if (entry.coreMagicSkillId !== 7010020 && entry.coreMagicName) rows.push('<div class="dmg-note">核心魔法 · ' + esc(entry.coreMagicName) + '</div>');
+    if (entry.wishPreview) {
+      var wish = entry.wishPreview, quote = wish.estimate || {};
+      rows.push('<div class="core-wish" title="' + esc(wish.note || '') + '"><div class="wish-line"><span>' + esc(wish.skillName || wish.name) +
+        '</span><b>' + quoteText(quote) + '</b></div>' + (quote.response ? '<div class="wish-line"><span>应对</span><b>' + quoteText(quote.response) + '</b></div>' : '') + '</div>');
+    }
+    if (entry.wishScenarios) {
+      var scenarios = entry.wishScenarios;
+      rows.push('<div title="' + esc(scenarios.note || scenarios.reason || '') + '"><div class="wish-line">愿力冲击 · 属性未知</div>' +
+        (scenarios.rows ? '<table class="wish-scenarios"><thead><tr><th></th><th>基础</th><th>应对</th></tr></thead><tbody>' + scenarios.rows.map(function(row) {
+          var present = row.types && row.types.length;
+          return '<tr title="' + esc(present ? row.types.join('、') : '当前精灵无对应属性') + '"><td>' + esc(row.label) + '</td><td>' + (present ? quoteText(row) : '') + '</td><td>' + (present ? quoteText(row.response) : '') + '</td></tr>';
+        }).join('') + '</tbody></table>' : '<span class="dmg-note">' + esc(scenarios.reason) + '</span>') + '</div>');
+    }
+    return rows.length ? '<div class="extra-damage">' + rows.join('') + '</div>' : '';
+  }
+
+  function benchRow(team, active) {
+    var rest = team.filter(function (entry, index) { return index !== active; }).slice(0, 5);
+    if (!rest.length) return '<div class="bench"><span class="none">无替补</span></div>';
+    return '<div class="bench">' + rest.map(function (entry) {
+      var hp = hpOf(entry, {}), energy = entry.energy == null ? '?' : entry.energy;
+      var title = (entry.petName || entry.name || '') + ' · ' + (isFinite(hp.current) ? hp.current : '?') +
+        (hp.frozen > 0 ? '（' + hp.frozen + '）' : '') + '/' + (hp.max || '?') + ' · 能量 ' + energy;
+      return '<div class="bench-pet" title="' + esc(title) + '"><img src="' + esc(iconUrl(entry)) + '" alt="' + esc(entry.petName || entry.name || '') + '" onerror="window.rocoImageError(this)" />' +
+        '<span class="bench-energy">⚡' + esc(energy) + '</span><div class="hp-track"><div class="' + hpClass(hp.percent) + '" style="width:' + (isFinite(hp.percent) ? hp.percent : 0) + '%"></div>' +
+        (hp.frozenPercent > 0 ? '<div class="hp-frozen-fill" style="width:' + hp.frozenPercent + '%"></div>' : '') + '</div><span class="bench-hp">' +
+        (isFinite(hp.percent) ? hp.percent + '%' : '?') + '</span></div>';
+    }).join("") + "</div>";
+  }
+
+  function skillPoolRows(entry, supplied) {
+    var form = entry.stageBaseConfId || entry.petBaseId;
+    if (!form) return '';
+    var data = supplied || skillPoolCache[form];
+    var query = skillPoolQueries[form] || '';
+    return '<details class="skill-query" data-skill-query="' + esc(form) + '" data-inference-key="skill-pool">' +
+      '<summary>技能查询 · 图鉴可携带</summary><div class="dmg-note">可学习范围，非对方已携带技能；请留意学习条件。左键选择技能，假设携带并试算对我方在场精灵的伤害。</div>' +
+      '<input data-pool-search="' + esc(form) + '" aria-label="搜索可学习技能" placeholder="搜索名称、系别或效果" value="' + esc(query) + '">' +
+      poolPreviewRows(entry) + '<div class="skill-query-list">' + poolResults(data, query) + '</div></details>';
+  }
+
+  function poolPreviewRows(entry) {
+    var query = poolPreview;
+    if (!query || query.key !== targetKey({slot:'pool',skillId:query.skillId}) ||
+        String(query.form) !== String(entry.stageBaseConfId || entry.petBaseId)) return '';
+    var runtime = cachedSnapshot.runtime || {}, index = ((runtime.active || {}).my || {}).rosterIndex;
+    if (index == null) index = (cachedSnapshot.state || {}).myActiveIndex || 0;
+    var target = (runtime.myTeam || [])[index] || {};
+    var fresh = query.token === runtime.snapshotToken && String(query.targetPetId) === String(target.petId);
+    var html = '<div class="target-result" role="status">假设试算 · ' + esc(query.skillName) + '：';
+    if (!fresh) html += '状态已更新，请重新选择';
+    else if (query.pending) html += '计算中…';
+    else if (query.error) html += esc(query.error);
+    else if (query.result) {
+      var result = query.result, estimate = result.estimate || {};
+      html += '<span title="' + esc(result.note) + '">对我方在场 ' + esc(result.targetName || target.petName || target.name || '?') + ' · ';
+      if (estimate.choices) html += estimate.choices.map(function(c) { return '<div>' + esc(c.label) + ' ' + quoteText(c) + (c.response ? ' / 应对 ' + quoteText(c.response) : '') + '</div>'; }).join('');
+      else html += (estimate.nonDamaging ? '无直接伤害' : quoteText(estimate)) + (estimate.response ? ' / 应对 ' + quoteText(estimate.response) : '');
+      html += '</span>';
+    }
+    return html + '</div>';
+  }
+
+  async function previewPoolSkill(skillId, skillName, form) {
+    if (side !== 'enemy' || !cachedSnapshot) return;
+    var runtime = cachedSnapshot.runtime || {}, actor = (runtime.enemyTeam || [])[activeIndex(cachedSnapshot)] || {};
+    if (String(form) !== String(actor.stageBaseConfId || actor.petBaseId)) return;
+    var index = ((runtime.active || {}).my || {}).rosterIndex;
+    if (index == null) index = (cachedSnapshot.state || {}).myActiveIndex || 0;
+    var target = (runtime.myTeam || [])[index] || {};
+    var query = poolPreview = {key:targetKey({slot:'pool',skillId:skillId}),form:form,skillId:skillId,skillName:skillName,
+      token:runtime.snapshotToken,targetPetId:target.petId,pending:true};
+    render(cachedSnapshot);
+    try {
+      var response = await fetch('/api/hud/preview-target', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+        sessionId:runtime.sessionId,snapshotToken:query.token,side:'enemy',actorPetId:actor.petId,targetPetId:target.petId,
+        skillId:skillId,slot:null,previewMode:'skill-pool'})});
+      var result = await response.json();
+      if (poolPreview !== query) return;
+      if (!response.ok) throw Error(result.error || '计算失败');
+      if (result.snapshotToken != null && result.snapshotToken !== query.token) throw Error('状态已更新，请重新选择');
+      query.result = result;
+    } catch(error) { if (poolPreview !== query) return; query.error = error.message; }
+    query.pending = false;
+    if (cachedSnapshot) render(cachedSnapshot);
+  }
+
+  function poolResults(data, query) {
+    if (!data) return '<div class="dmg-note">展开后读取技能图鉴…</div>';
+    if (data.error) return '<div class="dmg-note">' + esc(data.error) + '；重新展开可重试。</div>';
+    var term = (query || '').trim().toLowerCase();
+    var skills = (data.skills || []).filter(function (s) {
+      return !term || [s.name, s.type, s.description, s.skillId].join(' ').toLowerCase().indexOf(term) >= 0;
+    });
+    if (!skills.length) return '<div class="dmg-note">没有匹配的技能</div>';
+    var labels = {pool:'技能池',native:'升级',stones:'技能石',legacy:'血脉',legendary:'传说'};
+    return skills.map(function (s) {
+      var sources = (s.sources || []).map(function (r) {
+        return [labels[r.category] || r.category, r.bloodline,
+          r.level != null ? '等级≥' + r.level : '', r.stage != null ? '阶段≥' + r.stage : ''].filter(Boolean).join(' · ');
+      }).join(' / ');
+      var selected = poolPreview && poolPreview.key === targetKey({slot:'pool',skillId:s.skillId});
+      return '<div class="pool-skill"><button type="button" class="pool-select" data-pool-skill="' + esc(s.skillId) +
+        '" data-skill-name="' + esc(s.name) + '" aria-pressed="' + Boolean(selected) + '" title="假设携带此技能，试算对我方在场精灵的伤害"><b>' + esc(s.name) + '</b></button> <span class="pool-source">' +
+        esc([s.type, s.energy != null ? '能量' + s.energy : '', s.power != null ? '基础威力' + s.power : ''].filter(Boolean).join(' · ')) +
+        '</span><p>' + esc(s.description || '描述待核实') + '</p><div class="pool-source">' + esc(sources) + '</div></div>';
+    }).join('');
+  }
+
+  function loadSkillPool(form) {
+    if (skillPoolRequests[form] || (skillPoolCache[form] && skillPoolCache[form].skills)) return;
+    skillPoolRequests[form] = fetch('/api/forms/skill-pool?form_id=' + encodeURIComponent(form), {cache:'no-store'})
+      .then(function (response) { if (!response.ok) throw Error('技能图鉴暂不可读'); return response.json(); })
+      .then(function (data) { skillPoolCache[form] = data; })
+      .catch(function (error) { skillPoolCache[form] = {error:error.message}; })
+      .finally(function () { delete skillPoolRequests[form]; if (cachedSnapshot) render(cachedSnapshot); });
+  }
+
+  function historyRows(snapshot) {
+    var runtime = snapshot.runtime || {};
+    var events = runtime.battleHistory || runtime.battleTimeline || [];
+    var header = '第 ' + (runtime.round || '?') + ' 回合 · ' + (runtime.finished ? '本局已结束' : '本局记录');
+    if (runtime.replayArchive && (runtime.replayArchive.enabled || runtime.replayArchive.error)) header += runtime.replayArchive.error ? ' · 保存失败' : ' · 已存本地';
+    var start = events.find(function (e) { return e.kind === 'battle_enter'; });
+    if (start && start.round > 1) header += '（从第' + start.round + '回合开始观测）';
+    if (!runtime.battleHistory) header += ' · 仅最近记录';
+    var rows = events.filter(function (e) { return e.isMove !== false && ['skill_cast','switch','damage','form_change','battle_enter','battle_finish'].indexOf(e.kind) >= 0; });
+    return '<div class="history-head">' + esc(header) + '</div>' + rows.map(function (e) {
+      var label = e.side === 0 ? '我方' : e.side === 1 ? '敌方' : '场地';
+      var text = e.text || '';
+      if (e.kind === 'skill_cast') text = (e.petName || '') + ' 使用 ' + (e.skillName || '技能 ' + e.skillId);
+      if (e.kind === 'switch') text = (e.petName || '?') + ' 上场';
+      if (e.kind === 'damage') {
+        var damage = e.damage != null ? e.damage : e.damageFinal;
+        text = (e.casterName || '场地效果') + ' · ' + (e.skillName || '伤害效果') + ' → ' + (e.targetName || e.petName || '?');
+        text += '：' + (damage != null ? damage + ' 伤害' : '伤害待确认');
+        if (e.castEstimate) text += ' · 本次施放前预估 ' + e.castEstimate.normalMin + '–' + e.castEstimate.normalMax;
+        if (e.damage != null && e.damageFinal != null && e.damage !== e.damageFinal) text += '（实际扣血 ' + e.damageFinal + '）';
+        if (e.hit === false) text += ' · 未命中';
+        if (e.critical) text += ' · 暴击';
+      }
+      return '<div class="history-line"><span class="history-' + (e.side === 0 ? 'my' : e.side === 1 ? 'enemy' : 'field') + '">R' +
+        esc(e.round == null ? '?' : e.round) + ' ' + label + '</span> ' +
+        '<span' + (e.kind === 'damage' ? ' class="history-damage"' : '') + '>' + esc(text) + '</span></div>';
+    }).join('');
+  }
+
+  function render(snapshot) {
+    if (!snapshot) {
+      historyKey = '';
+      panel.innerHTML = '<div class="offline">' + offlineText() + "</div>";
+      return;
+    }
+    cachedSnapshot = snapshot;
+    var liveSession = String((snapshot.runtime || {}).sessionId || '');
+    if (targetSession !== liveSession) { targetSession = liveSession; targetQueries = {}; poolPreview = null; worldStarError = ''; }
+    if (side === 'history') {
+      var session = String((snapshot.runtime || {}).sessionId || (snapshot.runtime || {}).battleId || '');
+      var html = historyRows(snapshot);
+      var key = session + html;
+      if (key === historyKey) return;
+      var follow = session !== historySession || !historyKey || panel.scrollHeight - panel.scrollTop - panel.clientHeight < 24;
+      var position = panel.scrollTop;
+      panel.innerHTML = html;
+      panel.scrollTop = follow ? panel.scrollHeight : position;
+      historyKey = key;
+      historySession = session;
+      return;
+    }
+    battleMode = (snapshot.runtime && snapshot.runtime.mode) || "pvp";
+    var team = pickTeam(snapshot);
+    if (!team.length) {
+      panel.innerHTML = '<div class="offline">没有' + (side === "my" ? "我方" : "敌方") +
+                        "数据<br>" + offlineText() + "</div>";
+      return;
+    }
+    var index = activeIndex(snapshot);
+    var entry = team[index] || team[0];
+    var viewKey = String((snapshot.runtime || {}).sessionId || '') + ':' + String(entry.petId || entry.memberId || index);
+    var sameView = panel.dataset.inferenceView === viewKey;
+    var openKeys = sameView ? Array.from(panel.querySelectorAll('details[data-inference-key][open]')).map(function (d) { return d.dataset.inferenceKey; }) : [];
+    var scroll = sameView ? panel.scrollTop : 0;
+    var searchFocused = sameView && document.activeElement && document.activeElement.dataset && document.activeElement.dataset.poolSearch;
+    var searchPosition = searchFocused ? document.activeElement.selectionStart : null;
+    var hp = hpOf(entry, snapshot);
+    var name = entry.petName || entry.name || "?";
+    var lv = entry.level ? ("Lv." + entry.level) : "";
+    var worldStars = '';
+    if (battleMode === 'world' && side === 'my') {
+      if (entry.level > 0 && entry.level < 60) {
+        worldStars = '<span class="lv" title="未满60级按0星估计">0星</span>';
+      } else {
+        var selectedStars = (entry.natureStatsPolicy || {}).stars;
+        worldStars = '<label class="lv">星级 <select data-world-stars aria-label="己方大世界星级" title="仅设置当前大世界精灵，不影响PVP；不会覆盖游戏下发面板">' +
+          '<option value=""' + (selectedStars == null ? ' selected' : '') + '>未指定</option>' +
+          Array.from({length:11}, function(_, n) {return '<option value="' + n + '"' + (selectedStars === n ? ' selected' : '') + '>' + n + '星</option>';}).join('') + '</select></label>';
+      }
+    }
+    var types = entry.types || entry.type || [];
+    if (typeof types === "string") types = [types];
+    var typeChips = types.filter(Boolean).map(function (t) {
+      return '<span class="type-chip">' + esc(t) + "</span>";
+    }).join("");
+
+    // 萌化：名字其实已经由后端换成退化后的形态名（圣草迪莫 → 迪莫），
+    // 这里补一个徽章说明"为什么名字变了"，免得玩家以为抓错人。
+    var cuteStacks = entry.cuteStacks || 0;
+    var stageTag = "";
+    if (cuteStacks > 0) {
+      stageTag += '<span class="tag-cute" title="萌化：退化到上一阶，种族资质相应降低">萌化 ×'
+        + cuteStacks + "</span>";
+    }
+    if (entry.stageLowered && entry.stageFrom && entry.stage) {
+      stageTag += '<span class="tag-stage" title="当前形态阶段 / 退化前阶段">阶段 '
+        + entry.stageFrom + "→" + entry.stage + "</span>";
+    }
+
+    // 原性格ID与当前后天方向分开；未下发的方向只能展示已确认的推断。
+    var natureTag = "";
+    var knownNature = (entry.configurationInference || {}).known_nature || {};
+    var natureName = entry.natureName || knownNature.name || '';
+    var natureUp = entry.natureUp || knownNature.up, natureDown = entry.natureDown || knownNature.down;
+    var overrideKnown = entry.natureOverrideKnown || {};
+    var unknownOverride = overrideKnown.up === false || overrideKnown.down === false;
+    var originalNatureName = natureName;
+    if (unknownOverride) natureName = knownNature.name || '';
+    if (natureName || natureUp || natureDown || unknownOverride) {
+      var bits = [];
+      if (natureUp) bits.push("↑" + (NATURE_LABEL[natureUp] || natureUp));
+      if (natureDown) bits.push("↓" + (NATURE_LABEL[natureDown] || natureDown));
+      var changes = entry.natureRewritten ? '；原方向 ↑' + (NATURE_LABEL[entry.natureOriginalUp] || '?') + ' ↓' +
+        (NATURE_LABEL[entry.natureOriginalDown] || '?') + '；修正后 ' + bits.join(' ') : '';
+      if (unknownOverride) changes += '；原性格：' + (originalNatureName || '未知') + '；后天方向未下发，仅展示已确认方向';
+      natureTag = '<span class="tag-nature" title="' + esc(changes ? changes.replace(/^；/, '') : bits.join(' ')) +
+        '">' + esc(natureName || bits.join(' ') || '性格待确认') + '</span>';
+    }
+
+    var speciality = entry.speciality || {};
+    var specialityTag = speciality.confirmed && Number.isInteger(speciality.id) && speciality.id > 0
+      ? '<span class="tag-speciality" title="' + esc(speciality.description || speciality.mappingIssue || '报文已下发特长编号，名称尚未匹配') + '">' +
+        esc(speciality.name || ('特长#' + speciality.id)) + '</span>' : '';
+
+    var physical = entry.physical || {}, physicalBits = [];
+    [['height', '身高'], ['weight', '体重'], ['voice', '音调参数']].forEach(function (item) {
+      var metric = physical[item[0]] || {}, medals = (physical.medals || []).filter(function (m) { return m.attribute === item[0]; });
+      var text = metric.text ? esc(item[1] + ' ' + metric.text) : '';
+      medals.forEach(function (m) {
+        var confirmed = m.status === 'confirmed', boundary = m.status === 'boundary';
+        text += '<span class="physical-medal" title="' + esc(confirmed ? '报文已确认佩戴此奖牌' :
+          boundary ? '恰好位于2%边界，服务端比较与取整待核实' : '按已存范围预计符合条件，实际获得以捕获结算为准') + '">' +
+          esc((confirmed ? '' : boundary ? '边界待核实·' : '预计·') + m.name) + '</span>';
+      });
+      if (text) physicalBits.push('<span>' + text + '</span>');
+    });
+
+    panel.innerHTML =
+      (snapshot.source === "rkpp-live" && diag && !diag.relay_ok ? '<div class="dmg-note">抓包中继离线 · 历史快照（' + snapshotAge + ' 秒前）</div>' : '') +
+      (snapshot.runtime && snapshot.runtime.finished ? '<div class="dmg-note">本局已结束</div>' : '') +
+      '<div class="head">' +
+        '<img class="avatar" src="' + esc(iconUrl(entry)) + '" alt="" onerror="window.rocoImageError(this)" />' +
+        '<div>' +
+          '<div class="name-row"><span class="name">' + esc(name) + "</span>" +
+            '<span class="lv">' + esc(lv) + '</span>' + worldStars + '</div>' +
+          '<div class="types">' + natureTag + specialityTag + typeChips + stageTag + '</div>' +
+        "</div>" +
+      "</div>" +
+      (physicalBits.length ? '<div class="physical-info">' + physicalBits.join('') + '</div>' : '') +
+      '<div class="hp">' +
+        '<div class="hp-track' + (isFinite(hp.percent) ? '' : ' unknown') + '"><div class="' + hpClass(hp.percent) + '" style="width:' + (isFinite(hp.percent) ? hp.percent : 0) + '%"></div>' +
+          (hp.frozenPercent > 0 ? '<div class="hp-frozen-fill" style="width:' + hp.frozenPercent + '%" role="img" aria-label="冻结生命 ' + hp.frozen + '" title="冻结生命 ' + hp.frozen + '"></div>' : '') + '</div>' +
+        '<div class="hp-text"><span>' + (side === "my" ? "我方场上" : "敌方场上") + "</span>" +
+          "<b>" + (isFinite(hp.current) ? hp.current : "?") +
+            (hp.frozen > 0 ? '<span class="hp-frozen">（' + hp.frozen + '）</span>' : '') + " / " + (hp.max || "?") + "</b>" +
+          // 敌方在游戏里只能看到百分比，血量数字是抓包算出来的，两个都给，
+          // 但百分比单独标出来，免得和游戏里对不上时看不出哪个是估算。
+          (side === "enemy"
+            ? '<em class="hp-pct">' + (isFinite(hp.percent) ? hp.percent : "?") + "%</em>"
+            : "") +
+          "</div>" +
+      "</div>" +
+      (worldStarError ? '<div class="dmg-note" role="status">' + esc(worldStarError) + '</div>' : '') +
+      '<div class="stats stats-radar">' + radarChart(entry) + "</div>" +
+      '<div class="buffs">' + buffChips(entry) + "</div>" +
+      '<div class="active-summary">' + traitDamageRow(entry) +
+      '<div class="active-energy">能量 <b>' + esc(entry.energy == null ? '?' : entry.energy) + ' / ' + esc(entry.maxEnergy == null ? '?' : entry.maxEnergy) + '</b></div></div>' +
+      '<div class="skills">' + skillRows(entry) + "</div>" +
+      extraDamageRows(entry) +
+      '<div class="dmg-note">当前状态伤害估计</div>' +
+      benchRow(team, index) + (side === 'enemy' ? skillPoolRows(entry) : '');
+    panel.dataset.inferenceView = viewKey;
+    var starSelect = panel.querySelectorAll('[data-world-stars]')[0];
+    if (starSelect) starSelect.addEventListener('change', async function() {
+      var runtime = (cachedSnapshot || {}).runtime || {};
+      starSelect.disabled = true;
+      try {
+        var response = await fetch('/api/hud/world-stars', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({
+          sessionId:runtime.sessionId, snapshotToken:runtime.snapshotToken, petId:entry.petId,
+          stars:starSelect.value === '' ? null : Number(starSelect.value)})});
+        var result = await response.json();
+        if (!response.ok) throw Error(result.error || '星级设置失败');
+        worldStarError = '';
+      } catch(error) {
+        worldStarError = error.message;
+        render(cachedSnapshot);
+      }
+    });
+    panel.querySelectorAll('[data-target-toggle]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var key = button.dataset.targetToggle, query = targetQueries[key] || (targetQueries[key] = {});
+        query.open = !query.open;
+        render(cachedSnapshot);
+      });
+    });
+    panel.querySelectorAll('[data-target-select]').forEach(function(select) {
+      select.addEventListener('change', function() {
+        previewTarget(select.dataset.targetSelect, {skillId:Number(select.dataset.skillId),slot:Number(select.dataset.slot)}, select.value);
+      });
+    });
+    panel.querySelectorAll('[data-counter-toggle]').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var query = targetQueries[button.dataset.counterToggle];
+        if (query && query.open) { query.open = false; render(cachedSnapshot); }
+        else previewListening({skillId:Number(button.dataset.skillId),slot:Number(button.dataset.slot)}, null);
+      });
+    });
+    panel.querySelectorAll('[data-counter-select]').forEach(function(select) {
+      select.addEventListener('change', function() {
+        previewListening({skillId:Number(select.dataset.skillId),slot:Number(select.dataset.slot)}, select.value);
+      });
+    });
+    panel.querySelectorAll('details[data-inference-key]').forEach(function (d) { d.open = openKeys.indexOf(d.dataset.inferenceKey) >= 0; });
+    panel.querySelectorAll('details[data-skill-query]').forEach(function (d) {
+      var form = d.dataset.skillQuery, input = d.querySelector('input');
+      d.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-pool-skill]');
+        if (button && d.contains(button)) return previewPoolSkill(Number(button.dataset.poolSkill), button.dataset.skillName, form);
+      });
+      d.querySelector('summary').addEventListener('click', function () {
+        if (!d.open && skillPoolCache[form] && skillPoolCache[form].error) delete skillPoolCache[form];
+      });
+      d.addEventListener('toggle', function () { if (d.open && !skillPoolCache[form]) loadSkillPool(form); });
+      input.addEventListener('input', function () {
+        skillPoolQueries[form] = input.value;
+        d.querySelector('.skill-query-list').innerHTML = poolResults(skillPoolCache[form], input.value);
+      });
+      if (d.open && !skillPoolCache[form]) loadSkillPool(form);
+      if (searchFocused === form) { input.focus(); if (searchPosition != null) input.setSelectionRange(searchPosition, searchPosition); }
+    });
+    panel.scrollTop = scroll;
+  }
+
+  var pollPending = false;
+  function poll() {
+    if (pollPending) return;
+    pollPending = true;
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, 1500);
+    return fetch("/api/hud/snapshot" + (lastAt ? '?after=' + encodeURIComponent(lastAt) : ''), { cache: "no-store", signal: controller.signal }).then(function (response) {
+      if (!response || !response.ok) throw Error('工作台状态请求失败');
+      return response.json();
+    }).then(function (data) {
+      if (!data) return;
+      diag = data.state || diag;
+      var payload = data.unchanged ? cachedSnapshot : data.payload || null;
+      cachedSnapshot = payload;
+      snapshotAge = Math.max(0, Math.floor(data.age_seconds || 0));
+      var key = String(data.at || 0) + "|" + side + "|" + (diag ? (diag.key_missing + ":" + diag.relay_ok) : "") + (diag && !diag.relay_ok ? ":" + snapshotAge : "") + (!payload && diag ? ':' + diag.events_seen : '');
+      var at = data.at || 0;
+      if (key === lastKey && at === lastAt) return;
+      lastKey = key;
+      lastAt = at;
+      render(payload);
+    }).catch(function () {
+      diag = Object.assign({}, diag || {}, { fetch_error: '工作台请求暂缓，正在重试' });
+      lastKey = '';
+      snapshotAge = lastAt ? Math.max(0, Math.floor(Date.now() / 1000 - lastAt)) : 0;
+      render(cachedSnapshot);
+    }).finally(function () { clearTimeout(timer); pollPending = false; });
+  }
+
+  poll();
+  setInterval(poll, 300);
+  // 工作台在同一浏览器里写 localStorage 时也能立刻刷新（网页版调试用）。
+  window.addEventListener("storage", poll);
+
+  // 面板是常驻窗口，改一次前端就得手动关掉重开很烦。这里盯着页面文件的修订号，
+  // 后端一换代码就自己重载（只重载页面，不动窗口位置）。
+  var pageRev = null;
+  function watchRevision() {
+    fetch("/api/hud/revision", { cache: "no-store" }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (data) {
+      var rev = data && data.revision;
+      if (!rev) return;
+      if (pageRev === null) { pageRev = rev; return; }
+      if (rev !== pageRev) { pageRev = rev; location.reload(); }
+    }).catch(function () {});
+  }
+  watchRevision();
+  setInterval(watchRevision, 5000);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "targeted_python_tests": {
+    "passed": 42,
+    "seconds": 9.195,
+    "modules": [
+      "tests.test_belief",
+      "tests.test_lab_server"
+    ]
+  },
+  "frontend_data_tests_passed": 17,
+  "previous_broad_suite": "docs/verification/rule-reuse-20261025.json",
+  "broad_suite_rerun_this_turn": false,
+  "independent_review": "docs/verification/damage-belief-review-20261025.md",
+  "live_api_and_frontend_data_check": "docs/verification/damage-belief-live-20261025.json",
+  "rendered_ui_checked_this_turn": false,
+  "current_pvp_calibration_cases_added": 0,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "files_sha256": {
+    "lab/belief.py": "25f48ed33fa758b63264111cbb578325d525ee459da100296df7f35df80390d0",
+    "lab/server.py": "0099670888426138ce779e4c9336f2966666ccf34fa81028450959ee63561523",
+    "web/battle.js": "fa23e74195dc4c9fa240c0f1b1d5708310df26d967ba500a47b61e2f2318c17a",
+    "tests/test_belief.py": "98b66d66d372e62c99f15169a99d6943f18aad06b2b9b351f92a22d631a6c41f",
+    "tests/test_lab_server.py": "53d0596bc7756b98c58c6fe18e281cd62b62625ea0d5a97af2351a2a9da2b07f",
+    "tests/test_battle_team_code.js": "a80b06837946321ba26010976cade2e963e85d9f4573b1b5c1cda326d1b1e02b"
+  }
+}

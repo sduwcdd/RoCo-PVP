@@ -1,0 +1,43 @@
+{
+  "profile_id": "pvp-current-hud-20261029-v1",
+  "version": 2,
+  "settings": {
+    "profile_id": "pvp-current-hud-20261029-v1",
+    "damage_candidate": "hud_shared_current_v1",
+    "same_type_multiplier": 1.25,
+    "tie_break_side": "a",
+    "initial_energy": 10,
+    "source_mode": "patch2_components_then_bwiki",
+    "multi_hit_power": "source_power_per_hit"
+  },
+  "battle": {
+    "format": "pvp6v6",
+    "team_size": 6,
+    "initial_magic": 4,
+    "victory_rule": "pvp5001_four_magic",
+    "max_round": 50,
+    "pvp_id": 5001,
+    "battle_config": 340005
+  },
+  "damage": {
+    "runtime": "lab.hud_damage_runtime",
+    "hud_source": "lab.live_damage.skill_math + lab.live_damage._damage_case",
+    "same_type_multiplier": 1.25,
+    "critical_multiplier": 1.0,
+    "power_basis": "source_power_per_hit",
+    "critical_enabled": false,
+    "critical_basis": "用户确认2026-10-30：PVP不存在暴击"
+  },
+  "mechanism_sources": {
+    "reviewed_components": "data/rules/reviewed-*.json",
+    "runtime_defaults": "lab.game_runtime_defaults.load_game_runtime_defaults",
+    "weather": "lab.weather_runtime.rules",
+    "note": "Existing source-bound files retain their provenance and content hashes."
+  },
+  "uncertainty": {
+    "calibrated": false,
+    "real_game_verified": false,
+    "unknown_mechanisms": "fail_closed",
+    "notice": "Shared with the current HUD; shared implementation is not real-game calibration. Unsupported state must retain an explicit reason."
+  }
+}

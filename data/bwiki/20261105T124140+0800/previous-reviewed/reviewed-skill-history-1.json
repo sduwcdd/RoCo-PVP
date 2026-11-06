@@ -1,0 +1,4051 @@
+{
+  "schema": "reviewed-skill-history-1",
+  "policy": "source_bound_original_slot_skill_history_after_committed_events_v1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "skills": {
+    "7020400": {
+      "record": {
+        "id": 7020400,
+        "wiki_id": "skill_000251",
+        "name": {
+          "zh": "迫近攻击"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤。每次使用后，本技能威力永久+45。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%AB%E8%BF%91%E6%94%BB%E5%87%BB",
+        "source_module": "Skills",
+        "power": 90
+      },
+      "record_hash": "45134f055c03057b19c4824004f1176a8a64b2341210c6aa1670c5331cb87069",
+      "components": [
+        {
+          "when": "after.use",
+          "op": "power.add",
+          "amount": 45
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7020400,
+          "name": {
+            "localization_id": 1707,
+            "text": "迫近攻击"
+          },
+          "desc": {
+            "localization_id": 1708,
+            "text": "造成物伤。每次使用后，本技能威力永久+45。"
+          },
+          "flavor_text": {
+            "localization_id": 1709,
+            "text": "埋伏，冲刺，出击。驮着小洛克的时候不要做这种事哦。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 13,
+          "dam_para": [
+            90,
+            0,
+            45,
+            1,
+            1
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_DD_7020520",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/702073.702073'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {},
+        "bases_raw": {},
+        "effects_raw": {},
+        "all_handler_scheduling_verified": false
+      }
+    },
+    "7040200": {
+      "record": {
+        "id": 7040200,
+        "wiki_id": "skill_000382",
+        "name": {
+          "zh": "吹火"
+        },
+        "type": "火系",
+        "kind": "physical",
+        "energy": 1,
+        "desc": {
+          "zh": "造成物伤，每次使用后，本技能威力永久+20。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%90%B9%E7%81%AB",
+        "source_module": "Skills",
+        "power": 50
+      },
+      "record_hash": "bb82034cea00a85c09b32db70b5a14842c55ac90eecca9e7511929bec2c08d6d",
+      "components": [
+        {
+          "when": "after.use",
+          "op": "power.add",
+          "amount": 20
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7040200,
+          "name": {
+            "localization_id": 2100,
+            "text": "吹火"
+          },
+          "desc": {
+            "localization_id": 2101,
+            "text": "造成物伤，每次使用后，本技能威力永久+20。"
+          },
+          "flavor_text": {
+            "localization_id": 2102,
+            "text": "“不要给精灵喝太多上头水饮料！即使对战的时候有用也不行！”"
+          },
+          "energy_cost": [
+            1
+          ],
+          "damage_rule": 4,
+          "dam_para": [
+            50,
+            20,
+            1
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_PSHY_702003",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/702003.702003'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {},
+        "bases_raw": {},
+        "effects_raw": {},
+        "all_handler_scheduling_verified": false
+      }
+    },
+    "7110230": {
+      "record": {
+        "id": 7110230,
+        "wiki_id": "skill_000587",
+        "name": {
+          "zh": "落雷"
+        },
+        "type": "电系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，每次入场，本技能威力永久+40。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%90%BD%E9%9B%B7",
+        "source_module": "Skills",
+        "power": 35
+      },
+      "record_hash": "117ad8e1cfca733deab4d755963fb40f05dc3ca31dfbad469be984f7bcd1c53a",
+      "components": [
+        {
+          "when": "member.enter",
+          "op": "power.add",
+          "amount": 40
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7110230,
+          "name": {
+            "localization_id": 2760,
+            "text": "落雷"
+          },
+          "desc": {
+            "localization_id": 2761,
+            "text": "造成魔伤，每次入场，本技能威力永久+40。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 32,
+          "dam_para": [
+            35,
+            0,
+            40
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 11,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_QZFD_711015",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/711015.711015'",
+          "describe_type": [
+            5,
+            18
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {},
+        "bases_raw": {},
+        "effects_raw": {},
+        "all_handler_scheduling_verified": false
+      }
+    },
+    "7050300": {
+      "record": {
+        "id": 7050300,
+        "wiki_id": "skill_000433",
+        "name": {
+          "zh": "水波术"
+        },
+        "type": "水系",
+        "kind": "magical",
+        "energy": 6,
+        "desc": {
+          "zh": "造成魔伤，回合结束时，本技能威力永久+20。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B0%B4%E6%B3%A2%E6%9C%AF",
+        "source_module": "Skills",
+        "power": 90
+      },
+      "record_hash": "a5691b2ddd53b2b5504186208043f62e3500d9085b6c8d548a9909cd3db1a3ac",
+      "components": [
+        {
+          "when": "after.use",
+          "op": "round_listener.arm"
+        },
+        {
+          "when": "round.end.armed",
+          "op": "power.add",
+          "amount": 20
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7050300,
+          "name": {
+            "localization_id": 2251,
+            "text": "水波术"
+          },
+          "desc": {
+            "localization_id": 2252,
+            "text": "造成魔伤，回合结束时，本技能威力永久+20。"
+          },
+          "energy_cost": [
+            6
+          ],
+          "dam_para": [
+            90
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 5,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20172340,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_SBW_703003",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/703103.703103'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {
+          "20172340": {
+            "id": 20172340,
+            "buff_base_ids": [
+              2017234
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20640660": {
+            "id": 20640660,
+            "buff_base_ids": [
+              2064066
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "bases_raw": {
+          "2017234": {
+            "id": 2017234,
+            "buffbase_order": 17,
+            "trigger_type": 7,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20640660
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064066": {
+            "id": 2064066,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7050300
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  20
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "effects_raw": {},
+        "all_handler_scheduling_verified": false
+      }
+    },
+    "7040620": {
+      "record": {
+        "id": 7040620,
+        "wiki_id": "skill_000411",
+        "name": {
+          "zh": "阳火增辉"
+        },
+        "type": "火系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，每次击败敌方，本技能威力永久翻倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%98%B3%E7%81%AB%E5%A2%9E%E8%BE%89",
+        "source_module": "Skills",
+        "power": 75
+      },
+      "record_hash": "901568c38625fe1d17faeae132033cc562cbb14de7394d9ce4cb64e59b1382e3",
+      "components": [
+        {
+          "when": "this_skill.direct_defeat",
+          "op": "power.multiply",
+          "factor": 2
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7040620,
+          "name": {
+            "localization_id": 2181,
+            "text": "阳火增辉"
+          },
+          "desc": {
+            "localization_id": 2182,
+            "text": "造成魔伤，每次击败敌方，本技能威力永久翻倍。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20460240,
+              "cast_moment": 7
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_XLXH_303045",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/303045.303045'",
+          "describe_type": [
+            5,
+            2
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {
+          "20460240": {
+            "id": 20460240,
+            "buff_base_ids": [
+              2046024
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 3,
+                "reduce_param": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20640810": {
+            "id": 20640810,
+            "buff_base_ids": [
+              2064081
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "bases_raw": {
+          "2046024": {
+            "id": 2046024,
+            "buffbase_order": 46,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20640810
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064081": {
+            "id": 2064081,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7040620
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  20000
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "effects_raw": {},
+        "all_handler_scheduling_verified": false
+      }
+    },
+    "7020590": {
+      "record": {
+        "id": 7020590,
+        "wiki_id": "skill_000270",
+        "name": {
+          "zh": "吞噬"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 6,
+        "desc": {
+          "zh": "造成物伤，若使用本技能击败敌方，回复6能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%90%9E%E5%99%AC",
+        "source_module": "Skills",
+        "power": 150
+      },
+      "record_hash": "577b378383ebb8bd4cb549f0e9c6b2114aa51e4d75dfb5bd11759932837fec99",
+      "components": [
+        {
+          "when": "this_skill.direct_defeat",
+          "op": "energy.restore",
+          "amount": 6
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7020590,
+          "name": {
+            "localization_id": 1766,
+            "text": "吞噬"
+          },
+          "desc": {
+            "localization_id": 1767,
+            "text": "造成物伤，若使用本技能击败敌方，回复6能量。"
+          },
+          "energy_cost": [
+            6
+          ],
+          "dam_para": [
+            150
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20460020,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_TS_301028",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/301028.301028'",
+          "describe_type": [
+            5,
+            2
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {
+          "20460020": {
+            "id": 20460020,
+            "buff_base_ids": [
+              2046002
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 3,
+                "reduce_param": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "bases_raw": {
+          "2046002": {
+            "id": 2046002,
+            "buffbase_order": 46,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1019006
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "effects_raw": {
+          "1019006": {
+            "id": 1019006,
+            "effect_order": 19,
+            "add_des": "获得能量",
+            "add_icon": 1,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "all_handler_scheduling_verified": false
+      }
+    },
+    "7190230": {
+      "record": {
+        "id": 7190230,
+        "wiki_id": "skill_000806",
+        "name": {
+          "zh": "坍缩"
+        },
+        "type": "幻系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，若击败敌方，自己获得魔攻+70%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%9D%8D%E7%BC%A9",
+        "source_module": "Skills",
+        "power": 85
+      },
+      "record_hash": "b25a53754df8b85df636d39adeb041916da14032093ec5a3ba3703fc14b36a11",
+      "components": [
+        {
+          "when": "this_skill.direct_defeat",
+          "op": "stat.modify",
+          "attributes": [
+            "matk"
+          ],
+          "percent": [
+            70,
+            100
+          ]
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7190230,
+          "name": {
+            "localization_id": 3457,
+            "text": "坍缩"
+          },
+          "desc": {
+            "localization_id": 3458,
+            "text": "造成魔伤，若击败敌方，自己获得魔攻+70%。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            85
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 20,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20460150,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Cha_NQ_719011",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/719011.719011'",
+          "describe_type": [
+            5,
+            2
+          ]
+        },
+        "buffs_raw": {
+          "20460150": {
+            "id": 20460150,
+            "buff_base_ids": [
+              2046015
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  1,
+                  99
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20010020": {
+            "id": 20010020,
+            "buff_base_ids": [
+              2001002
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              1,
+              31
+            ],
+            "name": "魔攻等级提升",
+            "type_id": "1",
+            "add_des": "魔法攻击",
+            "add_icon": 1,
+            "type": 1,
+            "add_max": 99,
+            "desc": "魔攻+<span color=\"#73c715\">10%</>。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800002_png.800002_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+            "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "bases_raw": {
+          "2046015": {
+            "id": 2046015,
+            "buffbase_order": 46,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20010020,
+                  20010020,
+                  20010020,
+                  20010020,
+                  20010020,
+                  20010020,
+                  20010020
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2001002": {
+            "id": 2001002,
+            "buffbase_order": 1,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  30
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1000
+                ]
+              }
+            ]
+          }
+        },
+        "effects_raw": {},
+        "all_handler_scheduling_verified": false
+      }
+    },
+    "7020570": {
+      "record": {
+        "id": 7020570,
+        "wiki_id": "skill_000268",
+        "name": {
+          "zh": "能量刃"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，每应对成功1次，本技能威力永久+90。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%83%BD%E9%87%8F%E5%88%83",
+        "source_module": "Skills",
+        "power": 80
+      },
+      "record_hash": "4436b27aed054f2344893d5f13aee1064abbb5381af6c5c21a313760d2a73dce",
+      "components": [
+        {
+          "when": "carried.response.success",
+          "op": "power.add",
+          "amount": 90
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7020570,
+          "name": {
+            "localization_id": 1762,
+            "text": "能量刃"
+          },
+          "desc": {
+            "localization_id": 1763,
+            "text": "造成物伤，每应对成功1次，本技能威力永久+90。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 9,
+          "dam_para": [
+            80,
+            90,
+            1,
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_NLR_301026",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/301026.301026'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "2f74e1c0ada663420549fb9336444de32cbfb142e30e57cc6212730720a82bcd",
+        "uncertainties": [
+          "Observation starts with actual carried skills in this simulation; no imported or pre-acquisition events are inferred.",
+          "Growth is applied after the committed action and affects future uses; server trigger ordering uncalibrated.",
+          "Original slot identity and permanent events migrate with a complete skill bundle; generated/borrowed acquisition baselines block.",
+          "Other type uses compare resolved effective type and exclude the same skill ID, including duplicate slots, as a named research policy."
+        ],
+        "rule_enum": "Current shared ChangeRule has CR_STRESS=9, CR_KILL=11, CR_DOUBLEDAM=12, CR_USESKILL=5; legacy DamageRule numbering is not substituted."
+      }
+    },
+    "7030210": {
+      "record": {
+        "id": 7030210,
+        "wiki_id": "skill_000344",
+        "name": {
+          "zh": "光能聚集"
+        },
+        "type": "草系",
+        "kind": "magical",
+        "energy": 7,
+        "desc": {
+          "zh": "造成魔伤，每次使用其他草系技能后，本技能威力永久+60。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%85%89%E8%83%BD%E8%81%9A%E9%9B%86",
+        "source_module": "Skills",
+        "power": 100
+      },
+      "record_hash": "e7870f4ecaaa537fbce5477e83464077c205a56f38ee8ff41ceb8c565ed3e68d",
+      "components": [
+        {
+          "when": "carried.other_type.use",
+          "type": "草系",
+          "excluded_skill_id": 7030210,
+          "op": "power.add",
+          "amount": 60
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7030210,
+          "name": {
+            "localization_id": 1981,
+            "text": "光能聚集"
+          },
+          "desc": {
+            "localization_id": 1982,
+            "text": "造成魔伤，每次使用其他草系技能后，本技能威力永久+60。"
+          },
+          "energy_cost": [
+            7
+          ],
+          "damage_rule": 5,
+          "dam_para": [
+            100,
+            3,
+            0,
+            0,
+            60,
+            1,
+            1
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 3,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_GNJJ_701004",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/701004.701004'",
+          "describe_type": [
+            5,
+            18
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "56fcdc49b6945e7d1df7c8d75fec85705372ef8142a67936829e42339766ce59",
+        "uncertainties": [
+          "Observation starts with actual carried skills in this simulation; no imported or pre-acquisition events are inferred.",
+          "Growth is applied after the committed action and affects future uses; server trigger ordering uncalibrated.",
+          "Original slot identity and permanent events migrate with a complete skill bundle; generated/borrowed acquisition baselines block.",
+          "Other type uses compare resolved effective type and exclude the same skill ID, including duplicate slots, as a named research policy."
+        ],
+        "rule_enum": "Current shared ChangeRule has CR_STRESS=9, CR_KILL=11, CR_DOUBLEDAM=12, CR_USESKILL=5; legacy DamageRule numbering is not substituted."
+      }
+    },
+    "7040250": {
+      "record": {
+        "id": 7040250,
+        "wiki_id": "skill_000387",
+        "name": {
+          "zh": "山火"
+        },
+        "type": "火系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，每使用1次其他火系技能，本技能威力永久翻倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%B1%B1%E7%81%AB",
+        "source_module": "Skills",
+        "power": 15
+      },
+      "record_hash": "fdbc9ff32b6028f049220b3e7942fc4fef2fc74f8ccb29221e29e0e374785c31",
+      "components": [
+        {
+          "when": "carried.other_type.use",
+          "type": "火系",
+          "excluded_skill_id": 7040250,
+          "op": "power.multiply",
+          "factor": 2
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7040250,
+          "name": {
+            "localization_id": 2115,
+            "text": "山火"
+          },
+          "desc": {
+            "localization_id": 2116,
+            "text": "造成物伤，每使用1次其他火系技能，本技能威力永久翻倍。"
+          },
+          "flavor_text": {
+            "localization_id": 2117,
+            "text": "火红的烈焰从地底最深处向外迸发，构成了火系部族的盛大舞台。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 12,
+          "dam_para": [
+            15,
+            4,
+            10000,
+            1
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_LYCF_702005",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/702005.702005'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "f6e68c45fdf22cc3950e1ee1d3afbdc3c51220882a8eec0b3af0242cecf08a18",
+        "uncertainties": [
+          "Observation starts with actual carried skills in this simulation; no imported or pre-acquisition events are inferred.",
+          "Growth is applied after the committed action and affects future uses; server trigger ordering uncalibrated.",
+          "Original slot identity and permanent events migrate with a complete skill bundle; generated/borrowed acquisition baselines block.",
+          "Other type uses compare resolved effective type and exclude the same skill ID, including duplicate slots, as a named research policy."
+        ],
+        "rule_enum": "Current shared ChangeRule has CR_STRESS=9, CR_KILL=11, CR_DOUBLEDAM=12, CR_USESKILL=5; legacy DamageRule numbering is not substituted."
+      }
+    },
+    "7040690": {
+      "record": {
+        "id": 7040690,
+        "wiki_id": "skill_000417",
+        "name": {
+          "zh": "暖阳"
+        },
+        "type": "火系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，每使用1次其他火系技能，威力永久+40，使用本技能后重置。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%9A%96%E9%98%B3",
+        "source_module": "Skills",
+        "power": 70
+      },
+      "record_hash": "4049363d202ed09988f1ce6f9940353f3cc53b14670deb6ad82502c55700ed24",
+      "components": [
+        {
+          "when": "carried.other_type.use",
+          "type": "火系",
+          "excluded_skill_id": 7040690,
+          "op": "power.add",
+          "amount": 40
+        },
+        {
+          "when": "after.use",
+          "op": "power.reset"
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7040690,
+          "name": {
+            "localization_id": 2197,
+            "text": "暖阳"
+          },
+          "desc": {
+            "localization_id": 2198,
+            "text": "造成物伤，每使用1次其他火系技能，威力永久+40，使用本技能后重置。"
+          },
+          "flavor_text": {
+            "localization_id": 2199,
+            "text": "火系部族的一种战术——烧掉自己身上的一切，包括名字和旗帜，直到只剩下战意。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            70
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20642120,
+              "cast_moment": 24
+            },
+            {
+              "effect_id": 1004154,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20641940,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fire_LYHS_103050",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/103050.103050'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "e1b99221c0e9aaa1a84577fb7ba01987ed8cc96aa7eca123beba9b7584546ddc",
+        "uncertainties": [
+          "Observation starts with actual carried skills in this simulation; no imported or pre-acquisition events are inferred.",
+          "Growth is applied after the committed action and affects future uses; server trigger ordering uncalibrated.",
+          "Original slot identity and permanent events migrate with a complete skill bundle; generated/borrowed acquisition baselines block.",
+          "Other type uses compare resolved effective type and exclude the same skill ID, including duplicate slots, as a named research policy."
+        ],
+        "buffs": {
+          "20642120": {
+            "id": 20642120,
+            "buff_base_ids": [
+              2064212
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641860": {
+            "id": 20641860,
+            "buff_base_ids": [
+              2064186
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          },
+          "20641940": {
+            "id": 20641940,
+            "buff_base_ids": [
+              2064194
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2064212": {
+            "id": 2064212,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  4
+                ]
+              },
+              {
+                "params": [
+                  4
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20641860
+                ]
+              },
+              {
+                "params": [
+                  11
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064186": {
+            "id": 2064186,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7040690
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  40
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064194": {
+            "id": 2064194,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7040690
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  -40
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "effects": {
+          "1004154": {
+            "id": 1004154,
+            "effect_order": 4,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  20641860,
+                  20641940
+                ]
+              },
+              {
+                "params": [
+                  99
+                ]
+              },
+              {
+                "params": [
+                  99
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "rule_enum": "Current shared ChangeRule has CR_STRESS=9, CR_KILL=11, CR_DOUBLEDAM=12, CR_USESKILL=5; legacy DamageRule numbering is not substituted."
+      }
+    },
+    "7020600": {
+      "record": {
+        "id": 7020600,
+        "wiki_id": "skill_000271",
+        "name": {
+          "zh": "蓄能轰击"
+        },
+        "type": "普通系",
+        "kind": "magical",
+        "energy": 6,
+        "desc": {
+          "zh": "造成魔伤，每使用1次其他普通系技能，本技能能耗永久-2。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%93%84%E8%83%BD%E8%BD%B0%E5%87%BB",
+        "source_module": "Skills",
+        "power": 120
+      },
+      "record_hash": "9b972d94d376d643c4f5c695f6cfc406500fb5d8b7d24a76ce889bc783a4af97",
+      "components": [
+        {
+          "when": "carried.other_type.use",
+          "type": "普通系",
+          "excluded_skill_id": 7020600,
+          "op": "cost.add",
+          "amount": -2
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7020600,
+          "name": {
+            "localization_id": 1768,
+            "text": "蓄能轰击"
+          },
+          "desc": {
+            "localization_id": 1769,
+            "text": "造成魔伤，每使用1次其他普通系技能，本技能能耗永久-2。"
+          },
+          "flavor_text": {
+            "localization_id": 1770,
+            "text": "真正的环保主义，能源循环利用。"
+          },
+          "energy_rule": 5,
+          "energy_cost": [
+            6,
+            2,
+            0,
+            0,
+            -2,
+            1,
+            1
+          ],
+          "dam_para": [
+            120
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_ZL_702082",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/201022.201022'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "003bfaea3bc2200611fda2f3b800ea3c885b746bd4422cd9a7f0fe8e22439545",
+        "uncertainties": [
+          "Observation starts with actual carried skills in this simulation; no imported or pre-acquisition events are inferred.",
+          "Growth is applied after the committed action and affects future uses; server trigger ordering uncalibrated.",
+          "Original slot identity and permanent events migrate with a complete skill bundle; generated/borrowed acquisition baselines block.",
+          "Other type uses compare resolved effective type and exclude the same skill ID, including duplicate slots, as a named research policy."
+        ],
+        "rule_enum": "Current shared ChangeRule has CR_STRESS=9, CR_KILL=11, CR_DOUBLEDAM=12, CR_USESKILL=5; legacy DamageRule numbering is not substituted."
+      }
+    },
+    "7150350": {
+      "record": {
+        "id": 7150350,
+        "wiki_id": "skill_000709",
+        "name": {
+          "zh": "远行"
+        },
+        "type": "翼系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，自己每先于敌方行动1次，本技能威力永久+25。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%9C%E8%A1%8C",
+        "source_module": "Skills",
+        "power": 50
+      },
+      "record_hash": "a4656847af6f9ddb3cb1799885491add8c0639a0f2c376178d6bb28b00993535",
+      "components": [
+        {
+          "when": "carried.action.first",
+          "op": "power.add",
+          "amount": 25
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7150350,
+          "name": {
+            "localization_id": 3149,
+            "text": "远行"
+          },
+          "desc": {
+            "localization_id": 3150,
+            "text": "造成魔伤，自己每先于敌方行动1次，本技能威力永久+25。"
+          },
+          "flavor_text": {
+            "localization_id": 3151,
+            "text": "一直在离开。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            50
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20430100,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_QQJS_214036",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/214036.214036'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "77855dd971e408287b1fca6984d3ae03befb9f9c4b908a20ef809c35a2775c3d",
+        "uncertainties": [
+          "Observation starts with actual carried skills in this simulation; no imported or pre-acquisition events are inferred.",
+          "Growth is applied after the committed action and affects future uses; server trigger ordering uncalibrated.",
+          "Original slot identity and permanent events migrate with a complete skill bundle; generated/borrowed acquisition baselines block.",
+          "Other type uses compare resolved effective type and exclude the same skill ID, including duplicate slots, as a named research policy.",
+          "Top-level switch/recharge/skill commits count once; ordered entry Swift is excluded from a second first-action increment."
+        ],
+        "buffs": {
+          "20430100": {
+            "id": 20430100,
+            "buff_base_ids": [
+              2043010
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type_id": "3",
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641660": {
+            "id": 20641660,
+            "buff_base_ids": [
+              2064166
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type_id": "3",
+            "type": 3,
+            "add_max": 99,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2043010": {
+            "id": 2043010,
+            "buffbase_order": 43,
+            "trigger_type": 7,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20641660
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          },
+          "2064166": {
+            "id": 2064166,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7150350
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  25
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "rule_enum": "Current shared ChangeRule has CR_STRESS=9, CR_KILL=11, CR_DOUBLEDAM=12, CR_USESKILL=5; legacy DamageRule numbering is not substituted."
+      }
+    },
+    "7040210": {
+      "record": {
+        "id": 7040210,
+        "wiki_id": "skill_000383",
+        "name": {
+          "zh": "流星火雨"
+        },
+        "type": "火系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，每次击败敌方，本技能威力永久+85。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B5%81%E6%98%9F%E7%81%AB%E9%9B%A8",
+        "source_module": "Skills",
+        "power": 85
+      },
+      "record_hash": "105f337c7564ea532825a6d8a233662d7e5658edbbd164409a0a6cea79d6cb4a",
+      "components": [
+        {
+          "when": "carried.direct_defeat",
+          "op": "power.add",
+          "amount": 85
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7040210,
+          "name": {
+            "localization_id": 2103,
+            "text": "流星火雨"
+          },
+          "desc": {
+            "localization_id": 2104,
+            "text": "造成物伤，每次击败敌方，本技能威力永久+85。"
+          },
+          "flavor_text": {
+            "localization_id": 2105,
+            "text": "传说以心脏为代价，可以和流星签订契约，使用流星的力量。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 11,
+          "dam_para": [
+            85,
+            85,
+            1
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_LXHY_702004",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/702004.702004'",
+          "describe_type": [
+            5,
+            2
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "26356d301e09707e5e0526413b3b3894ef19764c4358dfe9f290ef1d9ac58f7f",
+        "uncertainties": [
+          "Observation starts with actual carried skills in this simulation; no imported or pre-acquisition events are inferred.",
+          "Growth is applied after the committed action and affects future uses; server trigger ordering uncalibrated.",
+          "Original slot identity and permanent events migrate with a complete skill bundle; generated/borrowed acquisition baselines block.",
+          "Other type uses compare resolved effective type and exclude the same skill ID, including duplicate slots, as a named research policy.",
+          "Only proven direct attacks while carried count; periodic/field knockouts without direct proof never count."
+        ],
+        "rule_enum": "Current shared ChangeRule has CR_STRESS=9, CR_KILL=11, CR_DOUBLEDAM=12, CR_USESKILL=5; legacy DamageRule numbering is not substituted."
+      }
+    },
+    "7080140": {
+      "record": {
+        "id": 7080140,
+        "wiki_id": "skill_000501",
+        "name": {
+          "zh": "岩土暴击"
+        },
+        "type": "地系",
+        "kind": "physical",
+        "energy": 8,
+        "desc": {
+          "zh": "造成物伤，每被攻击1次。本技能能耗永久-1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%B2%A9%E5%9C%9F%E6%9A%B4%E5%87%BB",
+        "source_module": "Skills",
+        "power": 140
+      },
+      "record_hash": "f88321257790d5c0cef0816d7ae08ebcd10bd7952979b95a2fb3f7e8e6c32a6e",
+      "components": [
+        {
+          "when": "carried.received_attack",
+          "op": "cost.add",
+          "amount": -1
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7080140,
+          "name": {
+            "localization_id": 2475,
+            "text": "岩土暴击"
+          },
+          "desc": {
+            "localization_id": 2476,
+            "text": "造成物伤，每被攻击1次。本技能能耗永久-1。"
+          },
+          "energy_rule": 26,
+          "energy_cost": [
+            8,
+            0,
+            -1,
+            1,
+            1
+          ],
+          "dam_para": [
+            140
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 8,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ear_SY_708013",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/708013.708013'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "103a7190f92c6f02ce74fab0f080ac4e5c9c5196fc0db4cd08d203d479c0d634",
+        "buffs": {},
+        "buff_bases": {},
+        "uncertainties": [
+          "Growth applies after the committed triggering event, affecting future uses; server ordering uncalibrated.",
+          "Completed direct attack packets count once even with zero HP loss, never once per hit; miss/cancellation without damage events does not count.",
+          "Resistance uses the same explicit defender combination table as research_damage, before other damage multipliers.",
+          "No pre-simulation/imported history is inferred; generated/borrowed acquisition baseline remains blocked."
+        ]
+      }
+    },
+    "7070280": {
+      "record": {
+        "id": 7070280,
+        "wiki_id": "skill_000493",
+        "name": {
+          "zh": "微型斥候"
+        },
+        "type": "机械系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，每受到1次抵抗的技能攻击（不含连击），本技能威力永久+20。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%BE%AE%E5%9E%8B%E6%96%A5%E5%80%99",
+        "source_module": "Skills",
+        "power": 75
+      },
+      "record_hash": "f62b0097362e9486ed7c72f60a6fc541fb80a6a520d57224c1b589c1a8c3c9c2",
+      "components": [
+        {
+          "when": "carried.received_attack",
+          "require_resisted": true,
+          "op": "power.add",
+          "amount": 20
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7070280,
+          "name": {
+            "localization_id": 2450,
+            "text": "微型斥候"
+          },
+          "desc": {
+            "localization_id": 2451,
+            "text": "造成魔伤，每受到1次抵抗的技能攻击（不含连击），本技能威力永久+20。"
+          },
+          "flavor_text": {
+            "localization_id": 2452,
+            "text": "正在评估——【威胁等级】，嘀嗒，威胁等级评估为——【极高】，判断小洛克需要被保护，正在提高本技能威力。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20190450,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_DL_106028",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106028.106028'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "1571e3fc7ff9f271d9b56017f1bb08de72134d92f1461ab254e482a14773ea72",
+        "buffs": {
+          "20190450": {
+            "id": 20190450,
+            "buff_base_ids": [
+              2019045
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800020_png.800020_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641060": {
+            "id": 20641060,
+            "buff_base_ids": [
+              2064106
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2019045": {
+            "id": 2019045,
+            "buffbase_order": 19,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  20641060
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064106": {
+            "id": 2064106,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7070280
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  20
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "uncertainties": [
+          "Growth applies after the committed triggering event, affecting future uses; server ordering uncalibrated.",
+          "Completed direct attack packets count once even with zero HP loss, never once per hit; miss/cancellation without damage events does not count.",
+          "Resistance uses the same explicit defender combination table as research_damage, before other damage multipliers.",
+          "No pre-simulation/imported history is inferred; generated/borrowed acquisition baseline remains blocked."
+        ]
+      }
+    },
+    "7070300": {
+      "record": {
+        "id": 7070300,
+        "wiki_id": "skill_000495",
+        "name": {
+          "zh": "绞轮"
+        },
+        "type": "机械系",
+        "kind": "physical",
+        "energy": 5,
+        "desc": {
+          "zh": "造成物伤，每受到1次抵抗的技能攻击（不含连击），本技能能耗永久-1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%BB%9E%E8%BD%AE",
+        "source_module": "Skills",
+        "power": 115
+      },
+      "record_hash": "d01c46853f7e1964c626e2cc88bef3a2a917c48dee10e91ba8e6cfe3309eea90",
+      "components": [
+        {
+          "when": "carried.received_attack",
+          "require_resisted": true,
+          "op": "cost.add",
+          "amount": -1
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7070300,
+          "name": {
+            "localization_id": 2456,
+            "text": "绞轮"
+          },
+          "desc": {
+            "localization_id": 2457,
+            "text": "造成物伤，每受到1次抵抗的技能攻击（不含连击），本技能能耗永久-1。"
+          },
+          "energy_cost": [
+            5
+          ],
+          "dam_para": [
+            115
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20190510,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_CHSC_106031",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106031.106031'",
+          "describe_type": [
+            5
+          ]
+        },
+        "game_skill_hash": "ebc4d97a4090b83506fb948c6f497df0f9a93eccf33e1c66affcb6b2cb3c059b",
+        "buffs": {
+          "20190510": {
+            "id": 20190510,
+            "buff_base_ids": [
+              2019051
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800020_png.800020_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641680": {
+            "id": 20641680,
+            "buff_base_ids": [
+              2064168
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2019051": {
+            "id": 2019051,
+            "buffbase_order": 19,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  20641680
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064168": {
+            "id": 2064168,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7070300
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  -1
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "uncertainties": [
+          "Growth applies after the committed triggering event, affecting future uses; server ordering uncalibrated.",
+          "Completed direct attack packets count once even with zero HP loss, never once per hit; miss/cancellation without damage events does not count.",
+          "Resistance uses the same explicit defender combination table as research_damage, before other damage multipliers.",
+          "No pre-simulation/imported history is inferred; generated/borrowed acquisition baseline remains blocked."
+        ]
+      }
+    },
+    "7100260": {
+      "record": {
+        "id": 7100260,
+        "wiki_id": "skill_000578",
+        "name": {
+          "zh": "绵里藏针"
+        },
+        "type": "龙系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，若自己上回合未使用攻击技能，本技能威力永久+20。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%BB%B5%E9%87%8C%E8%97%8F%E9%92%88",
+        "source_module": "Skills",
+        "power": 60
+      },
+      "record_hash": "77c27119cba5cd398fd7f8a9dda863744366b36cd01d0dc5aa0eedf520da692c",
+      "components": [
+        {
+          "when": "after.use.no_previous_attack",
+          "op": "power.add",
+          "amount": 20
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7100260,
+          "name": {
+            "localization_id": 2718,
+            "text": "绵里藏针"
+          },
+          "desc": {
+            "localization_id": 2719,
+            "text": "造成魔伤，若自己上回合未使用攻击技能，本技能威力永久+20。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "damage_rule": 39,
+          "dam_para": [
+            60,
+            2,
+            1,
+            20,
+            2,
+            2
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 10,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_MLCZ_309017",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/309017.309017'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "9ebd5623c554476aaa21e205e6b3232a20489b80d13c2d93b07052e86455cfb7",
+        "buffs": {},
+        "buff_bases": {},
+        "uncertainties": [
+          "Growth applies after the committed triggering event, affecting future uses; server ordering uncalibrated.",
+          "Completed direct attack packets count once even with zero HP loss, never once per hit; miss/cancellation without damage events does not count.",
+          "Resistance uses the same explicit defender combination table as research_damage, before other damage multipliers.",
+          "No pre-simulation/imported history is inferred; generated/borrowed acquisition baseline remains blocked."
+        ]
+      }
+    },
+    "7140270": {
+      "record": {
+        "id": 7140270,
+        "wiki_id": "skill_000680",
+        "name": {
+          "zh": "叠势"
+        },
+        "type": "武系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，2连击，每成功应对1次，本技能连击数永久+2。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8F%A0%E5%8A%BF",
+        "source_module": "Skills",
+        "power": 25
+      },
+      "record_hash": "56bea3ee26dd9efe1d4b9ea065d9d8bff7e2139e8a1ada55af0945c4bffe743c",
+      "components": [
+        {
+          "when": "carried.response.success",
+          "op": "hits.add",
+          "amount": 2
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7140270,
+          "name": {
+            "localization_id": 3052,
+            "text": "叠势"
+          },
+          "desc": {
+            "localization_id": 3053,
+            "text": "造成魔伤，2连击，每成功应对1次，本技能连击数永久+2。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            25
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 14,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1032002,
+              "cast_moment": 6
+            },
+            {
+              "effect_id": 20670080,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Mar_DS_113031",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/113031.113031'",
+          "describe_type": [
+            5,
+            15
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "game_skill_hash": "d2aa18974316cf3e79411bd63bd04ff3d206878a8b0bb17afcb20249688558c8",
+        "buffs": {
+          "20670080": {
+            "id": 20670080,
+            "buff_base_ids": [
+              2067008
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20450110": {
+            "id": 20450110,
+            "buff_base_ids": [
+              2045011
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830018_png.830018_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2067008": {
+            "id": 2067008,
+            "buffbase_order": 67,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20450110
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2045011": {
+            "id": 2045011,
+            "buffbase_order": 45,
+            "trigger_type": 12,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  7140270
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "uncertainties": [
+          "Growth applies after the committed triggering event, affecting future uses; server ordering uncalibrated.",
+          "Completed direct attack packets count once even with zero HP loss, never once per hit; miss/cancellation without damage events does not count.",
+          "Resistance uses the same explicit defender combination table as research_damage, before other damage multipliers.",
+          "No pre-simulation/imported history is inferred; generated/borrowed acquisition baseline remains blocked."
+        ],
+        "effects": {
+          "1032002": {
+            "id": 1032002,
+            "effect_order": 32,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "base_hits": 2
+    },
+    "7060120": {
+      "record": {
+        "id": 7060120,
+        "wiki_id": "skill_000451",
+        "name": {
+          "zh": "过曝"
+        },
+        "type": "光系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，每使用过1个其他系别技能，本技能威力永久+30。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%87%E6%9B%9D",
+        "source_module": "Skills",
+        "power": 60
+      },
+      "record_hash": "5ef5f049a98bdb078467757a1707f5fac3fd748cc1533d1d7825422d17d698ad",
+      "components": [
+        {
+          "when": "carried.distinct_other_type.use",
+          "excluded_type": "光系",
+          "op": "power.add",
+          "amount": 30
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7060120,
+          "name": {
+            "localization_id": 2318,
+            "text": "过曝"
+          },
+          "desc": {
+            "localization_id": 2319,
+            "text": "造成魔伤，每使用过1个其他系别技能，本技能威力永久+30。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 5,
+          "dam_para": [
+            60,
+            -1,
+            0,
+            0,
+            30,
+            1,
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 6,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Lig_SM_704005",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/704005.704005'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs": {},
+        "buff_bases": {},
+        "effects": {},
+        "uncertainties": [
+          "Growth is applied after its committed trigger and follows original slot identity; server timing remains uncalibrated.",
+          "Distinct non-light effective types count once while carried, as explicitly requested in the task.",
+          "7070020 uses an installed use-triggered position listener, once per turn, cleared on actual departure; same-index whole-bundle transfer is not a position change."
+        ]
+      }
+    },
+    "7021230": {
+      "record": {
+        "id": 7021230,
+        "wiki_id": "skill_000337",
+        "name": {
+          "zh": "友谊满溢"
+        },
+        "type": "普通系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，选择：每次使用后威力永久+20或应对状态时本次技能威力+100%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8F%8B%E8%B0%8A%E6%BB%A1%E6%BA%A2",
+        "source_module": "Skills",
+        "power": 70,
+        "desc_notes": [
+          3019,
+          1015
+        ]
+      },
+      "record_hash": "97bfc077463825df86521db6b3bca987c47e39fc1a7b74eb4729ab6df4155131",
+      "components": [
+        {
+          "when": "after.use.choice",
+          "option": 0,
+          "op": "power.add",
+          "amount": 20
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7021230,
+          "name": {
+            "localization_id": 1952,
+            "text": "友谊满溢"
+          },
+          "desc": {
+            "localization_id": 1953,
+            "text": "造成魔伤，<desc_id=3019>选择</>：每次使用后威力永久+20或<desc_id=1015>应对状态</>时本次技能威力+100%。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            70
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 3,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21500220,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_DB_101112",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/101112.101112'",
+          "describe_type": [
+            5,
+            1
+          ]
+        },
+        "buffs": {
+          "21500220": {
+            "id": 21500220,
+            "buff_base_ids": [
+              2150022
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641710": {
+            "id": 20641710,
+            "buff_base_ids": [
+              2064171
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2150022": {
+            "id": 2150022,
+            "buffbase_order": 150,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20641710
+                ]
+              },
+              {
+                "params": [
+                  12
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1031576
+                ]
+              },
+              {
+                "params": [
+                  12
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  19
+                ]
+              }
+            ]
+          },
+          "2064171": {
+            "id": 2064171,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7021230
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  20
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "effects": {
+          "1031576": {
+            "id": 1031576,
+            "effect_order": 31,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  7021231
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          }
+        },
+        "uncertainties": [
+          "Growth is applied after its committed trigger and follows original slot identity; server timing remains uncalibrated.",
+          "Distinct non-light effective types count once while carried, as explicitly requested in the task.",
+          "7070020 uses an installed use-triggered position listener, once per turn, cleared on actual departure; same-index whole-bundle transfer is not a position change."
+        ]
+      },
+      "choice_history": true
+    },
+    "7150360": {
+      "record": {
+        "id": 7150360,
+        "wiki_id": "skill_000710",
+        "name": {
+          "zh": "试飞"
+        },
+        "type": "翼系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，2连击。选择：每次使用后本技能威力永久+10或连击数永久+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%AF%95%E9%A3%9E",
+        "source_module": "Skills",
+        "power": 20,
+        "desc_notes": [
+          3019
+        ]
+      },
+      "record_hash": "d004b3aa6ce353d46adc26b623b69064d067f4cf747a4d098ecec858ab3a3186",
+      "components": [
+        {
+          "when": "after.use.choice",
+          "option": 0,
+          "op": "power.add",
+          "amount": 10
+        },
+        {
+          "when": "after.use.choice",
+          "option": 1,
+          "op": "hits.add",
+          "amount": 1
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7150360,
+          "name": {
+            "localization_id": 3152,
+            "text": "试飞"
+          },
+          "desc": {
+            "localization_id": 3153,
+            "text": "造成物伤，2连击。<desc_id=3019>选择</>：每次使用后本技能威力永久+10<span fork_road=\"or\">或</>连击数永久+1。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            20
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 3,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21500170,
+              "cast_moment": 24
+            },
+            {
+              "effect_id": 1032002,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_FR_114037",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/114037.114037'",
+          "describe_type": [
+            5,
+            15
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs": {
+          "21500170": {
+            "id": 21500170,
+            "buff_base_ids": [
+              2150017
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641690": {
+            "id": 20641690,
+            "buff_base_ids": [
+              2064169
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          },
+          "20641700": {
+            "id": 20641700,
+            "buff_base_ids": [
+              2064170
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          },
+          "21080050": {
+            "id": 21080050,
+            "buff_base_ids": [
+              2108005
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  1,
+                  99
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "buff_bases": {
+          "2150017": {
+            "id": 2150017,
+            "buffbase_order": 150,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20641690
+                ]
+              },
+              {
+                "params": [
+                  12
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  20641700
+                ]
+              },
+              {
+                "params": [
+                  12
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  22
+                ]
+              }
+            ]
+          },
+          "2064169": {
+            "id": 2064169,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7150360
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  10
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064170": {
+            "id": 2064170,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7150360
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  21080050
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2108005": {
+            "id": 2108005,
+            "buffbase_order": 108,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          }
+        },
+        "effects": {
+          "1032002": {
+            "id": 1032002,
+            "effect_order": 32,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "uncertainties": [
+          "Growth is applied after its committed trigger and follows original slot identity; server timing remains uncalibrated.",
+          "Distinct non-light effective types count once while carried, as explicitly requested in the task.",
+          "7070020 uses an installed use-triggered position listener, once per turn, cleared on actual departure; same-index whole-bundle transfer is not a position change."
+        ]
+      },
+      "choice_history": true,
+      "base_hits": 2
+    },
+    "7070020": {
+      "record": {
+        "id": 7070020,
+        "wiki_id": "skill_000470",
+        "name": {
+          "zh": "齿轮扭矩"
+        },
+        "type": "机械系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，每回合位置发生变化时，本技能威力永久+15。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%BD%BF%E8%BD%AE%E6%89%AD%E7%9F%A9",
+        "source_module": "Skills",
+        "power": 70
+      },
+      "record_hash": "d94ced3c25b24c9549f275f216ea21065089c3333df41a2b3bcaac98c585c612",
+      "components": [
+        {
+          "when": "after.use",
+          "op": "position_listener.arm"
+        },
+        {
+          "when": "slot.moved.armed",
+          "op": "power.add",
+          "amount": 15
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7070020,
+          "name": {
+            "localization_id": 2377,
+            "text": "齿轮扭矩"
+          },
+          "desc": {
+            "localization_id": 2378,
+            "text": "造成物伤，每回合位置发生变化时，本技能威力永久+15。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            70
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21060020,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_CLDJ_720008",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/720008.720008'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs": {
+          "21060020": {
+            "id": 21060020,
+            "buff_base_ids": [
+              2106002
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "21080281": {
+            "id": 21080281,
+            "buff_base_ids": [
+              2108028
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "buff_bases": {
+          "2106002": {
+            "id": 2106002,
+            "buffbase_order": 106,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  21080281,
+                  21080281,
+                  21080281
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          },
+          "2108028": {
+            "id": 2108028,
+            "buffbase_order": 108,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  5
+                ]
+              }
+            ]
+          }
+        },
+        "effects": {},
+        "uncertainties": [
+          "Growth is applied after its committed trigger and follows original slot identity; server timing remains uncalibrated.",
+          "Distinct non-light effective types count once while carried, as explicitly requested in the task.",
+          "7070020 uses an installed use-triggered position listener, once per turn, cleared on actual departure; same-index whole-bundle transfer is not a position change."
+        ]
+      }
+    },
+    "7150400": {
+      "record": {
+        "id": 7150400,
+        "wiki_id": "skill_000714",
+        "name": {
+          "zh": "月影交错"
+        },
+        "type": "翼系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，2连击，若上回合双方有精灵使用幻系技能，本技能获得迅捷。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%9C%88%E5%BD%B1%E4%BA%A4%E9%94%99",
+        "source_module": "Skills",
+        "power": 25,
+        "desc_notes": [
+          1005
+        ]
+      },
+      "record_hash": "b5259a6c3fd78f47957ab97afd5f1dedb5a84868e7d8c50f809d49756342a318",
+      "components": [],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7150400,
+          "name": {
+            "localization_id": 3162,
+            "text": "月影交错"
+          },
+          "desc": {
+            "localization_id": 3163,
+            "text": "造成物伤，2连击，若上回合双方有精灵使用幻系技能，本技能获得<desc_id=1005>迅捷</>。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            25
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 3,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21600030,
+              "cast_moment": 24
+            },
+            {
+              "effect_id": 1032002,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_YYJC_314035",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/314035.314035'",
+          "describe_type": [
+            5,
+            15
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs": {
+          "21600030": {
+            "id": 21600030,
+            "buff_base_ids": [
+              2160003
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641910": {
+            "id": 20641910,
+            "buff_base_ids": [
+              2064191
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              3
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  1,
+                  99
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "buff_bases": {
+          "2160003": {
+            "id": 2160003,
+            "buffbase_order": 160,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3,
+                  100
+                ]
+              },
+              {
+                "params": [
+                  20641910
+                ]
+              }
+            ]
+          },
+          "2064191": {
+            "id": 2064191,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7150400
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1051001
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "effects": {
+          "1032002": {
+            "id": 1032002,
+            "effect_order": 32,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "1051001": {
+            "id": 1051001,
+            "effect_order": 51,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          }
+        },
+        "uncertainties": [
+          "Growth is applied after its committed trigger and follows original slot identity; server timing remains uncalibrated.",
+          "Distinct non-light effective types count once while carried, as explicitly requested in the task.",
+          "7070020 uses an installed use-triggered position listener, once per turn, cleared on actual departure; same-index whole-bundle transfer is not a position change."
+        ]
+      },
+      "base_hits": 2,
+      "conditional_swift": {
+        "previous_turn_type": "幻系",
+        "scope": "any_owned_roster_member_both_sides"
+      }
+    }
+  }
+}

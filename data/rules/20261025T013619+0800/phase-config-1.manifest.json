@@ -1,0 +1,7 @@
+{
+  "method": "offline_migration_of_reviewed_intrinsic_swift_and_charge_classifier",
+  "real_game_calibrated": false,
+  "schema_version": "roco-phase-config-1",
+  "sha256": "bff95607298bbe1cb2633f21a97f1a7963a887a3cd910d408a4f8476cfc69b5b",
+  "snapshot_id": "20261025T013619+0800"
+}

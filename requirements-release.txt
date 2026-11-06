@@ -1,0 +1,5 @@
+# Isolated build environment; does not replace the tested capture environment.
+PyInstaller==6.22.3
+cryptography==50.0.2
+setuptools==84.2.1
+requests==2.33.1

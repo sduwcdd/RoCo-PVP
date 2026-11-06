@@ -1,0 +1,120 @@
+{
+  "schema": "pvp-community-inventory-1",
+  "created_at": "2026-10-29T15:43:48.639198+00:00",
+  "pvp_usage": {
+    "entries": 865,
+    "collected_at": "2026-09-28T19:52:13.196Z",
+    "coverage": {
+      "nature_usage": 772,
+      "individual_value_usage": 772,
+      "bloodline_usage": 772,
+      "skill_usage": 772
+    },
+    "joint_build_probabilities_available": false
+  },
+  "enemy_presets": {
+    "member_ids": 728,
+    "skill_count_distribution": {
+      "8": 728
+    },
+    "actual_four_slot_loadouts_established": false
+  },
+  "popular_team_source_status": "blocked_client_integrity_failed",
+  "complete_popular_teams_obtained": 0,
+  "eligible_training_teams": 0,
+  "training_started": false,
+  "files": {
+    "community-ui.source.js": {
+      "bytes": 29578,
+      "sha256": "2b842c98f4f5479396968383e11d7962c39e36c70be6873802421b6ec2b4df18"
+    },
+    "enemy-presets.raw.json": {
+      "bytes": 1659020,
+      "sha256": "e0e98e8d7380b442601cdfad30f6b4a1fd7e0163b1d28d4cbf62baa0519c99ed"
+    },
+    "import-d0c934bed89c310a.raw.json": {
+      "bytes": 88,
+      "sha256": "d0c934bed89c310aa277932fd47eb05f218cb098ea088c45d8026d9da6463b61"
+    },
+    "local-snapshot.json": {
+      "bytes": 1307,
+      "sha256": "6ca59b16d119e496ae8b4f5e12a6a7cd9c400a77093f20b0a4e8d33378bf5488"
+    },
+    "popular-community-recommendations-fetch.json": {
+      "bytes": 694,
+      "sha256": "0a60fb5544651c1c24c219e6a4ccb7f124c1b90eef05f147f1282a4489ef12cf"
+    },
+    "popular-community-recommendations.raw.json": {
+      "bytes": 88,
+      "sha256": "d0c934bed89c310aa277932fd47eb05f218cb098ea088c45d8026d9da6463b61"
+    },
+    "popular-teams-direct-fetch.json": {
+      "bytes": 451,
+      "sha256": "07c5390d0410cc052b98b6778fefaa29fbbb5ff5421abd94322811c569b1b827"
+    },
+    "popular-teams-fetch.json": {
+      "bytes": 701,
+      "sha256": "4d319bfda8ff36efe65ab9f5fa8c0e498447865e7eb624bf76ca3e3c8e68f603"
+    },
+    "popular-teams.raw.json": {
+      "bytes": 88,
+      "sha256": "d0c934bed89c310aa277932fd47eb05f218cb098ea088c45d8026d9da6463b61"
+    },
+    "pvp-usage.raw.json": {
+      "bytes": 4241235,
+      "sha256": "8c84ad48aaa98278c781de3556cfd8f447bc92b0f66afed7c0d06cf476c4eecb"
+    },
+    "roco-showdown-popular-discovery.json": {
+      "bytes": 1135,
+      "sha256": "1f865b0d4ac3a230edd0af13b9b670e08c648c3cd79043f6229126f53ad4b858"
+    },
+    "roco-showdown-popular-fetch.json": {
+      "bytes": 299,
+      "sha256": "3a47e1eb924571c0477e89e8b851833912f73b6d8fb6b08e1aeaa3dcf640c6e7"
+    },
+    "roco-showdown-popular-js-fetch.json": {
+      "bytes": 266,
+      "sha256": "d76f2537a51dd07205425802b7a808aed5e2d114221972a3539e6b7f0e448f18"
+    },
+    "roco-showdown-popular-library-fetch.json": {
+      "bytes": 257,
+      "sha256": "5bbfa42aba77460bd53c6775ef4662baf6fa5114f4fb0829d153722311485ae8"
+    },
+    "roco-showdown-popular-library.source.js": {
+      "bytes": 659003,
+      "sha256": "747f133ccdf691fba2af6752a3abb805d6220bae9fcc92874553fa189ec30a19"
+    },
+    "roco-showdown-popular-page.raw.html": {
+      "bytes": 43898,
+      "sha256": "8f4d284e9f60233f1c3791faf45cafe3e9a0f1fb5e43fa6b1d6c1f1e6e4d94a0"
+    },
+    "roco-showdown-popular-page.source.js": {
+      "bytes": 286,
+      "sha256": "3b8a1c02f026769e7053b4a8d635c24a89bf08c0f6b95d13c3a88226c9539a6c"
+    },
+    "roco-showdown-popular-teams-js-fetch.json": {
+      "bytes": 258,
+      "sha256": "d42b13fd565582cb3ca7ad62ee089b7a27e7b12e814dd59a4f86b8bb9a0e0993"
+    },
+    "roco-showdown-popular-teams.source.js": {
+      "bytes": 65615,
+      "sha256": "962014668381461fcab5b3c818fded43b0926cf0ac7c05e7f7df5bfc8ddf700c"
+    },
+    "source-discovery.il.txt": {
+      "bytes": 12883,
+      "sha256": "b64e9ed72bcf3af8291b966b289ce1955f2f40a3cecb729bab75acb2af9d52a0"
+    },
+    "source-discovery.json": {
+      "bytes": 4313,
+      "sha256": "1c7a2a261381679a94ec86b3bd561813d6c18008d6106a65c4cb3a95f355a901"
+    },
+    "source-discovery.md": {
+      "bytes": 4382,
+      "sha256": "16ce2a1ec7fc01c55e30256cd0c19815a81c46f673192e0f213b107517fb41b6"
+    },
+    "training-pool.json": {
+      "bytes": 867,
+      "sha256": "f37d3a244dbd9ebb015bbe08152144bde0a44490a215265a73fb49ac97366807"
+    }
+  }
+}

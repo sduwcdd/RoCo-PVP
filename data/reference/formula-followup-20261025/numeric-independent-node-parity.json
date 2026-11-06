@@ -1,0 +1,13 @@
+{
+  "kind": "independent Node expression parity, not game calibration",
+  "seed": 20261025,
+  "arena_stat_cases": 3192,
+  "showdown_panel_cases": 3000,
+  "damage_conditions": 4005,
+  "damage_expression_comparisons": 8010,
+  "all_matched": true,
+  "node_version": "v22.15.1",
+  "input_sha256": "49e8e2a4bd506a14460eeab49b4bb1cb3c0e6ccb809f2b11458174b6c67a80cd",
+  "numeric_module_sha256": "f7edb90ff9f2ca47d0c355baba7d11e6a34d5da0f28f275354bfbdb6a637d24c",
+  "calibrated": false
+}

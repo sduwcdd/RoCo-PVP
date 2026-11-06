@@ -1,0 +1,48 @@
+{
+  "source_package": "pakchunk4-WindowsNoEditor_3_P.pak",
+  "findings": {
+    "detail_display": {
+      "source": "raw/UMG_CommonPetDetails_C.luac",
+      "function": "SetWeigthAndStature",
+      "decompiled_lines": [
+        270,
+        278
+      ],
+      "weight_expression": "string.format(\"%.2f\", PetBaseInfo.weight * 0.001)",
+      "height_expression": "string.format(\"%.2f\", PetBaseInfo.height * 0.01)"
+    },
+    "medal_panel_display": {
+      "source": "raw/UMG_MedalPanel_C.luac",
+      "function": "SetWeigthAndStature",
+      "decompiled_lines": [
+        501,
+        509
+      ],
+      "weight_expression": "string.format(\"%.2f\", petData.weight * 0.001)",
+      "height_expression": "string.format(\"%.2f\", petData.height * 0.01)"
+    },
+    "voice": {
+      "source": "raw/UMG_PetImage3D_C.luac",
+      "function": "OnPetLoaded",
+      "decompiled_lines": [
+        1336,
+        1337
+      ],
+      "expression": "local voice = self.uiPetData and self.uiPetData.voice or 0; _G.NRCAudioManager:SetEmitterRTPC(\"Pet_Vo_Pitch\", voice, actor)",
+      "global_min": -100,
+      "global_max": 100,
+      "unit": "No physical unit or numerical-display conversion verified"
+    },
+    "medal_conditions": {
+      "source": "MEDAL_TASK_CONF.selected.json",
+      "available": "Localized text describes top or bottom 2 percent of height or voice range",
+      "unverified": "Exact server predicate, inclusive or exclusive threshold, and rounding"
+    }
+  },
+  "limitations": [
+    "Installed newer script packages 4 through 12 use unsupported encryption strategy 8, so effective patch precedence is unverified.",
+    "PetUI directory of package 3 contained 317 Lua files. Constant scanning found pet voice parameter consumed in the 3D model audio RTPC path, no pet voice numeric display formatter was found in that directory.",
+    "No server award-timing or predicate implementation was recovered."
+  ],
+  "cleanup": "Temporary standard Lua and decompiler outputs were removed; retained files are evidence only."
+}

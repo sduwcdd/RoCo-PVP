@@ -1,0 +1,78 @@
+{
+  "status": "source_fixed_protected_candidate_built",
+  "recording_id": "6a9b218849022a04a7ef8ad48ba866f558b16a2be89226126ec2d6787da12156",
+  "packets": 25,
+  "observed_start_round": 12,
+  "causes": [
+    "role_addi_info/role_simple absolute death counters were ignored",
+    "live trait guard ran for attributes outside the component"
+  ],
+  "fixes": [
+    "source-owned absolute counters plus idempotent NORMAL_DEAD and positive-HP revival transitions",
+    "sequence-bound stale/duplicate counter protection",
+    "common party_fainted_count reused for trait stats and per-fainted power",
+    "observed native stat BUFF priority preserved; no duplicate trait multiplier",
+    "no fabricated unseen opponents"
+  ],
+  "replay": {
+    "known_enemy_members": 5,
+    "r14_before_counts": {
+      "my": 2,
+      "enemy": 4
+    },
+    "r14_after_counts": {
+      "my": 2,
+      "enemy": 5
+    },
+    "r14_my_forecast": {
+      "先发制人": [
+        41,
+        98
+      ],
+      "光之矛": [
+        168,
+        543
+      ]
+    },
+    "retained_after_knockout": true,
+    "old_party_blocker_removed": true
+  },
+  "validation": {
+    "targeted_python_tests": 11,
+    "original_simulated_roster_fallback_checked": true,
+    "actual_packet_replay": true
+  },
+  "uncertainty": [
+    "random pet contributions remain unconfirmed; do not combine them silently",
+    "replay verifies this blocker removal, not full game damage calibration"
+  ],
+  "evidence": "artifacts/party_fainted_20261101/evidence.json",
+  "replay_report": "artifacts/party_fainted_20261101/replay-after.json",
+  "pvp_formula_changed": false,
+  "training_changed": false,
+  "protected_build_id": "20261101-party-fainted-v5",
+  "source_hash": "9c272b2d90731ae5523e3808a9c2b8020924866554f046b4d4da919ce0e8b89b",
+  "protected_zip": {
+    "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\dist\\RocoPVP-20261101-party-fainted-v5.zip",
+    "bytes": 306818916,
+    "sha256": "71588babe547f45ef0800b30a7676ea8366453aa279f596a4445fd5a67b73e2b",
+    "entries": 392,
+    "crc_verified": true
+  },
+  "native_self_test_passed": true,
+  "desktop_verification": {
+    "title": "洛克PVP · 连接控制台",
+    "server": {
+      "available": true,
+      "owned": true,
+      "port": 18869,
+      "revision": "composable-battle-20261031-selected-cost-1"
+    },
+    "rendererIpc": true,
+    "icon": true,
+    "workbenchReady": true,
+    "timestamp": "2026-11-01T10:34:52.857Z"
+  },
+  "public_release_approved": false,
+  "private_source_scan_passed": true
+}

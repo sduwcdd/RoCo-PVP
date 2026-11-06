@@ -1,0 +1,51 @@
+{
+  "retrieved_at": "2026-10-24T19:08:32.892663+00:00",
+  "sources": [
+    {
+      "title": "以燃薪虫灼烧为例解析洛克王国世界伤害计算机制",
+      "url": "https://wiki.biligame.com/rocom/api.php?action=query&prop=revisions&titles=%E4%BB%A5%E7%87%83%E8%96%AA%E8%99%AB%E7%81%BC%E7%83%A7%E4%B8%BA%E4%BE%8B%E8%A7%A3%E6%9E%90%E6%B4%9B%E5%85%8B%E7%8E%8B%E5%9B%BD%E4%B8%96%E7%95%8C%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%88%B6&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&rvstartid=33421&rvlimit=1",
+      "revision_id": 33421,
+      "revision_timestamp": "2026-05-08T11:51:57Z",
+      "raw_path": "data/reference/bwiki-numeric-20261025/burn-study.json",
+      "raw_sha256": "a9538efe94b6ad6b9384dc61dd4864612af030d98659759bb3be8549943f50e2",
+      "content_sha256": "4654f664e0bb370574e9feb7cc48bed91c7e1ed8c7c476dbce3fa97ae73b1cc2"
+    },
+    {
+      "title": "伤害计算器",
+      "url": "https://wiki.biligame.com/rocom/api.php?action=query&prop=revisions&titles=%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97%E5%99%A8&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json",
+      "revision_id": 33804,
+      "revision_timestamp": "2026-05-14T03:16:25Z",
+      "raw_path": "data/reference/bwiki-numeric-20261025/damage-calculator.json",
+      "raw_sha256": "340adb486bac20a9cb9e11c1b5ea2b525cbc3d5ca8e546988821f32a255705de",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "title": "性格计算器",
+      "url": "https://wiki.biligame.com/rocom/api.php?action=query&prop=revisions&titles=%E6%80%A7%E6%A0%BC%E8%AE%A1%E7%AE%97%E5%99%A8&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json",
+      "revision_id": 35191,
+      "revision_timestamp": "2026-05-24T09:55:08Z",
+      "raw_path": "data/reference/bwiki-numeric-20261025/nature-calculator.json",
+      "raw_sha256": "7cb3d38d5db50821e23a48aec1af222bc4e0eee47478b2c1faafea18158ea17a",
+      "content_sha256": "bf1fe8af91870135417d90552486ba737a5d10dcf710595e89c6bec89060f70c"
+    },
+    {
+      "title": "Module:Pets",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&prop=revisions&titles=Module%3APets&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json",
+      "revision_id": 19302,
+      "revision_timestamp": "2026-10-24T14:29:49Z",
+      "raw_path": "data/reference/bwiki-numeric-20261025/pets-module.json",
+      "raw_sha256": "32cbfba3dbcdbb24656838ed897e295196db41ca22622d2993f449b9ebb78be3",
+      "content_sha256": "83ab6ca063b90d35f5baf5e62035177928f7817eda640c335c5c0f9680de0e6e"
+    },
+    {
+      "local_path": "data/reference/bwiki-numeric-20261025/damage-calculator-history.json",
+      "raw_sha256": "d290e1328df7c058c179cc10ec664f9a1d01974c4110f98872cf1a8ebb42f6ae",
+      "purpose": "Empty calculator evidence; no formula recovered"
+    },
+    {
+      "local_path": "data/reference/bwiki-numeric-20261025/damage-calculator.html",
+      "raw_sha256": "af5bf4c99fbc1afaaeee4ea918368b688bd61b7dd18d10b5c2e6316d5fac613d",
+      "purpose": "Empty calculator evidence; no formula recovered"
+    }
+  ]
+}

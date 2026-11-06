@@ -1,0 +1,22 @@
+{
+  "104002": {
+    "id": 104002,
+    "name": {
+      "localization_id": 5,
+      "text": "罗盘"
+    },
+    "legally_used_object": 1,
+    "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+    "use_time_in_battle": 2
+  },
+  "104007": {
+    "id": 104007,
+    "name": {
+      "localization_id": 10,
+      "text": "罗盘"
+    },
+    "legally_used_object": 1,
+    "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+    "use_time_in_battle": 99
+  }
+}

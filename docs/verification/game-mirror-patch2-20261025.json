@@ -1,0 +1,899 @@
+{
+  "schema_version": "roco-mirror-patch2-verification-1",
+  "date": "2026-10-25",
+  "graph": {
+    "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\game_layer_references_mirror_patch2_20261025\\layer_references.json",
+    "sha256": "b70b11bc24423fa7f8e8e795614366ac08dccb6fe684f7460bf5e0816b5195aa",
+    "source_id": "resource-group-c40d72d37c3c43a12b3f",
+    "variant_count": 3,
+    "preserved_variants": [
+      {
+        "source_id": "archive-7eaa655a5d7950b7d58a",
+        "archive": "pakchunk4-WindowsNoEditor_3_P.pak"
+      },
+      {
+        "source_id": "archive-a45a57add3edf933f964",
+        "archive": "pakchunk4-WindowsNoEditor.pak"
+      }
+    ]
+  },
+  "resource_group": {
+    "declaration": {
+      "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+      "online_applicability_verified": false,
+      "runtime_precedence_verified": false,
+      "schema_version": "roco-explicit-resource-group-1",
+      "tables": {
+        "BUFFBASE_CONF": {
+          "binary": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+            "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+            "payload_sha256": "b9238546dcdf74c7da015645cc141ed9205bcadcf8459c2d9825751003ca361e",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+            "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+          },
+          "schema": {
+            "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+            "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+            "payload_sha256": "fac7530767357c039a049a4d8b03b7d2fe08f8f2614ce222c616174f4f9a7508",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+            "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+          }
+        },
+        "BUFF_CONF": {
+          "binary": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+            "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+            "payload_sha256": "568ad0c28a4303ff34ea8fac6673006b171e2e6ee671630e39deda115b0b02ae",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+            "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+          },
+          "schema": {
+            "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+            "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+            "payload_sha256": "de2efc82e53f77d59c8ada1c03bc5a69a19891acc54169d34dcd0874dcecca49",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+            "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+          }
+        },
+        "EFFECT_CONF": {
+          "binary": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+            "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+            "payload_sha256": "359e5b99309b9b3ff825d0ef99838e32b13e9b665235bd9df5df44015e14faae",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+            "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+          },
+          "schema": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+            "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+            "payload_sha256": "9383101d2d016f2fe3648f431b9f4c132abd3b76f86748d1ab949dfd727f8f5b",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+            "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+          }
+        },
+        "SKILL_CONF": {
+          "binary": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+            "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+            "payload_sha256": "f5da728497e1f0c59b1da705970acf777bfac46c7997e95232133e49eaab6325",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILL_CONF.bytes",
+            "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+          },
+          "localization": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+            "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+            "payload_sha256": "37716a360e50bb2d7f640f6f87112d64420e3417b97120fd7d4e37d16797b6d3",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/SKILL_CONF.bytes",
+            "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+          },
+          "schema": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+            "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+            "payload_sha256": "dcb2671c9898b6f69a5c8a23136701efa48fcc5da522bf916858f0c4cbe55c15",
+            "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILL_CONF.non",
+            "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+          }
+        }
+      }
+    },
+    "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\docs\\verification\\game-mirror-patch2-20261025.resources.json",
+    "sha256": "5f289bbe0a625eb861f3643db1873db28a0303bde7d26e8e2d75e16d7bba4c2b"
+  },
+  "table_sources": {
+    "BUFFBASE_CONF": {
+      "files": {
+        "binary": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 268350,
+            "offset": 6598656,
+            "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\BUFFBASE_CONF.bytes",
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+            "payload_sha256": "b9238546dcdf74c7da015645cc141ed9205bcadcf8459c2d9825751003ca361e",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 6598793,
+                "sha256": "7a1b61e87a09c0f3c5d58c40ec752a6fb56b5c42b0656c754a3bf38e08ce8ed2",
+                "size": 14256
+              },
+              {
+                "offset": 6613049,
+                "sha256": "9c9b79cbb3dcd27f9cb8a6a721e0ba25ef0804d0968fedbe583cd011739e3868",
+                "size": 16048
+              },
+              {
+                "offset": 6629097,
+                "sha256": "64cdd474a7fc1b800ab0d8802ac4dc9e21820a80c9d4798803488a823caa5980",
+                "size": 15184
+              },
+              {
+                "offset": 6644281,
+                "sha256": "f01ea96c35abe19da1f7741c7c9e9350f6c3e88a12981b8d6741978369c1878e",
+                "size": 15216
+              },
+              {
+                "offset": 6659497,
+                "sha256": "229460c454f1baabba76649d591ceb9b5dd7f2d2f5a9c58da2347c53fb681695",
+                "size": 1568
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\status_chain_manifest.json",
+          "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\BUFFBASE_CONF.bytes",
+          "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+        },
+        "schema": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 1790,
+            "offset": 1955195,
+            "output": "raw\\pakchunk4-WindowsNoEditor_0_P\\BinConf\\BUFFBASE_CONF.non",
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+            "payload_sha256": "fac7530767357c039a049a4d8b03b7d2fe08f8f2614ce222c616174f4f9a7508",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 1955268,
+                "sha256": "3415ef2464a13e10db07294125f76b5f0d8c31ba9c390e9ad4289c5016cdd224",
+                "size": 352
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\status_chain_manifest.json",
+          "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_0_P\\BinConf\\BUFFBASE_CONF.non",
+          "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+        }
+      },
+      "rows": 2601,
+      "declared_rows": 2601,
+      "rows_content_sha256": "191ca703e8fc7f86dd4304bb437e94569330acaa671644d274b65236afc4fd89",
+      "all_row_lengths_verified": true,
+      "unresolved_localization_ids": [],
+      "same_archive_schema_data": false
+    },
+    "BUFF_CONF": {
+      "files": {
+        "binary": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 310593,
+            "offset": 6522880,
+            "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\BUFF_CONF.bytes",
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+            "payload_sha256": "568ad0c28a4303ff34ea8fac6673006b171e2e6ee671630e39deda115b0b02ae",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 6523017,
+                "sha256": "1051189fcb845922d0dc83dcbd9d683de02a2037986ea8b8f4494512a03a63f9",
+                "size": 13344
+              },
+              {
+                "offset": 6536361,
+                "sha256": "bdde0e98748738c4964ca4d5589be1e6b4b223294f56f81e902910e662714c4c",
+                "size": 11824
+              },
+              {
+                "offset": 6548185,
+                "sha256": "e8e02a37245f6ccb89e3cd69387eccc8d3a7e73fbd37540fc9c5bba985bab71a",
+                "size": 18656
+              },
+              {
+                "offset": 6566841,
+                "sha256": "d397c4808b9a983cb8f7f760090f95ff8a703a876e9fe4e2ba27d76b222728b3",
+                "size": 19040
+              },
+              {
+                "offset": 6585881,
+                "sha256": "1bfda4ea2ea33dafe16db4e44f08bd563df80b4c889671d615f46c5f4e173f19",
+                "size": 12624
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\status_chain_manifest.json",
+          "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\BUFF_CONF.bytes",
+          "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+        },
+        "schema": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 5123,
+            "offset": 1954514,
+            "output": "raw\\pakchunk4-WindowsNoEditor_0_P\\BinConf\\BUFF_CONF.non",
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+            "payload_sha256": "de2efc82e53f77d59c8ada1c03bc5a69a19891acc54169d34dcd0874dcecca49",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 1954587,
+                "sha256": "d1f8c084312af294a2a968db8f0e32ec85be9232215452f00a536497261d5803",
+                "size": 608
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\status_chain_manifest.json",
+          "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_0_P\\BinConf\\BUFF_CONF.non",
+          "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+        }
+      },
+      "rows": 3028,
+      "declared_rows": 3028,
+      "rows_content_sha256": "8676ede6d837a7a29124e602c80df7c087867b4009c2a2015c3aca77db9d8e4f",
+      "all_row_lengths_verified": true,
+      "unresolved_localization_ids": [],
+      "same_archive_schema_data": false
+    },
+    "EFFECT_CONF": {
+      "files": {
+        "binary": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 125951,
+            "offset": 8585216,
+            "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\EFFECT_CONF.bytes",
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+            "payload_sha256": "359e5b99309b9b3ff825d0ef99838e32b13e9b665235bd9df5df44015e14faae",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 8585305,
+                "sha256": "4523ce64e8532d47c444c01f65dc42248634791ce34d32496af0428903e9f077",
+                "size": 19280
+              },
+              {
+                "offset": 8604585,
+                "sha256": "294e86058fc22e59f277a42527efcfbbce281adaa7b5543929291d7dcb85e6ff",
+                "size": 13920
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\related_manifest.json",
+          "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\EFFECT_CONF.bytes",
+          "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+        },
+        "schema": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 2276,
+            "offset": 2220841,
+            "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinConf\\EFFECT_CONF.non",
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+            "payload_sha256": "9383101d2d016f2fe3648f431b9f4c132abd3b76f86748d1ab949dfd727f8f5b",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 2220914,
+                "sha256": "2d9585fac6d4ab5245b619cc40e8003f50f04fdcb1c887a765f76de2fe5e1d45",
+                "size": 384
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\related_manifest.json",
+          "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_2_P\\BinConf\\EFFECT_CONF.non",
+          "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+        }
+      },
+      "rows": 1173,
+      "declared_rows": 1173,
+      "rows_content_sha256": "0ca5780b4e999bfb5583d228d15ee0ed1bec80e8eb885945af503fe124a63a39",
+      "all_row_lengths_verified": true,
+      "unresolved_localization_ids": [],
+      "same_archive_schema_data": true
+    },
+    "SKILL_CONF": {
+      "files": {
+        "binary": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 461057,
+            "offset": 15368192,
+            "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\SKILL_CONF.bytes",
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILL_CONF.bytes",
+            "payload_sha256": "f5da728497e1f0c59b1da705970acf777bfac46c7997e95232133e49eaab6325",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 15368377,
+                "sha256": "3b9842ded86b651fb2c724b64c242bf12d2918dfb982888162fc2df5d50dd03c",
+                "size": 11216
+              },
+              {
+                "offset": 15379593,
+                "sha256": "88c8065639b68877b1e9932a6281133e8424f3f2c3fcdbe9deaf2fa1e58fb574",
+                "size": 13936
+              },
+              {
+                "offset": 15393529,
+                "sha256": "b3ec4a1a064444d170e14aa9f9ea0436aa0c6cf409f8173eb65dd86cd11c75ff",
+                "size": 11008
+              },
+              {
+                "offset": 15404537,
+                "sha256": "9189170686285e1cef44b7b9b7b2c0f0143aa3c323e8c7e952d8696fce81aec8",
+                "size": 9456
+              },
+              {
+                "offset": 15413993,
+                "sha256": "85e0093677827041b7824045180e6f4956c2274ee1031f1b6746711357801792",
+                "size": 10640
+              },
+              {
+                "offset": 15424633,
+                "sha256": "7b1b13fa38139b74c1e9339761fc2efcfd64d047a1bdab124b320d83814c65bb",
+                "size": 17200
+              },
+              {
+                "offset": 15441833,
+                "sha256": "6769600013b7aecb57024fcb958424b99742bb2d8e75d5d5a5645418862a4492",
+                "size": 17088
+              },
+              {
+                "offset": 15458921,
+                "sha256": "7811b84927368065ee6b6aceca347f397ef1ef0e6ab50be2042f32ad9b316ad8",
+                "size": 608
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\manifest.json",
+          "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\SKILL_CONF.bytes",
+          "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+        },
+        "localization": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 240112,
+            "offset": 21542912,
+            "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinLocalize\\dev_CN\\SKILL_CONF.bytes",
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/SKILL_CONF.bytes",
+            "payload_sha256": "37716a360e50bb2d7f640f6f87112d64420e3417b97120fd7d4e37d16797b6d3",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 21543033,
+                "sha256": "1458be980cd49fc636d7d39261e0953d42a1b36d1f2e652b4d7d548e0678eb4a",
+                "size": 13312
+              },
+              {
+                "offset": 21556345,
+                "sha256": "42a42760b5df78d1f26c6b662f11e2de92e66b577de42a518e90c39c1236810b",
+                "size": 15648
+              },
+              {
+                "offset": 21571993,
+                "sha256": "c70cc2fe3b5fe5df489767400ab3ec05c3d60bcbb4a08103d999a3c2ef9bbd7d",
+                "size": 17952
+              },
+              {
+                "offset": 21589945,
+                "sha256": "f534706b5b3ef6673ab804cd410ef4d05f160fe5ebbe94fba359d9130f88ca31",
+                "size": 13632
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\manifest.json",
+          "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_2_P\\BinLocalize\\dev_CN\\SKILL_CONF.bytes",
+          "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+        },
+        "schema": {
+          "extraction": {
+            "compression": 1,
+            "declared_size": 8156,
+            "offset": 2300770,
+            "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinConf\\SKILL_CONF.non",
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILL_CONF.non",
+            "payload_sha256": "dcb2671c9898b6f69a5c8a23136701efa48fcc5da522bf916858f0c4cbe55c15",
+            "payload_strategy": 0,
+            "source_ranges_sha256": [
+              {
+                "offset": 2300843,
+                "sha256": "67ac34a4f184267b7c69279428408fd4f039c156870ca8ed8cf6fb06d1bb7cea",
+                "size": 832
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "manifest": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\manifest.json",
+          "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\raw\\pakchunk4-WindowsNoEditor_2_P\\BinConf\\SKILL_CONF.non",
+          "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+        }
+      },
+      "rows": 1894,
+      "declared_rows": 1894,
+      "rows_content_sha256": "785c8e8816e2d91e86fd7fd834ddf191779986d4b19159f8722b7560867f8b46",
+      "all_row_lengths_verified": true,
+      "unresolved_localization_ids": [],
+      "same_archive_schema_data": true
+    }
+  },
+  "input_reports": {
+    "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\RESULT.md": "343281007f8ddfba6da4507aec3644e5a7880773bfb39cb4ba758ae311be50fa",
+    "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\versions\\pakchunk4-WindowsNoEditor_2_P\\mirror.json": "4018c44017d8c69c73eec237dc7f302ca104bb462a2caf3c40d0a440246807d7",
+    "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\status_chain_patch2.json": "e405fc4448a49ff36e2b7014ddf91fdfd8aff92e7bb58eb8b83dfe98eed29751",
+    "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\strength_buff_probe_20261025\\mirror\\related_tables_patch2.json": "fc45f21e2af7fe86cfca988f922f537d9ce939e54d630853e32e181d0da7f5d4"
+  },
+  "skill_record": {
+    "Skill_Type": 2,
+    "can_changed": 1,
+    "cd_round": [
+      0,
+      0
+    ],
+    "contact_type": 1,
+    "dam_para": [
+      0
+    ],
+    "damage_type": 1,
+    "desc": {
+      "localization_id": 3191,
+      "text": "敌方获得魔防​-50%，​且​失​去​3​能量​。"
+    },
+    "describe_type": [
+      12,
+      7
+    ],
+    "energy_cost": [
+      2
+    ],
+    "flavor_text": {
+      "localization_id": 3192,
+      "text": "魔镜魔镜告诉我，谁是最棒的果？"
+    },
+    "hit_para": 10000,
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/116023.116023'",
+    "id": 7170280,
+    "name": {
+      "localization_id": 3190,
+      "text": "魔镜"
+    },
+    "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gho_JY_116023",
+    "skill_dam_type": 17,
+    "skill_feature": 4,
+    "skill_priority": 5,
+    "skill_result": [
+      {
+        "buff_group_level": 5,
+        "cast_moment": 11,
+        "effect_id": 20010080,
+        "result_target_type": 2,
+        "success_rate": 10000
+      },
+      {
+        "buff_group_level": 1,
+        "cast_moment": 11,
+        "effect_id": 1019013,
+        "result_target_type": 2,
+        "success_rate": 10000
+      }
+    ],
+    "target_count": 1,
+    "target_type": 1,
+    "type": 1
+  },
+  "applications": [
+    {
+      "base_references": [
+        {
+          "index": 0,
+          "raw_id": 2001008,
+          "status": "resolved",
+          "targets": [
+            "resource-group-c40d72d37c3c43a12b3f/BUFFBASE_CONF:2001008"
+          ]
+        }
+      ],
+      "blockers": [
+        "runtime_version_unverified",
+        "layer_rule_and_default_semantics_unverified",
+        "target_and_trigger_semantics_unverified",
+        "per_stack_formula_unverified"
+      ],
+      "effective_stack_count": null,
+      "historical_fallback_applied": false,
+      "id": "resource-group-c40d72d37c3c43a12b3f/SKILL_CONF:7170280/skill_result:0",
+      "kind": "state_application_reference",
+      "operand_byte_spans": [
+        {
+          "field": "effect_id",
+          "length": 4,
+          "offset": 333394,
+          "raw_hex": "60543101",
+          "slot": 0,
+          "type": "EUint32",
+          "value": 20010080
+        },
+        {
+          "field": "result_target_type",
+          "length": 4,
+          "offset": 333398,
+          "raw_hex": "02000000",
+          "slot": 0,
+          "type": "EInt32",
+          "value": 2
+        },
+        {
+          "field": "cast_moment",
+          "length": 4,
+          "offset": 333402,
+          "raw_hex": "0b000000",
+          "slot": 0,
+          "type": "EInt32",
+          "value": 11
+        },
+        {
+          "field": "success_rate",
+          "length": 4,
+          "offset": 333406,
+          "raw_hex": "10270000",
+          "slot": 0,
+          "type": "EUint32",
+          "value": 10000
+        },
+        {
+          "field": "buff_group_level",
+          "length": 4,
+          "offset": 333410,
+          "raw_hex": "05000000",
+          "slot": 0,
+          "type": "EUint32",
+          "value": 5
+        }
+      ],
+      "operands": {
+        "buff_group_level": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EUint32",
+          "state": "explicit",
+          "value": 5
+        },
+        "buff_level_rule": {
+          "present": false,
+          "schema_declared": true,
+          "schema_type": "EInt32",
+          "state": "absent_in_record"
+        },
+        "cast_moment": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EInt32",
+          "state": "explicit",
+          "value": 11
+        },
+        "effect_id": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EUint32",
+          "state": "explicit",
+          "value": 20010080
+        },
+        "result_target_type": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EInt32",
+          "state": "explicit",
+          "value": 2
+        },
+        "success_rate": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EUint32",
+          "state": "explicit",
+          "value": 10000
+        }
+      },
+      "per_stack_formula": null,
+      "raw_reference": {
+        "buff_group_level": 5,
+        "cast_moment": 11,
+        "effect_id": 20010080,
+        "result_target_type": 2,
+        "success_rate": 10000
+      },
+      "runtime_executable": false,
+      "slot": 0,
+      "source_node": "resource-group-c40d72d37c3c43a12b3f/SKILL_CONF:7170280",
+      "status": "resolved",
+      "targets": [
+        "resource-group-c40d72d37c3c43a12b3f/BUFF_CONF:20010080"
+      ],
+      "training_eligible": false
+    },
+    {
+      "base_references": [],
+      "blockers": [
+        "runtime_version_unverified",
+        "layer_rule_and_default_semantics_unverified",
+        "target_and_trigger_semantics_unverified",
+        "per_stack_formula_unverified"
+      ],
+      "effective_stack_count": null,
+      "historical_fallback_applied": false,
+      "id": "resource-group-c40d72d37c3c43a12b3f/SKILL_CONF:7170280/skill_result:1",
+      "kind": "result_reference",
+      "operand_byte_spans": [
+        {
+          "field": "effect_id",
+          "length": 4,
+          "offset": 338153,
+          "raw_hex": "858c0f00",
+          "slot": 1,
+          "type": "EUint32",
+          "value": 1019013
+        },
+        {
+          "field": "result_target_type",
+          "length": 4,
+          "offset": 338157,
+          "raw_hex": "02000000",
+          "slot": 1,
+          "type": "EInt32",
+          "value": 2
+        },
+        {
+          "field": "cast_moment",
+          "length": 4,
+          "offset": 338161,
+          "raw_hex": "0b000000",
+          "slot": 1,
+          "type": "EInt32",
+          "value": 11
+        },
+        {
+          "field": "success_rate",
+          "length": 4,
+          "offset": 338165,
+          "raw_hex": "10270000",
+          "slot": 1,
+          "type": "EUint32",
+          "value": 10000
+        },
+        {
+          "field": "buff_group_level",
+          "length": 4,
+          "offset": 338169,
+          "raw_hex": "01000000",
+          "slot": 1,
+          "type": "EUint32",
+          "value": 1
+        }
+      ],
+      "operands": {
+        "buff_group_level": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EUint32",
+          "state": "explicit",
+          "value": 1
+        },
+        "buff_level_rule": {
+          "present": false,
+          "schema_declared": true,
+          "schema_type": "EInt32",
+          "state": "absent_in_record"
+        },
+        "cast_moment": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EInt32",
+          "state": "explicit",
+          "value": 11
+        },
+        "effect_id": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EUint32",
+          "state": "explicit",
+          "value": 1019013
+        },
+        "result_target_type": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EInt32",
+          "state": "explicit",
+          "value": 2
+        },
+        "success_rate": {
+          "present": true,
+          "schema_declared": true,
+          "schema_type": "EUint32",
+          "state": "explicit",
+          "value": 10000
+        }
+      },
+      "per_stack_formula": null,
+      "raw_reference": {
+        "buff_group_level": 1,
+        "cast_moment": 11,
+        "effect_id": 1019013,
+        "result_target_type": 2,
+        "success_rate": 10000
+      },
+      "runtime_executable": false,
+      "slot": 1,
+      "source_node": "resource-group-c40d72d37c3c43a12b3f/SKILL_CONF:7170280",
+      "status": "resolved",
+      "targets": [
+        "resource-group-c40d72d37c3c43a12b3f/EFFECT_CONF:1019013"
+      ],
+      "training_eligible": false
+    }
+  ],
+  "buff_record": {
+    "add_des": "魔法防御",
+    "add_icon": 2,
+    "add_max": 99,
+    "buff_base_ids": [
+      2001008
+    ],
+    "buff_group_reduce": [
+      {
+        "reduce_param": [
+          999,
+          0
+        ],
+        "reduce_type": 13
+      }
+    ],
+    "buff_groupsigns": [
+      1,
+      31
+    ],
+    "buff_list_priority": 1,
+    "buff_trigger_priority": 1,
+    "connect_buff": 20010060,
+    "desc": "魔防-<span color=\"#c7494a\">10%</>。",
+    "field_buff": 20010060,
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800008_png.800008_png'",
+    "id": 20010080,
+    "is_clean_when_rest": 1,
+    "name": "魔防等级降低",
+    "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+    "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+    "type": 2,
+    "type_id": "2"
+  },
+  "buffbase_record": {
+    "buffbase_order": 1,
+    "buffbase_param": [
+      {
+        "params": [
+          36
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          1000
+        ]
+      }
+    ],
+    "client_trigger_type": [
+      -1
+    ],
+    "id": 2001008,
+    "show_letters": [
+      3
+    ]
+  },
+  "effect_record": {
+    "add_des": "失去能量",
+    "add_icon": 2,
+    "effect_order": 19,
+    "effect_param": [
+      {
+        "params": [
+          -3
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      }
+    ],
+    "id": 1019013,
+    "type": 3
+  },
+  "counts": {
+    "buff_references": 1761,
+    "buff_refs_with_explicit_layer_operand": 1759,
+    "explicit_layer_operands": 2513,
+    "layer_field_absent_in_record": 3726,
+    "layer_field_not_in_schema": 0,
+    "result_slots": 6239,
+    "skill_records": 1894
+  },
+  "validation": {
+    "source_reparse_before_publish": true,
+    "original_regression_tests": 12,
+    "additional_patch2_tests": 6,
+    "total_tests": 18,
+    "result": "passed",
+    "command": "python -m unittest tests.test_game_layer_references -v"
+  },
+  "runtime_precedence_verified": false,
+  "online_applicability_verified": false,
+  "runtime_executable": false,
+  "training_eligible": false,
+  "limitations": [
+    "Explicit cross-archive schema candidates are required for BUFF_CONF and BUFFBASE_CONF; no mounted resource ordering is proven.",
+    "buff_group_level=5 is a raw configuration operand; effective stack count and full attribute settlement formula remain unverified.",
+    "Historical patch-2 operands are not inherited into the base archive, patch-3 candidate or current game behavior.",
+    "All game package evidence is retained extraction material; no Lua was executed and no game file was modified."
+  ]
+}

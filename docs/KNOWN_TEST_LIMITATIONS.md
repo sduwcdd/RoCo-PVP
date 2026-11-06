@@ -1,0 +1,10 @@
+# 交接时尚未解决的测试结果
+
+本次公开同步不以修改机制数值来消除无关失败。公开前检查中，4个匿名化夹具的直接引用用例通过；扩展检查的其他用例出现以下失败，尚未确认它们是否在匿名化前也失败，不称为已确认基线失败。
+
+- tests.test_live_modifiers.CurrentEffectPreviewTests.test_cost_only_entry_trait_does_not_hide_damage_and_status_moves_are_explicit：row["nonDamaging"]为False，期望True。
+- tests.test_live_modifiers.CurrentEffectPreviewTests.test_snow_bear_combines_existing_stars_once_and_checks_freeze_conditions：结果(3,3,3)，期望(3,1,99)。
+- tests.test_live_power.LivePowerTests.test_other_choice_damage_handles_hp_slot_response_and_hidden_carried_types：结果(90,135)，期望(103,148)。
+- tests.test_live_power.LivePowerTests.test_other_conditions_and_missing_inputs_are_not_silently_zeroed：结果203，期望180。
+
+桌面退出、更新、物理信息显示、构建资源及来源校验的定向检查另有通过记录。不能据此声称全量机制测试通过。后续在第二台设备开发时应保留这些差异，先核对规则依据与测试预期，勿为通过测试静默更改游戏规则。

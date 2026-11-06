@@ -1,0 +1,461 @@
+{
+  "schema": "reviewed-team-targets-1",
+  "policy": "whole_state_team_energy_after_committed_skill_living_targets_v1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+    "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "skills": {
+    "7030510": {
+      "skill_id": 7030510,
+      "record": {
+        "id": 7030510,
+        "wiki_id": "skill_000367",
+        "name": {
+          "zh": "富养化"
+        },
+        "type": "草系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "为场下每个精灵回复3能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%AF%8C%E5%85%BB%E5%8C%96",
+        "source_module": "Skills"
+      },
+      "record_hash": "8e183bec51e25a2d32f5dc1b03c1be49e7e2e6cd3d81a39526995fbea3a4cd1b",
+      "before_operations": [],
+      "targets": {
+        "side": "self",
+        "positions": "reserve"
+      },
+      "effect": {
+        "op": "energy.restore",
+        "amount": 3
+      },
+      "evidence": {
+        "current_game_raw": {
+          "id": 7030510,
+          "name": {
+            "localization_id": 2051,
+            "text": "富养化"
+          },
+          "desc": {
+            "localization_id": 2052,
+            "text": "为场下每个精灵回复3能量。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 3,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1019003,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1081001,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_FYH_202034",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/202034.202034'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "energy_effect_raw": {
+          "id": 1019003,
+          "effect_order": 19,
+          "add_des": "获得能量",
+          "add_icon": 1,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "current_result_target_fields_missing": true,
+        "runtime_precedence_verified": false,
+        "enum_source": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+        "historical_patch2_raw": {
+          "id": 7030510,
+          "name": {
+            "localization_id": 1972,
+            "text": "富养化"
+          },
+          "desc": {
+            "localization_id": 1973,
+            "text": "为场下每个精灵回复3能量。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 3,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 9,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 1019003,
+              "result_target_type": 5,
+              "cast_moment": 11,
+              "success_rate": 10000
+            },
+            {
+              "effect_id": 1081001,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_FYH_202034",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/202034.202034'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "historical_result_target_type": 5,
+        "historical_target_enum": "RTT_UNDER_ALLY",
+        "selection_basis": "Explicit historical same-row reserve-ally operand corroborates the source prose; do not backfill missing patch3 fields."
+      }
+    },
+    "7170330": {
+      "skill_id": 7170330,
+      "record": {
+        "id": 7170330,
+        "wiki_id": "skill_000763",
+        "name": {
+          "zh": "小型打劫"
+        },
+        "type": "幽系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "敌方队伍中所有精灵失去1能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%B0%8F%E5%9E%8B%E6%89%93%E5%8A%AB",
+        "source_module": "Skills"
+      },
+      "record_hash": "07f44b3c3706644c2cfed265b6af7c9fd8b842dd357070bbb8d39c7a4ad66e7e",
+      "before_operations": [],
+      "targets": {
+        "side": "opponent",
+        "positions": "all"
+      },
+      "effect": {
+        "op": "energy.reduce",
+        "amount": 1
+      },
+      "evidence": {
+        "current_game_raw": {
+          "id": 7170330,
+          "name": {
+            "localization_id": 3321,
+            "text": "小型打劫"
+          },
+          "desc": {
+            "localization_id": 3322,
+            "text": "敌方队伍中所有精灵失去1能量。"
+          },
+          "flavor_text": {
+            "localization_id": 3323,
+            "text": "见者有份，不要急。\n这种事情谁会急啊！"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 17,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 3,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1019011,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1019011,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gho_YLSF_316033",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/316033.316033'",
+          "describe_type": [
+            12,
+            7
+          ]
+        },
+        "energy_effect_raw": {
+          "id": 1019011,
+          "effect_order": 19,
+          "add_des": "失去能量",
+          "add_icon": 2,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                -1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "current_result_target_fields_missing": true,
+        "runtime_precedence_verified": false,
+        "enum_source": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+        "skill_target_type": 3,
+        "skill_target_enum": "STT_ALL_ENEMY",
+        "selection_basis": "Whole BWIKI/game description explicitly says every opposing team member; repeated source effect slots have absent result targets and are not executed twice."
+      }
+    },
+    "7030560": {
+      "skill_id": 7030560,
+      "record": {
+        "id": 7030560,
+        "wiki_id": "skill_000370",
+        "name": {
+          "zh": "养分回流"
+        },
+        "type": "草系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，为场下所有精灵回复1能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%85%BB%E5%88%86%E5%9B%9E%E6%B5%81",
+        "source_module": "Skills",
+        "power": 75
+      },
+      "record_hash": "02df80c1c1286bf129c57ee694d6f2b27053c06d88178919d021d2dc80978105",
+      "before_operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "power": 75,
+            "type": "草系"
+          }
+        }
+      ],
+      "targets": {
+        "side": "self",
+        "positions": "reserve"
+      },
+      "effect": {
+        "op": "energy.restore",
+        "amount": 1
+      },
+      "evidence": {
+        "current_game_raw": {
+          "id": 7030560,
+          "name": {
+            "localization_id": 2069,
+            "text": "养分回流"
+          },
+          "desc": {
+            "localization_id": 2070,
+            "text": "造成魔伤，为场下所有精灵回复1能量。"
+          },
+          "flavor_text": {
+            "localization_id": 2071,
+            "text": "\"这次魔药课实验又失败了，唯一的安慰是给隔壁的对战课题组提供了三篇引用。\""
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 3,
+          "skill_feature": 3,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1019001,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1081001,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_CGCJ_302042",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/302042.302042'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "energy_effect_raw": {
+          "id": 1019001,
+          "effect_order": 19,
+          "add_des": "获得能量",
+          "add_icon": 1,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "current_result_target_fields_missing": true,
+        "runtime_precedence_verified": false,
+        "enum_source": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+        "historical_patch2_raw": {
+          "id": 7030560,
+          "name": {
+            "localization_id": 1990,
+            "text": "养分回流"
+          },
+          "desc": {
+            "localization_id": 1991,
+            "text": "造成​魔伤，​为场​下​所有​精灵​回复1​能量​。"
+          },
+          "flavor_text": {
+            "localization_id": 1992,
+            "text": "\"这次魔药课实验又失败了，唯一的安慰是给隔壁的对战课题组提供了三篇引用。\""
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 3,
+          "skill_feature": 3,
+          "damage_type": 3,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 1019001,
+              "result_target_type": 5,
+              "cast_moment": 11,
+              "success_rate": 10000
+            },
+            {
+              "effect_id": 1081001,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_CGCJ_302042",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/302042.302042'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "historical_result_target_type": 5,
+        "historical_target_enum": "RTT_UNDER_ALLY",
+        "selection_basis": "Explicit historical same-row reserve-ally operand corroborates the source prose; do not backfill missing patch3 fields."
+      }
+    }
+  }
+}

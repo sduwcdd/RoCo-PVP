@@ -1,0 +1,1457 @@
+{
+  "schema": "live-form-transition-1",
+  "battle_id": "90000000000000001",
+  "source_csv": "synthetic-capture-1.csv",
+  "petbase_sha256": "19281022feb168595f62916109da61c73611984c7c04066e77c9ae613400881b",
+  "events": [
+    {
+      "source_record": 133459,
+      "phase": "initial",
+      "pet_info": {
+        "battle_inside_pet_info": {
+          "pet_id": 4,
+          "pos": 18446744073709551615,
+          "conf_id": 410118,
+          "base_conf_id": 3123,
+          "battle_attr": [
+            0,
+            492,
+            200,
+            156,
+            133,
+            203,
+            182,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            20000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            492,
+            9,
+            16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2500,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2500,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2000,
+            0,
+            18446744073709550616,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "cur_passive_skill": 0,
+          "max_energy": 10,
+          "pet_change_status": 0,
+          "buffs": [
+            {
+              "buff_id": 20010824,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20010830,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20030050,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20860020,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            }
+          ],
+          "skill_round_data": [
+            {
+              "id": 709040000,
+              "skill_id": 7090400,
+              "pos": 3,
+              "cost_energy": 2,
+              "skill_name": "冰点",
+              "skill_energy_cost": [
+                2
+              ]
+            },
+            {
+              "id": 709011000,
+              "skill_id": 7090110,
+              "pos": 4,
+              "cost_energy": 3,
+              "skill_name": "暴风雪",
+              "skill_energy_cost": [
+                3
+              ]
+            },
+            {
+              "id": 709021000,
+              "skill_id": 7090210,
+              "pos": 1,
+              "cost_energy": 2,
+              "skill_name": "冰墙",
+              "skill_energy_cost": [
+                2
+              ]
+            },
+            {
+              "id": 716014000,
+              "skill_id": 7160140,
+              "pos": 2,
+              "cost_energy": 3,
+              "skill_name": "超级糖果",
+              "skill_energy_cost": [
+                3
+              ]
+            },
+            {
+              "id": 20011600,
+              "skill_id": 200116,
+              "pos": 12,
+              "cost_energy": 0
+            },
+            {
+              "id": 700001000,
+              "skill_id": 7000010,
+              "pos": 13,
+              "cost_energy": 0,
+              "skill_name": "聚能",
+              "skill_energy_cost": [
+                0
+              ]
+            },
+            {
+              "id": 700003000,
+              "skill_id": 7000030,
+              "pos": 0,
+              "cost_energy": 0,
+              "skill_name": "聚能",
+              "skill_energy_cost": [
+                0
+              ]
+            }
+          ]
+        },
+        "battle_common_pet_info": {
+          "base_conf_id": 3123,
+          "level": 60,
+          "nature": 28,
+          "energy": 10,
+          "blood_id": 19
+        }
+      }
+    },
+    {
+      "source_record": 133459,
+      "phase": "initial",
+      "pet_info": {
+        "battle_inside_pet_info": {
+          "pet_id": 401,
+          "pos": 18446744073709551615,
+          "conf_id": 300011,
+          "base_conf_id": 3011,
+          "battle_attr": [
+            0,
+            417,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            417,
+            18,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "cur_passive_skill": 0
+        },
+        "battle_common_pet_info": {
+          "base_conf_id": 3011,
+          "level": 60,
+          "energy": 10,
+          "blood_id": 19
+        }
+      }
+    },
+    {
+      "source_record": 134082,
+      "phase": "change_model",
+      "old_base_id": 3011,
+      "pet_info": {
+        "battle_inside_pet_info": {
+          "pet_id": 401,
+          "pos": 1,
+          "conf_id": 300011,
+          "base_conf_id": 5016,
+          "battle_attr": [
+            0,
+            417,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            417,
+            18,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "cur_passive_skill": 0,
+          "buffs": [
+            {
+              "buff_id": 20010832,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20860020,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20720020,
+              "stack": 1,
+              "buff_left_round": 997,
+              "buff_type": 4
+            },
+            {
+              "buff_id": 20340060,
+              "stack": 13,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20170880,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20011541,
+              "stack": 0,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20011542,
+              "stack": 12,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20173020,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20920150,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 4
+            }
+          ]
+        },
+        "battle_common_pet_info": {
+          "base_conf_id": 3011,
+          "level": 60,
+          "nature": 10,
+          "energy": 10,
+          "blood_id": 19
+        }
+      }
+    },
+    {
+      "source_record": 134477,
+      "phase": "change_model",
+      "old_base_id": 3123,
+      "pet_info": {
+        "battle_inside_pet_info": {
+          "pet_id": 4,
+          "pos": 1,
+          "conf_id": 410118,
+          "base_conf_id": 5013,
+          "battle_attr": [
+            0,
+            492,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            351,
+            9,
+            16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "cur_passive_skill": 0,
+          "buffs": [
+            {
+              "buff_id": 20010824,
+              "stack": 1,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20010830,
+              "stack": 1,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20030050,
+              "stack": 1,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20860020,
+              "stack": 1,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 21420010,
+              "stack": 1,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20640890,
+              "stack": 1,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20890110,
+              "stack": 1,
+              "buff_left_round": 997,
+              "buff_type": 4
+            },
+            {
+              "buff_id": 20170880,
+              "stack": 1,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20680130,
+              "stack": 0,
+              "buff_left_round": 998,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20680131,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 3
+            }
+          ]
+        },
+        "battle_common_pet_info": {
+          "base_conf_id": 3123,
+          "level": 60,
+          "nature": 28,
+          "energy": 10,
+          "blood_id": 19
+        }
+      }
+    },
+    {
+      "source_record": 134888,
+      "phase": "change_model",
+      "old_base_id": 5013,
+      "pet_info": {
+        "battle_inside_pet_info": {
+          "pet_id": 4,
+          "pos": 1,
+          "conf_id": 410118,
+          "base_conf_id": 3123,
+          "battle_attr": [
+            0,
+            492,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            9,
+            16,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "cur_passive_skill": 280012,
+          "buffs": [
+            {
+              "buff_id": 20010824,
+              "stack": 1,
+              "buff_left_round": 995,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20010830,
+              "stack": 1,
+              "buff_left_round": 995,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20030050,
+              "stack": 1,
+              "buff_left_round": 995,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20860020,
+              "stack": 1,
+              "buff_left_round": 995,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20350760,
+              "stack": 1,
+              "buff_left_round": 996,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 21420010,
+              "stack": 1,
+              "buff_left_round": 997,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20640890,
+              "stack": 1,
+              "buff_left_round": 997,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20890110,
+              "stack": 1,
+              "buff_left_round": 992,
+              "buff_type": 4
+            },
+            {
+              "buff_id": 20170880,
+              "stack": 1,
+              "buff_left_round": 997,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 20680131,
+              "stack": 1,
+              "buff_left_round": 997,
+              "buff_type": 3
+            },
+            {
+              "buff_id": 21020040,
+              "stack": 1,
+              "buff_left_round": 999,
+              "buff_type": 2
+            }
+          ]
+        },
+        "battle_common_pet_info": {
+          "base_conf_id": 3123,
+          "level": 60,
+          "nature": 28,
+          "energy": 3,
+          "blood_id": 19
+        }
+      }
+    }
+  ],
+  "published_boss_audit": [
+    {
+      "boss_id": 5001,
+      "name": "钻石蜗",
+      "predecessor": 3308,
+      "second_predecessor": 3307,
+      "old_one_step": 3308,
+      "old_two_steps": 3308
+    },
+    {
+      "boss_id": 5002,
+      "name": "彩虹独角兽",
+      "predecessor": 3063,
+      "second_predecessor": 3062,
+      "old_one_step": 3063,
+      "old_two_steps": 3063
+    },
+    {
+      "boss_id": 5003,
+      "name": "叶冕魔力猫",
+      "predecessor": 3007,
+      "second_predecessor": 3025,
+      "old_one_step": 3007,
+      "old_two_steps": 5003
+    },
+    {
+      "boss_id": 5004,
+      "name": "蹦蹦果",
+      "predecessor": 3019,
+      "second_predecessor": 3018,
+      "old_one_step": 3019,
+      "old_two_steps": 5004
+    },
+    {
+      "boss_id": 5005,
+      "name": "奇丽果",
+      "predecessor": 3031,
+      "second_predecessor": 3030,
+      "old_one_step": 3031,
+      "old_two_steps": 5005
+    },
+    {
+      "boss_id": 5006,
+      "name": "鸭吉吉国王",
+      "predecessor": 3012,
+      "second_predecessor": 3012,
+      "old_one_step": 3012,
+      "old_two_steps": 3012
+    },
+    {
+      "boss_id": 5007,
+      "name": "黑猫密探",
+      "predecessor": 3569,
+      "second_predecessor": 3568,
+      "old_one_step": 3569,
+      "old_two_steps": 3569
+    },
+    {
+      "boss_id": 5008,
+      "name": "迷嶂布莱克",
+      "predecessor": 3105,
+      "second_predecessor": 3104,
+      "old_one_step": 3105,
+      "old_two_steps": 5008
+    },
+    {
+      "boss_id": 5009,
+      "name": "祭礼巨像",
+      "predecessor": 3111,
+      "second_predecessor": 3110,
+      "old_one_step": 3111,
+      "old_two_steps": 5009
+    },
+    {
+      "boss_id": 5010,
+      "name": "圣水守护",
+      "predecessor": 3005,
+      "second_predecessor": 3033,
+      "old_one_step": 3005,
+      "old_two_steps": 5010
+    },
+    {
+      "boss_id": 5011,
+      "name": "神谕鲨",
+      "predecessor": 3117,
+      "second_predecessor": 3116,
+      "old_one_step": 3117,
+      "old_two_steps": 5011
+    },
+    {
+      "boss_id": 5012,
+      "name": "千棘海针",
+      "predecessor": 3332,
+      "second_predecessor": 3331,
+      "old_one_step": 3332,
+      "old_two_steps": 5012
+    },
+    {
+      "boss_id": 5013,
+      "name": "雪影冰灵",
+      "predecessor": 3123,
+      "second_predecessor": 3122,
+      "old_one_step": 3123,
+      "old_two_steps": 3746
+    },
+    {
+      "boss_id": 5014,
+      "name": "霜翼领主",
+      "predecessor": 3037,
+      "second_predecessor": 3028,
+      "old_one_step": 3037,
+      "old_two_steps": 5014
+    },
+    {
+      "boss_id": 5015,
+      "name": "女王蜂",
+      "predecessor": 3157,
+      "second_predecessor": 3059,
+      "old_one_step": 3157,
+      "old_two_steps": 5015
+    },
+    {
+      "boss_id": 5016,
+      "name": "恶魔狼王",
+      "predecessor": 3011,
+      "second_predecessor": 3011,
+      "old_one_step": 3011,
+      "old_two_steps": 3011
+    },
+    {
+      "boss_id": 5017,
+      "name": "烈火战神",
+      "predecessor": 3006,
+      "second_predecessor": 3032,
+      "old_one_step": 3006,
+      "old_two_steps": 5017
+    },
+    {
+      "boss_id": 5018,
+      "name": "风暴战犬",
+      "predecessor": 3071,
+      "second_predecessor": 3070,
+      "old_one_step": 3071,
+      "old_two_steps": 3071
+    },
+    {
+      "boss_id": 5019,
+      "name": "幻影荆棘",
+      "predecessor": 3064,
+      "second_predecessor": 3064,
+      "old_one_step": 3064,
+      "old_two_steps": 3064
+    },
+    {
+      "boss_id": 5020,
+      "name": "波普鹿",
+      "predecessor": 3359,
+      "second_predecessor": 3358,
+      "old_one_step": 3359,
+      "old_two_steps": 5020
+    },
+    {
+      "boss_id": 5021,
+      "name": "圣剑骑士",
+      "predecessor": 3546,
+      "second_predecessor": 3545,
+      "old_one_step": 3546,
+      "old_two_steps": 3546
+    },
+    {
+      "boss_id": 5022,
+      "name": "伊兰龙",
+      "predecessor": 3412,
+      "second_predecessor": 3211,
+      "old_one_step": 3412,
+      "old_two_steps": 3412
+    },
+    {
+      "boss_id": 5023,
+      "name": "棋契陛下",
+      "predecessor": 3551,
+      "second_predecessor": 3550,
+      "old_one_step": 3551,
+      "old_two_steps": 3551
+    },
+    {
+      "boss_id": 5024,
+      "name": "奇梦咪",
+      "predecessor": 3375,
+      "second_predecessor": 3374,
+      "old_one_step": 3375,
+      "old_two_steps": 5024
+    },
+    {
+      "boss_id": 5025,
+      "name": "圣光迪莫",
+      "predecessor": 3004,
+      "second_predecessor": 3004,
+      "old_one_step": 3004,
+      "old_two_steps": 3004
+    },
+    {
+      "boss_id": 5026,
+      "name": "圣草迪莫",
+      "predecessor": 3004,
+      "second_predecessor": 3004,
+      "old_one_step": 3004,
+      "old_two_steps": 3004
+    },
+    {
+      "boss_id": 5027,
+      "name": "圣火迪莫",
+      "predecessor": 3004,
+      "second_predecessor": 3004,
+      "old_one_step": 3004,
+      "old_two_steps": 3004
+    },
+    {
+      "boss_id": 5028,
+      "name": "圣水迪莫",
+      "predecessor": 3004,
+      "second_predecessor": 3004,
+      "old_one_step": 3004,
+      "old_two_steps": 3004
+    },
+    {
+      "boss_id": 5029,
+      "name": "千棘海针",
+      "predecessor": 3477,
+      "second_predecessor": 3476,
+      "old_one_step": 3332,
+      "old_two_steps": 5029
+    },
+    {
+      "boss_id": 5030,
+      "name": "霜翼领主",
+      "predecessor": 3285,
+      "second_predecessor": 3282,
+      "old_one_step": 3285,
+      "old_two_steps": 5030
+    },
+    {
+      "boss_id": 5031,
+      "name": "霜翼领主",
+      "predecessor": 3286,
+      "second_predecessor": 3283,
+      "old_one_step": 3286,
+      "old_two_steps": 5031
+    },
+    {
+      "boss_id": 5032,
+      "name": "霜翼领主",
+      "predecessor": 3287,
+      "second_predecessor": 3284,
+      "old_one_step": 3287,
+      "old_two_steps": 5032
+    },
+    {
+      "boss_id": 5033,
+      "name": "蹦蹦果",
+      "predecessor": 3303,
+      "second_predecessor": 3300,
+      "old_one_step": 3303,
+      "old_two_steps": 5033
+    },
+    {
+      "boss_id": 5034,
+      "name": "蹦蹦果",
+      "predecessor": 3304,
+      "second_predecessor": 3301,
+      "old_one_step": 3304,
+      "old_two_steps": 5034
+    },
+    {
+      "boss_id": 5035,
+      "name": "蹦蹦果",
+      "predecessor": 3305,
+      "second_predecessor": 3302,
+      "old_one_step": 3305,
+      "old_two_steps": 5035
+    },
+    {
+      "boss_id": 5036,
+      "name": "鸭吉吉国王",
+      "predecessor": 3036,
+      "second_predecessor": 3036,
+      "old_one_step": 3036,
+      "old_two_steps": 3036
+    },
+    {
+      "boss_id": 5037,
+      "name": "鸭吉吉国王",
+      "predecessor": 3452,
+      "second_predecessor": 3452,
+      "old_one_step": 3036,
+      "old_two_steps": 3036
+    },
+    {
+      "boss_id": 5038,
+      "name": "鸭吉吉国王",
+      "predecessor": 3453,
+      "second_predecessor": 3453,
+      "old_one_step": 3012,
+      "old_two_steps": 3012
+    },
+    {
+      "boss_id": 5039,
+      "name": "鸭吉吉国王",
+      "predecessor": 3495,
+      "second_predecessor": 3495,
+      "old_one_step": 3495,
+      "old_two_steps": 3495
+    },
+    {
+      "boss_id": 5040,
+      "name": "棋契陛下",
+      "predecessor": 3552,
+      "second_predecessor": 3550,
+      "old_one_step": 3552,
+      "old_two_steps": 3552
+    },
+    {
+      "boss_id": 5041,
+      "name": "棋契陛下",
+      "predecessor": 3553,
+      "second_predecessor": 3550,
+      "old_one_step": 3553,
+      "old_two_steps": 3553
+    },
+    {
+      "boss_id": 5042,
+      "name": "棋契陛下",
+      "predecessor": 3554,
+      "second_predecessor": 3550,
+      "old_one_step": 3554,
+      "old_two_steps": 3554
+    },
+    {
+      "boss_id": 5043,
+      "name": "棋契陛下",
+      "predecessor": 3556,
+      "second_predecessor": 3555,
+      "old_one_step": 3556,
+      "old_two_steps": 3556
+    },
+    {
+      "boss_id": 5044,
+      "name": "棋契陛下",
+      "predecessor": 3557,
+      "second_predecessor": 3555,
+      "old_one_step": 3557,
+      "old_two_steps": 3557
+    },
+    {
+      "boss_id": 5045,
+      "name": "棋契陛下",
+      "predecessor": 3558,
+      "second_predecessor": 3555,
+      "old_one_step": 3558,
+      "old_two_steps": 3558
+    },
+    {
+      "boss_id": 5046,
+      "name": "棋契陛下",
+      "predecessor": 3559,
+      "second_predecessor": 3555,
+      "old_one_step": 3559,
+      "old_two_steps": 3559
+    },
+    {
+      "boss_id": 5047,
+      "name": "钻石蜗",
+      "predecessor": 3448,
+      "second_predecessor": 3307,
+      "old_one_step": 3308,
+      "old_two_steps": 3308
+    },
+    {
+      "boss_id": 5048,
+      "name": "钻石蜗",
+      "predecessor": 3449,
+      "second_predecessor": 3307,
+      "old_one_step": 3308,
+      "old_two_steps": 3308
+    },
+    {
+      "boss_id": 5049,
+      "name": "钻石蜗",
+      "predecessor": 3450,
+      "second_predecessor": 3307,
+      "old_one_step": 3308,
+      "old_two_steps": 3308
+    },
+    {
+      "boss_id": 5050,
+      "name": "钻石蜗",
+      "predecessor": 3451,
+      "second_predecessor": 3307,
+      "old_one_step": 3308,
+      "old_two_steps": 3308
+    },
+    {
+      "boss_id": 5051,
+      "name": "钻石蜗",
+      "predecessor": 3486,
+      "second_predecessor": 3307,
+      "old_one_step": 3308,
+      "old_two_steps": 3308
+    },
+    {
+      "boss_id": 5052,
+      "name": "鸭吉吉国王",
+      "predecessor": 3742,
+      "second_predecessor": 3742,
+      "old_one_step": 3012,
+      "old_two_steps": 3012
+    },
+    {
+      "boss_id": 5053,
+      "name": "深渊罗隐",
+      "predecessor": 3016,
+      "second_predecessor": 3015,
+      "old_one_step": 3016,
+      "old_two_steps": 5053
+    },
+    {
+      "boss_id": 5054,
+      "name": "高帽鹬者",
+      "predecessor": 3252,
+      "second_predecessor": 3251,
+      "old_one_step": 3252,
+      "old_two_steps": 5054
+    },
+    {
+      "boss_id": 5055,
+      "name": "恶魔男爵",
+      "predecessor": 3039,
+      "second_predecessor": 3010,
+      "old_one_step": 3039,
+      "old_two_steps": 3039
+    },
+    {
+      "boss_id": 5056,
+      "name": "暮风隐者",
+      "predecessor": 3377,
+      "second_predecessor": 3483,
+      "old_one_step": 3377,
+      "old_two_steps": 5056
+    },
+    {
+      "boss_id": 5057,
+      "name": "淤泥乌泽",
+      "predecessor": 3491,
+      "second_predecessor": 3490,
+      "old_one_step": 3491,
+      "old_two_steps": 3491
+    },
+    {
+      "boss_id": 5059,
+      "name": "暗夜颅主",
+      "predecessor": 3150,
+      "second_predecessor": 3149,
+      "old_one_step": 3150,
+      "old_two_steps": 5059
+    },
+    {
+      "boss_id": 5060,
+      "name": "风暴酷拉",
+      "predecessor": 3189,
+      "second_predecessor": 3188,
+      "old_one_step": 3189,
+      "old_two_steps": 3189
+    },
+    {
+      "boss_id": 5061,
+      "name": "武斗酷猫",
+      "predecessor": 3007,
+      "second_predecessor": 3025,
+      "old_one_step": 3007,
+      "old_two_steps": 5061
+    },
+    {
+      "boss_id": 5062,
+      "name": "暮风隐者",
+      "predecessor": 3498,
+      "second_predecessor": 3497,
+      "old_one_step": 3377,
+      "old_two_steps": 5062
+    },
+    {
+      "boss_id": 5063,
+      "name": "烈焰狂战士",
+      "predecessor": 3092,
+      "second_predecessor": 3091,
+      "old_one_step": 3092,
+      "old_two_steps": 5063
+    },
+    {
+      "boss_id": 5064,
+      "name": "满月砣",
+      "predecessor": 3583,
+      "second_predecessor": 3582,
+      "old_one_step": 3583,
+      "old_two_steps": 3583
+    },
+    {
+      "boss_id": 5065,
+      "name": "满月砣",
+      "predecessor": 3585,
+      "second_predecessor": 3584,
+      "old_one_step": 3585,
+      "old_two_steps": 3585
+    },
+    {
+      "boss_id": 5075,
+      "name": "风暴战犬",
+      "predecessor": 3871,
+      "second_predecessor": 3870,
+      "old_one_step": 3071,
+      "old_two_steps": 3071
+    }
+  ],
+  "audit_result": {
+    "published_boss_forms": 65,
+    "one_step_previous_conflicts": 11,
+    "two_step_previous_conflicts": 56,
+    "scope": "Static comparison with explicit PETBASE evolution/boss references, not 65 live battle calibrations."
+  },
+  "full_battle_replay_check": [
+    {
+      "source_record": 134477,
+      "form_id": 5013,
+      "name": "雪影冰灵",
+      "cute_layers": 0,
+      "trait_id": 280012
+    },
+    {
+      "source_record": 134888,
+      "form_id": 3123,
+      "name": "雪影娃娃",
+      "cute_layers": 1,
+      "trait_id": 280012
+    },
+    {
+      "source_record": 134899,
+      "form_id": 3123,
+      "name": "雪影娃娃",
+      "cute_layers": 1,
+      "trait_id": 280012
+    },
+    {
+      "source_record": 134982,
+      "form_id": 3123,
+      "name": "雪影娃娃",
+      "cute_layers": 1,
+      "trait_id": 280012
+    }
+  ],
+  "anonymization": {
+    "version": 1,
+    "purpose": "Public regression fixture with synthetic identities and capture labels",
+    "method": "Deterministic consistent substitution across the four fixtures; numeric identifier types and digit lengths retained",
+    "scope": [
+      "battle identifiers",
+      "nonlocal individual or account identifiers when present",
+      "custom pet nicknames",
+      "capture file labels"
+    ],
+    "mechanics_preserved": true
+  }
+}

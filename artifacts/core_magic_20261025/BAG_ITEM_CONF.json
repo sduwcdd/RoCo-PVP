@@ -1,0 +1,849 @@
+{
+  "104001": {
+    "id": 104001,
+    "sort_id": 301002,
+    "name": {
+      "localization_id": 1654,
+      "text": "光合治愈"
+    },
+    "is_release": true,
+    "description": {
+      "localization_id": 1655,
+      "text": "对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1656,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100001,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "104002": {
+    "id": 104002,
+    "sort_id": 301003,
+    "name": {
+      "localization_id": 1657,
+      "text": "愿力强化"
+    },
+    "is_release": true,
+    "description": {
+      "localization_id": 1658,
+      "text": "对任意系别血脉的精灵使用，本回合技能栏首个技能替换为【愿力冲击】，每场战斗可使用2次，冷却3回合。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1659,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100002,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 99,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "104003": {
+    "id": 104003,
+    "sort_id": 301004,
+    "name": {
+      "localization_id": 1660,
+      "text": "闪焰爆发"
+    },
+    "description": {
+      "localization_id": 1661,
+      "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1662,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100003,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "104004": {
+    "id": 104004,
+    "sort_id": 301005,
+    "name": {
+      "localization_id": 1663,
+      "text": "节流术"
+    },
+    "description": {
+      "localization_id": 1664,
+      "text": "对水系或者水血脉的精灵使用，本回合技能不扣除能耗。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1665,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100004,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "104005": {
+    "id": 104005,
+    "sort_id": 301006,
+    "name": {
+      "localization_id": 1666,
+      "text": "遁逃术"
+    },
+    "description": {
+      "localization_id": 1667,
+      "text": "使用后，能够逃离战斗"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010050.7010050'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010050.7010050'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1668,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100005,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "104006": {
+    "id": 104006,
+    "sort_id": 301007,
+    "name": {
+      "localization_id": 1669,
+      "text": "噩梦纠缠"
+    },
+    "description": {
+      "localization_id": 1670,
+      "text": "对污染血脉的精灵使用，将其携带的技能替换为同系别同类型的随机技能，并增加10%全属性。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1671,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100006,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "104007": {
+    "id": 104007,
+    "sort_id": 301001,
+    "name": {
+      "localization_id": 1672,
+      "text": "进化之力"
+    },
+    "is_release": true,
+    "description": {
+      "localization_id": 1673,
+      "text": "对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1674,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100007,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "104008": {
+    "id": 104008,
+    "sort_id": 301008,
+    "name": {
+      "localization_id": 1675,
+      "text": "测试-治愈"
+    },
+    "description": {
+      "localization_id": 1676,
+      "text": "消耗1魔力，恢复10能量"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010070.7010070'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1677,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100008,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104009": {
+    "id": 104009,
+    "sort_id": 301009,
+    "name": {
+      "localization_id": 1678,
+      "text": "唤名"
+    },
+    "is_release": true,
+    "description": {
+      "localization_id": 1679,
+      "text": "呼唤精灵被吞噬的名字。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010075.7010075'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1680,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100009,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104010": {
+    "id": 104010,
+    "sort_id": 301010,
+    "name": {
+      "localization_id": 1681,
+      "text": "召唤亚瑟"
+    },
+    "is_release": true,
+    "description": {
+      "localization_id": 1682,
+      "text": "召唤亚瑟帮助战斗。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010076.7010076'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1683,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100010,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104011": {
+    "id": 104011,
+    "name": {
+      "localization_id": 1684,
+      "text": "光合治愈"
+    },
+    "description": {
+      "localization_id": 1685,
+      "text": "萌萌使用，对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1686,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100011,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104012": {
+    "id": 104012,
+    "name": {
+      "localization_id": 1687,
+      "text": "光合治愈"
+    },
+    "description": {
+      "localization_id": 1688,
+      "text": "普通学生使用，对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1689,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100012,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104013": {
+    "id": 104013,
+    "name": {
+      "localization_id": 1690,
+      "text": "光合治愈"
+    },
+    "description": {
+      "localization_id": 1691,
+      "text": "玩家形态NPC使用，对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1692,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100013,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104014": {
+    "id": 104014,
+    "name": {
+      "localization_id": 1693,
+      "text": "愿力强化"
+    },
+    "description": {
+      "localization_id": 1694,
+      "text": "可丽希亚使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1695,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100014,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 99,
+    "can_stack": 1
+  },
+  "104015": {
+    "id": 104015,
+    "name": {
+      "localization_id": 1696,
+      "text": "愿力强化"
+    },
+    "description": {
+      "localization_id": 1697,
+      "text": "普通学生使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1698,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100015,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 99,
+    "can_stack": 1
+  },
+  "104016": {
+    "id": 104016,
+    "name": {
+      "localization_id": 1699,
+      "text": "愿力强化"
+    },
+    "description": {
+      "localization_id": 1700,
+      "text": "费得使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1701,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100016,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 99,
+    "can_stack": 1
+  },
+  "104017": {
+    "id": 104017,
+    "name": {
+      "localization_id": 1702,
+      "text": "愿力强化"
+    },
+    "description": {
+      "localization_id": 1703,
+      "text": "卡普使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1704,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100017,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 99,
+    "can_stack": 1
+  },
+  "104018": {
+    "id": 104018,
+    "name": {
+      "localization_id": 1705,
+      "text": "闪焰爆发"
+    },
+    "description": {
+      "localization_id": 1706,
+      "text": "沃尔克使用，对火系或者火血脉的精灵，本回合技能威力提升150%。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1707,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100018,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104019": {
+    "id": 104019,
+    "name": {
+      "localization_id": 1708,
+      "text": "闪焰爆发"
+    },
+    "description": {
+      "localization_id": 1709,
+      "text": "普通学生使用，对火系或者火血脉的精灵，本回合技能威力提升150%。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1710,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100019,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104020": {
+    "id": 104020,
+    "name": {
+      "localization_id": 1711,
+      "text": "闪焰爆发"
+    },
+    "description": {
+      "localization_id": 1712,
+      "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1713,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100020,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104021": {
+    "id": 104021,
+    "name": {
+      "localization_id": 1714,
+      "text": "节流术"
+    },
+    "description": {
+      "localization_id": 1715,
+      "text": "路易斯使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1716,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100021,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104022": {
+    "id": 104022,
+    "name": {
+      "localization_id": 1717,
+      "text": "节流术"
+    },
+    "description": {
+      "localization_id": 1718,
+      "text": "普通学生使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1719,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100022,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104023": {
+    "id": 104023,
+    "name": {
+      "localization_id": 1720,
+      "text": "节流术"
+    },
+    "description": {
+      "localization_id": 1721,
+      "text": "玩家形态NPC使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1722,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100023,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104024": {
+    "id": 104024,
+    "name": {
+      "localization_id": 1723,
+      "text": "噩梦纠缠"
+    },
+    "description": {
+      "localization_id": 1724,
+      "text": "库伦使用，攻防提升30%，无法更换精灵"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1725,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100024,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104025": {
+    "id": 104025,
+    "name": {
+      "localization_id": 1726,
+      "text": "噩梦纠缠"
+    },
+    "description": {
+      "localization_id": 1727,
+      "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1728,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100025,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104026": {
+    "id": 104026,
+    "name": {
+      "localization_id": 1729,
+      "text": "噩梦纠缠"
+    },
+    "description": {
+      "localization_id": 1730,
+      "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1731,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100026,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104027": {
+    "id": 104027,
+    "name": {
+      "localization_id": 1732,
+      "text": "噩梦纠缠"
+    },
+    "description": {
+      "localization_id": 1733,
+      "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1734,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100027,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104028": {
+    "id": 104028,
+    "name": {
+      "localization_id": 1735,
+      "text": "噩梦纠缠"
+    },
+    "description": {
+      "localization_id": 1736,
+      "text": "恩佐使用，提升精灵属性，改变精灵技能。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1737,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100028,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104029": {
+    "id": 104029,
+    "name": {
+      "localization_id": 1738,
+      "text": "进化之力"
+    },
+    "description": {
+      "localization_id": 1739,
+      "text": "安妮使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1740,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100029,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104030": {
+    "id": 104030,
+    "name": {
+      "localization_id": 1741,
+      "text": "进化之力"
+    },
+    "description": {
+      "localization_id": 1742,
+      "text": "皮卡使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1743,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100030,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104031": {
+    "id": 104031,
+    "name": {
+      "localization_id": 1744,
+      "text": "进化之力"
+    },
+    "description": {
+      "localization_id": 1745,
+      "text": "博得使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1746,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100031,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104032": {
+    "id": 104032,
+    "name": {
+      "localization_id": 1747,
+      "text": "进化之力"
+    },
+    "description": {
+      "localization_id": 1748,
+      "text": "万事通使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1749,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100032,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  },
+  "104033": {
+    "id": 104033,
+    "name": {
+      "localization_id": 1750,
+      "text": "噩梦纠缠"
+    },
+    "description": {
+      "localization_id": 1751,
+      "text": "恩佐使用，提升精灵属性，改变精灵技能。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1752,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100033,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1
+  }
+}

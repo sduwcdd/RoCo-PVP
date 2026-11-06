@@ -1,0 +1,174 @@
+[
+  {
+    "pak": "pakchunk4-WindowsNoEditor.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+    "offset": 1916928,
+    "declared_size": 2451,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "e16bbe02f298e820fbbdc6e733184246edbb12be89e89b77dbdbfa2692a0353c",
+    "source_ranges_sha256": [
+      {
+        "offset": 1917001,
+        "size": 400,
+        "sha256": "6216a4688e67bf345a5e2d3a4a31246d0ec5791cc483dfaaec1ba00e642cd061"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor\\NRC\\Content\\ScriptC\\Data\\Bin\\BinConf\\EFFECT_CONF.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+    "offset": 10713088,
+    "declared_size": 130337,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "df8d2ef895522c36a233c8883b0b66b8a838168ca3ce5dcde997757abcb2eede",
+    "source_ranges_sha256": [
+      {
+        "offset": 10713177,
+        "size": 22560,
+        "sha256": "c6d5378dab7402b4a139ce25485a395aa9633d576c25ad8cbb7a991a9e91b699"
+      },
+      {
+        "offset": 10735737,
+        "size": 16144,
+        "sha256": "b98383765a8063373149065557d70b0e05ee2dbe697e4d24422d4146906289ef"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor\\NRC\\Content\\ScriptC\\Data\\Bin\\BinDataCompressed\\EFFECT_CONF.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+    "offset": 1897819,
+    "declared_size": 1965,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "7e20a6aaf8fe9af6824585c8bbbc858a3b1c4519f9a2bb09f8bfb20f2dd7cd23",
+    "source_ranges_sha256": [
+      {
+        "offset": 1897892,
+        "size": 384,
+        "sha256": "1844eac74e9eef19f0a08833eeb09b2efd217f4779bb3b0c4ec314cbeebee439"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor\\NRC\\Content\\ScriptC\\Data\\Bin\\BinConf\\BUFFBASE_CONF.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+    "offset": 7323648,
+    "declared_size": 260713,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "1c59c84b86456ff96f3d51c659e05bff0e5493e629871b45a02628ff835b5737",
+    "source_ranges_sha256": [
+      {
+        "offset": 7323769,
+        "size": 18496,
+        "sha256": "bbc85ff665b27b3ab0d4dac1942b5bbf668423de6b05ebc456053727b5408a65"
+      },
+      {
+        "offset": 7342265,
+        "size": 19936,
+        "sha256": "9d02d785a588acca38d59b32c805e2cf3ccafda747e27ddd05dd904b77e2bf41"
+      },
+      {
+        "offset": 7362201,
+        "size": 16560,
+        "sha256": "32ad2cf467f5fb7ca9c8c63f97d16bd20f8c4f7eba16b87762d1d6d49f8336fe"
+      },
+      {
+        "offset": 7378761,
+        "size": 16336,
+        "sha256": "2b24c8b1163fa456223116c0d6e7f536da500a8cb680a0785bc4131e9c4bf29d"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor\\NRC\\Content\\ScriptC\\Data\\Bin\\BinDataCompressed\\BUFFBASE_CONF.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+    "offset": 2883584,
+    "declared_size": 2144,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "11da8a5939f5e702fa2eaa30aad0d3319409e61024416aaa16f6c3abf37de9bb",
+    "source_ranges_sha256": [
+      {
+        "offset": 2883637,
+        "size": 2144,
+        "sha256": "73776096c64ca312cd75a063592cfdf6e213222fcb1cb366d135f10e3bc75d7c"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_3_P\\NRC\\Content\\ScriptC\\Data\\Bin\\BinConf\\EFFECT_CONF.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+    "offset": 27226112,
+    "declared_size": 135280,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "ed4f1eb7f32714e0302240233d9e0d33ac04f8fde862c4637c685bf47c9c3456",
+    "source_ranges_sha256": [
+      {
+        "offset": 27226165,
+        "size": 135280,
+        "sha256": "9276d7906137b4b1b584a44593244708634fe18f060ffda902e3a373c516c2aa"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_3_P\\NRC\\Content\\ScriptC\\Data\\Bin\\BinDataCompressed\\EFFECT_CONF.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+    "offset": 2777088,
+    "declared_size": 1440,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "addd54f944d30b819d0a3e3315edec58908bc7c574b2d1aa43c876bca8634d91",
+    "source_ranges_sha256": [
+      {
+        "offset": 2777141,
+        "size": 1440,
+        "sha256": "b6335de0b5a2e9ade9873cfc88002de619339c8f831b97a05d47779a5480a8cb"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_3_P\\NRC\\Content\\ScriptC\\Data\\Bin\\BinConf\\BUFFBASE_CONF.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+    "offset": 20281344,
+    "declared_size": 279776,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "318fdfe87c636d32c126c60bdcf5f590608e276f4b0f3f2a52c834dab22ab762",
+    "source_ranges_sha256": [
+      {
+        "offset": 20281397,
+        "size": 279776,
+        "sha256": "c16a35f2a09cf0134029a1598579db0758fcf133fc1b216437f692fd0b5f3ca1"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_3_P\\NRC\\Content\\ScriptC\\Data\\Bin\\BinDataCompressed\\BUFFBASE_CONF.bytes"
+  }
+]

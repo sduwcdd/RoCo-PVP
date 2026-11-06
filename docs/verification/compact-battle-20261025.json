@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-25",
+  "change": "Compact existing battle workspace; no battle rules or saved configuration changes",
+  "checks": {
+    "javascript_passed": 87,
+    "javascript_failed": 0,
+    "main_port_8766_serves_new_assets": true,
+    "browser_viewport": [
+      1280,
+      720
+    ],
+    "visible_team_counts": [
+      6,
+      6
+    ],
+    "last_card_bottoms": [
+      677.8021240234375,
+      691.7604370117188
+    ],
+    "both_metric_bottoms": 401.46875,
+    "details_expansion_keeps_full_configuration_and_source": true
+  },
+  "screenshot": "docs/previews/compact-battle-20261025.png",
+  "hashes": {
+    "web/battle_workspace.html": "71617e75cc6c2dcb16ba0a757e15beaeee68816e1258f8a98caa544cd99981fc",
+    "web/battle.js": "9a8df2b47b810b5febf3668a6079d93dbe2c7331f66ab8537a0217476028ad43",
+    "tests/test_battle_team_code.js": "07d1a2d17fca6e062a445cea3de95bc937e9705246735f3bec3fd6f4ddfb1150"
+  },
+  "limits": "Long history and expanded details scroll within panels; smaller screen layouts are responsive but not separately browser-verified."
+}

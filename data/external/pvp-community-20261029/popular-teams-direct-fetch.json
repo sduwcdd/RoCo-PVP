@@ -1,0 +1,11 @@
+{
+  "url": "http://server.hairuosky.cn:30006/api/popular-teams?limit=80",
+  "fetched_at": "2026-10-29T15:30:28.312277+00:00",
+  "status": 426,
+  "request_headers": {
+    "X-Roco-Client-Version": "1.0.54",
+    "X-Roco-Client-Sha256": "99b13757d0aadf02dfc054556c9ea8f0777fcca8b7df76d8c415bd3ed46d3611"
+  },
+  "body": "{\"error\":\"client_integrity_failed\",\"minimum_version\":\"1.0.54\",\"client_version\":\"1.0.54\"}",
+  "use_proxy": false
+}

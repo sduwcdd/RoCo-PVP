@@ -1,0 +1,132 @@
+[
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Data/BattlePlayerSkillData.luac",
+    "offset": 86787530,
+    "declared_size": 211,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "ac5c16886990295310a4fb4d5139a1d578e2618f5c7eb28c6ea12c8e0f5070bb",
+    "source_ranges_sha256": [
+      {
+        "offset": 86787583,
+        "size": 224,
+        "sha256": "3005cedb0ac41b14f00f175da2da6f5854932a482e372904f41fda8eb1055c85"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 190,
+    "functions": 2,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/core_magic_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BattlePlayerSkillData.decompiled.lua",
+    "output_sha256": "a77a78200e5b20437e2bab769df0ec76043df82927c6b8dac6f3a07900258aba",
+    "selection": "highest_numeric_suffix_candidate_not_runtime_verified"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Data/PlayerSkillData.luac",
+    "offset": 86835200,
+    "declared_size": 755,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "684d22c0ccbc0bc916b14310cc3644c9f85555cb858f0b218769846bce1164de",
+    "source_ranges_sha256": [
+      {
+        "offset": 86835253,
+        "size": 768,
+        "sha256": "79151c4fc0cbe7fc67506dcf987b21505bfb9da2a05b709616665c8cb332036e"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 734,
+    "functions": 7,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/core_magic_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/PlayerSkillData.decompiled.lua",
+    "output_sha256": "02c8af5bfb251452f18e4f11baebb9a8e36f7de8a8d0da47661f885063ee9989",
+    "selection": "highest_numeric_suffix_candidate_not_runtime_verified"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Fsm/Actions/Round/RoundPlayerSkillAction.luac",
+    "offset": 88190976,
+    "declared_size": 8763,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "d958569642e10b4c47b9af52fbbae17392e83b38ddea26c79d44d15412baaad7",
+    "source_ranges_sha256": [
+      {
+        "offset": 88191029,
+        "size": 8768,
+        "sha256": "000f67912780933c450f52b7b017cefcf4ec3ab383b1127609943af6d9e60a2d"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 8742,
+    "functions": 12,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/core_magic_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/RoundPlayerSkillAction.decompiled.lua",
+    "output_sha256": "18f79c8446d1ada18752e823eeee8d2ea5fe59bef1bb2ccda41ccb64436b73fa",
+    "selection": "highest_numeric_suffix_candidate_not_runtime_verified"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/System/LevelUpUI/Res/UMG_BloodMagic_C.luac",
+    "offset": 109488128,
+    "declared_size": 1153,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "c655345bf703547a103b1bd82bd052d24f5b5df7a5afeee5f53828d18bf570a9",
+    "source_ranges_sha256": [
+      {
+        "offset": 109488181,
+        "size": 1168,
+        "sha256": "c5117ed14a9abf4ddc16370172ac41212480b1f30db20569a50c4094cf168913"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 1132,
+    "functions": 4,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/core_magic_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/UMG_BloodMagic_C.decompiled.lua",
+    "output_sha256": "479a54ac8d850dd0432df227fe6fe94ea63edf9a15794090c7b642bb9338399d",
+    "selection": "highest_numeric_suffix_candidate_not_runtime_verified"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/System/MainUI/Res/UMG_MagicOptions_C.luac",
+    "offset": 112580608,
+    "declared_size": 10531,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "936da1c2869708c3cebc619b1e9aac60baa7b47922b71d03e16f63f48c3eb5a4",
+    "source_ranges_sha256": [
+      {
+        "offset": 112580661,
+        "size": 10544,
+        "sha256": "df29467206e6f9b33c3827fa7a1be467dfd5b05cba071f216e29c1cd459997fa"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 10510,
+    "functions": 15,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/core_magic_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/UMG_MagicOptions_C.decompiled.lua",
+    "output_sha256": "5aa3a0ef9d388c641869b6fca4b174ee400fc713abaac97ec417a167565df66a",
+    "selection": "highest_numeric_suffix_candidate_not_runtime_verified"
+  }
+]

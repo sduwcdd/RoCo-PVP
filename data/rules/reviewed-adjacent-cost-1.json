@@ -1,0 +1,215 @@
+{
+  "schema": "reviewed-adjacent-cost-1",
+  "policy": "source_bound_adjacent_cost_aura_v1",
+  "snapshot_id": "20261105T124140+0800",
+  "sources": {
+    "data/bwiki/20261105T124140+0800/catalog.json": "4f46200f8b7fa8e1a8415aa579f532c5f745b0ab08482b64d8bf55fb50e6ad15",
+    "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db"
+  },
+  "installation_sources": {
+    "SKILL_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+    },
+    "EFFECT_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    }
+  },
+  "skills": {
+    "7070060": {
+      "record_hash": "8d392bae8dcf060d4f16cd590f41be7d960ed9d61948859214169faae3b876e4",
+      "record": {
+        "id": 7070060,
+        "wiki_id": "skill_000474",
+        "name": {
+          "zh": "轴承支撑"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 6,
+        "desc": {
+          "zh": "主动：本技能被动永久额外-1能耗，被动：两侧技能能耗-1，传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BD%B4%E6%89%BF%E6%94%AF%E6%92%91",
+        "source_module": "Skills",
+        "desc_notes": [
+          1033
+        ]
+      },
+      "components": {
+        "base_cost": 6,
+        "own_cost": {
+          "per_use": -1,
+          "permanent": true,
+          "floor": 0,
+          "scope": "this_skill_only"
+        },
+        "adjacent_cost": {
+          "amount": -1,
+          "targets": "both_immediate_slots_without_wrap"
+        },
+        "transmission": 1,
+        "effect_ids": [
+          21150010,
+          21200010,
+          20640610
+        ]
+      },
+      "installation_evidence": {
+        "skill_parsed": {
+          "id": 7070060,
+          "name": {
+            "localization_id": 2387,
+            "text": "轴承支撑"
+          },
+          "desc": {
+            "localization_id": 2388,
+            "text": "主动：本技能被动永久额外-1能耗，被动：两侧技能能耗-1，<desc_id=1033>传动</>1。"
+          },
+          "flavor_text": {
+            "localization_id": 2389,
+            "text": "成为王国的左膀右臂，诸君将为王国的兴衰而动。"
+          },
+          "energy_cost": [
+            6
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21150010,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21200010,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20640610,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_JHHX_720004",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/720004.720004'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "skill_mirror": {
+          "id": 7070060,
+          "name": {
+            "localization_id": 2287,
+            "text": "轴承支撑"
+          },
+          "desc": {
+            "localization_id": 2288,
+            "text": "主动：本技能被动永久额外-1能耗，被动：两侧技能能耗-1，<desc_id=1033>传动</>1。"
+          },
+          "flavor_text": {
+            "localization_id": 2289,
+            "text": "成为王国的左膀右臂，诸君将为王国的兴衰而动。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 9,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 21150010,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            },
+            {
+              "effect_id": 21200010,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            },
+            {
+              "effect_id": 20640610,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_JHHX_720004",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/720004.720004'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "catalog_record": {
+          "id": 7070060,
+          "wiki_id": "skill_000474",
+          "name": {
+            "zh": "轴承支撑"
+          },
+          "type": "机械系",
+          "kind": "status",
+          "energy": 6,
+          "desc": {
+            "zh": "主动：本技能被动永久额外-1能耗，被动：两侧技能能耗-1，传动1。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E8%BD%B4%E6%89%BF%E6%94%AF%E6%92%91",
+          "source_module": "Skills",
+          "desc_notes": [
+            1033
+          ]
+        },
+        "effects": {
+          "21150010": null,
+          "21200010": null,
+          "20640610": null
+        },
+        "cost_version_note": {
+          "parsed_and_catalog": 6,
+          "older_mirror_build": 3,
+          "adopted": 6
+        }
+      },
+      "installation_uncertainty": "相邻定义取“按槽位序号相邻、不环绕”，边缘槽位只有实际存在的一侧邻居；客户端表未给出环绕规则。“本技能被动永久额外-1能耗”按每次成功使用本技能永久-1、可叠加、下限0实现；该永久减费是否在退场/换位后保留、以及是否对替换进同一槽位的技能生效，尚无实战证据。传动1 只作为标签记录，未参与任何威力公式。"
+    }
+  }
+}

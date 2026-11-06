@@ -1,0 +1,54 @@
+{
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "snapshot_id": "20261025T013619+0800",
+  "compiler_version": "bwiki-declarative-2",
+  "coverage": {
+    "skills": {
+      "total": 579,
+      "compiled": 149,
+      "unsupported": 430,
+      "executable": 0,
+      "real_game_verified": 0
+    },
+    "traits": {
+      "total": 246,
+      "compiled": 0,
+      "unsupported": 246,
+      "executable": 0,
+      "real_game_verified": 0
+    }
+  },
+  "v1_artifact_preserved_sha256": "ce6ad15b5f3414a9e07c27bc4acb8e3c9e2ece0c639868a9e7fe45f3046a67e6",
+  "v2_artifact_sha256": "49dacbf07bad10347d94cb3cbc8557a4c7ffb44eda4171e1a0054f0feeabb319",
+  "related_python_tests": {
+    "passed": 235,
+    "seconds": 112.455,
+    "not_game_calibration": true
+  },
+  "new_regressions": 17,
+  "independent_review": "docs/verification/compound-effects-review-20261025.md",
+  "live_api": {
+    "case_kind": "synthetic explicit-input experiment",
+    "missing_heal_policy_blocked": true,
+    "two_30percent_heals_from_50_of_100": [
+      80,
+      80
+    ],
+    "compound_poison_operations": [
+      "damage",
+      "status.add"
+    ]
+  },
+  "current_pvp_calibration_cases_added": 0,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "files_sha256": {
+    "lab/skill_programs.py": "3d8e7b3a13c799f5374f9554eaec4cc4ec7ffb0e5a4d8d373c3773ba119f46d2",
+    "lab/effect_runtime.py": "4114db3bcae7cfd8e51de36a0b763c5013c75c598c4875e3093bed5752e3d773",
+    "tests/test_skill_programs.py": "fdf4f5e6a452d38121e4ac809a0769a08a0cf2e8e12b2a0acdba9a6529e417fa",
+    "tests/test_effect_runtime.py": "3b253c3aa6d7c4f4befdf0b322d7879aeec379056fc49f01002bbd2cb5e1b994",
+    "tests/test_action_runtime.py": "98035da139a57f6a79bb18eb4aa110daf8d162e29777df019adc7897d8f642df",
+    "tests/test_lab_server.py": "94a3963be6f6bfe150f072cfda97f9e9e541ca40256cfa0962f2e80adbb26d6d"
+  }
+}

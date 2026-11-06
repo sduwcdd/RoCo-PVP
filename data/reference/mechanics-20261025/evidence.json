@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-25T01:52:18.247745+08:00",
+  "status": "reference_implementation_only",
+  "real_game_calibration_cases_added": 0,
+  "sources": [
+    {
+      "name": "arena-notes",
+      "url": "https://rocoarena.com/calculation-notes",
+      "sha256": "e754f0e370b97dbe95d4222f75695960546c5428e7d3c00d41bdf040934f1f29",
+      "bytes": 8029,
+      "retrieved_on": "2026-10-25",
+      "raw_saved_in_project": false
+    },
+    {
+      "name": "arena-info-bundle",
+      "url": "https://rocoarena.com/InfoPage-O_6xWEW2.js",
+      "sha256": "486c49b51537e4fa907771cd68dd37383d705ffaadb25110a250e6b07001e612",
+      "bytes": 20196,
+      "retrieved_on": "2026-10-25",
+      "raw_saved_in_project": false
+    },
+    {
+      "name": "arena-stat-bundle",
+      "url": "https://rocoarena.com/damage-ui-B2QaE2G3.js",
+      "sha256": "c2bdfb350a714f4e06239847c45d4fa5c2fb7ed7953eac05badec9df009721f9",
+      "bytes": 21330,
+      "retrieved_on": "2026-10-25",
+      "raw_saved_in_project": false
+    },
+    {
+      "name": "showdown-guide",
+      "url": "https://roco-showdown.com/battle-use-guide",
+      "sha256": "73ae320c39401123709f5e704017c6808d789e443d5e720004478d522cb80e2e",
+      "bytes": 82480,
+      "retrieved_on": "2026-10-25",
+      "raw_saved_in_project": false
+    }
+  ],
+  "short_math_expressions": [
+    {
+      "text": "p=Math.fround(o*.01)+s*.005",
+      "character_offset": 9178,
+      "source": "arena-stat-bundle"
+    },
+    {
+      "text": "b=Math.fround(m*p+v),x=Math.round(b),S=x*u+y,C=Math.round(S)",
+      "character_offset": 9263,
+      "source": "arena-stat-bundle"
+    }
+  ],
+  "bwiki": {
+    "Terms": {
+      "title": "Module:Pets/data/Terms",
+      "page_id": 6401,
+      "revision_id": 7078,
+      "revision_timestamp": "2026-09-09T10:00:15Z",
+      "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+    },
+    "Types": {
+      "title": "Module:Pets/data/Types",
+      "page_id": 6400,
+      "revision_id": 7079,
+      "revision_timestamp": "2026-09-09T10:01:01Z",
+      "content_sha256": "22999381d35c64ba50a71e695a9de5c6a45d0fb486fd6541ba6c785d70c2ab57",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Types&oldid=7079"
+    },
+    "Natures": {
+      "title": "Module:Natures/data",
+      "page_id": 16020,
+      "revision_id": 18014,
+      "revision_timestamp": "2026-10-07T17:38:42Z",
+      "content_sha256": "0905c9d2f90fac953f7297714525b90b4fac96f4a24a50905f20755bcafd093e",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Natures/data&oldid=18014"
+    }
+  },
+  "interpretation": {
+    "arena_stats_domain": "level60_five_stars",
+    "iv_raw_domain_of_reference_code": [
+      0,
+      60
+    ],
+    "display_plus10_means_raw60": "explicit_statement_by_arena_author",
+    "g": "f32(R*0.01)+I*0.005",
+    "non_hp_core": "JS_round(f32(110*g+10))",
+    "hp_core": "JS_round(f32(170*g+70))",
+    "final": "JS_round(core*n+bonus)",
+    "nature_multipliers_of_reference": [
+      1.2,
+      0.9,
+      1.0
+    ],
+    "bonus_non_hp": 50,
+    "bonus_hp": 100
+  },
+  "computed_discriminators": [
+    {
+      "type": "damage",
+      "A": 100,
+      "D": 102,
+      "effective_power": 75,
+      "multiplier": 1.25,
+      "arena_reference": 82,
+      "showdown_reference": 83,
+      "is_real_game_observation": false
+    },
+    {
+      "type": "stats",
+      "R": 105,
+      "I": 0,
+      "nature": 1,
+      "arena_non_hp": 175,
+      "decimal_showdown_non_hp": 176,
+      "is_real_game_observation": false
+    }
+  ],
+  "limits": [
+    "No official executable formula obtained",
+    "Original referenced videos could not be read",
+    "Author reported measurements are not this project calibration",
+    "References differ in floating point and intermediate rounding"
+  ]
+}

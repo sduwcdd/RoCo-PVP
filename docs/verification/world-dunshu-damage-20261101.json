@@ -1,0 +1,92 @@
+{
+  "status": "source_fixed_protected_candidate_built",
+  "recording_id": "d8ab052280a9068c3179513c276cd07b0fa76c1d2a142087fc65c1574b17a50e",
+  "packets": 34,
+  "causes": [
+    "NPC growth was treated as player zero-star/no-growth",
+    "all levels used level60 damage coefficient",
+    "one changed live stat invalidated downlinked own talents"
+  ],
+  "supported_npc": {
+    "conf_id": 410451,
+    "base_id": 3455,
+    "level": 24,
+    "configuration": "data/rules/reviewed-world-npc-stats-1.json"
+  },
+  "replay_after_first_pair": {
+    "phyAtk": [
+      90,
+      90
+    ],
+    "magDef": [
+      101,
+      101
+    ],
+    "heat_normal": 129,
+    "heat_world_critical": 258,
+    "quick": 14,
+    "talent_candidates": {
+      "hp": [
+        7,
+        8
+      ],
+      "pdef": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mdef": [
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  "validation": {
+    "python_targeted": 18,
+    "hud_targeted": 3,
+    "full_capture_replay": true
+  },
+  "uncertainty": [
+    "historical NPC growth and selection preset, not confirmed complete server semantics",
+    "nature rewrite directions absent",
+    "other NPCs/levels blocked until their growth configuration is reviewed",
+    "own live speed 223 to273 source not explained; protocol talents retained independently"
+  ],
+  "pvp_formula_changed": false,
+  "world_critical_multiplier": 2,
+  "formal_training_changed": false,
+  "protected_zip_updated": true,
+  "protected_zip": {
+    "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\dist\\RocoPVP-20261101-world-npc-v4.zip",
+    "bytes": 306793747,
+    "sha256": "13d378d02b6de998337a7f9a9f7dc677967bb299501c52f392d03c4405c8d8d4",
+    "entries": 392,
+    "crc_verified": true
+  },
+  "source_hash": "f172897e7009404c9552aadd59b5ed0f8d794378fe4db98e548a1f44182cd16a",
+  "build_id": "20261101-world-npc-v4",
+  "native_self_test_passed": true,
+  "desktop_verification": {
+    "title": "洛克PVP · 连接控制台",
+    "server": {
+      "available": true,
+      "owned": true,
+      "port": 18867,
+      "revision": "composable-battle-20261031-selected-cost-1"
+    },
+    "rendererIpc": true,
+    "icon": true,
+    "workbenchReady": true,
+    "timestamp": "2026-11-01T05:47:44.159Z"
+  },
+  "public_release_approved": false
+}

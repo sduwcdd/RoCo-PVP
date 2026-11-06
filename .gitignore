@@ -1,0 +1,99 @@
+__pycache__/
+*.pyc
+*.pyo
+.codebuddy/
+.vscode/
+.idea/
+*.egg-info/
+node_modules/
+dist/
+build/
+.venv/
+.venv-release/
+.venv-*/
+artifacts/release_builds/
+artifacts/release-tools/
+artifacts/app/
+vendor/rkpp/Key/
+vendor/rkpp/rkpp_*/
+vendor/rkpp/rkpp_settings.json
+overlay/state.json
+overlay/artifacts/
+data/external/user-teams-*/
+data/reference/team-code-20261025/user-team-codes.txt
+venv/
+*.log
+.DS_Store
+**/.DS_Store
+
+# WorkBuddy workspace config
+.workbuddy/
+
+# Database runtime files
+data/.bwiki-update.lock
+data/.bwiki-update.json
+data/nrc.db-shm
+data/nrc.db-wal
+data/nrc.db.bak
+data/crawl_progress.json
+data/nrc_battle.db
+data/replays/*.sqlite3*
+
+# Local info (not for repo)
+信息/
+dc_dm/
+
+# Large raw data / duplicates
+data/skills_raw.json
+
+# 临时审计文档
+AUDIT_INDEX.md
+AUDIT_REPORT.md
+AUDIT_SUMMARY.txt
+analysis/
+
+# 精灵立绘图片（163MB，通过爬虫单独获取，不纳入版本控制）
+# spirit_icons 已纳入版本管理（371张PNG，约163MB）
+# data/spirit_icons/
+
+# 爬虫日志
+scripts/scrape_log.txt
+
+# Excel 副本
+data/*.xlsx
+
+# biligami 爬虫输出（数据文件，不纳入版本控制）
+data/skills_bilibili.csv
+data/scrape_bilibili_progress.json
+
+# Claude Code 配置文件（本地使用，不纳入版本控制）
+CLAUDE.md
+
+# Gray test distribution files
+/用户测试/
+/用户测试.zip
+/.claude/
+
+# Private local archives and device-specific configuration
+artifacts/release_archives/
+artifacts/investigations/
+mobile/android/local.properties
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/build/
+mobile/android/.cxx/
+mobile/ios/Pods/
+mobile/ios/DerivedData/
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+*.pcap
+*.pcapng
+*.key
+.env
+.env.*
+
+# Private team imports
+data/reference/team-code-20261025/user-source.json
+docs/verification/team-codes-20261025.json

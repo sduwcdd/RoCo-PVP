@@ -1,0 +1,645 @@
+{
+  "schema_version": 1,
+  "version": "installed-heal-fire-core-magic-experiment-v1",
+  "online_mount_verified": false,
+  "battle_executable": false,
+  "training_eligible": false,
+  "source_scope": "installed patch3 candidate; scalar/BUFF evidence, separate named timing and rounding experiments",
+  "records": {
+    "104001": {
+      "item_row": {
+        "id": 104001,
+        "sort_id": 301002,
+        "name": {
+          "localization_id": 1654,
+          "text": "光合治愈"
+        },
+        "is_release": true,
+        "description": {
+          "localization_id": 1655,
+          "text": "对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1656,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100001,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100001,
+        "skill_id": 7010010
+      },
+      "battle_item_row": {
+        "id": 104001,
+        "name": {
+          "localization_id": 4,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "skill_row": {
+        "id": 7010010,
+        "name": {
+          "localization_id": 1625,
+          "text": "光合治愈"
+        },
+        "desc": {
+          "localization_id": 1626,
+          "text": "对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038008,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Treat_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010010.7010010'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "effects": {
+        "1038008": {
+          "id": 1038008,
+          "effect_order": 38,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26
+              ]
+            },
+            {
+              "params": [
+                1005015,
+                20173890
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "1004027": {
+          "id": 1004027,
+          "effect_order": 4,
+          "type": 2,
+          "effect_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                20990010,
+                20990020
+              ]
+            },
+            {
+              "params": [
+                99
+              ]
+            },
+            {
+              "params": [
+                99
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "buff": {
+        "id": 20173890,
+        "buff_base_ids": [
+          2017389
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "name": "光合治愈",
+        "type_id": "3",
+        "type": 3,
+        "add_max": 1,
+        "desc": "回合结束时恢复15%生命。",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7030010_png.7030010_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 14,
+            "reduce_param": [
+              3,
+              999
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "buff_base": {
+        "id": 2017389,
+        "buffbase_order": 17,
+        "trigger_type": 7,
+        "show_letters": [
+          0
+        ],
+        "buffbase_param": [
+          {
+            "params": [
+              1005015
+            ]
+          },
+          {
+            "params": [
+              10000
+            ]
+          },
+          {
+            "params": [
+              1
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      },
+      "heal_effect": {
+        "id": 1005015,
+        "effect_order": 5,
+        "add_des": "恢复",
+        "add_icon": 6,
+        "type": 1,
+        "effect_param": [
+          {
+            "params": [
+              2
+            ]
+          },
+          {
+            "params": [
+              1500
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              150
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      }
+    },
+    "104003": {
+      "item_row": {
+        "id": 104003,
+        "sort_id": 301004,
+        "name": {
+          "localization_id": 1660,
+          "text": "闪焰爆发"
+        },
+        "description": {
+          "localization_id": 1661,
+          "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1662,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100003,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100003,
+        "skill_id": 7010030
+      },
+      "battle_item_row": {
+        "id": 104003,
+        "name": {
+          "localization_id": 6,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "skill_row": {
+        "id": 7010030,
+        "name": {
+          "localization_id": 1645,
+          "text": "闪焰爆发"
+        },
+        "desc": {
+          "localization_id": 1646,
+          "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038009,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_Up_PlayerFire",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010030.7010030'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          3
+        ]
+      },
+      "effects": {
+        "1038009": {
+          "id": 1038009,
+          "effect_order": 38,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                20230351
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                4
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "1004027": {
+          "id": 1004027,
+          "effect_order": 4,
+          "type": 2,
+          "effect_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                20990010,
+                20990020
+              ]
+            },
+            {
+              "params": [
+                99
+              ]
+            },
+            {
+              "params": [
+                99
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "buff": {
+        "id": 20230351,
+        "buff_base_ids": [
+          2023032
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          0
+        ],
+        "add_des": "威力爆发",
+        "add_icon": 6,
+        "type": 3,
+        "add_max": 1,
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/820080_png.820080_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 2,
+            "reduce_param": [
+              1,
+              99
+            ]
+          }
+        ]
+      },
+      "buff_base": {
+        "id": 2023032,
+        "buffbase_order": 23,
+        "trigger_type": 12,
+        "show_letters": [
+          0
+        ],
+        "buffbase_param": [
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              2,
+              3
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              1
+            ]
+          },
+          {
+            "params": [
+              15000
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "binary_review": {
+    "row_count": 34,
+    "all_row_lengths_verified": true,
+    "parser_sha256": "49eac8b1c84335bf4f1a8d84a1a88805a435e2a2d8739cb51f6357222cdd5473"
+  },
+  "sources": [
+    {
+      "path": "artifacts/core_magic_20261025/BAG_ITEM_CONF.json",
+      "sha256": "ac14fb469f72dfdcbaff4ca2c37518c0b82041748b1d76c63a7afca646938cfd"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/PLAYER_MAGIC_CONF.json",
+      "sha256": "ce933d2bef56e3a3adfd01244b7a179c8634acf799a0caf6ac6d80e1463e078a"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_data.bytes",
+      "sha256": "743ea689053225402a1c29a6d08bee1d3fcdd948572b925bca28b30f11222455"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_local.bytes",
+      "sha256": "fe86364fcbd0911863e8d03bd981030f8495212b46156598fd90ffc25f11552e"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_schema.non",
+      "sha256": "a4ceb1576129be4f5694c8b0a40acad3174b32830031ded4363ef20d83f4fd43"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/RoundPlayerSkillAction.decompiled.lua",
+      "sha256": "18f79c8446d1ada18752e823eeee8d2ea5fe59bef1bb2ccda41ccb64436b73fa"
+    },
+    {
+      "path": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+      "sha256": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+    },
+    {
+      "path": "artifacts/strength_buff_probe_20261025/historical/pakchunk4-WindowsNoEditor_3_P.pak/SKILL_CONF.json",
+      "sha256": "3f9671521bde11123716fc818be882fa96d8ac667d1bac2883f9a00a8738bd47"
+    },
+    {
+      "path": "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_3_P/SKILL_CONF.json",
+      "sha256": "3f9671521bde11123716fc818be882fa96d8ac667d1bac2883f9a00a8738bd47"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/parse_roco_tables.py",
+      "sha256": "49eac8b1c84335bf4f1a8d84a1a88805a435e2a2d8739cb51f6357222cdd5473"
+    }
+  ]
+}

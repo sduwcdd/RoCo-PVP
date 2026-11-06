@@ -1,0 +1,4061 @@
+{
+  "SKILL_CONF": {
+    "7050250": {
+      "id": 7050250,
+      "name": {
+        "localization_id": 2234,
+        "text": "落雨"
+      },
+      "desc": {
+        "localization_id": 2235,
+        "text": "将天气改为<desc_id=3008>雨天</>，持续8回合。"
+      },
+      "energy_cost": [
+        5
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 1,
+      "Skill_Type": 2,
+      "skill_dam_type": 5,
+      "skill_feature": 3,
+      "damage_type": 1,
+      "skill_priority": 5,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 1028001,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_QY_705019",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/705019.705019'",
+      "describe_type": [
+        12,
+        25
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "7080210": {
+      "id": 7080210,
+      "name": {
+        "localization_id": 2501,
+        "text": "沙涌"
+      },
+      "desc": {
+        "localization_id": 2502,
+        "text": "将天气改为<desc_id=3006>沙暴</>，持续8回合。"
+      },
+      "energy_cost": [
+        7
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 1,
+      "Skill_Type": 2,
+      "skill_dam_type": 8,
+      "skill_feature": 3,
+      "damage_type": 1,
+      "skill_priority": 5,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 1028003,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ear_SB_708021",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/708021.708021'",
+      "describe_type": [
+        12,
+        25
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "7090370": {
+      "id": 7090370,
+      "name": {
+        "localization_id": 2645,
+        "text": "冬至"
+      },
+      "desc": {
+        "localization_id": 2646,
+        "text": "将天气改为<desc_id=3007>暴风雪</>，持续8回合。"
+      },
+      "energy_cost": [
+        7
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 1,
+      "Skill_Type": 2,
+      "skill_dam_type": 9,
+      "skill_feature": 4,
+      "damage_type": 1,
+      "skill_priority": 5,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 1028005,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ice_HX_709009",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/709009.709009'",
+      "describe_type": [
+        12,
+        25
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "7110440": {
+      "id": 7110440,
+      "name": {
+        "localization_id": 2814,
+        "text": "惊雷"
+      },
+      "desc": {
+        "localization_id": 2815,
+        "text": "将天气改为<desc_id=3021>雷鸣</>，持续8回合。"
+      },
+      "flavor_text": {
+        "localization_id": 2816,
+        "text": "从新型电系魔法中得到灵感：雷暴之下，没有绝缘体。"
+      },
+      "energy_cost": [
+        5
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 1,
+      "Skill_Type": 2,
+      "skill_dam_type": 11,
+      "skill_feature": 4,
+      "damage_type": 1,
+      "skill_priority": 5,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 1028006,
+          "cast_moment": 12
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_LBY_110034",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110034.110034'",
+      "describe_type": [
+        12,
+        25
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "7050490": {
+      "id": 7050490,
+      "name": {
+        "localization_id": 2299,
+        "text": "沉溺"
+      },
+      "desc": {
+        "localization_id": 2300,
+        "text": "造成物伤，天气为<desc_id=3008>雨天</>时，本技能能耗-2。"
+      },
+      "energy_cost": [
+        4
+      ],
+      "dam_para": [
+        110
+      ],
+      "type": 1,
+      "Skill_Type": 1,
+      "skill_dam_type": 5,
+      "skill_feature": 4,
+      "damage_type": 2,
+      "skill_priority": 5,
+      "target_type": 1,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400880,
+          "cast_moment": 24
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_CN_104037",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/104037.104037'",
+      "describe_type": [
+        5
+      ]
+    },
+    "7050530": {
+      "id": 7050530,
+      "name": {
+        "localization_id": 2307,
+        "text": "汇流"
+      },
+      "desc": {
+        "localization_id": 2308,
+        "text": "<desc_id=3008>雨天</>的回合数延长4回合，<desc_id=1017>应对防御</>：改为延长8回合。"
+      },
+      "flavor_text": {
+        "localization_id": 2309,
+        "text": "每一条滴水都记得回家的路。"
+      },
+      "energy_cost": [
+        1
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 1,
+      "Skill_Type": 2,
+      "skill_dam_type": 5,
+      "skill_feature": 4,
+      "damage_type": 1,
+      "skill_priority": 5,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 1092002,
+          "cast_moment": 11
+        },
+        {
+          "effect_id": 1031580,
+          "cast_moment": 11
+        },
+        {
+          "effect_id": 1092004,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_JJS_104038",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/104038.104038'",
+      "describe_type": [
+        12,
+        1
+      ]
+    },
+    "7050531": {
+      "id": 7050531,
+      "name": {
+        "localization_id": 2310,
+        "text": "应对！汇流"
+      },
+      "desc": {
+        "localization_id": 2311,
+        "text": "<desc_id=3008>雨天</>的回合数延长4回合，<desc_id=1017>应对防御</>：改为延长8回合。"
+      },
+      "flavor_text": {
+        "localization_id": 2312,
+        "text": "每一条滴水都记得回家的路。"
+      },
+      "energy_cost": [
+        1
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 1,
+      "Skill_Type": 2,
+      "skill_dam_type": 5,
+      "skill_feature": 4,
+      "damage_type": 1,
+      "skill_priority": 5,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 1092003,
+          "cast_moment": 11
+        },
+        {},
+        {
+          "effect_id": 1092005,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wat_JJS_104039_Y",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/104038.104038'",
+      "describe_type": [
+        12,
+        1
+      ]
+    },
+    "7060220": {
+      "id": 7060220,
+      "name": {
+        "localization_id": 2345,
+        "text": "天光"
+      },
+      "desc": {
+        "localization_id": 2346,
+        "text": "造成魔伤，本技能系别和天气系别相同。"
+      },
+      "flavor_text": {
+        "localization_id": 2347,
+        "text": "晶石蜗的狂热研究员说，可以在这个世界上找到6种天然矿石，矿石中蕴含的魔力与相似颜色的晶石蜗十分相似。"
+      },
+      "energy_cost": [
+        3
+      ],
+      "dam_para": [
+        95
+      ],
+      "type": 1,
+      "Skill_Type": 1,
+      "skill_dam_type": 6,
+      "skill_feature": 4,
+      "damage_type": 3,
+      "skill_priority": 5,
+      "target_type": 1,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400420,
+          "cast_moment": 24
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Lig_YCBD_205014",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/205014.205014'",
+      "describe_type": [
+        5
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "7080450": {
+      "id": 7080450,
+      "name": {
+        "localization_id": 2565,
+        "text": "扬尘"
+      },
+      "desc": {
+        "localization_id": 2566,
+        "text": "造成魔伤，天气为<desc_id=3006>沙暴</>时，<desc_id=1020>先手</>+1。"
+      },
+      "energy_cost": [
+        3
+      ],
+      "dam_para": [
+        80
+      ],
+      "type": 1,
+      "Skill_Type": 1,
+      "skill_dam_type": 8,
+      "skill_feature": 4,
+      "damage_type": 3,
+      "skill_priority": 5,
+      "target_type": 1,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400900,
+          "cast_moment": 24
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ear_FS_107044",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/107044.107044'",
+      "describe_type": [
+        5
+      ]
+    },
+    "7090460": {
+      "id": 7090460,
+      "name": {
+        "localization_id": 2670,
+        "text": "雪原狩猎"
+      },
+      "desc": {
+        "localization_id": 2671,
+        "text": "造成物伤，天气为<desc_id=3007>暴风雪</>时，本次技能威力+50"
+      },
+      "energy_cost": [
+        3
+      ],
+      "dam_para": [
+        85
+      ],
+      "type": 1,
+      "Skill_Type": 1,
+      "skill_dam_type": 9,
+      "skill_feature": 4,
+      "damage_type": 2,
+      "skill_priority": 5,
+      "target_type": 1,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400920,
+          "cast_moment": 24
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ice_TL_208041",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/208041.208041'",
+      "describe_type": [
+        5
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "200144": {
+      "id": 200144,
+      "name": {
+        "localization_id": 290,
+        "text": "滴眼液"
+      },
+      "desc": {
+        "localization_id": 291,
+        "text": "天气为<desc_id=3008>雨天</>时，使用水系攻击技能时<desc_id=1029>吸血</>50%。"
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 2,
+      "skill_dam_type": 1,
+      "skill_feature": 1,
+      "damage_type": 1,
+      "skill_priority": 1,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400790,
+          "cast_moment": 11
+        },
+        {
+          "effect_id": 20400800,
+          "cast_moment": 11
+        },
+        {},
+        {},
+        {},
+        {
+          "effect_id": 1004117,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200144.200144'",
+      "describe_type": [
+        0
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "200213": {
+      "id": 200213,
+      "name": {
+        "localization_id": 427,
+        "text": "得寸进尺"
+      },
+      "desc": {
+        "localization_id": 428,
+        "text": "天气为<desc_id=3008>雨天</>，或处于其他水系环境中时，获得双攻+100%。"
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 2,
+      "skill_dam_type": 1,
+      "damage_type": 1,
+      "skill_priority": 1,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20390010,
+          "cast_moment": 11
+        },
+        {},
+        {},
+        {},
+        {},
+        {
+          "effect_id": 1004117,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200079.200079'",
+      "describe_type": [
+        0
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "200298": {
+      "id": 200298,
+      "name": {
+        "localization_id": 595,
+        "text": "流沙统治者"
+      },
+      "desc": {
+        "localization_id": 596,
+        "text": "天气为<desc_id=3006>沙暴</>时，自己获得速度+50。"
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 2,
+      "skill_dam_type": 1,
+      "damage_type": 1,
+      "skill_priority": 1,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400760,
+          "cast_moment": 11
+        },
+        {
+          "effect_id": 20400770,
+          "cast_moment": 11
+        },
+        {},
+        {},
+        {},
+        {
+          "effect_id": 1004117,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200007",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200298.200298'",
+      "describe_type": [
+        0
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "200303": {
+      "id": 200303,
+      "name": {
+        "localization_id": 605,
+        "text": "电子音乐"
+      },
+      "desc": {
+        "localization_id": 606,
+        "text": "天气为<desc_id=3021>雷鸣</>时，使用电系技能后敌方获得引电。"
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 2,
+      "skill_dam_type": 1,
+      "skill_feature": 1,
+      "damage_type": 1,
+      "skill_priority": 1,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400810,
+          "cast_moment": 11
+        },
+        {
+          "effect_id": 20400820,
+          "cast_moment": 11
+        },
+        {},
+        {},
+        {},
+        {
+          "effect_id": 1004117,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200007",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200168.200168'",
+      "describe_type": [
+        0
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "200311": {
+      "id": 200311,
+      "name": {
+        "localization_id": 621,
+        "text": "冰雪魂魄"
+      },
+      "desc": {
+        "localization_id": 622,
+        "text": "天气为<desc_id=3007>暴风雪</>时，冰系技能威力+100%。"
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 2,
+      "skill_dam_type": 1,
+      "damage_type": 1,
+      "skill_priority": 1,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20400940,
+          "cast_moment": 11
+        },
+        {
+          "effect_id": 20400950,
+          "cast_moment": 11
+        },
+        {},
+        {},
+        {},
+        {
+          "effect_id": 1004117,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200007",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200311.200311'",
+      "describe_type": [
+        0
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    }
+  },
+  "EFFECT_CONF": {
+    "1028001": {
+      "id": 1028001,
+      "effect_order": 28,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1028003": {
+      "id": 1028003,
+      "effect_order": 28,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            6
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1028005": {
+      "id": 1028005,
+      "effect_order": 28,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            5
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1028006": {
+      "id": 1028006,
+      "effect_order": 28,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            14
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004126": {
+      "id": 1004126,
+      "effect_order": 4,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            20641630,
+            21080240
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1092002": {
+      "id": 1092002,
+      "effect_order": 92,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            4
+          ]
+        },
+        {
+          "params": [
+            4
+          ]
+        }
+      ]
+    },
+    "1031580": {
+      "id": 1031580,
+      "effect_order": 31,
+      "type": 1,
+      "effect_param": [
+        {
+          "params": [
+            7050531
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        }
+      ]
+    },
+    "1092004": {
+      "id": 1092004,
+      "effect_order": 92,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            4
+          ]
+        }
+      ]
+    },
+    "1092003": {
+      "id": 1092003,
+      "effect_order": 92,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            4
+          ]
+        },
+        {
+          "params": [
+            8
+          ]
+        }
+      ]
+    },
+    "1092005": {
+      "id": 1092005,
+      "effect_order": 92,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            8
+          ]
+        }
+      ]
+    },
+    "1085005": {
+      "id": 1085005,
+      "effect_order": 85,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            7060220
+          ]
+        },
+        {
+          "params": [
+            5
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1085009": {
+      "id": 1085009,
+      "effect_order": 85,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            7060220
+          ]
+        },
+        {
+          "params": [
+            9
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1085018": {
+      "id": 1085018,
+      "effect_order": 85,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            7060220
+          ]
+        },
+        {
+          "params": [
+            18
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1085017": {
+      "id": 1085017,
+      "effect_order": 85,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            7060220
+          ]
+        },
+        {
+          "params": [
+            17
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1085006": {
+      "id": 1085006,
+      "effect_order": 85,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            7060220
+          ]
+        },
+        {
+          "params": [
+            6
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1085008": {
+      "id": 1085008,
+      "effect_order": 85,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            7060220
+          ]
+        },
+        {
+          "params": [
+            8
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004127": {
+      "id": 1004127,
+      "effect_order": 4,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            21080250,
+            20641640
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004128": {
+      "id": 1004128,
+      "effect_order": 4,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            21080260,
+            20641650
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1011005": {
+      "id": 1011005,
+      "effect_order": 11,
+      "type": 1,
+      "effect_param": [
+        {
+          "params": [
+            5000
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004123": {
+      "id": 1004123,
+      "effect_order": 4,
+      "type": 1,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            20641440
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004117": {
+      "id": 1004117,
+      "effect_order": 4,
+      "type": 2,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            20990030
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004119": {
+      "id": 1004119,
+      "effect_order": 4,
+      "type": 1,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            20641430
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004124": {
+      "id": 1004124,
+      "effect_order": 4,
+      "type": 1,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            20641450
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004132": {
+      "id": 1004132,
+      "effect_order": 4,
+      "type": 1,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            20231260
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1085011": {
+      "id": 1085011,
+      "effect_order": 85,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            7060220
+          ]
+        },
+        {
+          "params": [
+            11
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "BUFF_CONF": {
+    "20400880": {
+      "id": 20400880,
+      "buff_base_ids": [
+        2040088
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20230030": {
+      "id": 20230030,
+      "buff_base_ids": [
+        2023003
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "add_des": "下雨",
+      "add_icon": 6,
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20641630": {
+      "id": 20641630,
+      "buff_base_ids": [
+        2064163
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "21080240": {
+      "id": 21080240,
+      "buff_base_ids": [
+        2108024
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 2,
+          "reduce_param": [
+            1,
+            99
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400890": {
+      "id": 20400890,
+      "buff_base_ids": [
+        2040089
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400420": {
+      "id": 20400420,
+      "buff_base_ids": [
+        2040042,
+        2040043,
+        2040044,
+        2040045,
+        2040046,
+        2040047
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 2,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20170870": {
+      "id": 20170870,
+      "buff_base_ids": [
+        2017087
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20171230": {
+      "id": 20171230,
+      "buff_base_ids": [
+        2017123
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20580010": {
+      "id": 20580010,
+      "buff_base_ids": [
+        2058001
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "name": "冻结",
+      "type_id": "2",
+      "add_des": "冻结",
+      "add_icon": 9,
+      "type": 2,
+      "add_max": 99,
+      "desc": "冻结5%生命，若当前生命低于冻结比例，则力竭。（冰系精灵免疫此效果）",
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830076_png.830076_png'",
+      "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/G6_Ice_BDZS_800037",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 2
+    },
+    "20171000": {
+      "id": 20171000,
+      "buff_base_ids": [
+        2017100
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20170990": {
+      "id": 20170990,
+      "buff_base_ids": [
+        2017099
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20170880": {
+      "id": 20170880,
+      "buff_base_ids": [
+        2017088
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20170900": {
+      "id": 20170900,
+      "buff_base_ids": [
+        2017090
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400900": {
+      "id": 20400900,
+      "buff_base_ids": [
+        2040090
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20320490": {
+      "id": 20320490,
+      "buff_base_ids": [
+        2032926
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7050010_png.7050010_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400910": {
+      "id": 20400910,
+      "buff_base_ids": [
+        2040091
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "21080250": {
+      "id": 21080250,
+      "buff_base_ids": [
+        2108025
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20641640": {
+      "id": 20641640,
+      "buff_base_ids": [
+        2064164
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400920": {
+      "id": 20400920,
+      "buff_base_ids": [
+        2040092
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20641650": {
+      "id": 20641650,
+      "buff_base_ids": [
+        2064165
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400930": {
+      "id": 20400930,
+      "buff_base_ids": [
+        2040093
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "21080260": {
+      "id": 21080260,
+      "buff_base_ids": [
+        2108026
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type_id": "3",
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400790": {
+      "id": 20400790,
+      "buff_base_ids": [
+        2040080
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20641440": {
+      "id": 20641440,
+      "buff_base_ids": [
+        2064144
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        3
+      ],
+      "name": "滴眼液",
+      "type": 3,
+      "add_max": 1,
+      "desc": "水系技能获得50%吸血。",
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830144_png.830144_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 2,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400800": {
+      "id": 20400800,
+      "buff_base_ids": [
+        2040081
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20990030": {
+      "id": 20990030,
+      "buff_base_ids": [
+        2099003
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        22
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20390010": {
+      "id": 20390010,
+      "buff_base_ids": [
+        2039001
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 2
+    },
+    "20230920": {
+      "id": 20230920,
+      "buff_base_ids": [
+        2023092
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        3
+      ],
+      "name": "得寸进尺",
+      "type_id": "5",
+      "type": 3,
+      "add_max": 1,
+      "desc": "双攻+100%",
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830079_png.830079_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400760": {
+      "id": 20400760,
+      "buff_base_ids": [
+        2040076
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20641430": {
+      "id": 20641430,
+      "buff_base_ids": [
+        2001010,
+        2001010,
+        2001010,
+        2001010,
+        2001010
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        3
+      ],
+      "name": "流沙统治者",
+      "type_id": "5",
+      "type": 3,
+      "add_max": 1,
+      "desc": "速度<span color=\"#73c715\">+50</>。",
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830140_png.830140_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 2,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400770": {
+      "id": 20400770,
+      "buff_base_ids": [
+        2040077
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400810": {
+      "id": 20400810,
+      "buff_base_ids": [
+        2040082
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20173420": {
+      "id": 20173420,
+      "buff_base_ids": [
+        2017342
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20011586": {
+      "id": 20011586,
+      "buff_base_ids": [
+        2001081
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "name": "引电",
+      "type_id": "2",
+      "type": 2,
+      "add_max": 2,
+      "desc": "累计2层后，受到25%最大生命值的电系伤害",
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830143_png.830143_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20641450": {
+      "id": 20641450,
+      "buff_base_ids": [
+        2064145
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 2,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400820": {
+      "id": 20400820,
+      "buff_base_ids": [
+        2040083
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400940": {
+      "id": 20400940,
+      "buff_base_ids": [
+        2040094
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20231260": {
+      "id": 20231260,
+      "buff_base_ids": [
+        2023126
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        3
+      ],
+      "name": "冰雪魂魄",
+      "type_id": "5",
+      "type": 3,
+      "add_max": 99,
+      "desc": "冰系技能威力+100%",
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830142_png.830142_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20400950": {
+      "id": 20400950,
+      "buff_base_ids": [
+        2040095
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20170910": {
+      "id": 20170910,
+      "buff_base_ids": [
+        2017091
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20170930": {
+      "id": 20170930,
+      "buff_base_ids": [
+        2017093
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    }
+  },
+  "BUFFBASE_CONF": {
+    "2040088": {
+      "id": 2040088,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20230030
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            20641630,
+            20400890
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2023003": {
+      "id": 2023003,
+      "buffbase_order": 23,
+      "trigger_type": 12,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            5
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            7500
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2064163": {
+      "id": 2064163,
+      "buffbase_order": 64,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            7
+          ]
+        },
+        {
+          "params": [
+            7050490
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            21080240
+          ]
+        },
+        {
+          "params": [
+            6
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2108024": {
+      "id": 2108024,
+      "buffbase_order": 108,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            -2
+          ]
+        }
+      ]
+    },
+    "2040089": {
+      "id": 2040089,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20230030
+          ]
+        },
+        {
+          "params": [
+            5,
+            -1
+          ]
+        },
+        {
+          "params": [
+            1004126
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040042": {
+      "id": 2040042,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20170870
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            1085005
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017087": {
+      "id": 2017087,
+      "buffbase_order": 17,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1085005
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040043": {
+      "id": 2040043,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20171230
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            1085009
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017123": {
+      "id": 2017123,
+      "buffbase_order": 17,
+      "trigger_type": 7,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20580010,
+            20580010
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2058001": {
+      "id": 2058001,
+      "buffbase_order": 58,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            500
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            50
+          ]
+        }
+      ]
+    },
+    "2040044": {
+      "id": 2040044,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20171000
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            1085018
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017100": {
+      "id": 2017100,
+      "buffbase_order": 17,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1085018
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040045": {
+      "id": 2040045,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20170990
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            1085017
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017099": {
+      "id": 2017099,
+      "buffbase_order": 17,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1085017
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040046": {
+      "id": 2040046,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20170880
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            1085006
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017088": {
+      "id": 2017088,
+      "buffbase_order": 17,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1085006
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040047": {
+      "id": 2040047,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20170900
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            1085008
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017090": {
+      "id": 2017090,
+      "buffbase_order": 17,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1085008
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040090": {
+      "id": 2040090,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20320490
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            20400910,
+            20641640
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2032926": {
+      "id": 2032926,
+      "buffbase_order": 32,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            8
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            -50
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040091": {
+      "id": 2040091,
+      "buffbase_order": 40,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20320490
+          ]
+        },
+        {
+          "params": [
+            5,
+            -1
+          ]
+        },
+        {
+          "params": [
+            1004127
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2108025": {
+      "id": 2108025,
+      "buffbase_order": 108,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            4
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        }
+      ]
+    },
+    "2064164": {
+      "id": 2064164,
+      "buffbase_order": 64,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            7
+          ]
+        },
+        {
+          "params": [
+            7080450
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            21080250
+          ]
+        },
+        {
+          "params": [
+            6
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040092": {
+      "id": 2040092,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20171230
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            20641650,
+            20400930
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2064165": {
+      "id": 2064165,
+      "buffbase_order": 64,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            7
+          ]
+        },
+        {
+          "params": [
+            7090460
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            50
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040093": {
+      "id": 2040093,
+      "buffbase_order": 40,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20171230
+          ]
+        },
+        {
+          "params": [
+            5,
+            -1
+          ]
+        },
+        {
+          "params": [
+            1004128
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2108026": {
+      "id": 2108026,
+      "buffbase_order": 108,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            5000
+          ]
+        }
+      ]
+    },
+    "2040080": {
+      "id": 2040080,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20230030
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            20641440
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2064144": {
+      "id": 2064144,
+      "buffbase_order": 64,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            4
+          ]
+        },
+        {
+          "params": [
+            5
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1011005
+          ]
+        },
+        {
+          "params": [
+            11
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040081": {
+      "id": 2040081,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20230030
+          ]
+        },
+        {
+          "params": [
+            5,
+            -1
+          ]
+        },
+        {
+          "params": [
+            1004123
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2099003": {
+      "id": 2099003,
+      "buffbase_order": 99,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            9001001
+          ]
+        }
+      ]
+    },
+    "2039001": {
+      "id": 2039001,
+      "buffbase_order": 39,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            5
+          ]
+        },
+        {
+          "params": [
+            20230920
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        }
+      ]
+    },
+    "2023092": {
+      "id": 2023092,
+      "buffbase_order": 23,
+      "trigger_type": 12,
+      "show_letters": [
+        3
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040076": {
+      "id": 2040076,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20320490
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            20641430
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2001010": {
+      "id": 2001010,
+      "buffbase_order": 1,
+      "show_letters": [
+        3
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            6
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            10
+          ]
+        }
+      ]
+    },
+    "2040077": {
+      "id": 2040077,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20320490
+          ]
+        },
+        {
+          "params": [
+            5,
+            -1
+          ]
+        },
+        {
+          "params": [
+            1004119
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040082": {
+      "id": 2040082,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20173420
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            20641450
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017342": {
+      "id": 2017342,
+      "buffbase_order": 17,
+      "trigger_type": 7,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20011586
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2001081": {
+      "id": 2001081,
+      "buffbase_order": 1,
+      "show_letters": [
+        3
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            29
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2064145": {
+      "id": 2064145,
+      "buffbase_order": 64,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            4
+          ]
+        },
+        {
+          "params": [
+            11
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20011586
+          ]
+        },
+        {
+          "params": [
+            11
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040083": {
+      "id": 2040083,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20173420
+          ]
+        },
+        {
+          "params": [
+            5,
+            -1
+          ]
+        },
+        {
+          "params": [
+            1004124
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040094": {
+      "id": 2040094,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20171230
+          ]
+        },
+        {
+          "params": [
+            5,
+            1
+          ]
+        },
+        {
+          "params": [
+            20231260
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2023126": {
+      "id": 2023126,
+      "buffbase_order": 23,
+      "show_letters": [
+        3
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            9
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2040095": {
+      "id": 2040095,
+      "buffbase_order": 40,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20171230
+          ]
+        },
+        {
+          "params": [
+            5,
+            -1
+          ]
+        },
+        {
+          "params": [
+            1004132
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017091": {
+      "id": 2017091,
+      "buffbase_order": 17,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1085009
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2017093": {
+      "id": 2017093,
+      "buffbase_order": 17,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1085011
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "snapshot_id": "20261025T013619+0800",
+  "counts": {
+    "intrinsic_true": 6,
+    "intrinsic_false": 572,
+    "unknown": 1
+  },
+  "intrinsic_true_ids": [
+    7150080,
+    7150110,
+    7150150,
+    7150260,
+    7150300,
+    7150410
+  ],
+  "unknown_ids": [
+    7150400
+  ],
+  "scope": "Intrinsic Skills metadata only; external grants/removals excluded; not complete skill execution",
+  "real_game_verified": false,
+  "training_eligible": false
+}

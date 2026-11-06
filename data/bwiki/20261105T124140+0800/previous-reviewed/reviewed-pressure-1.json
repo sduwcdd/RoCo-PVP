@@ -1,0 +1,449 @@
+{
+  "schema": "reviewed-pressure-components-1",
+  "policy": "source_bound_outgoing_power_suppression_v1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9"
+  },
+  "installation_sources": {
+    "SKILL_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+    },
+    "BUFF_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    },
+    "BUFFBASE_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab"
+    },
+    "EFFECT_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    }
+  },
+  "skills": {
+    "7070260": {
+      "record_hash": "08533303b2b02182eb1f3f841fdc9c80bce27fcc31fb269aec2d1c5f7a4c0f7c",
+      "record": {
+        "id": 7070260,
+        "wiki_id": "skill_000491",
+        "name": {
+          "zh": "排气"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "敌方获得威力-20，自己每受到1次抵抗伤害（不含连击），敌方额外获得威力-20，使用后重置。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%8E%92%E6%B0%94",
+        "source_module": "Skills"
+      },
+      "components": {
+        "install": {
+          "target": "opponent",
+          "amount": -20,
+          "stack_amount": -10,
+          "stacks": 2,
+          "scope": "all_skills"
+        },
+        "escalation": {
+          "per_resisted_packet": -20,
+          "stack_amount": -10,
+          "stacks": 2,
+          "require_resisted": true,
+          "combo_counts_once": true
+        },
+        "reset": "on_use_before_install"
+      },
+      "installation_evidence": {
+        "skill": {
+          "id": 7070260,
+          "name": {
+            "localization_id": 2444,
+            "text": "排气"
+          },
+          "desc": {
+            "localization_id": 2445,
+            "text": "敌方获得威力-20，自己每受到1次抵抗伤害（不含连击），敌方额外获得威力-20，使用后重置。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20190470,
+              "cast_moment": 24
+            },
+            {
+              "effect_id": 20230750,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_ZQYW_106025",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106025.106025'",
+          "describe_type": [
+            12,
+            7
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs": {
+          "20190470": {
+            "id": 20190470,
+            "buff_base_ids": [
+              2019047
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800020_png.800020_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641380": {
+            "id": 20641380,
+            "buff_base_ids": [
+              2064138,
+              2064139
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          },
+          "20230750": {
+            "id": 20230750,
+            "buff_base_ids": [
+              2023075
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "伤害降低",
+            "type_id": "2",
+            "add_des": "威力降低",
+            "add_icon": 5,
+            "type": 2,
+            "add_max": 99,
+            "desc": "技能威力-10",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800036_png.800036_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "buff_bases": {
+          "2019047": {
+            "id": 2019047,
+            "buffbase_order": 19,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  20641380
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064138": {
+            "id": 2064138,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7070260
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  20230750,
+                  20230750
+                ]
+              },
+              {
+                "params": [
+                  11
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2064139": {
+            "id": 2064139,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7070260
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1004116
+                ]
+              },
+              {
+                "params": [
+                  12
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2023075": {
+            "id": 2023075,
+            "buffbase_order": 23,
+            "trigger_type": 12,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  -10
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "effects": {
+          "1004116": {
+            "id": 1004116,
+            "effect_order": 4,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  20641380
+                ]
+              },
+              {
+                "params": [
+                  99
+                ]
+              },
+              {
+                "params": [
+                  99
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "installation_uncertainty": "减伤链以外的数值全部来自客户端表：2064138 明确给出两份 20230750（每份 技能威力-10，合计-20），2064139 以 param[5]=12 作为受击触发并调用 effect 1004116 再次施加 20641380，与描述“每受到1次抵抗伤害额外-20”一致。“抵抗伤害”按 属性倍率<1 且未无视抵抗 判定；“不含连击”按一次攻击动作只计一次实现；buff 2023075 的 trigger_type=12 是否与我的受击判定完全等价、以及离场后是否保留，尚未实战校准。"
+    }
+  }
+}

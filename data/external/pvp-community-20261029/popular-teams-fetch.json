@@ -1,0 +1,14 @@
+{
+  "url": "http://server.hairuosky.cn:30006/api/popular-teams?limit=80",
+  "fetched_at": "2026-10-29T15:29:23.695281+00:00",
+  "status": 426,
+  "sha256": "d0c934bed89c310aa277932fd47eb05f218cb098ea088c45d8026d9da6463b61",
+  "bytes": 88,
+  "request_headers": {
+    "X-Roco-Client-Version": "1.0.54",
+    "X-Roco-Client-Sha256": "99b13757d0aadf02dfc054556c9ea8f0777fcca8b7df76d8c415bd3ed46d3611"
+  },
+  "client_version_evidence": "Native.dll FileVersion 1.0.54.0 / ProductVersion 1.0.54",
+  "client_hash_evidence": "ResolveClientSha256 IL: normal path uses SHA256 of EntryAssembly.Location. Hash computed from actual Native.dll; network-test branch not used.",
+  "authentication": "none"
+}

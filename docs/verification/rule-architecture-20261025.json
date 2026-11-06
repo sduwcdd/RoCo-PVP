@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-25",
+  "phase": "composable-rules-stage-1",
+  "source_snapshot": "20261025T013619+0800",
+  "catalog_scope": {
+    "skills": 579,
+    "traits": 246
+  },
+  "mechanism_categories": 54,
+  "audit_report": "docs/verification/mechanism-audit-20261025.json",
+  "architecture": "docs/RULE_ARCHITECTURE.md",
+  "broad_related_tests": {
+    "run": 475,
+    "passed": 475,
+    "errors": 0,
+    "failures": 0,
+    "seconds": 214.276,
+    "scope": "Related lab regressions, static configuration validation and synthetic mechanisms; not legacy full suite or real-game calibration"
+  },
+  "test_report": "docs\\verification\\rule-architecture-tests-20261025.json",
+  "live_report": "docs/verification/rule-architecture-live-20261025.json",
+  "preserved_sources": "docs/verification/rule-architecture-preserved-20261025.json",
+  "review_report": "docs/verification/rule-architecture-review-20261025.md",
+  "capabilities": {
+    "description_structured": 172,
+    "isolated_components_supported": 168,
+    "full_battle_executable": 0,
+    "real_game_calibrated": 0
+  },
+  "migration": {
+    "all_records": 825,
+    "legacy_multi_effect_skills": 22,
+    "legacy_program_parity": true,
+    "swift_property_parity": 579,
+    "charge_property_parity": 579,
+    "runtime_skill_prose_parser": false,
+    "legacy_term_index_remaining": "mark glossary prefix; not new effect execution"
+  },
+  "generic_capabilities": [
+    "source-bound config validation",
+    "bounded rational expressions and resource predicates",
+    "explicit nested event scheduling and lineage",
+    "per-subscription and global execution budgets",
+    "manual and Swift common skill entry",
+    "native conditions retained through joint action path"
+  ],
+  "not_completed": [
+    "modifier duration/cooldown/dispel lifecycle",
+    "real trait/status/mark trigger integration",
+    "exact event ordering and numeric formulas",
+    "complete turns, replacement and exhaustion",
+    "real-game calibration and RL training"
+  ],
+  "files_sha256": {
+    "lab\\__init__.py": "421d886814d84d13ef86dfd9cedeed5ba681ed62e46778b6a6a0a34a27cae61e",
+    "lab\\action_rules.py": "5d1990df8a5c38258d3dabd956750675191e1abb088ed1973c773464eb005737",
+    "lab\\action_runtime.py": "51d3ef790500a504831efdadfa30e032018f3d2acff112ffd51e90139b5b90ed",
+    "lab\\belief.py": "25f48ed33fa758b63264111cbb578325d525ee459da100296df7f35df80390d0",
+    "lab\\bwiki.py": "e13066f189a337e9e1b70c6150b139a03c1691d4e43f42411cb54a2388e3aae9",
+    "lab\\dex.py": "ceda957aa2c04bef0b2b38093fe0b56cb9af78e4b99144f6598f03039a70f224",
+    "lab\\effect_runtime.py": "fb067e81ec79722af3bbfe5d03ff687754a02230f93ada4b7c38704cd114407d",
+    "lab\\event_scheduler.py": "5feaad8c169884da0c6331a85e716d754814d7b54d961f9272cbce33d943554f",
+    "lab\\mechanism_audit.py": "63b8634b7be4a0fc24a584024858e1ba8fcedecd267403318ffcbfe50acee5ee",
+    "lab\\numeric_candidates.py": "f7edb90ff9f2ca47d0c355baba7d11e6a34d5da0f28f275354bfbdb6a637d24c",
+    "lab\\offline_phase_config.py": "25d8923a4c89b676b1746ce5b75c5deb5c7d6813945b4dad0721591d3d81052b",
+    "lab\\phase_config.py": "090dc39b9d29549e05d8d59c94a3688de5bee0dcabb0ce75be662538d5d8e66c",
+    "lab\\prepared_rules.py": "cbebc907d3fea55e87e41aed92d1ce1c23904f0bb6dafe8fca6557000c0003dd",
+    "lab\\rl_contract.py": "075bc38cdd341fce8caa3688d9d803d94d92aacf9847ceb22916a274e7a00002",
+    "lab\\rule_config.py": "9669f3737a513f81211dbefdd59f355ac30a8f1e9523330b4767d9ff90676900",
+    "lab\\rule_expressions.py": "ca5a1410c2c284e72c538182e0bafab40ed77dba9a220cde51ac6a9d15a8013e",
+    "lab\\ruleset.py": "1137a9416df6638b4b6a4078c5e3096f5395a6c3f50c1ec8b076e73c8423039c",
+    "lab\\server.py": "fff92477bb80c0eafbb1653adac65bf8fe60a38415f9f3ddb9710ce1ad63b4ed",
+    "lab\\skill_execution.py": "41794e0fbe79d4e4e7c49af7e6aae1faea540f92eae8954cffde5f924034d737",
+    "lab\\skill_programs.py": "ea2abfe91641493cd69a28274a4265ca68138811aad999399220796f963df23e",
+    "lab\\status_runtime.py": "6b38c319f02a378b3a02e15f2edc6b176f5cf393398521d78f46fb48a4173adb",
+    "lab\\switch_rules.py": "b62a26f9d822e613e4434f6ca6308cbbf3972bc3804b4f8f69590a790bddbcb5",
+    "lab\\switch_runtime.py": "91d828ca00a473b453cfbdc0c8d325179b027db0d20b92fc8057297652835a44",
+    "lab\\team_code.py": "4552a63d97564f1408b2125e3bb96a69b860079b1b41e999cf6f54b70a5cb2b9",
+    "lab\\team_import.py": "2e1353f6f2d9ed29e1499e104d9f7f9160762f38e1df5e88e76ff916e7a43e63",
+    "lab\\turn_plan.py": "82d09ba8a9d076bdf5d7a16bc6f24763405bc369a43648e5a50e75781d64c0b6",
+    "lab/skill_execution.py": "e2222d6c4c5734425e328e42320693617e819c3d7c60fe79a2dd9ff93f600200",
+    "lab/turn_plan.py": "30276bee0bbde6f6faf08297221e3ffc06678a0ab46665fd757f3912089b36de",
+    "tests/test_skill_execution.py": "ef581b4aa0808159b175eb1dc8c1c9e0b6c687fe49b4e8b91573d8d425e37941"
+  },
+  "final_targeted_checks": [
+    {
+      "run": 145,
+      "passed": 145,
+      "errors": 0,
+      "failures": 0,
+      "seconds": 126.455,
+      "reason": "After final native envelope identity/source validation; earlier broad 475 remain separately recorded"
+    },
+    {
+      "run": 59,
+      "passed": 59,
+      "errors": 0,
+      "failures": 0,
+      "seconds": 83.701,
+      "reason": "Final native conditional defense ordering guard; earlier broad and envelope checks separate"
+    }
+  ],
+  "validation_sequence": "475 broad regressions passed before final two guards; then 145 envelope-focused and 59 final ordering-focused regressions passed. Overlapping suites are not added together.",
+  "server_pid_verified": 34176,
+  "final_check_reports": [
+    "docs/verification/rule-architecture-final-targeted-20261025.json",
+    "docs/verification/rule-architecture-order-targeted-20261025.json"
+  ]
+}

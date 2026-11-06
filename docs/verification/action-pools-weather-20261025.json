@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-25",
+  "scope": "actual-observation-ui-and-current-slot-bookkeeping",
+  "source_hashes": {
+    "web/battle.js": "e70d9e236c524c3892b8083b9cc061d554f847b75099fdc69ae964fed56e5d6c",
+    "web/battle_mechanics.js": "a2bada48a178f436a8277d8ec1e107354883362a9c35e05cd8857d94e87fb78d",
+    "web/battle_workspace.html": "f59fe3226a7f211e245e51f9d8dcaa962dc782fb33b4701c5a78b6328141a856",
+    "lab/action_mechanics.py": "d75c1be3206e678b4f8162bf1e7bfd1d37515abadb63bb06a97b67ff99b36e11",
+    "lab/server.py": "bf878602d7c42479792092e8eadc993962d1a15e59f1d8a55d7e3c11c3136923",
+    "tests/test_battle_team_code.js": "34baba423bbe9b1d003a631164c73f9b7b1864cac8eb73e8137875db5eb92816",
+    "tests/test_battle_mechanics.js": "ac2368f6a10b38e7afd7e7d44d7a3804dde75f8b91dbc720977596c7adbee9dc",
+    "tests/test_action_mechanics.py": "255cfe6169181edd79d0b08b36b98cc190d5450c9c8a11a94292d745345e3d89",
+    "artifacts/action_mechanics_20261025/random_skill_pools.json": "8ae0633941a90ece239de814811327ac8b03e563dbf87c11948215dde5282e01"
+  },
+  "tests": {
+    "javascript": {
+      "passed": 78,
+      "modules": [
+        "tests/test_battle_team_code.js",
+        "tests/test_battle_mechanics.js",
+        "tests/test_simulation_ui.js"
+      ]
+    },
+    "python": {
+      "passed": 25,
+      "modules": [
+        "tests.test_action_mechanics",
+        "tests.test_lab_server"
+      ]
+    }
+  },
+  "browser": {
+    "isolated_origin": "http://127.0.0.1:19389",
+    "cases": [
+      "existing imported six-member archive retained",
+      "initial HP100 for all allies and newly added opponent",
+      "own source selector removed; only borrow checkbox for SnowSpirit",
+      "borrow list contains teammates carried skills only",
+      "observed WingArrow starts pending clever slot; candidate list WindWall/WingShelter/NoWind",
+      "using WindWall restores WingArrow in same slot",
+      "rain observation8 stored in round1 and preserved after round2 and reload",
+      "one-line metrics; round note input removed"
+    ],
+    "screenshot": "docs/previews/action-pools-weather-20261025.png"
+  },
+  "source_counts": {
+    "generators": 3,
+    "clever_transformations": 11,
+    "response_slot_replacements": 2,
+    "weather_descriptions": 4
+  },
+  "limits": [
+    "weather observation/history implemented; automatic combat weather modifiers and duration timing not implemented",
+    "clever standard pools are catalog candidates; freeze10 and drain8 historical exact pools with current applicability unverified",
+    "slot replacement requires observed response success and unambiguous slots; no inferred server order for conflicting updates",
+    "formal training eligibility unchanged; no full game calibration"
+  ]
+}

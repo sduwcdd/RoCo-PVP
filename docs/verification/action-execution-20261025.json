@@ -1,0 +1,43 @@
+{
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "snapshot_id": "20261025T013619+0800",
+  "related_python_tests": {
+    "passed": 218,
+    "seconds": 104.769,
+    "scope": "lab regression tests including joint action runtime; not legacy full suite or game calibration"
+  },
+  "javascript_team_and_belief_tests_passed": 13,
+  "independent_review": "docs/verification/action-runtime-review-20261025.md",
+  "live_api": {
+    "case_kind": "synthetic explicit-input regression, not game calibration",
+    "paired_energy_after_two_tuzhang": [
+      18,
+      18
+    ],
+    "turn_unchanged": true,
+    "attack_without_formula_blocked": true,
+    "client_damage_never_used_as_prediction": true,
+    "belief_preserves_four_slots": true,
+    "legacy_lost_order_marked_unknown": true
+  },
+  "historical_source_evidence": {
+    "report": "docs\\verification\\bwiki-numeric-followup-20261025.json",
+    "raw_source_hash_verified": true,
+    "historical_arithmetic_rows": 12,
+    "current_pvp_calibration_cases_added": 0
+  },
+  "full_simulator_completed": false,
+  "policy_available": false,
+  "training_started": false,
+  "files_sha256": {
+    "lab/action_runtime.py": "85b0e112be4e66672658a1da76b70c4f11b5785fb44f1dcc74b382837d97b738",
+    "tests/test_action_runtime.py": "c32f213206677c0eba9b05ecbe6fbd75fb7afda2bdf88adf32b91c76ab7138a9",
+    "lab/belief.py": "5a5507f91c7113dc5ac6f74f4e959f83e041f838e810f460b79223c3f724f158",
+    "tests/test_belief.py": "d114c6ae24171099b17288c56fdefdb8ec12bfe61e9447e84f29bd119f4af33b",
+    "web/battle.js": "774975056567ef2a47614d81dcb2b62657a90f55c309b66fb46a717e1a12b1aa",
+    "tests/test_battle_team_code.js": "8cb685a1738b2088d80dcc827c28c1de73792985613e364ed8f22d62c2fa2210",
+    "lab/server.py": "43796f8ef613209e61d09bd69032b50f7a82fc4de0e86a80870c72872820ad26",
+    "tests/test_lab_server.py": "0fac6b3696259a6b71096a9101147ea5b90295f44a6dea05241e270c76653b76"
+  }
+}

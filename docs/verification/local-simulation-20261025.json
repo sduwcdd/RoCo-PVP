@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-25",
+  "profile": "local-simulation-20261025-v1",
+  "runtime_defaults": "game-runtime-config-20261025-v2",
+  "source_hashes": {
+    "lab/simulation.py": "06b624135d83ed3d0293568dc30557e5ce46fe634887bd90cf9cc7b2243d7bb0",
+    "lab/research_phases.py": "b2a8525fa31af0b80d4b2869dfe59499ebb98c650e52877bad7a637cd4991e97",
+    "lab/game_runtime_defaults.py": "babc394b4d72a1bd33a193cb2f9b64665ab4ebbecfce9dd6bb148e1fbb9c4f9b",
+    "lab/charge_program_adapter.py": "d2c07a76445f7a512db1d7b631b8d3f49c4d755316e67495c9449bc85939d341",
+    "lab/server.py": "c7b05e9b084808a8efd0a6f6fabf1d2f0be0890574c7600e8ad9bedccac165eb",
+    "web/simulation.js": "64a2817e0d1cf60e33209313b4d5f9a82a052ae9fabaec367b05eaeeab0a0973",
+    "web/simulation.css": "642d5a111414f30abd38d3d4a7b2eb340e059c77627e20f9a58a319ce455cdba",
+    "tests/test_simulation.py": "f2bb5893c236ef0c46b38cc3d11c470a237e71fe6ba34e0798064ea54ad1b685",
+    "tests/test_simulation_ui.js": "2a6dd0ea8e00b7e707e93cb41a48b392205a2c618af3a3921a2901f89934fbf1",
+    "tests/test_research_phases.py": "26d8cba8811674d0e9aa55cd670f093eaa1d87a61c2051b0569dda68b9756dda",
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "data/rules/20261025T013619+0800/rule-config-1.json": "c190c98d3a2e67153ac1c77f96adc2018e1ea6a3198880e5343451a7f87871cf"
+  },
+  "tests": [
+    {
+      "modules": [
+        "tests.test_simulation",
+        "tests.test_charge_program_adapter",
+        "tests.test_game_runtime_defaults"
+      ],
+      "passed": 21
+    },
+    {
+      "modules": [
+        "tests.test_research_phases"
+      ],
+      "passed": 27,
+      "runner": "research_turn_v2 agent"
+    },
+    {
+      "modules": [
+        "tests.test_research_api",
+        "tests.test_lab_server"
+      ],
+      "passed": 23
+    },
+    {
+      "modules": [
+        "tests/test_simulation_ui.js",
+        "tests/test_battle_team_code.js"
+      ],
+      "passed": 53
+    }
+  ],
+  "browser_cases": [
+    "19388 isolated origin: initial dual damage 95/42, visible integer HP72/88",
+    "fresh prepare all missing max_energy default10",
+    "edit own max_energy12 then immediately start persisted12",
+    "recharge own9->12 and opponent9->10",
+    "voluntary switch targets incoming WaterBlue: damage88 HP75%, benched Meow unchanged",
+    "undo restores active member and HP; reload restores trial",
+    "constructed enemy max_hp1: KO0%, only legal reserve selectable",
+    "manual reserve DiMo then next action advanced turn3; HP44/94",
+    "8766 original teams remained0/6; local simulation entry available",
+    "after closing trial, isolated original roster0/6 both sides and actual rounds0 unchanged"
+  ],
+  "screenshot": "docs/previews/battle-simulation-20261025.png",
+  "server": {
+    "port": 8766,
+    "pid_at_verification": 38092,
+    "http_status_api_and_assets": 200
+  },
+  "source_correction": {
+    "runtime_max_energy_first": true,
+    "missing_fallback": 10,
+    "character_config9_used_as_pet_cap": false,
+    "explicit_zero_preserved": true,
+    "opening_energy_default9_is_experiment": true
+  },
+  "full_game_battle_executable": false,
+  "real_game_calibrated": false,
+  "trained_policy_available": false,
+  "formal_training_eligible": false,
+  "primary_http_charge_verification": {
+    "port": 8766,
+    "skill_id": 7100150,
+    "prepare_energy": [
+      9,
+      9
+    ],
+    "release_energy": [
+      6,
+      6
+    ],
+    "turn_after_release": 3,
+    "fallback_cap": 10,
+    "passed": true
+  },
+  "temporary_server19388_stopped": true
+}

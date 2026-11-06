@@ -1,0 +1,1299 @@
+{
+  "schema": "reviewed-forced-switch-skills-1",
+  "snapshot_id": "20261105T124140+0800",
+  "skills": {
+    "7030290": {
+      "record_hash": "17f13a4542aa69abde39fffe95c246d5a4824c9d27eea2310d2588559084eb3f",
+      "record": {
+        "id": 7030290,
+        "wiki_id": "skill_000352",
+        "name": {
+          "zh": "移花接木"
+        },
+        "type": "草系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己回复15%生命，随后脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%A7%BB%E8%8A%B1%E6%8E%A5%E6%9C%A8",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "cause": "detach",
+      "target": "self",
+      "hits": 0,
+      "before_operations": [
+        {
+          "op": "hp.restore",
+          "params": {
+            "target": "self",
+            "percent": {
+              "numerator": 15,
+              "denominator": 100
+            }
+          }
+        }
+      ],
+      "after_operations": []
+    },
+    "7040240": {
+      "record_hash": "7981fc5bd4b827327150f1cf85d07390d6c85270a7c6ea94deed0918ca770949",
+      "record": {
+        "id": 7040240,
+        "wiki_id": "skill_000386",
+        "name": {
+          "zh": "高温回火"
+        },
+        "type": "火系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，自己脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%AB%98%E6%B8%A9%E5%9B%9E%E7%81%AB",
+        "source_module": "Skills",
+        "power": 40,
+        "desc_notes": [
+          1003
+        ]
+      },
+      "cause": "detach",
+      "target": "self",
+      "hits": 1,
+      "before_operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "power": 40,
+            "type": "火系"
+          }
+        }
+      ],
+      "after_operations": []
+    },
+    "7060290": {
+      "record_hash": "48bdb8405826d56b5929faf547be37f254958c5355e302938812cb1a6fb0789d",
+      "record": {
+        "id": 7060290,
+        "wiki_id": "skill_000468",
+        "name": {
+          "zh": "闪光弹"
+        },
+        "type": "光系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，自己脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%97%AA%E5%85%89%E5%BC%B9",
+        "source_module": "Skills",
+        "power": 40,
+        "desc_notes": [
+          1003
+        ]
+      },
+      "cause": "detach",
+      "target": "self",
+      "hits": 1,
+      "before_operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "power": 40,
+            "type": "光系"
+          }
+        }
+      ],
+      "after_operations": []
+    },
+    "7110220": {
+      "record_hash": "7aa7cb9da54e8c28c5106323fe93e6653d3fb58acc08f2f996ec63861d9dfc80",
+      "record": {
+        "id": 7110220,
+        "wiki_id": "skill_000586",
+        "name": {
+          "zh": "闪击折返"
+        },
+        "type": "电系",
+        "kind": "physical",
+        "energy": 5,
+        "desc": {
+          "zh": "造成物伤，2连击，自己脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%97%AA%E5%87%BB%E6%8A%98%E8%BF%94",
+        "source_module": "Skills",
+        "power": 45,
+        "desc_notes": [
+          1003
+        ]
+      },
+      "cause": "detach",
+      "target": "self",
+      "hits": 2,
+      "before_operations": [
+        {
+          "op": "damage.sequence",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "power": 45,
+            "type": "电系",
+            "hits": 2
+          }
+        }
+      ],
+      "after_operations": []
+    },
+    "7110370": {
+      "record_hash": "f06e9c11e5325258259d639717778ff0ba6892d33538fd9df5f4407c349467ee",
+      "record": {
+        "id": 7110370,
+        "wiki_id": "skill_000601",
+        "name": {
+          "zh": "远程访问"
+        },
+        "type": "电系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "使敌方精灵返场。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE",
+        "source_module": "Skills",
+        "desc_notes": [
+          1024
+        ]
+      },
+      "cause": "return",
+      "target": "opponent",
+      "hits": 0,
+      "before_operations": [],
+      "after_operations": []
+    },
+    "7170360": {
+      "record_hash": "8c2c37d970ca2cd7248f7ebd8347f43e339af3ef91747bdf0368c24a5e869aff",
+      "record": {
+        "id": 7170360,
+        "wiki_id": "skill_000766",
+        "name": {
+          "zh": "离魂术"
+        },
+        "type": "幽系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "偷取敌方2能量，脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%A6%BB%E9%AD%82%E6%9C%AF",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "cause": "detach",
+      "target": "self",
+      "hits": 0,
+      "before_operations": [
+        {
+          "op": "energy.transfer",
+          "params": {
+            "target": "opponent",
+            "amount": 2
+          }
+        }
+      ],
+      "after_operations": []
+    },
+    "7110270": {
+      "record_hash": "bbcd59bef212b8c5997a34cb6800d8117cf1d7eb31a6412a3260b1336bf9d041",
+      "record": {
+        "id": 7110270,
+        "wiki_id": "skill_000591",
+        "name": {
+          "zh": "加大功率"
+        },
+        "type": "电系",
+        "kind": "status",
+        "energy": 4,
+        "desc": {
+          "zh": "自己脱离，替换入场的精灵回复8能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8A%A0%E5%A4%A7%E5%8A%9F%E7%8E%87",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "cause": "detach",
+      "target": "self",
+      "hits": 0,
+      "before_operations": [],
+      "after_operations": [
+        {
+          "op": "energy.restore",
+          "target": "incoming",
+          "amount": 8
+        }
+      ]
+    },
+    "7160270": {
+      "record": {
+        "id": 7160270,
+        "wiki_id": "skill_000731",
+        "name": {
+          "zh": "击鼓传花"
+        },
+        "type": "萌系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "自己脱离，下个入场精灵继承自己增益。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%87%BB%E9%BC%93%E4%BC%A0%E8%8A%B1",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003,
+          1012
+        ]
+      },
+      "record_hash": "b333d112b6e50c5934cf114fd4d10d3f7818e9c5a8d96bc404648a13562b6dde",
+      "cause": "detach",
+      "target": "self",
+      "hits": 0,
+      "before_operations": [],
+      "after_operations": [],
+      "inherit_buffs": true,
+      "source_evidence": {
+        "table_root": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed",
+        "skill_hash": "e58a24d84d553812f5abf5dbad45ad7c5b827885c1b41a335840a30889e9f165",
+        "skill_result": [
+          {
+            "effect_id": 20480111,
+            "cast_moment": 12
+          },
+          {
+            "effect_id": 20400380,
+            "cast_moment": 6
+          }
+        ],
+        "uncertainties": [
+          "Transfer before departure cleanup and before entry triggers is an explicit experiment; server ordering uncalibrated."
+        ]
+      }
+    },
+    "7150270": {
+      "record": {
+        "id": 7150270,
+        "wiki_id": "skill_000705",
+        "name": {
+          "zh": "风隐"
+        },
+        "type": "翼系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "敌方和自己均脱离，先手-1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%A3%8E%E9%9A%90",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003,
+          1020
+        ]
+      },
+      "record_hash": "5ae30fd67388fd480fa588615d77dc511627121fc1c32f161fc2a275445a544e",
+      "cause": "detach",
+      "target": "both",
+      "hits": 0,
+      "before_operations": [],
+      "after_operations": [],
+      "priority_delta": -1,
+      "source_evidence": {
+        "table_root": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed",
+        "skill": {
+          "id": 7150270,
+          "name": {
+            "localization_id": 3129,
+            "text": "风隐"
+          },
+          "desc": {
+            "localization_id": 3130,
+            "text": "敌方和自己均<desc_id=1003>脱离</>，<desc_id=1020>先手</>-1。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 15,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 4,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20480034,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20480034,
+              "cast_moment": 12
+            },
+            {
+              "effect_id": 1004183,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_FY_214022",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/214022.214022'",
+          "describe_type": [
+            12,
+            19
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "skill_hash": "e425f94657b9f570c734a65a7a422965b83fb5eb8239c40131ececf8590abd0e",
+        "buff": {
+          "id": 20480034,
+          "buff_base_ids": [
+            2048003
+          ],
+          "buff_list_priority": 2,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "cover_id": 48,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "res_id_0": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_win_CF_20480010",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 3,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "effect": {
+          "id": 1004183,
+          "effect_order": 4,
+          "type": 1,
+          "effect_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                20171061
+              ]
+            },
+            {
+              "params": [
+                99
+              ]
+            },
+            {
+              "params": [
+                99
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "uncertainties": [
+          "Opponent then self is an explicit research order, not verified authoritative server ordering.",
+          "Independent departure immunity and no-reserve handling use existing common source switch rules."
+        ],
+        "buff_base": {
+          "id": 2048003,
+          "buffbase_order": 48,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "7110390": {
+      "record": {
+        "id": 7110390,
+        "wiki_id": "skill_000603",
+        "name": {
+          "zh": "强制重启"
+        },
+        "type": "电系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，应对状态：回合结束时使敌方精灵返场。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%BC%BA%E5%88%B6%E9%87%8D%E5%90%AF",
+        "source_module": "Skills",
+        "power": 90,
+        "desc_notes": [
+          1015,
+          1024
+        ]
+      },
+      "record_hash": "8fb867fc3074539bdbc0d05b2ef9fd066caf9050f7d264081067322ac65211ae",
+      "cause": "return",
+      "target": "opponent",
+      "hits": 1,
+      "before_operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "type": "电系",
+            "power": 90
+          }
+        }
+      ],
+      "after_operations": [],
+      "timing": "round.end",
+      "response_kinds": [
+        "status"
+      ],
+      "response_only": true,
+      "source_evidence": {
+        "raw": {
+          "id": 7110390,
+          "name": {
+            "localization_id": 2798,
+            "text": "强制重启"
+          },
+          "desc": {
+            "localization_id": 2799,
+            "text": "造成魔伤，<desc_id=1015>应对状态</>：回合结束时使敌方精灵<desc_id=1024>返场</>。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            90
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 11,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1031141,
+              "cast_moment": 7
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_QZCQ_110024",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110025.110025'",
+          "describe_type": [
+            5,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "response": {
+          "id": 7110391,
+          "name": {
+            "localization_id": 2800,
+            "text": "应对！强制重启"
+          },
+          "desc": {
+            "localization_id": 2801,
+            "text": "造成魔伤，<desc_id=1015>应对状态</>：回合结束时使敌方精灵<desc_id=1024>返场</>。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            90
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 11,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20171470,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "effect_id": 20231140,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_QZCQ_110025_Y",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110025.110025'",
+          "describe_type": [
+            5,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff": {
+          "id": 20171470,
+          "buff_base_ids": [
+            2017147
+          ],
+          "buff_list_priority": 4,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                1,
+                99
+              ]
+            },
+            {
+              "reduce_type": 3,
+              "reduce_param": [
+                2,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "bases": [
+          {
+            "id": 2017147,
+            "buffbase_order": 17,
+            "trigger_type": 7,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20480097
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "uncertainties": [
+          "End-round side order follows the named simulation policy; target is the original living entry instance."
+        ]
+      }
+    },
+    "7150200": {
+      "record": {
+        "id": 7150200,
+        "wiki_id": "skill_000699",
+        "name": {
+          "zh": "羽刃"
+        },
+        "type": "翼系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，应对状态：回合结束使敌方紧急脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%BE%BD%E5%88%83",
+        "source_module": "Skills",
+        "power": 75,
+        "desc_notes": [
+          1015,
+          1026
+        ]
+      },
+      "record_hash": "ba62b06cb8859b6fe7774805bc4d4482de073ccaa2819dd714496dfd6df1144e",
+      "cause": "emergency",
+      "target": "opponent",
+      "hits": 1,
+      "before_operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "type": "翼系",
+            "power": 75
+          }
+        }
+      ],
+      "after_operations": [],
+      "timing": "round.end",
+      "response_kinds": [
+        "status"
+      ],
+      "response_only": true,
+      "source_evidence": {
+        "raw": {
+          "id": 7150200,
+          "name": {
+            "localization_id": 3115,
+            "text": "羽刃"
+          },
+          "desc": {
+            "localization_id": 3116,
+            "text": "造成物伤，<desc_id=1015>应对状态</>：回合结束使敌方<desc_id=1026>紧急脱离</>。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1031159,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_YR_114015",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/114015.114015'",
+          "describe_type": [
+            5,
+            1,
+            19
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "response": {
+          "id": 7150201,
+          "name": {
+            "localization_id": 3117,
+            "text": "应对！羽刃"
+          },
+          "desc": {
+            "localization_id": 3118,
+            "text": "造成物伤，<desc_id=1015>应对状态</>：回合结束使敌方<desc_id=1026>紧急脱离</>。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20171570,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "effect_id": 20231140,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_YR_114015_Y",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/114015.114015'",
+          "describe_type": [
+            5,
+            1,
+            19
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff": {
+          "id": 20171570,
+          "buff_base_ids": [
+            2017157
+          ],
+          "buff_list_priority": 4,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                1,
+                99
+              ]
+            },
+            {
+              "reduce_type": 3,
+              "reduce_param": [
+                3,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "bases": [
+          {
+            "id": 2017157,
+            "buffbase_order": 17,
+            "trigger_type": 7,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20480041
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "uncertainties": [
+          "End-round side order follows the named simulation policy; target is the original living entry instance."
+        ]
+      }
+    },
+    "7180190": {
+      "record": {
+        "id": 7180190,
+        "wiki_id": "skill_000779",
+        "name": {
+          "zh": "恶意逃离"
+        },
+        "type": "恶系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "脱离，应对防御：额外使敌方攻击技能能耗+4。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%81%B6%E6%84%8F%E9%80%83%E7%A6%BB",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003,
+          1017
+        ]
+      },
+      "record_hash": "52b0cebbc2193653c54b56587c248383c195beac787942219f887fda9b9aae22",
+      "cause": "detach",
+      "target": "self",
+      "hits": 0,
+      "before_operations": [
+        {
+          "op": "modifier.grant",
+          "params": {
+            "target": "opponent",
+            "component": {
+              "op": "skill.cost",
+              "target": "opponent",
+              "amount": 4,
+              "event": "after.use",
+              "skill_selector": "all",
+              "attack_only": true
+            },
+            "when_response": true
+          }
+        }
+      ],
+      "after_operations": [],
+      "response_kinds": [
+        "defense"
+      ],
+      "installation_evidence": {
+        "SKILL_CONF:7180190": {
+          "record": {
+            "id": 7180190,
+            "name": {
+              "localization_id": 3371,
+              "text": "恶意逃离"
+            },
+            "desc": {
+              "localization_id": 3372,
+              "text": "<desc_id=1003>脱离</>，<desc_id=1017>应对防御</>：额外使敌方攻击技能能耗+4。"
+            },
+            "flavor_text": {
+              "localization_id": 3373,
+              "text": "“他有急事，先走了。”"
+            },
+            "energy_cost": [
+              1
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 18,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 1031074,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20480060,
+                "cast_moment": 9
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_EYTL_317016",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/317016.317016'",
+            "describe_type": [
+              12,
+              1,
+              19
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "5dbd94fb190d8878d92ec273fe8528a60bc60838d82caea7c24cb628cef6f565"
+        },
+        "BUFF_CONF:20480060": {
+          "record": {
+            "id": 20480060,
+            "buff_base_ids": [
+              2048006
+            ],
+            "buff_list_priority": 2,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "cover_id": 48,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_EYTL_317016_B",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 3,
+                "reduce_param": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "hash": "1e0fde63b121fe5241ee72c9b56ea44b63cd92e4134378706ace5558c6063d70"
+        },
+        "BUFFBASE_CONF:2048006": {
+          "record": {
+            "id": 2048006,
+            "buffbase_order": 48,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "7147585993560e709f3ece3a15d71eb49ff55ef2897cfa1f93c8efc4dd225c31"
+        },
+        "EFFECT_CONF:1031074": {
+          "record": {
+            "id": 1031074,
+            "effect_order": 31,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  7180191
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          },
+          "hash": "dbdd25fc196819562178f46ef629fe6c8f0fc911a9d62b27f7a0b98a843ea4e6"
+        },
+        "SKILL_CONF:7180191": {
+          "record": {
+            "id": 7180191,
+            "name": {
+              "localization_id": 3374,
+              "text": "应对！恶意逃离"
+            },
+            "desc": {
+              "localization_id": 3375,
+              "text": "<desc_id=1003>脱离</>，<desc_id=1017>应对防御</>：额外使敌方攻击技能能耗+4。"
+            },
+            "flavor_text": {
+              "localization_id": 3376,
+              "text": "“他有急事，先走了。”"
+            },
+            "energy_cost": [
+              1
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 18,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 20320400,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20480060,
+                "cast_moment": 11
+              },
+              {},
+              {},
+              {},
+              {
+                "effect_id": 1019047,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_EYTL_317017_Y",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/718001.718001'",
+            "describe_type": [
+              12,
+              1,
+              19
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "911d1f0a0446aa64944dd12da2dc70e42d067fcf6c60d52ff035c86b24cf8330"
+        },
+        "EFFECT_CONF:1019047": {
+          "record": {
+            "id": 1019047,
+            "effect_order": 19,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "2953e292d2f32944c079c02fc8d91a379d74189d979f99bb96114a82874c2a2b"
+        },
+        "BUFF_CONF:20320400": {
+          "record": {
+            "id": 20320400,
+            "buff_base_ids": [
+              2032039,
+              2032039,
+              2032039,
+              2032039
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "恶意逃离",
+            "type_id": "2",
+            "add_des": "能耗增加",
+            "add_icon": 5,
+            "type": 2,
+            "add_max": 1,
+            "desc": "攻击类技能消耗+4",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830027_png.830027_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "hash": "2c2e1ade6077b07221b20d79f8dde2d6344c1d2df7eca4b10c4f1398f3b6c7b5"
+        },
+        "BUFFBASE_CONF:2032039": {
+          "record": {
+            "id": 2032039,
+            "buffbase_order": 32,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "07cc1a2a23ac5270d6017da7b4f055b8f735290ef2afe33387e5e7991b46cf0e"
+        }
+      }
+    }
+  },
+  "policies": {
+    "timing": "after_committed_skill_effects_and_skill_after_hooks_experiment",
+    "locked_actions": "departed_member_later_committed_action_skipped_experiment",
+    "selection": "explicit_replacement_slot_preflight_before_damage",
+    "cleanup": "same_source_bound_status_weather_magic_departure_as_voluntary",
+    "post_followup": "after_successful_switch_and_entry_hooks_live_incoming_only_atomic_with_switch",
+    "dual_order": "user_confirmed_pre_departure_speed_seeded_tie_v1"
+  },
+  "user_confirmation_20261030": {
+    "source": "user",
+    "rule": "both detach: effective speed before departure; faster leaves and enters first; ties seeded random"
+  }
+}

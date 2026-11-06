@@ -1,0 +1,54 @@
+{
+  "cue4parse_commit": "460fc477bad0f9db3cfc387365a6699ee246377e",
+  "sources": [
+    {
+      "file": "NRCLua.cs",
+      "url": "https://github.com/FabianFG/CUE4Parse/blob/460fc477bad0f9db3cfc387365a6699ee246377e/CUE4Parse/GameTypes/Tencent/RocoKingdomWorld/Lua/NRCLua.cs",
+      "sha256": "2b92fd24e4d1cf10852c8b745eb10ef5dc08671c4c562d338ca7ed0e6c969fdc"
+    },
+    {
+      "file": "NRCLuaReader.cs",
+      "url": "https://github.com/FabianFG/CUE4Parse/blob/460fc477bad0f9db3cfc387365a6699ee246377e/CUE4Parse/GameTypes/Tencent/RocoKingdomWorld/Lua/NRCLuaReader.cs",
+      "sha256": "65e0ffa005abf935b857e56b05b767699ace815dacee1dd440646123cdfab2a6"
+    },
+    {
+      "file": "FRocoBinData.cs",
+      "url": "https://github.com/FabianFG/CUE4Parse/blob/460fc477bad0f9db3cfc387365a6699ee246377e/CUE4Parse/GameTypes/Tencent/RocoKingdomWorld/Assets/Objects/FRocoBinData.cs",
+      "sha256": "4a50994f22229c9c4d04209ba69dfc455211e6b05304bfb839674057464524f5"
+    },
+    {
+      "file": "FLua54Reader.cs",
+      "url": "https://github.com/FabianFG/CUE4Parse/blob/460fc477bad0f9db3cfc387365a6699ee246377e/CUE4Parse/UE4/Lua/Readers/FLua54Reader.cs",
+      "sha256": "c7b7b9c9dbcb6f529d69e368db2331e0cc9d3d81f5ad0f7aa7ad30077302a65d"
+    },
+    {
+      "file": "FLua54Archive.cs",
+      "url": "https://github.com/FabianFG/CUE4Parse/blob/460fc477bad0f9db3cfc387365a6699ee246377e/CUE4Parse/UE4/Lua/Archives/FLua54Archive.cs",
+      "sha256": "46e9213ec94c7bc1da1e5d94a481429c19b51d71deac8aa78e7d4a548b581fdb"
+    },
+    {
+      "file": "FLua54Writer.cs",
+      "url": "https://github.com/FabianFG/CUE4Parse/blob/460fc477bad0f9db3cfc387365a6699ee246377e/CUE4Parse/UE4/Lua/Writers/FLua54Writer.cs",
+      "sha256": "1ce3fd480c82e93d995d2b6e5f1cb84e002405ee9b70705767cf29b7781672b4"
+    }
+  ],
+  "decompiler": {
+    "source": "https://sourceforge.net/projects/unluac/",
+    "download": "https://sourceforge.net/projects/unluac/files/Unstable/unluac_2025_12_23.jar/download",
+    "sha256": "98be0fa84ac73ca66dce2842a2e4512226f4c611b6500dc96415571fc5538fcc"
+  },
+  "analysis_scripts": [
+    {
+      "file": "extract_targeted.py",
+      "sha256": "40f5906a324492c35b03214605dcc60bc4491614e41fbe093b5156b0c247b8d9"
+    },
+    {
+      "file": "decode_nrc_lua.py",
+      "sha256": "a46388048c2ea97555a82eb48a0aff4fe18fb58065cfc20f03aef8a5486a48bd"
+    },
+    {
+      "file": "parse_roco_tables.py",
+      "sha256": "49eac8b1c84335bf4f1a8d84a1a88805a435e2a2d8739cb51f6357222cdd5473"
+    }
+  ]
+}

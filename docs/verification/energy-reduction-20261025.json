@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-25",
+  "snapshot_id": "20261025T013619+0800",
+  "compiler_version": "bwiki-declarative-6",
+  "source": "BWIKI snapshot Skills revision 18764",
+  "newly_compiled_skill": 7170280,
+  "source_description": "敌方获得魔防-50%，且失去3能量。",
+  "coverage": {
+    "compiled": 172,
+    "unsupported": 407,
+    "total": 579
+  },
+  "artifact_sha256": {
+    "data/rules/20261025T013619+0800/bwiki-declarative-5.json": "ace79cf8c9ce56f795b7df8fbbec1fae9303deca9502b4127262124832036b36",
+    "data/rules/20261025T013619+0800/bwiki-declarative-6.json": "8720e2dd67bb0f4e06fda0f2f28f0167d0f514933c0f2cd24e501e19654a12d9"
+  },
+  "targeted_checks": {
+    "compiler": {
+      "passed": 44,
+      "seconds": 5.966
+    },
+    "runtime_and_server": {
+      "passed": 60,
+      "seconds": 16.712
+    },
+    "independent_action_integration": {
+      "passed": 33,
+      "seconds": 47.433
+    },
+    "independent_energy_cost_matrix": {
+      "cases": 56,
+      "applied": 18,
+      "blocked": 38
+    }
+  },
+  "broad_suite_report": "docs/verification/energy-reduction-tests-20261025.json",
+  "live_http_report": "docs/verification/energy-reduction-live-20261025.json",
+  "review": "docs/verification/energy-reduction-review-20261025.md",
+  "swift_entry_review": "docs/verification/swift-entry-review-20261025.md",
+  "swift_entry_live_report": "docs/verification/swift-entry-live-20261025.json",
+  "swift_review_scope": "Prior v5 review; current changed compiler/runtime additionally covered by v6 regressions. Switch runtime and wrapper unchanged since review.",
+  "prior_unretrieved_run": "Earlier v5 broad test process no longer available; no passing count claimed for that run.",
+  "real_game_calibration_cases": 0,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "remaining": [
+    "Actual low-energy behavior and follow-up unaffordable action behavior",
+    "Verified order, energy/magic defaults and final numeric formulas",
+    "Remaining skills, trait triggers, complete switching/turn/replacement chains",
+    "Version-matched real-game calibration"
+  ],
+  "files_sha256": {
+    "lab/skill_programs.py": "ea2abfe91641493cd69a28274a4265ca68138811aad999399220796f963df23e",
+    "lab/effect_runtime.py": "2cbe1a94424e55a60506cefe10859239fce439ea858e7c360cd3389b636bbb2b",
+    "lab/switch_runtime.py": "c5a663d157ca000231da77157dd6eb3a9c95907515613a8cc2078a2a3d41c03c",
+    "lab/prepared_rules.py": "cdfb4a70d8fc507fd680774f99b4417178d49c1ad7477077f5d60123b1951374",
+    "tests/test_skill_programs.py": "9d55c094d8f6219dc1d29b4bb2b38f9f5d005d73062cb1e9dc8e79a570aa1202",
+    "tests/test_effect_runtime.py": "418e4ccef882c24b6b87c5cfd385381f51fae50e3950022c3fb5bfec8916bc71",
+    "tests/test_action_runtime.py": "dc32efaed7432a1b9e736e2e905347aabf870667cd557c54435fcb10411f6cf9",
+    "tests/test_lab_server.py": "7178c5b880934a88413302078cbe7fcff6a75d2cbc30f701408b3e345a0b9fa6"
+  },
+  "broad_related_tests": {
+    "run": 410,
+    "passed": 410,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 203.409,
+    "scope": "Related lab regressions only; not legacy full suite or real-game calibration"
+  }
+}

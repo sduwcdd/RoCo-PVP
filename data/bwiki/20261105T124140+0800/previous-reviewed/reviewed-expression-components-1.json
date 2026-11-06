@@ -1,0 +1,854 @@
+{
+  "schema": "reviewed-expression-components-1",
+  "snapshot_id": "20261025T013619+0800",
+  "skills": {
+    "7120150": {
+      "rule": {
+        "rule_id": "skill:7120150",
+        "program": {
+          "blockers": [],
+          "category": "skill",
+          "compiler_version": "bwiki-declarative-6",
+          "dependency_ids": [],
+          "executable": false,
+          "execution_blockers": [
+            "尚未通过当前版本的真实对战校准。",
+            "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+          ],
+          "game_id": 7120150,
+          "name": "以毒攻毒",
+          "order_semantics": "source_text_order_not_validated_timing",
+          "real_game_verified": false,
+          "skill_source": {
+            "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+            "page_id": 6396,
+            "revision_id": 18764,
+            "revision_timestamp": "2026-10-19T12:08:03Z",
+            "title": "Module:Pets/data/Skills",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+          },
+          "snapshot_id": "20261025T013619+0800",
+          "source": {
+            "source_module": "Skills",
+            "source_url": "https://wiki.biligame.com/nrc/%E4%BB%A5%E6%AF%92%E6%94%BB%E6%AF%92",
+            "wiki_id": "skill_000618"
+          },
+          "source_description": "敌方每有1层中毒效果，自己获得魔攻+30%。",
+          "source_details": {
+            "desc_notes": [
+              1036
+            ]
+          },
+          "source_hash": "91d3828b8aa668a2a385f946f1da7cdd29e5a1fa56ae3dbbc2ba484a0f5ac55e",
+          "source_version": "s4-2026-10-16",
+          "static_fields": {
+            "energy": 1,
+            "kind": "status",
+            "type": "毒系"
+          },
+          "status": "compiled",
+          "term_source": {
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "title": "Module:Pets/data/Terms",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+          }
+        },
+        "components": [
+          {
+            "id": "effect:0",
+            "kind": "effect",
+            "effect": "stat.modify",
+            "target": "self",
+            "params": {
+              "attributes": [
+                "matk"
+              ],
+              "percent": {
+                "numerator": {
+                  "expr": {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "read": {
+                          "target": "opponent",
+                          "field": "effect.poison"
+                        }
+                      },
+                      {
+                        "const": 30
+                      }
+                    ]
+                  }
+                },
+                "denominator": 100
+              }
+            },
+            "evidence": {
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "91d3828b8aa668a2a385f946f1da7cdd29e5a1fa56ae3dbbc2ba484a0f5ac55e",
+              "raw_text": "敌方每有1层中毒效果，自己获得魔攻+30%。",
+              "module": "Skills",
+              "source_url": "https://wiki.biligame.com/nrc/%E4%BB%A5%E6%AF%92%E6%94%BB%E6%AF%92",
+              "basis": "reviewed_v6_program_migration"
+            },
+            "uncertainties": [
+              "尚未通过当前版本的真实对战校准。",
+              "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+            ],
+            "when": {
+              "compare": "gt",
+              "left": {
+                "read": {
+                  "target": "opponent",
+                  "field": "effect.poison"
+                }
+              },
+              "right": {
+                "const": 0
+              }
+            }
+          }
+        ],
+        "trigger": {
+          "event": "skill.use",
+          "order": "source_text_order_experiment"
+        },
+        "constraints": {
+          "priority": {
+            "status": "not_migrated"
+          },
+          "response_success": {
+            "status": "not_migrated"
+          },
+          "turn_order_condition": {
+            "status": "not_migrated"
+          },
+          "entry_trigger": {
+            "status": "not_migrated"
+          },
+          "duration": {
+            "status": "not_migrated"
+          },
+          "cooldown": {
+            "status": "not_migrated"
+          },
+          "execution_limits": {
+            "status": "not_migrated"
+          }
+        },
+        "capabilities": {
+          "description_structured": true,
+          "isolated_components_supported": true,
+          "full_battle_executable": false,
+          "real_game_calibrated": false
+        }
+      },
+      "record": {
+        "id": 7120150,
+        "wiki_id": "skill_000618",
+        "name": {
+          "zh": "以毒攻毒"
+        },
+        "type": "毒系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "敌方每有1层中毒效果，自己获得魔攻+30%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%BB%A5%E6%AF%92%E6%94%BB%E6%AF%92",
+        "source_module": "Skills",
+        "desc_notes": [
+          1036
+        ]
+      },
+      "record_hash": "91d3828b8aa668a2a385f946f1da7cdd29e5a1fa56ae3dbbc2ba484a0f5ac55e",
+      "game_skill": {
+        "id": 7120150,
+        "name": {
+          "localization_id": 2856,
+          "text": "以毒攻毒"
+        },
+        "desc": {
+          "localization_id": 2857,
+          "text": "敌方每有1层<desc_id=1036>中毒效果</>，自己获得魔攻+30%。"
+        },
+        "energy_cost": [
+          1
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 12,
+        "skill_feature": 3,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1053002,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Poi_YDGD_211012",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/211012.211012'",
+        "describe_type": [
+          12,
+          6
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "poison_definition": {
+        "basis": "BWIKI term1036 and installed status group28",
+        "meaning": "poison status layers plus poison field-mark1014 layers",
+        "not_other_negative_marks": true
+      }
+    },
+    "7120230": {
+      "rule": {
+        "rule_id": "skill:7120230",
+        "program": {
+          "blockers": [],
+          "category": "skill",
+          "compiler_version": "bwiki-declarative-6",
+          "dependency_ids": [],
+          "executable": false,
+          "execution_blockers": [
+            "尚未通过当前版本的真实对战校准。",
+            "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+          ],
+          "game_id": 7120230,
+          "name": "腐化",
+          "order_semantics": "source_text_order_not_validated_timing",
+          "real_game_verified": false,
+          "skill_source": {
+            "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+            "page_id": 6396,
+            "revision_id": 18764,
+            "revision_timestamp": "2026-10-19T12:08:03Z",
+            "title": "Module:Pets/data/Skills",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+          },
+          "snapshot_id": "20261025T013619+0800",
+          "source": {
+            "source_module": "Skills",
+            "source_url": "https://wiki.biligame.com/nrc/%E8%85%90%E5%8C%96",
+            "wiki_id": "skill_000625"
+          },
+          "source_description": "敌方每有1层中毒效果，敌方获得双攻-30%。",
+          "source_details": {
+            "desc_notes": [
+              1036
+            ]
+          },
+          "source_hash": "abac3f03c4e429d1b9fe0f46196680d4decf32bbfd556de230c53eba6c2c814f",
+          "source_version": "s4-2026-10-16",
+          "static_fields": {
+            "energy": 1,
+            "kind": "status",
+            "type": "毒系"
+          },
+          "status": "compiled",
+          "term_source": {
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "title": "Module:Pets/data/Terms",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+          }
+        },
+        "components": [
+          {
+            "id": "effect:0",
+            "kind": "effect",
+            "effect": "stat.modify",
+            "target": "opponent",
+            "params": {
+              "attributes": [
+                "patk",
+                "matk"
+              ],
+              "percent": {
+                "numerator": {
+                  "expr": {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "read": {
+                          "target": "opponent",
+                          "field": "effect.poison"
+                        }
+                      },
+                      {
+                        "const": -30
+                      }
+                    ]
+                  }
+                },
+                "denominator": 100
+              }
+            },
+            "evidence": {
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "abac3f03c4e429d1b9fe0f46196680d4decf32bbfd556de230c53eba6c2c814f",
+              "raw_text": "敌方每有1层中毒效果，敌方获得双攻-30%。",
+              "module": "Skills",
+              "source_url": "https://wiki.biligame.com/nrc/%E8%85%90%E5%8C%96",
+              "basis": "reviewed_v6_program_migration"
+            },
+            "uncertainties": [
+              "尚未通过当前版本的真实对战校准。",
+              "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+            ],
+            "when": {
+              "compare": "gt",
+              "left": {
+                "read": {
+                  "target": "opponent",
+                  "field": "effect.poison"
+                }
+              },
+              "right": {
+                "const": 0
+              }
+            }
+          }
+        ],
+        "trigger": {
+          "event": "skill.use",
+          "order": "source_text_order_experiment"
+        },
+        "constraints": {
+          "priority": {
+            "status": "not_migrated"
+          },
+          "response_success": {
+            "status": "not_migrated"
+          },
+          "turn_order_condition": {
+            "status": "not_migrated"
+          },
+          "entry_trigger": {
+            "status": "not_migrated"
+          },
+          "duration": {
+            "status": "not_migrated"
+          },
+          "cooldown": {
+            "status": "not_migrated"
+          },
+          "execution_limits": {
+            "status": "not_migrated"
+          }
+        },
+        "capabilities": {
+          "description_structured": true,
+          "isolated_components_supported": true,
+          "full_battle_executable": false,
+          "real_game_calibrated": false
+        }
+      },
+      "record": {
+        "id": 7120230,
+        "wiki_id": "skill_000625",
+        "name": {
+          "zh": "腐化"
+        },
+        "type": "毒系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "敌方每有1层中毒效果，敌方获得双攻-30%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%85%90%E5%8C%96",
+        "source_module": "Skills",
+        "desc_notes": [
+          1036
+        ]
+      },
+      "record_hash": "abac3f03c4e429d1b9fe0f46196680d4decf32bbfd556de230c53eba6c2c814f",
+      "game_skill": {
+        "id": 7120230,
+        "name": {
+          "localization_id": 2874,
+          "text": "腐化"
+        },
+        "desc": {
+          "localization_id": 2875,
+          "text": "敌方每有1层<desc_id=1036>中毒效果</>，敌方获得双攻-30%。"
+        },
+        "energy_cost": [
+          1
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 12,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1053020,
+            "cast_moment": 12
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Poi_MBDS_111020",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/111020.111020'",
+        "describe_type": [
+          12,
+          7
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "poison_definition": {
+        "basis": "BWIKI term1036 and installed status group28",
+        "meaning": "poison status layers plus poison field-mark1014 layers",
+        "not_other_negative_marks": true
+      }
+    },
+    "7090430": {
+      "rule": {
+        "rule_id": "skill:7090430",
+        "program": {
+          "blockers": [],
+          "category": "skill",
+          "compiler_version": "bwiki-declarative-6",
+          "dependency_ids": [],
+          "executable": false,
+          "execution_blockers": [
+            "尚未通过当前版本的真实对战校准。",
+            "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+          ],
+          "game_id": 7090430,
+          "name": "冷凝",
+          "order_semantics": "source_text_order_not_validated_timing",
+          "real_game_verified": false,
+          "skill_source": {
+            "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+            "page_id": 6396,
+            "revision_id": 18764,
+            "revision_timestamp": "2026-10-19T12:08:03Z",
+            "title": "Module:Pets/data/Skills",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+          },
+          "snapshot_id": "20261025T013619+0800",
+          "source": {
+            "source_module": "Skills",
+            "source_url": "https://wiki.biligame.com/nrc/%E5%86%B7%E5%87%9D",
+            "wiki_id": "skill_000559"
+          },
+          "source_description": "造成物伤，敌方每有1层冻结，自己回复1能量。",
+          "source_details": {
+            "desc_notes": [
+              1004
+            ]
+          },
+          "source_hash": "4be1cecde645fa5742d392328fabe4eb9571eda18549129b4551c9981c2b8f5b",
+          "source_version": "s4-2026-10-16",
+          "static_fields": {
+            "energy": 4,
+            "kind": "physical",
+            "power": 95,
+            "type": "冰系"
+          },
+          "status": "compiled",
+          "term_source": {
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "title": "Module:Pets/data/Terms",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+          }
+        },
+        "components": [
+          {
+            "id": "effect:0",
+            "kind": "effect",
+            "effect": "damage",
+            "target": "opponent",
+            "params": {
+              "kind": "physical",
+              "type": "冰系",
+              "power": 95
+            },
+            "evidence": {
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "4be1cecde645fa5742d392328fabe4eb9571eda18549129b4551c9981c2b8f5b",
+              "raw_text": "造成物伤，敌方每有1层冻结，自己回复1能量。",
+              "module": "Skills",
+              "source_url": "https://wiki.biligame.com/nrc/%E5%86%B7%E5%87%9D",
+              "basis": "reviewed_v6_program_migration"
+            },
+            "uncertainties": [
+              "尚未通过当前版本的真实对战校准。",
+              "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+            ]
+          },
+          {
+            "id": "effect:1",
+            "kind": "effect",
+            "effect": "energy.restore",
+            "target": "self",
+            "params": {
+              "amount": {
+                "expr": {
+                  "read": {
+                    "target": "opponent",
+                    "field": "status.freeze"
+                  }
+                }
+              }
+            },
+            "evidence": {
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "4be1cecde645fa5742d392328fabe4eb9571eda18549129b4551c9981c2b8f5b",
+              "raw_text": "造成物伤，敌方每有1层冻结，自己回复1能量。",
+              "module": "Skills",
+              "source_url": "https://wiki.biligame.com/nrc/%E5%86%B7%E5%87%9D",
+              "basis": "reviewed_v6_program_migration"
+            },
+            "uncertainties": [
+              "尚未通过当前版本的真实对战校准。",
+              "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+            ],
+            "when": {
+              "compare": "gt",
+              "left": {
+                "read": {
+                  "target": "opponent",
+                  "field": "status.freeze"
+                }
+              },
+              "right": {
+                "const": 0
+              }
+            }
+          }
+        ],
+        "trigger": {
+          "event": "skill.use",
+          "order": "source_text_order_experiment"
+        },
+        "constraints": {
+          "priority": {
+            "status": "not_migrated"
+          },
+          "response_success": {
+            "status": "not_migrated"
+          },
+          "turn_order_condition": {
+            "status": "not_migrated"
+          },
+          "entry_trigger": {
+            "status": "not_migrated"
+          },
+          "duration": {
+            "status": "not_migrated"
+          },
+          "cooldown": {
+            "status": "not_migrated"
+          },
+          "execution_limits": {
+            "status": "not_migrated"
+          }
+        },
+        "capabilities": {
+          "description_structured": true,
+          "isolated_components_supported": true,
+          "full_battle_executable": false,
+          "real_game_calibrated": false
+        }
+      },
+      "record": {
+        "id": 7090430,
+        "wiki_id": "skill_000559",
+        "name": {
+          "zh": "冷凝"
+        },
+        "type": "冰系",
+        "kind": "physical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成物伤，敌方每有1层冻结，自己回复1能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%86%B7%E5%87%9D",
+        "source_module": "Skills",
+        "power": 95,
+        "desc_notes": [
+          1004
+        ]
+      },
+      "record_hash": "4be1cecde645fa5742d392328fabe4eb9571eda18549129b4551c9981c2b8f5b",
+      "game_skill": {
+        "id": 7090430,
+        "name": {
+          "localization_id": 2659,
+          "text": "冷凝"
+        },
+        "desc": {
+          "localization_id": 2660,
+          "text": "造成物伤，敌方每有1层<desc_id=1004>冻结</>，自己回复1能量。"
+        },
+        "flavor_text": {
+          "localization_id": 2661,
+          "text": "冰越厚，越安静，越有力。"
+        },
+        "energy_cost": [
+          4
+        ],
+        "dam_para": [
+          95
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 9,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20400740,
+            "cast_moment": 7
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ice_CB_108039",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/108039.108039'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      }
+    },
+    "7030570": {
+      "rule": {
+        "rule_id": "skill:7030570",
+        "program": {
+          "blockers": [],
+          "category": "skill",
+          "compiler_version": "bwiki-declarative-6",
+          "dependency_ids": [],
+          "executable": false,
+          "execution_blockers": [
+            "尚未通过当前版本的真实对战校准。",
+            "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+          ],
+          "game_id": 7030570,
+          "name": "甜蜜陷阱",
+          "order_semantics": "source_text_order_not_validated_timing",
+          "real_game_verified": false,
+          "skill_source": {
+            "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+            "page_id": 6396,
+            "revision_id": 18764,
+            "revision_timestamp": "2026-10-19T12:08:03Z",
+            "title": "Module:Pets/data/Skills",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+          },
+          "snapshot_id": "20261025T013619+0800",
+          "source": {
+            "source_module": "Skills",
+            "source_url": "https://wiki.biligame.com/nrc/%E7%94%9C%E8%9C%9C%E9%99%B7%E9%98%B1",
+            "wiki_id": "skill_000371"
+          },
+          "source_description": "造成魔伤，自己每有1能量，本次技能威力+10。",
+          "source_details": {},
+          "source_hash": "284e7683749cb2661301a9ed7451486d1a20a85cd2bf7bc82e1f2a16b4571deb",
+          "source_version": "s4-2026-10-16",
+          "static_fields": {
+            "energy": 4,
+            "kind": "magical",
+            "power": 50,
+            "type": "草系"
+          },
+          "status": "compiled",
+          "term_source": {
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "title": "Module:Pets/data/Terms",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+          }
+        },
+        "components": [
+          {
+            "id": "effect:0",
+            "kind": "effect",
+            "effect": "damage",
+            "target": "opponent",
+            "params": {
+              "kind": "magical",
+              "type": "草系",
+              "power": {
+                "expr": {
+                  "op": "add",
+                  "args": [
+                    {
+                      "const": 50
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "read": {
+                            "target": "self",
+                            "field": "energy"
+                          }
+                        },
+                        {
+                          "const": 10
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "evidence": {
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "284e7683749cb2661301a9ed7451486d1a20a85cd2bf7bc82e1f2a16b4571deb",
+              "raw_text": "造成魔伤，自己每有1能量，本次技能威力+10。",
+              "module": "Skills",
+              "source_url": "https://wiki.biligame.com/nrc/%E7%94%9C%E8%9C%9C%E9%99%B7%E9%98%B1",
+              "basis": "reviewed_v6_program_migration"
+            },
+            "uncertainties": [
+              "尚未通过当前版本的真实对战校准。",
+              "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。"
+            ]
+          }
+        ],
+        "trigger": {
+          "event": "skill.use",
+          "order": "source_text_order_experiment"
+        },
+        "constraints": {
+          "priority": {
+            "status": "not_migrated"
+          },
+          "response_success": {
+            "status": "not_migrated"
+          },
+          "turn_order_condition": {
+            "status": "not_migrated"
+          },
+          "entry_trigger": {
+            "status": "not_migrated"
+          },
+          "duration": {
+            "status": "not_migrated"
+          },
+          "cooldown": {
+            "status": "not_migrated"
+          },
+          "execution_limits": {
+            "status": "not_migrated"
+          }
+        },
+        "capabilities": {
+          "description_structured": true,
+          "isolated_components_supported": true,
+          "full_battle_executable": false,
+          "real_game_calibrated": false
+        }
+      },
+      "record": {
+        "id": 7030570,
+        "wiki_id": "skill_000371",
+        "name": {
+          "zh": "甜蜜陷阱"
+        },
+        "type": "草系",
+        "kind": "magical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成魔伤，自己每有1能量，本次技能威力+10。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%94%9C%E8%9C%9C%E9%99%B7%E9%98%B1",
+        "source_module": "Skills",
+        "power": 50
+      },
+      "record_hash": "284e7683749cb2661301a9ed7451486d1a20a85cd2bf7bc82e1f2a16b4571deb",
+      "game_skill": {
+        "id": 7030570,
+        "name": {
+          "localization_id": 2072,
+          "text": "甜蜜陷阱"
+        },
+        "desc": {
+          "localization_id": 2073,
+          "text": "造成魔伤，自己每有1能量，本次技能威力+10。"
+        },
+        "energy_cost": [
+          4
+        ],
+        "damage_rule": 19,
+        "dam_para": [
+          50,
+          3,
+          1,
+          20011583,
+          0,
+          10
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 3,
+        "skill_feature": 3,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20520100,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_CHXJ_202040",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/202040.202040'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      }
+    }
+  },
+  "uncertainties": [
+    "Numeric expressions read after payment, before each component. Energy-basis timing and status-layer formulas are research policies, not online calibration."
+  ]
+}

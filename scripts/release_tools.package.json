@@ -1,0 +1,7 @@
+{
+  "name": "release-tools",
+  "private": true,
+  "dependencies": {
+    "electron": "45.2.1"
+  }
+}

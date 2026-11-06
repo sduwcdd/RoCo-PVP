@@ -1,0 +1,154 @@
+[
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/PLAYER_MAGIC_CONF.non",
+    "offset": 3602432,
+    "declared_size": 672,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "42de6ebca517f1c4d39d7df4a7924b59387c560fa9b49d9c2e21cde6921c5fc5",
+    "source_ranges_sha256": [
+      {
+        "offset": 3602485,
+        "size": 672,
+        "sha256": "0210c6be02208f6db22700d863e1b2ceff2352f17920e0812a95c82ce83bdae6"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/PLAYER_MAGIC_CONF_schema.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/PLAYER_MAGIC_CONF.bytes",
+    "offset": 47825237,
+    "declared_size": 944,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "cbd55ac9038e8485fe16aa5073d8da7b46284b94ba5fc6c0c648a234f8ed2a39",
+    "source_ranges_sha256": [
+      {
+        "offset": 47825290,
+        "size": 944,
+        "sha256": "afe37d6819e8edcd66701cef43bf62cfd67c0c517a95d409dc5d11343d3e5917"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/PLAYER_MAGIC_CONF_data.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BAG_ITEM_CONF.non",
+    "offset": 2635776,
+    "declared_size": 9776,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "cfe42ecde852c11c77e58aa3d6a59612c97c3ee7bbf81dde52210f0a928c6960",
+    "source_ranges_sha256": [
+      {
+        "offset": 2635829,
+        "size": 9776,
+        "sha256": "22b9f0ddd5f56b623fb0ca4c3761a769e4f2db956b3d2354b2e85b0f0b6ddb1e"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/BAG_ITEM_CONF_schema.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BAG_ITEM_CONF.bytes",
+    "offset": 15396864,
+    "declared_size": 1045056,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "779f78e4d0a291d64583d4efb934ff013a02936ba8f3a8df11c882e8b0580589",
+    "source_ranges_sha256": [
+      {
+        "offset": 15396917,
+        "size": 1045056,
+        "sha256": "e26f9997e24a7b22a39e320352d7289f384f55a2066e742d30b4101ac9461877"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/BAG_ITEM_CONF_data.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/BAG_ITEM_CONF.bytes",
+    "offset": 64262144,
+    "declared_size": 913136,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "295a294670a853a9cf0eac9110019c327804db0d9db3f80bdce598fa2b9c7b65",
+    "source_ranges_sha256": [
+      {
+        "offset": 64262197,
+        "size": 913136,
+        "sha256": "ea7dd5a9fe54467f4ef98599a5658512606eefe0086cc2f5e5b2f42120202074"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/BAG_ITEM_CONF_local.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BATTLE_ITEM_CONF.non",
+    "offset": 2699264,
+    "declared_size": 1344,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "a4ceb1576129be4f5694c8b0a40acad3174b32830031ded4363ef20d83f4fd43",
+    "source_ranges_sha256": [
+      {
+        "offset": 2699317,
+        "size": 1344,
+        "sha256": "589f90054d6e3b15ed043568fdc082befb3f96c36134491b08dfced02f59039b"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_schema.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BATTLE_ITEM_CONF.bytes",
+    "offset": 17762304,
+    "declared_size": 1760,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "743ea689053225402a1c29a6d08bee1d3fcdd948572b925bca28b30f11222455",
+    "source_ranges_sha256": [
+      {
+        "offset": 17762357,
+        "size": 1760,
+        "sha256": "1be93edc1168fe160cb905ff8b7d9b4ce7f2bf73b19309d3bf19d9821baec32d"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_data.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/BATTLE_ITEM_CONF.bytes",
+    "offset": 65449984,
+    "declared_size": 816,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "fe86364fcbd0911863e8d03bd981030f8495212b46156598fd90ffc25f11552e",
+    "source_ranges_sha256": [
+      {
+        "offset": 65450037,
+        "size": 816,
+        "sha256": "a3388da8dd61152f07e636e3b13791c94c533f4e1cc927830a7d9f2280453b53"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_local.bytes"
+  }
+]

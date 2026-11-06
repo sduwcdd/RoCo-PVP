@@ -1,0 +1,88 @@
+{
+  "schema_version": "roco-explicit-resource-group-1",
+  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+  "runtime_precedence_verified": false,
+  "online_applicability_verified": false,
+  "tables": {
+    "SKILL_CONF": {
+      "schema": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+        "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+        "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILL_CONF.non",
+        "payload_sha256": "dcb2671c9898b6f69a5c8a23136701efa48fcc5da522bf916858f0c4cbe55c15",
+        "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+      },
+      "binary": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+        "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+        "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILL_CONF.bytes",
+        "payload_sha256": "f5da728497e1f0c59b1da705970acf777bfac46c7997e95232133e49eaab6325",
+        "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+      },
+      "localization": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+        "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+        "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/SKILL_CONF.bytes",
+        "payload_sha256": "37716a360e50bb2d7f640f6f87112d64420e3417b97120fd7d4e37d16797b6d3",
+        "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+      }
+    },
+    "BUFF_CONF": {
+      "schema": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+        "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+        "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+        "payload_sha256": "de2efc82e53f77d59c8ada1c03bc5a69a19891acc54169d34dcd0874dcecca49",
+        "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+      },
+      "binary": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+        "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+        "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+        "payload_sha256": "568ad0c28a4303ff34ea8fac6673006b171e2e6ee671630e39deda115b0b02ae",
+        "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+      }
+    },
+    "BUFFBASE_CONF": {
+      "schema": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+        "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+        "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+        "payload_sha256": "fac7530767357c039a049a4d8b03b7d2fe08f8f2614ce222c616174f4f9a7508",
+        "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+      },
+      "binary": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+        "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+        "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+        "payload_sha256": "b9238546dcdf74c7da015645cc141ed9205bcadcf8459c2d9825751003ca361e",
+        "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+      }
+    },
+    "EFFECT_CONF": {
+      "schema": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+        "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+        "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+        "payload_sha256": "9383101d2d016f2fe3648f431b9f4c132abd3b76f86748d1ab949dfd727f8f5b",
+        "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+      },
+      "binary": {
+        "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+        "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+        "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+        "payload_sha256": "359e5b99309b9b3ff825d0ef99838e32b13e9b665235bd9df5df44015e14faae",
+        "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+      }
+    }
+  }
+}

@@ -1,0 +1,735 @@
+{
+  "engine_revision": "composable-battle-20261026-8",
+  "snapshot_id": "20261025T013619+0800",
+  "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+  "total": 579,
+  "component_admitted": 504,
+  "full_battle_calibrated": false,
+  "status": "stopped_after_current_batch_at_user_request",
+  "remaining": [
+    {
+      "skill_id": 7020550,
+      "name": "魔能爆",
+      "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7020770,
+      "name": "退化",
+      "description": "敌方获得1层萌化。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7020840,
+      "name": "借用",
+      "description": "每回合随机变成己方队伍中其他精灵的技能。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "dynamic_slot_origin_not_direct_cast_program"
+    },
+    {
+      "skill_id": 7020850,
+      "name": "取念",
+      "description": "每回合随机变成敌方任意精灵的技能，且该技能能耗-2。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "dynamic_slot_origin_not_direct_cast_program"
+    },
+    {
+      "skill_id": 7020860,
+      "name": "复写",
+      "description": "每回合随机变成自己未携带的技能，且该技能能耗-2。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "dynamic_slot_origin_not_direct_cast_program"
+    },
+    {
+      "skill_id": 7020990,
+      "name": "吨位压制",
+      "description": "造成物伤，敌方体重越低，本次技能威力越高。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7021000,
+      "name": "以重制重",
+      "description": "造成物伤，敌方体重越高，本次技能威力越高。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7060130,
+      "name": "折射",
+      "description": "造成魔伤，携带其他系别技能会给本技能带来不同效果。",
+      "blockers": [
+        "unresolved_effect_details"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7060140,
+      "name": "漫反射",
+      "description": "每种系别中的至多1个技能，威力+35。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7060270,
+      "name": "色散",
+      "description": "造成魔伤，对混血精灵造成伤害+50%。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7060280,
+      "name": "分光",
+      "description": "自己获得魔攻+20%，己方队伍中精灵每有1个不同的系别，额外获得魔攻+10%。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070060,
+      "name": "轴承支撑",
+      "description": "主动：本技能被动永久额外-1能耗，被动：两侧技能能耗-1，传动1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070070,
+      "name": "联动装置",
+      "description": "使用后两侧技能的威力永久+20，应对防御：变为威力永久+30。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070080,
+      "name": "能量守恒",
+      "description": "减伤80%，应对攻击：两侧技能能耗永久-1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070170,
+      "name": "啮合传递",
+      "description": "自己获得速度+30，本技能位于1号或3号位时额外获得物攻+80%，传动1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070250,
+      "name": "减压阀",
+      "description": "主动：本技能被动永久额外+20威力，被动：两侧技能威力+10，传动1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070260,
+      "name": "排气",
+      "description": "敌方获得威力-20，自己每受到1次抵抗伤害（不含连击），敌方额外获得威力-20，使用后重置。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070270,
+      "name": "相位移动",
+      "description": "减伤50%，本技能位于1号位或3号位时，额外减伤40%，应对攻击，传动1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7070290,
+      "name": "过山车",
+      "description": "使己方队伍中的所有精灵携带的技能跨精灵向下移动1个位置，巧变：机械系技能。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7080230,
+      "name": "硬化",
+      "description": "减伤90%，若上次使用攻击技则本技能能耗-2，应对攻击。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7080320,
+      "name": "鸣沙陷阱",
+      "description": "造成物伤，物防比敌方越高，本次技能威力越高。",
+      "blockers": [
+        "unresolved_effect_details"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7090190,
+      "name": "霜天",
+      "description": "敌方获得1层冻结，且每有1层冻结获得全技能能耗+1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7090440,
+      "name": "寒潮",
+      "description": "造成魔伤，敌方获得1层冻结，应对状态：额外获得4层冻结，巧变：冻结相关技能。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7100250,
+      "name": "龙血",
+      "description": "减伤70%，本技能可以在蓄力状态下使用，应对攻击：下次技能无需蓄力。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7100300,
+      "name": "龙守望",
+      "description": "下次技能无需蓄力，本技能可在蓄力状态下使用。选择：本次能耗-1或应对防御时打断，敌方下回合获得眩晕。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7110240,
+      "name": "雷暴",
+      "description": "造成魔伤，迸发：本技能获得所有生效过的迸发，每获得1种，本技能能耗+1，威力+10。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7110250,
+      "name": "麻痹",
+      "description": "敌方先手-1，应对防御：额外使敌方获得双攻-70%。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7110350,
+      "name": "双联脉冲",
+      "description": "造成魔伤，迸发：本技能使用次数+1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7110360,
+      "name": "过载回路",
+      "description": "回合结束自己返场，下回合所选技能使用次数+1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7110380,
+      "name": "感电",
+      "description": "造成魔伤，每离场1次，本技能使用次数永久+1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7110420,
+      "name": "电磁偏转",
+      "description": "减伤70%，应对攻击：下回合所选技能使用次数+1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7110460,
+      "name": "踏雷",
+      "description": "自己回合结束时返场，携带的攻击技能下回合获得1个已触发过的迸发效果，应对防御：改为获得所有触发过的迸发效果。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7120110,
+      "name": "感染病",
+      "description": "造成魔伤，若击败敌方则将中毒转化为中毒印记。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7130220,
+      "name": "掩护",
+      "description": "减伤70%，紧急脱离，应对攻击：下个入场精灵获得减伤。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7130290,
+      "name": "翅刃",
+      "description": "造成物伤，驱散敌方所有印记，应对状态：改为偷取印记。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7140130,
+      "name": "截拳",
+      "description": "造成物伤，应对状态：造成打断，回复被打断技能能耗的能量。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7140170,
+      "name": "气沉丹田",
+      "description": "自己回复60%生命，获得物攻+130%，每次应对后本技能能耗-3，使用后能耗重置。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7140180,
+      "name": "硬门",
+      "description": "应对攻击：打断被应对技能，并造成90威力物伤。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7140190,
+      "name": "听桥",
+      "description": "减伤60%，应对攻击：对敌方造成武系物理伤害，威力与被应对技能相等。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7150170,
+      "name": "疾风涡轮",
+      "description": "造成物伤，无法主动使用，在使用3次翼系技能后会自动使用此技能。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7150250,
+      "name": "闪击",
+      "description": "造成物伤，速度比敌方越高，本次技能威力越高。",
+      "blockers": [
+        "unresolved_effect_details"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7150320,
+      "name": "疾风连袭",
+      "description": "释放自己释放过的迅捷技能，其能耗之和的二分之一加至本技能能耗，每次使用后能耗+1。",
+      "blockers": [
+        "description_not_fully_supported"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7160140,
+      "name": "超级糖果",
+      "description": "造成物伤，自己获得萌化：本次技能威力+60。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160150,
+      "name": "砂糖弹球",
+      "description": "造成物伤，双方体重差越大，本次技能威力越高。",
+      "blockers": [
+        "unresolved_effect_details"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7160170,
+      "name": "示弱",
+      "description": "自己获得萌化：速度永久+130。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160180,
+      "name": "赤子之心",
+      "description": "自己获得萌化：全技能能耗永久-2。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160190,
+      "name": "反弹",
+      "description": "将自己的萌化转移给敌方。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160200,
+      "name": "甜心续航",
+      "description": "自己和敌方获得萌化：回复40%生命。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160250,
+      "name": "撒娇",
+      "description": "造成魔伤，3连击。自己获得萌化：全技能威力永久+10。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160280,
+      "name": "月光合奏",
+      "description": "造成物伤，1连击，双方携带的所有精灵每有1层萌化，本次技能连击数+1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160290,
+      "name": "捧杀",
+      "description": "减伤90%，应对攻击：敌方获得1层萌化。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160330,
+      "name": "拆礼物",
+      "description": "造成物伤，若敌方有萌化，本次技能威力+100。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160360,
+      "name": "转圈圈",
+      "description": "造成魔伤，若敌方本回合更换精灵，本次攻击使敌方获得萌化。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160370,
+      "name": "蹦跶",
+      "description": "造成魔伤，自己有减益时本技能能耗-1，选择：自己获得萌化或解除萌化。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "devolution_form_panel_transition_not_implemented"
+    },
+    {
+      "skill_id": 7160400,
+      "name": "做好事",
+      "description": "造成魔伤，自己每使用过1次选择技能，自己获得3层随机永久属性增益，使用后重置。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7170310,
+      "name": "吃独食",
+      "description": "造成魔伤，自己每使用过1次选择技能，敌方获得3层随机永久属性减益，使用后重置。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7180350,
+      "name": "伪造账单",
+      "description": "若敌方本回合回复生命，改为失去2倍（含溢出的回复量）。先手+1。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7180430,
+      "name": "杂耍",
+      "description": "造成魔伤，巧变：吸血相关技能。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7190220,
+      "name": "空间压迫",
+      "description": "造成物伤，敌方获得1层星陨印记。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190260,
+      "name": "多维击打",
+      "description": "造成魔伤，1连击，敌方每有1层星陨印记，本次技能连击数+1。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190270,
+      "name": "错乱",
+      "description": "造成魔伤，应对状态：敌方获得3层星陨印记。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190280,
+      "name": "超维投射",
+      "description": "敌方获得4层星陨印记。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190290,
+      "name": "星轨裂变",
+      "description": "敌方获得2层星陨印记。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190300,
+      "name": "星链",
+      "description": "2连击，每次连击使敌方获得1层星陨印记。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190310,
+      "name": "超新星馈赠",
+      "description": "敌方获得2层星陨印记，每使用1次，赋予的星陨印记层数永久+1。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190320,
+      "name": "心灵洞悉",
+      "description": "敌方获得星陨印记，获得层数等于敌方印记层数。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190330,
+      "name": "二律背反",
+      "description": "敌方获得3层星陨印记，应对防御：额外使敌方星陨印记层数翻倍。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190400,
+      "name": "冥想",
+      "description": "减伤80%，应对攻击：敌方获得2层星陨印记。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190430,
+      "name": "叠加态",
+      "description": "自己获得随机16层属性增益，巧变：幻系攻击技能。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7190450,
+      "name": "薄纱环",
+      "description": "选择：敌方随机获得1种负面印记或自己随机获得1种正面印记。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7190460,
+      "name": "重组",
+      "description": "下一次攻击时，额外造成100%幻系伤害，应对防御：改为额外造成300%幻系伤害。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7190490,
+      "name": "观测者效应",
+      "description": "自己脱离，更换入场的精灵以月陨星状态登场。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "not_completed_before_user_requested_stop"
+    },
+    {
+      "skill_id": 7190500,
+      "name": "量子涨落",
+      "description": "造成物伤，若敌方没有星陨印记，则敌方获得3层星陨印记。",
+      "blockers": [
+        "Star mark lifecycle requires extra damage whose raw parameter 20 has no verified decoding."
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190510,
+      "name": "奇点",
+      "description": "造成魔伤，若上回合双方有精灵使用水系技能，敌方获得4层星陨印记。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    },
+    {
+      "skill_id": 7190520,
+      "name": "引力偏转",
+      "description": "减伤80%，应对攻击：以魔法伤害触发敌方的星陨效果。",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ],
+      "review_status": "shared_star_damage_formula_unresolved_from_available_sources"
+    }
+  ]
+}

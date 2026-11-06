@@ -1,0 +1,30 @@
+{
+  "schema": "local-community-source-1",
+  "captured_at": "2026-10-29T15:24:54.674467+00:00",
+  "authority": "Third-party app snapshot; not official game protocol or validated full-team statistics",
+  "files": [
+    {
+      "file": "pvp-usage.raw.json",
+      "source_path": "E:\\洛克PVP助手\\app\\wwwroot\\native-data\\pokedex_800_pvp_usage_v340.json",
+      "bytes": 4241235,
+      "sha256": "8c84ad48aaa98278c781de3556cfd8f447bc92b0f66afed7c0d06cf476c4eecb"
+    },
+    {
+      "file": "enemy-presets.raw.json",
+      "source_path": "E:\\洛克PVP助手\\app\\user-data\\enemy-skill-presets.json",
+      "bytes": 1659020,
+      "sha256": "e0e98e8d7380b442601cdfad30f6b4a1fd7e0163b1d28d4cbf62baa0519c99ed"
+    },
+    {
+      "file": "community-ui.source.js",
+      "source_path": "E:\\洛克PVP助手\\app\\wwwroot\\community-assets\\team-community.js",
+      "bytes": 29578,
+      "sha256": "2b842c98f4f5479396968383e11d7962c39e36c70be6873802421b6ec2b4df18"
+    }
+  ],
+  "notes": [
+    "Single-pet usage distributions are marginals, not joint build/team probabilities.",
+    "Presets are third-party configuration candidates, not automatically true observed opponent skills.",
+    "Popular full-team data requires separate source verification; no invented lineups."
+  ]
+}

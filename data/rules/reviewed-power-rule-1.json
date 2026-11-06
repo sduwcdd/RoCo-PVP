@@ -1,0 +1,765 @@
+{
+  "schema": "reviewed-power-rule-1",
+  "policy": "source_bound_damage_rule_35_38_table_power_experiment_v1",
+  "skills": {
+    "7160150": {
+      "record_hash": "1c8d3cc0da6e25edf8802cdbc6bab8d991caa2cf43cff11c9cf899993ba968a2",
+      "raw": {
+        "id": 7160150,
+        "wiki_id": "skill_000719",
+        "name": {
+          "zh": "砂糖弹球"
+        },
+        "type": "萌系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，双方体重差越大，本次技能威力越高。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%A0%82%E7%B3%96%E5%BC%B9%E7%90%83",
+        "source_module": "Skills",
+        "power": 20,
+        "power_text": "变化",
+        "effect_details": {
+          "columns": [
+            "体重差（kg）",
+            "威力档位"
+          ],
+          "icon": "Ui_Weight.png",
+          "intro": "双方体重差越大，砂糖弹球的威力档位越高。",
+          "kind": "tiers",
+          "rows": [
+            {
+              "bar": 17,
+              "effects": [
+                {
+                  "value": "20"
+                }
+              ],
+              "label": "0–4"
+            },
+            {
+              "bar": 33,
+              "effects": [
+                {
+                  "value": "40"
+                }
+              ],
+              "label": "4–14"
+            },
+            {
+              "bar": 50,
+              "effects": [
+                {
+                  "value": "60"
+                }
+              ],
+              "label": "14–30"
+            },
+            {
+              "bar": 67,
+              "effects": [
+                {
+                  "value": "80"
+                }
+              ],
+              "label": "30–60"
+            },
+            {
+              "bar": 83,
+              "effects": [
+                {
+                  "value": "100"
+                }
+              ],
+              "label": "60–120"
+            },
+            {
+              "bar": 100,
+              "effects": [
+                {
+                  "value": "120"
+                }
+              ],
+              "label": "120 及以上"
+            }
+          ],
+          "title": "体重差与威力"
+        }
+      },
+      "rule": 35,
+      "stat": null,
+      "bucket": 10,
+      "dam_para": [
+        0,
+        20,
+        40,
+        60,
+        80,
+        100,
+        120,
+        0
+      ],
+      "energy_cost": [
+        2
+      ],
+      "skill_dam_type": 16,
+      "installation_evidence": {
+        "skill": {
+          "id": 7160150,
+          "name": {
+            "localization_id": 3174,
+            "text": "砂糖弹球"
+          },
+          "desc": {
+            "localization_id": 3175,
+            "text": "造成物伤，双方体重差越大，本次技能威力越高。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "damage_rule": 35,
+          "dam_para": [
+            0,
+            20,
+            40,
+            60,
+            80,
+            100,
+            120,
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 16,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Cut_TGHL_215003",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/215003.215003'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      },
+      "installation_uncertainty": "rule 35: bucket width 10 kg per level is experimental (no weight field in any unpacked table or catalog); rule 38: level = floor(max(stat_diff,0)/dam_para[1]), power = dam_para[0] + dam_para[2+level], experimental."
+    },
+    "7020990": {
+      "record_hash": "6a9cb1052a43da920bf84f3afb0027c1efbd1d72122689d50783db9d4aa91c8d",
+      "raw": {
+        "id": 7020990,
+        "wiki_id": "skill_000315",
+        "name": {
+          "zh": "吨位压制"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，敌方体重越低，本次技能威力越高。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%90%A8%E4%BD%8D%E5%8E%8B%E5%88%B6",
+        "source_module": "Skills",
+        "power": 160
+      },
+      "rule": 35,
+      "stat": null,
+      "bucket": 10,
+      "dam_para": [
+        0,
+        160,
+        140,
+        120,
+        100,
+        90,
+        80,
+        1
+      ],
+      "energy_cost": [
+        3
+      ],
+      "skill_dam_type": 2,
+      "installation_evidence": {
+        "skill": {
+          "id": 7020990,
+          "name": {
+            "localization_id": 1889,
+            "text": "吨位压制"
+          },
+          "desc": {
+            "localization_id": 1890,
+            "text": "造成物伤，敌方体重越低，本次技能威力越高。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 35,
+          "dam_para": [
+            0,
+            160,
+            140,
+            120,
+            100,
+            90,
+            80,
+            1
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_YLJSS_101081",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/101081.101081'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      },
+      "installation_uncertainty": "rule 35: bucket width 10 kg per level is experimental (no weight field in any unpacked table or catalog); rule 38: level = floor(max(stat_diff,0)/dam_para[1]), power = dam_para[0] + dam_para[2+level], experimental."
+    },
+    "7021000": {
+      "record_hash": "15b44a515be0b1afd1e56039a33d820191958aa8098122bfc33f3eca4d297a20",
+      "raw": {
+        "id": 7021000,
+        "wiki_id": "skill_000316",
+        "name": {
+          "zh": "以重制重"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，敌方体重越高，本次技能威力越高。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%BB%A5%E9%87%8D%E5%88%B6%E9%87%8D",
+        "source_module": "Skills",
+        "power": 80
+      },
+      "rule": 35,
+      "stat": null,
+      "bucket": 10,
+      "dam_para": [
+        0,
+        80,
+        90,
+        100,
+        120,
+        140,
+        160,
+        1
+      ],
+      "energy_cost": [
+        3
+      ],
+      "skill_dam_type": 2,
+      "installation_evidence": {
+        "skill": {
+          "id": 7021000,
+          "name": {
+            "localization_id": 1891,
+            "text": "以重制重"
+          },
+          "desc": {
+            "localization_id": 1892,
+            "text": "造成物伤，敌方体重越高，本次技能威力越高。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "damage_rule": 35,
+          "dam_para": [
+            0,
+            80,
+            90,
+            100,
+            120,
+            140,
+            160,
+            1
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 2,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_ZLJSS_101082",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/101082.101082'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      },
+      "installation_uncertainty": "rule 35: bucket width 10 kg per level is experimental (no weight field in any unpacked table or catalog); rule 38: level = floor(max(stat_diff,0)/dam_para[1]), power = dam_para[0] + dam_para[2+level], experimental."
+    },
+    "7150250": {
+      "record_hash": "6effe85dd80e63160833c3be0bf2bc96ef2c5b8f80d53034dbcbe669490cf45f",
+      "raw": {
+        "id": 7150250,
+        "wiki_id": "skill_000703",
+        "name": {
+          "zh": "闪击"
+        },
+        "type": "翼系",
+        "kind": "physical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成物伤，速度比敌方越高，本次技能威力越高。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%97%AA%E5%87%BB",
+        "source_module": "Skills",
+        "power": 60,
+        "effect_details": {
+          "columns": [
+            "速度差",
+            "档位数值"
+          ],
+          "icon": "Stat_Spe.png",
+          "intro": "自身速度高于对手时，差值越大，技能威力越高。",
+          "kind": "tiers",
+          "rows": [
+            {
+              "bar": 0,
+              "effects": [
+                {
+                  "value": "0"
+                }
+              ],
+              "label": "不高于对手"
+            },
+            {
+              "bar": 14,
+              "effects": [
+                {
+                  "value": "20"
+                }
+              ],
+              "label": "高出 1–30"
+            },
+            {
+              "bar": 29,
+              "effects": [
+                {
+                  "value": "40"
+                }
+              ],
+              "label": "高出 31–60"
+            },
+            {
+              "bar": 43,
+              "effects": [
+                {
+                  "value": "60"
+                }
+              ],
+              "label": "高出 61–90"
+            },
+            {
+              "bar": 57,
+              "effects": [
+                {
+                  "value": "80"
+                }
+              ],
+              "label": "高出 91–120"
+            },
+            {
+              "bar": 64,
+              "effects": [
+                {
+                  "value": "90"
+                }
+              ],
+              "label": "高出 121–150"
+            },
+            {
+              "bar": 71,
+              "effects": [
+                {
+                  "value": "100"
+                }
+              ],
+              "label": "高出 151–180"
+            },
+            {
+              "bar": 79,
+              "effects": [
+                {
+                  "value": "110"
+                }
+              ],
+              "label": "高出 181–210"
+            },
+            {
+              "bar": 86,
+              "effects": [
+                {
+                  "value": "120"
+                }
+              ],
+              "label": "高出 211–240"
+            },
+            {
+              "bar": 93,
+              "effects": [
+                {
+                  "value": "130"
+                }
+              ],
+              "label": "高出 241–270"
+            },
+            {
+              "bar": 100,
+              "effects": [
+                {
+                  "value": "140"
+                }
+              ],
+              "label": "高出 271 及以上"
+            }
+          ],
+          "title": "速度差与威力"
+        }
+      },
+      "rule": 38,
+      "stat": "spd",
+      "bucket": null,
+      "dam_para": [
+        60,
+        6,
+        0,
+        20,
+        40,
+        60,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140
+      ],
+      "energy_cost": [
+        4
+      ],
+      "skill_dam_type": 15,
+      "installation_evidence": {
+        "skill": {
+          "id": 7150250,
+          "name": {
+            "localization_id": 3125,
+            "text": "闪击"
+          },
+          "desc": {
+            "localization_id": 3126,
+            "text": "造成物伤，速度比敌方越高，本次技能威力越高。"
+          },
+          "energy_cost": [
+            4
+          ],
+          "damage_rule": 38,
+          "dam_para": [
+            60,
+            6,
+            0,
+            20,
+            40,
+            60,
+            80,
+            90,
+            100,
+            110,
+            120,
+            130,
+            140
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_SJ_114020",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/114020.114020'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      },
+      "installation_uncertainty": "rule 35: bucket width 10 kg per level is experimental (no weight field in any unpacked table or catalog); rule 38: level = floor(max(stat_diff,0)/dam_para[1]), power = dam_para[0] + dam_para[2+level], experimental.",
+      "expected_native_parameter_1": 6
+    },
+    "7080320": {
+      "record_hash": "9f7cc3a2602d6502c7b308307a20032fa68fc2b3ee3e32ab23c022086f19a21d",
+      "raw": {
+        "id": 7080320,
+        "wiki_id": "skill_000518",
+        "name": {
+          "zh": "鸣沙陷阱"
+        },
+        "type": "地系",
+        "kind": "physical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成物伤，物防比敌方越高，本次技能威力越高。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%B8%A3%E6%B2%99%E9%99%B7%E9%98%B1",
+        "source_module": "Skills",
+        "power": 60,
+        "effect_details": {
+          "columns": [
+            "物防差",
+            "档位数值"
+          ],
+          "icon": "Stat_Def.png",
+          "intro": "自身物防高于对手时，差值越大，技能威力越高。",
+          "kind": "tiers",
+          "rows": [
+            {
+              "bar": 0,
+              "effects": [
+                {
+                  "value": "0"
+                }
+              ],
+              "label": "不高于对手"
+            },
+            {
+              "bar": 14,
+              "effects": [
+                {
+                  "value": "20"
+                }
+              ],
+              "label": "高出 1–30"
+            },
+            {
+              "bar": 29,
+              "effects": [
+                {
+                  "value": "40"
+                }
+              ],
+              "label": "高出 31–60"
+            },
+            {
+              "bar": 43,
+              "effects": [
+                {
+                  "value": "60"
+                }
+              ],
+              "label": "高出 61–90"
+            },
+            {
+              "bar": 57,
+              "effects": [
+                {
+                  "value": "80"
+                }
+              ],
+              "label": "高出 91–120"
+            },
+            {
+              "bar": 64,
+              "effects": [
+                {
+                  "value": "90"
+                }
+              ],
+              "label": "高出 121–150"
+            },
+            {
+              "bar": 71,
+              "effects": [
+                {
+                  "value": "100"
+                }
+              ],
+              "label": "高出 151–180"
+            },
+            {
+              "bar": 79,
+              "effects": [
+                {
+                  "value": "110"
+                }
+              ],
+              "label": "高出 181–210"
+            },
+            {
+              "bar": 86,
+              "effects": [
+                {
+                  "value": "120"
+                }
+              ],
+              "label": "高出 211–240"
+            },
+            {
+              "bar": 93,
+              "effects": [
+                {
+                  "value": "130"
+                }
+              ],
+              "label": "高出 241–270"
+            },
+            {
+              "bar": 100,
+              "effects": [
+                {
+                  "value": "140"
+                }
+              ],
+              "label": "高出 271 及以上"
+            }
+          ],
+          "title": "物防差与威力"
+        }
+      },
+      "rule": 38,
+      "stat": "pdef",
+      "bucket": null,
+      "dam_para": [
+        60,
+        4,
+        0,
+        20,
+        40,
+        60,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140
+      ],
+      "energy_cost": [
+        4
+      ],
+      "skill_dam_type": 8,
+      "installation_evidence": {
+        "skill": {
+          "id": 7080320,
+          "name": {
+            "localization_id": 2531,
+            "text": "鸣沙陷阱"
+          },
+          "desc": {
+            "localization_id": 2532,
+            "text": "造成物伤，物防比敌方越高，本次技能威力越高。"
+          },
+          "flavor_text": {
+            "localization_id": 2533,
+            "text": "地系部族会把敌人和秘密一同用沙土掩埋。"
+          },
+          "energy_cost": [
+            4
+          ],
+          "damage_rule": 38,
+          "dam_para": [
+            60,
+            4,
+            0,
+            20,
+            40,
+            60,
+            80,
+            90,
+            100,
+            110,
+            120,
+            130,
+            140
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 8,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ear_JY_107028",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/107028.107028'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      },
+      "installation_uncertainty": "rule 35: bucket width 10 kg per level is experimental (no weight field in any unpacked table or catalog); rule 38: level = floor(max(stat_diff,0)/dam_para[1]), power = dam_para[0] + dam_para[2+level], experimental.",
+      "expected_native_parameter_1": 4
+    }
+  },
+  "installation_sources": [
+    "unpacked SKILL_CONF (snapshot 20261025T013619+0800)",
+    "bwiki catalog"
+  ],
+  "stat_difference_candidate": {
+    "policy": "positive_stat_difference_ceil_30_vendor_candidate_v2",
+    "source_path": "vendor/洛克PVP助手/app/wwwroot/assets/producer-session-runtime.js",
+    "source_sha256": "a894f23db520d0c1f71e8f2fd04a689b865dca56ad362ba21d4ee3bf5c7d2181",
+    "source_function": "qkProducerInferenceMingshaTierBand",
+    "source_status": "third_party_candidate_not_official_or_current_user_confirmation",
+    "step": 30,
+    "positive_rounding": "ceil",
+    "cap_level": 10,
+    "evidence": "第三方代码声明≤0档0，1–30档1，31–60档2，271以上档10；同处注释闪击相同档宽。",
+    "uncertainty": "本地解包未提供完整服务端公式；属性有效值额外取整和档位仍待更多独立实战校准。 dam_para[1]的完整字段语义未由客户端结算代码证实，4/6与属性编号相符仅为解释线索，不能当作分档步长。",
+    "powers": [
+      60,
+      80,
+      100,
+      120,
+      140,
+      150,
+      160,
+      170,
+      180,
+      190,
+      200
+    ]
+  }
+}

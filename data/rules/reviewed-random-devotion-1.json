@@ -1,0 +1,2242 @@
+{
+  "schema": "reviewed-random-devotion-1",
+  "snapshot_id": "20261105T124140+0800",
+  "skill_id": 7130200,
+  "effect_id": 1016003,
+  "count": 2,
+  "pool": [
+    {
+      "raw_buff_id": 20172450,
+      "enhancement_buff_id": 20640010,
+      "enhancement": "power",
+      "common_buff_id": 20640090
+    },
+    {
+      "raw_buff_id": 20172460,
+      "enhancement_buff_id": 20640020,
+      "enhancement": "hits",
+      "common_buff_id": 20640090
+    },
+    {
+      "raw_buff_id": 20172470,
+      "enhancement_buff_id": 20640030,
+      "enhancement": "poison",
+      "common_buff_id": 20640090
+    },
+    {
+      "raw_buff_id": 20172480,
+      "enhancement_buff_id": 20640040,
+      "enhancement": "cost",
+      "common_buff_id": 20640090
+    },
+    {
+      "raw_buff_id": 20172490,
+      "enhancement_buff_id": 20640050,
+      "enhancement": "lifesteal",
+      "common_buff_id": 20640090
+    }
+  ],
+  "sources": [
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+      "rows": {
+        "7130200": {
+          "id": 7130200,
+          "name": {
+            "localization_id": 2932,
+            "text": "虫群智慧"
+          },
+          "desc": {
+            "localization_id": 2933,
+            "text": "己方队伍获得2次随机<desc_id=1009>奉献</>。"
+          },
+          "flavor_text": {
+            "localization_id": 2934,
+            "text": "奉献吧！为了虫群的崇高意志！"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 13,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1016003,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Worm_CQZH_212012",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/212012.212012'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+      "rows": {
+        "1016003": {
+          "id": 1016003,
+          "effect_order": 16,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                20172450
+              ]
+            },
+            {
+              "params": [
+                20172460
+              ]
+            },
+            {
+              "params": [
+                20172470
+              ]
+            },
+            {
+              "params": [
+                20172480
+              ]
+            },
+            {
+              "params": [
+                20172490
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                4
+              ]
+            }
+          ]
+        },
+        "1016005": {
+          "id": 1016005,
+          "effect_order": 16,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                20172450
+              ]
+            },
+            {
+              "params": [
+                20172460
+              ]
+            },
+            {
+              "params": [
+                20172470
+              ]
+            },
+            {
+              "params": [
+                20172480
+              ]
+            },
+            {
+              "params": [
+                20172490
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            }
+          ]
+        },
+        "1016035": {
+          "id": 1016035,
+          "effect_order": 16,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                20640010
+              ]
+            },
+            {
+              "params": [
+                20640020
+              ]
+            },
+            {
+              "params": [
+                20640030
+              ]
+            },
+            {
+              "params": [
+                20640040
+              ]
+            },
+            {
+              "params": [
+                20640050
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                299906
+              ]
+            }
+          ]
+        },
+        "1016036": {
+          "id": 1016036,
+          "effect_order": 16,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                20640090
+              ]
+            },
+            {
+              "params": [
+                20640090
+              ]
+            },
+            {
+              "params": [
+                20640090
+              ]
+            },
+            {
+              "params": [
+                20640090
+              ]
+            },
+            {
+              "params": [
+                20640090
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                299906
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+      "rows": {
+        "20172450": {
+          "id": 20172450,
+          "buff_base_ids": [
+            2017245
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 10,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "20172460": {
+          "id": 20172460,
+          "buff_base_ids": [
+            2017246
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 10,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "20172470": {
+          "id": 20172470,
+          "buff_base_ids": [
+            2017247
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 10,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "20172480": {
+          "id": 20172480,
+          "buff_base_ids": [
+            2017248
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 10,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "20172490": {
+          "id": 20172490,
+          "buff_base_ids": [
+            2017249
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 10,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "20640010": {
+          "id": 20640010,
+          "buff_base_ids": [
+            2064001
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 4,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ]
+        },
+        "20640020": {
+          "id": 20640020,
+          "buff_base_ids": [
+            2064002,
+            2045007
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 4,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ]
+        },
+        "20640030": {
+          "id": 20640030,
+          "buff_base_ids": [
+            2064003
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 4,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ]
+        },
+        "20640040": {
+          "id": 20640040,
+          "buff_base_ids": [
+            2064004
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 4,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ]
+        },
+        "20640050": {
+          "id": 20640050,
+          "buff_base_ids": [
+            2064005
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 4,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ]
+        },
+        "20640090": {
+          "id": 20640090,
+          "buff_base_ids": [
+            2064009
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 4,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+      "rows": {
+        "2017245": {
+          "id": 2017245,
+          "buffbase_order": 17,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20640010,
+                20640090
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                299906
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2017246": {
+          "id": 2017246,
+          "buffbase_order": 17,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20640020,
+                20640090
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                299906
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2017247": {
+          "id": 2017247,
+          "buffbase_order": 17,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20640030,
+                20640090
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                299906
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2017248": {
+          "id": 2017248,
+          "buffbase_order": 17,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20640040,
+                20640090
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                299906
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2017249": {
+          "id": 2017249,
+          "buffbase_order": 17,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20640050,
+                20640090
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                299906
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2064001": {
+          "id": 2064001,
+          "buffbase_order": 64,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                7
+              ]
+            },
+            {
+              "params": [
+                7130100,
+                7130130
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                20
+              ]
+            },
+            {
+              "params": [
+                6
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2064001
+              ]
+            }
+          ]
+        },
+        "2064002": {
+          "id": 2064002,
+          "buffbase_order": 64,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                7
+              ]
+            },
+            {
+              "params": [
+                7130100,
+                7130130
+              ]
+            },
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                6
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2064002
+              ]
+            }
+          ]
+        },
+        "2064003": {
+          "id": 2064003,
+          "buffbase_order": 64,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                7
+              ]
+            },
+            {
+              "params": [
+                7130100,
+                7130130
+              ]
+            },
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                20070010,
+                20070010
+              ]
+            },
+            {
+              "params": [
+                12
+              ]
+            },
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                2064003
+              ]
+            }
+          ]
+        },
+        "2064004": {
+          "id": 2064004,
+          "buffbase_order": 64,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                7
+              ]
+            },
+            {
+              "params": [
+                7130100,
+                7130130
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                -2
+              ]
+            },
+            {
+              "params": [
+                6
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                2064004
+              ]
+            }
+          ]
+        },
+        "2064005": {
+          "id": 2064005,
+          "buffbase_order": 64,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                7
+              ]
+            },
+            {
+              "params": [
+                7130100,
+                7130130
+              ]
+            },
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                1011010
+              ]
+            },
+            {
+              "params": [
+                12
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2064005
+              ]
+            }
+          ]
+        },
+        "2064009": {
+          "id": 2064009,
+          "buffbase_order": 64,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                7
+              ]
+            },
+            {
+              "params": [
+                7130100
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                6
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2017025": {
+          "id": 2017025,
+          "buffbase_order": 17,
+          "trigger_type": 7,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                1016005
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2019037": {
+          "id": 2019037,
+          "buffbase_order": 19,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2,
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                1016035,
+                1016036
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            }
+          ]
+        },
+        "2023042": {
+          "id": 2023042,
+          "buffbase_order": 23,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1016005
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "traits_blocked": {},
+  "trait_sources": {
+    "200136": {
+      "record": {
+        "id": 200136,
+        "wiki_id": "skill_000055",
+        "name": {
+          "zh": "花精灵"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "回合结束时，己方队伍获得1次随机奉献。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%8A%B1%E7%B2%BE%E7%81%B5",
+        "source_module": "Skills",
+        "desc_notes": [
+          1009
+        ]
+      },
+      "record_hash": "99ba63ad0a0e03e0b7de2106dfe3cf80ce46d866b22f27d2364e711ce2d663ec",
+      "effect_id": 1016005,
+      "count": 1,
+      "pool": [
+        {
+          "raw_buff_id": 20172450,
+          "enhancement_buff_id": 20640010,
+          "enhancement": "power",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172460,
+          "enhancement_buff_id": 20640020,
+          "enhancement": "hits",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172470,
+          "enhancement_buff_id": 20640030,
+          "enhancement": "poison",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172480,
+          "enhancement_buff_id": 20640040,
+          "enhancement": "cost",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172490,
+          "enhancement_buff_id": 20640050,
+          "enhancement": "lifesteal",
+          "common_buff_id": 20640090
+        }
+      ],
+      "trigger_policy": "whole_description_source_bound_event_experiment_numeric_enum_not_claimed_decoded"
+    },
+    "200138": {
+      "record": {
+        "id": 200138,
+        "wiki_id": "skill_000057",
+        "name": {
+          "zh": "坚韧铠甲"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "每受到1次攻击伤害，己方队伍获得1次随机奉献。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%9D%9A%E9%9F%A7%E9%93%A0%E7%94%B2",
+        "source_module": "Skills",
+        "desc_notes": [
+          1009
+        ]
+      },
+      "record_hash": "d3ef5db46d01b5242a9a339e691d4b7f63bd09e41b36aa4d79d780368113b78d",
+      "effect_id": 1016035,
+      "count": 1,
+      "pool": [
+        {
+          "raw_buff_id": 20640010,
+          "enhancement_buff_id": 20640010,
+          "enhancement": "power",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20640020,
+          "enhancement_buff_id": 20640020,
+          "enhancement": "hits",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20640030,
+          "enhancement_buff_id": 20640030,
+          "enhancement": "poison",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20640040,
+          "enhancement_buff_id": 20640040,
+          "enhancement": "cost",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20640050,
+          "enhancement_buff_id": 20640050,
+          "enhancement": "lifesteal",
+          "common_buff_id": 20640090
+        }
+      ],
+      "trigger_policy": "whole_description_source_bound_event_experiment_numeric_enum_not_claimed_decoded"
+    },
+    "200133": {
+      "record": {
+        "id": 200133,
+        "wiki_id": "skill_000054",
+        "name": {
+          "zh": "振奋虫心"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "主动击败敌方后，己方队伍获得5次随机奉献。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%8C%AF%E5%A5%8B%E8%99%AB%E5%BF%83",
+        "source_module": "Skills",
+        "desc_notes": [
+          1009
+        ]
+      },
+      "record_hash": "01a7d85dcdddae5c3df39a22249fb9665162bbdbe6c8692a5faa2f033c21b0f2",
+      "effect_id": 1016004,
+      "count": 5,
+      "pool": [
+        {
+          "raw_buff_id": 20172450,
+          "enhancement_buff_id": 20640010,
+          "enhancement": "power",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172460,
+          "enhancement_buff_id": 20640020,
+          "enhancement": "hits",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172470,
+          "enhancement_buff_id": 20640030,
+          "enhancement": "poison",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172480,
+          "enhancement_buff_id": 20640040,
+          "enhancement": "cost",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172490,
+          "enhancement_buff_id": 20640050,
+          "enhancement": "lifesteal",
+          "common_buff_id": 20640090
+        }
+      ],
+      "trigger_policy": "whole_description_source_bound_event_experiment_numeric_enum_not_claimed_decoded"
+    }
+  },
+  "skill_sources": {
+    "7130320": {
+      "record": {
+        "id": 7130320,
+        "wiki_id": "skill_000654",
+        "name": {
+          "zh": "虫结阵"
+        },
+        "type": "虫系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤80%，应对攻击：己方队伍获得1次随机奉献。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%99%AB%E7%BB%93%E9%98%B5",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016,
+          1009
+        ]
+      },
+      "record_hash": "294d07c58c5461605f848dec4d50452184d9a973ca17a697ce54cadfb2fe6a91",
+      "count": 0,
+      "conditional_count": 1,
+      "condition": {
+        "response_success": true
+      },
+      "effect_id": 1016005,
+      "pool": [
+        {
+          "raw_buff_id": 20172450,
+          "enhancement_buff_id": 20640010,
+          "enhancement": "power",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172460,
+          "enhancement_buff_id": 20640020,
+          "enhancement": "hits",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172470,
+          "enhancement_buff_id": 20640030,
+          "enhancement": "poison",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172480,
+          "enhancement_buff_id": 20640040,
+          "enhancement": "cost",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172490,
+          "enhancement_buff_id": 20640050,
+          "enhancement": "lifesteal",
+          "common_buff_id": 20640090
+        }
+      ],
+      "trigger_policy": "after_successful_whole_skill_explicit_condition_experiment_v1",
+      "game_record": {
+        "id": 7130320,
+        "name": {
+          "localization_id": 2959,
+          "text": "虫结阵"
+        },
+        "desc": {
+          "localization_id": 2960,
+          "text": "减伤80%，<desc_id=1016>应对攻击</>：己方队伍获得1次随机<desc_id=1009>奉献</>。"
+        },
+        "flavor_text": {
+          "localization_id": 2961,
+          "text": "研究手记：虫群盘成漩涡，每一次振翅都将最终掀起龙卷。"
+        },
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 3,
+        "skill_dam_type": 13,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20110310,
+            "cast_moment": 11
+          },
+          {
+            "effect_id": 1031142,
+            "cast_moment": 11
+          },
+          {
+            "effect_id": 20620060,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wor_CJZ_112024",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/112025.112025'",
+        "describe_type": [
+          1,
+          11
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "effect_record": {
+        "id": 1016005,
+        "effect_order": 16,
+        "type": 3,
+        "effect_param": [
+          {
+            "params": [
+              1
+            ]
+          },
+          {
+            "params": [
+              20172450
+            ]
+          },
+          {
+            "params": [
+              20172460
+            ]
+          },
+          {
+            "params": [
+              20172470
+            ]
+          },
+          {
+            "params": [
+              20172480
+            ]
+          },
+          {
+            "params": [
+              20172490
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              1
+            ]
+          }
+        ]
+      },
+      "uncertainties": [
+        "Sampling weights and hook order are experimental; previous-turn history includes actual Swift casts."
+      ],
+      "references": {
+        "SKILL_CONF": {
+          "7130321": {
+            "id": 7130321,
+            "name": {
+              "localization_id": 2962,
+              "text": "应对！虫结阵"
+            },
+            "desc": {
+              "localization_id": 2963,
+              "text": "减伤80%，<desc_id=1016>应对攻击</>：己方队伍获得1次随机<desc_id=1009>奉献</>。"
+            },
+            "flavor_text": {
+              "localization_id": 2964,
+              "text": "研究手记：虫群盘成漩涡，每一次振翅都将最终掀起龙卷。"
+            },
+            "energy_cost": [
+              2
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 3,
+            "skill_dam_type": 13,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 9,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 20110310,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 1016005,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20620060,
+                "cast_moment": 11
+              },
+              {},
+              {},
+              {
+                "effect_id": 20190360,
+                "cast_moment": 6
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wor_CJZ_112025_Y",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/112025.112025'",
+            "describe_type": [
+              1,
+              11
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          }
+        },
+        "EFFECT_CONF": {
+          "1031142": {
+            "id": 1031142,
+            "effect_order": 31,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  7130321
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "7130360": {
+      "record": {
+        "id": 7130360,
+        "wiki_id": "skill_000658",
+        "name": {
+          "zh": "信息素"
+        },
+        "type": "虫系",
+        "kind": "status",
+        "energy": 4,
+        "desc": {
+          "zh": "己方队伍获得1次随机奉献，若上回合双方有精灵使用地系技能，额外获得3次随机奉献。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%BF%A1%E6%81%AF%E7%B4%A0",
+        "source_module": "Skills",
+        "desc_notes": [
+          1009,
+          1009
+        ]
+      },
+      "record_hash": "1cf5d6012af670f99f4ee18f30ce831242c6715b52b0600f5c58728cc29ae226",
+      "count": 1,
+      "conditional_count": 3,
+      "condition": {
+        "previous_turn_type": "地系"
+      },
+      "effect_id": 1016031,
+      "pool": [
+        {
+          "raw_buff_id": 20172450,
+          "enhancement_buff_id": 20640010,
+          "enhancement": "power",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172460,
+          "enhancement_buff_id": 20640020,
+          "enhancement": "hits",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172470,
+          "enhancement_buff_id": 20640030,
+          "enhancement": "poison",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172480,
+          "enhancement_buff_id": 20640040,
+          "enhancement": "cost",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172490,
+          "enhancement_buff_id": 20640050,
+          "enhancement": "lifesteal",
+          "common_buff_id": 20640090
+        }
+      ],
+      "trigger_policy": "after_successful_whole_skill_explicit_condition_experiment_v1",
+      "game_record": {
+        "id": 7130360,
+        "name": {
+          "localization_id": 2972,
+          "text": "信息素"
+        },
+        "desc": {
+          "localization_id": 2973,
+          "text": "己方队伍获得1次随机<desc_id=1009>奉献</>，若上回合双方有精灵使用地系技能，额外获得3次随机<desc_id=1009>奉献</>。"
+        },
+        "flavor_text": {
+          "localization_id": 2974,
+          "text": "它们不说话，但它们都知道。"
+        },
+        "energy_cost": [
+          4
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 13,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1016005,
+            "cast_moment": 11
+          },
+          {
+            "effect_id": 21600060,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wor_XXS_112039",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/112039.112039'",
+        "describe_type": [
+          12,
+          6
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "effect_record": {
+        "id": 1016031,
+        "effect_order": 16,
+        "type": 3,
+        "effect_param": [
+          {
+            "params": [
+              3
+            ]
+          },
+          {
+            "params": [
+              20172450
+            ]
+          },
+          {
+            "params": [
+              20172460
+            ]
+          },
+          {
+            "params": [
+              20172470
+            ]
+          },
+          {
+            "params": [
+              20172480
+            ]
+          },
+          {
+            "params": [
+              20172490
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      },
+      "uncertainties": [
+        "Sampling weights and hook order are experimental; previous-turn history includes actual Swift casts."
+      ],
+      "references": {
+        "BUFF_CONF": {
+          "21600060": {
+            "id": 21600060,
+            "buff_base_ids": [
+              2160006
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641960": {
+            "id": 20641960,
+            "buff_base_ids": [
+              2064196
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              3
+            ],
+            "name": "信息素",
+            "type_id": "3",
+            "type": 3,
+            "add_max": 1,
+            "desc": "「信息素」获得额外效果，可以额外获得3次随机奉献。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830194_png.830194_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  1,
+                  99
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "BUFFBASE_CONF": {
+          "2160006": {
+            "id": 2160006,
+            "buffbase_order": 160,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  8
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3,
+                  100
+                ]
+              },
+              {
+                "params": [
+                  20641960
+                ]
+              }
+            ]
+          },
+          "2064196": {
+            "id": 2064196,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7130360
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1016031
+                ]
+              },
+              {
+                "params": [
+                  11
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "7130370": {
+      "record": {
+        "id": 7130370,
+        "wiki_id": "skill_000659",
+        "name": {
+          "zh": "迁飞扩散"
+        },
+        "type": "虫系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，若敌方本回合更换精灵，己方队伍获得3次随机奉献。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%81%E9%A3%9E%E6%89%A9%E6%95%A3",
+        "source_module": "Skills",
+        "power": 55,
+        "desc_notes": [
+          1009
+        ]
+      },
+      "record_hash": "749cf53763f116e48bc5becde849bd52156f18c4143c816876c77f49d4daec9f",
+      "count": 0,
+      "conditional_count": 3,
+      "condition": {
+        "opponent_switched_this_turn": true
+      },
+      "effect_id": 1016030,
+      "pool": [
+        {
+          "raw_buff_id": 20172450,
+          "enhancement_buff_id": 20640010,
+          "enhancement": "power",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172460,
+          "enhancement_buff_id": 20640020,
+          "enhancement": "hits",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172470,
+          "enhancement_buff_id": 20640030,
+          "enhancement": "poison",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172480,
+          "enhancement_buff_id": 20640040,
+          "enhancement": "cost",
+          "common_buff_id": 20640090
+        },
+        {
+          "raw_buff_id": 20172490,
+          "enhancement_buff_id": 20640050,
+          "enhancement": "lifesteal",
+          "common_buff_id": 20640090
+        }
+      ],
+      "trigger_policy": "after_successful_whole_skill_explicit_condition_experiment_v1",
+      "game_record": {
+        "id": 7130370,
+        "name": {
+          "localization_id": 2975,
+          "text": "迁飞扩散"
+        },
+        "desc": {
+          "localization_id": 2976,
+          "text": "造成物伤，若敌方本回合更换精灵，己方队伍获得3次随机<desc_id=1009>奉献</>。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          55
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 13,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 21070120,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wor_CYYC_212036",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/212036.212036'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "effect_record": {
+        "id": 1016030,
+        "effect_order": 16,
+        "type": 3,
+        "effect_param": [
+          {
+            "params": [
+              3
+            ]
+          },
+          {
+            "params": [
+              20172450
+            ]
+          },
+          {
+            "params": [
+              20172460
+            ]
+          },
+          {
+            "params": [
+              20172470
+            ]
+          },
+          {
+            "params": [
+              20172480
+            ]
+          },
+          {
+            "params": [
+              20172490
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          },
+          {
+            "params": [
+              0
+            ]
+          }
+        ]
+      },
+      "uncertainties": [
+        "Sampling weights and hook order are experimental; previous-turn history includes actual Swift casts."
+      ],
+      "references": {
+        "BUFF_CONF": {
+          "21070120": {
+            "id": 21070120,
+            "buff_base_ids": [
+              2107012
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  1,
+                  99
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20641990": {
+            "id": 20641990,
+            "buff_base_ids": [
+              2064199
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              3
+            ],
+            "type": 3,
+            "add_max": 1,
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  1,
+                  99
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "BUFFBASE_CONF": {
+          "2107012": {
+            "id": 2107012,
+            "buffbase_order": 107,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20641990
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          },
+          "2064199": {
+            "id": 2064199,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7130370
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1016030
+                ]
+              },
+              {
+                "params": [
+                  11
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

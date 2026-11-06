@@ -1,0 +1,118 @@
+[
+  {
+    "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+    "offset": 1954514,
+    "declared_size": 5123,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "de2efc82e53f77d59c8ada1c03bc5a69a19891acc54169d34dcd0874dcecca49",
+    "source_ranges_sha256": [
+      {
+        "offset": 1954587,
+        "size": 608,
+        "sha256": "d1f8c084312af294a2a968db8f0e32ec85be9232215452f00a536497261d5803"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_0_P\\BinConf\\BUFF_CONF.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+    "offset": 6522880,
+    "declared_size": 310593,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "568ad0c28a4303ff34ea8fac6673006b171e2e6ee671630e39deda115b0b02ae",
+    "source_ranges_sha256": [
+      {
+        "offset": 6523017,
+        "size": 13344,
+        "sha256": "1051189fcb845922d0dc83dcbd9d683de02a2037986ea8b8f4494512a03a63f9"
+      },
+      {
+        "offset": 6536361,
+        "size": 11824,
+        "sha256": "bdde0e98748738c4964ca4d5589be1e6b4b223294f56f81e902910e662714c4c"
+      },
+      {
+        "offset": 6548185,
+        "size": 18656,
+        "sha256": "e8e02a37245f6ccb89e3cd69387eccc8d3a7e73fbd37540fc9c5bba985bab71a"
+      },
+      {
+        "offset": 6566841,
+        "size": 19040,
+        "sha256": "d397c4808b9a983cb8f7f760090f95ff8a703a876e9fe4e2ba27d76b222728b3"
+      },
+      {
+        "offset": 6585881,
+        "size": 12624,
+        "sha256": "1bfda4ea2ea33dafe16db4e44f08bd563df80b4c889671d615f46c5f4e173f19"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\BUFF_CONF.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+    "offset": 1955195,
+    "declared_size": 1790,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "fac7530767357c039a049a4d8b03b7d2fe08f8f2614ce222c616174f4f9a7508",
+    "source_ranges_sha256": [
+      {
+        "offset": 1955268,
+        "size": 352,
+        "sha256": "3415ef2464a13e10db07294125f76b5f0d8c31ba9c390e9ad4289c5016cdd224"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_0_P\\BinConf\\BUFFBASE_CONF.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+    "offset": 6598656,
+    "declared_size": 268350,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "b9238546dcdf74c7da015645cc141ed9205bcadcf8459c2d9825751003ca361e",
+    "source_ranges_sha256": [
+      {
+        "offset": 6598793,
+        "size": 14256,
+        "sha256": "7a1b61e87a09c0f3c5d58c40ec752a6fb56b5c42b0656c754a3bf38e08ce8ed2"
+      },
+      {
+        "offset": 6613049,
+        "size": 16048,
+        "sha256": "9c9b79cbb3dcd27f9cb8a6a721e0ba25ef0804d0968fedbe583cd011739e3868"
+      },
+      {
+        "offset": 6629097,
+        "size": 15184,
+        "sha256": "64cdd474a7fc1b800ab0d8802ac4dc9e21820a80c9d4798803488a823caa5980"
+      },
+      {
+        "offset": 6644281,
+        "size": 15216,
+        "sha256": "f01ea96c35abe19da1f7741c7c9e9350f6c3e88a12981b8d6741978369c1878e"
+      },
+      {
+        "offset": 6659497,
+        "size": 1568,
+        "sha256": "229460c454f1baabba76649d591ceb9b5dd7f2d2f5a9c58da2347c53fb681695"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "raw\\pakchunk4-WindowsNoEditor_2_P\\BinDataCompressed\\BUFFBASE_CONF.bytes"
+  }
+]

@@ -1,0 +1,676 @@
+METHOD RocoAuthClient::.ctor
+0000 ldarg.0 
+0001 ldc.i4.1 
+0002 newobj .ctor
+0007 dup 
+0008 ldc.i4.1 
+0009 callvirt set_PropertyNameCaseInsensitive
+000E stfld _jsonOptions
+0013 ldarg.0 
+0014 call .ctor
+0019 newobj .ctor
+001E dup 
+001F ldc.i4.0 
+0020 callvirt set_UseProxy
+0025 stloc.0 
+0026 ldarg.0 
+0027 ldloc.0 
+0028 newobj .ctor
+002D dup 
+002E call ResolveApiBaseUrl
+0033 newobj .ctor
+0038 callvirt set_BaseAddress
+003D dup 
+003E ldc.r8 00-00-00-00-00-00-39-40
+0047 call FromSeconds
+004C callvirt set_Timeout
+0051 stfld _http
+0056 ldarg.0 
+0057 ldfld _http
+005C callvirt get_DefaultRequestHeaders
+0061 ldstr X-Roco-Client-Version
+0066 ldsfld ClientVersion
+006B callvirt TryAddWithoutValidation
+0070 pop 
+0071 ldarg.0 
+0072 ldfld _http
+0077 callvirt get_DefaultRequestHeaders
+007C ldstr X-Roco-Client-Sha256
+0081 ldsfld ClientSha256
+0086 callvirt TryAddWithoutValidation
+008B pop 
+008C ret 
+METHOD RocoAuthClient::GetPopularTeamsAsync
+0000 ldarg.0 
+0001 call get_Get
+0006 ldstr api/popular-teams?limit=80
+000B ldnull 
+000C ldarg.1 
+000D ldarg.2 
+000E ldc.i4.0 
+000F call 4A-02-00-2B
+0014 ret 
+METHOD MainWindow::LoadPopularTeams
+0000 newobj .ctor
+0005 stloc.0 
+0006 ldloc.0 
+0007 ldarg.0 
+0008 stfld <>4__this
+000D ldloc.0 
+000E ldarg.2 
+000F stfld dexCards
+0014 ldarg.1 
+0015 call ReadAllText
+001A ldloca.s 04
+001C initobj JsonDocumentOptions
+0022 ldloc.s 04
+0024 call Parse
+0029 stloc.1 
+002A ldloc.1 
+002B callvirt get_RootElement
+0030 stloc.s 05
+0032 ldloca.s 05
+0034 ldstr items
+0039 ldloca.s 02
+003B call TryGetProperty
+0040 brfalse.s 0A
+0042 ldloca.s 02
+0044 call get_ValueKind
+0049 ldc.i4.2 
+004A beq.s 2F
+004C ldloc.1 
+004D callvirt get_RootElement
+0052 stloc.s 05
+0054 ldloca.s 05
+0056 call get_ValueKind
+005B ldc.i4.2 
+005C beq.s 07
+005E call E2-00-00-2B
+0063 br.s 22
+0065 ldloc.1 
+0066 callvirt get_RootElement
+006B stloc.s 05
+006D ldloca.s 05
+006F call EnumerateArray
+0074 box ArrayEnumerator
+0079 br.s 0C
+007B ldloca.s 02
+007D call EnumerateArray
+0082 box ArrayEnumerator
+0087 castclass 23-01-00-1B
+008C newobj .ctor
+0091 stloc.3 
+0092 callvirt GetEnumerator
+0097 stloc.s 06
+0099 br 83-01-00-00
+009E ldloc.s 06
+00A0 callvirt get_Current
+00A5 stloc.s 07
+00A7 ldloca.s 07
+00A9 ldstr snapshot
+00AE ldloca.s 08
+00B0 call TryGetProperty
+00B5 brtrue.s 0C
+00B7 ldloca.s 05
+00B9 initobj JsonElement
+00BF ldloc.s 05
+00C1 br.s 02
+00C3 ldloc.s 08
+00C5 stloc.s 09
+00C7 ldloca.s 09
+00C9 call get_ValueKind
+00CE ldc.i4.1 
+00CF bne.un.s 10
+00D1 ldloca.s 09
+00D3 ldstr team
+00D8 ldloca.s 0A
+00DA call TryGetProperty
+00DF brtrue.s 0C
+00E1 ldloca.s 05
+00E3 initobj JsonElement
+00E9 ldloc.s 05
+00EB br.s 02
+00ED ldloc.s 0A
+00EF stloc.s 0B
+00F1 ldloca.s 0B
+00F3 call get_ValueKind
+00F8 ldc.i4.1 
+00F9 bne.un 23-01-00-00
+00FE ldloc.s 0B
+0100 ldstr name
+0105 call ReadJsonString
+010A stloc.s 0C
+010C ldloc.s 0C
+010E call IsNullOrWhiteSpace
+0113 brtrue 09-01-00-00
+0118 ldloca.s 09
+011A call get_ValueKind
+011F ldc.i4.1 
+0120 bne.un.s 1A
+0122 ldloca.s 09
+0124 ldstr builds
+0129 ldloca.s 0D
+012B call TryGetProperty
+0130 brfalse.s 0A
+0132 ldloca.s 0D
+0134 call get_ValueKind
+0139 ldc.i4.2 
+013A beq.s 07
+013C call D3-00-00-2B
+0141 br.s 3D
+0143 ldloca.s 0D
+0145 call EnumerateArray
+014A box ArrayEnumerator
+014F ldloc.0 
+0150 ldfld <>9__0
+0155 dup 
+0156 brtrue.s 18
+0158 pop 
+0159 ldloc.0 
+015A ldloc.0 
+015B ldftn <LoadPopularTeams>b__0
+0161 newobj .ctor
+0166 dup 
+0167 stloc.s 0F
+0169 stfld <>9__0
+016E ldloc.s 0F
+0170 call E3-00-00-2B
+0175 ldc.i4.6 
+0176 call E4-00-00-2B
+017B call E5-00-00-2B
+0180 stloc.s 0E
+0182 ldloc.3 
+0183 newobj .ctor
+0188 dup 
+0189 ldloc.s 07
+018B ldstr id
+0190 call ReadJsonString
+0195 callvirt set_Id
+019A dup 
+019B ldloc.s 0C
+019D callvirt set_Name
+01A2 dup 
+01A3 ldloc.s 0B
+01A5 ldstr description
+01AA call ReadJsonString
+01AF callvirt set_Description
+01B4 dup 
+01B5 ldloc.s 0B
+01B7 ldstr gameTeamCode
+01BC call ReadJsonString
+01C1 callvirt set_GameTeamCode
+01C6 dup 
+01C7 ldloc.s 0B
+01C9 ldstr tags
+01CE call ReadJsonStringArray
+01D3 callvirt set_Tags
+01D8 dup 
+01D9 ldloc.s 07
+01DB ldstr favoriteCount
+01E0 call TryReadInt
+01E5 stloc.s 10
+01E7 ldloca.s 10
+01E9 call get_HasValue
+01EE brtrue.s 18
+01F0 ldloc.s 07
+01F2 ldstr likes
+01F7 call TryReadInt
+01FC stloc.s 11
+01FE ldloca.s 11
+0200 ldc.i4.1 
+0201 call GetValueOrDefault
+0206 br.s 07
+0208 ldloca.s 10
+020A call GetValueOrDefault
+020F callvirt set_FavoriteCount
+0214 dup 
+0215 ldloc.s 0E
+0217 callvirt set_Pets
+021C callvirt Add
+0221 ldloc.s 06
+0223 callvirt MoveNext
+0228 brtrue 71-FE-FF-FF
+022D leave.s 0C
+022F ldloc.s 06
+0231 brfalse.s 07
+0233 ldloc.s 06
+0235 callvirt Dispose
+023A endfinally 
+023B ldloc.3 
+023C callvirt ToArray
+0241 stloc.s 12
+0243 leave.s 0A
+0245 ldloc.1 
+0246 brfalse.s 06
+0248 ldloc.1 
+0249 callvirt Dispose
+024E endfinally 
+024F ldloc.s 12
+0251 ret 
+METHOD MainWindow::BuildPopularTeamPet
+0000 ldarg.1 
+0001 ldstr name
+0006 call ReadJsonString
+000B stloc.0 
+000C ldarg.1 
+000D ldstr petbaseId
+0012 call ReadJsonString
+0017 stloc.1 
+0018 ldarg.1 
+0019 ldstr creatureId
+001E call ReadJsonString
+0023 stloc.2 
+0024 ldloc.0 
+0025 ldloc.1 
+0026 ldloc.2 
+0027 ldarg.2 
+0028 call FindPopularTeamPetCard
+002D stloc.3 
+002E ldarga.s 01
+0030 ldstr bloodline
+0035 ldloca.s 04
+0037 call TryGetProperty
+003C brfalse.s 0A
+003E ldloca.s 04
+0040 call get_ValueKind
+0045 ldc.i4.1 
+0046 beq.s 07
+0048 ldstr 
+004D br.s 0C
+004F ldloc.s 04
+0051 ldstr name
+0056 call ReadJsonString
+005B stloc.s 05
+005D ldarga.s 01
+005F ldstr statMarks
+0064 ldloca.s 06
+0066 call TryGetProperty
+006B brfalse.s 0A
+006D ldloca.s 06
+006F call get_ValueKind
+0074 ldc.i4.1 
+0075 beq.s 0C
+0077 ldloca.s 0A
+0079 initobj JsonElement
+007F ldloc.s 0A
+0081 br.s 02
+0083 ldloc.s 06
+0085 stloc.s 07
+0087 ldarg.1 
+0088 ldstr selectedSkillNames
+008D call ReadJsonStringArray
+0092 stloc.s 08
+0094 ldarg.1 
+0095 ldstr selectedSkillIds
+009A call ReadJsonLongArray
+009F stloc.s 09
+00A1 ldloc.s 09
+00A3 ldlen 
+00A4 brtrue.s 09
+00A6 ldloc.s 08
+00A8 call ResolvePopularTeamSkillIds
+00AD stloc.s 09
+00AF newobj .ctor
+00B4 dup 
+00B5 ldloc.3 
+00B6 brtrue.s 03
+00B8 ldnull 
+00B9 br.s 06
+00BB ldloc.3 
+00BC call get_Name
+00C1 dup 
+00C2 brtrue.s 02
+00C4 pop 
+00C5 ldloc.0 
+00C6 callvirt set_Name
+00CB dup 
+00CC ldloc.3 
+00CD brtrue.s 03
+00CF ldnull 
+00D0 br.s 06
+00D2 ldloc.3 
+00D3 call get_ImageUri
+00D8 dup 
+00D9 brtrue.s 06
+00DB pop 
+00DC ldstr 
+00E1 callvirt set_AvatarUri
+00E6 dup 
+00E7 ldloc.s 05
+00E9 callvirt set_BloodlineName
+00EE dup 
+00EF ldarg.1 
+00F0 ldstr level
+00F5 call ReadJsonString
+00FA callvirt set_Level
+00FF dup 
+0100 ldloca.s 07
+0102 call get_ValueKind
+0107 ldc.i4.1 
+0108 beq.s 07
+010A ldstr 
+010F br.s 11
+0111 ldloc.s 07
+0113 ldstr extremeStat
+0118 call ReadJsonString
+011D call TranslateTeamStat
+0122 callvirt set_ExtremeStat
+0127 dup 
+0128 ldloca.s 07
+012A call get_ValueKind
+012F ldc.i4.1 
+0130 beq.s 07
+0132 ldstr 
+0137 br.s 11
+0139 ldloc.s 07
+013B ldstr minusStat
+0140 call ReadJsonString
+0145 call TranslateTeamStat
+014A callvirt set_MinusStat
+014F dup 
+0150 ldloca.s 07
+0152 call get_ValueKind
+0157 ldc.i4.1 
+0158 beq.s 07
+015A call 67-00-00-2B
+015F br.s 55
+0161 ldloc.s 07
+0163 ldstr plusStats
+0168 call ReadJsonStringArray
+016D ldsfld <11>__TranslateTeamStat
+0172 dup 
+0173 brtrue.s 13
+0175 pop 
+0176 ldnull 
+0177 ldftn TranslateTeamStat
+017D newobj .ctor
+0182 dup 
+0183 stsfld <11>__TranslateTeamStat
+0188 call 88-00-00-2B
+018D ldsfld <>9__769_0
+0192 dup 
+0193 brtrue.s 17
+0195 pop 
+0196 ldsfld <>9
+019B ldftn <BuildPopularTeamPet>b__769_0
+01A1 newobj .ctor
+01A6 dup 
+01A7 stsfld <>9__769_0
+01AC call 0E-00-00-2B
+01B1 call 9A-00-00-2B
+01B6 callvirt set_PlusStats
+01BB dup 
+01BC ldloc.s 09
+01BE callvirt set_SkillIds
+01C3 dup 
+01C4 ldloc.s 08
+01C6 callvirt set_SkillNames
+01CB ret 
+METHOD MainWindow::BuildPopularTeamPetCodeRecord
+0000 ldarg.1 
+0001 brtrue.s 04
+0003 ldc.i4.s 13
+0005 br.s 02
+0007 ldc.i4.s 14
+0009 newarr Byte
+000E stloc.0 
+000F ldarg.0 
+0010 callvirt get_BloodlineName
+0015 call GetBloodlineTypeId
+001A ldc.i4.s 0A
+001C shl 
+001D ldarg.0 
+001E callvirt get_ExtremeStat
+0023 ldarg.0 
+0024 callvirt get_MinusStat
+0029 call GetNatureCode
+002E ldc.i4.4 
+002F shl 
+0030 or 
+0031 stloc.1 
+0032 ldloc.0 
+0033 ldc.i4.0 
+0034 ldloc.1 
+0035 ldc.i4.8 
+0036 shr 
+0037 ldc.i4 FF-00-00-00
+003C and 
+003D conv.u1 
+003E stelem.i1 
+003F ldloc.0 
+0040 ldc.i4.1 
+0041 ldloc.1 
+0042 ldc.i4 FF-00-00-00
+0047 and 
+0048 conv.u1 
+0049 stelem.i1 
+004A ldarg.0 
+004B callvirt get_PlusStats
+0050 call GetPlusStatCode
+0055 stloc.2 
+0056 ldloc.2 
+0057 ldc.i4.0 
+0058 ldloc.0 
+0059 ldc.i4.2 
+005A ldloc.2 
+005B ldlen 
+005C conv.i4 
+005D call Copy
+0062 ldc.i4.0 
+0063 stloc.3 
+0064 br.s 2A
+0066 ldloc.3 
+0067 ldarg.0 
+0068 callvirt get_SkillIds
+006D ldlen 
+006E conv.i4 
+006F blt.s 04
+0071 ldc.i4.0 
+0072 conv.i8 
+0073 br.s 08
+0075 ldarg.0 
+0076 callvirt get_SkillIds
+007B ldloc.3 
+007C ldelem.i8 
+007D stloc.s 04
+007F ldloc.0 
+0080 ldc.i4.6 
+0081 ldloc.3 
+0082 ldc.i4.3 
+0083 mul 
+0084 add 
+0085 ldloc.s 04
+0087 call WriteUInt24
+008C ldloc.3 
+008D ldc.i4.1 
+008E add 
+008F stloc.3 
+0090 ldloc.3 
+0091 ldc.i4.4 
+0092 blt.s D2
+0094 ldloc.0 
+0095 ldc.i4.s 12
+0097 ldarg.1 
+0098 brtrue.s 08
+009A ldloc.0 
+009B call PredictPopularTeamTail
+00A0 br.s 02
+00A2 ldc.i4.s 65
+00A4 conv.u1 
+00A5 stelem.i1 
+00A6 ldarg.1 
+00A7 brfalse.s 09
+00A9 ldloc.0 
+00AA ldc.i4.s 13
+00AC ldc.i4 90-00-00-00
+00B1 stelem.i1 
+00B2 ldloc.0 
+00B3 ret 
+METHOD MainWindow::MapServerPopularTeam
+0000 newobj .ctor
+0005 stloc.0 
+0006 ldloc.0 
+0007 ldarg.2 
+0008 stfld dexCards
+000D ldarg.1 
+000E callvirt get_Pets
+0013 dup 
+0014 brtrue.s 06
+0016 pop 
+0017 call 67-00-00-2B
+001C ldc.i4.6 
+001D call B8-00-00-2B
+0022 call 9A-00-00-2B
+0027 ldloc.0 
+0028 ldarg.1 
+0029 callvirt get_PetIds
+002E dup 
+002F brtrue.s 06
+0031 pop 
+0032 call 6E-00-00-2B
+0037 stfld ids
+003C ldloc.0 
+003D ldftn <MapServerPopularTeam>b__0
+0043 newobj .ctor
+0048 call F2-00-00-2B
+004D call E5-00-00-2B
+0052 stloc.1 
+0053 newobj .ctor
+0058 stloc.2 
+0059 ldloc.2 
+005A ldarg.1 
+005B callvirt get_Key
+0060 callvirt set_Id
+0065 ldloc.2 
+0066 ldloca.s 03
+0068 ldc.i4.4 
+0069 ldc.i4.1 
+006A call .ctor
+006F ldloca.s 03
+0071 ldstr 第 
+0076 call AppendLiteral
+007B ldloca.s 03
+007D ldarg.1 
+007E callvirt get_Rank
+0083 call 3C-00-00-2B
+0088 ldloca.s 03
+008A ldstr  名
+008F call AppendLiteral
+0094 ldloca.s 03
+0096 call ToStringAndClear
+009B callvirt set_Name
+00A0 ldloc.2 
+00A1 ldstr  / 
+00A6 ldloc.1 
+00A7 ldsfld <>9__781_1
+00AC dup 
+00AD brtrue.s 17
+00AF pop 
+00B0 ldsfld <>9
+00B5 ldftn <MapServerPopularTeam>b__781_1
+00BB newobj .ctor
+00C0 dup 
+00C1 stsfld <>9__781_1
+00C6 call F3-00-00-2B
+00CB call Join
+00D0 callvirt set_Description
+00D5 ldloc.2 
+00D6 ldc.i4.1 
+00D7 newarr String
+00DC dup 
+00DD ldc.i4.0 
+00DE ldloca.s 04
+00E0 ldc.i4.5 
+00E1 ldc.i4.1 
+00E2 call .ctor
+00E7 ldloca.s 04
+00E9 ldstr 出场 
+00EE call AppendLiteral
+00F3 ldloca.s 04
+00F5 ldarg.1 
+00F6 callvirt get_Appearances
+00FB call 3C-00-00-2B
+0100 ldloca.s 04
+0102 ldstr  次
+0107 call AppendLiteral
+010C ldloca.s 04
+010E call ToStringAndClear
+0113 stelem.ref 
+0114 callvirt set_Tags
+0119 ldloc.2 
+011A ldarg.1 
+011B callvirt get_Appearances
+0120 callvirt set_FavoriteCount
+0125 ldloc.2 
+0126 ldloc.1 
+0127 callvirt set_Pets
+012C ldloc.2 
+012D ret 
+METHOD <>c__DisplayClass781_0::<MapServerPopularTeam>b__0
+0000 newobj .ctor
+0005 stloc.0 
+0006 ldloc.0 
+0007 ldarg.2 
+0008 ldarg.0 
+0009 ldfld ids
+000E ldlen 
+000F conv.i4 
+0010 blt.s 04
+0012 ldc.i4.0 
+0013 conv.i8 
+0014 br.s 08
+0016 ldarg.0 
+0017 ldfld ids
+001C ldarg.2 
+001D ldelem.i8 
+001E stfld petId
+0023 ldloc.0 
+0024 ldfld petId
+0029 ldc.i4.0 
+002A conv.i8 
+002B bgt.s 03
+002D ldnull 
+002E br.s 17
+0030 ldarg.0 
+0031 ldfld dexCards
+0036 ldloc.0 
+0037 ldftn <MapServerPopularTeam>b__2
+003D newobj .ctor
+0042 call D4-00-00-2B
+0047 stloc.1 
+0048 ldloc.1 
+0049 brtrue.s 17
+004B ldarg.1 
+004C ldstr 
+0051 ldstr 
+0056 ldarg.0 
+0057 ldfld dexCards
+005C call FindPopularTeamPetCard
+0061 stloc.1 
+0062 newobj .ctor
+0067 dup 
+0068 ldloc.1 
+0069 brtrue.s 03
+006B ldnull 
+006C br.s 06
+006E ldloc.1 
+006F call get_Name
+0074 dup 
+0075 brtrue.s 07
+0077 pop 
+0078 ldarg.1 
+0079 callvirt Trim
+007E callvirt set_Name
+0083 dup 
+0084 ldloc.1 
+0085 brtrue.s 03
+0087 ldnull 
+0088 br.s 06
+008A ldloc.1 
+008B call get_ImageUri
+0090 dup 
+0091 brtrue.s 06
+0093 pop 
+0094 ldstr 
+0099 callvirt set_AvatarUri
+009E ret 

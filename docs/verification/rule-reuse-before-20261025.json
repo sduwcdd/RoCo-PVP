@@ -1,0 +1,361 @@
+{
+  "kind": "synthetic_paired_energy_fragment_not_full_battle",
+  "repeats": 3,
+  "seconds": [
+    5.366063900000881,
+    1.6013458000015817,
+    1.6800029999940307
+  ],
+  "first_run_profiled": true,
+  "source_hashes": {
+    "lab/ruleset.py": "5e6ee1e9e16bc917680f80c6e65bdf860f3e256ea75273e738632d4d14912bff",
+    "lab/turn_plan.py": "1d98f2a0fe3b0907a17fc58a9cdc4c51c59b6a4f405d65c2ea39c32df1d0ef8c",
+    "lab/action_runtime.py": "85b0e112be4e66672658a1da76b70c4f11b5785fb44f1dcc74b382837d97b738"
+  },
+  "payload": {
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 2,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7030220,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7030220,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "actions": {
+      "a": {
+        "kind": "skill",
+        "slot": 1,
+        "effective_cost": 2,
+        "effective_priority": 1
+      },
+      "b": {
+        "kind": "skill",
+        "slot": 1,
+        "effective_cost": 2,
+        "effective_priority": 0
+      }
+    },
+    "context": {
+      "mode": "isolated_joint_action_experiment",
+      "excluded_hooks": [
+        "bloodlines",
+        "event_triggers",
+        "field",
+        "marks",
+        "traits"
+      ],
+      "fragments": {
+        "a": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max"
+        },
+        "b": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max"
+        }
+      }
+    }
+  },
+  "result": {
+    "status": "applied",
+    "scope": "isolated_joint_action_experiment",
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 2,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 18,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7030220,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {},
+              "types": [
+                "草系"
+              ]
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 18,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7030220,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {},
+              "types": [
+                "草系"
+              ]
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "events": [
+      {
+        "op": "energy.pay",
+        "amount": 2,
+        "source": "caller_resolved_cost",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "ecb811bd71533498405e0ff647c8ef179660cae1af4cc3750b1d5b63779aa032",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 0,
+        "actor_side": "a",
+        "actor_member_id": "a",
+        "target_side": "a",
+        "target_member_id": "a",
+        "skill_slot": 1,
+        "skill_id": 7030220,
+        "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e"
+      },
+      {
+        "op": "energy.restore",
+        "target": "self",
+        "params": {
+          "target": "self",
+          "amount": 10
+        },
+        "before": 8,
+        "after": 18,
+        "policy": "caller_declared_cap",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "ecb811bd71533498405e0ff647c8ef179660cae1af4cc3750b1d5b63779aa032",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 0,
+        "actor_side": "a",
+        "actor_member_id": "a",
+        "target_side": "a",
+        "target_member_id": "a",
+        "skill_slot": 1,
+        "skill_id": 7030220,
+        "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e"
+      },
+      {
+        "op": "energy.pay",
+        "amount": 2,
+        "source": "caller_resolved_cost",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "ecb811bd71533498405e0ff647c8ef179660cae1af4cc3750b1d5b63779aa032",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 1,
+        "actor_side": "b",
+        "actor_member_id": "b",
+        "target_side": "b",
+        "target_member_id": "b",
+        "skill_slot": 1,
+        "skill_id": 7030220,
+        "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e"
+      },
+      {
+        "op": "energy.restore",
+        "target": "self",
+        "params": {
+          "target": "self",
+          "amount": 10
+        },
+        "before": 8,
+        "after": 18,
+        "policy": "caller_declared_cap",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "ecb811bd71533498405e0ff647c8ef179660cae1af4cc3750b1d5b63779aa032",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 1,
+        "actor_side": "b",
+        "actor_member_id": "b",
+        "target_side": "b",
+        "target_member_id": "b",
+        "skill_slot": 1,
+        "skill_id": 7030220,
+        "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e"
+      }
+    ],
+    "blockers": [],
+    "snapshot_id": "20261025T013619+0800",
+    "state_hash": "e77f94e592dfc1900a174c9e375e06b89d421e1f8d2f3b3ff21396adda012b44",
+    "actions_hash": "483d40b8a771b5a93d1ad3666904dbd28c35bd47c6635d03d676a46c10741848",
+    "context_hash": "19062fb9276fbc5769a0ae1a5dcfdce827319f85240c706dc747fe3b387c7836",
+    "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+    "plan_hash": "f002ea47a7113874d9124122c3e1b967b35d7fb6f155692b35648e4dff7bb9aa",
+    "order": [
+      "a",
+      "b"
+    ],
+    "input_state_mutated": false,
+    "full_turn_executed": false,
+    "battle_executable": false,
+    "calibrated": false,
+    "training_eligible": false,
+    "implementation_unvalidated": true,
+    "final_state_hash": "8aa14b088cc4272f02a245be05228bce61d191554c81e7343fea00ea1a927b9a",
+    "assumptions": {
+      "mode": "isolated_joint_action_experiment",
+      "excluded_hooks": [
+        "bloodlines",
+        "event_triggers",
+        "field",
+        "marks",
+        "traits"
+      ],
+      "fragments": {
+        "a": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max"
+        },
+        "b": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max"
+        }
+      }
+    },
+    "unresolved": [
+      {
+        "side": "both",
+        "reason": "配招学习条件、完整伤害、资源结算、特性触发和胜负仍未校准；此结果仅为行动阶段计划，不证明阵容合法。"
+      }
+    ],
+    "end_of_turn_executed": false
+  },
+  "profile": "         15499748 function calls (12489891 primitive calls) in 5.333 seconds\n\n   Ordered by: cumulative time\n   List reduced from 94 to 10 due to restriction <10>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.020    0.020    5.333    5.333 D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\lab\\action_runtime.py:31(execute_joint_actions)\n        2    0.008    0.004    4.961    2.480 D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\lab\\ruleset.py:35(__init__)\n2697486/10697    2.158    0.000    4.877    0.000 E:\\miniconda3\\Lib\\copy.py:119(deepcopy)\n291499/4982    0.943    0.000    4.860    0.001 E:\\miniconda3\\Lib\\copy.py:218(_deepcopy_dict)\n65229/28678    0.166    0.000    3.926    0.000 E:\\miniconda3\\Lib\\copy.py:192(_deepcopy_list)\n        1    0.000    0.000    2.904    2.904 D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\lab\\turn_plan.py:84(plan_joint_actions)\n  5404154    0.867    0.000    0.867    0.000 {method 'get' of 'dict' objects}\n        9    0.002    0.000    0.373    0.041 D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\lab\\ruleset.py:18(canonical_hash)\n  3416331    0.327    0.000    0.327    0.000 {built-in method builtins.id}\n        2    0.001    0.001    0.318    0.159 D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\lab\\ruleset.py:132(plan)\n\n\n"
+}

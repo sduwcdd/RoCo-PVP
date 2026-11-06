@@ -1,0 +1,4113 @@
+{
+  "battle_unit_maximum": {
+    "id": 3,
+    "key": "battle_unit_maximum",
+    "num": 6
+  },
+  "battle_catch_times": {
+    "id": 10,
+    "key": "battle_catch_times",
+    "num": 1
+  },
+  "base_prob_ball_id": {
+    "id": 42,
+    "key": "base_prob_ball_id",
+    "num": 100002
+  },
+  "history_time_maximum": {
+    "id": 43,
+    "key": "history_time_maximum",
+    "num": 27
+  },
+  "battle_overtime_limit": {
+    "id": 44,
+    "key": "battle_overtime_limit",
+    "num": 300
+  },
+  "pvp_tem_battle_id": {
+    "id": 45,
+    "key": "pvp_tem_battle_id",
+    "numList": [
+      307001,
+      307002
+    ]
+  },
+  "restraint_percent": {
+    "id": 46,
+    "key": "restraint_percent",
+    "num": 10000
+  },
+  "double_restraint_percent": {
+    "id": 47,
+    "key": "double_restraint_percent",
+    "num": 20000
+  },
+  "restrained_percent": {
+    "id": 48,
+    "key": "restrained_percent",
+    "num": 5000
+  },
+  "double_restrained_percent": {
+    "id": 49,
+    "key": "double_restrained_percent",
+    "num": 7500
+  },
+  "catch_fight_max": {
+    "id": 62,
+    "key": "catch_fight_max",
+    "num": 10000
+  },
+  "catch_pet_back_level（废弃，在monster中每个怪都可单独配置）": {
+    "id": 65,
+    "key": "catch_pet_back_level（废弃，在monster中每个怪都可单独配置）",
+    "num": 10
+  },
+  "catch_icon_display_time": {
+    "id": 66,
+    "key": "catch_icon_display_time",
+    "num": 3
+  },
+  "1vn_battle_id": {
+    "id": 67,
+    "key": "1vn_battle_id",
+    "num": 307003
+  },
+  "1vn_battle_radius": {
+    "id": 68,
+    "key": "1vn_battle_radius",
+    "num": 1000
+  },
+  "battle_gve_blood_energy": {
+    "id": 69,
+    "key": "battle_gve_blood_energy"
+  },
+  "battle_gve_blood_deathround": {
+    "id": 70,
+    "key": "battle_gve_blood_deathround",
+    "numList": [
+      2,
+      2
+    ]
+  },
+  "battle_gve_blood_boss_energy": {
+    "id": 71,
+    "key": "battle_gve_blood_boss_energy",
+    "num": 99
+  },
+  "1v1v1_battle_id": {
+    "id": 72,
+    "key": "1v1v1_battle_id",
+    "num": 307015
+  },
+  "1v1v1_battle_radius": {
+    "id": 73,
+    "key": "1v1v1_battle_radius",
+    "num": 2000
+  },
+  "default_battle_time_limit": {
+    "id": 74,
+    "key": "default_battle_time_limit",
+    "num": 7200
+  },
+  "B1_final_battle_state3_evolution": {
+    "id": 75,
+    "key": "B1_final_battle_state3_evolution",
+    "num": 7000341
+  },
+  "B1_FINAL_BATTLE_STATE2_INITIAL_GPA": {
+    "id": 76,
+    "key": "B1_FINAL_BATTLE_STATE2_INITIAL_GPA",
+    "num": 1000
+  },
+  "B1_FINAL_BATTLE_STATE3_INITIAL_GPA": {
+    "id": 77,
+    "key": "B1_FINAL_BATTLE_STATE3_INITIAL_GPA",
+    "num": 9999
+  },
+  "B1_FINAL_BATTLE_STATE2_SIGN_DIALOGUE": {
+    "id": 78,
+    "key": "B1_FINAL_BATTLE_STATE2_SIGN_DIALOGUE",
+    "num": 24999022
+  },
+  "B1_FINAL_BATTLE_STATE2_SIGN_SKILL": {
+    "id": 79,
+    "key": "B1_FINAL_BATTLE_STATE2_SIGN_SKILL",
+    "num": 7000341
+  },
+  "B1_FINAL_BATTLE_STATE3_SIGN_DIALOGUE": {
+    "id": 80,
+    "key": "B1_FINAL_BATTLE_STATE3_SIGN_DIALOGUE",
+    "num": 24999035
+  },
+  "B1_TEACHER_CURE": {
+    "id": 81,
+    "key": "B1_TEACHER_CURE",
+    "num": 7000351
+  },
+  "B1_TEACHER_BUFF": {
+    "id": 82,
+    "key": "B1_TEACHER_BUFF",
+    "num": 7000352
+  },
+  "B1_FINAL_BATTLE_STATE3_LB": {
+    "id": 83,
+    "key": "B1_FINAL_BATTLE_STATE3_LB",
+    "num": 7000346
+  },
+  "B1_TEACHER_CURE_DIALOGUE": {
+    "id": 84,
+    "key": "B1_TEACHER_CURE_DIALOGUE",
+    "num": 24999033
+  },
+  "B1_TEACHER_BUFF_DIALOGUE": {
+    "id": 85,
+    "key": "B1_TEACHER_BUFF_DIALOGUE",
+    "num": 24999034
+  },
+  "B1_P2_ROUND1_DIALOGUE": {
+    "id": 86,
+    "key": "B1_P2_ROUND1_DIALOGUE",
+    "num": 24999010
+  },
+  "B1_P3_ROUND1_DIALOGUE": {
+    "id": 87,
+    "key": "B1_P3_ROUND1_DIALOGUE",
+    "num": 24999025
+  },
+  "B1_P3_ROUND3_DIALOGUE": {
+    "id": 88,
+    "key": "B1_P3_ROUND3_DIALOGUE",
+    "num": 24999037
+  },
+  "B1_FINAL_P2_REST_WEATHER_BUFF": {
+    "id": 89,
+    "key": "B1_FINAL_P2_REST_WEATHER_BUFF",
+    "num": 1029001
+  },
+  "B1_P1_ROUND1_DIALOGUE": {
+    "id": 90,
+    "key": "B1_P1_ROUND1_DIALOGUE",
+    "num": 24999001
+  },
+  "B1_P3_MAXROUND": {
+    "id": 91,
+    "key": "B1_P3_MAXROUND",
+    "num": 4
+  },
+  "B1_P2_END_DIALOGUE": {
+    "id": 92,
+    "key": "B1_P2_END_DIALOGUE",
+    "num": 24999061
+  },
+  "B1_P2_START_DIALOGUE": {
+    "id": 93,
+    "key": "B1_P2_START_DIALOGUE",
+    "num": 24999013
+  },
+  "fantastic_ui1": {
+    "id": 94,
+    "key": "fantastic_ui1",
+    "str": {
+      "localization_id": 1,
+      "text": "PrimaryDataAsset'/Game/NewRoco/Modules/System/PVPQualifier/Res/SeasonSkill/PDA_SeasonSkillUiConfiguration_S1.PDA_SeasonSkillUiConfiguration_S1'"
+    }
+  },
+  "common_nightmare_keep_pro": {
+    "id": 95,
+    "key": "common_nightmare_keep_pro",
+    "num": 5000
+  },
+  "season_pet_fantastic_season_skill": {
+    "id": 96,
+    "key": "season_pet_fantastic_season_skill",
+    "num": 2000
+  },
+  "common_pet_fantastic_season_skill": {
+    "id": 97,
+    "key": "common_pet_fantastic_season_skill",
+    "num": 8000
+  },
+  "fantastic_ui2": {
+    "id": 98,
+    "key": "fantastic_ui2",
+    "str": {
+      "localization_id": 2,
+      "text": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Texture/img_qiyijinngkuang.img_qiyijinngkuang'"
+    }
+  },
+  "fantastic_ui3": {
+    "id": 99,
+    "key": "fantastic_ui3",
+    "str": {
+      "localization_id": 3,
+      "text": "Material'/Game/ArtRes/UI/Effects/Materials/MI_UI_LSC_02.MI_UI_LSC_02'"
+    }
+  },
+  "fantastic_ui4": {
+    "id": 100,
+    "key": "fantastic_ui4",
+    "str": {
+      "localization_id": 4,
+      "text": "Material'/Game/ArtRes/UI/Effects/Materials/MI_UI_LSC_01.MI_UI_LSC_01'"
+    }
+  },
+  "fantastic_ui5": {
+    "id": 101,
+    "key": "fantastic_ui5",
+    "str": {
+      "localization_id": 5,
+      "text": "Texture2D'/Game/ArtRes/UI/Effects/Textures/T_UI_LSC_08.T_UI_LSC_08'"
+    }
+  },
+  "fantastic_ui6": {
+    "id": 102,
+    "key": "fantastic_ui6",
+    "str": {
+      "localization_id": 6,
+      "text": "Texture2D'/Game/ArtRes/UI/Effects/Textures/T_UI_LSC_07.T_UI_LSC_07'"
+    }
+  },
+  "default_skill_timeline_client_time_limit": {
+    "id": 110,
+    "key": "default_skill_timeline_client_time_limit",
+    "num": 120
+  },
+  "default_skill_timeline_server_time_limit": {
+    "id": 111,
+    "key": "default_skill_timeline_server_time_limit",
+    "num": 150
+  },
+  "character_max_energy": {
+    "id": 121,
+    "key": "character_max_energy",
+    "num": 9
+  },
+  "pet_common_globalskill": {
+    "id": 122,
+    "key": "pet_common_globalskill",
+    "num": 7000010
+  },
+  "triple_restraint_percent": {
+    "id": 135,
+    "key": "triple_restraint_percent",
+    "num": 30000
+  },
+  "triple_restrained_percent": {
+    "id": 136,
+    "key": "triple_restrained_percent",
+    "num": 9900
+  },
+  "match_pattern_time": {
+    "id": 148,
+    "key": "match_pattern_time",
+    "num": 20000
+  },
+  "match_pattern_battleid": {
+    "id": 149,
+    "key": "match_pattern_battleid",
+    "numList": [
+      399041,
+      399042,
+      399043,
+      399044,
+      399045,
+      399046
+    ]
+  },
+  "match_pattern_battleid2": {
+    "id": 150,
+    "key": "match_pattern_battleid2",
+    "numList": [
+      399032,
+      399033,
+      399034
+    ]
+  },
+  "match_pattern_practicemode": {
+    "id": 151,
+    "key": "match_pattern_practicemode",
+    "num": 399039
+  },
+  "Change_pet_skill": {
+    "id": 177,
+    "key": "Change_pet_skill",
+    "num": 1
+  },
+  "battle_field_layer_max": {
+    "id": 184,
+    "key": "battle_field_layer_max",
+    "num": 3
+  },
+  "battle_entry_role_hp_low_text": {
+    "id": 185,
+    "key": "battle_entry_role_hp_low_text",
+    "str": {
+      "localization_id": 7,
+      "text": "干劲值低，危险！"
+    }
+  },
+  "battle_process_role_hp_deduct_text": {
+    "id": 186,
+    "key": "battle_process_role_hp_deduct_text",
+    "str": {
+      "localization_id": 8,
+      "text": "{0}力竭，你的魔力损耗了。"
+    }
+  },
+  "battle_end_role_hp_deduct_text": {
+    "id": 187,
+    "key": "battle_end_role_hp_deduct_text",
+    "str": {
+      "localization_id": 9,
+      "text": "{0}力竭，你的魔力损耗了。"
+    }
+  },
+  "battle_process_opposite_hp_deduct_text": {
+    "id": 188,
+    "key": "battle_process_opposite_hp_deduct_text",
+    "str": {
+      "localization_id": 10,
+      "text": "{0}力竭，对手的魔力损耗了。"
+    }
+  },
+  "battle_end_opposite_hp_deduct_text": {
+    "id": 189,
+    "key": "battle_end_opposite_hp_deduct_text",
+    "str": {
+      "localization_id": 11,
+      "text": "{0}力竭，对手的魔力损耗了。"
+    }
+  },
+  "battle_people_hp_rules": {
+    "id": 190,
+    "key": "battle_people_hp_rules",
+    "str": {
+      "localization_id": 12,
+      "text": "注意：魔力耗尽的一方，战斗失败！"
+    }
+  },
+  "enjoy_field_buff1": {
+    "id": 191,
+    "key": "enjoy_field_buff1",
+    "num": 20010110
+  },
+  "enjoy_field_buff2": {
+    "id": 192,
+    "key": "enjoy_field_buff2",
+    "num": 20010130
+  },
+  "hate_field_buff1": {
+    "id": 193,
+    "key": "hate_field_buff1",
+    "num": 20010150
+  },
+  "hate_field_buff2": {
+    "id": 194,
+    "key": "hate_field_buff2",
+    "num": 20010170
+  },
+  "before_new_round_clear_buff": {
+    "id": 195,
+    "key": "before_new_round_clear_buff",
+    "numList": [
+      20110131,
+      20380200
+    ]
+  },
+  "catch_handicap": {
+    "id": 200,
+    "key": "catch_handicap",
+    "num": 7700
+  },
+  "sneak_modify": {
+    "id": 201,
+    "key": "sneak_modify",
+    "num": 150000
+  },
+  "min_throw_distance": {
+    "id": 202,
+    "key": "min_throw_distance",
+    "num": 500
+  },
+  "throw_distance": {
+    "id": 203,
+    "key": "throw_distance",
+    "num": 5
+  },
+  "throw_distance_reward": {
+    "id": 204,
+    "key": "throw_distance_reward",
+    "num": 20000
+  },
+  "throw_distance_reward_max": {
+    "id": 205,
+    "key": "throw_distance_reward_max",
+    "num": 4000
+  },
+  "catch_pr_low": {
+    "id": 206,
+    "key": "catch_pr_low",
+    "numList": [
+      0,
+      500
+    ]
+  },
+  "catch_pr_middle": {
+    "id": 207,
+    "key": "catch_pr_middle",
+    "numList": [
+      500,
+      1500
+    ]
+  },
+  "catch_pr_high": {
+    "id": 208,
+    "key": "catch_pr_high",
+    "numList": [
+      1500,
+      10000
+    ]
+  },
+  "catch_pr_full": {
+    "id": 209,
+    "key": "catch_pr_full",
+    "numList": [
+      8000,
+      10000
+    ]
+  },
+  "pvp_open": {
+    "id": 210,
+    "key": "pvp_open",
+    "num": 1
+  },
+  "game_time_per_round": {
+    "id": 211,
+    "key": "game_time_per_round",
+    "num": 360
+  },
+  "damage_percent_limit": {
+    "id": 212,
+    "key": "damage_percent_limit",
+    "num": 1000
+  },
+  "battle_skill_prediction_sihu": {
+    "id": 213,
+    "key": "battle_skill_prediction_sihu",
+    "str": {
+      "localization_id": 13,
+      "text": "{0}似乎想要"
+    }
+  },
+  "battle_skill_prediction_xiang": {
+    "id": 214,
+    "key": "battle_skill_prediction_xiang",
+    "str": {
+      "localization_id": 14,
+      "text": "向"
+    }
+  },
+  "battle_skill_prediction_shifang": {
+    "id": 215,
+    "key": "battle_skill_prediction_shifang",
+    "str": {
+      "localization_id": 15,
+      "text": "释放{0}技能。"
+    }
+  },
+  "area_succeed_percent": {
+    "id": 216,
+    "key": "area_succeed_percent",
+    "num": 5000
+  },
+  "aura_battle_dilation": {
+    "id": 217,
+    "key": "aura_battle_dilation",
+    "num": 20000
+  },
+  "base_model_radius": {
+    "id": 218,
+    "key": "base_model_radius",
+    "num": 100
+  },
+  "base_aura_radies": {
+    "id": 219,
+    "key": "base_aura_radies",
+    "num": 300
+  },
+  "aura_trans_percent": {
+    "id": 220,
+    "key": "aura_trans_percent",
+    "num": 1500
+  },
+  "round_energy": {
+    "id": 221,
+    "key": "round_energy"
+  },
+  "magicstar_catch_modify": {
+    "id": 222,
+    "key": "magicstar_catch_modify",
+    "num": 12000
+  },
+  "level_modify": {
+    "id": 223,
+    "key": "level_modify",
+    "num": 10800
+  },
+  "battle_skill_prediction_sihubu": {
+    "id": 224,
+    "key": "battle_skill_prediction_sihubu",
+    "str": {
+      "localization_id": 16,
+      "text": "{0}似乎不会使用"
+    }
+  },
+  "sleep_buff_id": {
+    "id": 225,
+    "key": "sleep_buff_id",
+    "num": 20500010
+  },
+  "escape_emote": {
+    "id": 226,
+    "key": "escape_emote",
+    "num": 9
+  },
+  "backstab_buff_id": {
+    "id": 227,
+    "key": "backstab_buff_id",
+    "num": 20330010
+  },
+  "change_pet_icon": {
+    "id": 228,
+    "key": "change_pet_icon",
+    "num": 7000080
+  },
+  "escape_failure_emote": {
+    "id": 229,
+    "key": "escape_failure_emote",
+    "num": 18
+  },
+  "escape_call_back": {
+    "id": 230,
+    "key": "escape_call_back",
+    "num": 791214
+  },
+  "escape_camera_time": {
+    "id": 231,
+    "key": "escape_camera_time",
+    "num": 2000
+  },
+  "battle_npc_skill_prediction_sihu": {
+    "id": 232,
+    "key": "battle_npc_skill_prediction_sihu",
+    "str": {
+      "localization_id": 17,
+      "text": "{0}说他打算使用"
+    }
+  },
+  "battle_npc_skill_prediction_xiang": {
+    "id": 233,
+    "key": "battle_npc_skill_prediction_xiang",
+    "str": {
+      "localization_id": 18,
+      "text": "向"
+    }
+  },
+  "battle_npc_skill_prediction_shifang": {
+    "id": 234,
+    "key": "battle_npc_skill_prediction_shifang",
+    "str": {
+      "localization_id": 19,
+      "text": "释放{0}技能。"
+    }
+  },
+  "battle_npc_skill_prediction_sihubu": {
+    "id": 235,
+    "key": "battle_npc_skill_prediction_sihubu",
+    "str": {
+      "localization_id": 20,
+      "text": "{0}说他打算使用"
+    }
+  },
+  "sleep_buff_loop": {
+    "id": 236,
+    "key": "sleep_buff_loop",
+    "str": {
+      "localization_id": 21,
+      "text": "{0}正在睡觉。"
+    }
+  },
+  "sleep_buff_end": {
+    "id": 237,
+    "key": "sleep_buff_end",
+    "str": {
+      "localization_id": 22,
+      "text": "{0}醒来了！"
+    }
+  },
+  "backstab_buff_loop": {
+    "id": 238,
+    "key": "backstab_buff_loop",
+    "str": {
+      "localization_id": 23,
+      "text": "{0}正背对着你。"
+    }
+  },
+  "backstab_buff_end": {
+    "id": 239,
+    "key": "backstab_buff_end",
+    "str": {
+      "localization_id": 24,
+      "text": "{0}转了过来！"
+    }
+  },
+  "drill_buff_id": {
+    "id": 240,
+    "key": "drill_buff_id",
+    "num": 20500030
+  },
+  "drill_buff_loop": {
+    "id": 241,
+    "key": "drill_buff_loop",
+    "str": {
+      "localization_id": 25,
+      "text": "{0}正埋着自己。"
+    }
+  },
+  "drill_buff_end": {
+    "id": 242,
+    "key": "drill_buff_end",
+    "str": {
+      "localization_id": 26,
+      "text": "{0}钻出了地面！"
+    }
+  },
+  "static_buff_id": {
+    "id": 243,
+    "key": "static_buff_id",
+    "num": 20500040
+  },
+  "static_buff_loop": {
+    "id": 244,
+    "key": "static_buff_loop",
+    "str": {
+      "localization_id": 27,
+      "text": "{0}正试图降低存在感。"
+    }
+  },
+  "static_buff_end": {
+    "id": 245,
+    "key": "static_buff_end",
+    "str": {
+      "localization_id": 28,
+      "text": "{0}放弃了伪装！"
+    }
+  },
+  "mimic_buff_id": {
+    "id": 246,
+    "key": "mimic_buff_id",
+    "num": 20500050
+  },
+  "mimic_buff_loop": {
+    "id": 247,
+    "key": "mimic_buff_loop",
+    "str": {
+      "localization_id": 29,
+      "text": "看起来不像是精灵。"
+    }
+  },
+  "mimic_buff_end": {
+    "id": 248,
+    "key": "mimic_buff_end",
+    "str": {
+      "localization_id": 30,
+      "text": "精灵解除了幻化！"
+    }
+  },
+  "drill_forbid_catch": {
+    "id": 249,
+    "key": "drill_forbid_catch",
+    "str": {
+      "localization_id": 31,
+      "text": "{0}正埋在地下，无法捕捉。"
+    }
+  },
+  "static_forbid_catch": {
+    "id": 250,
+    "key": "static_forbid_catch",
+    "str": {
+      "localization_id": 32,
+      "text": "{0}正藏着自己，无法捕捉。"
+    }
+  },
+  "mimic_forbid_catch": {
+    "id": 251,
+    "key": "mimic_forbid_catch",
+    "str": {
+      "localization_id": 33,
+      "text": "看起来不像是精灵，无法捕捉。"
+    }
+  },
+  "magic_stun_buff_id": {
+    "id": 252,
+    "key": "magic_stun_buff_id",
+    "num": 20500060
+  },
+  "magic_stun_loop": {
+    "id": 253,
+    "key": "magic_stun_loop",
+    "str": {
+      "localization_id": 34,
+      "text": "{0}正头晕目眩。"
+    }
+  },
+  "magic_stun_end": {
+    "id": 254,
+    "key": "magic_stun_end",
+    "str": {
+      "localization_id": 35,
+      "text": "{0}清醒了！"
+    }
+  },
+  "is_battle_defeat_get_energy": {
+    "id": 255,
+    "key": "is_battle_defeat_get_energy"
+  },
+  "sleep_skill_tip": {
+    "id": 256,
+    "key": "sleep_skill_tip",
+    "str": {
+      "localization_id": 36,
+      "text": "{0}睡得很香。"
+    }
+  },
+  "drill_skill_tip": {
+    "id": 257,
+    "key": "drill_skill_tip",
+    "str": {
+      "localization_id": 37,
+      "text": "{0}继续埋着。"
+    }
+  },
+  "static_skill_tip": {
+    "id": 258,
+    "key": "static_skill_tip",
+    "str": {
+      "localization_id": 38,
+      "text": "{0}一动不动。"
+    }
+  },
+  "mimic_skill_tip": {
+    "id": 259,
+    "key": "mimic_skill_tip",
+    "str": {
+      "localization_id": 39,
+      "text": "这是什么精灵。"
+    }
+  },
+  "battle_skill_prediction_energy": {
+    "id": 260,
+    "key": "battle_skill_prediction_energy",
+    "str": {
+      "localization_id": 40,
+      "text": "{0:d}能量"
+    }
+  },
+  "drill_forbid_props": {
+    "id": 261,
+    "key": "drill_forbid_props",
+    "str": {
+      "localization_id": 41,
+      "text": "{0}正埋在地下，无法使用道具。"
+    }
+  },
+  "static_forbid_props": {
+    "id": 262,
+    "key": "static_forbid_props",
+    "str": {
+      "localization_id": 42,
+      "text": "{0}正藏着自己，无法使用道具。"
+    }
+  },
+  "mimic_forbid_props": {
+    "id": 263,
+    "key": "mimic_forbid_props",
+    "str": {
+      "localization_id": 43,
+      "text": "看起来不像是精灵，无法使用道具。"
+    }
+  },
+  "pet_word_hint": {
+    "id": 264,
+    "key": "pet_word_hint",
+    "num": 10001
+  },
+  "disable_pet_hint": {
+    "id": 265,
+    "key": "disable_pet_hint",
+    "num": 1
+  },
+  "deepwater_length": {
+    "id": 266,
+    "key": "deepwater_length",
+    "num": 8
+  },
+  "buff_tip_show_time_cd": {
+    "id": 267,
+    "key": "buff_tip_show_time_cd",
+    "num": 800
+  },
+  "ghost_buff_id": {
+    "id": 268,
+    "key": "ghost_buff_id",
+    "num": 20500070
+  },
+  "thunder_buff_id": {
+    "id": 269,
+    "key": "thunder_buff_id",
+    "num": 20500080
+  },
+  "diving_buff_id": {
+    "id": 270,
+    "key": "diving_buff_id",
+    "num": 20500090
+  },
+  "trail_buff_id": {
+    "id": 271,
+    "key": "trail_buff_id",
+    "num": 20500100
+  },
+  "thunder_buff_loop": {
+    "id": 272,
+    "key": "thunder_buff_loop",
+    "str": {
+      "localization_id": 44,
+      "text": "{0}正在观察。"
+    }
+  },
+  "diving_buff_loop": {
+    "id": 273,
+    "key": "diving_buff_loop",
+    "str": {
+      "localization_id": 45,
+      "text": "{0}正在观察。"
+    }
+  },
+  "trail_buff_loop": {
+    "id": 274,
+    "key": "trail_buff_loop",
+    "str": {
+      "localization_id": 46,
+      "text": "{0}有些害怕。"
+    }
+  },
+  "notify_radius": {
+    "id": 275,
+    "key": "notify_radius",
+    "num": 15
+  },
+  "reset_time": {
+    "id": 276,
+    "key": "reset_time",
+    "num": 60
+  },
+  "burnout_time": {
+    "id": 277,
+    "key": "burnout_time",
+    "num": 3
+  },
+  "delay_time_basic": {
+    "id": 278,
+    "key": "delay_time_basic"
+  },
+  "delay_time_growth_distance": {
+    "id": 279,
+    "key": "delay_time_growth_distance",
+    "num": 100
+  },
+  "delay_time_growth_rate": {
+    "id": 280,
+    "key": "delay_time_growth_rate"
+  },
+  "WaterShakeGapTime": {
+    "id": 281,
+    "key": "WaterShakeGapTime",
+    "num": 45
+  },
+  "WaterShakeSpendTime": {
+    "id": 282,
+    "key": "WaterShakeSpendTime",
+    "num": 2
+  },
+  "touch_battle_min_cd": {
+    "id": 283,
+    "key": "touch_battle_min_cd",
+    "num": 3
+  },
+  "ball_shake_times_param": {
+    "id": 284,
+    "key": "ball_shake_times_param",
+    "num": 10000
+  },
+  "worldcombat_battle_basetime": {
+    "id": 285,
+    "key": "worldcombat_battle_basetime",
+    "num": 1
+  },
+  "worldcombat_battle_dizzy1": {
+    "id": 286,
+    "key": "worldcombat_battle_dizzy1",
+    "numList": [
+      0,
+      15,
+      1,
+      1,
+      999
+    ]
+  },
+  "worldcombat_battle_dizzy2": {
+    "id": 287,
+    "key": "worldcombat_battle_dizzy2",
+    "numList": [
+      15,
+      30,
+      1,
+      1,
+      999
+    ]
+  },
+  "touch_battle_player_trigger_angle": {
+    "id": 288,
+    "key": "touch_battle_player_trigger_angle",
+    "num": 30
+  },
+  "touch_battle_npc_trigger_angle": {
+    "id": 289,
+    "key": "touch_battle_npc_trigger_angle",
+    "num": 30
+  },
+  "1vn_battle_throwbattle_attack_radius": {
+    "id": 290,
+    "key": "1vn_battle_throwbattle_attack_radius",
+    "num": 600
+  },
+  "1vn_battle_throwbattle_group_radius": {
+    "id": 291,
+    "key": "1vn_battle_throwbattle_group_radius",
+    "num": 1500
+  },
+  "1vn_battle_touchbattle_attack_radius": {
+    "id": 292,
+    "key": "1vn_battle_touchbattle_attack_radius",
+    "num": 800
+  },
+  "1vn_battle_touchbattle_group_radius": {
+    "id": 293,
+    "key": "1vn_battle_touchbattle_group_radius",
+    "num": 1500
+  },
+  "backstab_throwbattle_trigger_angle": {
+    "id": 294,
+    "key": "backstab_throwbattle_trigger_angle",
+    "num": 60
+  },
+  "backstab_touchbattle_trigger_angle": {
+    "id": 295,
+    "key": "backstab_touchbattle_trigger_angle",
+    "num": 45
+  },
+  "player_hit_npc_world_animation": {
+    "id": 296,
+    "key": "player_hit_npc_world_animation",
+    "str": {
+      "localization_id": 47,
+      "text": "Hit2"
+    }
+  },
+  "player_hit_npc_closeup_animation": {
+    "id": 297,
+    "key": "player_hit_npc_closeup_animation",
+    "str": {
+      "localization_id": 48,
+      "text": "Shock"
+    }
+  },
+  "player_hit_skip_throw_ball": {
+    "id": 298,
+    "key": "player_hit_skip_throw_ball"
+  },
+  "npc_hit_player_world_animation": {
+    "id": 299,
+    "key": "npc_hit_player_world_animation",
+    "str": {
+      "localization_id": 49,
+      "text": "HitLightBR"
+    }
+  },
+  "npc_hit_npc_closeup_animation": {
+    "id": 300,
+    "key": "npc_hit_npc_closeup_animation",
+    "str": {
+      "localization_id": 50,
+      "text": "Show"
+    }
+  },
+  "npc_hit_skip_throw_ball": {
+    "id": 301,
+    "key": "npc_hit_skip_throw_ball",
+    "num": 1
+  },
+  "each_hit_npc_closeup_animation": {
+    "id": 302,
+    "key": "each_hit_npc_closeup_animation",
+    "str": {
+      "localization_id": 51,
+      "text": "Anger"
+    }
+  },
+  "each_hit_npc_world_animation": {
+    "id": 303,
+    "key": "each_hit_npc_world_animation",
+    "str": {
+      "localization_id": 52,
+      "text": "Hit2"
+    }
+  },
+  "each_hit_player_world_animation": {
+    "id": 304,
+    "key": "each_hit_player_world_animation",
+    "str": {
+      "localization_id": 53,
+      "text": "HitLightFR"
+    }
+  },
+  "each_hit_skip_throw_ball": {
+    "id": 305,
+    "key": "each_hit_skip_throw_ball"
+  },
+  "velocity_difference_threshold": {
+    "id": 306,
+    "key": "velocity_difference_threshold",
+    "num": 200
+  },
+  "worldcombat_battle_dizzy_buff1": {
+    "id": 307,
+    "key": "worldcombat_battle_dizzy_buff1",
+    "num": 20040030
+  },
+  "worldcombat_battle_dizzy_buff2": {
+    "id": 308,
+    "key": "worldcombat_battle_dizzy_buff2",
+    "num": 20040030
+  },
+  "worldcombat_battle_weak_buff": {
+    "id": 309,
+    "key": "worldcombat_battle_weak_buff",
+    "num": 20010200
+  },
+  "low_catch_prob_show": {
+    "id": 310,
+    "key": "low_catch_prob_show",
+    "str": {
+      "localization_id": 54,
+      "text": "Anger"
+    }
+  },
+  "middle_catch_prob_show": {
+    "id": 311,
+    "key": "middle_catch_prob_show",
+    "str": {
+      "localization_id": 55,
+      "text": "Alert"
+    }
+  },
+  "high_catch_prob_show": {
+    "id": 312,
+    "key": "high_catch_prob_show",
+    "str": {
+      "localization_id": 56,
+      "text": "Show"
+    }
+  },
+  "worldcombat_battle_dizzy_buff0": {
+    "id": 313,
+    "key": "worldcombat_battle_dizzy_buff0",
+    "num": 20040030
+  },
+  "block_hit_animation_battle_ai_status": {
+    "id": 314,
+    "key": "block_hit_animation_battle_ai_status",
+    "numList": [
+      3,
+      6,
+      8,
+      10
+    ]
+  },
+  "1vn_battle_cheer_pet_enter": {
+    "id": 315,
+    "key": "1vn_battle_cheer_pet_enter",
+    "str": {
+      "localization_id": 57,
+      "text": "围攻的{0}登场了！"
+    }
+  },
+  "1vn_battle_pet_join_1vn": {
+    "id": 316,
+    "key": "1vn_battle_pet_join_1vn",
+    "str": {
+      "localization_id": 58,
+      "text": "{0}加入了战斗"
+    }
+  },
+  "1vn_battle_cheer_pet_escape": {
+    "id": 317,
+    "key": "1vn_battle_cheer_pet_escape",
+    "str": {
+      "localization_id": 59,
+      "text": "{0}逃离了战斗"
+    }
+  },
+  "worldcombat_battle_dizzy_buff3": {
+    "id": 318,
+    "key": "worldcombat_battle_dizzy_buff3",
+    "num": 20040030
+  },
+  "worldcombat_battle_dizzy_buff4": {
+    "id": 319,
+    "key": "worldcombat_battle_dizzy_buff4",
+    "num": 20040030
+  },
+  "worldcombat_battle_broken_weakness1": {
+    "id": 320,
+    "key": "worldcombat_battle_broken_weakness1",
+    "num": 2
+  },
+  "worldcombat_battle_broken_weakness2": {
+    "id": 321,
+    "key": "worldcombat_battle_broken_weakness2",
+    "num": 4
+  },
+  "worldcombat_battle_broken_weakness3": {
+    "id": 322,
+    "key": "worldcombat_battle_broken_weakness3",
+    "num": 6
+  },
+  "worldcombat_battle_dizzy3": {
+    "id": 323,
+    "key": "worldcombat_battle_dizzy3",
+    "numList": [
+      30,
+      45,
+      1,
+      1,
+      999
+    ]
+  },
+  "worldcombat_battle_dizzy4": {
+    "id": 324,
+    "key": "worldcombat_battle_dizzy4",
+    "numList": [
+      45,
+      60,
+      1,
+      1,
+      999
+    ]
+  },
+  "1vn_battle_surrender": {
+    "id": 325,
+    "key": "1vn_battle_surrender"
+  },
+  "worldcombat_battle_weak_buff_plus": {
+    "id": 326,
+    "key": "worldcombat_battle_weak_buff_plus",
+    "num": 20010200
+  },
+  "worldcombat_battle_broken_weakness1_plus": {
+    "id": 327,
+    "key": "worldcombat_battle_broken_weakness1_plus",
+    "num": 1
+  },
+  "worldcombat_battle_broken_weakness2_plus": {
+    "id": 328,
+    "key": "worldcombat_battle_broken_weakness2_plus",
+    "num": 2
+  },
+  "worldcombat_battle_broken_weakness3_plus": {
+    "id": 329,
+    "key": "worldcombat_battle_broken_weakness3_plus",
+    "num": 3
+  },
+  "catch_guarant_retain_time": {
+    "id": 330,
+    "key": "catch_guarant_retain_time",
+    "num": 180
+  },
+  "exit_evolve_confirm_time": {
+    "id": 331,
+    "key": "exit_evolve_confirm_time",
+    "num": 180
+  },
+  "exit_evolve_finish_time": {
+    "id": 332,
+    "key": "exit_evolve_finish_time",
+    "num": 30
+  },
+  "nightmare_pet_buff": {
+    "id": 333,
+    "key": "nightmare_pet_buff",
+    "num": 20960010
+  },
+  "worldcombat_battle_dizzy0": {
+    "id": 334,
+    "key": "worldcombat_battle_dizzy0",
+    "numList": [
+      1,
+      0,
+      999
+    ]
+  },
+  "nonmagic_battle_ai_status": {
+    "id": 335,
+    "key": "nonmagic_battle_ai_status",
+    "num": 20
+  },
+  "3dui_switch_on_battle_type": {
+    "id": 336,
+    "key": "3dui_switch_on_battle_type",
+    "numList": [
+      11,
+      12,
+      19,
+      31
+    ]
+  },
+  "battle_map_local_blood": {
+    "id": 337,
+    "key": "battle_map_local_blood",
+    "str": {
+      "localization_id": 60,
+      "text": "/Game/ArtRes/Level/Editor/BigWorld/L_Bigworld_01/Arena_Levels/L_Arena_XMTZ_02"
+    }
+  },
+  "blood_pr_low": {
+    "id": 338,
+    "key": "blood_pr_low",
+    "numList": [
+      0,
+      2500
+    ]
+  },
+  "blood_pr_middle": {
+    "id": 339,
+    "key": "blood_pr_middle",
+    "numList": [
+      2500,
+      5000
+    ]
+  },
+  "battle_mimic_tip_skill": {
+    "id": 340,
+    "key": "battle_mimic_tip_skill",
+    "num": 299001
+  },
+  "battle_attention_tip_show_time": {
+    "id": 341,
+    "key": "battle_attention_tip_show_time",
+    "num": 1800
+  },
+  "worldcombat_battle_execution_trigger": {
+    "id": 342,
+    "key": "worldcombat_battle_execution_trigger",
+    "num": 5000
+  },
+  "worldcombat_battle_execution_round": {
+    "id": 343,
+    "key": "worldcombat_battle_execution_round",
+    "numList": [
+      1,
+      3,
+      5,
+      20040035,
+      4,
+      7,
+      4,
+      20040036,
+      7,
+      999,
+      3,
+      20040037
+    ]
+  },
+  "worldcombat_battle_gain_expose": {
+    "id": 344,
+    "key": "worldcombat_battle_gain_expose",
+    "numList": [
+      2,
+      20011200,
+      3,
+      20011210,
+      4,
+      20011220,
+      5,
+      20011230,
+      6,
+      20011240
+    ]
+  },
+  "worldcombat_battle_pet_buff": {
+    "id": 345,
+    "key": "worldcombat_battle_pet_buff",
+    "num": 30016
+  },
+  "no_pet_battle": {
+    "id": 346,
+    "key": "no_pet_battle",
+    "numList": [
+      308132,
+      308133,
+      308134
+    ]
+  },
+  "AI_battle_list": {
+    "id": 347,
+    "key": "AI_battle_list",
+    "numList": [
+      316051,
+      316053,
+      316054,
+      316055,
+      316057,
+      316058,
+      316059,
+      316061,
+      316062
+    ]
+  },
+  "AI_uid_list": {
+    "id": 348,
+    "key": "AI_uid_list",
+    "numList": [
+      335545836,
+      301993963,
+      402656964,
+      738199397,
+      469763935,
+      402655282,
+      268438564,
+      637534239,
+      905971225,
+      771754862,
+      905969860,
+      301991673,
+      469762363
+    ]
+  },
+  "AI_battle_switch": {
+    "id": 349,
+    "key": "AI_battle_switch",
+    "num": 2
+  },
+  "parallel_buff_list": {
+    "id": 350,
+    "key": "parallel_buff_list",
+    "numList": [
+      20940010,
+      20940011
+    ]
+  },
+  "parallel_buff_show_time": {
+    "id": 351,
+    "key": "parallel_buff_show_time",
+    "num": 800
+  },
+  "pvp_rank_stage_bgm": {
+    "id": 352,
+    "key": "pvp_rank_stage_bgm",
+    "str": {
+      "localization_id": 61,
+      "text": "Battle\\;Battle\\;Battle_Type\\;Boss\\;Boss\\;PVP\\;Battle_Stage\\;Stage_1;Battle\\;Battle\\;Battle_Type\\;Boss\\;Boss\\;PVP\\;Battle_Stage\\;Stage_2"
+    }
+  },
+  "fantastic_blood_pro": {
+    "id": 353,
+    "key": "fantastic_blood_pro"
+  },
+  "warm_control_enable_pvp": {
+    "id": 354,
+    "key": "warm_control_enable_pvp",
+    "num": 1
+  },
+  "warm_control_enable_pve": {
+    "id": 355,
+    "key": "warm_control_enable_pve"
+  },
+  "fantastic_box_petbase": {
+    "id": 356,
+    "key": "fantastic_box_petbase",
+    "numList": [
+      9001,
+      9002,
+      9003
+    ]
+  },
+  "GOLD_BOX_LEVEL": {
+    "id": 357,
+    "key": "GOLD_BOX_LEVEL",
+    "num": 1
+  },
+  "GOLD_BOX_DIFFICULTY": {
+    "id": 358,
+    "key": "GOLD_BOX_DIFFICULTY",
+    "num": 27
+  },
+  "SILVER_BOX_LEVEL": {
+    "id": 359,
+    "key": "SILVER_BOX_LEVEL",
+    "num": 1
+  },
+  "SILVER_BOX_DIFFICULTY": {
+    "id": 360,
+    "key": "SILVER_BOX_DIFFICULTY",
+    "num": 27
+  },
+  "COLOR_BOX_SHIELD": {
+    "id": 361,
+    "key": "COLOR_BOX_SHIELD",
+    "num": 150
+  },
+  "bonus_fantastic_blood_pro": {
+    "id": 362,
+    "key": "bonus_fantastic_blood_pro",
+    "num": 442217
+  },
+  "fantastic_box_monster": {
+    "id": 363,
+    "key": "fantastic_box_monster",
+    "numList": [
+      1639,
+      1640,
+      1641
+    ]
+  },
+  "bonus_mix_blood_pro": {
+    "id": 364,
+    "key": "bonus_mix_blood_pro",
+    "num": 530000
+  },
+  "s3_box_monster_name": {
+    "id": 365,
+    "key": "s3_box_monster_name",
+    "str": {
+      "localization_id": 62,
+      "text": "四叶草铅绘"
+    }
+  },
+  "s3_final_boss_npc_id": {
+    "id": 366,
+    "key": "s3_final_boss_npc_id",
+    "num": 53068
+  },
+  "S4_enterbattle_petbase": {
+    "id": 367,
+    "key": "S4_enterbattle_petbase",
+    "num": 9004
+  },
+  "S4_gold_star_buff": {
+    "id": 368,
+    "key": "S4_gold_star_buff",
+    "num": 20011597
+  },
+  "S4_blood_star_buff": {
+    "id": 369,
+    "key": "S4_blood_star_buff",
+    "num": 20011598
+  },
+  "S4_blood_star_change_buff": {
+    "id": 370,
+    "key": "S4_blood_star_change_buff",
+    "num": 20011599
+  },
+  "S4_gold_star_change_buff": {
+    "id": 371,
+    "key": "S4_gold_star_change_buff",
+    "num": 20011600
+  },
+  "S4_change_time_max": {
+    "id": 372,
+    "key": "S4_change_time_max",
+    "num": 5
+  },
+  "S4_common_white_buff": {
+    "id": 373,
+    "key": "S4_common_white_buff",
+    "num": 20011605
+  },
+  "S4_special_white_buff": {
+    "id": 374,
+    "key": "S4_special_white_buff",
+    "num": 20011606
+  },
+  "advanced_evolution_level_1": {
+    "id": 400,
+    "key": "advanced_evolution_level_1",
+    "num": 5
+  },
+  "advanced_evolution_level_2": {
+    "id": 401,
+    "key": "advanced_evolution_level_2",
+    "num": 5
+  },
+  "advanced_evolution_level_3": {
+    "id": 402,
+    "key": "advanced_evolution_level_3",
+    "num": 10
+  },
+  "advanced_evolution_level_4": {
+    "id": 403,
+    "key": "advanced_evolution_level_4",
+    "num": 10
+  },
+  "advanced_evolution_level_5": {
+    "id": 404,
+    "key": "advanced_evolution_level_5",
+    "num": 10
+  },
+  "advanced_evolution_player_RemainingHealth": {
+    "id": 405,
+    "key": "advanced_evolution_player_RemainingHealth",
+    "num": 1
+  },
+  "advanced_evolution_pet_RemainingHealth": {
+    "id": 406,
+    "key": "advanced_evolution_pet_RemainingHealth",
+    "num": 2500
+  },
+  "advanced_evolution_probability": {
+    "id": 407,
+    "key": "advanced_evolution_probability",
+    "num": 1000
+  },
+  "battle_process_assist_hp_deduct_text": {
+    "id": 408,
+    "key": "battle_process_assist_hp_deduct_text",
+    "str": {
+      "localization_id": 63,
+      "text": "{0}力竭，队友的魔力损耗了。"
+    }
+  },
+  "battle_end_assist_hp_deduct_text": {
+    "id": 409,
+    "key": "battle_end_assist_hp_deduct_text",
+    "str": {
+      "localization_id": 64,
+      "text": "{0}力竭，队友的魔力损耗了。"
+    }
+  },
+  "1vn_escape_res": {
+    "id": 410,
+    "key": "1vn_escape_res",
+    "str": {
+      "localization_id": 65,
+      "text": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_TP_20480090"
+    }
+  },
+  "catch_pet_recover_playermagic_time": {
+    "id": 411,
+    "key": "catch_pet_recover_playermagic_time",
+    "num": 1
+  },
+  "buff_list_show_num": {
+    "id": 412,
+    "key": "buff_list_show_num",
+    "num": 5
+  },
+  "battle_attention_tip_close_time": {
+    "id": 413,
+    "key": "battle_attention_tip_close_time",
+    "num": 5
+  },
+  "battle_npc_guarantee": {
+    "id": 414,
+    "key": "battle_npc_guarantee",
+    "num": 12017
+  },
+  "muti_pve_round_select_timeout": {
+    "id": 415,
+    "key": "muti_pve_round_select_timeout",
+    "num": 60
+  },
+  "syn_battle_waiting_tip": {
+    "id": 416,
+    "key": "syn_battle_waiting_tip",
+    "str": {
+      "localization_id": 66,
+      "text": "等待同伴思考中......"
+    }
+  },
+  "syn_battle_catch_tip": {
+    "id": 417,
+    "key": "syn_battle_catch_tip",
+    "str": {
+      "localization_id": 67,
+      "text": "{0}扔出了{1}！"
+    }
+  },
+  "syn_battle_other_player_flee_tip": {
+    "id": 418,
+    "key": "syn_battle_other_player_flee_tip",
+    "str": {
+      "localization_id": 68,
+      "text": "{0}离开了战斗......"
+    }
+  },
+  "watch_to_assist_not_friend_tip": {
+    "id": 419,
+    "key": "watch_to_assist_not_friend_tip",
+    "str": {
+      "localization_id": 69,
+      "text": "添加该玩家为好友后才能助战"
+    }
+  },
+  "watch_to_assist_player_is_full_tip": {
+    "id": 420,
+    "key": "watch_to_assist_player_is_full_tip",
+    "str": {
+      "localization_id": 70,
+      "text": "可参加战斗人数已满"
+    }
+  },
+  "watch_to_assist_battle_tip": {
+    "id": 421,
+    "key": "watch_to_assist_battle_tip",
+    "str": {
+      "localization_id": 71,
+      "text": "正在等待出手时机..."
+    }
+  },
+  "assist_battle_tip": {
+    "id": 422,
+    "key": "assist_battle_tip",
+    "str": {
+      "localization_id": 72,
+      "text": "{0}前来助战"
+    }
+  },
+  "syn_battle_end_waiting_time": {
+    "id": 423,
+    "key": "syn_battle_end_waiting_time",
+    "num": 10
+  },
+  "syn_battle_choose_other_player_pet": {
+    "id": 424,
+    "key": "syn_battle_choose_other_player_pet",
+    "str": {
+      "localization_id": 73,
+      "text": "不能选择更换同伴的精灵"
+    }
+  },
+  "observed_battle_end_tip": {
+    "id": 425,
+    "key": "observed_battle_end_tip",
+    "str": {
+      "localization_id": 74,
+      "text": "观战的战斗已结束"
+    }
+  },
+  "catch_bigworld_low_1": {
+    "id": 500,
+    "key": "catch_bigworld_low_1",
+    "numList": [
+      0,
+      500
+    ]
+  },
+  "catch_bigworld_middle_2": {
+    "id": 501,
+    "key": "catch_bigworld_middle_2",
+    "numList": [
+      500,
+      1500
+    ]
+  },
+  "catch_bigworld_middle_3": {
+    "id": 502,
+    "key": "catch_bigworld_middle_3",
+    "numList": [
+      1500,
+      5000
+    ]
+  },
+  "catch_bigworld_high_4": {
+    "id": 503,
+    "key": "catch_bigworld_high_4",
+    "numList": [
+      5000,
+      7000
+    ]
+  },
+  "catch_bigworld_high_5": {
+    "id": 504,
+    "key": "catch_bigworld_high_5",
+    "numList": [
+      7000,
+      10000
+    ]
+  },
+  "dimo_battle_ball": {
+    "id": 505,
+    "key": "dimo_battle_ball",
+    "numList": [
+      308213,
+      100255
+    ]
+  },
+  "weather_duration": {
+    "id": 506,
+    "key": "weather_duration",
+    "num": 8
+  },
+  "s4_bonus_mix_blood_pro": {
+    "id": 507,
+    "key": "s4_bonus_mix_blood_pro",
+    "num": 246148
+  },
+  "s4_meteor_show_blood_ratio": {
+    "id": 508,
+    "key": "s4_meteor_show_blood_ratio",
+    "numList": [
+      257732,
+      128866
+    ]
+  },
+  "S4_nightmare_season_battle": {
+    "id": 509,
+    "key": "S4_nightmare_season_battle",
+    "num": 750000010
+  },
+  "battle_solo_title": {
+    "id": 1001,
+    "key": "battle_solo_title",
+    "str": {
+      "localization_id": 75,
+      "text": "匹配模式"
+    }
+  },
+  "battle_pair_title": {
+    "id": 1002,
+    "key": "battle_pair_title",
+    "str": {
+      "localization_id": 76,
+      "text": "人机模式"
+    }
+  },
+  "battle_practice_title": {
+    "id": 1003,
+    "key": "battle_practice_title",
+    "str": {
+      "localization_id": 77,
+      "text": "训练模式"
+    }
+  },
+  "battle_solo_picture_big": {
+    "id": 1004,
+    "key": "battle_solo_picture_big",
+    "str": {
+      "localization_id": 78,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/img_zhaopian.img_zhaopian'"
+    }
+  },
+  "battle_pair_picture_big": {
+    "id": 1005,
+    "key": "battle_pair_picture_big",
+    "str": {
+      "localization_id": 79,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/img_zhaopian1.img_zhaopian1'"
+    }
+  },
+  "battle_practice_picture_big": {
+    "id": 1006,
+    "key": "battle_practice_picture_big",
+    "str": {
+      "localization_id": 80,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/img_zhaopian2.img_zhaopian2'"
+    }
+  },
+  "battle_solo_picture_0": {
+    "id": 1007,
+    "key": "battle_solo_picture_0",
+    "str": {
+      "localization_id": 81,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Formation/Frames/img_moshi3_png.img_moshi3_png'"
+    }
+  },
+  "battle_pair_picture_0": {
+    "id": 1008,
+    "key": "battle_pair_picture_0",
+    "str": {
+      "localization_id": 82,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Formation/Frames/img_moshi1_png.img_moshi1_png'"
+    }
+  },
+  "battle_practice_picture_0": {
+    "id": 1009,
+    "key": "battle_practice_picture_0",
+    "str": {
+      "localization_id": 83,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Formation/Frames/img_moshi2_png.img_moshi2_png'"
+    }
+  },
+  "battle_solo_picture_1": {
+    "id": 1010,
+    "key": "battle_solo_picture_1",
+    "str": {
+      "localization_id": 84,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Formation/Frames/img_moshi6_png.img_moshi6_png'"
+    }
+  },
+  "battle_pair_picture_1": {
+    "id": 1011,
+    "key": "battle_pair_picture_1",
+    "str": {
+      "localization_id": 85,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Formation/Frames/img_moshi4_png.img_moshi4_png'"
+    }
+  },
+  "battle_practice_picture_1": {
+    "id": 1012,
+    "key": "battle_practice_picture_1",
+    "str": {
+      "localization_id": 86,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Formation/Frames/img_moshi5_png.img_moshi5_png'"
+    }
+  },
+  "battle_solo_depict": {
+    "id": 1013,
+    "key": "battle_solo_depict",
+    "str": {
+      "localization_id": 87,
+      "text": "匹配模式下每方训练师共有4点魔力，精灵被击败会损耗1点魔力。\n对方的每点魔力损耗会让己方获得1制胜点数。先让对方全部魔力损耗的训练师获得胜利！"
+    }
+  },
+  "battle_pair_depict": {
+    "id": 1014,
+    "key": "battle_pair_depict",
+    "str": {
+      "localization_id": 88,
+      "text": "人机模式下的对战规则和匹配模式完全一致，在模拟实战中锻炼对战技巧！"
+    }
+  },
+  "battle_practice_depict": {
+    "id": 1015,
+    "key": "battle_practice_depict",
+    "str": {
+      "localization_id": 89,
+      "text": "在训练模式中，自由尝试队伍搭配与精灵技能选择，探索最合理的对战队伍配置。"
+    }
+  },
+  "battle_solo_button": {
+    "id": 1016,
+    "key": "battle_solo_button",
+    "str": {
+      "localization_id": 90,
+      "text": "开始对战"
+    }
+  },
+  "battle_pair_button": {
+    "id": 1017,
+    "key": "battle_pair_button",
+    "str": {
+      "localization_id": 91,
+      "text": "开始对战"
+    }
+  },
+  "battle_practice_button": {
+    "id": 1018,
+    "key": "battle_practice_button",
+    "str": {
+      "localization_id": 92,
+      "text": "开始训练"
+    }
+  },
+  "battle_double_depict": {
+    "id": 1019,
+    "key": "battle_double_depict",
+    "str": {
+      "localization_id": 93,
+      "text": "双精灵模式下每方训练师共有4点魔力，并且可以同时上场两只精灵！\n对方的每点魔力损耗会让己方获得1制胜点数。先让对方全部魔力损耗的训练师获得胜利！"
+    }
+  },
+  "battle_pvp_level": {
+    "id": 1020,
+    "key": "battle_pvp_level",
+    "num": 60
+  },
+  "battle_mappoint_random": {
+    "id": 1100,
+    "key": "battle_mappoint_random",
+    "numList": [
+      1101,
+      1102,
+      1103,
+      1104
+    ]
+  },
+  "battle_mappoint_1": {
+    "id": 1101,
+    "key": "battle_mappoint_1",
+    "numList": [
+      103,
+      430811,
+      671497,
+      890
+    ]
+  },
+  "battle_mappoint_2": {
+    "id": 1102,
+    "key": "battle_mappoint_2",
+    "numList": [
+      103,
+      404147,
+      642168,
+      1121
+    ]
+  },
+  "battle_mappoint_3": {
+    "id": 1103,
+    "key": "battle_mappoint_3",
+    "numList": [
+      103,
+      430811,
+      671497,
+      890
+    ]
+  },
+  "battle_mappoint_4": {
+    "id": 1104,
+    "key": "battle_mappoint_4",
+    "numList": [
+      103,
+      404147,
+      642168,
+      1121
+    ]
+  },
+  "battle_mappoint_5": {
+    "id": 1105,
+    "key": "battle_mappoint_5",
+    "numList": [
+      103,
+      430811,
+      671497,
+      890
+    ]
+  },
+  "battle_mappoint_6": {
+    "id": 1106,
+    "key": "battle_mappoint_6",
+    "numList": [
+      103,
+      404147,
+      642168,
+      1121
+    ]
+  },
+  "battle_mappoint_7": {
+    "id": 1107,
+    "key": "battle_mappoint_7",
+    "numList": [
+      103,
+      430811,
+      671497,
+      890
+    ]
+  },
+  "battle_mappoint_8": {
+    "id": 1108,
+    "key": "battle_mappoint_8",
+    "numList": [
+      103,
+      404147,
+      642168,
+      1121
+    ]
+  },
+  "pvp_npc_around_random": {
+    "id": 1109,
+    "key": "pvp_npc_around_random",
+    "numList": [
+      62130,
+      62133,
+      62136,
+      62142,
+      62143,
+      62148,
+      62150,
+      62156,
+      62164,
+      62167,
+      62183,
+      62185,
+      62212
+    ]
+  },
+  "pve_npc_around_range": {
+    "id": 1110,
+    "key": "pve_npc_around_range",
+    "num": 1000
+  },
+  "npc_show_time interval": {
+    "id": 1111,
+    "key": "npc_show_time interval",
+    "num": 5
+  },
+  "npc_show_time interval_random_deviation": {
+    "id": 1112,
+    "key": "npc_show_time interval_random_deviation",
+    "num": 1
+  },
+  "around_npc_animation_name1": {
+    "id": 1113,
+    "key": "around_npc_animation_name1"
+  },
+  "around_npc_animation_name2": {
+    "id": 1114,
+    "key": "around_npc_animation_name2",
+    "str": {
+      "localization_id": 94,
+      "text": "Cheerup1"
+    }
+  },
+  "around_npc_animation_name3": {
+    "id": 1115,
+    "key": "around_npc_animation_name3",
+    "str": {
+      "localization_id": 95,
+      "text": "Cheerup2"
+    }
+  },
+  "around_npc_animation_battle_actime_random_deviation": {
+    "id": 1116,
+    "key": "around_npc_animation_battle_actime_random_deviation",
+    "num": 200
+  },
+  "wild_rare_monster_cannot_escape": {
+    "id": 1117,
+    "key": "wild_rare_monster_cannot_escape",
+    "num": 1
+  },
+  "around_player_animation_name": {
+    "id": 1118,
+    "key": "around_player_animation_name",
+    "str": {
+      "localization_id": 96,
+      "text": "RolePlayThink;RolePlayCommand;RolePlayShow;Fig;Relax;HZRelax"
+    }
+  },
+  "around_player_animation_time interval": {
+    "id": 1119,
+    "key": "around_player_animation_time interval",
+    "num": 8
+  },
+  "around_player_animation interval_random_deviation": {
+    "id": 1120,
+    "key": "around_player_animation interval_random_deviation",
+    "num": 2
+  },
+  "battle_map_time": {
+    "id": 1201,
+    "key": "battle_map_time",
+    "num": 57600
+  },
+  "battle_map_weather": {
+    "id": 1202,
+    "key": "battle_map_weather",
+    "num": 1
+  },
+  "battle_trainer_emoji1": {
+    "id": 1301,
+    "key": "battle_trainer_emoji1",
+    "str": {
+      "localization_id": 97,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/img_biaoqing2.img_biaoqing2'"
+    }
+  },
+  "battle_trainer_emoji2": {
+    "id": 1302,
+    "key": "battle_trainer_emoji2",
+    "str": {
+      "localization_id": 98,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/img_biaoqing5.img_biaoqing5'"
+    }
+  },
+  "battle_trainer_emoji3": {
+    "id": 1303,
+    "key": "battle_trainer_emoji3",
+    "str": {
+      "localization_id": 99,
+      "text": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/img_biaoqing6.img_biaoqing6'"
+    }
+  },
+  "battle_trainer_action_boy_1": {
+    "id": 1304,
+    "key": "battle_trainer_action_boy_1",
+    "str": {
+      "localization_id": 100,
+      "text": "Happy1"
+    }
+  },
+  "battle_trainer_action_boy_2": {
+    "id": 1305,
+    "key": "battle_trainer_action_boy_2",
+    "str": {
+      "localization_id": 101,
+      "text": "Fear1"
+    }
+  },
+  "battle_trainer_action_boy_3": {
+    "id": 1306,
+    "key": "battle_trainer_action_boy_3",
+    "str": {
+      "localization_id": 102,
+      "text": "True"
+    }
+  },
+  "is_battle_catch_need_round": {
+    "id": 1307,
+    "key": "is_battle_catch_need_round",
+    "num": 1
+  },
+  "pvp_ingore_naughty": {
+    "id": 1308,
+    "key": "pvp_ingore_naughty",
+    "num": 1
+  },
+  "battle_mappoint_blood": {
+    "id": 1309,
+    "key": "battle_mappoint_blood",
+    "numList": [
+      0,
+      0,
+      600000
+    ]
+  },
+  "battle_model_scale_blood": {
+    "id": 1310,
+    "key": "battle_model_scale_blood",
+    "num": 25000
+  },
+  "charging_skill_id": {
+    "id": 1311,
+    "key": "charging_skill_id",
+    "num": 7100100
+  },
+  "boss_hp_section_num": {
+    "id": 1312,
+    "key": "boss_hp_section_num",
+    "num": 6
+  },
+  "buff_ball_1": {
+    "id": 1313,
+    "key": "buff_ball_1",
+    "num": 100002
+  },
+  "buff_ball_2": {
+    "id": 1314,
+    "key": "buff_ball_2",
+    "num": 100003
+  },
+  "buff_ball_3": {
+    "id": 1315,
+    "key": "buff_ball_3",
+    "num": 100254
+  },
+  "buff_ball_4": {
+    "id": 1316,
+    "key": "buff_ball_4",
+    "num": 100255
+  },
+  "buff_ball_5": {
+    "id": 1317,
+    "key": "buff_ball_5",
+    "num": 100256
+  },
+  "buff_ball_6": {
+    "id": 1318,
+    "key": "buff_ball_6",
+    "num": 100261
+  },
+  "buff_ball_7": {
+    "id": 1319,
+    "key": "buff_ball_7",
+    "num": 100262
+  },
+  "buff_ball_8": {
+    "id": 1320,
+    "key": "buff_ball_8",
+    "num": 100263
+  },
+  "buff_ball_9": {
+    "id": 1321,
+    "key": "buff_ball_9",
+    "num": 100271
+  },
+  "buff_ball_10": {
+    "id": 1322,
+    "key": "buff_ball_10",
+    "num": 100272
+  },
+  "buff_ball_11": {
+    "id": 1323,
+    "key": "buff_ball_11",
+    "num": 100273
+  },
+  "buff_ball_12": {
+    "id": 1324,
+    "key": "buff_ball_12",
+    "num": 100274
+  },
+  "buff_ball_13": {
+    "id": 1325,
+    "key": "buff_ball_13",
+    "num": 100275
+  },
+  "buff_ball_14": {
+    "id": 1326,
+    "key": "buff_ball_14",
+    "num": 100281
+  },
+  "buff_ball_15": {
+    "id": 1327,
+    "key": "buff_ball_15",
+    "num": 100282
+  },
+  "buff_ball_16": {
+    "id": 1328,
+    "key": "buff_ball_16",
+    "num": 100283
+  },
+  "buff_ball_17": {
+    "id": 1329,
+    "key": "buff_ball_17",
+    "num": 100284
+  },
+  "buff_ball_18": {
+    "id": 1330,
+    "key": "buff_ball_18",
+    "num": 280001
+  },
+  "pvp_choose_first_time": {
+    "id": 1331,
+    "key": "pvp_choose_first_time",
+    "num": 25
+  },
+  "pet_legendary_deployment_limits": {
+    "id": 1332,
+    "key": "pet_legendary_deployment_limits",
+    "num": 1
+  },
+  "cr_weight": {
+    "id": 1333,
+    "key": "cr_weight",
+    "numList": [
+      0,
+      4000,
+      14000,
+      30000,
+      60000,
+      120000,
+      99999999
+    ]
+  },
+  "visit_catch_number_battle_notice": {
+    "id": 1334,
+    "key": "visit_catch_number_battle_notice",
+    "str": {
+      "localization_id": 103,
+      "text": "互访捕捉次数:{0}"
+    }
+  },
+  "pvp_match_award_vitem_id": {
+    "id": 1335,
+    "key": "pvp_match_award_vitem_id",
+    "num": 1
+  },
+  "pvp_match_per_defeat_award_num": {
+    "id": 1336,
+    "key": "pvp_match_per_defeat_award_num",
+    "num": 1
+  },
+  "pvp_match_taopao_bonus_award_num": {
+    "id": 1337,
+    "key": "pvp_match_taopao_bonus_award_num",
+    "num": 10000
+  },
+  "pvp_balance_break_times": {
+    "id": 1338,
+    "key": "pvp_balance_break_times",
+    "num": 5
+  },
+  "pvp_tips_hold_time": {
+    "id": 1339,
+    "key": "pvp_tips_hold_time",
+    "num": 5
+  },
+  "battle_in_the_air_height": {
+    "id": 1340,
+    "key": "battle_in_the_air_height",
+    "num": 500
+  },
+  "pvp_max_team_num": {
+    "id": 1341,
+    "key": "pvp_max_team_num",
+    "num": 8
+  },
+  "pvp_constant_p": {
+    "id": 1342,
+    "key": "pvp_constant_p",
+    "num": 9000
+  },
+  "pvp_constant_i": {
+    "id": 1343,
+    "key": "pvp_constant_i",
+    "num": 50
+  },
+  "pvp_technical_score_initial": {
+    "id": 1344,
+    "key": "pvp_technical_score_initial",
+    "num": 1500
+  },
+  "pvp_rd": {
+    "id": 1345,
+    "key": "pvp_rd",
+    "num": 350
+  },
+  "pvp_vol": {
+    "id": 1346,
+    "key": "pvp_vol",
+    "num": 600
+  },
+  "pvp_match_score_diff_r": {
+    "id": 1347,
+    "key": "pvp_match_score_diff_r",
+    "numList": [
+      1000,
+      1000
+    ]
+  },
+  "pvp_match_score_time": {
+    "id": 1348,
+    "key": "pvp_match_score_time",
+    "num": 1
+  },
+  "pvp_match_pet_score_difference": {
+    "id": 1349,
+    "key": "pvp_match_pet_score_difference",
+    "num": 10000
+  },
+  "pvp_team_name": {
+    "id": 1350,
+    "key": "pvp_team_name",
+    "str": {
+      "localization_id": 104,
+      "text": "队伍{0:d}"
+    }
+  },
+  "pvp_team_magic_nameless": {
+    "id": 1351,
+    "key": "pvp_team_magic_nameless",
+    "str": {
+      "localization_id": 105,
+      "text": "无共鸣魔法"
+    }
+  },
+  "pvp_team_same_pet": {
+    "id": 1352,
+    "key": "pvp_team_same_pet",
+    "str": {
+      "localization_id": 106,
+      "text": "无法上阵同进化链的精灵"
+    }
+  },
+  "pvp_team_name_set": {
+    "id": 1353,
+    "key": "pvp_team_name_set",
+    "str": {
+      "localization_id": 107,
+      "text": "编辑小队名称"
+    }
+  },
+  "pvp_team_none": {
+    "id": 1354,
+    "key": "pvp_team_none",
+    "str": {
+      "localization_id": 108,
+      "text": "请选择需要上阵的精灵"
+    }
+  },
+  "pvp_team_exceed_num": {
+    "id": 1355,
+    "key": "pvp_team_exceed_num",
+    "str": {
+      "localization_id": 109,
+      "text": "已携带超过6只精灵"
+    }
+  },
+  "pvp_team_num_none": {
+    "id": 1356,
+    "key": "pvp_team_num_none",
+    "str": {
+      "localization_id": 110,
+      "text": "队伍中没有精灵"
+    }
+  },
+  "pvp_refresh_type": {
+    "id": 1357,
+    "key": "pvp_refresh_type",
+    "str": {
+      "localization_id": 111,
+      "text": "TRE_DAILY_FROM"
+    }
+  },
+  "pvp_refresh_reset_param": {
+    "id": 1358,
+    "key": "pvp_refresh_reset_param",
+    "str": {
+      "localization_id": 112,
+      "text": "7 0:00:00"
+    }
+  },
+  "pvp_refresh_reset_param2": {
+    "id": 1359,
+    "key": "pvp_refresh_reset_param2",
+    "str": {
+      "localization_id": 113,
+      "text": "2024-11-04 4:00:00"
+    }
+  },
+  "pvp_score_max": {
+    "id": 1360,
+    "key": "pvp_score_max",
+    "num": 15000000
+  },
+  "pvp_score_localization1": {
+    "id": 1361,
+    "key": "pvp_score_localization1",
+    "str": {
+      "localization_id": 114,
+      "text": "本周"
+    }
+  },
+  "pvp_score_localization2": {
+    "id": 1362,
+    "key": "pvp_score_localization2",
+    "str": {
+      "localization_id": 115,
+      "text": "本周(已满)"
+    }
+  },
+  "pvp_battle_again_num": {
+    "id": 1363,
+    "key": "pvp_battle_again_num",
+    "num": 2
+  },
+  "pvp_juezhan": {
+    "id": 1364,
+    "key": "pvp_juezhan",
+    "str": {
+      "localization_id": 116,
+      "text": "Sources/ArtResources/Release/Effects/G6Skill/PVP/PVP_Fight_JueZhan.uasset"
+    }
+  },
+  "pvp_liansha": {
+    "id": 1365,
+    "key": "pvp_liansha",
+    "str": {
+      "localization_id": 117,
+      "text": "Sources/ArtResources/Release/Effects/G6Skill/PVP/PVP_Fight_LianSha.uasset"
+    }
+  },
+  "pvp_wansha": {
+    "id": 1366,
+    "key": "pvp_wansha",
+    "str": {
+      "localization_id": 118,
+      "text": "Sources/ArtResources/Release/Effects/G6Skill/PVP/PVP_Fight_ WanSha.uasset"
+    }
+  },
+  "pvp_yingdui": {
+    "id": 1367,
+    "key": "pvp_yingdui",
+    "str": {
+      "localization_id": 119,
+      "text": "Sources/ArtResources/Release/Effects/G6Skill/PVP/PVP_Fight_ YingDui.uasset"
+    }
+  },
+  "pvp_team_pet1": {
+    "id": 1368,
+    "key": "pvp_team_pet1",
+    "str": {
+      "localization_id": 120,
+      "text": "精灵编队"
+    }
+  },
+  "pvp_battle_again_max_tip": {
+    "id": 1369,
+    "key": "pvp_battle_again_max_tip",
+    "str": {
+      "localization_id": 121,
+      "text": "已达切磋次数上限，无法再次切磋"
+    }
+  },
+  "a1_finalbattle_prologue_target_camera": {
+    "id": 1387,
+    "key": "a1_finalbattle_prologue_target_camera",
+    "numList": [
+      -6247,
+      2343,
+      427,
+      0,
+      0,
+      -90
+    ]
+  },
+  "a1_finalbattle_correct_rate_need": {
+    "id": 1388,
+    "key": "a1_finalbattle_correct_rate_need",
+    "num": 6666
+  },
+  "a1_finalbattle_effective_factor": {
+    "id": 1389,
+    "key": "a1_finalbattle_effective_factor",
+    "num": 2
+  },
+  "a1_finalbattle_wishpower_decay": {
+    "id": 1390,
+    "key": "a1_finalbattle_wishpower_decay",
+    "num": 2
+  },
+  "a1_finalbattle_bag_item_1": {
+    "id": 1391,
+    "key": "a1_finalbattle_bag_item_1",
+    "num": 104009
+  },
+  "a1_finalbattle_bag_item_2": {
+    "id": 1392,
+    "key": "a1_finalbattle_bag_item_2",
+    "num": 104010
+  },
+  "a1_finalbattle_named_times": {
+    "id": 1393,
+    "key": "a1_finalbattle_named_times",
+    "num": 1
+  },
+  "a1_finalbattle_summon_failed": {
+    "id": 1394,
+    "key": "a1_finalbattle_summon_failed",
+    "str": {
+      "localization_id": 122,
+      "text": "确定是这个名字吗？再想一想吧。"
+    }
+  },
+  "a1_finalbattle_autosummon_tips": {
+    "id": 1395,
+    "key": "a1_finalbattle_autosummon_tips",
+    "str": {
+      "localization_id": 123,
+      "text": "错误次数过多，已为您选择一只。"
+    }
+  },
+  "a1_finalbattle_summonbox_text": {
+    "id": 1396,
+    "key": "a1_finalbattle_summonbox_text",
+    "str": {
+      "localization_id": 124,
+      "text": "呼唤你的精灵"
+    }
+  },
+  "a1_finalbattle_sequence_arthur_path": {
+    "id": 1397,
+    "key": "a1_finalbattle_sequence_arthur_path",
+    "str": {
+      "localization_id": 125,
+      "text": "/Game/ArtRes/AnimSequence/Sequence/CG/QYT_Layout/JQ08_CS06/JQ08_CS06_Master.JQ08_CS06_Master"
+    }
+  },
+  "a1_finalbattle_postsummon_dialogue_ID": {
+    "id": 1398,
+    "key": "a1_finalbattle_postsummon_dialogue_ID",
+    "num": 1302018
+  },
+  "a1_finalbattle_summon_dialogue_ID": {
+    "id": 1399,
+    "key": "a1_finalbattle_summon_dialogue_ID",
+    "num": 2550115
+  },
+  "a1_finalbattle_name_buff_ID": {
+    "id": 1400,
+    "key": "a1_finalbattle_name_buff_ID",
+    "num": 20010745
+  },
+  "a1_finalbattle_introduce_turn": {
+    "id": 1401,
+    "key": "a1_finalbattle_introduce_turn",
+    "num": 2
+  },
+  "a1_finalbattle_realname_color": {
+    "id": 1402,
+    "key": "a1_finalbattle_realname_color",
+    "numList": [
+      0,
+      0,
+      0
+    ]
+  },
+  "a1_finalbattle_energy_max": {
+    "id": 1403,
+    "key": "a1_finalbattle_energy_max",
+    "num": 24
+  },
+  "a1_finalbattle_energy_per_attack": {
+    "id": 1404,
+    "key": "a1_finalbattle_energy_per_attack",
+    "num": 2
+  },
+  "a1_finalbattle_energy_on_hit": {
+    "id": 1405,
+    "key": "a1_finalbattle_energy_on_hit"
+  },
+  "a1_finalbattle_max_summon_attempts": {
+    "id": 1406,
+    "key": "a1_finalbattle_max_summon_attempts",
+    "num": 10
+  },
+  "a1_finalbattle_magic_ID1": {
+    "id": 1407,
+    "key": "a1_finalbattle_magic_ID1",
+    "num": 7010075
+  },
+  "a1_finalbattle_magic_ID2": {
+    "id": 1408,
+    "key": "a1_finalbattle_magic_ID2",
+    "num": 7010076
+  },
+  "pvp_rank_character1": {
+    "id": 1409,
+    "key": "pvp_rank_character1",
+    "str": {
+      "localization_id": 126,
+      "text": "队伍编辑"
+    }
+  },
+  "pvp_rank_character2": {
+    "id": 1410,
+    "key": "pvp_rank_character2",
+    "str": {
+      "localization_id": 127,
+      "text": "队伍中没有精灵"
+    }
+  },
+  "pvp_rank_character3": {
+    "id": 1411,
+    "key": "pvp_rank_character3",
+    "str": {
+      "localization_id": 128,
+      "text": "结算中无法进行调整"
+    }
+  },
+  "pvp_tips1": {
+    "id": 1412,
+    "key": "pvp_tips1",
+    "str": {
+      "localization_id": 129,
+      "text": "目前还没有共鸣魔法可以装备"
+    }
+  },
+  "pvp_rank_character4": {
+    "id": 1413,
+    "key": "pvp_rank_character4",
+    "str": {
+      "localization_id": 130,
+      "text": "{0:d}场胜利"
+    }
+  },
+  "pvp_rank_character5": {
+    "id": 1414,
+    "key": "pvp_rank_character5",
+    "str": {
+      "localization_id": 131,
+      "text": "第{0:d}名"
+    }
+  },
+  "pvp_rank_character6": {
+    "id": 1415,
+    "key": "pvp_rank_character6",
+    "str": {
+      "localization_id": 132,
+      "text": "<span color=\"#d76c07\">胜利  {0:d}</>  失败  {1:d}"
+    }
+  },
+  "pvp_rank_character7": {
+    "id": 1416,
+    "key": "pvp_rank_character7",
+    "str": {
+      "localization_id": 133,
+      "text": "本周胜场（含观战）  <span color=\"#D56C1F\">{0:d}/{1:d}</>， 挑战刷新时间  <span color=\"#D56C1F\">{2}</>"
+    }
+  },
+  "pvp_rank_character8": {
+    "id": 1417,
+    "key": "pvp_rank_character8",
+    "str": {
+      "localization_id": 134,
+      "text": "赛季倒计时:{0}"
+    }
+  },
+  "pvp_rank_character9": {
+    "id": 1418,
+    "key": "pvp_rank_character9",
+    "str": {
+      "localization_id": 135,
+      "text": "{0}"
+    }
+  },
+  "pvp_rank_character10": {
+    "id": 1419,
+    "key": "pvp_rank_character10",
+    "str": {
+      "localization_id": 136,
+      "text": "结算中"
+    }
+  },
+  "pvp_rank_character11": {
+    "id": 1420,
+    "key": "pvp_rank_character11",
+    "str": {
+      "localization_id": 137,
+      "text": "快速编队"
+    }
+  },
+  "pvp_rank_character12": {
+    "id": 1421,
+    "key": "pvp_rank_character12",
+    "str": {
+      "localization_id": 138,
+      "text": "剩余{0}"
+    }
+  },
+  "pvp_rank_character13": {
+    "id": 1422,
+    "key": "pvp_rank_character13",
+    "str": {
+      "localization_id": 139,
+      "text": "您不会在此段位降级"
+    }
+  },
+  "pvp_rank_character14": {
+    "id": 1423,
+    "key": "pvp_rank_character14",
+    "str": {
+      "localization_id": 140,
+      "text": "结算中，无法进行对战"
+    }
+  },
+  "pvp_character1": {
+    "id": 1424,
+    "key": "pvp_character1",
+    "str": {
+      "localization_id": 141,
+      "text": "本周获得点数"
+    }
+  },
+  "pvp_rank_character15": {
+    "id": 1425,
+    "key": "pvp_rank_character15",
+    "str": {
+      "localization_id": 142,
+      "text": "对方正在加载中({0}秒）"
+    }
+  },
+  "pvp_rank_character16": {
+    "id": 1426,
+    "key": "pvp_rank_character16",
+    "str": {
+      "localization_id": 143,
+      "text": "快捷编辑"
+    }
+  },
+  "pvp_rank_character17": {
+    "id": 1427,
+    "key": "pvp_rank_character17",
+    "str": {
+      "localization_id": 144,
+      "text": "保存编辑"
+    }
+  },
+  "pvp_rank_character18": {
+    "id": 1428,
+    "key": "pvp_rank_character18",
+    "str": {
+      "localization_id": 145,
+      "text": "随机精灵"
+    }
+  },
+  "pvp_rank_character19": {
+    "id": 1429,
+    "key": "pvp_rank_character19",
+    "str": {
+      "localization_id": 146,
+      "text": "队伍中有精灵携带奇异技能，将无法进行匹配"
+    }
+  },
+  "pvp_rank_dashi_initial_scroe": {
+    "id": 1430,
+    "key": "pvp_rank_dashi_initial_scroe",
+    "num": 500
+  },
+  "pvp_rank_dashi_min_scroe": {
+    "id": 1431,
+    "key": "pvp_rank_dashi_min_scroe"
+  },
+  "pvp_rank_dashi_scroe0": {
+    "id": 1432,
+    "key": "pvp_rank_dashi_scroe0",
+    "numList": [
+      40,
+      -40
+    ]
+  },
+  "pvp_rank_dashi_scroe1": {
+    "id": 1433,
+    "key": "pvp_rank_dashi_scroe1",
+    "numList": [
+      200,
+      -2
+    ]
+  },
+  "pvp_rank_dashi_scroe2": {
+    "id": 1434,
+    "key": "pvp_rank_dashi_scroe2",
+    "numList": [
+      200,
+      -2
+    ]
+  },
+  "pvp_rank_dashi_scroe3": {
+    "id": 1435,
+    "key": "pvp_rank_dashi_scroe3",
+    "numList": [
+      200,
+      2
+    ]
+  },
+  "pvp_rank_dashi_scroe4": {
+    "id": 1436,
+    "key": "pvp_rank_dashi_scroe4",
+    "numList": [
+      200,
+      2
+    ]
+  },
+  "pvp_rank_dashi_scroe5": {
+    "id": 1437,
+    "key": "pvp_rank_dashi_scroe5",
+    "numList": [
+      0,
+      0,
+      1,
+      2,
+      3,
+      5,
+      7
+    ]
+  },
+  "pvp_rank_dashi_scroe6": {
+    "id": 1438,
+    "key": "pvp_rank_dashi_scroe6",
+    "numList": [
+      0,
+      0,
+      2,
+      4,
+      6,
+      10
+    ]
+  },
+  "pvp_rank_dashi_scroe7": {
+    "id": 1439,
+    "key": "pvp_rank_dashi_scroe7",
+    "numList": [
+      30,
+      50
+    ]
+  },
+  "pvp_rank_dashi_scroe8": {
+    "id": 1440,
+    "key": "pvp_rank_dashi_scroe8",
+    "numList": [
+      -30,
+      -50
+    ]
+  },
+  "pvp_rank_dashi_para1": {
+    "id": 1441,
+    "key": "pvp_rank_dashi_para1"
+  },
+  "pvp_rank_dashi_para2": {
+    "id": 1442,
+    "key": "pvp_rank_dashi_para2",
+    "num": 150
+  },
+  "pvp_rank_dashi_para3": {
+    "id": 1443,
+    "key": "pvp_rank_dashi_para3",
+    "numList": [
+      30,
+      400
+    ]
+  },
+  "pvp_para1": {
+    "id": 1444,
+    "key": "pvp_para1"
+  },
+  "pvp_para2": {
+    "id": 1445,
+    "key": "pvp_para2",
+    "num": 12000
+  },
+  "pvp_para3": {
+    "id": 1446,
+    "key": "pvp_para3",
+    "num": 2
+  },
+  "pvp_para4": {
+    "id": 1447,
+    "key": "pvp_para4",
+    "str": {
+      "localization_id": 147,
+      "text": "5 04:00:00"
+    }
+  },
+  "pvp_para5": {
+    "id": 1448,
+    "key": "pvp_para5",
+    "str": {
+      "localization_id": 148,
+      "text": "1 04:00:00"
+    }
+  },
+  "pvp_rank_battle1": {
+    "id": 1452,
+    "key": "pvp_rank_battle1",
+    "numList": [
+      341001,
+      341002,
+      341003,
+      341004
+    ]
+  },
+  "pvp_rank_match_robot_time": {
+    "id": 1453,
+    "key": "pvp_rank_match_robot_time",
+    "numList": [
+      3,
+      8
+    ]
+  },
+  "pvp_rank_match_robot_time1": {
+    "id": 1454,
+    "key": "pvp_rank_match_robot_time1",
+    "numList": [
+      5,
+      20
+    ]
+  },
+  "pvp_rank_match_score_diff_r": {
+    "id": 1455,
+    "key": "pvp_rank_match_score_diff_r",
+    "numList": [
+      200,
+      100
+    ]
+  },
+  "pvp_rank_match_score_time": {
+    "id": 1456,
+    "key": "pvp_rank_match_score_time",
+    "num": 1
+  },
+  "pvp_rank_match_star_y": {
+    "id": 1457,
+    "key": "pvp_rank_match_star_y",
+    "num": 1
+  },
+  "pvp_rank_match_time": {
+    "id": 1458,
+    "key": "pvp_rank_match_time",
+    "num": 1
+  },
+  "pvp_rank_match_star_y1": {
+    "id": 1459,
+    "key": "pvp_rank_match_star_y1",
+    "num": 1
+  },
+  "pvp_rank_match_time_num": {
+    "id": 1460,
+    "key": "pvp_rank_match_time_num",
+    "num": 30
+  },
+  "pvp_rank_fail_num": {
+    "id": 1461,
+    "key": "pvp_rank_fail_num",
+    "num": 3
+  },
+  "pvp_rank_win_num": {
+    "id": 1462,
+    "key": "pvp_rank_win_num",
+    "num": 3
+  },
+  "pvp_rank_maxrank_diff_r": {
+    "id": 1464,
+    "key": "pvp_rank_maxrank_diff_r",
+    "numList": [
+      100,
+      100
+    ]
+  },
+  "pvp_rank_maxrank_time": {
+    "id": 1465,
+    "key": "pvp_rank_maxrank_time",
+    "num": 5
+  },
+  "pvp_rank_max_num": {
+    "id": 1466,
+    "key": "pvp_rank_max_num",
+    "num": 10000
+  },
+  "pvp_rank_week_reward_time1": {
+    "id": 1467,
+    "key": "pvp_rank_week_reward_time1",
+    "str": {
+      "localization_id": 149,
+      "text": "7 0:00:00"
+    }
+  },
+  "pvp_rank_week_reward_time2": {
+    "id": 1468,
+    "key": "pvp_rank_week_reward_time2",
+    "str": {
+      "localization_id": 150,
+      "text": "2024-11-04 4:00:00"
+    }
+  },
+  "pvp_rank_battle_mappoint_random": {
+    "id": 1469,
+    "key": "pvp_rank_battle_mappoint_random",
+    "numList": [
+      1470
+    ]
+  },
+  "pvp_rank_battle_mappoint_1": {
+    "id": 1470,
+    "key": "pvp_rank_battle_mappoint_1",
+    "numList": [
+      103,
+      -802979,
+      -778280,
+      29974
+    ]
+  },
+  "fake_standby": {
+    "id": 1471,
+    "key": "fake_standby",
+    "num": 7000012
+  },
+  "starfall": {
+    "id": 1472,
+    "key": "starfall",
+    "numList": [
+      1,
+      24,
+      -24
+    ]
+  },
+  "battle_number": {
+    "id": 1473,
+    "key": "battle_number",
+    "num": 5
+  },
+  "CR_SPECIES_STRENGTH": {
+    "id": 1474,
+    "key": "CR_SPECIES_STRENGTH",
+    "numList": [
+      -9999,
+      1,
+      31,
+      61,
+      91,
+      121,
+      151,
+      181,
+      211,
+      241,
+      271,
+      999999
+    ]
+  },
+  "pvp_rank_week_reward_time3": {
+    "id": 1475,
+    "key": "pvp_rank_week_reward_time3",
+    "str": {
+      "localization_id": 151,
+      "text": "TRE_DAILY_FROM"
+    }
+  },
+  "pvp_balance_effort_grow_level": {
+    "id": 1476,
+    "key": "pvp_balance_effort_grow_level",
+    "num": 50
+  },
+  "pvp_AI_pet": {
+    "id": 1477,
+    "key": "pvp_AI_pet",
+    "str": {
+      "localization_id": 152,
+      "text": "MFBT_BattleAI_fulijuAI"
+    }
+  },
+  "pvp_AI_NPC": {
+    "id": 1478,
+    "key": "pvp_AI_NPC",
+    "str": {
+      "localization_id": 153,
+      "text": "MFBT_fulijunpcAI"
+    }
+  },
+  "pvp_battlewatch_character1": {
+    "id": 1479,
+    "key": "pvp_battlewatch_character1",
+    "str": {
+      "localization_id": 154,
+      "text": "退出"
+    }
+  },
+  "pvp_battlewatch_character2": {
+    "id": 1480,
+    "key": "pvp_battlewatch_character2",
+    "str": {
+      "localization_id": 155,
+      "text": "确定要退出观战吗？"
+    }
+  },
+  "pvp_battlewatch_character3": {
+    "id": 1481,
+    "key": "pvp_battlewatch_character3",
+    "str": {
+      "localization_id": 156,
+      "text": "你已被移出观战模式"
+    }
+  },
+  "pvp_battlewatch_character4": {
+    "id": 1482,
+    "key": "pvp_battlewatch_character4",
+    "str": {
+      "localization_id": 157,
+      "text": "移出观战"
+    }
+  },
+  "pvp_battlewatch_character5": {
+    "id": 1483,
+    "key": "pvp_battlewatch_character5",
+    "str": {
+      "localization_id": 158,
+      "text": "你确定要将好友 {0} 移出观战吗？"
+    }
+  },
+  "pvp_battlewatch_character6": {
+    "id": 1484,
+    "key": "pvp_battlewatch_character6",
+    "str": {
+      "localization_id": 159,
+      "text": "正在进行[{0}]"
+    }
+  },
+  "pvp_battlewatch_character7": {
+    "id": 1485,
+    "key": "pvp_battlewatch_character7",
+    "str": {
+      "localization_id": 160,
+      "text": "<span color=\"#d76c07\">{0}</> 正在观看你的对战"
+    }
+  },
+  "pvp_friend_battle": {
+    "id": 1486,
+    "key": "pvp_friend_battle",
+    "str": {
+      "localization_id": 161,
+      "text": "BT_PVP;好友切磋"
+    }
+  },
+  "pvp_rank_npc_position": {
+    "id": 1487,
+    "key": "pvp_rank_npc_position",
+    "numList": [
+      103,
+      -803771,
+      -778112,
+      29967
+    ]
+  },
+  "yanhu_buff112": {
+    "id": 1488,
+    "key": "yanhu_buff112",
+    "num": 791337
+  },
+  "pvp_battlewatch_num_max": {
+    "id": 1489,
+    "key": "pvp_battlewatch_num_max",
+    "num": 11000
+  },
+  "pvp_countdown": {
+    "id": 1490,
+    "key": "pvp_countdown",
+    "num": 15
+  },
+  "pvp_wait_time": {
+    "id": 1491,
+    "key": "pvp_wait_time",
+    "num": 30
+  },
+  "pvp_rank_trial_pet_para1": {
+    "id": 1492,
+    "key": "pvp_rank_trial_pet_para1",
+    "str": {
+      "localization_id": 162,
+      "text": "TRE_DAILY_FROM"
+    }
+  },
+  "pvp_rank_trial_pet_para2": {
+    "id": 1493,
+    "key": "pvp_rank_trial_pet_para2",
+    "str": {
+      "localization_id": 163,
+      "text": "7 0:00:00"
+    }
+  },
+  "pvp_rank_trial_pet_para3": {
+    "id": 1494,
+    "key": "pvp_rank_trial_pet_para3",
+    "str": {
+      "localization_id": 164,
+      "text": "2026-01-29 4:00:00"
+    }
+  },
+  "pvp_rank_trial_pet_character1": {
+    "id": 1495,
+    "key": "pvp_rank_trial_pet_character1",
+    "str": {
+      "localization_id": 165,
+      "text": "试用精灵无法修改"
+    }
+  },
+  "pvp_ddl": {
+    "id": 1496,
+    "key": "pvp_ddl",
+    "num": 10,
+    "numList": [
+      10
+    ]
+  },
+  "pvp_rank_task": {
+    "id": 1497,
+    "key": "pvp_rank_task",
+    "num": 11001
+  },
+  "pvp_rank_task_tips": {
+    "id": 1498,
+    "key": "pvp_rank_task_tips",
+    "str": {
+      "localization_id": 166,
+      "text": "您即将前往一个未知之地参与闪耀大赛，该地区可能会涉及部分剧透，传送前请进行确认。"
+    }
+  },
+  "pvp_rank_trial_pet_character2": {
+    "id": 1499,
+    "key": "pvp_rank_trial_pet_character2",
+    "str": {
+      "localization_id": 167,
+      "text": "我的精灵"
+    }
+  },
+  "pvp_rank_trial_pet_character3": {
+    "id": 1500,
+    "key": "pvp_rank_trial_pet_character3",
+    "str": {
+      "localization_id": 168,
+      "text": "试用精灵"
+    }
+  },
+  "pvp_rank_trial_pet_character4": {
+    "id": 1501,
+    "key": "pvp_rank_trial_pet_character4",
+    "str": {
+      "localization_id": 169,
+      "text": "试用精灵已过期，请从本界面退出重新进入"
+    }
+  },
+  "pvp_rank_trial_pet_character5": {
+    "id": 1502,
+    "key": "pvp_rank_trial_pet_character5",
+    "str": {
+      "localization_id": 170,
+      "text": "暂无对战数据"
+    }
+  },
+  "npc_challenge_mappoint1": {
+    "id": 1503,
+    "key": "npc_challenge_mappoint1",
+    "numList": [
+      103,
+      440064,
+      524554,
+      34783
+    ],
+    "str": {
+      "localization_id": 171,
+      "text": "12:00:00"
+    }
+  },
+  "npc_challenge_mappoint2": {
+    "id": 1504,
+    "key": "npc_challenge_mappoint2",
+    "numList": [
+      103,
+      440064,
+      524554,
+      34783
+    ],
+    "str": {
+      "localization_id": 172,
+      "text": "12:00:00"
+    }
+  },
+  "npc_challenge_mappoint3": {
+    "id": 1505,
+    "key": "npc_challenge_mappoint3",
+    "numList": [
+      103,
+      440064,
+      524554,
+      34783
+    ],
+    "str": {
+      "localization_id": 173,
+      "text": "12:00:00"
+    }
+  },
+  "npc_challenge_mappoint4": {
+    "id": 1506,
+    "key": "npc_challenge_mappoint4",
+    "numList": [
+      103,
+      440064,
+      524554,
+      34783
+    ],
+    "str": {
+      "localization_id": 174,
+      "text": "12:00:00"
+    }
+  },
+  "npc_challenge_unlock_task": {
+    "id": 1507,
+    "key": "npc_challenge_unlock_task",
+    "num": 91000047
+  },
+  "boss_challenge_unlock_task": {
+    "id": 1508,
+    "key": "boss_challenge_unlock_task",
+    "num": 91000051
+  },
+  "battle_character1": {
+    "id": 1509,
+    "key": "battle_character1",
+    "str": {
+      "localization_id": 175,
+      "text": "精灵被退化，借用等均无法使用该技能"
+    }
+  },
+  "pvp_rank_param1": {
+    "id": 1510,
+    "key": "pvp_rank_param1",
+    "num": 2
+  },
+  "pvp_win_rating_change_limit": {
+    "id": 1511,
+    "key": "pvp_win_rating_change_limit",
+    "numList": [
+      15,
+      9999
+    ]
+  },
+  "pvp_lose_rating_change_limit": {
+    "id": 1512,
+    "key": "pvp_lose_rating_change_limit",
+    "numList": [
+      15,
+      9999
+    ]
+  },
+  "pvp_rank_param2": {
+    "id": 1513,
+    "key": "pvp_rank_param2",
+    "num": 2
+  },
+  "pvp_rank_param3": {
+    "id": 1514,
+    "key": "pvp_rank_param3",
+    "num": 20
+  },
+  "blood_team_battle_normal_model_scale": {
+    "id": 1515,
+    "key": "blood_team_battle_normal_model_scale",
+    "numList": [
+      30,
+      150
+    ]
+  },
+  "blood_team_battle_boss_model_scale": {
+    "id": 1516,
+    "key": "blood_team_battle_boss_model_scale",
+    "numList": [
+      250,
+      350
+    ]
+  },
+  "team_battle_AI_wait_seconds": {
+    "id": 1517,
+    "key": "team_battle_AI_wait_seconds",
+    "num": 10
+  },
+  "pvp_rank_match_fix_low_score": {
+    "id": 1518,
+    "key": "pvp_rank_match_fix_low_score"
+  },
+  "pvp_rank_match_distance": {
+    "id": 1519,
+    "key": "pvp_rank_match_distance",
+    "num": 35
+  },
+  "rogue_battle_id": {
+    "id": 1520,
+    "key": "rogue_battle_id",
+    "num": 808236
+  },
+  "rogue_battle_id_2": {
+    "id": 1521,
+    "key": "rogue_battle_id_2",
+    "num": 808237
+  },
+  "weekly_challenge_unlock_task": {
+    "id": 1522,
+    "key": "weekly_challenge_unlock_task"
+  },
+  "battle_interval_time": {
+    "id": 1523,
+    "key": "battle_interval_time",
+    "numList": [
+      2,
+      3
+    ]
+  },
+  "battle_duration_time": {
+    "id": 1524,
+    "key": "battle_duration_time",
+    "numList": [
+      4,
+      3
+    ]
+  },
+  "battle_Transmission_speed": {
+    "id": 1525,
+    "key": "battle_Transmission_speed",
+    "numList": [
+      3,
+      2
+    ]
+  },
+  "battle_Random_speed": {
+    "id": 1526,
+    "key": "battle_Random_speed",
+    "numList": [
+      3,
+      2
+    ]
+  },
+  "peer_modify": {
+    "id": 1527,
+    "key": "peer_modify",
+    "num": 150000
+  },
+  "B1_finalbattle_loadlevel": {
+    "id": 1528,
+    "key": "B1_finalbattle_loadlevel",
+    "num": 1611045
+  },
+  "quick_catch_trigger_rate": {
+    "id": 1529,
+    "key": "quick_catch_trigger_rate",
+    "num": 9000
+  },
+  "pve_challenge_battle_distance": {
+    "id": 1530,
+    "key": "pve_challenge_battle_distance",
+    "num": 25
+  },
+  "weekly_challenge_entrence_refresh_id": {
+    "id": 1531,
+    "key": "weekly_challenge_entrence_refresh_id",
+    "num": 2400575
+  },
+  "pvp_rank_is_open_limit_fantastic": {
+    "id": 1532,
+    "key": "pvp_rank_is_open_limit_fantastic",
+    "num": 1
+  },
+  "pve_enter_battle_ban_untransform": {
+    "id": 1533,
+    "key": "pve_enter_battle_ban_untransform",
+    "numList": [
+      32
+    ]
+  },
+  "pvp_rank_character31": {
+    "id": 1534,
+    "key": "pvp_rank_character31",
+    "str": {
+      "localization_id": 176,
+      "text": "本期限时试用系别"
+    }
+  },
+  "pvp_rank_character32": {
+    "id": 1535,
+    "key": "pvp_rank_character32",
+    "str": {
+      "localization_id": 177,
+      "text": "本期限时试用全系别"
+    }
+  },
+  "pvp_rank_character33": {
+    "id": 1536,
+    "key": "pvp_rank_character33",
+    "str": {
+      "localization_id": 178,
+      "text": "本日获得:"
+    }
+  },
+  "pvp_rank_character34": {
+    "id": 1537,
+    "key": "pvp_rank_character34",
+    "str": {
+      "localization_id": 179,
+      "text": "{0}/{1}"
+    }
+  },
+  "pvp_rank_character35": {
+    "id": 1538,
+    "key": "pvp_rank_character35",
+    "str": {
+      "localization_id": 180,
+      "text": "胜利<Yellow>+{0}</>"
+    }
+  },
+  "pvp_rank_character36": {
+    "id": 1539,
+    "key": "pvp_rank_character36",
+    "str": {
+      "localization_id": 181,
+      "text": "队伍不符合上阵规则要求，无法进行该操作"
+    }
+  },
+  "pvp_rank_character37": {
+    "id": 1540,
+    "key": "pvp_rank_character37",
+    "str": {
+      "localization_id": 182,
+      "text": "对决时间"
+    }
+  },
+  "pvp_rank_character38": {
+    "id": 1541,
+    "key": "pvp_rank_character38",
+    "str": {
+      "localization_id": 183,
+      "text": "随机加成"
+    }
+  },
+  "pvp_rank_character39": {
+    "id": 1542,
+    "key": "pvp_rank_character39",
+    "str": {
+      "localization_id": 184,
+      "text": "本期规则"
+    }
+  },
+  "pvp_param12": {
+    "id": 1551,
+    "key": "pvp_param12",
+    "num": 1000
+  },
+  "pvp_param13": {
+    "id": 1552,
+    "key": "pvp_param13",
+    "num": 500
+  },
+  "pvp_param14": {
+    "id": 1553,
+    "key": "pvp_param14",
+    "str": {
+      "localization_id": 185,
+      "text": "TRE_DAILY_FROM"
+    }
+  },
+  "pvp_param15": {
+    "id": 1554,
+    "key": "pvp_param15",
+    "str": {
+      "localization_id": 186,
+      "text": "7 0:00:00"
+    }
+  },
+  "pvp_param16": {
+    "id": 1555,
+    "key": "pvp_param16",
+    "str": {
+      "localization_id": 187,
+      "text": "2025-03-17 04:00:00"
+    }
+  },
+  "pvp_param17": {
+    "id": 1556,
+    "key": "pvp_param17",
+    "num": 608023
+  },
+  "pvp_param18": {
+    "id": 1557,
+    "key": "pvp_param18",
+    "num": 608014
+  },
+  "pvp_rank_character20": {
+    "id": 1600,
+    "key": "pvp_rank_character20",
+    "str": {
+      "localization_id": 188,
+      "text": "胜利可获得的最多星级加成"
+    }
+  },
+  "pvp_rank_character21": {
+    "id": 1601,
+    "key": "pvp_rank_character21",
+    "str": {
+      "localization_id": 189,
+      "text": "胜利获得的制胜点数加成"
+    }
+  },
+  "pvp_rank_character22": {
+    "id": 1602,
+    "key": "pvp_rank_character22",
+    "str": {
+      "localization_id": 190,
+      "text": "击败对方精灵制胜点数加成"
+    }
+  },
+  "pvp_rank_param4": {
+    "id": 1603,
+    "key": "pvp_rank_param4",
+    "num": 6
+  },
+  "pvp_rank_param5": {
+    "id": 1604,
+    "key": "pvp_rank_param5",
+    "num": 1
+  },
+  "pvp_rank_param6": {
+    "id": 1605,
+    "key": "pvp_rank_param6",
+    "num": 1
+  },
+  "pvp_rank_param7": {
+    "id": 1606,
+    "key": "pvp_rank_param7",
+    "num": 10000
+  },
+  "pvp_rank_param8": {
+    "id": 1607,
+    "key": "pvp_rank_param8",
+    "num": 1500
+  },
+  "pvp_rank_character23": {
+    "id": 1608,
+    "key": "pvp_rank_character23",
+    "str": {
+      "localization_id": 191,
+      "text": "完成今日首胜获得奖励"
+    }
+  },
+  "territory_trial_point_param": {
+    "id": 1609,
+    "key": "territory_trial_point_param",
+    "num": 100
+  },
+  "territory_trial_countdown": {
+    "id": 1610,
+    "key": "territory_trial_countdown",
+    "num": 5
+  },
+  "pvp_rank_character24": {
+    "id": 1611,
+    "key": "pvp_rank_character24",
+    "str": {
+      "localization_id": 192,
+      "text": "赛季段位重置"
+    }
+  },
+  "battle_train_skip_title": {
+    "id": 1612,
+    "key": "battle_train_skip_title",
+    "str": {
+      "localization_id": 193,
+      "text": "跳过指引"
+    }
+  },
+  "battle_train_skip_display": {
+    "id": 1613,
+    "key": "battle_train_skip_display",
+    "str": {
+      "localization_id": 194,
+      "text": "是否跳过当前战斗指引？"
+    }
+  },
+  "pvp_param1": {
+    "id": 1614,
+    "key": "pvp_param1",
+    "num": 20
+  },
+  "pvp_param2": {
+    "id": 1615,
+    "key": "pvp_param2",
+    "num": 6
+  },
+  "pvp_param3": {
+    "id": 1616,
+    "key": "pvp_param3",
+    "num": 5000
+  },
+  "pvp_param4": {
+    "id": 1617,
+    "key": "pvp_param4",
+    "num": 3000000
+  },
+  "pvp_param5": {
+    "id": 1618,
+    "key": "pvp_param5",
+    "num": 10
+  },
+  "pvp_rank_character25": {
+    "id": 1619,
+    "key": "pvp_rank_character25",
+    "str": {
+      "localization_id": 195,
+      "text": "使用随机精灵获得额外星级！"
+    }
+  },
+  "pvp_rank_character26": {
+    "id": 1620,
+    "key": "pvp_rank_character26",
+    "str": {
+      "localization_id": 196,
+      "text": "连胜获得额外星级！"
+    }
+  },
+  "pvp_rank_character27": {
+    "id": 1621,
+    "key": "pvp_rank_character27",
+    "str": {
+      "localization_id": 197,
+      "text": "连胜及使用随机精灵获得额外星级！"
+    }
+  },
+  "pvp_param6": {
+    "id": 1622,
+    "key": "pvp_param6",
+    "num": 1
+  },
+  "pvp_rank_character28": {
+    "id": 1623,
+    "key": "pvp_rank_character28",
+    "str": {
+      "localization_id": 198,
+      "text": "第{0}/{1}页"
+    }
+  },
+  "pvp_rank_character29": {
+    "id": 1624,
+    "key": "pvp_rank_character29",
+    "str": {
+      "localization_id": 199,
+      "text": "该精灵已在队伍中"
+    }
+  },
+  "pvp_rank_character30": {
+    "id": 1625,
+    "key": "pvp_rank_character30",
+    "str": {
+      "localization_id": 200,
+      "text": "观战人数：%s"
+    }
+  },
+  "pvp_param7": {
+    "id": 1626,
+    "key": "pvp_param7",
+    "num": 3
+  },
+  "pvp_param8": {
+    "id": 1627,
+    "key": "pvp_param8",
+    "num": 3
+  },
+  "pvp_param9": {
+    "id": 1628,
+    "key": "pvp_param9",
+    "num": 2
+  },
+  "pvp_param10": {
+    "id": 1629,
+    "key": "pvp_param10",
+    "num": 1
+  },
+  "pvp_param11": {
+    "id": 1630,
+    "key": "pvp_param11",
+    "num": 2
+  },
+  "skill_damage_max": {
+    "id": 1633,
+    "key": "skill_damage_max",
+    "num": 99999
+  },
+  "attr_max": {
+    "id": 1634,
+    "key": "attr_max",
+    "num": 999999
+  },
+  "random_value": {
+    "id": 1644,
+    "key": "random_value",
+    "numList": [
+      3000,
+      3000
+    ]
+  },
+  "lordevo_exp_ratio": {
+    "id": 1651,
+    "key": "lordevo_exp_ratio",
+    "num": 100
+  },
+  "auto_battle_exp_ratio": {
+    "id": 1652,
+    "key": "auto_battle_exp_ratio",
+    "num": 100
+  },
+  "auto_battle_damage_level": {
+    "id": 1662,
+    "key": "auto_battle_damage_level",
+    "num": 50
+  },
+  "auto_battle_damage_star": {
+    "id": 1663,
+    "key": "auto_battle_damage_star",
+    "num": 112
+  },
+  "auto_battle_hitcount": {
+    "id": 1664,
+    "key": "auto_battle_hitcount",
+    "num": 400
+  },
+  "auto_battle_lordevo_evo": {
+    "id": 1665,
+    "key": "auto_battle_lordevo_evo",
+    "num": 100
+  },
+  "auto_battle_wild_evo": {
+    "id": 1666,
+    "key": "auto_battle_wild_evo",
+    "numList": [
+      67,
+      82,
+      100
+    ]
+  },
+  "auto_battle_inspire_ratio": {
+    "id": 1667,
+    "key": "auto_battle_inspire_ratio",
+    "numList": [
+      100,
+      120,
+      160,
+      240,
+      340,
+      550
+    ]
+  },
+  "damage_over_level_ratio": {
+    "id": 1668,
+    "key": "damage_over_level_ratio",
+    "num": 140
+  },
+  "damage_over_star_ratio": {
+    "id": 1669,
+    "key": "damage_over_star_ratio",
+    "num": 114
+  },
+  "over_level_cutoff": {
+    "id": 1670,
+    "key": "over_level_cutoff",
+    "num": 1
+  },
+  "over_star_cutoff": {
+    "id": 1671,
+    "key": "over_star_cutoff"
+  },
+  "damage_over_evo_ratio": {
+    "id": 1672,
+    "key": "damage_over_evo_ratio",
+    "numList": [
+      130,
+      150
+    ]
+  },
+  "lordevo_breakthrough_lv_hitedcount": {
+    "id": 1673,
+    "key": "lordevo_breakthrough_lv_hitedcount",
+    "numList": [
+      6,
+      6,
+      6,
+      6,
+      6
+    ]
+  },
+  "lordevo_inspire_lv_hitedcount": {
+    "id": 1674,
+    "key": "lordevo_inspire_lv_hitedcount",
+    "numList": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "lordevo_breakthrough_lv_damage": {
+    "id": 1675,
+    "key": "lordevo_breakthrough_lv_damage",
+    "numList": [
+      100,
+      150,
+      200,
+      250,
+      300
+    ]
+  },
+  "lordevo_inspire_lv_damage": {
+    "id": 1676,
+    "key": "lordevo_inspire_lv_damage",
+    "numList": [
+      350,
+      400,
+      450,
+      600,
+      900
+    ]
+  },
+  "auto_battle_restraint_percent": {
+    "id": 1677,
+    "key": "auto_battle_restraint_percent",
+    "num": 200
+  },
+  "auto_battle_double_restraint_percent": {
+    "id": 1678,
+    "key": "auto_battle_double_restraint_percent",
+    "num": 300
+  },
+  "auto_battle_restrained_percent": {
+    "id": 1679,
+    "key": "auto_battle_restrained_percent",
+    "num": 50
+  },
+  "auto_battle_double_restrained_percent": {
+    "id": 1680,
+    "key": "auto_battle_double_restrained_percent",
+    "num": 33
+  },
+  "recover_countdown_wild": {
+    "id": 1681,
+    "key": "recover_countdown_wild",
+    "num": 30
+  },
+  "recover_countdown_lordevo": {
+    "id": 1682,
+    "key": "recover_countdown_lordevo",
+    "num": 30
+  },
+  "stun_time_wild": {
+    "id": 1683,
+    "key": "stun_time_wild",
+    "num": 10
+  },
+  "stun_time_lordevo": {
+    "id": 1684,
+    "key": "stun_time_lordevo",
+    "num": 10
+  },
+  "legendary_battle_jiaer_transform_hp": {
+    "id": 1685,
+    "key": "legendary_battle_jiaer_transform_hp",
+    "num": 5000
+  },
+  "magicstar_damage_decrease_percent": {
+    "id": 1686,
+    "key": "magicstar_damage_decrease_percent",
+    "numList": [
+      100,
+      50,
+      33,
+      25
+    ]
+  },
+  "lordevo_hitcount_wild_max": {
+    "id": 1687,
+    "key": "lordevo_hitcount_wild_max",
+    "num": 6
+  },
+  "legendary_battle_jiaer_white_id": {
+    "id": 1688,
+    "key": "legendary_battle_jiaer_white_id",
+    "num": 3232
+  },
+  "legendary_battle_jiaer_black_id": {
+    "id": 1689,
+    "key": "legendary_battle_jiaer_black_id",
+    "num": 19000010
+  },
+  "bookworld_battle_tips_time": {
+    "id": 1690,
+    "key": "bookworld_battle_tips_time",
+    "num": 180
+  },
+  "platinum_unicorn_id": {
+    "id": 1691,
+    "key": "platinum_unicorn_id",
+    "num": 3063
+  }
+}

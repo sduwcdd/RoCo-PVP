@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-25",
+  "snapshot_id": "20261025T013619+0800",
+  "catalog_file_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "compiler_version": "bwiki-declarative-4",
+  "compiled_skills": 170,
+  "unsupported_skills": 409,
+  "unsupported_traits": 246,
+  "new_skill_ids": [
+    7020440,
+    7020530,
+    7170110
+  ],
+  "broad_related_tests": {
+    "passed": 295,
+    "failed": 0,
+    "seconds": 122.845,
+    "scope": "295 related lab regressions including conditional, paired and isolated execution, source reuse, beliefs/API and data/contracts; not legacy full suite or real-game calibration."
+  },
+  "independent_review": {
+    "report": "docs/verification/energy-condition-review-20261025.md",
+    "tests_passed": 98,
+    "synthetic_combinations_passed": 540
+  },
+  "live_api_evidence": "docs/verification/energy-condition-live-20261025.json",
+  "server_pid_verified": 43436,
+  "files_sha256": {
+    "lab/skill_programs.py": "d29f4d6fd7aa53b3b3078a0974ac02402272ef0c482ad940ea475eba43359d73",
+    "lab/effect_runtime.py": "0e1d0b1c96df2124d3cc0ea252040a33fb2555d43b04c0bdacfef9a5e1cacaea",
+    "lab/action_runtime.py": "e0743f1a04275a7f89f05ea7d71e94f049e2fe3850ca8856cdf334a893234e19",
+    "tests/test_skill_programs.py": "15587c0316f9e5a73aaf4e93ac6572a20d9ae231e74af2dbad4bb1202cb53952",
+    "tests/test_effect_runtime.py": "4a1ccdf4113bcdf3b2e9711e0508d29a788469a5fbe7e768ea4147dd71ddad3e",
+    "tests/test_action_runtime.py": "22b1e1c2071c6d6d7ccef0ea1d3579a5d31ac59d02692045e6d98600777484b4",
+    "tests/test_turn_plan.py": "853ff236178b0f9c5413389b21cc9ba4ff91c4b0259f546f71220d16b6738441",
+    "data/rules/20261025T013619+0800/bwiki-declarative-3.json": "af67936fea097ab1424d164d2eb7fe0c8f50e4a09f588b70bac4e865fac4acf9",
+    "data/rules/20261025T013619+0800/bwiki-declarative-4.json": "ac2b94122b719f02c7e1c22c4d95828e8fb30800e38233d32f6aabaa19ad38ca"
+  },
+  "uncertainties": [
+    "Actual condition-read timing unverified; after-payment-before-damage is explicit experiment only",
+    "Full damage formula and excluded trait/field/mark/bloodline/event hooks unresolved"
+  ],
+  "full_simulator_completed": false,
+  "real_game_calibration_cases": 0,
+  "training_started": false
+}

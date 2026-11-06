@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-25",
+  "snapshot_id": "20261025T013619+0800",
+  "catalog_file_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "terms_content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+  "broad_related_tests": {
+    "passed": 324,
+    "failed": 0,
+    "seconds": 138.795,
+    "scope": "324 related lab regressions including source-bound status phases and atomic action/status composition; not legacy full suite or current-version game calibration."
+  },
+  "new_tests": {
+    "status_runtime": 21,
+    "action_status_sequence": 8
+  },
+  "initial_fixture_failure": {
+    "test": "test_status_failure_discards_successful_skill_damage_and_payments",
+    "cause": "Missing explicit damage_policy in synthetic attack fixture",
+    "fixed": true,
+    "sequence_rerun_passed": 8
+  },
+  "independent_review": "docs/verification/status-phase-review-20261025.md",
+  "synthetic_probe_counts": {
+    "state_schedule_layer_rounding": 162,
+    "post_skill_odd_layer": 3
+  },
+  "live_evidence": "docs/verification/status-phase-live-20261025.json",
+  "local_server_pid_verified": 37552,
+  "files_sha256": {
+    "lab/status_runtime.py": "6b38c319f02a378b3a02e15f2edc6b176f5cf393398521d78f46fb48a4173adb",
+    "lab/action_runtime.py": "74c20bebf43d2a90030c55c86f3c4c78dba0b91e16b3e4a60676c9bf059c403b",
+    "lab/prepared_rules.py": "9a55e73776fa64dbf8dac8b9c8041fa7699c05145caf8b101f19634374c35605",
+    "lab/server.py": "10c392cd8c83781204662d45436ed0abb0c22214e977671b6ea4d1d40dd56605",
+    "tests/test_status_runtime.py": "36c91f58eec3d2e8ab228cb8575497db39fa0b576c70db46930ed1a66e1cc09a",
+    "tests/test_action_status_sequence.py": "fa0b506db2116f3e9b416b7704258e2f4d828009b9952b9df134e0e6cfe42394",
+    "docs/PHASE_RULES.md": "0c0a4d9ecc6ddcf51011c1c1c0f04515df3dafcbe99102e7874ed612b1c6a990",
+    "docs/BWIKI_RULE_CORE.md": "b780dc8da37761af4e85b1f8e0c8eea0ee2d7214701d033ca154c1b28cb5e559"
+  },
+  "no_ui_changed": true,
+  "real_game_calibration_cases": 0,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "remaining": [
+    "Exact HP basis, layer scaling, numeric caps and rounding",
+    "Real-game status and trigger timing",
+    "Current-type immunity for existing status, freeze/leech and faint/replacement chains",
+    "Remaining skills/traits and complete turn resources/victory",
+    "Version-matched real-game calibration before policy training"
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "schema": "reviewed-world-npc-stats-1",
+  "candidate_id": "historical_world_npc_growth_attacker_level_v1",
+  "calibrated": false,
+  "real_game_verified": false,
+  "training_eligible": false,
+  "sources": [
+    {
+      "path": "artifacts/world_dunshu_20261101/npc_evidence.json",
+      "sha256": "692398d993ce996e8908da5b6a2c14878a44ef429cfd2159ae979f741b43e5f5"
+    }
+  ],
+  "policy": {
+    "unsupported_npcs": "blocked",
+    "unlisted_levels": "blocked",
+    "online_preset_truth": false,
+    "historical_fields_are_candidates": true,
+    "do_not_add_unreviewed_upper_mag_or_bornmagic": true
+  },
+  "npcs": {
+    "410451": {
+      "conf_id": 410451,
+      "base_id": 3455,
+      "difficulty": 1,
+      "historical_selected_ids": [
+        1,
+        4,
+        5
+      ],
+      "historical_selected_dimensions": [
+        "hp",
+        "pdef",
+        "mdef"
+      ],
+      "selection_status": "historical_candidate_not_downlinked_online_truth",
+      "growth_by_level": {
+        "24": {
+          "level": 24,
+          "historical_break_times": 1,
+          "effort_grow_level": 10,
+          "effort": {
+            "hp": 20,
+            "patk": 10,
+            "matk": 10,
+            "pdef": 10,
+            "mdef": 10,
+            "spd": 10
+          },
+          "nature_world_below60_stars": 0
+        }
+      },
+      "core_formula_id": "captured_world_zero_star_core_candidate_v1",
+      "talent_domain": {
+        "minimum": 0,
+        "maximum": 10,
+        "raw_to_display_factor_candidate": 1,
+        "status": "explicit_candidate_not_confirmed_npc_generation_domain"
+      },
+      "nature": {
+        "up_multiplier": 1.1,
+        "down_multiplier": 0.9,
+        "growth_outside_nature": true,
+        "source": "user_world_below60_zero_star_policy"
+      },
+      "upper_mag_applied": false,
+      "monster_bornmagic_applied": false,
+      "source_archive_candidates": {
+        "monster": "pakchunk4-WindowsNoEditor.pak",
+        "monster_growth": "pakchunk4-WindowsNoEditor.pak",
+        "grow_level": "pakchunk4-WindowsNoEditor_3_P.pak"
+      },
+      "current_client_schema_omits": [
+        "attr_enum_break_set",
+        "individuality",
+        "hp_max_plus",
+        "hp_max_upper_mag",
+        "monster_bornmagic",
+        "MONSTER_GROWTH.break_times",
+        "MONSTER_GROWTH.effort_grow_level"
+      ],
+      "active_server_growth_verified": false
+    }
+  },
+  "level_damage": {
+    "denominator": 41,
+    "level_magnitude": 0.45,
+    "level_add": 10,
+    "level_input": "attacker_level",
+    "expression": "(attacker_level*level_magnitude+level_add)/denominator",
+    "physical_source_keys": [
+      "phy_dam_param",
+      "phy_dam_level_mag",
+      "phy_dam_level_add"
+    ],
+    "magical_source_keys": [
+      "spe_dam_param",
+      "spe_dam_level_mag",
+      "spe_dam_level_add"
+    ],
+    "source_values_physical": [
+      41,
+      45,
+      10
+    ],
+    "source_values_magical": [
+      41,
+      45,
+      10
+    ],
+    "formula_status": "source_parameter_candidate_complete_server_order_unconfirmed",
+    "damage_floor_field_value": 2,
+    "damage_floor_semantics_confirmed": false,
+    "damage_floor_added_by_this_rule": false
+  },
+  "validation": {
+    "status": "one_consistency_witness_not_identified_true_configuration",
+    "attacker_level_term_24": 0.5073170731707317,
+    "attacker_level_term_60": 0.9024390243902439,
+    "illustrative_raw_talents": {
+      "hp": 8,
+      "patk": 0,
+      "mdef": 10
+    },
+    "panels": {
+      "hp": 158,
+      "patk": 90,
+      "mdef": 101
+    },
+    "damage_cases": [
+      {
+        "skill_id": 7020970,
+        "actor_level": 24,
+        "attack": 90,
+        "power": 55,
+        "defense": 175,
+        "combined_multiplier": 1,
+        "predicted": 14,
+        "observed": 14
+      },
+      {
+        "skill_id": 7080300,
+        "actor_level": 60,
+        "attack": 181,
+        "power": 80,
+        "defense": 101,
+        "combined_multiplier": 1,
+        "predicted": 129,
+        "observed": 129
+      },
+      {
+        "skill_id": 7080300,
+        "actor_level": 60,
+        "attack": 181,
+        "power": 80,
+        "defense": 101,
+        "combined_multiplier": 1,
+        "critical_multiplier": 2,
+        "predicted": 258,
+        "observed": 258
+      }
+    ],
+    "limits": [
+      "The HP/raw-talent and mdef/raw-talent witness is not unique under integer rounding; do not mark these as actual NPC talents.",
+      "The selected HP/physical-defense/magical-defense pattern is a historical source candidate, not an observed online fact.",
+      "Damage examples keep the existing round-then-divide candidate and use combined multiplier1 for this case; no new +2/minimum operation is inferred from dam_floor2.",
+      "The critical example does not distinguish multiply-before versus multiply-after flooring because both agree for these inputs."
+    ]
+  },
+  "limitations": [
+    "Single NPC type at level24; no implicit fallback for other NPCs or levels.",
+    "The historical growth/three-selection preset and current client field deletion are version-bound; runtime mount order and server state remain unconfirmed.",
+    "The examples establish consistency, not unique configuration identification or complete game calibration.",
+    "Separate PVE over-level/star/evolution modifiers are not enabled by this rule because their call sites and ordering are not confirmed."
+  ]
+}

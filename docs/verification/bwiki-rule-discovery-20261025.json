@@ -1,0 +1,492 @@
+{
+  "retrieved_at": "2026-10-24T18:36:04.728914+00:00",
+  "scope": "BWIKI NRC MediaWiki search; absence only within reported query scope",
+  "searches": [
+    {
+      "query": "公式",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%85%AC%E5%BC%8F&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "伤害计算",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "能量上限",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E8%83%BD%E9%87%8F%E4%B8%8A%E9%99%90&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "初始能量",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%88%9D%E5%A7%8B%E8%83%BD%E9%87%8F&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "恢复能量",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E6%81%A2%E5%A4%8D%E8%83%BD%E9%87%8F&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "蓄力",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E8%93%84%E5%8A%9B&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "魔力 复活",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E9%AD%94%E5%8A%9B+%E5%A4%8D%E6%B4%BB&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "魔力 战败",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E9%AD%94%E5%8A%9B+%E6%88%98%E8%B4%A5&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "战斗机制",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E6%88%98%E6%96%97%E6%9C%BA%E5%88%B6&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "行动顺序",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E8%A1%8C%E5%8A%A8%E9%A1%BA%E5%BA%8F&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "取整",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%8F%96%E6%95%B4&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "四舍五入",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "冷却",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%86%B7%E5%8D%B4&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "本系",
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E6%9C%AC%E7%B3%BB&srlimit=30&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "公式",
+      "limit": 20,
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%85%AC%E5%BC%8F&srlimit=20&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "魔力",
+      "limit": 20,
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E9%AD%94%E5%8A%9B&srlimit=20&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "复活",
+      "limit": 20,
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%A4%8D%E6%B4%BB&srlimit=20&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "蓄能",
+      "limit": 20,
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E8%93%84%E8%83%BD&srlimit=20&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "战斗机制",
+      "limit": 20,
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E6%88%98%E6%96%97%E6%9C%BA%E5%88%B6&srlimit=20&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "query": "取整",
+      "limit": 20,
+      "url": "https://wiki.biligame.com/nrc/api.php?action=query&list=search&srsearch=%E5%8F%96%E6%95%B4&srlimit=20&format=json",
+      "error": "HTTP Error 567: Unknown Status"
+    }
+  ],
+  "sources": [
+    {
+      "kind": "verified_local_bwiki_snapshot",
+      "snapshot_id": "20261025T013619+0800",
+      "catalog_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+      "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\data\\bwiki\\20261025T013619+0800\\catalog.json",
+      "source_version": "s4-2026-10-16",
+      "modules": {
+        "Terms": {
+          "title": "Module:Pets/data/Terms",
+          "page_id": 6401,
+          "revision_id": 7078,
+          "revision_timestamp": "2026-09-09T10:00:15Z",
+          "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+          "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+        },
+        "Skills": {
+          "title": "Module:Pets/data/Skills",
+          "page_id": 6396,
+          "revision_id": 18764,
+          "revision_timestamp": "2026-10-19T12:08:03Z",
+          "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+          "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+        },
+        "Config": {
+          "title": "Module:Pets/data/Config",
+          "page_id": 6393,
+          "revision_id": 18789,
+          "revision_timestamp": "2026-10-19T12:28:25Z",
+          "content_sha256": "1e08f10653dc7e836f808b2fe496ce7cd842d85509eb521ab59f016f44926607",
+          "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Config&oldid=18789"
+        },
+        "Natures": {
+          "title": "Module:Natures/data",
+          "page_id": 16020,
+          "revision_id": 18014,
+          "revision_timestamp": "2026-10-07T17:38:42Z",
+          "content_sha256": "0905c9d2f90fac953f7297714525b90b4fac96f4a24a50905f20755bcafd093e",
+          "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Natures/data&oldid=18014"
+        },
+        "Types": {
+          "title": "Module:Pets/data/Types",
+          "page_id": 6400,
+          "revision_id": 7079,
+          "revision_timestamp": "2026-09-09T10:01:01Z",
+          "content_sha256": "22999381d35c64ba50a71e695a9de5c6a45d0fb486fd6541ba6c785d70c2ab57",
+          "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Types&oldid=7079"
+        }
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "source_backed_switch_and_charge_conditions",
+      "state": "direct_text_available",
+      "implementation_boundary": "Can encode charge duration and exit immunity conditions, current-turn-entry exit immunity, and exclude exhaustion from ordinary exit; total ordering and forced replacements remain unverified."
+    },
+    {
+      "id": "marks_capacity",
+      "state": "direct_text_available",
+      "implementation_boundary": "Positive/negative marks persist across exits and one kind of each may coexist; replacement/merge ordering and sign classification of every mark need per-effect evidence."
+    },
+    {
+      "id": "stat_damage_formulas",
+      "state": "not_established",
+      "implementation_boundary": "No exact formula in inspected normalized data. One successful namespace-0 formula search returned zero; further API requests failed with HTTP567. Do not assert global absence."
+    },
+    {
+      "id": "energy",
+      "state": "not_established",
+      "implementation_boundary": "Named traits provide special initial zero and over-cap behavior; ordinary initial/max/passive-regeneration values not established."
+    },
+    {
+      "id": "terminal_revive",
+      "state": "not_established",
+      "implementation_boundary": "Named traits provide magic-loss modifications and 4-turn resurrection; generic loss amount, global resurrection and simultaneous terminal rules not established."
+    },
+    {
+      "id": "rounding_and_order",
+      "state": "not_established",
+      "implementation_boundary": "Terms give specific phases but not complete event order or percentage/halving rounding."
+    }
+  ],
+  "real_game_calibration_cases_added": 0,
+  "initial_search_observation": {
+    "query": "公式",
+    "namespace": 0,
+    "limit": 20,
+    "total_hits": 0,
+    "response_hash_retained": false,
+    "note": "Initial successful API result observed in tool output. Later retries returned HTTP 567; do not interpret failures as zero hits."
+  },
+  "selected_term_evidence": [
+    {
+      "key": 1003,
+      "zh": "脱离",
+      "definition": "精灵离场，并选择队伍里一只其他精灵替换入场。本回合入场的精灵免疫此效果。"
+    },
+    {
+      "key": 1005,
+      "zh": "迅捷",
+      "definition": "通过主动更换精灵的方式入场时，使用第一个能量满足要求，并带有迅捷的技能。"
+    },
+    {
+      "key": 1007,
+      "zh": "蓄力",
+      "definition": "该技能需要先蓄力1回合，下回合才能释放。蓄力期间免疫所有离场效果。"
+    },
+    {
+      "key": 1010,
+      "zh": "迸发",
+      "definition": "入场后的首次行动，会获得额外效果。"
+    },
+    {
+      "key": 1015,
+      "zh": "应对状态",
+      "definition": "若敌方使用状态技能，则本技能应对成功，本次行动必定先手，且触发应对效果。"
+    },
+    {
+      "key": 1016,
+      "zh": "应对攻击",
+      "definition": "若敌方使用攻击技能，则本技能应对成功，本次行动必定先手，且触发应对效果。使用后，携带的防御技能进入1回合冷却。"
+    },
+    {
+      "key": 1017,
+      "zh": "应对防御",
+      "definition": "若敌方使用防御技能，则本技能应对成功，本次行动必定先手，且触发应对效果。"
+    },
+    {
+      "key": 1020,
+      "zh": "先手",
+      "definition": "技能行动的优先级，先手度更高的技能忽略双方精灵速度差异，优先释放，先手度可叠加。"
+    },
+    {
+      "key": 1024,
+      "zh": "返场",
+      "definition": "精灵离场，并立即入场。本回合入场的精灵免疫此效果。"
+    },
+    {
+      "key": 1026,
+      "zh": "紧急脱离",
+      "definition": "精灵离场，并随机选择队伍里一只其他精灵替换入场。本回合入场的精灵免疫此效果。"
+    },
+    {
+      "key": 1033,
+      "zh": "传动",
+      "definition": "回合开始时，带有“传动X”的技能会向下移动X个位置，该效果可叠加。"
+    },
+    {
+      "key": 3005,
+      "zh": "连击数",
+      "definition": "改变连击次数，仅对有连击的技能生效。"
+    },
+    {
+      "key": 3006,
+      "zh": "沙暴",
+      "definition": "天气为沙暴时，双方的地系技能能耗减半。"
+    },
+    {
+      "key": 3007,
+      "zh": "暴风雪",
+      "definition": "天气为暴风雪时，双方每回合结束获得2层冻结。（冰系精灵免疫此效果）"
+    },
+    {
+      "key": 3008,
+      "zh": "雨天",
+      "definition": "天气为雨天时，双方的水系技能威力+75%。"
+    },
+    {
+      "key": 3009,
+      "zh": "离场",
+      "definition": "通过主动更换精灵或触发脱离效果的方式下场。（不包括精灵力竭后下场）"
+    },
+    {
+      "key": 3010,
+      "zh": "印记",
+      "definition": "精灵下场后印记不会消失，新入场的精灵会继承印记效果。精灵最多同时拥有1种正面印记和1种负面印记。"
+    },
+    {
+      "key": 3021,
+      "zh": "雷鸣",
+      "definition": "天气为雷鸣时，双方每回合结束获得1层引电。（电系精灵免疫此效果）"
+    },
+    {
+      "key": 3022,
+      "zh": "引电",
+      "definition": "获得2层引电时，立即受到25%生命的电系伤害，并失去2层引电。（电系精灵免疫此效果）"
+    },
+    {
+      "key": 3023,
+      "zh": "禁足",
+      "definition": "处于禁足状态时，精灵无法离场，且无法获得新的禁足状态。"
+    }
+  ],
+  "special_trait_evidence": [
+    {
+      "id": 200081,
+      "name": {
+        "zh": "诈死"
+      },
+      "desc": {
+        "zh": "自己力竭时，少损失1点魔力。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E8%AF%88%E6%AD%BB",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200102,
+      "name": {
+        "zh": "地脉"
+      },
+      "desc": {
+        "zh": "初始能量为0，入场前己方精灵每放1次地系技能，回复3能量。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9C%B0%E8%84%89",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200118,
+      "name": {
+        "zh": "结晶水"
+      },
+      "desc": {
+        "zh": "初始能量为0，入场前己方精灵每放1次冰系技能，回复3能量。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E7%BB%93%E6%99%B6%E6%B0%B4",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200141,
+      "name": {
+        "zh": "付给恶魔的赎价"
+      },
+      "desc": {
+        "zh": "击败敌方精灵时，敌方额外损失1点魔力。被敌方精灵击败时，自己额外损失1点魔力。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E4%BB%98%E7%BB%99%E6%81%B6%E9%AD%94%E7%9A%84%E8%B5%8E%E4%BB%B7",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200147,
+      "name": {
+        "zh": "散热"
+      },
+      "desc": {
+        "zh": "初始能量为0，入场前己方精灵每放1次火系技能，回复3能量。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E6%95%A3%E7%83%AD",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200177,
+      "name": {
+        "zh": "慢热型"
+      },
+      "desc": {
+        "zh": "初始能量为0，入场前己方精灵每成功应对1次，回复5能量。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E6%85%A2%E7%83%AD%E5%9E%8B",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200211,
+      "name": {
+        "zh": "飓风"
+      },
+      "desc": {
+        "zh": "对本精灵的技能，若其他翼系精灵携带相同技能，则获得迅捷。被敌方精灵击败时，自己额外损失1点魔力。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A3%93%E9%A3%8E",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200215,
+      "name": {
+        "zh": "多人宿舍"
+      },
+      "desc": {
+        "zh": "自己的能量可以超过能量上限。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E5%A4%9A%E4%BA%BA%E5%AE%BF%E8%88%8D",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200230,
+      "name": {
+        "zh": "不朽"
+      },
+      "desc": {
+        "zh": "力竭4回合后复活。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E4%B8%8D%E6%9C%BD",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200244,
+      "name": {
+        "zh": "图书守卫者"
+      },
+      "desc": {
+        "zh": "入场时，若自己魔力值为1，自己获得双攻+100%。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9B%BE%E4%B9%A6%E5%AE%88%E5%8D%AB%E8%80%85",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200245,
+      "name": {
+        "zh": "构装契约者"
+      },
+      "desc": {
+        "zh": "入场时，若敌方魔力值为1，自己获得双防+100%。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E6%9E%84%E8%A3%85%E5%A5%91%E7%BA%A6%E8%80%85",
+      "source_module": "Skills"
+    },
+    {
+      "id": 200322,
+      "name": {
+        "zh": "盗魂铃"
+      },
+      "desc": {
+        "zh": "初始能量为0，首次入场前敌方每聚能1次，回复5能量（可突破上限），在场时自己回复的能量-4。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E7%9B%97%E9%AD%82%E9%93%83",
+      "source_module": "Skills"
+    },
+    {
+      "id": 280007,
+      "name": {
+        "zh": "地脉馈赠"
+      },
+      "desc": {
+        "zh": "突破能量上限并立即回复10能量，入场前己方精灵每使用1次地系技能，回复3能量。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9C%B0%E8%84%89%E9%A6%88%E8%B5%A0",
+      "source_module": "Skills"
+    },
+    {
+      "id": 280019,
+      "name": {
+        "zh": "御驾亲征"
+      },
+      "desc": {
+        "zh": "棋契陛下大幅提升种族资质，力竭时扣除4魔力。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E5%BE%A1%E9%A9%BE%E4%BA%B2%E5%BE%81",
+      "source_module": "Skills"
+    }
+  ],
+  "local_scope": {
+    "forms": 633,
+    "skills": 579,
+    "traits": 246,
+    "terms": 54,
+    "config_keys": [
+      "build_form",
+      "current_version",
+      "features",
+      "pet_count",
+      "talent_pools"
+    ],
+    "searched_description_fields": [
+      "desc",
+      "effect_details",
+      "desc_notes"
+    ],
+    "keywords": [
+      "魔力",
+      "复活",
+      "能量上限",
+      "初始能量",
+      "最大能量",
+      "每回合回复",
+      "回合恢复",
+      "向下取整",
+      "四舍五入"
+    ]
+  },
+  "search_failures_are_not_absence_evidence": true
+}

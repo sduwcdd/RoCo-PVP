@@ -1,0 +1,40 @@
+.function	main/f141
+
+.source	null
+.linedefined	2595
+.lastlinedefined	2601
+.numparams	1
+.is_vararg	0
+.maxstacksize	255
+
+.local	"self"	0	15
+.local	"card"	1	15
+.local	"petInfo"	4	15
+.local	"insideInfo"	7	15
+.local	"maxEnergy"	13	15
+
+.constant	k0	"card"
+.constant	k1	"petInfo"
+.constant	k2	"battle_inside_pet_info"
+.constant	k3	"max_energy"
+
+.line	1	getfield      r1    r0    k0 ; k0 = "card"
+.line	1	testset       r2    r1     0
+.line	0	jmp           l5
+.line	0	getfield      r2    r1    k1 ; k1 = "petInfo"
+.label	l5
+.line	1	testset       r3    r2     0
+.line	0	jmp           l8
+.line	0	getfield      r3    r2    k2 ; k2 = "battle_inside_pet_in" (truncated)
+.label	l8
+.line	1	test          r3     0
+.line	0	jmp          l13
+.line	0	getfield      r4    r3    k3 ; k3 = "max_energy"
+.line	0	test          r4     1
+.line	0	jmp          l14
+.label	l13
+.line	0	loadi         r4    10
+.label	l14
+.line	1	return1       r4     2     0     0
+.line	1	return0       r5     1     0     0
+

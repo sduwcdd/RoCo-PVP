@@ -1,0 +1,705 @@
+{
+  "kind": "synthetic phase composition, not real-game calibration",
+  "test_resolver": "fixed 17 actual HP loss",
+  "payload": {
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 2,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7040260,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7030220,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "actions": {
+      "a": {
+        "kind": "skill",
+        "slot": 1,
+        "effective_cost": 2,
+        "effective_priority": 1
+      },
+      "b": {
+        "kind": "skill",
+        "slot": 1,
+        "effective_cost": 2,
+        "effective_priority": 0
+      }
+    },
+    "context": {
+      "mode": "isolated_action_status_sequence",
+      "phase_order": "actions_then_status_experiment",
+      "actions_context": {
+        "mode": "isolated_joint_action_experiment",
+        "excluded_hooks": [
+          "bloodlines",
+          "event_triggers",
+          "field",
+          "marks",
+          "traits"
+        ],
+        "fragments": {
+          "a": {
+            "mode": "isolated_skill_experiment",
+            "snapshot_id": "20261025T013619+0800",
+            "source_hash": "13cc7d1485599b8a9c3c443c64de8a8f544b0e867b04031f93d51da220c8233b",
+            "operation_order": "source_text_order_experiment",
+            "excluded_hooks": [
+              "bloodlines",
+              "event_triggers",
+              "field",
+              "marks",
+              "traits"
+            ],
+            "unresolved_dependencies": [],
+            "energy_policy": "clamp_to_declared_max",
+            "damage_policy": "resolver_returns_actual_integer_hp_loss",
+            "status_policies": {
+              "burn": {
+                "stacking": "add_to_declared_count",
+                "cap": null,
+                "immunity_type": "火系"
+              }
+            }
+          },
+          "b": {
+            "mode": "isolated_skill_experiment",
+            "snapshot_id": "20261025T013619+0800",
+            "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+            "operation_order": "source_text_order_experiment",
+            "excluded_hooks": [
+              "bloodlines",
+              "event_triggers",
+              "field",
+              "marks",
+              "traits"
+            ],
+            "unresolved_dependencies": [],
+            "energy_policy": "clamp_to_declared_max",
+            "damage_policy": "resolver_returns_actual_integer_hp_loss",
+            "status_policies": {
+              "burn": {
+                "stacking": "add_to_declared_count",
+                "cap": null,
+                "immunity_type": "火系"
+              }
+            }
+          }
+        }
+      },
+      "status_context": {
+        "mode": "isolated_status_phase_experiment",
+        "snapshot_id": "20261025T013619+0800",
+        "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+        "operation_order": "damage_then_decay_experiment",
+        "excluded_hooks": [
+          "bloodlines",
+          "event_triggers",
+          "field",
+          "marks",
+          "traits"
+        ],
+        "unresolved_dependencies": [],
+        "schedule": [
+          {
+            "side": "b",
+            "status": "burn"
+          }
+        ],
+        "status_policy": {
+          "immunity": "reject_existing_immune_status",
+          "burn_decay_rounding": "exact"
+        }
+      }
+    }
+  },
+  "results": {
+    "sequence_missing_formula": {
+      "status": "blocked",
+      "scope": "isolated_action_status_sequence",
+      "state": {
+        "snapshot_id": "20261025T013619+0800",
+        "turn": 2,
+        "teams": {
+          "a": {
+            "active_slot": 0,
+            "members": [
+              {
+                "member_id": "a",
+                "form_id": 3001,
+                "hp": 300,
+                "max_hp": 350,
+                "energy": 10,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7040260,
+                  0,
+                  0
+                ],
+                "statuses": {},
+                "stat_modifiers": {}
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          },
+          "b": {
+            "active_slot": 0,
+            "members": [
+              {
+                "member_id": "b",
+                "form_id": 3001,
+                "hp": 300,
+                "max_hp": 350,
+                "energy": 10,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7030220,
+                  0,
+                  0
+                ],
+                "statuses": {},
+                "stat_modifiers": {}
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          }
+        }
+      },
+      "events": [],
+      "blockers": [
+        "Status phase rejected; both phases rolled back: No calibrated/default status damage formula is available; supply an explicit experiment resolver"
+      ],
+      "unresolved": [],
+      "initial_state_hash": "c2f13e5fc94b8502612e9412eb47ee10d2a3a867066d113ad007bb9543eb23fa",
+      "final_state_hash": null,
+      "full_turn_executed": false,
+      "end_of_turn_executed": false,
+      "status_fragment_executed": false,
+      "battle_executable": false,
+      "training_eligible": false,
+      "calibrated": false,
+      "real_game_verified": false,
+      "snapshot_id": "20261025T013619+0800",
+      "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+      "snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9"
+    },
+    "empty_status_phase": {
+      "status": "applied",
+      "scope": "isolated_status_phase_experiment",
+      "state": {
+        "snapshot_id": "20261025T013619+0800",
+        "turn": 2,
+        "teams": {
+          "a": {
+            "active_slot": 0,
+            "members": [
+              {
+                "member_id": "a",
+                "form_id": 3001,
+                "hp": 300,
+                "max_hp": 350,
+                "energy": 10,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7040260,
+                  0,
+                  0
+                ],
+                "statuses": {},
+                "stat_modifiers": {}
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          },
+          "b": {
+            "active_slot": 0,
+            "members": [
+              {
+                "member_id": "b",
+                "form_id": 3001,
+                "hp": 300,
+                "max_hp": 350,
+                "energy": 10,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7030220,
+                  0,
+                  0
+                ],
+                "statuses": {},
+                "stat_modifiers": {}
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          }
+        }
+      },
+      "events": [],
+      "blockers": [],
+      "snapshot_id": "20261025T013619+0800",
+      "state_hash": "c2f13e5fc94b8502612e9412eb47ee10d2a3a867066d113ad007bb9543eb23fa",
+      "context_hash": "d49f22cc8534a195969dc26e96befa7b00a725a7da6742ae44df3ef3d8ea9e57",
+      "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+      "input_state_mutated": false,
+      "full_turn_executed": false,
+      "end_of_turn_executed": false,
+      "status_phase_executed": true,
+      "battle_executable": false,
+      "calibrated": false,
+      "real_game_verified": false,
+      "training_eligible": false,
+      "implementation_unvalidated": true,
+      "unresolved": [
+        "Damage basis, per-layer arithmetic, cap, rounding and final modifiers require an external uncalibrated resolver.",
+        "The supplied status schedule and damage-then-decay order are experimental, not verified game timing.",
+        "Existing status on an immune type, exhaustion, replacement and associated triggers remain unresolved.",
+        "Bench effects, traits, field, marks (including poison marks), bloodlines and event hooks are not processed.",
+        "No resource regeneration, turn advancement or winner calculation is performed."
+      ],
+      "schedule": [],
+      "final_state_hash": "c2f13e5fc94b8502612e9412eb47ee10d2a3a867066d113ad007bb9543eb23fa",
+      "assumptions": {
+        "mode": "isolated_status_phase_experiment",
+        "snapshot_id": "20261025T013619+0800",
+        "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+        "operation_order": "damage_then_decay_experiment",
+        "excluded_hooks": [
+          "bloodlines",
+          "event_triggers",
+          "field",
+          "marks",
+          "traits"
+        ],
+        "unresolved_dependencies": [],
+        "schedule": [],
+        "status_policy": {
+          "immunity": "reject_existing_immune_status",
+          "burn_decay_rounding": "exact"
+        }
+      },
+      "snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9"
+    },
+    "python_sequence": {
+      "status": "applied",
+      "scope": "isolated_action_status_sequence",
+      "state": {
+        "snapshot_id": "20261025T013619+0800",
+        "turn": 2,
+        "teams": {
+          "a": {
+            "active_slot": 0,
+            "members": [
+              {
+                "member_id": "a",
+                "form_id": 3001,
+                "hp": 300,
+                "max_hp": 350,
+                "energy": 8,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7040260,
+                  0,
+                  0
+                ],
+                "statuses": {},
+                "stat_modifiers": {},
+                "types": [
+                  "草系"
+                ]
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          },
+          "b": {
+            "active_slot": 0,
+            "members": [
+              {
+                "member_id": "b",
+                "form_id": 3001,
+                "hp": 283,
+                "max_hp": 350,
+                "energy": 18,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7030220,
+                  0,
+                  0
+                ],
+                "statuses": {
+                  "burn": 5
+                },
+                "stat_modifiers": {},
+                "types": [
+                  "草系"
+                ]
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          }
+        }
+      },
+      "events": [
+        {
+          "op": "energy.pay",
+          "amount": 2,
+          "source": "caller_resolved_cost",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "aac153722626a53f43b80d7845848a8616299dc1f2c7eaac0f414e301e80af09",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 0,
+          "actor_side": "a",
+          "actor_member_id": "a",
+          "target_side": "a",
+          "target_member_id": "a",
+          "skill_slot": 1,
+          "skill_id": 7040260,
+          "source_hash": "13cc7d1485599b8a9c3c443c64de8a8f544b0e867b04031f93d51da220c8233b",
+          "sequence_phase": "actions"
+        },
+        {
+          "op": "status.add",
+          "target": "opponent",
+          "params": {
+            "target": "opponent",
+            "status": "burn",
+            "stacks": 10
+          },
+          "before": 0,
+          "after": 10,
+          "immune": false,
+          "term_source": {
+            "title": "Module:Pets/data/Terms",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+          },
+          "end_of_turn_resolved": false,
+          "status_consequences_resolved": false,
+          "excluded_consequences": "Isolated stack assignment only; damage, decay and freeze-exhaustion triggers are not executed.",
+          "stacking_policy": "caller_declared",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "aac153722626a53f43b80d7845848a8616299dc1f2c7eaac0f414e301e80af09",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 0,
+          "actor_side": "a",
+          "actor_member_id": "a",
+          "target_side": "b",
+          "target_member_id": "b",
+          "skill_slot": 1,
+          "skill_id": 7040260,
+          "source_hash": "13cc7d1485599b8a9c3c443c64de8a8f544b0e867b04031f93d51da220c8233b",
+          "sequence_phase": "actions"
+        },
+        {
+          "op": "energy.pay",
+          "amount": 2,
+          "source": "caller_resolved_cost",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "ec79be9b14eb9de40979b5980b4ef89f5a43cfc25630f1f348f3447d3a9eb01e",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 1,
+          "actor_side": "b",
+          "actor_member_id": "b",
+          "target_side": "b",
+          "target_member_id": "b",
+          "skill_slot": 1,
+          "skill_id": 7030220,
+          "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+          "sequence_phase": "actions"
+        },
+        {
+          "op": "energy.restore",
+          "target": "self",
+          "params": {
+            "target": "self",
+            "amount": 10
+          },
+          "before": 8,
+          "after": 18,
+          "policy": "caller_declared_cap",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "ec79be9b14eb9de40979b5980b4ef89f5a43cfc25630f1f348f3447d3a9eb01e",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 1,
+          "actor_side": "b",
+          "actor_member_id": "b",
+          "target_side": "b",
+          "target_member_id": "b",
+          "skill_slot": 1,
+          "skill_id": 7030220,
+          "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+          "sequence_phase": "actions"
+        },
+        {
+          "op": "status.tick",
+          "status": "burn",
+          "stacks": 10,
+          "rate": {
+            "numerator": 2,
+            "denominator": 100
+          },
+          "damage_type": "火系",
+          "target_side": "b",
+          "target_member_id": "b",
+          "target_types": [
+            "草系"
+          ],
+          "schedule_index": 0,
+          "source": {
+            "key": 1002,
+            "zh": "灼烧",
+            "definition": "回合结束时，造成2%生命的火系伤害，并衰减一半层数。（火系精灵免疫此效果）",
+            "evidence": {
+              "snapshot_id": "20261025T013619+0800",
+              "module": "Terms",
+              "title": "Module:Pets/data/Terms",
+              "page_id": 6401,
+              "revision_id": 7078,
+              "revision_timestamp": "2026-09-09T10:00:15Z",
+              "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+              "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+            }
+          },
+          "rate_and_stacks_are_separate": true,
+          "operation_order": "damage_then_decay_experiment",
+          "hp_before": 300,
+          "hp_after": 283,
+          "actual_hp_loss": 17,
+          "stacks_before": 10,
+          "stacks_after": 5,
+          "snapshot_id": "20261025T013619+0800",
+          "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+          "real_game_verified": false,
+          "calibrated": false,
+          "decay_remaining_unrounded": {
+            "numerator": 5,
+            "denominator": 1
+          },
+          "decay_rounding": "exact",
+          "sequence_phase": "statuses"
+        }
+      ],
+      "blockers": [],
+      "unresolved": [
+        {
+          "side": "both",
+          "reason": "配招学习条件、完整伤害、资源结算、特性触发和胜负仍未校准；此结果仅为行动阶段计划，不证明阵容合法。"
+        },
+        "Damage basis, per-layer arithmetic, cap, rounding and final modifiers require an external uncalibrated resolver.",
+        "The supplied status schedule and damage-then-decay order are experimental, not verified game timing.",
+        "Existing status on an immune type, exhaustion, replacement and associated triggers remain unresolved.",
+        "Bench effects, traits, field, marks (including poison marks), bloodlines and event hooks are not processed.",
+        "No resource regeneration, turn advancement or winner calculation is performed."
+      ],
+      "initial_state_hash": "c2f13e5fc94b8502612e9412eb47ee10d2a3a867066d113ad007bb9543eb23fa",
+      "final_state_hash": "5dc4d9c1a310af229a427cccbd2fcd3d0998c1652d985892d275c719ca4705e1",
+      "full_turn_executed": false,
+      "end_of_turn_executed": false,
+      "status_fragment_executed": true,
+      "battle_executable": false,
+      "training_eligible": false,
+      "calibrated": false,
+      "real_game_verified": false,
+      "snapshot_id": "20261025T013619+0800",
+      "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+      "assumptions": {
+        "mode": "isolated_action_status_sequence",
+        "phase_order": "actions_then_status_experiment",
+        "actions_context": {
+          "mode": "isolated_joint_action_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "fragments": {
+            "a": {
+              "mode": "isolated_skill_experiment",
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "13cc7d1485599b8a9c3c443c64de8a8f544b0e867b04031f93d51da220c8233b",
+              "operation_order": "source_text_order_experiment",
+              "excluded_hooks": [
+                "bloodlines",
+                "event_triggers",
+                "field",
+                "marks",
+                "traits"
+              ],
+              "unresolved_dependencies": [],
+              "energy_policy": "clamp_to_declared_max",
+              "damage_policy": "resolver_returns_actual_integer_hp_loss",
+              "status_policies": {
+                "burn": {
+                  "stacking": "add_to_declared_count",
+                  "cap": null,
+                  "immunity_type": "火系"
+                }
+              }
+            },
+            "b": {
+              "mode": "isolated_skill_experiment",
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "b862a30d0c5490b669800b01593ddadec8c3638f9aaa51bdf0335756ee17183e",
+              "operation_order": "source_text_order_experiment",
+              "excluded_hooks": [
+                "bloodlines",
+                "event_triggers",
+                "field",
+                "marks",
+                "traits"
+              ],
+              "unresolved_dependencies": [],
+              "energy_policy": "clamp_to_declared_max",
+              "damage_policy": "resolver_returns_actual_integer_hp_loss",
+              "status_policies": {
+                "burn": {
+                  "stacking": "add_to_declared_count",
+                  "cap": null,
+                  "immunity_type": "火系"
+                }
+              }
+            }
+          }
+        },
+        "status_context": {
+          "mode": "isolated_status_phase_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+          "operation_order": "damage_then_decay_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "schedule": [
+            {
+              "side": "b",
+              "status": "burn"
+            }
+          ],
+          "status_policy": {
+            "immunity": "reject_existing_immune_status",
+            "burn_decay_rounding": "exact"
+          }
+        }
+      },
+      "action_order": [
+        "a",
+        "b"
+      ]
+    }
+  }
+}

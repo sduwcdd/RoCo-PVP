@@ -1,0 +1,80 @@
+{
+  "archive": "pakchunk4-WindowsNoEditor.pak",
+  "skill_id": 7020620,
+  "row_offset": 46792,
+  "declared_row_length": 106,
+  "consumed_row_length": 106,
+  "fields": [
+    {
+      "field": "effect_id",
+      "offset": 253687,
+      "raw_hex": "1a543101",
+      "value": 20010010
+    },
+    {
+      "field": "cast_moment",
+      "offset": 253695,
+      "raw_hex": "0b000000",
+      "value": 11
+    },
+    {
+      "field": "buff_group_level",
+      "offset": 253703,
+      "raw_hex": "0a000000",
+      "value": 10
+    }
+  ],
+  "record": {
+    "id": 7020620,
+    "name": {
+      "localization_id": 1061,
+      "text": "力量增效"
+    },
+    "desc": {
+      "localization_id": 1062,
+      "text": "自己获得物攻+100%。"
+    },
+    "energy_cost": [
+      1
+    ],
+    "dam_para": [
+      0
+    ],
+    "type": 1,
+    "Skill_Type": 2,
+    "skill_dam_type": 2,
+    "skill_feature": 3,
+    "damage_type": 1,
+    "contact_type": 2,
+    "skill_priority": 5,
+    "target_type": 9,
+    "target_count": 1,
+    "cd_round": [
+      0,
+      0
+    ],
+    "hit_para": 10000,
+    "skill_result": [
+      {
+        "effect_id": 20010010,
+        "result_target_type": 1,
+        "cast_moment": 11,
+        "success_rate": 10000,
+        "buff_group_level": 10
+      }
+    ],
+    "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_GJZX_700021",
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/700021.700021'",
+    "describe_type": [
+      12,
+      6
+    ],
+    "target_blood_limit": [
+      0
+    ],
+    "can_changed": 1,
+    "common_type": "普通",
+    "common_type_number": 1,
+    "monitor_data_version": 100
+  }
+}

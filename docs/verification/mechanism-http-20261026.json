@@ -1,0 +1,20 @@
+{
+  "engine_revision": "composable-battle-20261026-3",
+  "port": 8766,
+  "pid": 46808,
+  "page_and_updated_js": true,
+  "six_vs_six_prepare_start": true,
+  "independent_core_magic": true,
+  "action_payment": [
+    0
+  ],
+  "turn": 2,
+  "core_expired": true,
+  "magic": {
+    "a": 4,
+    "b": 4
+  },
+  "training_eligible": false,
+  "calibrated": false,
+  "scope": "Constructed stateless HTTP requests; user battle archive untouched; not live-game calibration."
+}

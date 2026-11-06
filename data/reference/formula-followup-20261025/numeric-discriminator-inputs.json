@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "damage-rounding",
+      "kind": "damage60",
+      "inputs": {
+        "attack": 100,
+        "defense": 102,
+        "effective_power": 75,
+        "multiplier": 1.25
+      }
+    },
+    {
+      "id": "stat-float32",
+      "kind": "non_hp_stat60",
+      "inputs": {
+        "base_stat": 105,
+        "stat": "patk",
+        "nature_multiplier": 1,
+        "raw_iv": 0,
+        "display_iv": 0,
+        "iv_mapping_assumption": "raw_iv_equals_six_display_iv"
+      }
+    }
+  ]
+}

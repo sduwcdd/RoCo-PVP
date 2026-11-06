@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "version": "installed-water-magic-experiment-v1",
+  "online_mount_verified": false,
+  "source_scope": "installed patch3 candidate; client item request and scalar/BUFF evidence; experiment timing is separate",
+  "item_row": {
+    "id": 104004,
+    "sort_id": 301005,
+    "name": {
+      "localization_id": 1663,
+      "text": "节流术"
+    },
+    "description": {
+      "localization_id": 1664,
+      "text": "对水系或者水血脉的精灵使用，本回合技能不扣除能耗。"
+    },
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+    "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+    "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+    "type": 7,
+    "lable_type": 6,
+    "type_desc": {
+      "localization_id": 1665,
+      "text": "共鸣魔法"
+    },
+    "player_skill_id": 100004,
+    "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+    "initial_use_times": 1,
+    "can_stack": 1,
+    "item_quality": 5
+  },
+  "player_magic_row": {
+    "id": 100004,
+    "skill_id": 7010040
+  },
+  "battle_item_row": {
+    "id": 104004,
+    "name": {
+      "localization_id": 7,
+      "text": "罗盘"
+    },
+    "legally_used_object": 1,
+    "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+    "use_time_in_battle": 99
+  },
+  "skill_row": {
+    "id": 7010040,
+    "name": {
+      "localization_id": 1653,
+      "text": "节流术"
+    },
+    "desc": {
+      "localization_id": 1654,
+      "text": "对水系或者水血脉的精灵使用，本回合技能不扣除能耗。"
+    },
+    "energy_cost": [
+      0
+    ],
+    "dam_para": [
+      0
+    ],
+    "type": 9,
+    "skill_dam_type": 1,
+    "damage_type": 1,
+    "skill_priority": 1,
+    "target_type": 10,
+    "cd_round": [
+      999,
+      0
+    ],
+    "skill_result": [
+      {
+        "effect_id": 1038010,
+        "cast_moment": 10
+      },
+      {},
+      {},
+      {},
+      {
+        "effect_id": 1004027,
+        "cast_moment": 6
+      }
+    ],
+    "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_Up_PlayerWater",
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010040.7010040'",
+    "describe_type": [
+      0
+    ],
+    "target_blood_limit": [
+      4
+    ]
+  },
+  "effects": {
+    "1038010": {
+      "id": 1038010,
+      "effect_order": 38,
+      "type": 3,
+      "effect_param": [
+        {
+          "params": [
+            4
+          ]
+        },
+        {
+          "params": [
+            20320320
+          ]
+        },
+        {
+          "params": [
+            1
+          ]
+        },
+        {
+          "params": [
+            5
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "1004027": {
+      "id": 1004027,
+      "effect_order": 4,
+      "type": 2,
+      "effect_param": [
+        {
+          "params": [
+            3
+          ]
+        },
+        {
+          "params": [
+            20990010,
+            20990020
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            99
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "buffs": {
+    "20320320": {
+      "id": 20320320,
+      "buff_base_ids": [
+        2032032
+      ],
+      "buff_list_priority": 1,
+      "buff_groupsigns": [
+        0
+      ],
+      "add_des": "激活能量",
+      "add_icon": 6,
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800049_png.800049_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 2,
+          "reduce_param": [
+            1,
+            99
+          ]
+        }
+      ]
+    },
+    "20990010": {
+      "id": 20990010,
+      "buff_base_ids": [
+        2099001
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        22
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "20990020": {
+      "id": 20990020,
+      "buff_base_ids": [
+        2099002
+      ],
+      "buff_list_priority": 3,
+      "buff_groupsigns": [
+        22
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    }
+  },
+  "buff_bases": {
+    "2032032": {
+      "id": 2032032,
+      "buffbase_order": 32,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    },
+    "2099001": {
+      "id": 2099001,
+      "buffbase_order": 99,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            9819001
+          ]
+        }
+      ]
+    },
+    "2099002": {
+      "id": 2099002,
+      "buffbase_order": 99,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "binary_review": {
+    "all_row_lengths_verified": true,
+    "row_count": 34,
+    "parser_sha256": "49eac8b1c84335bf4f1a8d84a1a88805a435e2a2d8739cb51f6357222cdd5473"
+  },
+  "sources": [
+    {
+      "path": "artifacts/core_magic_20261025/BAG_ITEM_CONF.json",
+      "sha256": "ac14fb469f72dfdcbaff4ca2c37518c0b82041748b1d76c63a7afca646938cfd"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/PLAYER_MAGIC_CONF.json",
+      "sha256": "ce933d2bef56e3a3adfd01244b7a179c8634acf799a0caf6ac6d80e1463e078a"
+    },
+    {
+      "path": "artifacts/strength_buff_probe_20261025/historical/pakchunk4-WindowsNoEditor_3_P.pak/SKILL_CONF.json",
+      "sha256": "3f9671521bde11123716fc818be882fa96d8ac667d1bac2883f9a00a8738bd47"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_data.bytes",
+      "sha256": "743ea689053225402a1c29a6d08bee1d3fcdd948572b925bca28b30f11222455"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_local.bytes",
+      "sha256": "fe86364fcbd0911863e8d03bd981030f8495212b46156598fd90ffc25f11552e"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_schema.non",
+      "sha256": "a4ceb1576129be4f5694c8b0a40acad3174b32830031ded4363ef20d83f4fd43"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/parse_roco_tables.py",
+      "sha256": "49eac8b1c84335bf4f1a8d84a1a88805a435e2a2d8739cb51f6357222cdd5473"
+    },
+    {
+      "path": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+      "sha256": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/RoundPlayerSkillAction.decompiled.lua",
+      "sha256": "18f79c8446d1ada18752e823eeee8d2ea5fe59bef1bb2ccda41ccb64436b73fa"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-25",
+  "purpose": "Implement and compare named source-bound numeric expressions to design future real-game discriminators; no default formula",
+  "snapshot_id": "20261025T013619+0800",
+  "snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "new_candidate_tests": 17,
+  "targeted_regression": {
+    "passed": 46,
+    "failed": 0,
+    "seconds": 0.635,
+    "modules": [
+      "tests.test_numeric_candidates",
+      "tests.test_numeric_comparison",
+      "tests.test_rl_contract"
+    ],
+    "scope": "Named formula expressions, comparison report integrity, and unchanged calibration/training contract. Earlier 324-test broad run was not rerun this turn."
+  },
+  "prior_broad_regression": {
+    "passed": 324,
+    "report": "docs/verification/status-phase-20261025.json",
+    "rerun_this_turn": false
+  },
+  "cross_language_parity": "docs/verification/numeric-candidate-node-parity-20261025.json",
+  "source_recheck": "data/reference/formula-followup-20261025/arena-source-recheck.json",
+  "additional_source_review": "docs/verification/formula-source-review-20261025.md",
+  "discriminator_inputs": "data/reference/formula-followup-20261025/numeric-discriminator-inputs.json",
+  "discriminator_results": "docs/verification/numeric-discriminators-20261025.json",
+  "files_sha256": {
+    "lab/numeric_candidates.py": "f7edb90ff9f2ca47d0c355baba7d11e6a34d5da0f28f275354bfbdb6a637d24c",
+    "scripts/compare_numeric_candidates.py": "34cb8c2678f8beb9422bb22cd46e29dcbb8a2d5f2ee6e1d17ac9c30cc465c6d9",
+    "tests/test_numeric_candidates.py": "6fd041f605d98d813aa019549df0881ddbe5a07c97ec9952448d8e7d57b96236",
+    "tests/test_numeric_comparison.py": "3b9fc435e9d1954345b6d8fa2fea9f0aa4d017feee2186258d467b1c6c1388cb",
+    "docs/MECHANICS_EVIDENCE.md": "f21c5f318ad5b5b1d57feb587b99df3e5848f54561df4630e06602e52cbdd95c"
+  },
+  "corrected_source_overstatement": "Terms 1002/1004/1008 do not explicitly state per-layer linear scaling; earlier table wording corrected",
+  "real_game_calibration_cases": 0,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "no_default_formula_selected": true,
+  "uncertainties": [
+    "Community expressions do not establish current-game arithmetic",
+    "Full stat domains, talent legality and actual panel/HP observations remain unverified",
+    "Complete damage modifier and trigger order remains unresolved"
+  ],
+  "independent_review": "docs/verification/numeric-candidate-review-20261025.md",
+  "independent_cross_language_evidence": "data/reference/formula-followup-20261025/numeric-independent-node-parity.json",
+  "independent_expression_comparisons": 14202
+}

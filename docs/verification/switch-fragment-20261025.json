@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-25",
+  "snapshot_id": "20261025T013619+0800",
+  "catalog_file_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "broad_related_tests": {
+    "passed": 373,
+    "failed": 0,
+    "seconds": 155.876,
+    "scope": "373 related lab regressions including source Swift metadata, switch fragments and composition, numeric candidates, prior phases, beliefs and calibration contracts. Not legacy full suite or game calibration."
+  },
+  "new_tests": {
+    "swift_metadata": 7,
+    "switch_runtime": 21,
+    "integration": 4
+  },
+  "independent_review": "docs/verification/switch-fragment-review-20261025.md",
+  "independent_tests": 74,
+  "independent_synthetic_combinations": 336,
+  "source_classification": "docs/verification/swift-source-coverage-20261025.json",
+  "live_http_evidence": "docs/verification/switch-fragment-live-20261025.json",
+  "server_pid_verified": 35112,
+  "files_sha256": {
+    "lab/switch_rules.py": "4264bc715d986c43456cf5f726c240c9f45d2cc20ceb79bba3f7c3df79108273",
+    "lab/switch_runtime.py": "b9dd11c2edcaa70a87ee1038749c1ef3be7d54bef646ba7686a046da7efb9aca",
+    "lab/prepared_rules.py": "498e5fd640b11f648dc12348d36dcd2d558431d945bd955a9990480ff1ebb3cb",
+    "lab/server.py": "ea4754257c8fbf0bab63a85288136fd5e919d4d0707b988d150d71ca8ce6f6da",
+    "tests/test_switch_rules.py": "991a91bf43d3cbbb5999ec6deb7a4759fa3d7a89031c8675c1b3e1dadc163919",
+    "tests/test_switch_runtime.py": "0e0c7782b317a738f86f12d45464b8469049aa1ca57bdb953c2178b49df98e36",
+    "tests/test_switch_integration.py": "7506a85bf5d0c789c8eaec1f6d4d07162eff466456273bdf598331be0a5e64c9",
+    "docs/PHASE_RULES.md": "dc6a632a71c9e3955ad4693daf04b574eb1176b612090559757f07249d1dff1c"
+  },
+  "real_game_calibration_cases": 0,
+  "full_switch_executed": false,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "remaining": [
+    "Real-game departure cleanup and current dynamic Swift grants",
+    "Execution of selected entry Swift and complete entry/exit hooks",
+    "Joint switching/action timing and replacement/faint chain",
+    "Complete numeric and skill/trait coverage and version-matched calibration"
+  ]
+}

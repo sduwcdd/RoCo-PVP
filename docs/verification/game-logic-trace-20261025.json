@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "scope": {
+    "additional_index_packages": 37,
+    "package_scope": "pakchunk4 only",
+    "additional_scripts": 15,
+    "complete_binary_parses": 15,
+    "successful_decompilations": 15,
+    "executed_extracted_lua": false,
+    "all_603_scripts_reviewed": false,
+    "native_code_reviewed": false
+  },
+  "artifacts": {
+    "manifest": "artifacts/game_logic_followup_20261025/manifest.json",
+    "index_audit": "artifacts/game_logic_followup_20261025/dependency_directory_matches.json",
+    "reproduction": "artifacts/game_logic_followup_20261025/followup.py",
+    "enum": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+    "source_commit": "460fc477bad0f9db3cfc387365a6699ee246377e",
+    "selection_policy": "highest numeric patch suffix per path; actual load winner unverified"
+  },
+  "evidence_roots": {
+    "new3": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/",
+    "prior3": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/"
+  },
+  "findings": [
+    {
+      "id": "dynamic_skill_cost",
+      "classification": "client_consumer",
+      "source_root": "new3",
+      "file": "Skill.luac.decompiled.lua",
+      "lines": [21, 142],
+      "fact": "Init and RefreshByServer consume round-data cost_energy/cd_round; GetInitEnergy reads config energy_cost[1]. CanCast is client eligibility checking.",
+      "not_established": ["authoritative deduction timing", "post-selection low-energy behavior", "global missing-field defaults"]
+    },
+    {
+      "id": "damage_forecast_consumer",
+      "classification": "client_consumer",
+      "source_root": "new3",
+      "file": "Skill.luac.decompiled.lua",
+      "lines": [210, 244],
+      "fact": "Damage accessors read skillData.damage_params rather than compute a damage formula."
+    },
+    {
+      "id": "damage_display_rounding",
+      "classification": "presentation_only",
+      "source_root": "prior3",
+      "file": "BattleDataCenter.luac.decompiled.lua",
+      "lines": [379, 454],
+      "fact": "Consumes damage_result/hp_change/hp_result. Ceil at lines 412 and 414 distributes already-known damage among display segments.",
+      "not_established": ["damage formula", "authoritative arithmetic rounding"]
+    },
+    {
+      "id": "effect_order_enum_and_animation_parameter",
+      "classification": "direct_client_parameter_use",
+      "source_root": "new3",
+      "file": "BattleEffectPlayer.luac.decompiled.lua",
+      "lines": [31, 100],
+      "fact": "effect_order is compared to Enum.EffectType; ET_ANIMATION effect_param[1].params[1] is animation ID. Play returns early in pure-logic mode.",
+      "not_established": ["other effect parameter layouts", "effect resolver behavior"]
+    },
+    {
+      "id": "buff152_ui_target",
+      "classification": "direct_client_parameter_use",
+      "source_root": "new3",
+      "file": "BuffComponent.luac.decompiled.lua",
+      "lines": [330, 350],
+      "fact": "For IsBuff152 base, buffbase_param[1].params[1] is compared to Enum.UIEffectTargetType.",
+      "not_established": ["parameter layout for other buffbase orders"]
+    },
+    {
+      "id": "notification_queue_order",
+      "classification": "client_notification_consumption",
+      "source_root": "prior3",
+      "file": "BattleNetManager.luac.decompiled.lua",
+      "lines": [272, 581],
+      "fact": "Round-start may cache embedded perform command first. CacheNotify appends; ExecuteCachedNotify consumes first item and dispatches its event after readiness checks.",
+      "not_established": ["battle effect trigger order", "speed ties", "nested proc scheduling", "faint and entry resolution"]
+    },
+    {
+      "id": "skill_id_classifier",
+      "classification": "direct_client_helper",
+      "source_root": "prior3",
+      "file": "SkillUtils.luac.decompiled.lua",
+      "lines": [89, 122],
+      "ranges": {
+        "skill": [[200000, 300000, "exclusive_end"], [7000000, 8000000, "exclusive_end"]],
+        "buff": [[20000000, 29999999, "inclusive_end"]],
+        "buffbase": [[2000000, 2999999, "exclusive_end"]],
+        "effect": [[1000000, 1999999, "inclusive_end"]]
+      },
+      "not_established": ["database existence of every ID in these ranges"]
+    }
+  ],
+  "still_unknown": [
+    "damage formula and all rounding stages",
+    "authoritative event dispatch and nested trigger ordering",
+    "complete effect and buffbase parameter semantics",
+    "actual patch mount winner and online overrides",
+    "location and extent of authoritative computation in client versus server"
+  ],
+  "calibration": {
+    "data_readable": true,
+    "new_runtime_rules_installed_by_this_subtask": false,
+    "full_battle_executable_proved": false,
+    "real_battle_calibrated": false
+  }
+}

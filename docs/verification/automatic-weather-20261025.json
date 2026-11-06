@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-25",
+  "scope": "Automatic source-bound weather; constructed regression cases, not real-game calibration",
+  "source_report": "artifacts/weather_rules_20261025/ANALYSIS.md",
+  "preserved_catalog_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "preserved_active_rules_sha256": "c190c98d3a2e67153ac1c77f96adc2018e1ea6a3198880e5343451a7f87871cf",
+  "tests": {
+    "broad_python": {
+      "passed": 102,
+      "scope": "weather source/runtime/replay, research phases, simulation, damage, server before final boundary refinements"
+    },
+    "post_dynamic_cost_python": {
+      "passed": 66,
+      "scope": "weather runtime/replay, phases, simulation; overlaps broad suite"
+    },
+    "final_delta_python": {
+      "passed": 29,
+      "scope": "final immunity/source-version/thunder-trait regressions, replay and server; overlaps other suites"
+    },
+    "javascript": {
+      "passed": 87,
+      "scope": "battle mechanics, import/UI, simulation UI, weather UI"
+    }
+  },
+  "live_http": {
+    "simulation_status": "applied",
+    "weather": "blizzard",
+    "remaining_rounds": 7,
+    "opponent_weather_statuses": {
+      "freeze": 2
+    },
+    "replay_weather": "blizzard",
+    "replay_remaining": 7,
+    "static_weather_js": 200
+  },
+  "browser": [
+    "isolated test origin retained existing archive",
+    "legacy manually entered rain was retained as archive and not authoritative",
+    "winter skill selected from configured four slots",
+    "record winter -> blizzard remaining7",
+    "ice actor immune; opponent predicted freeze2; real HP not double-applied"
+  ],
+  "browser_limitation": "Additional browser undo check encountered an automation timeout; undo/new-game/cache covered by JS and replay regressions",
+  "screenshot": "docs/previews/automatic-weather-20261025.png",
+  "hashes": {
+    "lab/weather_rules.py": "1e123a9cbe9c722a44943685a3d37e8e2c43407e6c3546d945bed7165b556691",
+    "lab/weather_runtime.py": "af8e4ebc24852e7cb6a802f7e34d40ab9f2241639317db7dea36facbffe8676b",
+    "lab/weather_replay.py": "e88c4a5a28025606cbc47a31cb03b933a696ff73e80dc17a79db30e2f27a2d6e",
+    "lab/research_phases.py": "999da0792d5b114983a4f8e2918adf108207c154d5429512f029c84eda9f4304",
+    "lab/research_damage.py": "cdd0ae3857249f32a77cc5565ca54f85a207c0ec45db738d0079e03dc23b0789",
+    "lab/simulation.py": "109bcc52e74cdaa925a86d844d57466ff8ff22a609329a954f0e6f5dd8edfce5",
+    "lab/server.py": "7757a59de2f9d058b192bc22536ae099a2cf8baaa625634b3302f3e9ea5d713e",
+    "web/weather_view.js": "47a4cabfa8feef9817a4f5f723686fa188d0b62ac363dc850863101930fac7da",
+    "web/battle.js": "4e925386b75537c460da04ac05b8854438b420b99a5ce9170b14e97371e20cee",
+    "web/simulation.js": "6f3ecc859d074a9d02a81373c3a311f0d78c7ff69aef997838890b2dda0dba69",
+    "artifacts/weather_rules_20261025/weather_rules.json": "8cddf46eea087715ae1ed8afec4f2fb1e93b68e874844a482b9b4df4a8bf9ef3"
+  },
+  "uncertainties": [
+    "online config priority and overrides",
+    "server exact round-end ordering and activation-round counting",
+    "sand cost rounding and modifier order",
+    "conductive consume/clear rules and damage rounding",
+    "freeze base parameter50 and exact stat multiplier formula stage"
+  ],
+  "complete_game_simulation": false,
+  "real_game_calibrated": false,
+  "formal_training_eligible": false,
+  "final_service": {
+    "port": 8766,
+    "automatic_weather_advertised": true,
+    "pid": 19672
+  }
+}

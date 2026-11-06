@@ -1,0 +1,77 @@
+[
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Data/BattleRuntimeData.luac",
+    "offset": 86788096,
+    "declared_size": 38170,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "29628ef5e6cecc3bc1c12528902c3bbb945851d030c0acc4fcced78f238e8b6c",
+    "source_ranges_sha256": [
+      {
+        "offset": 86788149,
+        "size": 38176,
+        "sha256": "659095be817de98a28a3b0c1464e8544ce52bfa1a9e33c82418ca7fe36795229"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 38149,
+    "functions": 132,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/weather_rules_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BattleRuntimeData.decompiled.lua",
+    "output_sha256": "3162f18f5b5e81aaac43881e6a32038e3529385a2be1f35a72de09eebc470bb4"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/System/BattleUI/Res/UMG_Weather_Tips_C.luac",
+    "offset": 103376896,
+    "declared_size": 1878,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "d46afda95e13eeda9dd6335c38fb674135893383b680e7ebb418193189f2bcb2",
+    "source_ranges_sha256": [
+      {
+        "offset": 103376949,
+        "size": 1888,
+        "sha256": "69576a707297412c3ad51582db05844fb45c82fd79cf296bdd943f2dedd83181"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 1857,
+    "functions": 12,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/weather_rules_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/UMG_Weather_Tips_C.decompiled.lua",
+    "output_sha256": "0703beed7367baf2eded632b02d70a58bfdd0f68cebb230c1d79ae0d3f707058"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/NewRoco/Modules/Core/Battle/Entity/Components/Buff/BuffUtils.luac",
+    "offset": 87173120,
+    "declared_size": 4943,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "0bdc5bedb6759efd0010c9941e57605c5ba1377e92e9275546a9addac5794394",
+    "source_ranges_sha256": [
+      {
+        "offset": 87173173,
+        "size": 4944,
+        "sha256": "c52cd74ae07c1df363889e271b6be8f94b4579670826b18dbab77889e2ef0300"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "format": "MLE",
+    "decoded_bytes": 4922,
+    "functions": 16,
+    "complete_parse": true,
+    "stack_policy": "255 as pinned CUE4Parse; original stack retained in parser",
+    "output": "artifacts/weather_rules_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BuffUtils.decompiled.lua",
+    "output_sha256": "a82d952dcc50a5f2ec8c56e6d01aaf306711ac2ce97a74a7850f0ca8ffb78106"
+  }
+]

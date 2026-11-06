@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-25",
+  "scope": "synthetic UI and research execution verification; not real-game calibration",
+  "python_combined_tests": 56,
+  "javascript_tests": 34,
+  "python_modules": [
+    "test_research_api",
+    "test_research_battle",
+    "test_game_skill_adapter",
+    "test_research_damage",
+    "test_lab_server"
+  ],
+  "http_port": 8766,
+  "http": {
+    "lethal_turn": "awaiting_replacement",
+    "committed_actions": [
+      "a"
+    ],
+    "skipped_actions": [
+      "b"
+    ],
+    "manual_replacement": "applied",
+    "next_turn": 3,
+    "patch2_mirror_turn": "applied",
+    "target_energy_after_mirror_and_scratch": 6,
+    "mdef_terms": [
+      {
+        "numerator": -5000,
+        "denominator": 10000
+      }
+    ],
+    "file_bindings": {
+      "7170280": {
+        "source_hash": "51e3b93ccdf2cfb2b11d3b1503671f6d9704e93f8477ebca05b3e8cd768db1f7",
+        "source_id": "resource-group-c40d72d37c3c43a12b3f",
+        "policy": {
+          "version": "game-file-components-experiment-1",
+          "source_id": "resource-group-c40d72d37c3c43a12b3f",
+          "operation_order": "file_slot_order_experiment",
+          "cast_moments": [
+            11
+          ],
+          "target_codes": {
+            "1": "self",
+            "2": "opponent"
+          },
+          "success_rate": "require_explicit_10000",
+          "empty_slots": "preserve_as_noop",
+          "absent_buff_level_rule": "literal_group_operand_experiment",
+          "attribute_parameters": "attribute_zero_basis_points_per_layer_experiment",
+          "attribute_denominator": 10000,
+          "stat_stacking": "record_separate_signed_terms",
+          "energy_parameters": "signed_delta_zero_zero_once_experiment",
+          "energy_group_operand": "retained_not_a_multiplier",
+          "runtime_version_verified": false
+        },
+        "operations": [
+          {
+            "op": "stat.modify",
+            "params": {
+              "target": "opponent",
+              "attributes": [
+                "mdef"
+              ],
+              "percent": {
+                "numerator": -5000,
+                "denominator": 10000
+              }
+            }
+          },
+          {
+            "op": "energy.reduce",
+            "params": {
+              "target": "opponent",
+              "amount": 3
+            }
+          }
+        ]
+      }
+    }
+  },
+  "ui": {
+    "integer_hp": true,
+    "observed_samples": [
+      72,
+      1,
+      0
+    ],
+    "legacy_fraction_preserved_without_display": true,
+    "undo_restored_hp": 1,
+    "test_origin": "http://127.0.0.1:19387",
+    "user_origin_modified": false,
+    "screenshot": "docs/previews/battle-hp-bars-20261025.png"
+  },
+  "source_sha256": {
+    "web/battle.js": "df06408dbaeea597cb5d33ca565d0e9675833ceb28f36f7dfaacb5c1bcf9be7c",
+    "web/battle_workspace.html": "732b6463a3c781e324166db18afcd54c0ed7a7ee3ce1084bdcef4df09211794d",
+    "lab/server.py": "a1e357e39dbeae0babd3684f1bf720ed23db4fc9e7d23f7c3688078a9e674655",
+    "lab/research_api.py": "af3b235071df7827902036a3b984fee586076fdc4479355bee34f4d7ed011c29",
+    "lab/research_battle.py": "e22cd71c3d83725cdfabb8d70aec2d21924e1e6286cf8fc3478635afb8f8b346",
+    "lab/research_damage.py": "ab32a964754fef9c379b2fbe88666cb5cb4386270bffcffd37fd52ca10bc1b13",
+    "lab/game_skill_adapter.py": "95497be259960e262d4c77edc24e877f1bfe72816286a11c9f6a06c7d7720fca",
+    "lab/effect_runtime.py": "67fec44b135a97f8602cdaec24f56a863080a0912732399dba2c8c66c1ceaad8",
+    "lab/skill_execution.py": "af6c634c24342950e727d174201d55c1004cb26f3f3c29650e4453687ba11acc",
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "data/rules/20261025T013619+0800/rule-config-1.json": "c190c98d3a2e67153ac1c77f96adc2018e1ea6a3198880e5343451a7f87871cf"
+  },
+  "full_battle_executable": false,
+  "real_game_calibrated": false,
+  "training_eligible": false,
+  "battle_page_auto_simulation": false
+}

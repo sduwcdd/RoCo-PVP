@@ -1,0 +1,493 @@
+{
+  "schema": "reviewed-swift-release-1",
+  "policy": "source_bound_wing_charge_and_swift_rerelease_experiment_v1",
+  "skills": {
+    "7150170": {
+      "record_hash": "e263a1d26a4ad57353c29fb941e8227d759b38c49cb601322e18efbb9a06fe0d",
+      "raw": {
+        "id": 7150170,
+        "wiki_id": "skill_000696",
+        "name": {
+          "zh": "疾风涡轮"
+        },
+        "type": "翼系",
+        "kind": "physical",
+        "energy": 0,
+        "desc": {
+          "zh": "造成物伤，无法主动使用，在使用3次翼系技能后会自动使用此技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%96%BE%E9%A3%8E%E6%B6%A1%E8%BD%AE",
+        "source_module": "Skills",
+        "power": 100
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        100
+      ],
+      "skill_dam_type": 15,
+      "wing_threshold": 3,
+      "installation_evidence": {
+        "skill": {
+          "id": 7150170,
+          "name": {
+            "localization_id": 3109,
+            "text": "疾风涡轮"
+          },
+          "desc": {
+            "localization_id": 3110,
+            "text": "造成物伤，无法主动使用，在使用3次翼系技能后会自动使用此技能。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            100
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 15,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20060110,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_XMFJ_7999107",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/715017.715017'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "effects": {
+          "20060110": null
+        },
+        "buffs": {
+          "20060110": {
+            "id": 20060110,
+            "buff_base_ids": [
+              2006010
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800014_png.800014_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          },
+          "20640870": {
+            "id": 20640870,
+            "buff_base_ids": [
+              2064087
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2006010": {
+            "id": 2006010,
+            "buffbase_order": 6,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  4
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2006010
+                ]
+              },
+              {
+                "params": [
+                  7150170
+                ]
+              }
+            ]
+          },
+          "2064087": {
+            "id": 2064087,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7150320
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "installation_uncertainty": "charge threshold from desc (3 wing skills); buff base 2006010 param[0]=4 not field-decoded; 7150320 cost rounding floor(sum/2) per energy_rule 6; -5000 sentinel undecoded."
+    },
+    "7150320": {
+      "record_hash": "c1ad0240d70e55ab198b1170757a116083743e2700b95d2e542c301e2edc47a9",
+      "raw": {
+        "id": 7150320,
+        "wiki_id": "skill_000708",
+        "name": {
+          "zh": "疾风连袭"
+        },
+        "type": "翼系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "释放自己释放过的迅捷技能，其能耗之和的二分之一加至本技能能耗，每次使用后能耗+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%96%BE%E9%A3%8E%E8%BF%9E%E8%A2%AD",
+        "source_module": "Skills"
+      },
+      "energy_cost": [
+        0,
+        0,
+        1,
+        -5000
+      ],
+      "dam_para": [
+        0
+      ],
+      "skill_dam_type": 15,
+      "wing_threshold": null,
+      "installation_evidence": {
+        "skill": {
+          "id": 7150320,
+          "name": {
+            "localization_id": 3141,
+            "text": "疾风连袭"
+          },
+          "desc": {
+            "localization_id": 3142,
+            "text": "释放自己释放过的迅捷技能，其能耗之和的二分之一加至本技能能耗，每次使用后能耗+1。"
+          },
+          "energy_rule": 6,
+          "energy_cost": [
+            0,
+            0,
+            1,
+            -5000
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 15,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20640870,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1033003,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_ZC_314028",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/314028.314028'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ],
+          "is_showlens": 1
+        },
+        "effects": {
+          "20640870": null,
+          "1033003": {
+            "id": 1033003,
+            "effect_order": 33,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          }
+        },
+        "buffs": {
+          "20060110": {
+            "id": 20060110,
+            "buff_base_ids": [
+              2006010
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800014_png.800014_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          },
+          "20640870": {
+            "id": 20640870,
+            "buff_base_ids": [
+              2064087
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          }
+        },
+        "buff_bases": {
+          "2006010": {
+            "id": 2006010,
+            "buffbase_order": 6,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  4
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2006010
+                ]
+              },
+              {
+                "params": [
+                  7150170
+                ]
+              }
+            ]
+          },
+          "2064087": {
+            "id": 2064087,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7150320
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "installation_uncertainty": "charge threshold from desc (3 wing skills); buff base 2006010 param[0]=4 not field-decoded; 7150320 cost rounding floor(sum/2) per energy_rule 6; -5000 sentinel undecoded."
+    }
+  },
+  "swift_skills": {
+    "7150080": {
+      "is_swift": true,
+      "energy_cost": [
+        3
+      ]
+    },
+    "7150110": {
+      "is_swift": true,
+      "energy_cost": [
+        5
+      ]
+    },
+    "7150150": {
+      "is_swift": true,
+      "energy_cost": [
+        2
+      ]
+    },
+    "7150260": {
+      "is_swift": true,
+      "energy_cost": [
+        1
+      ]
+    },
+    "7150300": {
+      "is_swift": true,
+      "energy_cost": [
+        2
+      ]
+    },
+    "7150320": {
+      "is_swift": true,
+      "energy_cost": [
+        0,
+        0,
+        1,
+        -5000
+      ]
+    },
+    "7150400": {
+      "is_swift": true,
+      "energy_cost": [
+        2
+      ]
+    },
+    "7150410": {
+      "is_swift": true,
+      "energy_cost": [
+        2
+      ]
+    }
+  },
+  "installation_sources": [
+    "unpacked SKILL_CONF/BUFF_CONF/BUFFBASE_CONF/EFFECT_CONF (snapshot 20261025T013619+0800)",
+    "bwiki catalog"
+  ]
+}

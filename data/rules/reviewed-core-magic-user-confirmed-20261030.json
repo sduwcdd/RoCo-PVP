@@ -1,0 +1,47 @@
+{
+  "schema": "reviewed-core-magic-user-confirmed-20261030",
+  "policy": "user_confirmed_active_optional_wish_tplus3_boss_hp_ratio_heal_three_endings_v1",
+  "confirmation": {
+    "source": "user_message_2026-10-30_rules_1_through_4",
+    "basis": "用户确认",
+    "ordinary_action_consumed": false,
+    "active_target_only": true,
+    "wish": {
+      "uses": 2,
+      "ready_offset": 3,
+      "restore": "after_cast_round_even_if_unused_or_departed",
+      "refund": false
+    },
+    "boss": {
+      "hp": "current_percentage",
+      "preserve": [
+        "energy",
+        "statuses",
+        "marks",
+        "permanent_modifiers",
+        "skill_slots",
+        "cooldowns"
+      ],
+      "persists_on_departure": true
+    },
+    "heal": {
+      "cast_round_end_included": true,
+      "departure_clears": true
+    }
+  },
+  "rounding": {
+    "boss_hp": "floor(new_max_hp*old_hp/old_max_hp), living minimum 1",
+    "basis": "existing_integer_hp_version_policy_not_confirmed_game_rounding"
+  },
+  "sources": [
+    {
+      "path": "data/external/petbase.json",
+      "sha256": "19281022feb168595f62916109da61c73611984c7c04066e77c9ae613400881b"
+    },
+    {
+      "path": "data/external/skill.json",
+      "sha256": "88be522f61fc73cae1e85b76bf671c70c7588302c20afa86b2207ea6aa839296"
+    }
+  ],
+  "mapping_boundary": "Current petbase bosspetbase_id_arry; old Effect1041001 arrays conflict with current petbase; never apply old positional array blindly. Explicit matching token required for rule2, ambiguous branches blocked."
+}

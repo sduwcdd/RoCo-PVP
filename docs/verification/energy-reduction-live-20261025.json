@@ -1,0 +1,623 @@
+{
+  "source_skill": 7170280,
+  "server_pid": 20636,
+  "payload": {
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 2,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7170280,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7170280,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "actions": {
+      "a": {
+        "kind": "skill",
+        "slot": 1,
+        "effective_cost": 2,
+        "effective_priority": 1
+      },
+      "b": {
+        "kind": "skill",
+        "slot": 1,
+        "effective_cost": 2,
+        "effective_priority": 0
+      }
+    },
+    "context": {
+      "mode": "isolated_joint_action_experiment",
+      "excluded_hooks": [
+        "bloodlines",
+        "event_triggers",
+        "field",
+        "marks",
+        "traits"
+      ],
+      "fragments": {
+        "a": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max",
+          "stat_policy": "record_signed_percentage_terms",
+          "energy_reduction_policy": "clamp_to_zero_experiment"
+        },
+        "b": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max",
+          "stat_policy": "record_signed_percentage_terms",
+          "energy_reduction_policy": "clamp_to_zero_experiment"
+        }
+      }
+    }
+  },
+  "program": {
+    "snapshot_id": "20261025T013619+0800",
+    "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+    "skill": {
+      "id": 7170280,
+      "wiki_id": "skill_000759",
+      "name": {
+        "zh": "魔镜"
+      },
+      "type": "幽系",
+      "kind": "status",
+      "energy": 2,
+      "desc": {
+        "zh": "敌方获得魔防-50%，且失去3能量。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E9%AD%94%E9%95%9C",
+      "source_module": "Skills"
+    },
+    "program": {
+      "game_id": 7170280,
+      "name": "魔镜",
+      "category": "skill",
+      "compiler_version": "bwiki-declarative-6",
+      "source_description": "敌方获得魔防-50%，且失去3能量。",
+      "source_details": {},
+      "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f",
+      "source": {
+        "wiki_id": "skill_000759",
+        "source_url": "https://wiki.biligame.com/nrc/%E9%AD%94%E9%95%9C",
+        "source_module": "Skills"
+      },
+      "static_fields": {
+        "kind": "status",
+        "type": "幽系",
+        "energy": 2
+      },
+      "status": "compiled",
+      "operations": [
+        {
+          "op": "stat.modify",
+          "params": {
+            "target": "opponent",
+            "attributes": [
+              "mdef"
+            ],
+            "percent": {
+              "numerator": -50,
+              "denominator": 100
+            }
+          }
+        },
+        {
+          "op": "energy.reduce",
+          "params": {
+            "target": "opponent",
+            "amount": 3
+          }
+        }
+      ],
+      "blockers": [],
+      "dependency_ids": [],
+      "snapshot_id": "20261025T013619+0800",
+      "source_version": "s4-2026-10-16",
+      "order_semantics": "source_text_order_not_validated_timing",
+      "executable": false,
+      "real_game_verified": false,
+      "execution_blockers": [
+        "尚未通过当前版本的真实对战校准。",
+        "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。",
+        "失去能量的低能量边界和复合效果结算顺序未核实；必须显式提供实验政策，不默认负能量、截零或转移给施法者。"
+      ],
+      "term_source": {
+        "title": "Module:Pets/data/Terms",
+        "page_id": 6401,
+        "revision_id": 7078,
+        "revision_timestamp": "2026-09-09T10:00:15Z",
+        "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+        "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+      },
+      "skill_source": {
+        "title": "Module:Pets/data/Skills",
+        "page_id": 6396,
+        "revision_id": 18764,
+        "revision_timestamp": "2026-10-19T12:08:03Z",
+        "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+        "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+      }
+    },
+    "source": {
+      "snapshot_id": "20261025T013619+0800",
+      "module": "Skills",
+      "title": "Module:Pets/data/Skills",
+      "page_id": 6396,
+      "revision_id": 18764,
+      "revision_timestamp": "2026-10-19T12:08:03Z",
+      "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+    },
+    "training_eligible": false,
+    "battle_executable": false,
+    "missing_battle_dependencies": [
+      "当前局面的特性、印记、天气和触发链",
+      "实战校准的数值公式及结算顺序"
+    ],
+    "snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9"
+  },
+  "result": {
+    "status": "applied",
+    "scope": "isolated_joint_action_experiment",
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 2,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 5,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7170280,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {
+                "mdef": [
+                  {
+                    "numerator": -50,
+                    "denominator": 100
+                  }
+                ]
+              },
+              "types": [
+                "草系"
+              ]
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 5,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7170280,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {
+                "mdef": [
+                  {
+                    "numerator": -50,
+                    "denominator": 100
+                  }
+                ]
+              },
+              "types": [
+                "草系"
+              ]
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "events": [
+      {
+        "op": "energy.pay",
+        "amount": 2,
+        "source": "caller_resolved_cost",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "3dd49a6501f0e0b4291894c3d3cebb8ee898524d3fc57b69978fca95604dcf66",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 0,
+        "actor_side": "a",
+        "actor_member_id": "a",
+        "target_side": "a",
+        "target_member_id": "a",
+        "skill_slot": 1,
+        "skill_id": 7170280,
+        "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f"
+      },
+      {
+        "op": "stat.modify",
+        "target": "opponent",
+        "params": {
+          "target": "opponent",
+          "attributes": [
+            "mdef"
+          ],
+          "percent": {
+            "numerator": -50,
+            "denominator": 100
+          }
+        },
+        "effective_panel_recomputed": false,
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "3dd49a6501f0e0b4291894c3d3cebb8ee898524d3fc57b69978fca95604dcf66",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 0,
+        "actor_side": "a",
+        "actor_member_id": "a",
+        "target_side": "b",
+        "target_member_id": "b",
+        "skill_slot": 1,
+        "skill_id": 7170280,
+        "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f"
+      },
+      {
+        "op": "energy.reduce",
+        "target": "opponent",
+        "params": {
+          "target": "opponent",
+          "amount": 3
+        },
+        "before": 10,
+        "after": 7,
+        "requested_amount": 3,
+        "actual_amount": 3,
+        "policy": "clamp_to_zero_experiment",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "3dd49a6501f0e0b4291894c3d3cebb8ee898524d3fc57b69978fca95604dcf66",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 0,
+        "actor_side": "a",
+        "actor_member_id": "a",
+        "target_side": "b",
+        "target_member_id": "b",
+        "skill_slot": 1,
+        "skill_id": 7170280,
+        "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f"
+      },
+      {
+        "op": "energy.pay",
+        "amount": 2,
+        "source": "caller_resolved_cost",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "3dd49a6501f0e0b4291894c3d3cebb8ee898524d3fc57b69978fca95604dcf66",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 1,
+        "actor_side": "b",
+        "actor_member_id": "b",
+        "target_side": "b",
+        "target_member_id": "b",
+        "skill_slot": 1,
+        "skill_id": 7170280,
+        "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f"
+      },
+      {
+        "op": "stat.modify",
+        "target": "opponent",
+        "params": {
+          "target": "opponent",
+          "attributes": [
+            "mdef"
+          ],
+          "percent": {
+            "numerator": -50,
+            "denominator": 100
+          }
+        },
+        "effective_panel_recomputed": false,
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "3dd49a6501f0e0b4291894c3d3cebb8ee898524d3fc57b69978fca95604dcf66",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 1,
+        "actor_side": "b",
+        "actor_member_id": "b",
+        "target_side": "a",
+        "target_member_id": "a",
+        "skill_slot": 1,
+        "skill_id": 7170280,
+        "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f"
+      },
+      {
+        "op": "energy.reduce",
+        "target": "opponent",
+        "params": {
+          "target": "opponent",
+          "amount": 3
+        },
+        "before": 8,
+        "after": 5,
+        "requested_amount": 3,
+        "actual_amount": 3,
+        "policy": "clamp_to_zero_experiment",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "3dd49a6501f0e0b4291894c3d3cebb8ee898524d3fc57b69978fca95604dcf66",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "action_index": 1,
+        "actor_side": "b",
+        "actor_member_id": "b",
+        "target_side": "a",
+        "target_member_id": "a",
+        "skill_slot": 1,
+        "skill_id": 7170280,
+        "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f"
+      }
+    ],
+    "blockers": [],
+    "snapshot_id": "20261025T013619+0800",
+    "state_hash": "fc93275fde68fcf1f3c0acc443961de065e7bdd3479df1c0e5c38f962f1dc9b3",
+    "actions_hash": "483d40b8a771b5a93d1ad3666904dbd28c35bd47c6635d03d676a46c10741848",
+    "context_hash": "0b123b69e1e5cef2d900b0ccf5a8068d0d0d12f98c6ab4490143fccb60bd9078",
+    "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+    "plan_hash": "f069aade372eb41a4ed475d0437bc5daf3b290e81b61c78f796633c6e3177007",
+    "order": [
+      "a",
+      "b"
+    ],
+    "input_state_mutated": false,
+    "full_turn_executed": false,
+    "battle_executable": false,
+    "calibrated": false,
+    "training_eligible": false,
+    "implementation_unvalidated": true,
+    "final_state_hash": "4f8543ce7020ffc6adf64ab8ffefe68e1c0d2a48794308e2a8aa67a758e59166",
+    "assumptions": {
+      "mode": "isolated_joint_action_experiment",
+      "excluded_hooks": [
+        "bloodlines",
+        "event_triggers",
+        "field",
+        "marks",
+        "traits"
+      ],
+      "fragments": {
+        "a": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max",
+          "stat_policy": "record_signed_percentage_terms",
+          "energy_reduction_policy": "clamp_to_zero_experiment"
+        },
+        "b": {
+          "mode": "isolated_skill_experiment",
+          "snapshot_id": "20261025T013619+0800",
+          "source_hash": "b291c586c33ec0b089717f659fbd9464d672596bc9e5d26c36acc85d842e019f",
+          "operation_order": "source_text_order_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "unresolved_dependencies": [],
+          "energy_policy": "clamp_to_declared_max",
+          "stat_policy": "record_signed_percentage_terms",
+          "energy_reduction_policy": "clamp_to_zero_experiment"
+        }
+      }
+    },
+    "unresolved": [
+      {
+        "side": "both",
+        "reason": "配招学习条件、完整伤害、资源结算、特性触发和胜负仍未校准；此结果仅为行动阶段计划，不证明阵容合法。"
+      }
+    ],
+    "end_of_turn_executed": false,
+    "snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9"
+  },
+  "missing_policy_result": {
+    "status": "blocked",
+    "scope": "isolated_joint_action_experiment",
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 2,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7170280,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b",
+              "form_id": 3001,
+              "hp": 100,
+              "max_hp": 100,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                7170280,
+                0,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "events": [],
+    "blockers": [
+      "energy reduction floor must be an explicit experiment; no game floor is inferred"
+    ],
+    "snapshot_id": "20261025T013619+0800",
+    "state_hash": "fc93275fde68fcf1f3c0acc443961de065e7bdd3479df1c0e5c38f962f1dc9b3",
+    "actions_hash": "483d40b8a771b5a93d1ad3666904dbd28c35bd47c6635d03d676a46c10741848",
+    "context_hash": "f85d66407e5b4a3c22a5a9298b335dae1e143b4e25fecb6f73e7974c011f66ec",
+    "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+    "plan_hash": "f069aade372eb41a4ed475d0437bc5daf3b290e81b61c78f796633c6e3177007",
+    "order": null,
+    "input_state_mutated": false,
+    "full_turn_executed": false,
+    "battle_executable": false,
+    "calibrated": false,
+    "training_eligible": false,
+    "implementation_unvalidated": true,
+    "snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9"
+  },
+  "real_game_calibration": false
+}

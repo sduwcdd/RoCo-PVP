@@ -1,0 +1,372 @@
+{
+  "schema": "reviewed-slot-stat-1",
+  "policy": "source_bound_positional_stat_skill_v1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db"
+  },
+  "installation_sources": {
+    "SKILL_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+    },
+    "EFFECT_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    "BUFF_CONF": {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    }
+  },
+  "skills": {
+    "7070170": {
+      "record_hash": "bc5d70f426c67c664e23bdd9d951049206f3e5f63d903e1092269f189952204a",
+      "record": {
+        "id": 7070170,
+        "wiki_id": "skill_000484",
+        "name": {
+          "zh": "啮合传递"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "自己获得速度+30，本技能位于1号或3号位时额外获得物攻+80%，传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%95%AE%E5%90%88%E4%BC%A0%E9%80%92",
+        "source_module": "Skills",
+        "desc_notes": [
+          1033
+        ]
+      },
+      "components": {
+        "base_stats": [
+          {
+            "attribute": "spd",
+            "percent": null,
+            "layers": 3,
+            "per_layer": 10,
+            "buff_id": 20010100
+          }
+        ],
+        "positional_stats": {
+          "slots": [
+            0,
+            2
+          ],
+          "attribute": "patk",
+          "layers": 8,
+          "per_layer": 10,
+          "buff_id": 20010010
+        },
+        "transmission": 1,
+        "effect_ids": [
+          20640740,
+          20010100,
+          21150010,
+          20640750
+        ]
+      },
+      "installation_evidence": {
+        "skill_parsed": {
+          "id": 7070170,
+          "name": {
+            "localization_id": 2416,
+            "text": "啮合传递"
+          },
+          "desc": {
+            "localization_id": 2417,
+            "text": "自己获得速度+30，本技能位于1号或3号位时额外获得物攻+80%，<desc_id=1033>传动</>1。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20640740,
+              "cast_moment": 24
+            },
+            {
+              "effect_id": 20010100,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21150010,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20640750,
+              "cast_moment": 24
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_GNZZ_106017",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106017.106017'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "skill_mirror": {
+          "id": 7070170,
+          "name": {
+            "localization_id": 2316,
+            "text": "啮合传递"
+          },
+          "desc": {
+            "localization_id": 2317,
+            "text": "自己获得速度+30，本技能位于1号或3号位时额外获得物攻+80%，<desc_id=1033>传动</>1。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 9,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 20640740,
+              "result_target_type": 1,
+              "cast_moment": 24,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            },
+            {
+              "effect_id": 20010100,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 3
+            },
+            {
+              "effect_id": 21150010,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            },
+            {
+              "effect_id": 20640750,
+              "result_target_type": 1,
+              "cast_moment": 24,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_GNZZ_106017",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106017.106017'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "catalog_record": {
+          "id": 7070170,
+          "wiki_id": "skill_000484",
+          "name": {
+            "zh": "啮合传递"
+          },
+          "type": "机械系",
+          "kind": "status",
+          "energy": 1,
+          "desc": {
+            "zh": "自己获得速度+30，本技能位于1号或3号位时额外获得物攻+80%，传动1。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%95%AE%E5%90%88%E4%BC%A0%E9%80%92",
+          "source_module": "Skills",
+          "desc_notes": [
+            1033
+          ]
+        },
+        "buffs": {
+          "20010100": {
+            "id": 20010100,
+            "buff_base_ids": [
+              2001010
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              1,
+              31
+            ],
+            "name": "速度提升",
+            "type_id": "1",
+            "add_des": "速度",
+            "add_icon": 1,
+            "type": 1,
+            "add_max": 99,
+            "desc": "速度<span color=\"#73c715\">+10</>。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800033_png.800033_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+            "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20640740": {
+            "id": 20640740,
+            "buff_base_ids": [
+              2064074,
+              2064076
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20640750": {
+            "id": 20640750,
+            "buff_base_ids": [
+              2064075,
+              2064076
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7040010_png.7040010_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "21150010": {
+            "id": 21150010,
+            "buff_base_ids": [
+              2115001
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "effects": {
+          "1031131": {
+            "id": 1031131,
+            "effect_order": 31,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  7070071
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "installation_uncertainty": "位置条件取“按槽位序号 1号位=0、3号位=2”，与相邻选择器同一套索引约定；速度+30 按 BUFF 20010100 每层+10、三层实现；物攻+80% 按 8 层×10% 实现；buff 2064074/2064075 两个 base 的具体分工未逐字段解码，因此位置分支只按描述结构实现，未做实战校准。"
+    }
+  }
+}

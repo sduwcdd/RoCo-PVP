@@ -1,0 +1,675 @@
+{
+  "schema": "reviewed-live-entry-buffs-1",
+  "scope": "HUD read-only observed native entry buffs; do not reconstruct missing cast history or install simulator snapshots",
+  "snapshot_id": "20261025T013619+0800",
+  "source_files": {
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "data/external/buff.json": "c3297bf6f706c03bcdfd75524f257cb3db22bc6ef2c2a0862b7c6cf3ca526479",
+    "data/external/skill.json": "88be522f61fc73cae1e85b76bf671c70c7588302c20afa86b2207ea6aa839296"
+  },
+  "traits": {
+    "200325": {
+      "name": "旧玩具",
+      "trait_record_hash": "7c6b74faefb12481ddc31eb81e6583ca2d539adc0472bbcf04f46ce350388efc",
+      "native_trait_hash": "eb1ffce8483e81a60b9da07b12cf618ca40836cc3880b2a40300bf74dfc68ccf",
+      "marker_id": 20011629,
+      "marker_hash": "031b9680841caf713c15934a77e4cb5b228b2b15109bb95ddd3dcd1422b2e6ba",
+      "marker_cap": 99,
+      "fields": {
+        "phyAtkPercent": 10,
+        "magAtkPercent": 10
+      },
+      "native_reference": {
+        "buff": {
+          "id": 20401140,
+          "buff_base_ids": [
+            2040114
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800021_png.800021_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base": {
+          "id": 2040114,
+          "buffbase_order": 40,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20011610,
+                20011611,
+                20011612,
+                20011613,
+                20011614,
+                20011615,
+                20011616,
+                20011617,
+                20011618,
+                20011619,
+                20011620,
+                20011621,
+                20011622,
+                20011623,
+                20011624,
+                20011625,
+                20011626,
+                20011627,
+                20011628
+              ]
+            },
+            {
+              "params": [
+                5,
+                1
+              ]
+            },
+            {
+              "params": [
+                20011629
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "marker_native": {
+        "id": 20011629,
+        "buff_base_ids": [
+          2001001,
+          2001002
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          0
+        ],
+        "name": "旧玩具",
+        "type_id": "5",
+        "type": 3,
+        "add_max": 99,
+        "desc": "双攻+<span color=\"#73c715\">10%</>。",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830147_png.830147_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "marker_bases": {
+        "2001001": {
+          "id": 2001001,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                29
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "2001002": {
+          "id": 2001002,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                30
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        }
+      },
+      "deduplication": "visible marker already contributes through generic BUFF terms; do not also add historical trait effect"
+    },
+    "200153": {
+      "name": "蒸汽膨胀",
+      "trait_record_hash": "4d29af1951b2606d487093b44f6c6b2d0c2a4d080d12479041fb6348f9211135",
+      "native_trait_hash": "2d6fc51f38517cb42576a39a16c10a94624df0beaaf47c3b68e3a35000687c39",
+      "marker_id": 20230446,
+      "marker_hash": "eb46cd8cc86c58112feba98d920ed77e739a3c324ee658d8e18312cdb9362e11",
+      "marker_cap": 99,
+      "fields": {
+        "flatPowerBonus": 10
+      },
+      "native_reference": {
+        "effect": {
+          "id": 1034016,
+          "effect_order": 34,
+          "is_special": 1,
+          "name": "蒸汽膨胀",
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                4
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                20230446
+              ]
+            },
+            {
+              "params": [
+                299901
+              ]
+            },
+            {
+              "params": [
+                -1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "marker_native": {
+        "id": 20230446,
+        "buff_base_ids": [
+          2023044
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          0
+        ],
+        "name": "蒸汽膨胀",
+        "type_id": "5",
+        "add_des": "威力增加",
+        "add_icon": 6,
+        "type": 3,
+        "add_max": 99,
+        "desc": "技能威力+10",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830082_png.830082_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "marker_bases": {
+        "2023044": {
+          "id": 2023044,
+          "buffbase_order": 23,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                10
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "deduplication": "visible marker already contributes through generic BUFF terms; do not also add historical trait effect"
+    },
+    "200302": {
+      "name": "淬炼火",
+      "trait_record_hash": "a1f5617ed446cb71f85e19c08a55e05561e649d6e605e1205d5d449b79ac4637",
+      "native_trait_hash": "b47f82945b666c474a3322f04b0f5145b7364c0648623e44222a7029465463b5",
+      "marker_id": 20010039,
+      "marker_hash": "707a930e04cd292e00e538ffc2f112636f985e675e7711c3e2e2f8ae86ecd97d",
+      "marker_cap": 10,
+      "fields": {
+        "phyAtkPercent": 10,
+        "magAtkPercent": 10,
+        "phyDefPercent": 10,
+        "magDefPercent": 10,
+        "speedFlat": 10
+      },
+      "native_reference": {
+        "buff": {
+          "id": 21000120,
+          "buff_base_ids": [
+            2100012
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "base": {
+          "id": 2100012,
+          "buffbase_order": 100,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                4
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                4
+              ]
+            },
+            {
+              "params": [
+                20010039
+              ]
+            },
+            {
+              "params": [
+                -1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "marker_native": {
+        "id": 20010039,
+        "buff_base_ids": [
+          2001001,
+          2001002,
+          2001005,
+          2001006,
+          2001010
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "name": "淬炼火",
+        "type_id": "5",
+        "type": 3,
+        "add_max": 10,
+        "desc": "双攻、双防+10%，速度+10",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830129_png.830129_png'",
+        "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800035",
+        "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800035",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 2
+      },
+      "marker_bases": {
+        "2001001": {
+          "id": 2001001,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                29
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "2001002": {
+          "id": 2001002,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                30
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "2001005": {
+          "id": 2001005,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                31
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "2001006": {
+          "id": 2001006,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                32
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "2001010": {
+          "id": 2001010,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                6
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                10
+              ]
+            }
+          ]
+        }
+      },
+      "deduplication": "visible marker already contributes through generic BUFF terms; do not also add historical trait effect"
+    },
+    "200120": {
+      "name": "冻土",
+      "trait_record_hash": "2ad69a2c6d83da38384cca04fbb0b7a726a94eeef8fbe89d462b6b1629000060",
+      "native_trait_hash": "19c72ee90cc02079f550da2c2f2bdcd7d2cc56a7a94d77381cd368f88e638d2a",
+      "marker_id": 20230571,
+      "marker_hash": "2057e39ad433932c9f1d2b10e50ab0fb368a39fce67ab70843c43c607c3727d2",
+      "marker_cap": 4,
+      "fields": {},
+      "count_component": {
+        "op": "power.initial_carried",
+        "carried_type": "冰系",
+        "percent_per": 10
+      },
+      "native_reference": {
+        "effect": {
+          "id": 1064002,
+          "effect_order": 64,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                9
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                20230571
+              ]
+            },
+            {
+              "params": [
+                299901
+              ]
+            }
+          ]
+        },
+        "marker": {
+          "id": 20230571,
+          "buff_base_ids": [
+            2023057
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            3
+          ],
+          "name": "冻土",
+          "type_id": "5",
+          "type": 3,
+          "add_max": 99,
+          "desc": "地系技能威力+10%",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830055_png.830055_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        }
+      },
+      "interpretation": "当前冻土BUFF层数直接表征已赋予的每层地系技能威力10%加成；不借此恢复或公开隐藏的实际冰系配招。",
+      "uncertainty": "基础效果额外条件字段未做泛化解码；此处仅依据当前层数、原生BUFF描述与已审特性组件做专用来源绑定。"
+    }
+  }
+}

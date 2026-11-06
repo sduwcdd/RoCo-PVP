@@ -1,0 +1,443 @@
+{
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "related_python_tests": {
+    "passed": 278,
+    "seconds": 114.76,
+    "not_game_calibration": true
+  },
+  "new_regressions": 16,
+  "independent_review": "docs/verification/fixed-hit-review-20261025.md",
+  "artifact_sha256": {
+    "1": "ce6ad15b5f3414a9e07c27bc4acb8e3c9e2ece0c639868a9e7fe45f3046a67e6",
+    "2": "49dacbf07bad10347d94cb3cbc8557a4c7ffb44eda4171e1a0054f0feeabb319",
+    "3": "af67936fea097ab1424d164d2eb7fe0c8f50e4a09f588b70bac4e865fac4acf9"
+  },
+  "compiled_skills": 167,
+  "unsupported_skills": 412,
+  "synthetic_execution": {
+    "source_count_a": 3,
+    "source_count_b": 2,
+    "test_resolver": "hit_index+1 for a; hit_index+4 for b; not a game formula",
+    "result": {
+      "status": "applied",
+      "scope": "isolated_joint_action_experiment",
+      "state": {
+        "snapshot_id": "20261025T013619+0800",
+        "turn": 2,
+        "teams": {
+          "a": {
+            "active_slot": 1,
+            "members": [
+              {
+                "member_id": "a-reserve",
+                "form_id": 3016,
+                "hp": 300,
+                "max_hp": 350,
+                "energy": 10,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7020360,
+                  0,
+                  7020780
+                ],
+                "statuses": {},
+                "stat_modifiers": {}
+              },
+              {
+                "member_id": "a-active",
+                "form_id": 3001,
+                "hp": 291,
+                "max_hp": 350,
+                "energy": 8,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7020480,
+                  0,
+                  7020780
+                ],
+                "statuses": {},
+                "stat_modifiers": {},
+                "types": [
+                  "草系"
+                ]
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          },
+          "b": {
+            "active_slot": 1,
+            "members": [
+              {
+                "member_id": "b-reserve",
+                "form_id": 3016,
+                "hp": 300,
+                "max_hp": 350,
+                "energy": 10,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7020360,
+                  0,
+                  7020780
+                ],
+                "statuses": {},
+                "stat_modifiers": {}
+              },
+              {
+                "member_id": "b-active",
+                "form_id": 3001,
+                "hp": 294,
+                "max_hp": 350,
+                "energy": 8,
+                "max_energy": 20,
+                "speed": 100,
+                "entered_turn": 1,
+                "rooted": false,
+                "charge": null,
+                "skill_slots": [
+                  0,
+                  7020920,
+                  0,
+                  7020780
+                ],
+                "statuses": {},
+                "stat_modifiers": {},
+                "types": [
+                  "草系"
+                ]
+              }
+            ],
+            "marks": {
+              "positive": null,
+              "negative": null
+            }
+          }
+        }
+      },
+      "events": [
+        {
+          "op": "energy.pay",
+          "amount": 2,
+          "source": "caller_resolved_cost",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "eb5f7e7a1930202cf2dbf23e87e6173cac18e745ab23d486bed56b556a8bc69a",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 0,
+          "actor_side": "a",
+          "actor_member_id": "a-active",
+          "target_side": "a",
+          "target_member_id": "a-active",
+          "skill_slot": 1,
+          "skill_id": 7020480,
+          "source_hash": "4343526bef2b73435582c56de317cb8f4a21297a107d26d276d445c3d54a839e"
+        },
+        {
+          "op": "damage",
+          "source_op": "damage.sequence",
+          "target": "opponent",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "power": 35,
+            "type": "普通系",
+            "hits": 3,
+            "hit_index": 0,
+            "hit_count": 3,
+            "power_basis": "source_power_per_hit"
+          },
+          "before": 300,
+          "after": 299,
+          "damage": 1,
+          "sequence_operation_index": 0,
+          "hit_index": 0,
+          "hit_count": 3,
+          "power_basis": "source_power_per_hit",
+          "source": "caller_supplied_unvalidated_resolver",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "eb5f7e7a1930202cf2dbf23e87e6173cac18e745ab23d486bed56b556a8bc69a",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 0,
+          "actor_side": "a",
+          "actor_member_id": "a-active",
+          "target_side": "b",
+          "target_member_id": "b-active",
+          "skill_slot": 1,
+          "skill_id": 7020480,
+          "source_hash": "4343526bef2b73435582c56de317cb8f4a21297a107d26d276d445c3d54a839e"
+        },
+        {
+          "op": "damage",
+          "source_op": "damage.sequence",
+          "target": "opponent",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "power": 35,
+            "type": "普通系",
+            "hits": 3,
+            "hit_index": 1,
+            "hit_count": 3,
+            "power_basis": "source_power_per_hit"
+          },
+          "before": 299,
+          "after": 297,
+          "damage": 2,
+          "sequence_operation_index": 0,
+          "hit_index": 1,
+          "hit_count": 3,
+          "power_basis": "source_power_per_hit",
+          "source": "caller_supplied_unvalidated_resolver",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "eb5f7e7a1930202cf2dbf23e87e6173cac18e745ab23d486bed56b556a8bc69a",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 0,
+          "actor_side": "a",
+          "actor_member_id": "a-active",
+          "target_side": "b",
+          "target_member_id": "b-active",
+          "skill_slot": 1,
+          "skill_id": 7020480,
+          "source_hash": "4343526bef2b73435582c56de317cb8f4a21297a107d26d276d445c3d54a839e"
+        },
+        {
+          "op": "damage",
+          "source_op": "damage.sequence",
+          "target": "opponent",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "power": 35,
+            "type": "普通系",
+            "hits": 3,
+            "hit_index": 2,
+            "hit_count": 3,
+            "power_basis": "source_power_per_hit"
+          },
+          "before": 297,
+          "after": 294,
+          "damage": 3,
+          "sequence_operation_index": 0,
+          "hit_index": 2,
+          "hit_count": 3,
+          "power_basis": "source_power_per_hit",
+          "source": "caller_supplied_unvalidated_resolver",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "eb5f7e7a1930202cf2dbf23e87e6173cac18e745ab23d486bed56b556a8bc69a",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 0,
+          "actor_side": "a",
+          "actor_member_id": "a-active",
+          "target_side": "b",
+          "target_member_id": "b-active",
+          "skill_slot": 1,
+          "skill_id": 7020480,
+          "source_hash": "4343526bef2b73435582c56de317cb8f4a21297a107d26d276d445c3d54a839e"
+        },
+        {
+          "op": "energy.pay",
+          "amount": 2,
+          "source": "caller_resolved_cost",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "22b8a12480a730a69559164070d23bf593220ffc05fac0dd3f73fa8ad01a57fb",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 1,
+          "actor_side": "b",
+          "actor_member_id": "b-active",
+          "target_side": "b",
+          "target_member_id": "b-active",
+          "skill_slot": 1,
+          "skill_id": 7020920,
+          "source_hash": "b4331be20adf16180e9731b7218508a72dcf1afe51fe1cc388c288f499e7fd74"
+        },
+        {
+          "op": "damage",
+          "source_op": "damage.sequence",
+          "target": "opponent",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "power": 50,
+            "type": "普通系",
+            "hits": 2,
+            "hit_index": 0,
+            "hit_count": 2,
+            "power_basis": "source_power_per_hit"
+          },
+          "before": 300,
+          "after": 296,
+          "damage": 4,
+          "sequence_operation_index": 0,
+          "hit_index": 0,
+          "hit_count": 2,
+          "power_basis": "source_power_per_hit",
+          "source": "caller_supplied_unvalidated_resolver",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "22b8a12480a730a69559164070d23bf593220ffc05fac0dd3f73fa8ad01a57fb",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 1,
+          "actor_side": "b",
+          "actor_member_id": "b-active",
+          "target_side": "a",
+          "target_member_id": "a-active",
+          "skill_slot": 1,
+          "skill_id": 7020920,
+          "source_hash": "b4331be20adf16180e9731b7218508a72dcf1afe51fe1cc388c288f499e7fd74"
+        },
+        {
+          "op": "damage",
+          "source_op": "damage.sequence",
+          "target": "opponent",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "power": 50,
+            "type": "普通系",
+            "hits": 2,
+            "hit_index": 1,
+            "hit_count": 2,
+            "power_basis": "source_power_per_hit"
+          },
+          "before": 296,
+          "after": 291,
+          "damage": 5,
+          "sequence_operation_index": 0,
+          "hit_index": 1,
+          "hit_count": 2,
+          "power_basis": "source_power_per_hit",
+          "source": "caller_supplied_unvalidated_resolver",
+          "snapshot_id": "20261025T013619+0800",
+          "program_hash": "22b8a12480a730a69559164070d23bf593220ffc05fac0dd3f73fa8ad01a57fb",
+          "implementation_unvalidated": true,
+          "training_eligible": false,
+          "action_index": 1,
+          "actor_side": "b",
+          "actor_member_id": "b-active",
+          "target_side": "a",
+          "target_member_id": "a-active",
+          "skill_slot": 1,
+          "skill_id": 7020920,
+          "source_hash": "b4331be20adf16180e9731b7218508a72dcf1afe51fe1cc388c288f499e7fd74"
+        }
+      ],
+      "blockers": [],
+      "snapshot_id": "20261025T013619+0800",
+      "state_hash": "9fa6df06f353ead2630716bd435c1781275fec8aaf858e896a9239737de14284",
+      "actions_hash": "483d40b8a771b5a93d1ad3666904dbd28c35bd47c6635d03d676a46c10741848",
+      "context_hash": "74491ed1dbdd80d2aa9a3526bae618f1f89b959c227f821f3d979d84b4cef361",
+      "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+      "plan_hash": "ee87d142f337e2fdd9a8214f6303e05adf24f25b9645659cbc4975893addc94e",
+      "order": [
+        "a",
+        "b"
+      ],
+      "input_state_mutated": false,
+      "full_turn_executed": false,
+      "battle_executable": false,
+      "calibrated": false,
+      "training_eligible": false,
+      "implementation_unvalidated": true,
+      "final_state_hash": "1a4cd819bddeed66872b3f80d2dfe5b506141862daeb5bc9f8108b26423116e0",
+      "assumptions": {
+        "mode": "isolated_joint_action_experiment",
+        "excluded_hooks": [
+          "bloodlines",
+          "event_triggers",
+          "field",
+          "marks",
+          "traits"
+        ],
+        "fragments": {
+          "a": {
+            "mode": "isolated_skill_experiment",
+            "snapshot_id": "20261025T013619+0800",
+            "source_hash": "4343526bef2b73435582c56de317cb8f4a21297a107d26d276d445c3d54a839e",
+            "operation_order": "source_text_order_experiment",
+            "unresolved_dependencies": [],
+            "excluded_hooks": [
+              "bloodlines",
+              "event_triggers",
+              "field",
+              "marks",
+              "traits"
+            ],
+            "energy_policy": "clamp_to_declared_max",
+            "stat_policy": "record_signed_percentage_terms",
+            "damage_policy": "resolver_returns_actual_integer_hp_loss",
+            "multi_hit_policy": {
+              "power_basis": "source_power_per_hit",
+              "timing": "sequential_experiment"
+            }
+          },
+          "b": {
+            "mode": "isolated_skill_experiment",
+            "snapshot_id": "20261025T013619+0800",
+            "source_hash": "b4331be20adf16180e9731b7218508a72dcf1afe51fe1cc388c288f499e7fd74",
+            "operation_order": "source_text_order_experiment",
+            "unresolved_dependencies": [],
+            "excluded_hooks": [
+              "bloodlines",
+              "event_triggers",
+              "field",
+              "marks",
+              "traits"
+            ],
+            "energy_policy": "clamp_to_declared_max",
+            "stat_policy": "record_signed_percentage_terms",
+            "damage_policy": "resolver_returns_actual_integer_hp_loss",
+            "multi_hit_policy": {
+              "power_basis": "source_power_per_hit",
+              "timing": "sequential_experiment"
+            }
+          }
+        }
+      },
+      "unresolved": [
+        {
+          "side": "both",
+          "reason": "配招学习条件、完整伤害、资源结算、特性触发和胜负仍未校准；此结果仅为行动阶段计划，不证明阵容合法。"
+        }
+      ],
+      "end_of_turn_executed": false
+    }
+  },
+  "live_api": {
+    "compiler_version": "bwiki-declarative-3",
+    "source_hit_count": 3,
+    "missing_damage_formula_blocked_without_mutation": true
+  },
+  "current_pvp_calibration_cases_added": 0,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "files_sha256": {
+    "lab/skill_programs.py": "41df751ac01ee209c04fcfa84dc0feb9b446b5c2bf04cd47f358c1974c21e5d5",
+    "lab/effect_runtime.py": "27cc127102b8ad0e17af608f903eb05f4e794ebbc14ad9d7d6ac96eac8f7aca7",
+    "tests/test_skill_programs.py": "9ce8ab7a14a5c520fbea5e5bb0471ef76b17c205e1d69007ff033ddd499ac87d",
+    "tests/test_effect_runtime.py": "d32756293e5bea9b4b632fc0bde6e7b7e059d39d4ca9a6a0faf20a2f80db14e3",
+    "tests/test_action_runtime.py": "ee6b73ab3a2d32ef2a3bb1c452b5cd9910d9b70db9f7654a80fb4b22dfe6e46c",
+    "tests/test_prepared_rules.py": "8a83187ec7465e8c2ae834721c5282e6288a80038bb6c72c4f43380a2de9af6a"
+  }
+}

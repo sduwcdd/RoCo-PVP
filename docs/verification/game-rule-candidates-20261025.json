@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-25",
+  "source_id": "local-game-eecaca24ae7728e5e485",
+  "artifact": "artifacts/game_rules_followup_20261025/game-rule-candidates-1.json",
+  "artifact_sha256": "3e79c40c23bff5ce16125f70e4685fe6f3047cc9c6b42aaf53830812c6934450",
+  "artifact_bytes": 50429059,
+  "candidate_validation_errors": [],
+  "table_records": 17578,
+  "candidate_counts": {
+    "components_executable": 0,
+    "file_configurations_read": 1988,
+    "full_battle_executable": 0,
+    "real_game_calibrated": 0,
+    "runtime_rules_validated": 0
+  },
+  "reference_counts": {
+    "BUFF_CONF.references.explicit_zero": 1,
+    "BUFF_CONF.references.resolved": 4603,
+    "BUFF_CONF.targets.BUFFBASE_CONF": 4603,
+    "SKILL_CONF.references.absent_id": 3041,
+    "SKILL_CONF.references.resolved": 3445,
+    "SKILL_CONF.targets.BUFF_CONF": 1988,
+    "SKILL_CONF.targets.EFFECT_CONF": 1457
+  },
+  "bwiki_matches": {
+    "moves": 579,
+    "traits": 246,
+    "overlap": 0
+  },
+  "tests": [
+    {
+      "modules": [
+        "tests.test_game_rule_candidates",
+        "tests.test_game_table_probe"
+      ],
+      "passed": 23,
+      "failed": 0,
+      "seconds": 11.588
+    },
+    {
+      "modules": [
+        "tests.test_rule_config",
+        "tests.test_phase_config",
+        "tests.test_rl_contract"
+      ],
+      "passed": 51,
+      "failed": 0,
+      "seconds": 14.898
+    }
+  ],
+  "tests_are_not_real_game_calibration": true,
+  "training_eligible": false,
+  "active_rules_modified": false,
+  "unchanged_active_artifact_hashes": {
+    "data/rules/20261025T013619+0800/rule-config-1.json": "c190c98d3a2e67153ac1c77f96adc2018e1ea6a3198880e5343451a7f87871cf",
+    "data/rules/20261025T013619+0800/phase-config-1.json": "bff95607298bbe1cb2633f21a97f1a7963a887a3cd910d408a4f8476cfc69b5b",
+    "data/rules/20261025T013619+0800/bwiki-declarative-6.json": "8720e2dd67bb0f4e06fda0f2f28f0167d0f514933c0f2cd24e501e19654a12d9"
+  },
+  "evidence_reports": {
+    "game-config-semantics-20261025": {
+      "path": "docs/verification/game-config-semantics-20261025.json",
+      "sha256": "3e99794535435995767ccfc1928ed6173386e0c08821d0e91a658ada0021da97"
+    },
+    "game-loading-review-20261025": {
+      "path": "docs/verification/game-loading-review-20261025.json",
+      "sha256": "51cd61d15fdb3818c141ce08e59958d05fd4e2622138c5b1f48e9f19bd540a91"
+    },
+    "game-logic-trace-20261025": {
+      "path": "docs/verification/game-logic-trace-20261025.json",
+      "sha256": "b3b8f6499ad9457876aba94b5c5429cb2dcb8e7072ca289cbeef0690f2345fe0"
+    }
+  },
+  "changed_code_hashes": {
+    "lab/game_rule_candidates.py": "47214cf89800b8b8ad072d9c97fbe71b3002f71dfa0f2c31351097193a47c26a",
+    "scripts/build_game_rule_candidates.py": "272e022b9964796b88fec9cf50f7f18187a86f83639e295d04e993193c19e546",
+    "tests/test_game_rule_candidates.py": "64eee180ae94e9f3942cba747dee5c3618a1ed35e512ef7b18cdb9b553bfbf61",
+    "tests/test_game_table_probe.py": "17d9fd35caf757e72c70f55aae402f35dcfeaee76b6f1551e4dbb766fb94e37c"
+  },
+  "user_clarification": "docs/verification/game-config-semantics-20261025.json#user_clarifications",
+  "notes": [
+    "All SKILL_CONF rows retained, not all verified active PVP skills.",
+    "Candidate publication is staging only, not an active ruleset.",
+    "Game files read-only; no extracted Lua executed.",
+    "Tests use temporary directories that are cleaned automatically."
+  ]
+}

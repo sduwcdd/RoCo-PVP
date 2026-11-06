@@ -1,0 +1,35 @@
+{
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "source_snapshot_id": "20261025T013619+0800",
+  "source_snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "counts": {
+    "skills": {
+      "total": 579,
+      "compiled": 138,
+      "unsupported": 441,
+      "executable": 0,
+      "real_game_verified": 0
+    },
+    "traits": {
+      "total": 246,
+      "compiled": 0,
+      "unsupported": 246,
+      "executable": 0,
+      "real_game_verified": 0
+    }
+  },
+  "related_python_tests_passed": 140,
+  "type_combinations_tested": 11394,
+  "runtime_tests_passed": 16,
+  "live_api_verified": true,
+  "full_simulator_completed": false,
+  "training_started": false,
+  "policy_available": false,
+  "artifacts": {
+    "lab/ruleset.py": "5e6ee1e9e16bc917680f80c6e65bdf860f3e256ea75273e738632d4d14912bff",
+    "lab/skill_programs.py": "22201889771e09bf2982ba4455f7202a46c5b7e421c139bfa1489f8848d50dba",
+    "lab/effect_runtime.py": "acfcb00140e79000f9f19996a8a0f4b70ec0a3b344e98749f5fd0ff16fcc5cea",
+    "data/rules/20261025T013619+0800/bwiki-declarative-1.json": "ce6ad15b5f3414a9e07c27bc4acb8e3c9e2ece0c639868a9e7fe45f3046a67e6"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "status": "source_and_protected_candidate_built",
+  "scope": "original checkout; world/NPC stat inference and packaged capture UX",
+  "world": {
+    "below_level_60_stars": 0,
+    "own_level_60_star_selection": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "selection_lifetime": "current battle / pet only",
+    "pvp": "unchanged level60 five stars",
+    "zero_star_source": "data/reference/world-panel-20261101.json",
+    "base_and_nature_sample_dimensions": 24,
+    "under_level_60_sample_pets": 1,
+    "all_sample_pets": 4,
+    "positive_star_raw_conversion": "unknown without protocol raw/base/effort",
+    "damage_formula_changed": false,
+    "calibrated": false
+  },
+  "capture": {
+    "online_relay": "reuse; no second UAC; external process untouched",
+    "fresh_start": "typed runas/WinAPI; fresh success receipt required",
+    "real_fresh_uac_verified": false
+  },
+  "verification": {
+    "targeted_python_passed": 15,
+    "targeted_hud_passed": 3,
+    "full_catalog_level56_inference": "聪明; patk,pdef,mdef; multiple compatible talent values preserved",
+    "existing_inference_damage_suite": "26/27 passed; one higher-branch assertion still fails with original numeric expressions; not changed or masked"
+  },
+  "third_party_notices": "preserved",
+  "remote_training_changed": false,
+  "release_build_id": "20261101-world-uac-v3",
+  "source_hash": "c8fa2fa2010292df10b32723a69487e81e0ce49d0e5c3e0fbefa49a1a35800dc",
+  "output": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\dist\\RocoPVP-20261101-world-uac-v3-candidate",
+  "zip": {
+    "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\dist\\RocoPVP-20261101-world-uac-v3.zip",
+    "bytes": 306755364,
+    "sha256": "c8056e2d2e032bad1c2641daeebd518be47117af521a1dbfc0019e65f56bfb86",
+    "entries": 392,
+    "crc_verified": true
+  },
+  "native_modules": 124,
+  "native_self_test_passed": true,
+  "desktop_verification": {
+    "title": "洛克PVP · 连接控制台",
+    "server": {
+      "available": true,
+      "owned": true,
+      "port": 18866,
+      "revision": "composable-battle-20261031-selected-cost-1"
+    },
+    "rendererIpc": true,
+    "icon": true,
+    "workbenchReady": true,
+    "timestamp": "2026-11-01T04:53:44.031Z"
+  },
+  "plaintext_build_inputs_removed": true,
+  "public_release_approved": false,
+  "build_report": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\artifacts\\release_builds\\20261101-world-uac-v3\\build-report.json",
+  "world_source_sha256": "887c78c6e5d29fcde211d3329d3143623af8436de46fb7106dbf38b9e95f0bf4",
+  "preserved": [
+    "original development checkout",
+    "dist/RocoPVP-20261101-protected-candidate.zip",
+    "all required third-party copyright and license notices",
+    "old models and remote experiments"
+  ],
+  "untested": [
+    "real fresh UAC consent/cancellation with no existing relay",
+    "clean-machine capture",
+    "full positive-star growth/raw-talent conversion and non60 damage calibration"
+  ],
+  "scope_note": "No damage formula, skill effects, RNG, rewards or PVP winner rules changed."
+}

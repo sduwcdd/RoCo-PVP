@@ -1,0 +1,211 @@
+[
+  {
+    "pak": "pakchunk4-WindowsNoEditor.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/WEATHER_CONF.non",
+    "offset": 2142208,
+    "declared_size": 3088,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "16d6e8bb5cef3bc888412e3717312ee5064a27184d8cbe2a381cd68fd0c2bb0b",
+    "source_ranges_sha256": [
+      {
+        "offset": 2142281,
+        "size": 464,
+        "sha256": "255706d529b3b87fe07e32fa976bc09bd6ae96315494308fafd875c42208941c"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor\\schema.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/WEATHER_CONF.bytes",
+    "offset": 34103449,
+    "declared_size": 5021,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "62424c23bc877ffed1e64ac84cb5505b6918af25d448c26d12087ec9959fd692",
+    "source_ranges_sha256": [
+      {
+        "offset": 34103522,
+        "size": 1632,
+        "sha256": "c631598ba9c8527024248376e6395c87ba18ba0bddf712d3726db314f51325b5"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor\\data.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/WEATHER_CONF.non",
+    "offset": 2107657,
+    "declared_size": 3001,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "7bd6b28dc54a66fa121063da3ea633d59afc5b282a8587a0b1ff9b4655ffc983",
+    "source_ranges_sha256": [
+      {
+        "offset": 2107730,
+        "size": 464,
+        "sha256": "b12ad0b1801281f09a7945f19d0c63b1112216abb773a466ff9bebb4962449a1"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_0_P\\schema.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/WEATHER_CONF.bytes",
+    "offset": 16808089,
+    "declared_size": 4224,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "65c6115610ccc8291d7992dec927e879f08720235b011b9b019b70d7b69c8a29",
+    "source_ranges_sha256": [
+      {
+        "offset": 16808162,
+        "size": 1248,
+        "sha256": "85655b735bc8e00681e66029e15ecc088c98757b66d98a50ffa4b77e4e3b0586"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_0_P\\data.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/WEATHER_CONF.bytes",
+    "offset": 20402898,
+    "declared_size": 1454,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "52f2bdcab69a1f11be3b5e2101a1c14c9ec2aef0a13ea1003b90bcf8db64aa59",
+    "source_ranges_sha256": [
+      {
+        "offset": 20402971,
+        "size": 512,
+        "sha256": "e1385eb1b49ff1e81fb7fc4f62b39c6a2e04b6b1893f7c17d1d4ee7a54d1aeb8"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_0_P\\local.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/WEATHER_CONF.non",
+    "offset": 2316288,
+    "declared_size": 3309,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "30b361b404f88648b5ca21f0ccc7e6a4e927823b45f79867a1601bcec01a7980",
+    "source_ranges_sha256": [
+      {
+        "offset": 2316361,
+        "size": 496,
+        "sha256": "47e722aa63369df1928947a325fd87a9fdf2a049cbb0f9e067d208b8a2d877ab"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_2_P\\schema.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/WEATHER_CONF.bytes",
+    "offset": 17623040,
+    "declared_size": 4867,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "4bd519d9461f7e4d732d242b89c8bcb4760cfd3c8c73af70a0a4405aaad259eb",
+    "source_ranges_sha256": [
+      {
+        "offset": 17623113,
+        "size": 1456,
+        "sha256": "3ca2507adb3e1ce01b1aff09645041731ca51713b043e091e06189a5ee9c6c51"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_2_P\\data.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/WEATHER_CONF.bytes",
+    "offset": 21905408,
+    "declared_size": 2240,
+    "compression": 1,
+    "payload_strategy": 0,
+    "payload_sha256": "47923b66f82b33a3d37a87b4b3431b74d8aab6855344853157c5e385e04b4955",
+    "source_ranges_sha256": [
+      {
+        "offset": 21905481,
+        "size": 784,
+        "sha256": "9eca907e469e6775a266fcbd26c1b666dae28cdcbbb2a255f096da964c5eb1e8"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_2_P\\local.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/WEATHER_CONF.non",
+    "offset": 4139008,
+    "declared_size": 2304,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "0c39a5568c4fe023fec9350ea9dbad98f7c765f1629105169ce3ed51f407d997",
+    "source_ranges_sha256": [
+      {
+        "offset": 4139061,
+        "size": 2304,
+        "sha256": "b4d01cc718eaf4eaed5f5135a51cf41d0ff0784e930dabb63f5b75665cc3ac67"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_3_P\\schema.non"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/WEATHER_CONF.bytes",
+    "offset": 63541248,
+    "declared_size": 3920,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "301699d794ceabe3b5257244209aec8eef5a6bcc41bb9fa937833f8a28f9d327",
+    "source_ranges_sha256": [
+      {
+        "offset": 63541301,
+        "size": 3920,
+        "sha256": "e6764e0b77ea1cea1b484cef10ebabe3d741dcf2a457fb8257806fb149fdf9d6"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_3_P\\data.bytes"
+  },
+  {
+    "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+    "path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/WEATHER_CONF.bytes",
+    "offset": 78555136,
+    "declared_size": 2336,
+    "compression": 0,
+    "payload_strategy": 13,
+    "payload_sha256": "0e257a3ee80fad299c562a80ff918d61a354bc81bf74a5ea9f2534f92394ff89",
+    "source_ranges_sha256": [
+      {
+        "offset": 78555189,
+        "size": 2336,
+        "sha256": "66637b1dd2434587981032f46cb8ac0aa2a6225f977c85cec1defb019f56de19"
+      }
+    ],
+    "source_ranges_unchanged": true,
+    "stat_unchanged": true,
+    "output": "artifacts\\weather_rules_20261025\\raw\\pakchunk4-WindowsNoEditor_3_P\\local.bytes"
+  }
+]

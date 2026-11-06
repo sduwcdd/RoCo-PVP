@@ -1,0 +1,1873 @@
+{
+  "schema_version": 1,
+  "scope": "Static analysis of local extracted candidate files; no game execution, no online applicability or battle calibration claim.",
+  "source_snapshot": "unpack_probe_20261025 + game_logic_followup_20261025",
+  "field_bindings": {
+    "EFFECT_CONF.effect_order": {
+      "enum_namespace": "Data.Config.Enum.EffectType",
+      "mapping": {
+        "0": "ET_NONE",
+        "1": "ET_DAM",
+        "2": "ET_PP_CHANGE",
+        "3": "ET_INTERRUPT",
+        "4": "ET_PURIFY",
+        "5": "ET_RECOVER",
+        "6": "ET_PET_TRANSE",
+        "7": "ET_SKILL_CHANGE",
+        "8": "ET_IGNORE_RESIST",
+        "9": "ET_SKILL_UPGRADE",
+        "10": "ET_ENERGY_LIFE",
+        "11": "ET_SUCKBLOOD",
+        "12": "ET_DAMNBUFF",
+        "13": "ET_SHARINGA",
+        "14": "ET_EXECUTE",
+        "15": "ET_ESCAPE",
+        "16": "ET_RANDOM",
+        "17": "ET_CLEAR_FIELD",
+        "18": "ET_STEAL_ENERGY",
+        "19": "ET_CHANGE_ENERGY",
+        "20": "ET_INHERIT_ATTR",
+        "21": "ET_BUFF_BY_ENEMY_TYPE",
+        "22": "ET_BUFF_BY_PACK_PET_NUM",
+        "23": "ET_BUFF_BY_PACK_PET_THRES",
+        "24": "ET_BUFF_BY_FIELD",
+        "25": "ET_CHANGE_FIELD",
+        "26": "ET_CHANGE_ENJOY_HATE",
+        "27": "ET_CHANGE_SKILL",
+        "28": "ET_CHANGE_WEATHER",
+        "29": "ET_RESET_WEATHER",
+        "30": "ET_REMOVE_AURA",
+        "31": "ET_COUNTER",
+        "32": "ET_MULTIPLE",
+        "33": "ET_USEALL",
+        "34": "ET_HERO",
+        "35": "ET_SERIES_SKILL",
+        "36": "ET_MODEL_CHANGE",
+        "37": "ET_SKILL_CD",
+        "38": "ET_ADD_BUFF_BY_BLOOD",
+        "39": "ET_ROLE_CHANGE_SKILL",
+        "40": "ET_ROLE_CHANGE_PET",
+        "41": "ET_BOSS_BLOOD",
+        "42": "ET_BUFF_CONVERT",
+        "43": "ET_BUFF_BY_HP",
+        "44": "ET_SWAP_STAT",
+        "45": "ET_SHARE_STAT",
+        "46": "ET_CHANGE_DAM_TYPE",
+        "47": "ET_SWAP_SKILLS",
+        "49": "ET_AUTO_CHANGE_SKILL",
+        "50": "ET_COPY_BUFF",
+        "51": "ET_FAST_SKILL",
+        "52": "ET_CHANGE_BUFF_STACK",
+        "53": "ET_BUFF_BY_STACK",
+        "55": "ET_ENHANCE_SKILL",
+        "56": "ET_RANDOM_BUFF",
+        "57": "ET_CHANGE_SKILL_POS",
+        "58": "ET_BUFF_BY_EQUIP_SKILL",
+        "59": "ET_CHANGE_SKILL_BY_SPEED",
+        "60": "ET_GET_SEEN_BUFFS",
+        "61": "ET_BUFF_BY_CHANGE_TIMES",
+        "62": "ET_FORBID_ENTER_BATTLE",
+        "63": "ET_SET_ENERGY",
+        "64": "ET_BUFF_BY_EQUIP_SKILL_NUM",
+        "65": "ET_REVIVE_BAG_PET",
+        "66": "ET_SHUFFLE_SKILLS",
+        "67": "ET_RUN",
+        "68": "ET_BUFF_BY_SKILL_CHANGE_TIMES",
+        "69": "ET_STAR_FALL_SPEEDUP",
+        "70": "ET_GURU_BALL",
+        "71": "ET_MYTHICAL_BEASTS_SKILL",
+        "72": "ET_LOST_CONTACT",
+        "73": "ET_EARLY_WARNING",
+        "74": "ET_EXCHANGE_ENERGY_COST",
+        "75": "ET_INHERIT_UNDEAD",
+        "76": "ET_DOT_SUCK",
+        "77": "ET_LIMIT_FIGHT_BY_HP",
+        "78": "ET_KONG",
+        "79": "ET_ENERGY_COST_EFFICIENCY",
+        "80": "ET_ENERGY_COST_RESET",
+        "81": "ET_ANIMATION",
+        "82": "ET_TEMP_CONF",
+        "83": "ET_INLAY",
+        "84": "ET_CHARGE_UNLIMITED",
+        "85": "ET_CHANGE_TPYE",
+        "86": "ET_IRIS",
+        "87": "ET_CROSS_TRANSFER",
+        "88": "ET_COPY",
+        "89": "ET_PHANTOM_POINT",
+        "90": "ET_INSERT_SKILL",
+        "91": "ET_GAIN_TALENT",
+        "92": "ET_EXTEND_WEATHER",
+        "93": "ET_TRIGGER_STARFALL"
+      },
+      "binding_evidence": [
+        {
+          "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BattleEffectPlayer.luac.decompiled.lua",
+          "line_start": 43,
+          "line_end": 58,
+          "sha256": "35c49d1d786a8f152a22f6e71e5d86904072f0f8bdad764fb734c81381fc0bca",
+          "claim": "GetEffectConf(effect_id).effect_order is compared to Enum.EffectType opcodes."
+        },
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/BattleDataCenter.luac.decompiled.lua",
+          "line_start": 90,
+          "line_end": 99,
+          "sha256": "5b2bc97ad34bd8d6f7373998111574114e64296640c1ccf3ad84d267e7eea25c",
+          "claim": "Same field is compared to ProtoEnum.EffectType.ET_CHANGE_SKILL; field is an opcode, not chronology."
+        }
+      ],
+      "enum_evidence": [
+        {
+          "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+          "line_start": 2430,
+          "line_end": 2523,
+          "sha256": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5",
+          "claim": "Direct integer-to-symbol declarations; annotation does not establish operand semantics or execution."
+        }
+      ],
+      "component_executable": false
+    },
+    "BUFFBASE_CONF.buffbase_order": {
+      "enum_namespace": "Data.Config.Enum.BuffType",
+      "mapping": {
+        "1": "BFT_ATTR_CHANGE",
+        "2": "BFT_SHEILD",
+        "3": "BFT_IMMUNE",
+        "4": "BFT_BAN",
+        "5": "BFT_ABSORB",
+        "6": "BFT_SKILL_BAN",
+        "7": "BFT_DAM",
+        "8": "BFT_LURK",
+        "9": "BFT_DAMT_CHANGE",
+        "10": "BFT_RELAY",
+        "11": "BFT_DAMNUM_CHANGE",
+        "13": "BFT_OBTAIN_TYPE",
+        "15": "BFT_CAST_REPEAT_SKILL",
+        "16": "BFT_ATTACK_BACK",
+        "17": "BFT_ASSIGN",
+        "19": "BFT_CAST_SKILL_AFTER_ATTACK",
+        "20": "BFT_ADD_EXTRA_ENERGY",
+        "21": "BFT_INC_DAM_BY_ATTACK_FIRST",
+        "22": "BFT_BUFF_BY_HEAL",
+        "23": "BFT_INC_DAM_BY_SKILL",
+        "24": "BFT_BLOOD_TO_ENERGY",
+        "25": "BFT_INC_DAM_BY_BUFF",
+        "26": "BFT_DEPOSIT_HP",
+        "27": "BFT_NOT_GET_HIT",
+        "28": "BFT_RECORD_CAST_SKILL",
+        "29": "BFT_INC_DAM_BY_TARGET_HP_THRES",
+        "30": "BFT_CONSUME_EX_ENERGY",
+        "31": "BFT_INC_DAM_BY_COST_HP",
+        "32": "BFT_CHANGE_SKILL_ENERGY_COST",
+        "33": "BFT_CHANGE_CATCH_VALUE",
+        "34": "BFT_CHANGE_GAIN_ENERGY_EFFECIENCY",
+        "35": "BFT_BUFF_AFTER_SKILL",
+        "36": "BFT_FIELD_LAYER_CHANGE",
+        "37": "BFT_BUFF_LAYER_CHANGE",
+        "38": "BFT_FIELD_UP_CHANGE",
+        "39": "BFT_FIELD_REDUSE_COST",
+        "40": "BFT_CHECK_BUFF_LAYER",
+        "41": "BFT_CHECK_HP",
+        "42": "BFT_CHANGE_SDT_RATIO",
+        "43": "BFT_ASSIGN_ATTACK_FIRST",
+        "45": "BFT_MULTIPLE_NUM",
+        "46": "BFT_KILL_BUFF",
+        "47": "BFT_SKILL_FEVER",
+        "48": "BFT_PET_TRANSE",
+        "49": "BFT_SPIKES",
+        "50": "BFT_ENTER_BATTLE",
+        "51": "BFT_DETECT_ENEMY_SKILLS",
+        "52": "BFT_CURRENT_ENERGY",
+        "53": "BFT_SKILL_ACTUAL_REDUSE_COST",
+        "54": "BFT_BLOOD",
+        "55": "BFT_EXTRA_CLASS",
+        "56": "BFT_SKILL_CHANGE",
+        "57": "BFT_CHANGE_REPEAT_SKILL",
+        "58": "BFT_FREEZE",
+        "60": "BFT_STRESSED",
+        "62": "BFT_CHANGE_CD",
+        "63": "BFT_TARGET_HAS_BUFF",
+        "64": "BFT_STRENGTHEN_THE_SKILL",
+        "65": "BFT_CHANGE_CLASS_RISIST",
+        "66": "BFT_SIXTY_SIX",
+        "67": "BFT_SIXTY_SEVEN",
+        "68": "BFT_SIXTY_EIGHT",
+        "69": "BFT_SIXTY_NIEN",
+        "70": "BFT_SEVENTY",
+        "71": "BFT_SEVENTY_ONE",
+        "72": "BFT_SEVENTY_TWO",
+        "73": "BFT_SEVENTY_THREE",
+        "74": "BFT_SEVENTY_FOUR",
+        "75": "BFT_SEVENTY_FIVE",
+        "76": "BFT_SEVENTY_SIX",
+        "77": "BFT_SEVENTY_SEVEN",
+        "78": "BFT_SEVENTY_EIGHT",
+        "79": "BFT_SEVENTY_NINE",
+        "80": "BFT_EIGHTY",
+        "81": "BFT_EIGHTY_ONE",
+        "82": "BFT_EIGHTY_TWO",
+        "83": "BFT_EIGHTY_THREE",
+        "84": "BFT_EIGHTY_FOUR",
+        "85": "BFT_EIGHTY_FIVE",
+        "86": "BFT_EIGHTY_SIX",
+        "87": "BFT_EIGHTY_SEVEN",
+        "88": "BFT_EIGHTY_EIGHT",
+        "89": "BFT_EIGHTY_NINE",
+        "90": "BFT_NINETY",
+        "91": "BFT_NINETY_ONE",
+        "92": "BFT_NINETY_TWO",
+        "93": "BFT_NINETY_THREE",
+        "94": "BFT_NINETY_FOUR",
+        "95": "BFT_NINETY_FIVE",
+        "96": "BFT_NINETY_SIX",
+        "97": "BFT_NINETY_SEVEN",
+        "98": "BFT_NINETY_EIGHT",
+        "99": "BFT_NINETY_NINE",
+        "100": "BFT_O_T",
+        "101": "BFT_O_ONE",
+        "102": "BFT_O_TWO",
+        "103": "BFT_O_THREE",
+        "104": "BFT_O_FOUR",
+        "105": "BFT_O_FIVE",
+        "106": "BFT_O_SIX",
+        "107": "BFT_O_SEVEN",
+        "108": "BFT_O_EIGHT",
+        "109": "BFT_O_NINE",
+        "110": "BFT_O_TEN",
+        "111": "BFT_O_ELEVEN",
+        "112": "BFT_O_TWELVE",
+        "113": "BFT_O_THIRTEEN",
+        "114": "BFT_O_FOURTEEN",
+        "115": "BFT_O_FIFTEEN",
+        "116": "BFT_O_SIXTEEN",
+        "117": "BFT_O_SEVENTEEN",
+        "118": "BFT_O_EIGHTEEN",
+        "119": "BFT_O_NINETEEN",
+        "120": "BFT_O_TWENTY",
+        "121": "BFT_O_TWENTYONE",
+        "122": "BFT_O_TWEENTYTWO",
+        "123": "BFT_O_TWEENTYTHREE",
+        "124": "BFT_O_TWEENTYFOUR",
+        "125": "BFT_O_TWEENTYFIVE",
+        "126": "BFT_O_TWEENTYSIX",
+        "127": "BFT_O_TWEENTYSEVEN",
+        "128": "BFT_O_TWEENTYEIGHT",
+        "129": "BFT_O_TWEENTYNINE",
+        "130": "BFT_O_THIRTY",
+        "131": "BFT_O_THIRTYONE",
+        "132": "BFT_O_THIRTYTWO",
+        "133": "BFT_O_THIRTYTHREE",
+        "134": "BFT_O_THIRTYFOUR",
+        "135": "BFT_O_THIRTYFIVE",
+        "136": "BFT_O_THIRTYSIX",
+        "137": "BFT_O_THIRTYSEVEN",
+        "138": "BFT_O_THIRTYEIGHT",
+        "139": "BFT_O_THIRTYNINE",
+        "140": "BFT_O_FORTY",
+        "141": "BFT_O_FORTYONE",
+        "142": "BFT_O_FORTYTWO",
+        "143": "BFT_O_FORTYTHREE",
+        "144": "BFT_O_FORTYFOUR",
+        "145": "BFT_O_FORTYFIVE",
+        "146": "BFT_O_FORTYSIX",
+        "147": "BFT_O_FORTYSEVEN",
+        "148": "BFT_O_FORTYEIGHT",
+        "149": "BFT_O_FORTYNINE",
+        "150": "BFT_O_FIFTY",
+        "151": "BFT_O_FIFTYONE",
+        "152": "BFT_O_FIFTYTWO",
+        "153": "BFT_O_FIFTYTHREE",
+        "154": "BFT_O_FIFTYFOUR",
+        "155": "BFT_O_FIFTYFIVE",
+        "156": "BFT_O_FIFYTSIX",
+        "157": "BFT_O_FIFYTSEVEN",
+        "158": "BFT_O_FIFYTEIGHT",
+        "159": "BFT_RESTRICTIONS_HP_RECOVER",
+        "160": "BFT_O_SIXTY",
+        "161": "BFT_O_SIXTYONE",
+        "162": "BFT_O_SIXTYTWO",
+        "163": "BFT_O_SIXTYTHREE",
+        "164": "BFT_O_SIXTYFOUR",
+        "165": "BFT_O_SIXTYFIVE",
+        "166": "BFT_O_SIXYSIX"
+      },
+      "binding_evidence": [
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_14_P/BattleUtils.luac.decompiled.lua",
+          "line_start": 3359,
+          "line_end": 3370,
+          "sha256": "9a4615926d2ff4037198845943ec9952bde197a9169457e54dab0f6eb35ec4b9",
+          "claim": "GetBuffbaseConf(...).buffbase_order is compared to Enum.BuffType.BFT_NINETY_THREE."
+        },
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/BuffUtils.luac.decompiled.lua",
+          "line_start": 89,
+          "line_end": 108,
+          "sha256": "a82d952dcc50a5f2ec8c56e6d01aaf306711ac2ce97a74a7850f0ca8ffb78106",
+          "claim": "BuffType supplied as ProtoEnum.BuffType and compared to buffbase_order."
+        }
+      ],
+      "enum_evidence": [
+        {
+          "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+          "line_start": 2524,
+          "line_end": 2685,
+          "sha256": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5",
+          "claim": "Direct integer-to-symbol declarations; annotation does not establish operand semantics or execution."
+        }
+      ],
+      "component_executable": false
+    },
+    "BUFF_CONF.buff_group_reduce[].reduce_type": {
+      "enum_namespace": "Data.Config.Enum.BuffReduceType",
+      "mapping": {
+        "1": "BRT_CODE",
+        "2": "BRT_ROUND",
+        "3": "BRT_ACT",
+        "4": "BRT_HURT",
+        "5": "BRT_BEFOREACT",
+        "6": "BRT_ROUND_RATIO",
+        "7": "BRT_TRIGGER",
+        "8": "BRT_LAYER_ROUND",
+        "9": "BRT_SLEEP",
+        "10": "BRT_RESTRAINT_ATTACK",
+        "11": "BRT_BACKHEAD",
+        "12": "BRT_SKILL",
+        "13": "BRT_ROUND_SEVENTY_FIVE",
+        "14": "BRT_ROUND_SEVENTY_FIVE_LAST"
+      },
+      "binding_evidence": [
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/BuffUtils.luac.decompiled.lua",
+          "line_start": 13,
+          "line_end": 31,
+          "sha256": "a82d952dcc50a5f2ec8c56e6d01aaf306711ac2ce97a74a7850f0ca8ffb78106",
+          "claim": "UI remaining-time helper compares reduce_type to Enum.BuffReduceType; this is not a complete expiry executor."
+        }
+      ],
+      "enum_evidence": [
+        {
+          "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+          "line_start": 2231,
+          "line_end": 2246,
+          "sha256": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5",
+          "claim": "Direct integer-to-symbol declarations; annotation does not establish operand semantics or execution."
+        }
+      ],
+      "component_executable": false
+    }
+  },
+  "source_tables": [
+    {
+      "table": "SKILL_CONF",
+      "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+      "rows": 1988
+    },
+    {
+      "table": "EFFECT_CONF",
+      "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+      "rows": 1259
+    },
+    {
+      "table": "BUFF_CONF",
+      "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+      "rows": 3312
+    },
+    {
+      "table": "BUFFBASE_CONF",
+      "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+      "rows": 2813
+    }
+  ],
+  "stats": {
+    "EFFECT_CONF.effect_order": {
+      "total_rows": 1259,
+      "distinct_present_values": 81,
+      "counts": {
+        "4": 250,
+        "31": 239,
+        "23": 71,
+        "34": 59,
+        "19": 55,
+        "64": 54,
+        "35": 50,
+        "16": 43,
+        "5": 34,
+        "53": 32,
+        "1": 31,
+        "42": 30,
+        "22": 21,
+        "38": 20,
+        "85": 20,
+        "18": 14,
+        "27": 14,
+        "50": 14,
+        "43": 13,
+        "32": 12,
+        "11": 11,
+        "52": 11,
+        "25": 7,
+        "49": 7,
+        "58": 7,
+        "28": 6,
+        "36": 6,
+        "55": 6,
+        "61": 6,
+        "69": 6,
+        "46": 5,
+        "65": 5,
+        "92": 5,
+        "3": 4,
+        "37": 4,
+        "59": 4,
+        "76": 4,
+        "77": 4,
+        "81": 4,
+        "89": 4,
+        "6": 3,
+        "33": 3,
+        "51": 3,
+        "63": 3,
+        "66": 3,
+        "79": 3,
+        "8": 2,
+        "10": 2,
+        "39": 2,
+        "44": 2,
+        "47": 2,
+        "56": 2,
+        "57": 2,
+        "62": 2,
+        "70": 2,
+        "74": 2,
+        "75": 2,
+        "84": 2,
+        "86": 2,
+        "88": 2,
+        "7": 1,
+        "9": 1,
+        "13": 1,
+        "14": 1,
+        "15": 1,
+        "17": 1,
+        "29": 1,
+        "30": 1,
+        "40": 1,
+        "41": 1,
+        "45": 1,
+        "67": 1,
+        "71": 1,
+        "72": 1,
+        "73": 1,
+        "83": 1,
+        "87": 1,
+        "90": 1,
+        "91": 1,
+        "93": 1,
+        "60": 1
+      },
+      "mapped_rows": 1259,
+      "unmapped_present_values": [],
+      "distinct_referring_skills_by_value": {
+        "4": 672,
+        "31": 191,
+        "19": 85,
+        "32": 66,
+        "35": 49,
+        "34": 29,
+        "38": 29,
+        "5": 26,
+        "1": 20,
+        "3": 16,
+        "23": 14,
+        "42": 14,
+        "22": 13,
+        "53": 11,
+        "41": 10,
+        "11": 10,
+        "51": 9,
+        "64": 8,
+        "16": 8,
+        "18": 7,
+        "27": 7,
+        "36": 7,
+        "39": 6,
+        "52": 6,
+        "84": 5,
+        "28": 5,
+        "61": 4,
+        "77": 4,
+        "89": 4,
+        "50": 4,
+        "25": 4,
+        "67": 3,
+        "33": 3,
+        "92": 3,
+        "43": 3,
+        "44": 3,
+        "70": 2,
+        "66": 2,
+        "75": 2,
+        "81": 2,
+        "83": 2,
+        "87": 2,
+        "59": 2,
+        "88": 2,
+        "62": 1,
+        "15": 1,
+        "72": 1,
+        "57": 1,
+        "79": 1,
+        "8": 1,
+        "47": 1,
+        "74": 1,
+        "29": 1,
+        "30": 1,
+        "40": 1,
+        "71": 1
+      }
+    },
+    "EFFECT_CONF.type": {
+      "total_rows": 1259,
+      "distinct_present_values": 3,
+      "counts": {
+        "3": 546,
+        "1": 446,
+        "2": 267
+      }
+    },
+    "BUFFBASE_CONF.buffbase_order": {
+      "total_rows": 2813,
+      "distinct_present_values": 150,
+      "counts": {
+        "17": 398,
+        "64": 277,
+        "1": 199,
+        "23": 137,
+        "35": 124,
+        "40": 122,
+        "11": 107,
+        "56": 101,
+        "32": 96,
+        "108": 78,
+        "19": 77,
+        "3": 63,
+        "72": 62,
+        "49": 43,
+        "67": 38,
+        "146": 35,
+        "150": 34,
+        "53": 32,
+        "38": 28,
+        "92": 28,
+        "63": 27,
+        "73": 27,
+        "37": 24,
+        "46": 24,
+        "45": 23,
+        "48": 19,
+        "77": 19,
+        "93": 19,
+        "68": 18,
+        "98": 18,
+        "52": 17,
+        "42": 16,
+        "100": 16,
+        "117": 16,
+        "62": 14,
+        "143": 14,
+        "34": 13,
+        "43": 13,
+        "89": 13,
+        "107": 13,
+        "10": 12,
+        "41": 12,
+        "86": 12,
+        "91": 12,
+        "102": 12,
+        "121": 11,
+        "6": 10,
+        "15": 10,
+        "21": 10,
+        "25": 10,
+        "50": 10,
+        "7": 9,
+        "160": 9,
+        "103": 8,
+        "142": 8,
+        "29": 7,
+        "51": 7,
+        "84": 7,
+        "113": 6,
+        "13": 5,
+        "24": 5,
+        "55": 5,
+        "75": 5,
+        "76": 5,
+        "138": 5,
+        "152": 5,
+        "27": 4,
+        "88": 4,
+        "99": 4,
+        "153": 4,
+        "154": 4,
+        "158": 4,
+        "4": 3,
+        "39": 3,
+        "54": 3,
+        "66": 3,
+        "71": 3,
+        "90": 3,
+        "96": 3,
+        "106": 3,
+        "130": 3,
+        "132": 3,
+        "133": 3,
+        "151": 3,
+        "156": 3,
+        "5": 2,
+        "16": 2,
+        "22": 2,
+        "30": 2,
+        "31": 2,
+        "33": 2,
+        "70": 2,
+        "78": 2,
+        "83": 2,
+        "87": 2,
+        "94": 2,
+        "95": 2,
+        "104": 2,
+        "105": 2,
+        "109": 2,
+        "111": 2,
+        "114": 2,
+        "119": 2,
+        "120": 2,
+        "122": 2,
+        "126": 2,
+        "136": 2,
+        "145": 2,
+        "147": 2,
+        "164": 2,
+        "166": 2,
+        "9": 1,
+        "28": 1,
+        "57": 1,
+        "58": 1,
+        "60": 1,
+        "65": 1,
+        "69": 1,
+        "74": 1,
+        "79": 1,
+        "80": 1,
+        "97": 1,
+        "101": 1,
+        "110": 1,
+        "112": 1,
+        "115": 1,
+        "116": 1,
+        "118": 1,
+        "123": 1,
+        "124": 1,
+        "125": 1,
+        "127": 1,
+        "128": 1,
+        "129": 1,
+        "131": 1,
+        "134": 1,
+        "135": 1,
+        "139": 1,
+        "140": 1,
+        "141": 1,
+        "144": 1,
+        "148": 1,
+        "149": 1,
+        "155": 1,
+        "157": 1,
+        "161": 1,
+        "162": 1,
+        "163": 1,
+        "85": 1,
+        "159": 1
+      },
+      "mapped_rows": 2813,
+      "unmapped_present_values": [],
+      "distinct_referring_skills_by_value": {
+        "1": 202,
+        "23": 192,
+        "11": 134,
+        "17": 127,
+        "62": 125,
+        "35": 78,
+        "19": 77,
+        "64": 59,
+        "40": 45,
+        "32": 42,
+        "7": 41,
+        "67": 31,
+        "3": 31,
+        "150": 29,
+        "92": 27,
+        "48": 27,
+        "63": 24,
+        "94": 22,
+        "100": 21,
+        "93": 20,
+        "58": 20,
+        "10": 19,
+        "45": 19,
+        "146": 19,
+        "115": 18,
+        "46": 17,
+        "38": 16,
+        "107": 15,
+        "68": 14,
+        "15": 13,
+        "89": 13,
+        "37": 12,
+        "53": 12,
+        "73": 12,
+        "6": 12,
+        "132": 12,
+        "77": 11,
+        "102": 10,
+        "49": 10,
+        "88": 10,
+        "24": 9,
+        "52": 9,
+        "21": 9,
+        "142": 9,
+        "160": 9,
+        "117": 9,
+        "4": 8,
+        "104": 8,
+        "41": 8,
+        "43": 7,
+        "75": 7,
+        "54": 7,
+        "56": 7,
+        "114": 6,
+        "130": 6,
+        "151": 6,
+        "108": 6,
+        "109": 5,
+        "76": 5,
+        "154": 5,
+        "136": 5,
+        "91": 5,
+        "111": 5,
+        "86": 5,
+        "145": 4,
+        "133": 4,
+        "158": 4,
+        "34": 3,
+        "106": 3,
+        "39": 3,
+        "138": 3,
+        "5": 3,
+        "22": 2,
+        "27": 2,
+        "29": 2,
+        "87": 2,
+        "72": 2,
+        "141": 2,
+        "79": 2,
+        "55": 2,
+        "110": 2,
+        "83": 2,
+        "101": 2,
+        "84": 2,
+        "143": 2,
+        "148": 2,
+        "155": 2,
+        "153": 2,
+        "121": 2,
+        "147": 2,
+        "33": 2,
+        "120": 2,
+        "164": 2,
+        "51": 1,
+        "42": 1,
+        "71": 1,
+        "119": 1,
+        "163": 1,
+        "161": 1,
+        "25": 1,
+        "166": 1,
+        "112": 1
+      }
+    },
+    "BUFFBASE_CONF.trigger_type": {
+      "total_rows": 2813,
+      "distinct_present_values": 5,
+      "counts": {
+        "<missing>": 2428,
+        "7": 194,
+        "12": 177,
+        "50": 8,
+        "60": 5,
+        "23": 1
+      }
+    },
+    "BUFF_CONF.type": {
+      "total_rows": 3312,
+      "distinct_present_values": 4,
+      "counts": {
+        "3": 2758,
+        "4": 396,
+        "2": 99,
+        "1": 59
+      }
+    }
+  },
+  "nonzero_skill_result_reference_counts": {
+    "buff": 1988,
+    "effect": 1457
+  },
+  "unresolved_fields": {
+    "BUFFBASE_CONF.trigger_type": {
+      "reason": "No direct reader binding this config field to an enum was found in inspected Lua. Presence values 7/12/23/50/60 are retained independently; missing stays missing.",
+      "do_not_bind_to": "Data.Config.Enum.Buffbasetrigger_type"
+    },
+    "SKILL_CONF.skill_result[].cast_moment": {
+      "reason": "No direct config-field reader binding found. Presentation performInfo.cast_moment uses Buffbasetrigger_type, but this does not prove configuration field domain."
+    },
+    "EFFECT_CONF.type": {
+      "reason": "Values 1/2/3 are present, but no verified field-to-domain binding."
+    },
+    "SKILL_CONF.skill_priority": {
+      "reason": "Raw value 5 does not establish priority +5; normalization and comparison rules unknown."
+    },
+    "EFFECT_CONF.effect_param / BUFFBASE_CONF.buffbase_param": {
+      "reason": "Ordered operand vectors have opcode-dependent semantics; numeric scale, target, formulas and defaults not recovered except scoped presentation uses below."
+    }
+  },
+  "related_unbound_enum": {
+    "namespace": "Data.Config.Enum.Buffbasetrigger_type",
+    "mapping": {
+      "0": "Invalid",
+      "-1": "Immediatyly",
+      "10": "OnAnimationHit",
+      "13": "OnBeforePetDead",
+      "19": "OnFlyEnergy",
+      "6": "OnBeforeSkill",
+      "7": "OnBeforeAttack",
+      "9": "OnHit",
+      "11": "OnAfterAttack",
+      "12": "OnAfterSkill",
+      "15": "OnRoundEnd",
+      "16": "OnCounter",
+      "17": "OnInterrupt",
+      "18": "OnCounterEnd",
+      "21": "OnBeforeHit",
+      "22": "OnBeforeDamage",
+      "23": "OnAfterDamage",
+      "24": "OnEnterBattle",
+      "25": "OnCharge",
+      "26": "OnBagCast",
+      "27": "OnOnlyCharge",
+      "100": "OnRoleMagicChangeModel",
+      "1000": "OnAttackHit"
+    },
+    "enum_evidence": [
+      {
+        "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+        "line_start": 2874,
+        "line_end": 2898,
+        "sha256": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5",
+        "claim": "Direct integer-to-symbol declarations; annotation does not establish operand semantics or execution."
+      }
+    ],
+    "scope": "Only annotation of known presentation events; not bound to config trigger_type or cast_moment."
+  },
+  "parameter_semantics": [
+    {
+      "field": "EFFECT_CONF.effect_param[1].params[1]",
+      "condition": "effect_order == ET_ANIMATION",
+      "meaning": "UI animation ID dispatched through BattleEvent.PlayUIAnimation; presentation only",
+      "evidence": [
+        {
+          "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BattleEffectPlayer.luac.decompiled.lua",
+          "line_start": 91,
+          "line_end": 99,
+          "sha256": "35c49d1d786a8f152a22f6e71e5d86904072f0f8bdad764fb734c81381fc0bca",
+          "claim": "Reads first operand and dispatches UI animation."
+        }
+      ]
+    },
+    {
+      "field": "BUFFBASE_CONF.buffbase_param[1].params[1]",
+      "condition": "BattleUtils.IsBuff152(buff_id)",
+      "meaning": "Compared with Enum.UIEffectTargetType for screen/pet/all-skill UI effects; presentation only",
+      "evidence": [
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_14_P/BattleUtils.luac.decompiled.lua",
+          "line_start": 3373,
+          "line_end": 3383,
+          "sha256": "9a4615926d2ff4037198845943ec9952bde197a9169457e54dab0f6eb35ec4b9",
+          "claim": "Finds buffbase with BFT_O_FIFTYTWO."
+        },
+        {
+          "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BuffComponent.luac.decompiled.lua",
+          "line_start": 331,
+          "line_end": 348,
+          "sha256": "9f53cba8ccfb215eeedc56f4debd64bd9ba723e23208e3425b66d37aa720cc55",
+          "claim": "Reads first parameter and routes UI effect targets."
+        }
+      ]
+    },
+    {
+      "field": "BUFFBASE_CONF.buffbase_param[5].params[1]",
+      "condition": "buffbase_order == BFT_NINETY_THREE",
+      "meaning": "Value 5 is tested by IsBuffBaseIdIsBuff93AndParams5Is5; general meaning of operand not established",
+      "evidence": [
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_14_P/BattleUtils.luac.decompiled.lua",
+          "line_start": 3359,
+          "line_end": 3370,
+          "sha256": "9a4615926d2ff4037198845943ec9952bde197a9169457e54dab0f6eb35ec4b9",
+          "claim": "Explicit comparison only."
+        }
+      ]
+    },
+    {
+      "field": "BUFFBASE_CONF.buffbase_param[11].params[1]",
+      "condition": "CollectBuff93EnhanceInfo caller supplies relevant base IDs",
+      "meaning": "Copied into SkillEnhanceInfo.tip_id; presentation/description metadata",
+      "evidence": [
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_14_P/BattleUtils.luac.decompiled.lua",
+          "line_start": 3386,
+          "line_end": 3401,
+          "sha256": "9a4615926d2ff4037198845943ec9952bde197a9169457e54dab0f6eb35ec4b9",
+          "claim": "Builds enhancement info with tip ID."
+        }
+      ]
+    },
+    {
+      "field": "BUFFBASE_CONF.buffbase_param[12].params[1]",
+      "condition": "buffbase_order == BFT_O_FIFTY",
+      "meaning": "DifPathsDescConf lookup ID; description metadata",
+      "evidence": [
+        {
+          "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/SkillUtils.luac.decompiled.lua",
+          "line_start": 707,
+          "line_end": 719,
+          "sha256": "7ef73b49eb832294b17a69b3dfa5e17bd89269758b130e476243a633a979c222",
+          "claim": "Reads param12 and calls GetDifPathsDescConf."
+        }
+      ]
+    }
+  ],
+  "representative_chains": [
+    {
+      "skill_id": 7060200,
+      "raw_skill": {
+        "id": 7060200,
+        "name": {
+          "localization_id": 2341,
+          "text": "虹光冲击"
+        },
+        "desc": {
+          "localization_id": 2342,
+          "text": "对敌方精灵造成魔法伤害。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          100
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 6,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Lig_JJ_105012",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/105012.105012'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "ordered_results": [],
+      "component_executable": false
+    },
+    {
+      "skill_id": 7150080,
+      "raw_skill": {
+        "id": 7150080,
+        "name": {
+          "localization_id": 3087,
+          "text": "翼击"
+        },
+        "desc": {
+          "localization_id": 3088,
+          "text": "造成魔伤，<desc_id=1005>迅捷</>。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          50
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 15,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1051001,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Win_YJ_715004",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/715004.715004'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "ordered_results": [
+        {
+          "slot_zero_based": 0,
+          "reference": {
+            "effect_id": 1051001,
+            "cast_moment": 6
+          },
+          "table": "EFFECT_CONF",
+          "row": {
+            "id": 1051001,
+            "effect_order": 51,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          },
+          "reference_status": "nonzero"
+        }
+      ],
+      "component_executable": false
+    },
+    {
+      "skill_id": 7170280,
+      "raw_skill": {
+        "id": 7170280,
+        "name": {
+          "localization_id": 3309,
+          "text": "魔镜"
+        },
+        "desc": {
+          "localization_id": 3310,
+          "text": "敌方获得魔防-50%，且失去3能量。"
+        },
+        "flavor_text": {
+          "localization_id": 3311,
+          "text": "魔镜魔镜告诉我，谁是最棒的果？"
+        },
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 17,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20010080,
+            "cast_moment": 11
+          },
+          {
+            "effect_id": 1019013,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gho_JY_116023",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/116023.116023'",
+        "describe_type": [
+          12,
+          7
+        ]
+      },
+      "ordered_results": [
+        {
+          "slot_zero_based": 0,
+          "reference": {
+            "effect_id": 20010080,
+            "cast_moment": 11
+          },
+          "table": "BUFF_CONF",
+          "row": {
+            "id": 20010080,
+            "buff_base_ids": [
+              2001008
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              1,
+              31
+            ],
+            "name": "魔防等级降低",
+            "type_id": "2",
+            "add_des": "魔法防御",
+            "add_icon": 2,
+            "type": 2,
+            "add_max": 99,
+            "desc": "魔防-<span color=\"#c7494a\">10%</>。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800008_png.800008_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+            "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "base_rows": [
+            {
+              "id": 2001008,
+              "buffbase_order": 1,
+              "show_letters": [
+                3
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    36
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    1000
+                  ]
+                }
+              ]
+            }
+          ],
+          "reference_status": "nonzero"
+        },
+        {
+          "slot_zero_based": 1,
+          "reference": {
+            "effect_id": 1019013,
+            "cast_moment": 11
+          },
+          "table": "EFFECT_CONF",
+          "row": {
+            "id": 1019013,
+            "effect_order": 19,
+            "add_des": "失去能量",
+            "add_icon": 2,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  -3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "reference_status": "nonzero"
+        }
+      ],
+      "component_executable": false
+    },
+    {
+      "skill_id": 7030260,
+      "raw_skill": {
+        "id": 7030260,
+        "name": {
+          "localization_id": 1994,
+          "text": "孢子"
+        },
+        "desc": {
+          "localization_id": 1995,
+          "text": "敌方获得3层<desc_id=1008>寄生</>。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 3,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20050010,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_JSZZ_701003",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/701003.701003'",
+        "describe_type": [
+          12,
+          10,
+          16
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "ordered_results": [
+        {
+          "slot_zero_based": 0,
+          "reference": {
+            "effect_id": 20050010,
+            "cast_moment": 11
+          },
+          "table": "BUFF_CONF",
+          "row": {
+            "id": 20050010,
+            "buff_base_ids": [
+              2005001
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "寄生",
+            "type_id": "2",
+            "add_des": "寄生",
+            "add_icon": 11,
+            "type": 2,
+            "add_max": 99,
+            "desc": "每回合受到2%伤害，并恢复敌方等量生命值。（草系精灵免疫此效果）",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830075_png.830075_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800015",
+            "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800015",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "base_rows": [
+            {
+              "id": 2005001,
+              "buffbase_order": 5,
+              "trigger_type": 7,
+              "show_letters": [
+                0
+              ],
+              "buffbase_param": [
+                {
+                  "params": [
+                    2
+                  ]
+                },
+                {
+                  "params": [
+                    200
+                  ]
+                },
+                {
+                  "params": [
+                    10000
+                  ]
+                },
+                {
+                  "params": [
+                    0
+                  ]
+                },
+                {
+                  "params": [
+                    100
+                  ]
+                }
+              ]
+            }
+          ],
+          "reference_status": "nonzero"
+        }
+      ],
+      "component_executable": false
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "magic_mirror_layer_semantics_unresolved",
+      "classification": "user_explained_description_difference_file_mapping_unresolved",
+      "skill_id": 7170280,
+      "skill_description": "敌方获得魔防-50%，且失去3能量。",
+      "buff_id": 20010080,
+      "buff_description": "魔防-10%",
+      "base_id": 2001008,
+      "base_raw_params": [
+        {
+          "params": [
+            36
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            1000
+          ]
+        }
+      ],
+      "reason": "The user-provided explanation is retained as its own source. No inspected configuration field or handler yet maps the skill reference to five applied stacks; file_binding_pending.",
+      "component_executable": false,
+      "semantic_resolution": "User provides the numerical explanation of five applied stacks and ten percent magic-defense reduction per stack, with the qualifier 原因应该是. This explains how the descriptions can agree; not battle calibration or file-level binding.",
+      "user_source_id": "user_magic_mirror_layers_20261025"
+    },
+    {
+      "id": "trigger_domains_must_remain_separate",
+      "classification": "unsafe_enum_conflation",
+      "buff_id": 20050010,
+      "base_id": 2005001,
+      "config_trigger_type": 7,
+      "description": "每回合受到2%伤害，并恢复敌方等量生命值；草系免疫。",
+      "different_domain_symbol": "Data.Config.Enum.Buffbasetrigger_type.OnBeforeAttack = 7",
+      "reason": "Matching integer is insufficient binding proof; this is not evidence that parasite executes before attack."
+    }
+  ],
+  "limitations": [
+    "Highest numeric patch selection is candidate selection; actual mounted winner and online override remain unverified.",
+    "Decompiled Lua is reconstructed source and primarily client presentation/sync in inspected paths.",
+    "Enum coverage is annotation coverage only; no new battle executable component or calibrated formula is established.",
+    "Missing fields remain missing; no default zero insertion.",
+    "Full per-opcode operands, target semantics, trigger priority, file-derived layer-count bindings and damage/rounding require additional settlement handlers or independent evidence."
+  ],
+  "reference_shape_audit": {
+    "skill_result": {
+      "entries": 6486,
+      "nonzero_effect_id": 3445,
+      "absent_effect_id": 3041
+    },
+    "buff_base_ids": {
+      "nonzero": 4603,
+      "explicit_zero": 1
+    },
+    "policy": "Preserve every array element and its zero-based source slot, including missing effect_id, explicit zero and empty objects. Missing ID is not zero; no implicit target, padding, skipped timing, or execution meaning is inferred."
+  },
+  "verification": {
+    "evidence_hashes_and_line_bounds_checked": 18,
+    "all_mapping_symbols_present_in_anchored_definitions": true,
+    "game_scripts_executed": false
+  },
+  "layer_application_followup": {
+    "scope": "Targeted static follow-up after user layer clarification; all source files read only, Lua not executed.",
+    "skill_result_schema": {
+      "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/BinConf/SKILL_CONF.non",
+      "sha256": "09baca31a786bfb7324a46b6bd65f9acef33da4c72c687093888591fc0fc8fe0",
+      "array_dim": 6,
+      "nested_fields": [
+        "effect_id",
+        "cast_moment"
+      ],
+      "has_explicit_stack_field": false
+    },
+    "chains": [
+      {
+        "skill": {
+          "id": 7170280,
+          "name": {
+            "localization_id": 3309,
+            "text": "魔镜"
+          },
+          "desc": {
+            "localization_id": 3310,
+            "text": "敌方获得魔防-50%，且失去3能量。"
+          },
+          "flavor_text": {
+            "localization_id": 3311,
+            "text": "魔镜魔镜告诉我，谁是最棒的果？"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 17,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20010080,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1019013,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gho_JY_116023",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/116023.116023'",
+          "describe_type": [
+            12,
+            7
+          ]
+        },
+        "buff": {
+          "id": 20010080,
+          "buff_base_ids": [
+            2001008
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            1,
+            31
+          ],
+          "name": "魔防等级降低",
+          "type_id": "2",
+          "add_des": "魔法防御",
+          "add_icon": 2,
+          "type": 2,
+          "add_max": 99,
+          "desc": "魔防-<span color=\"#c7494a\">10%</>。",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800008_png.800008_png'",
+          "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+          "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base": {
+          "id": 2001008,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                36
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+            "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+            "json_pointer": "/7170280"
+          },
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+            "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+            "json_pointer": "/20010080"
+          },
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+            "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+            "json_pointer": "/2001008"
+          }
+        ],
+        "component_executable": false
+      },
+      {
+        "skill": {
+          "id": 7020630,
+          "name": {
+            "localization_id": 1776,
+            "text": "魔法增效"
+          },
+          "desc": {
+            "localization_id": 1777,
+            "text": "自己获得魔攻+70%。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 2,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20010020,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_MFZX_700020",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/700020.700020'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff": {
+          "id": 20010020,
+          "buff_base_ids": [
+            2001002
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            1,
+            31
+          ],
+          "name": "魔攻等级提升",
+          "type_id": "1",
+          "add_des": "魔法攻击",
+          "add_icon": 1,
+          "type": 1,
+          "add_max": 99,
+          "desc": "魔攻+<span color=\"#73c715\">10%</>。",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800002_png.800002_png'",
+          "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+          "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base": {
+          "id": 2001002,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                30
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+            "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+            "json_pointer": "/7020630"
+          },
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+            "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+            "json_pointer": "/20010020"
+          },
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+            "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+            "json_pointer": "/2001002"
+          }
+        ],
+        "component_executable": false
+      },
+      {
+        "skill": {
+          "id": 7880001,
+          "name": {
+            "localization_id": 4006,
+            "text": "魔法增效"
+          },
+          "desc": {
+            "localization_id": 4007,
+            "text": "自己获得魔攻+70%。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 2,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20010020,
+              "cast_moment": 23
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_MFZX_700020",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/700020.700020'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff": {
+          "id": 20010020,
+          "buff_base_ids": [
+            2001002
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            1,
+            31
+          ],
+          "name": "魔攻等级提升",
+          "type_id": "1",
+          "add_des": "魔法攻击",
+          "add_icon": 1,
+          "type": 1,
+          "add_max": 99,
+          "desc": "魔攻+<span color=\"#73c715\">10%</>。",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800002_png.800002_png'",
+          "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+          "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base": {
+          "id": 2001002,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                30
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+            "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+            "json_pointer": "/7880001"
+          },
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+            "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+            "json_pointer": "/20010020"
+          },
+          {
+            "file": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+            "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+            "json_pointer": "/2001002"
+          }
+        ],
+        "component_executable": false
+      }
+    ],
+    "client_stack_evidence": [
+      {
+        "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/Buff.luac.decompiled.lua",
+        "line_start": 49,
+        "line_end": 62,
+        "sha256": "410f400eb96ed91f7782fb57d630cd754ecadcd5d830b86582b3c9c743d5fdc9",
+        "claim": "Refresh copies incoming Info.stack without computing applied stack count."
+      },
+      {
+        "file": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/Buff.luac.decompiled.lua",
+        "line_start": 91,
+        "line_end": 94,
+        "sha256": "410f400eb96ed91f7782fb57d630cd754ecadcd5d830b86582b3c9c743d5fdc9",
+        "claim": "Displayed stack is incoming stack minus hidden_stack; presentation only."
+      },
+      {
+        "file": "artifacts/unpack_probe_20261025/battle_analysis/pakchunk4-WindowsNoEditor_3_P/BattleDataCenter.luac.decompiled.lua",
+        "line_start": 536,
+        "line_end": 565,
+        "sha256": "5b2bc97ad34bd8d6f7373998111574114e64296640c1ccf3ad84d267e7eea25c",
+        "claim": "ChangeBuffData receives buff change/sync data; buff_stack_change sign determines popup, not applied-count computation."
+      }
+    ],
+    "confirmed_from_files": [
+      "魔镜 describes magic defense -50%, refers to buff 20010080 describing magic defense -10%.",
+      "魔法增效 records 7020630 and 7880001 describe magic attack +70%, both refer to buff 20010020 describing magic attack +10%.",
+      "Both base rows have opcode 1 (BFT_ATTR_CHANGE); ordered operands differ only in first vector: [36] versus [30], followed by [0], [1000].",
+      "Both buff rows have add_max=99; this is not evidence of initial or applied stack count.",
+      "The extracted skill_result schema contains effect_id and cast_moment only."
+    ],
+    "not_yet_mapped": [
+      "Which configuration or execution operand encodes five applied stacks for 魔镜.",
+      "Whether 魔法增效 applies seven stacks: compatible with the two descriptions but not directly verified as a numeric layer rule.",
+      "Attribute operand IDs 30/36 and scale 1000 require direct handler binding before becoming executable semantics.",
+      "Layer caps, duration/reduction, composition with other modifiers, and linearity outside the specifically confirmed 魔镜 example."
+    ]
+  },
+  "user_clarifications": [
+    {
+      "id": "user_magic_mirror_layers_20261025",
+      "source_kind": "user_provided_explanation",
+      "scope": {
+        "skill_id": 7170280,
+        "buff_id": 20010080
+      },
+      "claims": {
+        "stacks_applied_per_use": 5,
+        "magic_defense_reduction_per_stack_percent": 10
+      },
+      "source_note": "用户主对话原文，由主代理完整转交；保留“原因应该是”限定语，作为用户提供的数值解释，文件映射与实战校准仍待完成。",
+      "limitations": [
+        "This statement does not identify the binary configuration operand carrying applied stacks.",
+        "Do not generalize linear stacking or bounds to all statuses.",
+        "No numeric applied-stack count for 魔法增效 is treated as explicitly user confirmed here."
+      ],
+      "status": "file_binding_pending",
+      "calibration_status": "not_battle_calibrated",
+      "original_text": "“魔镜”的技能描述写魔防降低 50%，但它引用的状态描述写 10%，这里的原因应该是洛克王国状态是按层数来的，一层魔防降低10%，释放一次魔镜叠5层debuff。和魔法增效等状态类似。",
+      "original_text_status": "verbatim_user_message_relayed_by_parent",
+      "per_stack_effect": {
+        "stat": "magic_defense",
+        "operation": "reduce_percent",
+        "value": 10
+      },
+      "application_stacks": 5
+    }
+  ]
+}

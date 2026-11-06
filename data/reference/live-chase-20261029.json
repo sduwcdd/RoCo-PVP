@@ -1,0 +1,2792 @@
+{
+  "schema": "live-chase-per-hit-2",
+  "battle_id": "9000000000000000001",
+  "hits": [
+    {
+      "row": 136435,
+      "battle": "9000000000000000001",
+      "round": 5,
+      "skill": 702047100,
+      "damage": 59,
+      "critical": false
+    },
+    {
+      "row": 136435,
+      "battle": "9000000000000000001",
+      "round": 5,
+      "skill": 702047100,
+      "damage": 59,
+      "critical": false
+    },
+    {
+      "row": 136435,
+      "battle": "9000000000000000001",
+      "round": 5,
+      "skill": 702047100,
+      "damage": 59,
+      "critical": false
+    },
+    {
+      "row": 136435,
+      "battle": "9000000000000000001",
+      "round": 5,
+      "skill": 702047100,
+      "damage": 59,
+      "critical": false
+    },
+    {
+      "row": 136435,
+      "battle": "9000000000000000001",
+      "round": 5,
+      "skill": 702047100,
+      "damage": 59,
+      "critical": false
+    },
+    {
+      "row": 136435,
+      "battle": "9000000000000000001",
+      "round": 5,
+      "skill": 702047100,
+      "damage": 59,
+      "critical": false
+    }
+  ],
+  "perform_info": [
+    {
+      "type": 1,
+      "group_id": 1,
+      "skill_cast": {
+        "caster_id": 3,
+        "target_id": [
+          406,
+          406
+        ],
+        "skill_id": 715026000,
+        "restraint_type": [
+          0
+        ],
+        "real_perform_id": 0,
+        "type": 1,
+        "perform_flag": 0,
+        "resonance_pet_id": 0,
+        "field_13": 0,
+        "skill_name": "飞羽",
+        "skill_desc": "<desc_id=1005>迅捷</>，驱散敌方1种<desc_id=1012>增益</>。",
+        "skill_energy_cost": [
+          1
+        ],
+        "skill_target_type": 1,
+        "skill_target_count": 1,
+        "skill_priority": 5,
+        "skill_damage_type": 1,
+        "skill_feature": 4,
+        "skill_cd_round": [
+          0,
+          0
+        ]
+      },
+      "is_group_head": true,
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 3,
+            "energy_change": "18446744073709551615",
+            "energy_result": 9
+          }
+        ]
+      },
+      "cast_moment": 0,
+      "group_ref": 0,
+      "exec_index": 1
+    },
+    {
+      "type": 2,
+      "group_id": 1,
+      "buff_change": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20231140,
+        "type": 3
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20231140,
+            "buff_stack_change": 0,
+            "buff_stack_result": 0
+          }
+        ]
+      },
+      "cast_moment": 9,
+      "exec_index": 246
+    },
+    {
+      "type": 9,
+      "group_id": 1,
+      "effect_trigger": {
+        "caster_id": 3,
+        "target_id": 406,
+        "effect_id": 1004054,
+        "result": 12,
+        "params": [
+          0,
+          0
+        ]
+      },
+      "cast_moment": 7,
+      "exec_index": 254
+    },
+    {
+      "type": 2,
+      "group_id": 1,
+      "buff_change": {
+        "caster_id": 3,
+        "target_id": 406,
+        "buff_id": 20010020,
+        "type": 3,
+        "buff_name": "魔攻等级提升",
+        "buff_desc": "魔攻+<span color=\"#0e9800\">10%</>。",
+        "buff_type_id": "1"
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20010020,
+            "buff_stack_change": "18446744073709551608",
+            "buff_stack_result": 0,
+            "buff_name": "魔攻等级提升",
+            "buff_desc": "魔攻+<span color=\"#0e9800\">10%</>。",
+            "buff_type_id": "1"
+          }
+        ]
+      },
+      "cast_moment": 7,
+      "exec_index": 255
+    },
+    {
+      "type": 25,
+      "group_id": 1,
+      "cast_moment": 9,
+      "exec_index": 289
+    },
+    {
+      "type": 25,
+      "group_id": 1,
+      "cast_moment": 9,
+      "exec_index": 320
+    },
+    {
+      "type": 25,
+      "group_id": 1,
+      "cast_moment": 9,
+      "exec_index": 351
+    },
+    {
+      "type": 25,
+      "group_id": 1,
+      "cast_moment": 9,
+      "exec_index": 367
+    },
+    {
+      "type": 1,
+      "group_id": 2,
+      "skill_cast": {
+        "caster_id": 406,
+        "target_id": [
+          3
+        ],
+        "skill_id": 702047100,
+        "restraint_type": [
+          "18446744073709551615"
+        ],
+        "real_perform_id": 0,
+        "type": 3,
+        "perform_flag": 0,
+        "resonance_pet_id": 0,
+        "field_13": 0,
+        "skill_name": "应对！追打",
+        "skill_desc": "造成魔伤，1连击，<desc_id=1015>应对状态</>：本技能变为3连击。",
+        "skill_energy_cost": [
+          3
+        ],
+        "skill_target_type": 1,
+        "skill_target_count": 1,
+        "skill_priority": 5,
+        "skill_damage_type": 3,
+        "skill_feature": 4,
+        "skill_cd_round": [
+          0,
+          0
+        ]
+      },
+      "is_group_head": true,
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "energy_change": "18446744073709551613",
+            "energy_result": 1
+          }
+        ]
+      },
+      "cast_moment": 16,
+      "group_ref": 1,
+      "exec_index": 7
+    },
+    {
+      "type": 9,
+      "group_id": 2,
+      "effect_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "effect_id": 1032003,
+        "result": 0,
+        "params": [
+          0,
+          0
+        ]
+      },
+      "cast_moment": 7,
+      "exec_index": 13
+    },
+    {
+      "type": 2,
+      "group_id": 2,
+      "buff_change": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20231140,
+        "type": 1,
+        "buff_info": {
+          "buff_id": 20231140,
+          "stack": 1,
+          "buff_type": 3,
+          "buff_data": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "is_hidden": false,
+          "hidden_stack": 0,
+          "buff_left_round": 0
+        }
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20231140,
+            "buff_stack_change": 1,
+            "buff_stack_result": 1
+          }
+        ],
+        "skill_sync_info": [
+          {
+            "pet_id": 406,
+            "skill_id": 702047100,
+            "damage_param_change": 82,
+            "damage_param_result": 83,
+            "sp_energy_skill": 0,
+            "damage_param_pet_id": 3,
+            "skill_name": "应对！追打",
+            "skill_desc": "造成魔伤，1连击，<desc_id=1015>应对状态</>：本技能变为3连击。",
+            "skill_energy_cost": [
+              3
+            ],
+            "skill_target_type": 1,
+            "skill_target_count": 1,
+            "skill_priority": 5,
+            "skill_damage_type": 3,
+            "skill_feature": 4,
+            "skill_cd_round": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "cast_moment": 7,
+      "exec_index": 14
+    },
+    {
+      "type": 4,
+      "group_id": 2,
+      "damage_info": {
+        "caster_id": 406,
+        "target_id": 3,
+        "source_id": 702047100,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": "18446744073709551615",
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 3,
+            "original_damage": 59,
+            "damage_change": 0,
+            "damage_result": 59
+          },
+          {
+            "pet_id": 3,
+            "hp_change": "18446744073709551557",
+            "hp_result": 472
+          }
+        ]
+      },
+      "cast_moment": 1000,
+      "exec_index": 41
+    },
+    {
+      "type": 4,
+      "group_id": 2,
+      "damage_info": {
+        "caster_id": 406,
+        "target_id": 3,
+        "source_id": 702047100,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": "18446744073709551615",
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 3,
+            "original_damage": 59,
+            "damage_change": 0,
+            "damage_result": 59
+          },
+          {
+            "pet_id": 3,
+            "hp_change": "18446744073709551557",
+            "hp_result": 413
+          }
+        ]
+      },
+      "cast_moment": 1001,
+      "exec_index": 42
+    },
+    {
+      "type": 4,
+      "group_id": 2,
+      "damage_info": {
+        "caster_id": 406,
+        "target_id": 3,
+        "source_id": 702047100,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": "18446744073709551615",
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 3,
+            "original_damage": 59,
+            "damage_change": 0,
+            "damage_result": 59
+          },
+          {
+            "pet_id": 3,
+            "hp_change": "18446744073709551557",
+            "hp_result": 354
+          }
+        ]
+      },
+      "cast_moment": 1002,
+      "exec_index": 43
+    },
+    {
+      "type": 4,
+      "group_id": 2,
+      "damage_info": {
+        "caster_id": 406,
+        "target_id": 3,
+        "source_id": 702047100,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": "18446744073709551615",
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 3,
+            "original_damage": 59,
+            "damage_change": 0,
+            "damage_result": 59
+          },
+          {
+            "pet_id": 3,
+            "hp_change": "18446744073709551557",
+            "hp_result": 295
+          }
+        ]
+      },
+      "cast_moment": 1003,
+      "exec_index": 44
+    },
+    {
+      "type": 4,
+      "group_id": 2,
+      "damage_info": {
+        "caster_id": 406,
+        "target_id": 3,
+        "source_id": 702047100,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": "18446744073709551615",
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 3,
+            "original_damage": 59,
+            "damage_change": 0,
+            "damage_result": 59
+          },
+          {
+            "pet_id": 3,
+            "hp_change": "18446744073709551557",
+            "hp_result": 236
+          }
+        ]
+      },
+      "cast_moment": 1004,
+      "exec_index": 45
+    },
+    {
+      "type": 4,
+      "group_id": 2,
+      "damage_info": {
+        "caster_id": 406,
+        "target_id": 3,
+        "source_id": 702047100,
+        "is_critical": [
+          false
+        ],
+        "is_hit": true,
+        "restraint_type": "18446744073709551615",
+        "has_shield": false,
+        "dam_type": 2
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 3,
+            "original_damage": 59,
+            "damage_change": 0,
+            "damage_result": 59
+          },
+          {
+            "pet_id": 3,
+            "hp_change": "18446744073709551557",
+            "hp_result": 177
+          }
+        ]
+      },
+      "cast_moment": 1005,
+      "exec_index": 46
+    },
+    {
+      "type": 2,
+      "group_id": 2,
+      "buff_change": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20010010,
+        "type": 2,
+        "buff_info": {
+          "buff_id": 20010010,
+          "stack": 8,
+          "buff_type": 1,
+          "buff_data": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "is_hidden": false,
+          "hidden_stack": 0,
+          "buff_left_round": 998,
+          "buff_name": "物攻等级提升",
+          "buff_desc": "物攻+<span color=\"#0e9800\">10%</>。",
+          "buff_type_id": "1"
+        },
+        "buff_name": "物攻等级提升",
+        "buff_desc": "物攻+<span color=\"#0e9800\">10%</>。",
+        "buff_type_id": "1"
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20010010,
+            "buff_stack_change": 4,
+            "buff_stack_result": 8,
+            "buff_name": "物攻等级提升",
+            "buff_desc": "物攻+<span color=\"#0e9800\">10%</>。",
+            "buff_type_id": "1"
+          }
+        ]
+      },
+      "cast_moment": 11,
+      "exec_index": 47
+    },
+    {
+      "type": 10,
+      "group_id": 2,
+      "cast_moment": 11,
+      "show_letters": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20010010,
+        "pet_id": 406,
+        "buff_name": "物攻等级提升",
+        "buff_desc": "物攻+<span color=\"#0e9800\">10%</>。",
+        "buff_type_id": "1"
+      },
+      "exec_index": 48
+    },
+    {
+      "type": 2,
+      "group_id": 2,
+      "buff_change": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20010020,
+        "type": 2,
+        "buff_info": {
+          "buff_id": 20010020,
+          "stack": 8,
+          "buff_type": 1,
+          "buff_data": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "is_hidden": false,
+          "hidden_stack": 0,
+          "buff_left_round": 998,
+          "buff_name": "魔攻等级提升",
+          "buff_desc": "魔攻+<span color=\"#0e9800\">10%</>。",
+          "buff_type_id": "1"
+        },
+        "buff_name": "魔攻等级提升",
+        "buff_desc": "魔攻+<span color=\"#0e9800\">10%</>。",
+        "buff_type_id": "1"
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20010020,
+            "buff_stack_change": 4,
+            "buff_stack_result": 8,
+            "buff_name": "魔攻等级提升",
+            "buff_desc": "魔攻+<span color=\"#0e9800\">10%</>。",
+            "buff_type_id": "1"
+          }
+        ]
+      },
+      "cast_moment": 11,
+      "exec_index": 62
+    },
+    {
+      "type": 10,
+      "group_id": 2,
+      "cast_moment": 11,
+      "show_letters": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20010020,
+        "pet_id": 406,
+        "buff_name": "魔攻等级提升",
+        "buff_desc": "魔攻+<span color=\"#0e9800\">10%</>。",
+        "buff_type_id": "1"
+      },
+      "exec_index": 63
+    },
+    {
+      "type": 25,
+      "group_id": 2,
+      "cast_moment": 9,
+      "exec_index": 139
+    },
+    {
+      "type": 25,
+      "group_id": 2,
+      "cast_moment": 9,
+      "exec_index": 245
+    },
+    {
+      "type": 3,
+      "group_id": 3,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20530070,
+        "buffbase_ids": [
+          2064083,
+          2064211
+        ],
+        "perform_type": 0,
+        "buff_name": "龙噬印记",
+        "buff_desc": "使用3能耗的技能后，双攻+30%",
+        "buff_type_id": "4"
+      },
+      "is_group_head": true,
+      "cast_moment": 7,
+      "group_ref": 2,
+      "exec_index": 27
+    },
+    {
+      "type": 10,
+      "group_id": 3,
+      "cast_moment": 7,
+      "show_letters": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20530070,
+        "pet_id": 406,
+        "buff_name": "龙噬印记",
+        "buff_desc": "使用3能耗的技能后，双攻+30%",
+        "buff_type_id": "4"
+      },
+      "exec_index": 28
+    },
+    {
+      "type": 3,
+      "group_id": 4,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20230440,
+        "buffbase_ids": [
+          2023044
+        ],
+        "perform_type": 0,
+        "buff_name": "伤害增加",
+        "buff_desc": "技能威力+10",
+        "buff_type_id": "1"
+      },
+      "is_group_head": true,
+      "cast_moment": 7,
+      "group_ref": 2,
+      "exec_index": 36
+    },
+    {
+      "type": 10,
+      "group_id": 4,
+      "cast_moment": 7,
+      "show_letters": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20230440,
+        "pet_id": 406,
+        "buff_name": "伤害增加",
+        "buff_desc": "技能威力+10",
+        "buff_type_id": "1"
+      },
+      "exec_index": 37
+    },
+    {
+      "type": 3,
+      "group_id": 5,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20450052,
+        "buffbase_ids": [
+          2045005
+        ],
+        "perform_type": 0,
+        "buff_name": "咔咔冲刺",
+        "buff_desc": "连击次数+1",
+        "buff_type_id": "5"
+      },
+      "is_group_head": true,
+      "cast_moment": 7,
+      "group_ref": 2,
+      "exec_index": 38
+    },
+    {
+      "type": 3,
+      "group_id": 6,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20231140,
+        "buffbase_ids": [
+          2023114
+        ],
+        "perform_type": 0
+      },
+      "is_group_head": true,
+      "cast_moment": 7,
+      "group_ref": 2,
+      "exec_index": 39
+    },
+    {
+      "type": 10,
+      "group_id": 6,
+      "cast_moment": 7,
+      "show_letters": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20231140,
+        "pet_id": 406
+      },
+      "exec_index": 40
+    },
+    {
+      "type": 3,
+      "group_id": 7,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20010010,
+        "buffbase_ids": [
+          2001001
+        ],
+        "perform_type": 0,
+        "buff_name": "物攻等级提升",
+        "buff_desc": "物攻+<span color=\"#0e9800\">10%</>。",
+        "buff_type_id": "1"
+      },
+      "is_group_head": true,
+      "cast_moment": 11,
+      "group_ref": 2,
+      "exec_index": 49
+    },
+    {
+      "type": 3,
+      "group_id": 8,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20010020,
+        "buffbase_ids": [
+          2001002
+        ],
+        "perform_type": 0,
+        "buff_name": "魔攻等级提升",
+        "buff_desc": "魔攻+<span color=\"#0e9800\">10%</>。",
+        "buff_type_id": "1"
+      },
+      "is_group_head": true,
+      "cast_moment": 11,
+      "group_ref": 2,
+      "exec_index": 64
+    },
+    {
+      "type": 3,
+      "group_id": 9,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20430030,
+        "buffbase_ids": [
+          2043003
+        ],
+        "perform_type": 0
+      },
+      "is_group_head": true,
+      "cast_moment": 11,
+      "group_ref": 2,
+      "exec_index": 83
+    },
+    {
+      "type": 2,
+      "group_id": 9,
+      "buff_change": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20450052,
+        "type": 2,
+        "buff_info": {
+          "buff_id": 20450052,
+          "stack": 4,
+          "buff_type": 3,
+          "buff_data": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "is_hidden": false,
+          "hidden_stack": 0,
+          "buff_left_round": 996,
+          "buff_name": "咔咔冲刺",
+          "buff_desc": "连击次数+1",
+          "buff_type_id": "5"
+        },
+        "buff_name": "咔咔冲刺",
+        "buff_desc": "连击次数+1",
+        "buff_type_id": "5"
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20450052,
+            "buff_stack_change": 1,
+            "buff_stack_result": 4,
+            "buff_name": "咔咔冲刺",
+            "buff_desc": "连击次数+1",
+            "buff_type_id": "5"
+          }
+        ]
+      },
+      "cast_moment": 11,
+      "exec_index": 84
+    },
+    {
+      "type": 10,
+      "group_id": 9,
+      "cast_moment": 11,
+      "show_letters": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20450052,
+        "pet_id": 406,
+        "buff_name": "咔咔冲刺",
+        "buff_desc": "连击次数+1",
+        "buff_type_id": "5"
+      },
+      "exec_index": 85
+    },
+    {
+      "type": 10,
+      "group_id": 9,
+      "cast_moment": 7,
+      "show_letters": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20430030,
+        "pet_id": 406
+      },
+      "exec_index": 98
+    },
+    {
+      "type": 3,
+      "group_id": 10,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20350760,
+        "buffbase_ids": [
+          2035076
+        ],
+        "perform_type": 0
+      },
+      "is_group_head": true,
+      "cast_moment": 11,
+      "group_ref": 2,
+      "exec_index": 99
+    },
+    {
+      "type": 9,
+      "group_id": 10,
+      "effect_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "effect_id": 1004095,
+        "result": 12,
+        "params": [
+          0,
+          0
+        ]
+      },
+      "cast_moment": 11,
+      "exec_index": 100
+    },
+    {
+      "type": 3,
+      "group_id": 11,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20351070,
+        "buffbase_ids": [
+          2035107
+        ],
+        "perform_type": 0
+      },
+      "is_group_head": true,
+      "cast_moment": 11,
+      "group_ref": 2,
+      "exec_index": 101
+    },
+    {
+      "type": 2,
+      "group_id": 11,
+      "buff_change": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20620100,
+        "type": 1,
+        "buff_info": {
+          "buff_id": 20620100,
+          "stack": 1,
+          "buff_type": 3,
+          "buff_data": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "is_hidden": false,
+          "hidden_stack": 0,
+          "buff_left_round": 0
+        }
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20620100,
+            "buff_stack_change": 1,
+            "buff_stack_result": 1
+          }
+        ],
+        "skill_sync_info": [
+          {
+            "pet_id": 406,
+            "skill_id": 702047000,
+            "damage_param_change": 23,
+            "damage_param_result": 106,
+            "sp_energy_skill": 0,
+            "damage_param_pet_id": 3,
+            "skill_name": "追打",
+            "skill_desc": "造成魔伤，1连击，<desc_id=1015>应对状态</>：本技能变为3连击。",
+            "skill_energy_cost": [
+              3
+            ],
+            "skill_target_type": 1,
+            "skill_target_count": 1,
+            "skill_priority": 5,
+            "skill_damage_type": 3,
+            "skill_feature": 4,
+            "skill_cd_round": [
+              0,
+              0
+            ]
+          },
+          {
+            "pet_id": 406,
+            "skill_id": 702089000,
+            "damage_param_change": 20,
+            "damage_param_result": 90,
+            "sp_energy_skill": 0,
+            "damage_param_pet_id": 3,
+            "skill_name": "音波弹",
+            "skill_desc": "造成魔伤，1连击。",
+            "skill_energy_cost": [
+              1
+            ],
+            "skill_target_type": 1,
+            "skill_target_count": 1,
+            "skill_priority": 5,
+            "skill_damage_type": 3,
+            "skill_feature": 4,
+            "skill_cd_round": [
+              0,
+              0
+            ]
+          },
+          {
+            "pet_id": 406,
+            "skill_id": 702047100,
+            "damage_param_change": 23,
+            "damage_param_result": 106,
+            "sp_energy_skill": 0,
+            "damage_param_pet_id": 3,
+            "skill_name": "应对！追打",
+            "skill_desc": "造成魔伤，1连击，<desc_id=1015>应对状态</>：本技能变为3连击。",
+            "skill_energy_cost": [
+              3
+            ],
+            "skill_target_type": 1,
+            "skill_target_count": 1,
+            "skill_priority": 5,
+            "skill_damage_type": 3,
+            "skill_feature": 4,
+            "skill_cd_round": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "cast_moment": 11,
+      "exec_index": 102
+    },
+    {
+      "type": 2,
+      "group_id": 11,
+      "buff_change": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20620100,
+        "type": 3
+      },
+      "sync_data": {
+        "pet_sync_info": [
+          {
+            "pet_id": 406,
+            "buff_id": 20620100,
+            "buff_stack_change": 0,
+            "buff_stack_result": 0
+          }
+        ]
+      },
+      "cast_moment": 11,
+      "exec_index": 104
+    },
+    {
+      "type": 10,
+      "group_id": 11,
+      "cast_moment": 7,
+      "show_letters": {
+        "caster_id": 3,
+        "target_id": 406,
+        "buff_id": 20351070,
+        "pet_id": 406
+      },
+      "exec_index": 117
+    },
+    {
+      "type": 3,
+      "group_id": 12,
+      "buff_trigger": {
+        "caster_id": 406,
+        "target_id": 406,
+        "buff_id": 20620100,
+        "buffbase_ids": [
+          2062010
+        ],
+        "perform_type": 0
+      },
+      "is_group_head": true,
+      "cast_moment": 11,
+      "group_ref": 11,
+      "exec_index": 103
+    }
+  ],
+  "source": {
+    "relay_row": 136435,
+    "round": 5,
+    "note": "Wire array groups differ from exec_index order; magAtk buff removal exec255 occurs AFTER hits exec41..46 and stack8 update exec62.",
+    "inference": "Under current level60 damage/stat model, all six 59-damage hits are compatible with base magAtk214, live magAtk+40%, power75+20 and defender magDef270. Conditional model agreement, not universal calibration."
+  },
+  "before_buffs": {
+    "attacker": [
+      {
+        "id": 20010816,
+        "layers": 1,
+        "leftRounds": 996,
+        "hidden": false
+      },
+      {
+        "id": 20010827,
+        "layers": 1,
+        "leftRounds": 996,
+        "hidden": false
+      },
+      {
+        "id": 20860020,
+        "layers": 1,
+        "leftRounds": 996,
+        "hidden": false
+      },
+      {
+        "id": 20530070,
+        "layers": 1,
+        "leftRounds": 995,
+        "hidden": false
+      },
+      {
+        "id": 20170880,
+        "layers": 1,
+        "leftRounds": 996,
+        "hidden": false
+      },
+      {
+        "id": 20430030,
+        "layers": 1,
+        "leftRounds": 996,
+        "hidden": false
+      },
+      {
+        "id": 20230440,
+        "layers": 2,
+        "leftRounds": 996,
+        "hidden": false
+      },
+      {
+        "id": 20450052,
+        "layers": 3,
+        "leftRounds": 996,
+        "hidden": false
+      },
+      {
+        "id": 20350760,
+        "layers": 1,
+        "leftRounds": 997,
+        "hidden": false
+      },
+      {
+        "id": 20010010,
+        "layers": 4,
+        "leftRounds": 998,
+        "hidden": false
+      },
+      {
+        "id": 20010020,
+        "layers": 4,
+        "leftRounds": 998,
+        "hidden": false
+      },
+      {
+        "id": 20351070,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": true
+      }
+    ],
+    "defender": [
+      {
+        "id": 20010821,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20010826,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20860020,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20170880,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      },
+      {
+        "id": 20920210,
+        "layers": 1,
+        "leftRounds": 999,
+        "hidden": false
+      }
+    ]
+  },
+  "ordered_context": {
+    "attacker": {
+      "memberId": "enemy-5",
+      "id": 410173,
+      "iconId": 3177,
+      "petBaseId": 3177,
+      "petId": 406,
+      "rosterIndex": 5,
+      "side": 1,
+      "petName": "咔咔鸟",
+      "name": "咔咔鸟",
+      "nickname": "合成昵称甲",
+      "level": 60,
+      "currentHp": 205,
+      "hpSource": "battle_attr[25]",
+      "maxHp": 371,
+      "hpPercent": 55,
+      "energy": 1,
+      "maxEnergy": 10,
+      "stats": {},
+      "initialStats": {},
+      "battleStats": {
+        "hp": 371,
+        "phyAtk": 0,
+        "magAtk": 0,
+        "phyDef": 0,
+        "magDef": 0,
+        "spd": 0
+      },
+      "battleStatsBasis": "natured_base",
+      "revealedBaseStats": {
+        "hp": 371
+      },
+      "talentEvidence": {},
+      "moves": [],
+      "selectedMoves": [],
+      "slotCount": 4,
+      "buffs": [
+        {
+          "id": 20010816,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20010827,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20530070,
+          "layers": 1,
+          "leftRounds": 995,
+          "hidden": false,
+          "name": "龙噬印记",
+          "passive": false
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20430030,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20230440,
+          "layers": 2,
+          "leftRounds": 996,
+          "hidden": false,
+          "name": "伤害增加",
+          "passive": false
+        },
+        {
+          "id": 20450052,
+          "layers": 3,
+          "leftRounds": 996,
+          "hidden": false,
+          "name": "咔咔冲刺",
+          "passive": false
+        },
+        {
+          "id": 20350760,
+          "layers": 1,
+          "leftRounds": 997,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20010010,
+          "layers": 4,
+          "leftRounds": 998,
+          "hidden": false,
+          "passive": false,
+          "name": "物攻等级提升"
+        },
+        {
+          "id": 20010020,
+          "layers": 4,
+          "leftRounds": 998,
+          "hidden": false,
+          "passive": false,
+          "name": "魔攻等级提升"
+        },
+        {
+          "id": 20351070,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": true,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20231140,
+          "layers": 1,
+          "passive": false,
+          "name": ""
+        }
+      ],
+      "battleBuffs": [
+        {
+          "id": 20010816,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20010827,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20530070,
+          "layers": 1,
+          "leftRounds": 995,
+          "hidden": false,
+          "name": "龙噬印记"
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20430030,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20230440,
+          "layers": 2,
+          "leftRounds": 996,
+          "hidden": false,
+          "name": "伤害增加"
+        },
+        {
+          "id": 20450052,
+          "layers": 3,
+          "leftRounds": 996,
+          "hidden": false,
+          "name": "咔咔冲刺"
+        },
+        {
+          "id": 20350760,
+          "layers": 1,
+          "leftRounds": 997,
+          "hidden": false
+        },
+        {
+          "id": 20010010,
+          "layers": 4,
+          "leftRounds": 998,
+          "hidden": false
+        },
+        {
+          "id": 20010020,
+          "layers": 4,
+          "leftRounds": 998,
+          "hidden": false
+        },
+        {
+          "id": 20351070,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": true
+        },
+        {
+          "id": 20231140,
+          "layers": 1
+        }
+      ],
+      "effectiveTraitId": 200125,
+      "enteredTurn": 2,
+      "entryActionCount": 3,
+      "carriedSkillIds": null,
+      "bloodId": 3,
+      "nature": 22,
+      "naturePosOverride": 0,
+      "natureNegOverride": 0,
+      "alive": true,
+      "cuteStacks": 0,
+      "stage": 3,
+      "stageFrom": null,
+      "stageName": "",
+      "stageBaseConfId": null,
+      "stageLowered": false,
+      "stageRace": null,
+      "liveContext": {
+        "turn": 5,
+        "weather": null,
+        "rosters": {
+          "self": [
+            {
+              "member_id": "404",
+              "types": [
+                "龙系",
+                "幽系"
+              ],
+              "hp": 285
+            },
+            {
+              "member_id": "401",
+              "types": [
+                "水系",
+                "翼系"
+              ],
+              "hp": 359
+            },
+            {
+              "member_id": "402",
+              "types": [
+                "火系",
+                "草系"
+              ],
+              "hp": 521
+            },
+            {
+              "member_id": "403",
+              "types": [
+                "地系",
+                "恶系"
+              ],
+              "hp": 352
+            },
+            {
+              "member_id": "405",
+              "types": [
+                "水系"
+              ],
+              "hp": 434
+            },
+            {
+              "member_id": "406",
+              "types": [
+                "翼系",
+                "普通系"
+              ],
+              "hp": 205
+            }
+          ],
+          "opponent": [
+            {
+              "member_id": "1",
+              "types": [
+                "恶系"
+              ],
+              "hp": 411
+            },
+            {
+              "member_id": "2",
+              "types": [
+                "翼系"
+              ],
+              "hp": 379
+            },
+            {
+              "member_id": "3",
+              "types": [
+                "机械系",
+                "虫系"
+              ],
+              "hp": 531
+            },
+            {
+              "member_id": "4",
+              "types": [
+                "幽系",
+                "幻系"
+              ],
+              "hp": 417
+            },
+            {
+              "member_id": "5",
+              "types": [
+                "幻系",
+                "光系"
+              ],
+              "hp": 362
+            },
+            {
+              "member_id": "6",
+              "types": [
+                "光系"
+              ],
+              "hp": 0
+            }
+          ]
+        }
+      }
+    },
+    "defender": {
+      "memberId": "my-2",
+      "id": 1801016,
+      "iconId": 3753,
+      "petBaseId": 3753,
+      "petId": 3,
+      "rosterIndex": 2,
+      "side": 0,
+      "petName": "飞飞钥",
+      "name": "飞飞钥",
+      "nickname": "飞飞钥",
+      "level": 60,
+      "currentHp": 531,
+      "hpSource": "battle_attr[25]",
+      "maxHp": 531,
+      "hpPercent": 100,
+      "energy": 9,
+      "maxEnergy": 10,
+      "stats": {
+        "hp": 459,
+        "phyAtk": 123,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "initialStats": {
+        "hp": 459,
+        "phyAtk": 123,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "battleStats": {
+        "hp": 531,
+        "phyAtk": 116,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "battleStatsBasis": "natured_base",
+      "revealedBaseStats": {
+        "hp": 531,
+        "phyAtk": 116,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "talentEvidence": {
+        "source": "battle_common_pet_info.attribute_info",
+        "selected_ids": [
+          5,
+          4,
+          1
+        ],
+        "dimensions": {
+          "hp": {
+            "talent": 48,
+            "talent_add_value": 8,
+            "base_value": 359,
+            "effort_add": 100,
+            "total_race": 146
+          },
+          "phyAtk": {
+            "talent": 0,
+            "talent_add_value": 0,
+            "base_value": 73,
+            "effort_add": 50,
+            "total_race": 57
+          },
+          "magAtk": {
+            "talent": 0,
+            "talent_add_value": 0,
+            "base_value": 121,
+            "effort_add": 50,
+            "total_race": 101
+          },
+          "phyDef": {
+            "talent": 48,
+            "talent_add_value": 8,
+            "base_value": 140,
+            "effort_add": 50,
+            "total_race": 94
+          },
+          "magDef": {
+            "talent": 42,
+            "talent_add_value": 7,
+            "base_value": 220,
+            "effort_add": 50,
+            "total_race": 170
+          },
+          "spd": {
+            "talent": 0,
+            "talent_add_value": 0,
+            "base_value": 76,
+            "effort_add": 50,
+            "total_race": 60
+          }
+        }
+      },
+      "moves": [
+        {
+          "slot": 1,
+          "skill_id": 7070140,
+          "skillId": 7070140,
+          "skillName": "磁暴",
+          "moveName": "磁暴",
+          "name": "磁暴",
+          "energy_cost": 2,
+          "damage_type": 3,
+          "skill_desc": "造成魔伤，本技能位于1号或3号位时威力+30，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 2,
+          "skill_id": 7150260,
+          "skillId": 7150260,
+          "skillName": "飞羽",
+          "moveName": "飞羽",
+          "name": "飞羽",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "<desc_id=1005>迅捷</>，驱散敌方1种<desc_id=1012>增益</>。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 3,
+          "skill_id": 7150270,
+          "skillId": 7150270,
+          "skillName": "风隐",
+          "moveName": "风隐",
+          "name": "风隐",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "敌方和自己均<desc_id=1003>脱离</>，<desc_id=1020>先手</>-1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 4,
+          "skill_id": 7070010,
+          "skillId": 7070010,
+          "skillName": "械斗",
+          "moveName": "械斗",
+          "name": "械斗",
+          "energy_cost": 1,
+          "damage_type": 2,
+          "skill_desc": "造成物伤，本技能位于1号位时威力+60，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        }
+      ],
+      "selectedMoves": [
+        {
+          "slot": 1,
+          "skill_id": 7070140,
+          "skillId": 7070140,
+          "skillName": "磁暴",
+          "moveName": "磁暴",
+          "name": "磁暴",
+          "energy_cost": 2,
+          "damage_type": 3,
+          "skill_desc": "造成魔伤，本技能位于1号或3号位时威力+30，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 2,
+          "skill_id": 7150260,
+          "skillId": 7150260,
+          "skillName": "飞羽",
+          "moveName": "飞羽",
+          "name": "飞羽",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "<desc_id=1005>迅捷</>，驱散敌方1种<desc_id=1012>增益</>。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 3,
+          "skill_id": 7150270,
+          "skillId": 7150270,
+          "skillName": "风隐",
+          "moveName": "风隐",
+          "name": "风隐",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "敌方和自己均<desc_id=1003>脱离</>，<desc_id=1020>先手</>-1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 4,
+          "skill_id": 7070010,
+          "skillId": 7070010,
+          "skillName": "械斗",
+          "moveName": "械斗",
+          "name": "械斗",
+          "energy_cost": 1,
+          "damage_type": 2,
+          "skill_desc": "造成物伤，本技能位于1号位时威力+60，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        }
+      ],
+      "slotCount": 4,
+      "buffs": [
+        {
+          "id": 20010821,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": true,
+          "name": ""
+        },
+        {
+          "id": 20010826,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": true,
+          "name": ""
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": true,
+          "name": ""
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20920210,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        }
+      ],
+      "battleBuffs": [
+        {
+          "id": 20010821,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20010826,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20920210,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        }
+      ],
+      "effectiveTraitId": 200300,
+      "enteredTurn": 5,
+      "entryActionCount": 1,
+      "carriedSkillIds": [
+        7070140,
+        7150260,
+        7150270,
+        7070010
+      ],
+      "bloodId": 17,
+      "nature": 26,
+      "naturePosOverride": 0,
+      "natureNegOverride": 0,
+      "alive": true,
+      "cuteStacks": 0,
+      "stage": 2,
+      "stageFrom": null,
+      "stageName": "",
+      "stageBaseConfId": null,
+      "stageLowered": false,
+      "stageRace": null,
+      "liveContext": {
+        "turn": 5,
+        "weather": null,
+        "rosters": {
+          "self": [
+            {
+              "member_id": "1",
+              "types": [
+                "恶系"
+              ],
+              "hp": 411
+            },
+            {
+              "member_id": "2",
+              "types": [
+                "翼系"
+              ],
+              "hp": 379
+            },
+            {
+              "member_id": "3",
+              "types": [
+                "机械系",
+                "虫系"
+              ],
+              "hp": 531
+            },
+            {
+              "member_id": "4",
+              "types": [
+                "幽系",
+                "幻系"
+              ],
+              "hp": 417
+            },
+            {
+              "member_id": "5",
+              "types": [
+                "幻系",
+                "光系"
+              ],
+              "hp": 362
+            },
+            {
+              "member_id": "6",
+              "types": [
+                "光系"
+              ],
+              "hp": 0
+            }
+          ],
+          "opponent": [
+            {
+              "member_id": "404",
+              "types": [
+                "龙系",
+                "幽系"
+              ],
+              "hp": 285
+            },
+            {
+              "member_id": "401",
+              "types": [
+                "水系",
+                "翼系"
+              ],
+              "hp": 359
+            },
+            {
+              "member_id": "402",
+              "types": [
+                "火系",
+                "草系"
+              ],
+              "hp": 521
+            },
+            {
+              "member_id": "403",
+              "types": [
+                "地系",
+                "恶系"
+              ],
+              "hp": 352
+            },
+            {
+              "member_id": "405",
+              "types": [
+                "水系"
+              ],
+              "hp": 434
+            },
+            {
+              "member_id": "406",
+              "types": [
+                "翼系",
+                "普通系"
+              ],
+              "hp": 205
+            }
+          ]
+        }
+      }
+    }
+  },
+  "wire_order_context": {
+    "attacker": {
+      "memberId": "enemy-5",
+      "id": 410173,
+      "iconId": 3177,
+      "petBaseId": 3177,
+      "petId": 406,
+      "rosterIndex": 5,
+      "side": 1,
+      "petName": "咔咔鸟",
+      "name": "咔咔鸟",
+      "nickname": "合成昵称甲",
+      "level": 60,
+      "currentHp": 205,
+      "hpSource": "battle_attr[25]",
+      "maxHp": 371,
+      "hpPercent": 55,
+      "energy": 1,
+      "maxEnergy": 10,
+      "stats": {},
+      "initialStats": {},
+      "battleStats": {
+        "hp": 371,
+        "phyAtk": 0,
+        "magAtk": 0,
+        "phyDef": 0,
+        "magDef": 0,
+        "spd": 0
+      },
+      "battleStatsBasis": "natured_base",
+      "revealedBaseStats": {
+        "hp": 371
+      },
+      "talentEvidence": {},
+      "moves": [],
+      "selectedMoves": [],
+      "slotCount": 4,
+      "buffs": [
+        {
+          "id": 20010816,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20010827,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20530070,
+          "layers": 1,
+          "leftRounds": 995,
+          "hidden": false,
+          "passive": false,
+          "name": "龙噬印记"
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20430030,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20230440,
+          "layers": 2,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": "伤害增加"
+        },
+        {
+          "id": 20450052,
+          "layers": 3,
+          "leftRounds": 996,
+          "hidden": false,
+          "passive": false,
+          "name": "咔咔冲刺"
+        },
+        {
+          "id": 20350760,
+          "layers": 1,
+          "leftRounds": 997,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20010010,
+          "layers": 4,
+          "leftRounds": 998,
+          "hidden": false,
+          "passive": false,
+          "name": "物攻等级提升"
+        },
+        {
+          "id": 20351070,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": true,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20231140,
+          "layers": 1,
+          "passive": false,
+          "name": ""
+        }
+      ],
+      "battleBuffs": [
+        {
+          "id": 20010816,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20010827,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20530070,
+          "layers": 1,
+          "leftRounds": 995,
+          "hidden": false
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20430030,
+          "layers": 1,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20230440,
+          "layers": 2,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20450052,
+          "layers": 3,
+          "leftRounds": 996,
+          "hidden": false
+        },
+        {
+          "id": 20350760,
+          "layers": 1,
+          "leftRounds": 997,
+          "hidden": false
+        },
+        {
+          "id": 20010010,
+          "layers": 4,
+          "leftRounds": 998,
+          "hidden": false
+        },
+        {
+          "id": 20351070,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": true
+        },
+        {
+          "id": 20231140,
+          "layers": 1
+        }
+      ],
+      "effectiveTraitId": 200125,
+      "enteredTurn": 2,
+      "entryActionCount": 3,
+      "carriedSkillIds": null,
+      "bloodId": 3,
+      "nature": 22,
+      "naturePosOverride": 0,
+      "natureNegOverride": 0,
+      "alive": true,
+      "cuteStacks": 0,
+      "stage": 3,
+      "stageFrom": null,
+      "stageName": "",
+      "stageBaseConfId": null,
+      "stageLowered": false,
+      "stageRace": null,
+      "liveContext": {
+        "turn": 5,
+        "weather": null,
+        "rosters": {
+          "self": [
+            {
+              "member_id": "404",
+              "types": [
+                "龙系",
+                "幽系"
+              ],
+              "hp": 285
+            },
+            {
+              "member_id": "401",
+              "types": [
+                "水系",
+                "翼系"
+              ],
+              "hp": 359
+            },
+            {
+              "member_id": "402",
+              "types": [
+                "火系",
+                "草系"
+              ],
+              "hp": 521
+            },
+            {
+              "member_id": "403",
+              "types": [
+                "地系",
+                "恶系"
+              ],
+              "hp": 352
+            },
+            {
+              "member_id": "405",
+              "types": [
+                "水系"
+              ],
+              "hp": 434
+            },
+            {
+              "member_id": "406",
+              "types": [
+                "翼系",
+                "普通系"
+              ],
+              "hp": 205
+            }
+          ],
+          "opponent": [
+            {
+              "member_id": "1",
+              "types": [
+                "恶系"
+              ],
+              "hp": 411
+            },
+            {
+              "member_id": "2",
+              "types": [
+                "翼系"
+              ],
+              "hp": 379
+            },
+            {
+              "member_id": "3",
+              "types": [
+                "机械系",
+                "虫系"
+              ],
+              "hp": 531
+            },
+            {
+              "member_id": "4",
+              "types": [
+                "幽系",
+                "幻系"
+              ],
+              "hp": 417
+            },
+            {
+              "member_id": "5",
+              "types": [
+                "幻系",
+                "光系"
+              ],
+              "hp": 362
+            },
+            {
+              "member_id": "6",
+              "types": [
+                "光系"
+              ],
+              "hp": 0
+            }
+          ]
+        }
+      }
+    },
+    "defender": {
+      "memberId": "my-2",
+      "id": 1801016,
+      "iconId": 3753,
+      "petBaseId": 3753,
+      "petId": 3,
+      "rosterIndex": 2,
+      "side": 0,
+      "petName": "飞飞钥",
+      "name": "飞飞钥",
+      "nickname": "飞飞钥",
+      "level": 60,
+      "currentHp": 531,
+      "hpSource": "battle_attr[25]",
+      "maxHp": 531,
+      "hpPercent": 100,
+      "energy": 9,
+      "maxEnergy": 10,
+      "stats": {
+        "hp": 459,
+        "phyAtk": 123,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "initialStats": {
+        "hp": 459,
+        "phyAtk": 123,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "battleStats": {
+        "hp": 531,
+        "phyAtk": 116,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "battleStatsBasis": "natured_base",
+      "revealedBaseStats": {
+        "hp": 531,
+        "phyAtk": 116,
+        "magAtk": 171,
+        "phyDef": 190,
+        "magDef": 270,
+        "spd": 126
+      },
+      "talentEvidence": {
+        "source": "battle_common_pet_info.attribute_info",
+        "selected_ids": [
+          5,
+          4,
+          1
+        ],
+        "dimensions": {
+          "hp": {
+            "talent": 48,
+            "talent_add_value": 8,
+            "base_value": 359,
+            "effort_add": 100,
+            "total_race": 146
+          },
+          "phyAtk": {
+            "talent": 0,
+            "talent_add_value": 0,
+            "base_value": 73,
+            "effort_add": 50,
+            "total_race": 57
+          },
+          "magAtk": {
+            "talent": 0,
+            "talent_add_value": 0,
+            "base_value": 121,
+            "effort_add": 50,
+            "total_race": 101
+          },
+          "phyDef": {
+            "talent": 48,
+            "talent_add_value": 8,
+            "base_value": 140,
+            "effort_add": 50,
+            "total_race": 94
+          },
+          "magDef": {
+            "talent": 42,
+            "talent_add_value": 7,
+            "base_value": 220,
+            "effort_add": 50,
+            "total_race": 170
+          },
+          "spd": {
+            "talent": 0,
+            "talent_add_value": 0,
+            "base_value": 76,
+            "effort_add": 50,
+            "total_race": 60
+          }
+        }
+      },
+      "moves": [
+        {
+          "slot": 1,
+          "skill_id": 7070140,
+          "skillId": 7070140,
+          "skillName": "磁暴",
+          "moveName": "磁暴",
+          "name": "磁暴",
+          "energy_cost": 2,
+          "damage_type": 3,
+          "skill_desc": "造成魔伤，本技能位于1号或3号位时威力+30，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 2,
+          "skill_id": 7150260,
+          "skillId": 7150260,
+          "skillName": "飞羽",
+          "moveName": "飞羽",
+          "name": "飞羽",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "<desc_id=1005>迅捷</>，驱散敌方1种<desc_id=1012>增益</>。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 3,
+          "skill_id": 7150270,
+          "skillId": 7150270,
+          "skillName": "风隐",
+          "moveName": "风隐",
+          "name": "风隐",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "敌方和自己均<desc_id=1003>脱离</>，<desc_id=1020>先手</>-1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 4,
+          "skill_id": 7070010,
+          "skillId": 7070010,
+          "skillName": "械斗",
+          "moveName": "械斗",
+          "name": "械斗",
+          "energy_cost": 1,
+          "damage_type": 2,
+          "skill_desc": "造成物伤，本技能位于1号位时威力+60，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        }
+      ],
+      "selectedMoves": [
+        {
+          "slot": 1,
+          "skill_id": 7070140,
+          "skillId": 7070140,
+          "skillName": "磁暴",
+          "moveName": "磁暴",
+          "name": "磁暴",
+          "energy_cost": 2,
+          "damage_type": 3,
+          "skill_desc": "造成魔伤，本技能位于1号或3号位时威力+30，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 2,
+          "skill_id": 7150260,
+          "skillId": 7150260,
+          "skillName": "飞羽",
+          "moveName": "飞羽",
+          "name": "飞羽",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "<desc_id=1005>迅捷</>，驱散敌方1种<desc_id=1012>增益</>。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 3,
+          "skill_id": 7150270,
+          "skillId": 7150270,
+          "skillName": "风隐",
+          "moveName": "风隐",
+          "name": "风隐",
+          "energy_cost": 1,
+          "damage_type": 1,
+          "skill_desc": "敌方和自己均<desc_id=1003>脱离</>，<desc_id=1020>先手</>-1。",
+          "cd": 0,
+          "state": 1
+        },
+        {
+          "slot": 4,
+          "skill_id": 7070010,
+          "skillId": 7070010,
+          "skillName": "械斗",
+          "moveName": "械斗",
+          "name": "械斗",
+          "energy_cost": 1,
+          "damage_type": 2,
+          "skill_desc": "造成物伤，本技能位于1号位时威力+60，<desc_id=1033>传动</>1。",
+          "cd": 0,
+          "state": 1
+        }
+      ],
+      "slotCount": 4,
+      "buffs": [
+        {
+          "id": 20010821,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": true,
+          "name": ""
+        },
+        {
+          "id": 20010826,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": true,
+          "name": ""
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": true,
+          "name": ""
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        },
+        {
+          "id": 20920210,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false,
+          "passive": false,
+          "name": ""
+        }
+      ],
+      "battleBuffs": [
+        {
+          "id": 20010821,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20010826,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20860020,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20170880,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        },
+        {
+          "id": 20920210,
+          "layers": 1,
+          "leftRounds": 999,
+          "hidden": false
+        }
+      ],
+      "effectiveTraitId": 200300,
+      "enteredTurn": 5,
+      "entryActionCount": 1,
+      "carriedSkillIds": [
+        7070140,
+        7150260,
+        7150270,
+        7070010
+      ],
+      "bloodId": 17,
+      "nature": 26,
+      "naturePosOverride": 0,
+      "natureNegOverride": 0,
+      "alive": true,
+      "cuteStacks": 0,
+      "stage": 2,
+      "stageFrom": null,
+      "stageName": "",
+      "stageBaseConfId": null,
+      "stageLowered": false,
+      "stageRace": null,
+      "liveContext": {
+        "turn": 5,
+        "weather": null,
+        "rosters": {
+          "self": [
+            {
+              "member_id": "1",
+              "types": [
+                "恶系"
+              ],
+              "hp": 411
+            },
+            {
+              "member_id": "2",
+              "types": [
+                "翼系"
+              ],
+              "hp": 379
+            },
+            {
+              "member_id": "3",
+              "types": [
+                "机械系",
+                "虫系"
+              ],
+              "hp": 531
+            },
+            {
+              "member_id": "4",
+              "types": [
+                "幽系",
+                "幻系"
+              ],
+              "hp": 417
+            },
+            {
+              "member_id": "5",
+              "types": [
+                "幻系",
+                "光系"
+              ],
+              "hp": 362
+            },
+            {
+              "member_id": "6",
+              "types": [
+                "光系"
+              ],
+              "hp": 0
+            }
+          ],
+          "opponent": [
+            {
+              "member_id": "404",
+              "types": [
+                "龙系",
+                "幽系"
+              ],
+              "hp": 285
+            },
+            {
+              "member_id": "401",
+              "types": [
+                "水系",
+                "翼系"
+              ],
+              "hp": 359
+            },
+            {
+              "member_id": "402",
+              "types": [
+                "火系",
+                "草系"
+              ],
+              "hp": 521
+            },
+            {
+              "member_id": "403",
+              "types": [
+                "地系",
+                "恶系"
+              ],
+              "hp": 352
+            },
+            {
+              "member_id": "405",
+              "types": [
+                "水系"
+              ],
+              "hp": 434
+            },
+            {
+              "member_id": "406",
+              "types": [
+                "翼系",
+                "普通系"
+              ],
+              "hp": 205
+            }
+          ]
+        }
+      }
+    }
+  },
+  "anonymization": {
+    "version": 1,
+    "purpose": "Public regression fixture with synthetic identities and capture labels",
+    "method": "Deterministic consistent substitution across the four fixtures; numeric identifier types and digit lengths retained",
+    "scope": [
+      "battle identifiers",
+      "nonlocal individual or account identifiers when present",
+      "custom pet nicknames",
+      "capture file labels"
+    ],
+    "mechanics_preserved": true
+  }
+}

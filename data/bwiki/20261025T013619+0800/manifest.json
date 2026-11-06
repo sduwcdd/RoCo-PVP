@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "20261025T013619+0800",
+  "started_at": "2026-10-25T01:36:19+08:00",
+  "timezone": "Asia/Shanghai",
+  "source": "https://wiki.biligame.com/nrc/",
+  "complete": true,
+  "pages": {
+    "Index": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Index&oldid=18793",
+      "fetched_at": "2026-10-25T01:36:20+08:00",
+      "sha256": "c5b8c3c0375e03e0b1de6c0dd6615e7ba2eb2f6222ef32723d4814df82f10184",
+      "bytes": 120845,
+      "raw_file": "raw/Index.gz",
+      "title": "Module:Pets/data/Index",
+      "page_id": 6394,
+      "revision_id": 18793,
+      "revision_timestamp": "2026-10-19T12:28:51Z",
+      "content_sha256": "0b50a4e8e503e89814e6f2176e40dc5d046895ec9ee0596d128f113457946098"
+    },
+    "Catalog": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Catalog&oldid=19223",
+      "fetched_at": "2026-10-25T01:36:21+08:00",
+      "sha256": "045522a20c9b5122ded2f1eac02fecf89c465b42206095a6d50c61f116f551d2",
+      "bytes": 991244,
+      "raw_file": "raw/Catalog.gz",
+      "title": "Module:Pets/data/Catalog",
+      "page_id": 6395,
+      "revision_id": 19223,
+      "revision_timestamp": "2026-10-24T04:34:11Z",
+      "content_sha256": "02fe03fa944bfbf659f62d5c4303c9177b11156c7d90be6e2f091652d65d575f"
+    },
+    "Skills": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764",
+      "fetched_at": "2026-10-25T01:36:22+08:00",
+      "sha256": "3c6d0887ee947601cce9d188b759e0edf2797a43ba08c84e2184160973355804",
+      "bytes": 207631,
+      "raw_file": "raw/Skills.gz",
+      "title": "Module:Pets/data/Skills",
+      "page_id": 6396,
+      "revision_id": 18764,
+      "revision_timestamp": "2026-10-19T12:08:03Z",
+      "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0"
+    },
+    "Learnsets": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Learnsets&oldid=18761",
+      "fetched_at": "2026-10-25T01:36:23+08:00",
+      "sha256": "0477fb0c4597488b14b457ad9d167dd6524900267bff8bc72c64fd6268c6881c",
+      "bytes": 582677,
+      "raw_file": "raw/Learnsets.gz",
+      "title": "Module:Pets/data/Learnsets",
+      "page_id": 6397,
+      "revision_id": 18761,
+      "revision_timestamp": "2026-10-19T12:07:57Z",
+      "content_sha256": "752718e3f32c6ab2aa343a7e98bcb7147f5e0fdc604e35006c989dc8265b2981"
+    },
+    "Terms": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078",
+      "fetched_at": "2026-10-25T01:36:24+08:00",
+      "sha256": "ceaf97a0f8edacbf08fb80c239cfc823ba027186cf81e1d7254581b786cb5040",
+      "bytes": 7138,
+      "raw_file": "raw/Terms.gz",
+      "title": "Module:Pets/data/Terms",
+      "page_id": 6401,
+      "revision_id": 7078,
+      "revision_timestamp": "2026-09-09T10:00:15Z",
+      "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488"
+    },
+    "Types": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Types&oldid=7079",
+      "fetched_at": "2026-10-25T01:36:25+08:00",
+      "sha256": "fdcc0e61151a0d6db7e98486a80d714d38e80774cf427b2a4720020bf7e3ab3e",
+      "bytes": 38094,
+      "raw_file": "raw/Types.gz",
+      "title": "Module:Pets/data/Types",
+      "page_id": 6400,
+      "revision_id": 7079,
+      "revision_timestamp": "2026-09-09T10:01:01Z",
+      "content_sha256": "22999381d35c64ba50a71e695a9de5c6a45d0fb486fd6541ba6c785d70c2ab57"
+    },
+    "Config": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Config&oldid=18789",
+      "fetched_at": "2026-10-25T01:36:26+08:00",
+      "sha256": "ea51ea973f366fcc2ce26482be5a0ae860d59b8c4ad42dce455b439283de55e3",
+      "bytes": 5580,
+      "raw_file": "raw/Config.gz",
+      "title": "Module:Pets/data/Config",
+      "page_id": 6393,
+      "revision_id": 18789,
+      "revision_timestamp": "2026-10-19T12:28:25Z",
+      "content_sha256": "1e08f10653dc7e836f808b2fe496ce7cd842d85509eb521ab59f016f44926607"
+    },
+    "Natures": {
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Natures/data&oldid=18014",
+      "fetched_at": "2026-10-25T01:36:26+08:00",
+      "sha256": "b8abcdf8b6e543fb18e95d3bc1ae781396932c6e1b20c2f7229537055dd7d5f5",
+      "bytes": 4859,
+      "raw_file": "raw/Natures.gz",
+      "title": "Module:Natures/data",
+      "page_id": 16020,
+      "revision_id": 18014,
+      "revision_timestamp": "2026-10-07T17:38:42Z",
+      "content_sha256": "0905c9d2f90fac953f7297714525b90b4fac96f4a24a50905f20755bcafd093e"
+    },
+    "dex-html": {
+      "url": "https://wiki.biligame.com/nrc/%E7%B2%BE%E7%81%B5%E5%9B%BE%E9%89%B4",
+      "fetched_at": "2026-10-25T01:36:27+08:00",
+      "sha256": "4ad8ff5730278770bfa99a88cf6c7a88dfb3347bb8d7e7accc3a985fc882854e",
+      "bytes": 1416027,
+      "raw_file": "raw/dex-html.gz"
+    }
+  },
+  "completed_at": "2026-10-25T01:36:27+08:00",
+  "source_version": "s4-2026-10-16",
+  "validation": {
+    "complete": true,
+    "expected_forms": 633,
+    "parsed_forms": 633,
+    "move_count": 579,
+    "trait_count": 246,
+    "learnset_count": 312,
+    "term_count": 54,
+    "type_combination_count": 120,
+    "nature_count": 30,
+    "consistency_errors": [],
+    "mechanics_verified": false,
+    "missing_mechanics_data": [
+      "nature multipliers and talent stat formula",
+      "executable skill and trait effects",
+      "action and event resolution order"
+    ],
+    "note": "Complete means eight selected modules parsed with resolved core references, not full gameplay coverage."
+  },
+  "catalog_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+  "popular_builds_enabled": false,
+  "portrait_count": 633
+}

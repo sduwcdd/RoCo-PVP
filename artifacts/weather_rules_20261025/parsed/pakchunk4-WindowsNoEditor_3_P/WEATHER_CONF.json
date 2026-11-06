@@ -1,0 +1,762 @@
+{
+  "1": {
+    "id": 1,
+    "weather_type": 1,
+    "name": {
+      "localization_id": 1,
+      "text": "晴天"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 40,
+          "text": "晴天"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 41,
+          "text": "晴天"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 42,
+          "text": "晴天"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 43,
+          "text": "夜晚"
+        }
+      }
+    ],
+    "temperature": 5,
+    "report_tip": {
+      "localization_id": 2,
+      "text": "天气放晴了"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_qingtian2_png.img_qingtian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_qingtian_png.img_qingtian_png'"
+  },
+  "2": {
+    "id": 2,
+    "weather_type": 2,
+    "name": {
+      "localization_id": 3,
+      "text": "阴天"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 44,
+          "text": "阴天"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 45,
+          "text": "阴天"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 46,
+          "text": "阴天"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 43,
+          "text": "夜晚"
+        }
+      }
+    ],
+    "report_tip": {
+      "localization_id": 4,
+      "text": "天气转阴了"
+    }
+  },
+  "3": {
+    "id": 3,
+    "weather_type": 3,
+    "name": {
+      "localization_id": 5,
+      "text": "小雨"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 47,
+          "text": "雨天"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 48,
+          "text": "雨天"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 49,
+          "text": "雨天"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 50,
+          "text": "雨天"
+        }
+      }
+    ],
+    "temperature": -3,
+    "report_tip": {
+      "localization_id": 6,
+      "text": "开始下小雨了"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xiayutian2_png.img_xiayutian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xiayutian_png.img_xiayutian_png'",
+    "name_for_battle": {
+      "localization_id": 7,
+      "text": "雨天"
+    },
+    "desc_for_battle": {
+      "localization_id": 8,
+      "text": "双方的水系技能威力+75%。"
+    }
+  },
+  "4": {
+    "id": 4,
+    "weather_type": 4,
+    "name": {
+      "localization_id": 9,
+      "text": "大雨"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 47,
+          "text": "雨天"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 48,
+          "text": "雨天"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 49,
+          "text": "雨天"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 50,
+          "text": "雨天"
+        }
+      }
+    ],
+    "temperature": -5,
+    "report_tip": {
+      "localization_id": 10,
+      "text": "开始下大雨了"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xiayutian2_png.img_xiayutian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xiayutian_png.img_xiayutian_png'",
+    "name_for_battle": {
+      "localization_id": 11,
+      "text": "雨天"
+    },
+    "desc_for_battle": {
+      "localization_id": 12,
+      "text": "双方的水系技能威力+75%。"
+    }
+  },
+  "5": {
+    "id": 5,
+    "weather_type": 5,
+    "name": {
+      "localization_id": 13,
+      "text": "暴风雪"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 51,
+          "text": "雪天"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 52,
+          "text": "雪天"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 53,
+          "text": "雪天"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 54,
+          "text": "雪天"
+        }
+      }
+    ],
+    "temperature": -10,
+    "report_tip": {
+      "localization_id": 14,
+      "text": "开始下大雪了"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xuetian2_png.img_xuetian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xuetian_png.img_xuetian_png'",
+    "name_for_battle": {
+      "localization_id": 15,
+      "text": "暴风雪"
+    },
+    "desc_for_battle": {
+      "localization_id": 16,
+      "text": "双方每回合结束获得2层冻结。（冰系精灵免疫此效果）"
+    }
+  },
+  "6": {
+    "id": 6,
+    "weather_type": 6,
+    "name": {
+      "localization_id": 17,
+      "text": "沙尘暴"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 55,
+          "text": "沙暴"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 56,
+          "text": "沙暴"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 57,
+          "text": "沙暴"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 58,
+          "text": "沙暴"
+        }
+      }
+    ],
+    "report_tip": {
+      "localization_id": 18,
+      "text": "刮起了沙尘暴"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_shabaotian2_png.img_shabaotian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_shabaotian_png.img_shabaotian_png'",
+    "name_for_battle": {
+      "localization_id": 19,
+      "text": "沙暴"
+    },
+    "desc_for_battle": {
+      "localization_id": 20,
+      "text": "双方的地系技能能耗减半。"
+    }
+  },
+  "7": {
+    "id": 7,
+    "weather_type": 7,
+    "name": {
+      "localization_id": 21,
+      "text": "雾天"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 59,
+          "text": "雾天"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 60,
+          "text": "雾天"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 61,
+          "text": "雾天"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 62,
+          "text": "雾天"
+        }
+      }
+    ],
+    "report_tip": {
+      "localization_id": 22,
+      "text": "开始起雾了"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_wutian2_png.img_wutian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_wutian_png.img_wutian_png'"
+  },
+  "8": {
+    "id": 8,
+    "weather_type": 8,
+    "name": {
+      "localization_id": 23,
+      "text": "异常天气"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 63,
+          "text": "异常"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 64,
+          "text": "异常"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 65,
+          "text": "异常"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 66,
+          "text": "异常"
+        }
+      }
+    ],
+    "report_tip": {
+      "localization_id": 24,
+      "text": "出现异常天气了"
+    }
+  },
+  "9": {
+    "id": 9,
+    "weather_type": 9,
+    "name": {
+      "localization_id": 25,
+      "text": "小雪"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 51,
+          "text": "雪天"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 52,
+          "text": "雪天"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 53,
+          "text": "雪天"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 54,
+          "text": "雪天"
+        }
+      }
+    ],
+    "temperature": -10,
+    "report_tip": {
+      "localization_id": 26,
+      "text": "开始下小雪了"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xuetian2_png.img_xuetian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_xuetian_png.img_xuetian_png'",
+    "name_for_battle": {
+      "localization_id": 27,
+      "text": "暴风雪"
+    },
+    "desc_for_battle": {
+      "localization_id": 28,
+      "text": "双方每回合结束获得2层冻结。（冰系精灵免疫此效果）"
+    }
+  },
+  "10": {
+    "id": 10,
+    "weather_type": 10,
+    "name": {
+      "localization_id": 29,
+      "text": "空白天气"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 67,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 68,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 69,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 70,
+          "text": "无天气"
+        }
+      }
+    ]
+  },
+  "11": {
+    "id": 11,
+    "weather_type": 11,
+    "name": {
+      "localization_id": 30,
+      "text": "噩梦空间"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 71,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 72,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 73,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 74,
+          "text": "噩梦"
+        }
+      }
+    ],
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_emengtian2_png.img_emengtian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_emengtian_png.img_emengtian_png'"
+  },
+  "12": {
+    "id": 12,
+    "weather_type": 12,
+    "name": {
+      "localization_id": 31,
+      "text": "噩梦领地"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 71,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 72,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 73,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 74,
+          "text": "噩梦"
+        }
+      }
+    ],
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_emengtian2_png.img_emengtian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_emengtian_png.img_emengtian_png'"
+  },
+  "13": {
+    "id": 13,
+    "weather_type": 13,
+    "name": {
+      "localization_id": 32,
+      "text": "加强版带雾气噩梦天气"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 71,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 72,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 73,
+          "text": "噩梦"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 74,
+          "text": "噩梦"
+        }
+      }
+    ],
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_emengtian2_png.img_emengtian2_png'",
+    "show_icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_emengtian_png.img_emengtian_png'"
+  },
+  "14": {
+    "id": 14,
+    "weather_type": 14,
+    "name": {
+      "localization_id": 33,
+      "text": "雷鸣"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 75,
+          "text": "雷鸣"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 76,
+          "text": "雷鸣"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 77,
+          "text": "雷鸣"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 78,
+          "text": "雷鸣"
+        }
+      }
+    ],
+    "report_tip": {
+      "localization_id": 34,
+      "text": "开始雷鸣了"
+    },
+    "icon": "PaperSprite'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/Combat/Frames/img_leidian2_png.img_leidian2_png'",
+    "name_for_battle": {
+      "localization_id": 35,
+      "text": "雷鸣"
+    },
+    "desc_for_battle": {
+      "localization_id": 36,
+      "text": "双方每回合结束获得1层引电。（电系精灵免疫此效果）"
+    }
+  },
+  "15": {
+    "id": 15,
+    "weather_type": 15,
+    "name": {
+      "localization_id": 37,
+      "text": "永夜"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 79,
+          "text": "永夜"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 80,
+          "text": "永夜"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 81,
+          "text": "永夜"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 82,
+          "text": "永夜"
+        }
+      }
+    ]
+  },
+  "16": {
+    "id": 16,
+    "weather_type": 16,
+    "name": {
+      "localization_id": 38,
+      "text": "流星"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 67,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 68,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 69,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 70,
+          "text": "无天气"
+        }
+      }
+    ]
+  },
+  "17": {
+    "id": 17,
+    "weather_type": 17,
+    "name": {
+      "localization_id": 39,
+      "text": "流星雨"
+    },
+    "tod_param": [
+      {
+        "available_time_enum": 1,
+        "des": {
+          "localization_id": 67,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 2,
+        "des": {
+          "localization_id": 68,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 3,
+        "des": {
+          "localization_id": 69,
+          "text": "无天气"
+        }
+      },
+      {
+        "available_time_enum": 4,
+        "des": {
+          "localization_id": 70,
+          "text": "无天气"
+        }
+      }
+    ]
+  }
+}

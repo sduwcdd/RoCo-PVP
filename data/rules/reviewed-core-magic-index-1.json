@@ -1,0 +1,4034 @@
+{
+  "schema_version": 1,
+  "version": "installed-all-core-magic-index-v1",
+  "source_scope": "installed patch3 candidate all33 bag/player magic mappings; no online mount or NPC/player eligibility inferred",
+  "online_mount_verified": false,
+  "records": {
+    "104001": {
+      "item_id": 104001,
+      "name": "光合治愈",
+      "player_magic_id": 100001,
+      "skill_id": 7010010,
+      "status": "supported_experiment",
+      "blockers": [],
+      "item_row": {
+        "id": 104001,
+        "sort_id": 301002,
+        "name": {
+          "localization_id": 1654,
+          "text": "光合治愈"
+        },
+        "is_release": true,
+        "description": {
+          "localization_id": 1655,
+          "text": "对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1656,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100001,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100001,
+        "skill_id": 7010010
+      },
+      "skill_row": {
+        "id": 7010010,
+        "name": {
+          "localization_id": 1625,
+          "text": "光合治愈"
+        },
+        "desc": {
+          "localization_id": 1626,
+          "text": "对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038008,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Treat_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010010.7010010'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104001,
+        "name": {
+          "localization_id": 4,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104002": {
+      "item_id": 104002,
+      "name": "愿力强化",
+      "player_magic_id": 100002,
+      "skill_id": 7010020,
+      "status": "blocked_reviewed_chain",
+      "blockers": [
+        "Existing detailed wish/evolution evidence gates remain authoritative."
+      ],
+      "item_row": {
+        "id": 104002,
+        "sort_id": 301003,
+        "name": {
+          "localization_id": 1657,
+          "text": "愿力强化"
+        },
+        "is_release": true,
+        "description": {
+          "localization_id": 1658,
+          "text": "对任意系别血脉的精灵使用，本回合技能栏首个技能替换为【愿力冲击】，每场战斗可使用2次，冷却3回合。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1659,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100002,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 99,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100002,
+        "skill_id": 7010020,
+        "round": 3
+      },
+      "skill_row": {
+        "id": 7010020,
+        "name": {
+          "localization_id": 1635,
+          "text": "愿力强化"
+        },
+        "desc": {
+          "localization_id": 1636,
+          "text": "对任意系别血脉的精灵使用，本回合技能栏首个技能替换为【愿力冲击】，每场战斗可使用2次，冷却3回合。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          4,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1039002,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 1038019,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_Up_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010020.7010020'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      "battle_item_row": {
+        "id": 104002,
+        "name": {
+          "localization_id": 5,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 2
+      },
+      "missing_effect_ids": []
+    },
+    "104003": {
+      "item_id": 104003,
+      "name": "闪焰爆发",
+      "player_magic_id": 100003,
+      "skill_id": 7010030,
+      "status": "supported_experiment",
+      "blockers": [],
+      "item_row": {
+        "id": 104003,
+        "sort_id": 301004,
+        "name": {
+          "localization_id": 1660,
+          "text": "闪焰爆发"
+        },
+        "description": {
+          "localization_id": 1661,
+          "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1662,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100003,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100003,
+        "skill_id": 7010030
+      },
+      "skill_row": {
+        "id": 7010030,
+        "name": {
+          "localization_id": 1645,
+          "text": "闪焰爆发"
+        },
+        "desc": {
+          "localization_id": 1646,
+          "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038009,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_Up_PlayerFire",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010030.7010030'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          3
+        ]
+      },
+      "battle_item_row": {
+        "id": 104003,
+        "name": {
+          "localization_id": 6,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104004": {
+      "item_id": 104004,
+      "name": "节流术",
+      "player_magic_id": 100004,
+      "skill_id": 7010040,
+      "status": "supported_experiment",
+      "blockers": [],
+      "item_row": {
+        "id": 104004,
+        "sort_id": 301005,
+        "name": {
+          "localization_id": 1663,
+          "text": "节流术"
+        },
+        "description": {
+          "localization_id": 1664,
+          "text": "对水系或者水血脉的精灵使用，本回合技能不扣除能耗。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1665,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100004,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100004,
+        "skill_id": 7010040
+      },
+      "skill_row": {
+        "id": 7010040,
+        "name": {
+          "localization_id": 1653,
+          "text": "节流术"
+        },
+        "desc": {
+          "localization_id": 1654,
+          "text": "对水系或者水血脉的精灵使用，本回合技能不扣除能耗。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038010,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_Up_PlayerWater",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010040.7010040'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          4
+        ]
+      },
+      "battle_item_row": {
+        "id": 104004,
+        "name": {
+          "localization_id": 7,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104005": {
+      "item_id": 104005,
+      "name": "遁逃术",
+      "player_magic_id": 100005,
+      "skill_id": 7010050,
+      "status": "blocked",
+      "blockers": [
+        "Escape opcode67 and description establish escape intent, but PVP escape eligibility, terminal result/winner and score/resource effects are not supplied. Do not convert escape into a fabricated victory/loss."
+      ],
+      "item_row": {
+        "id": 104005,
+        "sort_id": 301006,
+        "name": {
+          "localization_id": 1666,
+          "text": "遁逃术"
+        },
+        "description": {
+          "localization_id": 1667,
+          "text": "使用后，能够逃离战斗"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010050.7010050'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010050.7010050'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1668,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100005,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100005,
+        "skill_id": 7010050
+      },
+      "skill_row": {
+        "id": 7010050,
+        "name": {
+          "localization_id": 1661,
+          "text": "遁逃术"
+        },
+        "desc": {
+          "localization_id": 1662,
+          "text": "逃离当前战斗"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1067001,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Run",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010050.7010050'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104005,
+        "name": {
+          "localization_id": 8,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104006": {
+      "item_id": 104006,
+      "name": "噩梦纠缠",
+      "player_magic_id": 100006,
+      "skill_id": 7010060,
+      "status": "blocked",
+      "blockers": [
+        "Effects20010440 and20010441 referenced by patch3 skill are absent from available EFFECT_CONF table; cannot omit those operations.",
+        "Pollution bloodline23 eligibility, same-type/same-kind candidate universe, slot duplicates and full +10% attribute/HP transfer have no complete reviewed resolver."
+      ],
+      "item_row": {
+        "id": 104006,
+        "sort_id": 301007,
+        "name": {
+          "localization_id": 1669,
+          "text": "噩梦纠缠"
+        },
+        "description": {
+          "localization_id": 1670,
+          "text": "对污染血脉的精灵使用，将其携带的技能替换为同系别同类型的随机技能，并增加10%全属性。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1671,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100006,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100006,
+        "skill_id": 7010060
+      },
+      "skill_row": {
+        "id": 7010060,
+        "name": {
+          "localization_id": 1665,
+          "text": "噩梦纠缠"
+        },
+        "desc": {
+          "localization_id": 1666,
+          "text": "对污染血脉的精灵使用，将其携带的技能替换为同系别同类型的随机技能，并增加10%全属性。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038018,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010440,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010441,
+            "cast_moment": 11
+          },
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Black_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010060.7010060'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          23
+        ]
+      },
+      "battle_item_row": {
+        "id": 104006,
+        "name": {
+          "localization_id": 9,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": [
+        20010440,
+        20010441
+      ]
+    },
+    "104007": {
+      "item_id": 104007,
+      "name": "进化之力",
+      "player_magic_id": 100007,
+      "skill_id": 7010070,
+      "status": "blocked_reviewed_chain",
+      "blockers": [
+        "Existing detailed wish/evolution evidence gates remain authoritative."
+      ],
+      "item_row": {
+        "id": 104007,
+        "sort_id": 301001,
+        "name": {
+          "localization_id": 1672,
+          "text": "进化之力"
+        },
+        "is_release": true,
+        "description": {
+          "localization_id": 1673,
+          "text": "对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1674,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100007,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1,
+        "item_quality": 5
+      },
+      "player_magic_row": {
+        "id": 100007,
+        "skill_id": 7010070,
+        "tag": 1
+      },
+      "skill_row": {
+        "id": 7010070,
+        "name": {
+          "localization_id": 1679,
+          "text": "进化之力"
+        },
+        "desc": {
+          "localization_id": 1680,
+          "text": "对首领血脉的精灵使用，可以使该精灵在本场战斗中进化，部分精灵会激活远古血脉。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1041001,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Boss_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010070.7010070'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          19
+        ]
+      },
+      "battle_item_row": {
+        "id": 104007,
+        "name": {
+          "localization_id": 10,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104008": {
+      "item_id": 104008,
+      "name": "测试-治愈",
+      "player_magic_id": 100008,
+      "skill_id": 7010013,
+      "status": "blocked",
+      "blockers": [
+        "Test item description says consume1magic/recover10energy, but mapped Skill7010013 describes NPC heal; conflicting item/skill intent cannot be silently normalized."
+      ],
+      "item_row": {
+        "id": 104008,
+        "sort_id": 301008,
+        "name": {
+          "localization_id": 1675,
+          "text": "测试-治愈"
+        },
+        "description": {
+          "localization_id": 1676,
+          "text": "消耗1魔力，恢复10能量"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010070.7010070'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1677,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100008,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100008,
+        "skill_id": 7010013
+      },
+      "skill_row": {
+        "id": 7010013,
+        "name": {
+          "localization_id": 1631,
+          "text": "光合治愈"
+        },
+        "desc": {
+          "localization_id": 1632,
+          "text": "萌萌使用，对任意血脉的精灵，立即恢复精灵15%生命，每回合结束恢复15%生命持续3回合。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 2,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038013,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Treat_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010010.7010010'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": null,
+      "missing_effect_ids": []
+    },
+    "104009": {
+      "item_id": 104009,
+      "name": "唤名",
+      "player_magic_id": 100009,
+      "skill_id": 7010075,
+      "status": "blocked",
+      "blockers": [
+        "Scene/NPC-specific magic has incomplete skill description and lacks reviewed scene eligibility/summon state; no PVP alias is established."
+      ],
+      "item_row": {
+        "id": 104009,
+        "sort_id": 301009,
+        "name": {
+          "localization_id": 1678,
+          "text": "唤名"
+        },
+        "is_release": true,
+        "description": {
+          "localization_id": 1679,
+          "text": "呼唤精灵被吞噬的名字。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010075.7010075'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1680,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100009,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100009,
+        "skill_id": 7010075
+      },
+      "skill_row": {
+        "id": 7010075,
+        "name": {
+          "localization_id": 1689,
+          "text": "唤名"
+        },
+        "desc": {
+          "localization_id": 1690,
+          "text": "文本待补充"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 2,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1004046,
+            "cast_moment": 7
+          },
+          {
+            "effect_id": 1004002,
+            "cast_moment": 7
+          },
+          {
+            "effect_id": 1005100,
+            "cast_moment": 7
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/A1/G6_A1_NameMagic",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010075.7010075'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104009,
+        "name": {
+          "localization_id": 11,
+          "text": "唤名"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 1
+      },
+      "missing_effect_ids": []
+    },
+    "104010": {
+      "item_id": 104010,
+      "name": "召唤亚瑟",
+      "player_magic_id": 100010,
+      "skill_id": 7010076,
+      "status": "blocked",
+      "blockers": [
+        "Scene/NPC-specific magic has incomplete skill description and lacks reviewed scene eligibility/summon state; no PVP alias is established."
+      ],
+      "item_row": {
+        "id": 104010,
+        "sort_id": 301010,
+        "name": {
+          "localization_id": 1681,
+          "text": "召唤亚瑟"
+        },
+        "is_release": true,
+        "description": {
+          "localization_id": 1682,
+          "text": "召唤亚瑟帮助战斗。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010076.7010076'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1683,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100010,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100010,
+        "skill_id": 7010076
+      },
+      "skill_row": {
+        "id": 7010076,
+        "name": {
+          "localization_id": 1691,
+          "text": "召唤亚瑟"
+        },
+        "desc": {
+          "localization_id": 1692,
+          "text": "文本待补充"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 1,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1004053,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_None",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010076.7010076'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104010,
+        "name": {
+          "localization_id": 12,
+          "text": "召唤亚瑟"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 1
+      },
+      "missing_effect_ids": []
+    },
+    "104011": {
+      "item_id": 104011,
+      "name": "光合治愈",
+      "player_magic_id": 100011,
+      "skill_id": 7010011,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104011,
+        "name": {
+          "localization_id": 1684,
+          "text": "光合治愈"
+        },
+        "description": {
+          "localization_id": 1685,
+          "text": "萌萌使用，对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1686,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100011,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100011,
+        "skill_id": 7010011
+      },
+      "skill_row": {
+        "id": 7010011,
+        "name": {
+          "localization_id": 1627,
+          "text": "光合治愈"
+        },
+        "desc": {
+          "localization_id": 1628,
+          "text": "萌萌使用，对任意血脉的精灵，立即恢复精灵15%生命，每回合结束恢复15%生命持续3回合。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 2,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038013,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Treat_NPC_01601",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010010.7010010'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104011,
+        "name": {
+          "localization_id": 13,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104012": {
+      "item_id": 104012,
+      "name": "光合治愈",
+      "player_magic_id": 100012,
+      "skill_id": 7010012,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104012,
+        "name": {
+          "localization_id": 1687,
+          "text": "光合治愈"
+        },
+        "description": {
+          "localization_id": 1688,
+          "text": "普通学生使用，对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1689,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100012,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100012,
+        "skill_id": 7010012
+      },
+      "skill_row": {
+        "id": 7010012,
+        "name": {
+          "localization_id": 1629,
+          "text": "光合治愈"
+        },
+        "desc": {
+          "localization_id": 1630,
+          "text": "普通学生使用，对任意血脉的精灵，立即恢复精灵15%生命，每回合结束恢复15%生命持续3回合。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 2,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038013,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Treat",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010010.7010010'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104012,
+        "name": {
+          "localization_id": 14,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104013": {
+      "item_id": 104013,
+      "name": "光合治愈",
+      "player_magic_id": 100013,
+      "skill_id": 7010013,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104013,
+        "name": {
+          "localization_id": 1690,
+          "text": "光合治愈"
+        },
+        "description": {
+          "localization_id": 1691,
+          "text": "玩家形态NPC使用，对任意血脉的精灵使用，立即回复15%生命，每回合结束时回复15%生命，持续3回合。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010010.7010010'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010010.7010010'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1692,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100013,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100013,
+        "skill_id": 7010013
+      },
+      "skill_row": {
+        "id": 7010013,
+        "name": {
+          "localization_id": 1631,
+          "text": "光合治愈"
+        },
+        "desc": {
+          "localization_id": 1632,
+          "text": "萌萌使用，对任意血脉的精灵，立即恢复精灵15%生命，每回合结束恢复15%生命持续3回合。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 2,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038013,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Treat_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010010.7010010'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104013,
+        "name": {
+          "localization_id": 15,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104014": {
+      "item_id": 104014,
+      "name": "愿力强化",
+      "player_magic_id": 100014,
+      "skill_id": 7010021,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104014,
+        "name": {
+          "localization_id": 1693,
+          "text": "愿力强化"
+        },
+        "description": {
+          "localization_id": 1694,
+          "text": "可丽希亚使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1695,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100014,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 99,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100014,
+        "skill_id": 7010021,
+        "round": 3
+      },
+      "skill_row": {
+        "id": 7010021,
+        "name": {
+          "localization_id": 1637,
+          "text": "愿力强化"
+        },
+        "desc": {
+          "localization_id": 1638,
+          "text": "可丽希亚使用，对任意系别血脉的精灵使用，使用后技能栏第一个技能本回合被替换为「愿力冲击」。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          4,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1039002,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010020.7010020'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104014,
+        "name": {
+          "localization_id": 16,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104015": {
+      "item_id": 104015,
+      "name": "愿力强化",
+      "player_magic_id": 100015,
+      "skill_id": 7010022,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104015,
+        "name": {
+          "localization_id": 1696,
+          "text": "愿力强化"
+        },
+        "description": {
+          "localization_id": 1697,
+          "text": "普通学生使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1698,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100015,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 99,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100015,
+        "skill_id": 7010022,
+        "round": 3
+      },
+      "skill_row": {
+        "id": 7010022,
+        "name": {
+          "localization_id": 1639,
+          "text": "愿力强化"
+        },
+        "desc": {
+          "localization_id": 1640,
+          "text": "普通学生使用，对任意系别血脉的精灵使用，使用后技能栏第一个技能本回合被替换为「愿力冲击」。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          4,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1039002,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010020.7010020'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104015,
+        "name": {
+          "localization_id": 17,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104016": {
+      "item_id": 104016,
+      "name": "愿力强化",
+      "player_magic_id": 100016,
+      "skill_id": 7010023,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104016,
+        "name": {
+          "localization_id": 1699,
+          "text": "愿力强化"
+        },
+        "description": {
+          "localization_id": 1700,
+          "text": "费得使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1701,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100016,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 99,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100016,
+        "skill_id": 7010023,
+        "round": 3
+      },
+      "skill_row": {
+        "id": 7010023,
+        "name": {
+          "localization_id": 1641,
+          "text": "愿力强化"
+        },
+        "desc": {
+          "localization_id": 1642,
+          "text": "费得使用，对任意系别血脉的精灵使用，使用后技能栏第一个技能本回合被替换为「愿力冲击」。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          4,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1039002,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010020.7010020'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104016,
+        "name": {
+          "localization_id": 18,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104017": {
+      "item_id": 104017,
+      "name": "愿力强化",
+      "player_magic_id": 100017,
+      "skill_id": 7010024,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104017,
+        "name": {
+          "localization_id": 1702,
+          "text": "愿力强化"
+        },
+        "description": {
+          "localization_id": 1703,
+          "text": "卡普使用，对任意血脉的精灵使用，使用后技能栏第一个技能被替换为「愿力冲击」技能，每场战斗仅可使用x次。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010020.7010020'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010020.7010020'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1704,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100017,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 99,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100017,
+        "skill_id": 7010024,
+        "round": 3
+      },
+      "skill_row": {
+        "id": 7010024,
+        "name": {
+          "localization_id": 1643,
+          "text": "愿力强化"
+        },
+        "desc": {
+          "localization_id": 1644,
+          "text": "卡普使用，对任意系别血脉的精灵使用，使用后技能栏第一个技能本回合被替换为「愿力冲击」。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          4,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1039002,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010020.7010020'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104017,
+        "name": {
+          "localization_id": 19,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104018": {
+      "item_id": 104018,
+      "name": "闪焰爆发",
+      "player_magic_id": 100018,
+      "skill_id": 7010031,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104018,
+        "name": {
+          "localization_id": 1705,
+          "text": "闪焰爆发"
+        },
+        "description": {
+          "localization_id": 1706,
+          "text": "沃尔克使用，对火系或者火血脉的精灵，本回合技能威力提升150%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1707,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100018,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100018,
+        "skill_id": 7010031
+      },
+      "skill_row": {
+        "id": 7010031,
+        "name": {
+          "localization_id": 1647,
+          "text": "闪焰爆发"
+        },
+        "desc": {
+          "localization_id": 1648,
+          "text": "沃尔克使用，对火系或者火血脉的精灵，本回合技能威力提升150%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038014,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010030.7010030'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104018,
+        "name": {
+          "localization_id": 20,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104019": {
+      "item_id": 104019,
+      "name": "闪焰爆发",
+      "player_magic_id": 100019,
+      "skill_id": 7010032,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104019,
+        "name": {
+          "localization_id": 1708,
+          "text": "闪焰爆发"
+        },
+        "description": {
+          "localization_id": 1709,
+          "text": "普通学生使用，对火系或者火血脉的精灵，本回合技能威力提升150%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1710,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100019,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100019,
+        "skill_id": 7010032
+      },
+      "skill_row": {
+        "id": 7010032,
+        "name": {
+          "localization_id": 1649,
+          "text": "闪焰爆发"
+        },
+        "desc": {
+          "localization_id": 1650,
+          "text": "普通学生使用，对火系或者火血脉的精灵，本回合技能威力提升150%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038014,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010030.7010030'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104019,
+        "name": {
+          "localization_id": 21,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104020": {
+      "item_id": 104020,
+      "name": "闪焰爆发",
+      "player_magic_id": 100020,
+      "skill_id": 7010033,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104020,
+        "name": {
+          "localization_id": 1711,
+          "text": "闪焰爆发"
+        },
+        "description": {
+          "localization_id": 1712,
+          "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010030.7010030'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010030.7010030'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1713,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100020,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100020,
+        "skill_id": 7010033
+      },
+      "skill_row": {
+        "id": 7010033,
+        "name": {
+          "localization_id": 1651,
+          "text": "闪焰爆发"
+        },
+        "desc": {
+          "localization_id": 1652,
+          "text": "对火系或者火血脉的精灵使用，本回合技能威力提升150%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038014,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010030.7010030'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104020,
+        "name": {
+          "localization_id": 22,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104021": {
+      "item_id": 104021,
+      "name": "节流术",
+      "player_magic_id": 100021,
+      "skill_id": 7010041,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104021,
+        "name": {
+          "localization_id": 1714,
+          "text": "节流术"
+        },
+        "description": {
+          "localization_id": 1715,
+          "text": "路易斯使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1716,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100021,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100021,
+        "skill_id": 7010041
+      },
+      "skill_row": {
+        "id": 7010041,
+        "name": {
+          "localization_id": 1655,
+          "text": "节流术"
+        },
+        "desc": {
+          "localization_id": 1656,
+          "text": "路易斯使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038015,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010040.7010040'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104021,
+        "name": {
+          "localization_id": 23,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104022": {
+      "item_id": 104022,
+      "name": "节流术",
+      "player_magic_id": 100022,
+      "skill_id": 7010042,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104022,
+        "name": {
+          "localization_id": 1717,
+          "text": "节流术"
+        },
+        "description": {
+          "localization_id": 1718,
+          "text": "普通学生使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1719,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100022,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100022,
+        "skill_id": 7010042
+      },
+      "skill_row": {
+        "id": 7010042,
+        "name": {
+          "localization_id": 1657,
+          "text": "节流术"
+        },
+        "desc": {
+          "localization_id": 1658,
+          "text": "普通学生使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038015,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010040.7010040'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104022,
+        "name": {
+          "localization_id": 24,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104023": {
+      "item_id": 104023,
+      "name": "节流术",
+      "player_magic_id": 100023,
+      "skill_id": 7010043,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104023,
+        "name": {
+          "localization_id": 1720,
+          "text": "节流术"
+        },
+        "description": {
+          "localization_id": 1721,
+          "text": "玩家形态NPC使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010040.7010040'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010040.7010040'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1722,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100023,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100023,
+        "skill_id": 7010043
+      },
+      "skill_row": {
+        "id": 7010043,
+        "name": {
+          "localization_id": 1659,
+          "text": "节流术"
+        },
+        "desc": {
+          "localization_id": 1660,
+          "text": "路易斯使用，对水系或者水血脉的精灵，本回合技能不扣除能耗。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038015,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Blood_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010040.7010040'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104023,
+        "name": {
+          "localization_id": 25,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104024": {
+      "item_id": 104024,
+      "name": "噩梦纠缠",
+      "player_magic_id": 100024,
+      "skill_id": 7010061,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias.",
+        "Referenced effects absent from bound EFFECT_CONF: [20010440, 20010441]"
+      ],
+      "item_row": {
+        "id": 104024,
+        "name": {
+          "localization_id": 1723,
+          "text": "噩梦纠缠"
+        },
+        "description": {
+          "localization_id": 1724,
+          "text": "库伦使用，攻防提升30%，无法更换精灵"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1725,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100024,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100024,
+        "skill_id": 7010061
+      },
+      "skill_row": {
+        "id": 7010061,
+        "name": {
+          "localization_id": 1667,
+          "text": "噩梦纠缠"
+        },
+        "desc": {
+          "localization_id": 1668,
+          "text": "库伦使用，攻防提升30%，无法更换精灵"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038011,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010440,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010441,
+            "cast_moment": 11
+          },
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Black_Player",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010060.7010060'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104024,
+        "name": {
+          "localization_id": 26,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": [
+        20010440,
+        20010441
+      ]
+    },
+    "104025": {
+      "item_id": 104025,
+      "name": "噩梦纠缠",
+      "player_magic_id": 100025,
+      "skill_id": 7010062,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias.",
+        "Referenced effects absent from bound EFFECT_CONF: [20010440, 20010441]"
+      ],
+      "item_row": {
+        "id": 104025,
+        "name": {
+          "localization_id": 1726,
+          "text": "噩梦纠缠"
+        },
+        "description": {
+          "localization_id": 1727,
+          "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1728,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100025,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100025,
+        "skill_id": 7010062
+      },
+      "skill_row": {
+        "id": 7010062,
+        "name": {
+          "localization_id": 1669,
+          "text": "噩梦纠缠"
+        },
+        "desc": {
+          "localization_id": 1670,
+          "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038006,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010440,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010441,
+            "cast_moment": 11
+          },
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Black_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010060.7010060'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104025,
+        "name": {
+          "localization_id": 27,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": [
+        20010440,
+        20010441
+      ]
+    },
+    "104026": {
+      "item_id": 104026,
+      "name": "噩梦纠缠",
+      "player_magic_id": 100026,
+      "skill_id": 7010063,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias.",
+        "Referenced effects absent from bound EFFECT_CONF: [20010440, 20010441]"
+      ],
+      "item_row": {
+        "id": 104026,
+        "name": {
+          "localization_id": 1729,
+          "text": "噩梦纠缠"
+        },
+        "description": {
+          "localization_id": 1730,
+          "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1731,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100026,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100026,
+        "skill_id": 7010063
+      },
+      "skill_row": {
+        "id": 7010063,
+        "name": {
+          "localization_id": 1671,
+          "text": "噩梦纠缠"
+        },
+        "desc": {
+          "localization_id": 1672,
+          "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038006,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010440,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010441,
+            "cast_moment": 11
+          },
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Black_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010060.7010060'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104026,
+        "name": {
+          "localization_id": 28,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": [
+        20010440,
+        20010441
+      ]
+    },
+    "104027": {
+      "item_id": 104027,
+      "name": "噩梦纠缠",
+      "player_magic_id": 100027,
+      "skill_id": 7010064,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias.",
+        "Referenced effects absent from bound EFFECT_CONF: [20010440, 20010441]"
+      ],
+      "item_row": {
+        "id": 104027,
+        "name": {
+          "localization_id": 1732,
+          "text": "噩梦纠缠"
+        },
+        "description": {
+          "localization_id": 1733,
+          "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1734,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100027,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100027,
+        "skill_id": 7010064
+      },
+      "skill_row": {
+        "id": 7010064,
+        "name": {
+          "localization_id": 1673,
+          "text": "噩梦纠缠"
+        },
+        "desc": {
+          "localization_id": 1674,
+          "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038006,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010440,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010441,
+            "cast_moment": 11
+          },
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Black_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010060.7010060'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104027,
+        "name": {
+          "localization_id": 29,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": [
+        20010440,
+        20010441
+      ]
+    },
+    "104028": {
+      "item_id": 104028,
+      "name": "噩梦纠缠",
+      "player_magic_id": 100028,
+      "skill_id": 7010065,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias.",
+        "Referenced effects absent from bound EFFECT_CONF: [20010441, 20560360]"
+      ],
+      "item_row": {
+        "id": 104028,
+        "name": {
+          "localization_id": 1735,
+          "text": "噩梦纠缠"
+        },
+        "description": {
+          "localization_id": 1736,
+          "text": "恩佐使用，提升精灵属性，改变精灵技能。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1737,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100028,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100028,
+        "skill_id": 7010065
+      },
+      "skill_row": {
+        "id": 7010065,
+        "name": {
+          "localization_id": 1675,
+          "text": "噩梦纠缠"
+        },
+        "desc": {
+          "localization_id": 1676,
+          "text": "恩佐使用，提升精灵属性，改变精灵技能。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038017,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010441,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20560360,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 1004002,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          },
+          {
+            "effect_id": 1019010,
+            "cast_moment": 10
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Black_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010060.7010060'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104028,
+        "name": {
+          "localization_id": 30,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": [
+        20010441,
+        20560360
+      ]
+    },
+    "104029": {
+      "item_id": 104029,
+      "name": "进化之力",
+      "player_magic_id": 100029,
+      "skill_id": 7010071,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104029,
+        "name": {
+          "localization_id": 1738,
+          "text": "进化之力"
+        },
+        "description": {
+          "localization_id": 1739,
+          "text": "安妮使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1740,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100029,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100029,
+        "skill_id": 7010071
+      },
+      "skill_row": {
+        "id": 7010071,
+        "name": {
+          "localization_id": 1681,
+          "text": "进化之力"
+        },
+        "desc": {
+          "localization_id": 1682,
+          "text": "安妮使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化，部分精灵会激活远古血脉"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1041001,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Boss_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010070.7010070'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104029,
+        "name": {
+          "localization_id": 31,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104030": {
+      "item_id": 104030,
+      "name": "进化之力",
+      "player_magic_id": 100030,
+      "skill_id": 7010072,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104030,
+        "name": {
+          "localization_id": 1741,
+          "text": "进化之力"
+        },
+        "description": {
+          "localization_id": 1742,
+          "text": "皮卡使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1743,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100030,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100030,
+        "skill_id": 7010072
+      },
+      "skill_row": {
+        "id": 7010072,
+        "name": {
+          "localization_id": 1683,
+          "text": "进化之力"
+        },
+        "desc": {
+          "localization_id": 1684,
+          "text": "皮卡使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化，部分精灵会激活远古血脉"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1041001,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Boss_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010070.7010070'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104030,
+        "name": {
+          "localization_id": 32,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104031": {
+      "item_id": 104031,
+      "name": "进化之力",
+      "player_magic_id": 100031,
+      "skill_id": 7010073,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104031,
+        "name": {
+          "localization_id": 1744,
+          "text": "进化之力"
+        },
+        "description": {
+          "localization_id": 1745,
+          "text": "博得使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1746,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100031,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100031,
+        "skill_id": 7010073
+      },
+      "skill_row": {
+        "id": 7010073,
+        "name": {
+          "localization_id": 1685,
+          "text": "进化之力"
+        },
+        "desc": {
+          "localization_id": 1686,
+          "text": "博得使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化，部分精灵会激活远古血脉"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1041001,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Boss_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010070.7010070'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104031,
+        "name": {
+          "localization_id": 33,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104032": {
+      "item_id": 104032,
+      "name": "进化之力",
+      "player_magic_id": 100032,
+      "skill_id": 7010074,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias."
+      ],
+      "item_row": {
+        "id": 104032,
+        "name": {
+          "localization_id": 1747,
+          "text": "进化之力"
+        },
+        "description": {
+          "localization_id": 1748,
+          "text": "万事通使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化；部分精灵搭配首领信物，方可激活远古血脉。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010070.7010070'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010070.7010070'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1749,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100032,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100032,
+        "skill_id": 7010074
+      },
+      "skill_row": {
+        "id": 7010074,
+        "name": {
+          "localization_id": 1687,
+          "text": "进化之力"
+        },
+        "desc": {
+          "localization_id": 1688,
+          "text": "万事通使用，对首领血脉的精灵使用，可以使该精灵在本场战斗中进化，部分精灵会激活远古血脉"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1041001,
+            "cast_moment": 10
+          },
+          {},
+          {},
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Boss_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010070.7010070'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": {
+        "id": 104032,
+        "name": {
+          "localization_id": 34,
+          "text": "罗盘"
+        },
+        "legally_used_object": 1,
+        "model": "Blueprint'/Game/NewRoco/Modules/Core/Battle/BP_PlayerSkill_LuoPan.BP_PlayerSkill_LuoPan_C'",
+        "use_time_in_battle": 99
+      },
+      "missing_effect_ids": []
+    },
+    "104033": {
+      "item_id": 104033,
+      "name": "噩梦纠缠",
+      "player_magic_id": 100033,
+      "skill_id": 7010066,
+      "status": "blocked",
+      "blockers": [
+        "NPC-specific variant has distinct target/effect parameters and/or actor restrictions; shared name does not establish player PVP eligibility or an exact alias.",
+        "Referenced effects absent from bound EFFECT_CONF: [20010440, 20010441]"
+      ],
+      "item_row": {
+        "id": 104033,
+        "name": {
+          "localization_id": 1750,
+          "text": "噩梦纠缠"
+        },
+        "description": {
+          "localization_id": 1751,
+          "text": "恩佐使用，提升精灵属性，改变精灵技能。"
+        },
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/7010060.7010060'",
+        "big_icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/Item190/7010060.7010060'",
+        "TUIbutton_icon": "PaperSprite'/Game/NewRoco/Modules/System/MainUI/Raw/Atlas/MainUI/Frames/img_xingxingmofa_png.img_xingxingmofa_png'",
+        "type": 7,
+        "lable_type": 6,
+        "type_desc": {
+          "localization_id": 1752,
+          "text": "共鸣魔法"
+        },
+        "player_skill_id": 100033,
+        "icon_charging1": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "icon_charging2": "Texture2D'/Game/NewRoco/Modules/System/Common/Icon/BagItem/100660.100660'",
+        "initial_use_times": 1,
+        "can_stack": 1
+      },
+      "player_magic_row": {
+        "id": 100033,
+        "skill_id": 7010066
+      },
+      "skill_row": {
+        "id": 7010066,
+        "name": {
+          "localization_id": 1677,
+          "text": "噩梦纠缠"
+        },
+        "desc": {
+          "localization_id": 1678,
+          "text": "黑巫团使用，攻击，防御和速度属性提升10%。"
+        },
+        "energy_cost": [
+          0
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 9,
+        "skill_dam_type": 1,
+        "damage_type": 1,
+        "skill_priority": 1,
+        "target_type": 10,
+        "cd_round": [
+          999,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1038006,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010440,
+            "cast_moment": 10
+          },
+          {
+            "effect_id": 20010441,
+            "cast_moment": 11
+          },
+          {},
+          {
+            "effect_id": 1004027,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/Magic/G6_Magic_Black_NPC",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/7010060.7010060'",
+        "describe_type": [
+          0
+        ],
+        "target_blood_limit": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "battle_item_row": null,
+      "missing_effect_ids": [
+        20010440,
+        20010441
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "artifacts/core_magic_20261025/BAG_ITEM_CONF.json",
+      "sha256": "ac14fb469f72dfdcbaff4ca2c37518c0b82041748b1d76c63a7afca646938cfd"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/PLAYER_MAGIC_CONF.json",
+      "sha256": "ce933d2bef56e3a3adfd01244b7a179c8634acf799a0caf6ac6d80e1463e078a"
+    },
+    {
+      "path": "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_3_P/SKILL_CONF.json",
+      "sha256": "3f9671521bde11123716fc818be882fa96d8ac667d1bac2883f9a00a8738bd47"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_data.bytes",
+      "sha256": "743ea689053225402a1c29a6d08bee1d3fcdd948572b925bca28b30f11222455"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_local.bytes",
+      "sha256": "fe86364fcbd0911863e8d03bd981030f8495212b46156598fd90ffc25f11552e"
+    },
+    {
+      "path": "artifacts/core_magic_20261025/raw/BATTLE_ITEM_CONF_schema.non",
+      "sha256": "a4ceb1576129be4f5694c8b0a40acad3174b32830031ded4363ef20d83f4fd43"
+    }
+  ]
+}

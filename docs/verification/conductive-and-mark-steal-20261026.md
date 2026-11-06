@@ -1,0 +1,13 @@
+# 普通技能引电与保守印记偷取（2026-10-26）
+
+`lab/status_skill_runtime.py`及其来源配置接通7110450通电：普通75物伤和费用由既有执行器处理，随后1层引电由`weather_runtime.add_conductive`处理。当前catalog扫描只发现这1个直接引电技能。保留3022术语、20011586原BUFF和2001081原基元，继续使用同一weather_statuses存储、2层阈值、现有电系免疫、电系克制计算、消2层和离场生命周期；不另造放电伤害公式。普通status组件可走既有status.add分派，引电走共用conductive handler。放电事件保持间接weather effect，不伪装成普通直接击杀。
+
+`lab/mark_steal_runtime.py`与`mark_runtime.steal_one_mark`接拟寄生7130340的80魔伤后偷1层，以及200256回合末偷1层组件。两个来源共同指向1050010，Enum原名为ET_COPY_BUFF=50；配置保留完整技能/特性、安装监听和候选BUFF列表。
+
+仅在可以确定的状态下转移：敌方恰有一种可用印记、己方对应极性为空或同种且未满，且不存在多个无法区分的层贡献来源。精确从敌方扣1、己方加1，保留所有已知donor_sources并标注原偷取源，不通过改写历史伪造最早或最后一层。普通preflight在支付前识别未支持分支，after-hook在提交副本上处理当前实际印记，唯一事件token防重。
+
+以下没有足够来源，明确阻断：敌方正负两种都存在时选哪种、接收方同极性异种应覆盖还是跳过、满层偷取是否损失、多个贡献来源中选哪一层，以及双方200256同时偷时的顺序。没有直接套用已有“不同种替换同极性”的研究策略冒充偷取协议。若本次技能已因力竭触发调用者停止余下效果的策略，则偷取按同一策略跳过；trait round-end统一整相处理，才能预先检测双方顺序冲突。
+
+接入：status模块注册status_skill_components并在普通component dispatcher调用其preflight/execute；fragment合入research_context。偷取模块注册mark_steal_components；支付前preflight，普通技能提交后after_skill返回events并修改owned full state；200256调用round_end一次完整阶段。mark_runtime保留既有暗涌、属性sidecar、传动等改动，仅增加纯偷取primitive。
+
+新增3项独立定向测试覆盖共用放电、单一印记来源转移/幂等及未明分支阻断，已编译检查，未在并发配置更新窗口下扩展运行；由主智能体统一选择最终关键集成验证。未做实战校准，完整游戏BUFF图与当前线上语义未获验证。

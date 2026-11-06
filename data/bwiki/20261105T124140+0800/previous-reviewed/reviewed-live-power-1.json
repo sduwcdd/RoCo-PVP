@@ -1,0 +1,2268 @@
+{
+  "schema": "reviewed-live-power-1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": [
+    "data/external/skill.json",
+    "data/external/buff.json",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+    "vendor/洛克PVP助手/app/wwwroot/assets/producer-session-runtime.js"
+  ],
+  "policy": "current-state-source-power-before-shared-modifiers-with-separate-response-scenario",
+  "uncertainties": [
+    "Damage formula and integer HP step boundaries require broader live calibration.",
+    "No universal response multiplier is inferred from the old BUFFBASE editor label.",
+    "Unknown current HP, energy, slot or carried costs remain bounds or blockers; missing history is not zero."
+  ],
+  "skills": {
+    "7700001": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "c04b3a002bf0841cfa055a0ca974e9431520d5e4a74880d4e4f6919a9c0f4209",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700101,
+        "native_hash": "d545ab68a527094bda2b2e4ed72aa43921349a6852f5888c5a2495958f1e8bca",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700002": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "f708fe16bc3f3f03d58d6d9ca83c9d16bb0bcf6cf6d3ed21805f73a62fe5f8d6",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700102,
+        "native_hash": "348bbffcf442a65e6606b2cbeaa92bfa931ac047c919f8c5f9bd76b45caf545f",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700003": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "2a88ba6f720d81c03d8a1e43421c4efacda030b8d91c637135f4f4c017f6620e",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700103,
+        "native_hash": "78b0af6f2cf89f8a013705d35a5cd0047a6c7dbc278307dc1292159d0f1b52a7",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700004": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "fa1b9b2edbfa755b95df6def842157be17d4e862a2650b382a9058ff3606cea7",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700104,
+        "native_hash": "9b7adb415fdf87509b20c343b882615786e29c78eae24db3a1c6b22d40648b42",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700005": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "19b044ffb0365ca1a9c2dbec6d0435b2b1050b109b293b4cc0c9a5df630351b2",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700105,
+        "native_hash": "7c8089f7a4454412221cf3fa52059121f94982a7badea6654e847cb9c68485c1",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700007": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "f416d7bd8a794b3608e65d61b94bca37ab008584266d9007134461d8add04c5a",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700107,
+        "native_hash": "84a2c68af2ea8fbbe9e7f05a9a8db4ec3f9d53abdfeab6bd076954e30f0319af",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700008": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "2e5b659ccb904cb65ffe1bae459ab6da6951995989cac00441a7cf9d06c420ad",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700108,
+        "native_hash": "7642eaf0a11220fe67674d1b9c1ce5de49059ad4409c1892b6e3e07765c30ccb",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700009": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "b8dfbdaa1078c99c0856bc1f441c5608f74c8221a541cc174d3492f67154c7bd",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700109,
+        "native_hash": "b57c0fc0bb4b12fd5636da5d9503db876653e57969fe6ba3f0a21bcc9d7258b9",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700010": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "04fe9d62ce958b3fdd13555abc7e1ef1c9e31a76e2434204b92479d025a3f930",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700110,
+        "native_hash": "bce42dfc8f94c45f035b9a2c4d83188087b4569f7ffb9e9c1432ab8ca6e5aa66",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700011": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "c854275047119461c4f4bcbd1890ce8b7ebfd1991c32a0a475fa3cc09cb5ec98",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700111,
+        "native_hash": "14d27a47da93fda5af666ac0cad84932226c20c298c0d9dfba9f9027aacf7af4",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700012": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "ff0d91f0ad9d32c0d4a0edfa08441505c55ba32abd6c35dc1f2e1f3916ef34a1",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700112,
+        "native_hash": "6f904286827994eedc2ee1efe10b816e64ea1625f8a173a16e6ce6558febc08e",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700013": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "d5f1bc59777ae5bac31bb0a1d987f810baa47562b14bba213232fccb9574d33e",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700113,
+        "native_hash": "2fdadbe0091f9a56770113961443a5be166594b2dd22f9548f6f698deb56dbcf",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700014": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "1bf45fcb53cea2a6eb9eacbffd4fe39b2ebfc2bcf0456366e8ff7a285d54e013",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700114,
+        "native_hash": "2f5295a3fc4030c9dae67ec0bf15f7edbaeedf4ed952009cf2d3ace51311a829",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700015": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "857cc932c9c0fd203f05a7d905c8248e597b9f4d42b151edd7f100cdabae503e",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700115,
+        "native_hash": "414391c441c744de0870300d967ad86f7e297ce48289cc0c5234337ab4960bc0",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700016": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "860e7d5481e4d8dad603b707b8ab3369b69c487df9b8fbe17b592c6cb1188640",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700116,
+        "native_hash": "73f7f966162fc17e32c11a9ffd48770511ba2d5651dbe61132a0ce346285e99a",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700017": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "5aa8cd6ef754dd2ff3c747c4f4175abd85c9bf793bbb23e3472b2b8e71ed0349",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700117,
+        "native_hash": "4e5bd752295f68c15cc4f38ed2078ac60e92d14cd8fb177c4bdbedbe22b8b81c",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700018": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "f1af198b3ecea2955c617d4f827c5f39e869210562fc444c9a777dc6d0bb88f8",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700118,
+        "native_hash": "4a616be47c108b41836fa0f7552751cc9641abe01bce65e341aa5d3e240334e6",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7700019": {
+      "name": "愿力冲击",
+      "native_only": true,
+      "record_hash": null,
+      "native_hash": "53fb30ec51825d3809868aae49fdb8e4c9f9135f18c79eb9edca58dff58c1fe5",
+      "damage_rule": 15,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "hits": 1,
+      "response": {
+        "id": 7700119,
+        "native_hash": "964769c5e5dfee375a925092aea89d13bc2d88bf87f45dda9ef33b19f89eb6b6",
+        "damage_rule": 15,
+        "dam_para": [
+          200
+        ],
+        "components": [],
+        "hits": 1,
+        "source": "native skill_result / response replacement mapping"
+      },
+      "source_policy": "native_will_impact_normal_80_response_200",
+      "uncertainty": "未知血脉只用于明确标注的属性情景，不推定敌方选择或携带属性。"
+    },
+    "7030210": {
+      "name": "光能聚集",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%85%89%E8%83%BD%E8%81%9A%E9%9B%86",
+      "description": "造成魔伤，每次使用其他草系技能后，本技能威力永久+60。",
+      "record_hash": "e7870f4ecaaa537fbce5477e83464077c205a56f38ee8ff41ceb8c565ed3e68d",
+      "native_hash": "042f7bb558faaa9c16aee7a0577c92b76e68a149f5d73542b6672c9c4fcb71cb",
+      "damage_rule": 5,
+      "dam_para": [
+        100,
+        3,
+        0,
+        0,
+        60,
+        1,
+        1
+      ],
+      "components": [
+        {
+          "op": "carried_type_history"
+        }
+      ],
+      "source_policy": "shared_reviewed_skill_history_carried_other_type_use",
+      "source_evidence": {
+        "path": "data/rules/reviewed-skill-history-1.json",
+        "skill_id": 7030210
+      },
+      "uncertainty": "只累计本精灵已观测的其他草系技能使用；不累计光能聚集自身。中途观战或换槽历史不完整时阻断；敌方历史携带不确定时保留范围。"
+    },
+    "7110230": {
+      "name": "落雷",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%90%BD%E9%9B%B7",
+      "description": "造成魔伤，每次入场，本技能威力永久+40。",
+      "record_hash": "117ad8e1cfca733deab4d755963fb40f05dc3ca31dfbad469be984f7bcd1c53a",
+      "native_hash": "0e9bc5a46aee15ca854264953e9bdd79968540fe0a907f4e1a94b58fc1d31657",
+      "damage_rule": 32,
+      "dam_para": [
+        35,
+        0,
+        40
+      ],
+      "components": [
+        {
+          "op": "entry_history"
+        }
+      ],
+      "source_policy": "shared_reviewed_skill_history_member_enter",
+      "source_evidence": {
+        "path": "data/rules/reviewed-skill-history-1.json",
+        "skill_id": 7110230,
+        "component": "member.enter / power.add",
+        "initial_entry_included": true
+      },
+      "uncertainty": "与模拟器复用同一份入场威力组件；缺少完整入场历史或发生技能换槽时阻断。敌方未确认历史携带时，按0至已观测入场次数给出范围，不读取隐藏配招。尚未全量实战校准。"
+    },
+    "7020450": {
+      "name": "突袭",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%AA%81%E8%A2%AD",
+      "description": "造成魔伤，应对状态：本次技能威力变为3倍。",
+      "record_hash": "b2df4841ad9f736b29db5555f991e0a060971e9462769a5723c48a12e3d62b95",
+      "native_hash": "20a88a06b55915d0c451e416015a23274c0dc7139fd614f305d859b548c42b68",
+      "damage_rule": null,
+      "dam_para": [
+        70
+      ],
+      "components": [],
+      "response": {
+        "id": 7020451,
+        "native_hash": "786daa1c1b9061e004a6444cd263a84fc9303a8f228c8d2332fa7f4da3c78ac0",
+        "damage_rule": null,
+        "dam_para": [
+          210
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7020460": {
+      "name": "连续爪击",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%BF%9E%E7%BB%AD%E7%88%AA%E5%87%BB",
+      "description": "造成物伤，2连击，应对状态：本次技能连击数翻倍。",
+      "record_hash": "4c56f3d09abe3608618c8c9fa148632fd5972e0878a7e9056fa9aba6f29733c6",
+      "native_hash": "cf959f025f6202f3b3897700f72aa0d67fe3d8fb4b1bf5a644aaf697be9d17b1",
+      "damage_rule": null,
+      "dam_para": [
+        30
+      ],
+      "components": [],
+      "response": {
+        "id": 7020461,
+        "native_hash": "57913e21ec4a967accf8136c3291303e96dfd99295932fb1b21ecb80f9129124",
+        "damage_rule": null,
+        "dam_para": [
+          30
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 2,
+        "hits_source": "EFFECT_CONF.order32"
+      },
+      "hits": 2,
+      "hits_source": "wiki_desc_parsed"
+    },
+    "7020470": {
+      "name": "追打",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%BF%BD%E6%89%93",
+      "description": "造成魔伤，1连击，应对状态：本技能变为3连击。",
+      "record_hash": "51921380e5ca706d71943d5f0ee649500a3ba1007dace2ce80e8fbbbd7d27cdf",
+      "native_hash": "41934d0fbbd5c93edad8968cff3ab320020363d783026ac2c67ee480f0703c1b",
+      "damage_rule": null,
+      "dam_para": [
+        75
+      ],
+      "components": [],
+      "response": {
+        "id": 7020471,
+        "native_hash": "5d7fe194cca4ee440292595b6c8ea2c8d5605a6c6eb3ca8596be72d884c82227",
+        "damage_rule": null,
+        "dam_para": [
+          75
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 3,
+        "hits_source": "EFFECT_CONF.order32"
+      },
+      "hits": 1,
+      "hits_source": "wiki_desc_parsed"
+    },
+    "7020490": {
+      "name": "偷袭",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%81%B7%E8%A2%AD",
+      "description": "造成物伤，应对状态：本次技能威力变为3倍。",
+      "record_hash": "f70e043311b48fab664d558234613f1b0b8943880d5927cf5ab22842d02a302c",
+      "native_hash": "64813af9f9974e209df895473ecbd5d9ebcc27f0c184ef8179b7b3d272d5897a",
+      "damage_rule": null,
+      "dam_para": [
+        85
+      ],
+      "components": [],
+      "response": {
+        "id": 7020491,
+        "native_hash": "71c33b1dae036acc32b97a699a203e8e24f6f165c7433958923d2e510cefd9fb",
+        "damage_rule": null,
+        "dam_para": [
+          255
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7020520": {
+      "name": "阻断",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%98%BB%E6%96%AD",
+      "description": "造成魔伤，应对状态：额外打断被应对技能。",
+      "record_hash": "d213a27c2d032d98b98a910f99dac3ebfbce9f07cceef4a0f6a9a3fa1cbb3e41",
+      "native_hash": "c915d522915739ba64a1674200411c8be31cae23cf62c8e8081dc494ba774515",
+      "damage_rule": null,
+      "dam_para": [
+        75
+      ],
+      "components": [],
+      "response": {
+        "id": 7020521,
+        "native_hash": "0f77a3cf9cb23fc51926e3d632f938cff2e8ec488b46c77ab04f651b9c660246",
+        "damage_rule": null,
+        "dam_para": [
+          75
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7020530": {
+      "name": "穿膛",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%A9%BF%E8%86%9B",
+      "description": "造成物伤，若敌方能量小于等于2，造成5倍伤害。",
+      "record_hash": "beb9f7c2c31ac32c4caa860c77c4004fa8dd4a6acfe4097788d9135a161291ee",
+      "native_hash": "c0ddaea59956ce6c3bafcc3f6cca1459613a16a17585a1ab7bcdcb458efba798",
+      "damage_rule": 18,
+      "dam_para": [
+        65,
+        1,
+        2,
+        1,
+        400
+      ],
+      "components": [
+        {
+          "op": "if_energy",
+          "target": "opponent",
+          "comparison": "le",
+          "value": 2,
+          "damage_factor": 5
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7020560": {
+      "name": "垂死反击",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9E%82%E6%AD%BB%E5%8F%8D%E5%87%BB",
+      "description": "造成物伤，自己每失去5%生命，本次技能威力+5。",
+      "record_hash": "c75101fb6f4f5fad07626777434eaf7bef2c611ffea5ca0d770df718b1713866",
+      "native_hash": "bdcb14d721a3288090021e9c9ddb612ac7436c6401bb4a6c7fcd3c5750af3c5d",
+      "damage_rule": 10,
+      "dam_para": [
+        80,
+        500,
+        5,
+        0
+      ],
+      "components": [
+        {
+          "op": "hp_steps",
+          "target": "self",
+          "step_bp": 500,
+          "add": 5
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7021060": {
+      "name": "彗星",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%BD%97%E6%98%9F",
+      "description": "造成魔伤，每失去5%生命，本次技能威力-10，使用后消耗全部生命。",
+      "record_hash": "3ef1c06ead9708dc8c0186da3a30091b1110df5c218cc8872aad8d117a83e52b",
+      "native_hash": "eed29d417cc993c392bba7386fbaace2acdf6a83a98b8d8640c8010e1e425241",
+      "damage_rule": 10,
+      "dam_para": [
+        240,
+        500,
+        -10,
+        0
+      ],
+      "components": [
+        {
+          "op": "hp_steps",
+          "target": "self",
+          "step_bp": 500,
+          "add": -10
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7021210": {
+      "name": "急中生智",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%80%A5%E4%B8%AD%E7%94%9F%E6%99%BA",
+      "description": "造成魔伤，自己有减益时，本次技能威力+40。",
+      "record_hash": "4c6f16372b912d6c018ac57165608d872e2dce1c9a773cf5799b79dab53e1501",
+      "native_hash": "20f1ac757c6286fea1dbafac5a05acd9c5b89383ad1c902623d24cead7098a78",
+      "damage_rule": 29,
+      "dam_para": [
+        80,
+        0,
+        2,
+        0,
+        40,
+        0,
+        0
+      ],
+      "components": [
+        {
+          "op": "if_buff",
+          "target": "self",
+          "selector": {
+            "type": 2
+          },
+          "add": 40
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7030480": {
+      "name": "筛管奔流",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%AD%9B%E7%AE%A1%E5%A5%94%E6%B5%81",
+      "description": "造成物伤，自己生命大于80%时，本次技能威力+75。",
+      "record_hash": "0127ecbcac70dc5cfc3c567b243aa3992d031d4de2e05609f80b8bf36ee67567",
+      "native_hash": "364c9cb70d842fe30c598e5886494a915bb3bd28b6779f6d12ef500feee5df02",
+      "damage_rule": 37,
+      "dam_para": [
+        80,
+        1,
+        1,
+        1,
+        80,
+        1,
+        75
+      ],
+      "components": [
+        {
+          "op": "hp_above",
+          "target": "self",
+          "percent": 80,
+          "add": 75
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7030530": {
+      "name": "抽枝",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8A%BD%E6%9E%9D",
+      "description": "造成物伤，应对状态：自己回复50%生命和5能量。",
+      "record_hash": "51b7d407953d382b7807402bbb383fc2f97069112415535654aa9b83b9793fe5",
+      "native_hash": "cb3be802cdb1d533d74df403194c486d4eda2d5d44b29266c4b89327380b7ad2",
+      "damage_rule": null,
+      "dam_para": [
+        90
+      ],
+      "components": [],
+      "response": {
+        "id": 7030531,
+        "native_hash": "ae16751f01114901f779cba69c79855e9c505a66fd9d0012d88a1bf1cb6fd9cd",
+        "damage_rule": null,
+        "dam_para": [
+          90
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7030570": {
+      "name": "甜蜜陷阱",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%94%9C%E8%9C%9C%E9%99%B7%E9%98%B1",
+      "description": "造成魔伤，自己每有1能量，本次技能威力+10。",
+      "record_hash": "284e7683749cb2661301a9ed7451486d1a20a85cd2bf7bc82e1f2a16b4571deb",
+      "native_hash": "cf70b92b7ecda3052641b81627b20ae4789fb32a56bb15ee61652191b158e635",
+      "damage_rule": 19,
+      "dam_para": [
+        50,
+        3,
+        1,
+        20011583,
+        0,
+        10
+      ],
+      "components": [
+        {
+          "op": "per_energy",
+          "target": "self",
+          "add": 10
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7040180": {
+      "name": "闪燃",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%97%AA%E7%87%83",
+      "description": "造成物伤，应对状态：本次技能威力变为4倍。",
+      "record_hash": "35c9aebefa068bcac997e79efacc1e024eda3df25806b4c6441692d111f75486",
+      "native_hash": "73563782c67f73973b781dc6c120cbb7f1dfdb7f49464f05158fab3582ec6b75",
+      "damage_rule": null,
+      "dam_para": [
+        40
+      ],
+      "components": [],
+      "response": {
+        "id": 7040181,
+        "native_hash": "9306285b94a6c5c8c5eb8477e8ecede5e51ac05ef3dabef7a64b30150d9a75df",
+        "damage_rule": null,
+        "dam_para": [
+          160
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7040220": {
+      "name": "持续高温",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8C%81%E7%BB%AD%E9%AB%98%E6%B8%A9",
+      "description": "造成魔伤，应对状态：下次攻击技能威力翻倍。",
+      "record_hash": "3f987ddc39babb380aa477f12a3cb7b51da1fd65fbabcc99daa515496d924cdc",
+      "native_hash": "c0feb845e8af586ea6fa8bc08b827ba3903751673771f8c290ced90561dac072",
+      "damage_rule": null,
+      "dam_para": [
+        70
+      ],
+      "components": [],
+      "response": {
+        "id": 7040221,
+        "native_hash": "899a353c3bbf2f88450dd26a8a3b93cd0c5054b36756e68852202cb5ca490892",
+        "damage_rule": null,
+        "dam_para": [
+          70
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7040380": {
+      "name": "炙热波动",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%82%99%E7%83%AD%E6%B3%A2%E5%8A%A8",
+      "description": "造成魔伤，敌方获得4层灼烧，应对状态：本次技能威力和赋予灼烧翻倍。",
+      "record_hash": "65daca916d38b11752fab4eb0bd95e36c62b7a54fefc2d657f726418d46c6108",
+      "native_hash": "145d4effbfd85475ff8d0f8475010d6bb77ef61e8a91419e5b473001e5668227",
+      "damage_rule": null,
+      "dam_para": [
+        55
+      ],
+      "components": [],
+      "response": {
+        "id": 7040381,
+        "native_hash": "fc3bad812f0187f16b5c89a7b21b694f16fcd5c56215ccbd7b0c978a0791426f",
+        "damage_rule": null,
+        "dam_para": [
+          110
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7040460": {
+      "name": "燃尽",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%87%83%E5%B0%BD",
+      "description": "造成魔伤，敌方每失去5%生命，本次技能威力-5。",
+      "record_hash": "f024ec40b970108e5504246c0dcc17efe384ca8b6d7e8f79386d02e195338058",
+      "native_hash": "a6a28cf588cad8503a5fe44caa8659a6431c1281738ef58e011065296ba0140a",
+      "damage_rule": 10,
+      "dam_para": [
+        155,
+        500,
+        -5,
+        1
+      ],
+      "components": [
+        {
+          "op": "hp_steps",
+          "target": "opponent",
+          "step_bp": 500,
+          "add": -5
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7050210": {
+      "name": "天洪",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%A4%A9%E6%B4%AA",
+      "description": "造成魔伤，应对状态：本技能能耗永久-6。",
+      "record_hash": "7b1a37e9f1e40a9637cec1e3c9924c7adc0ad452f070f911b899c3068b993376",
+      "native_hash": "22c965880cf39de5091b87f3d24197c15b2e88316871f8a560d6c5c742e7cc92",
+      "damage_rule": null,
+      "dam_para": [
+        150
+      ],
+      "components": [],
+      "response": {
+        "id": 7050211,
+        "native_hash": "d0ca200b37a15665fa7c15f99fac5a6ee57117190a1143169d94a12d6519dd92",
+        "damage_rule": null,
+        "dam_para": [
+          150
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7070140": {
+      "name": "磁暴",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%A3%81%E6%9A%B4",
+      "description": "造成魔伤，本技能位于1号或3号位时威力+30，传动1。",
+      "record_hash": "60ebcbb3764c77cec8412e876c16bd36baaf05b73eea45c7c6d8443654d83cf5",
+      "native_hash": "d205eccd74977d5212631839d725e7d24b9a038d3f3ecb3c92cff2297860a2a7",
+      "damage_rule": null,
+      "dam_para": [
+        70
+      ],
+      "components": [
+        {
+          "op": "slot",
+          "slots": [
+            1,
+            3
+          ],
+          "add": 30
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7070240": {
+      "name": "铁蒺藜",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%93%81%E8%92%BA%E8%97%9C",
+      "description": "造成魔伤，应对状态：本次伤害翻倍。",
+      "record_hash": "94193df41774503aade9569a8362462672a3c38f89af111c4380845a53b3a3dc",
+      "native_hash": "b27893871eeda19ec24df8183f002ed000e0efa2681ae0a110e97b7d797544d9",
+      "damage_rule": null,
+      "dam_para": [
+        85
+      ],
+      "components": [],
+      "response": {
+        "id": 7070241,
+        "native_hash": "bc250fe22c70ab3b7bac9d772fadfa42fbd30498f325500dbb2abc948f6757d0",
+        "damage_rule": null,
+        "dam_para": [
+          170
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7080130": {
+      "name": "地刺",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9C%B0%E5%88%BA",
+      "description": "造成物伤，应对状态：额外打断被应对技能。",
+      "record_hash": "6f29b2baf74b3bd44d102532e594e048f1f6d8350090b2b0dd5071c8345edc0d",
+      "native_hash": "3dde75d5475d3b3ed8dc8fec9d818eca6c578bf3be24bbe16c86e63fcfabde6d",
+      "damage_rule": null,
+      "dam_para": [
+        90
+      ],
+      "components": [],
+      "response": {
+        "id": 7080131,
+        "native_hash": "b4ece077f772fe17d9336839b00024bb5927d9b0e814c4b81377d650cf813df6",
+        "damage_rule": null,
+        "dam_para": [
+          90
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7080330": {
+      "name": "地陷",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9C%B0%E9%99%B7",
+      "description": "造成物伤，自己获得物防+70%，应对状态：本次技能威力翻倍，且物防额外+70%。",
+      "record_hash": "efb26ffe98a7832a34556bdf25c511e38f64c4a02ad47c1a5518423a53858c6f",
+      "native_hash": "175a3bd0b0d0bb3fd00d5227054f255c6c3981d6344d123d0ab0c3d9f440b715",
+      "damage_rule": null,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "response": {
+        "id": 7080331,
+        "native_hash": "ae496fa139fa7791fcad27659b4ad565eea987bfc94289cc2283f72b28c584d1",
+        "damage_rule": null,
+        "dam_para": [
+          160
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7090130": {
+      "name": "冰雹",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%86%B0%E9%9B%B9",
+      "description": "造成物伤，应对状态：额外使敌方获得全技能能耗+3。",
+      "record_hash": "5c89f8c7899fddeb5f2c6f799efcf98cdea844fd3ea3ef37eafb9d66a91f5454",
+      "native_hash": "073f3977a4b240405bc42012770fb18191fb48784ce91b195d79ecc8d48f057c",
+      "damage_rule": null,
+      "dam_para": [
+        105
+      ],
+      "components": [],
+      "response": {
+        "id": 7090131,
+        "native_hash": "26d9cac564b6be95aa9c94287f73900109026e485f832fb9dcef454d2d91fdf2",
+        "damage_rule": null,
+        "dam_para": [
+          105
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7090140": {
+      "name": "极寒领域",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%9E%81%E5%AF%92%E9%A2%86%E5%9F%9F",
+      "description": "造成魔伤，若敌方有冻结，本次技能威力+60，应对状态：使冻结翻倍。",
+      "record_hash": "79335c153b7a1cdde6815010d06dc2d2b7236d164443d234bb2e53ea33c8c8ab",
+      "native_hash": "b6c4c64cfca2d6c326fdef8d0643ccc74903ce55b791511477ba2c4ff983958f",
+      "damage_rule": 29,
+      "dam_para": [
+        105,
+        1,
+        20580010,
+        0,
+        60,
+        0,
+        1
+      ],
+      "components": [
+        {
+          "op": "if_buff",
+          "target": "opponent",
+          "selector": {
+            "id": 20580010
+          },
+          "add": 60
+        }
+      ],
+      "response": {
+        "id": 7090141,
+        "native_hash": "1d4223b714d06a502bb9c009b4ae6577ee66177dbc4853d709db0f71a9ac7591",
+        "damage_rule": 29,
+        "dam_para": [
+          105,
+          1,
+          20580010,
+          0,
+          60,
+          0,
+          1
+        ],
+        "components": [
+          {
+            "op": "if_buff",
+            "target": "opponent",
+            "selector": {
+              "id": 20580010
+            },
+            "add": 60
+          }
+        ],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7090270": {
+      "name": "滚雪球",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%BB%9A%E9%9B%AA%E7%90%83",
+      "description": "造成物伤，敌方获得2层冻结，应对状态：额外获得2层，本次技能威力翻倍。",
+      "record_hash": "a50be897546e0a25be8a8f284e4de75af79d15bb7152fab5d939be21ad0015fa",
+      "native_hash": "3b677f5060bcba3217aed062e8a971ccda1a435a277f043d73b55bf0510364ed",
+      "damage_rule": null,
+      "dam_para": [
+        55
+      ],
+      "components": [],
+      "response": {
+        "id": 7090271,
+        "native_hash": "88c6e24d1f53799f1f02ebce9bfa9ff69185ebb7095ff2970758b2e665ed10aa",
+        "damage_rule": null,
+        "dam_para": [
+          110
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7090310": {
+      "name": "碎冰冰",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%A2%8E%E5%86%B0%E5%86%B0",
+      "description": "造成魔伤，敌方每有1层冻结，本次技能威力+20。",
+      "record_hash": "a9c2823a63dc1522cc04fca18ce406ff0a337015878fa4ac214502efc7424393",
+      "native_hash": "f86f604f32384f909083e231953a5b287ebdbc7f7bca101c2bf1006e12353bb7",
+      "damage_rule": 19,
+      "dam_para": [
+        40,
+        0,
+        1,
+        20580010,
+        0,
+        20
+      ],
+      "components": [
+        {
+          "op": "per_stack",
+          "target": "opponent",
+          "selector": {
+            "id": 20580010
+          },
+          "add": 20
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7090360": {
+      "name": "冰锋横扫",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%86%B0%E9%94%8B%E6%A8%AA%E6%89%AB",
+      "description": "造成魔伤，本技能威力等于敌方精灵技能总能耗的10倍。",
+      "record_hash": "3eae09713bf76b1e422f00e0dfbdefe08072c164c92704bb0281a924429becad",
+      "native_hash": "5c43e604bc34fe3c9e745f40e988d66955d6c1399b93cae2c12a8504dc8628f0",
+      "damage_rule": 41,
+      "dam_para": [
+        0,
+        1,
+        10
+      ],
+      "components": [
+        {
+          "op": "carried_cost_sum",
+          "target": "opponent",
+          "factor": 10
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7090440": {
+      "name": "寒潮",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%AF%92%E6%BD%AE",
+      "description": "造成魔伤，敌方获得1层冻结，应对状态：额外获得4层冻结，巧变：冻结相关技能。",
+      "record_hash": "780ceb1b757aad46e1defa5baae35f5dff865e00484d2ffcc113e0294e494784",
+      "native_hash": "a3a472ad3ec407032655bdf2fd0a92b221f41bb10bb1964105029cdded859f09",
+      "damage_rule": null,
+      "dam_para": [
+        95
+      ],
+      "components": [],
+      "response": {
+        "id": 7090441,
+        "native_hash": "1c28ef152eae75320e6f4d5d1d4ea01b917b9651a6030c86f5834984d542b2b6",
+        "damage_rule": null,
+        "dam_para": [
+          95
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7100200": {
+      "name": "龙息环爆",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%BE%99%E6%81%AF%E7%8E%AF%E7%88%86",
+      "description": "造成魔伤，应对状态：下次技能无需蓄力。",
+      "record_hash": "ea01819090e1bd42383e362ec663ddbf33f47f84453ab973fe23f03b6e49b3ff",
+      "native_hash": "f25f3587d242298507248682359dedaa1471e4811d9706026ecdeb4377a2adf4",
+      "damage_rule": null,
+      "dam_para": [
+        55
+      ],
+      "components": [],
+      "response": {
+        "id": 7100201,
+        "native_hash": "c181a5dc102a7945b2527aaaecb00b5252ba93b27bf0e17c9458bd06a6f8b8fd",
+        "damage_rule": null,
+        "dam_para": [
+          55
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7110390": {
+      "name": "强制重启",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%BC%BA%E5%88%B6%E9%87%8D%E5%90%AF",
+      "description": "造成魔伤，应对状态：回合结束时使敌方精灵返场。",
+      "record_hash": "8fb867fc3074539bdbc0d05b2ef9fd066caf9050f7d264081067322ac65211ae",
+      "native_hash": "b56b05861b337e02d3dba6ac91a42cbe443d1fe688c08818a4522788cb6ae344",
+      "damage_rule": null,
+      "dam_para": [
+        90
+      ],
+      "components": [],
+      "response": {
+        "id": 7110391,
+        "native_hash": "edcceb463894985e3bbf5090b7d05ff0e4516d3746b768fa2735fbfae541d029",
+        "damage_rule": null,
+        "dam_para": [
+          90
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7120090": {
+      "name": "毒囊",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%AF%92%E5%9B%8A",
+      "description": "造成物伤，敌方获得2层中毒，应对状态：改为获得6层。",
+      "record_hash": "9e640b544e58918a7b2ea6fa6f4d2fe05e4e579e5711325ba5d0b5f4bd4885cf",
+      "native_hash": "84bac92cfcf997afa84f9ef1357e62d38d2be22ff1725ad986a19a6552885859",
+      "damage_rule": null,
+      "dam_para": [
+        25
+      ],
+      "components": [],
+      "response": {
+        "id": 7120091,
+        "native_hash": "a6431a8a742f6ad2dccc8aa925ca0aeb9d99e306d74ca30f17721a849dc4a94b",
+        "damage_rule": null,
+        "dam_para": [
+          25
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7120220": {
+      "name": "鸩毒",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%B8%A9%E6%AF%92",
+      "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+40。",
+      "record_hash": "e5ecb63d6089a381b8f6fd5520d37070e403c9b68d9c841c5ed657bf215bed01",
+      "native_hash": "bb694d407b82a6810dec7e5598a1d4061b957af7656bf3db3b50ff80ca50be06",
+      "damage_rule": 19,
+      "dam_para": [
+        75,
+        0,
+        2,
+        28,
+        0,
+        10
+      ],
+      "components": [
+        {
+          "op": "per_stack",
+          "target": "opponent",
+          "selector": {
+            "group": 28
+          },
+          "add": 10
+        }
+      ],
+      "response": {
+        "id": 7120221,
+        "native_hash": "d412293463c1748c2ed2a8d4ba2f3512bb3dc3efc50c067e7f6eb142de93ac32",
+        "damage_rule": 19,
+        "dam_para": [
+          75,
+          0,
+          2,
+          28,
+          0,
+          40
+        ],
+        "components": [
+          {
+            "op": "per_stack",
+            "target": "opponent",
+            "selector": {
+              "group": 28
+            },
+            "add": 40
+          }
+        ],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7130150": {
+      "name": "虫击",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%99%AB%E5%87%BB",
+      "description": "造成物伤，应对状态：本次技能威力变为2倍，无视敌方系别抵抗。",
+      "record_hash": "5d3523c45766f66a2194166b8b4c4682df8b9d0fb2c9c02abd2d5345e76dca36",
+      "native_hash": "d9df1c1367082373bc852295cd06fd73794d4ef4f7a8be1c91b08dcc974c645f",
+      "damage_rule": null,
+      "dam_para": [
+        90
+      ],
+      "components": [],
+      "response": {
+        "id": 7130151,
+        "native_hash": "8d18a6adeca67b8e070b27c0083be74892ff74854ed46213d2e7083a295cd020",
+        "damage_rule": null,
+        "dam_para": [
+          180
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7130290": {
+      "name": "翅刃",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%BF%85%E5%88%83",
+      "description": "造成物伤，驱散敌方所有印记，应对状态：改为偷取印记。",
+      "record_hash": "a2868f6b4d42b970fef224243c0938bc8989273a78f1ad156a4beb564c8feb68",
+      "native_hash": "cb4e601858b93796afa1b1e30823060c44c4ccb212a4470256dd400cc08f5541",
+      "damage_rule": null,
+      "dam_para": [
+        85
+      ],
+      "components": [],
+      "response": {
+        "id": 7130291,
+        "native_hash": "bfc4bbbcf78f9b91a90aba855482e2ceca824ce8ae191f8fc6221af2fde12767",
+        "damage_rule": null,
+        "dam_para": [
+          85
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7140060": {
+      "name": "崩拳",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%B4%A9%E6%8B%B3",
+      "description": "造成物伤，应对状态：自己获得物攻+100%。",
+      "record_hash": "45e432b305227e8e3fad2bdb3894bb6fa11dc8222fadd94b8838b95221687c97",
+      "native_hash": "7c76ab78f02a582b38642fdaa03e56fda8a4ff3b018de2617fc10f01496b45af",
+      "damage_rule": null,
+      "dam_para": [
+        65
+      ],
+      "components": [],
+      "response": {
+        "id": 7140061,
+        "native_hash": "0301e81fd3f7ea1f87701c4209e241d932c1c1018d111d4f8e0b80587ab5e2c7",
+        "damage_rule": null,
+        "dam_para": [
+          65
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7140070": {
+      "name": "散手",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%95%A3%E6%89%8B",
+      "description": "造成物伤，2连击，应对状态：本技能改为6连击。",
+      "record_hash": "a4323f6b8de5cfbbe8743938022108fc1afe2e3eab75b898b3b1e4f72e90ced4",
+      "native_hash": "bb670b3059b862f341f339eb5c1585030303d181a08c11a217bae0219da8c62b",
+      "damage_rule": null,
+      "dam_para": [
+        35
+      ],
+      "components": [],
+      "response": {
+        "id": 7140071,
+        "native_hash": "f66c79874d7a449d1759865936f4c5c75cb74e94c5806f56b6127e2ff0abda57",
+        "damage_rule": null,
+        "dam_para": [
+          35
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 6,
+        "hits_source": "EFFECT_CONF.order32"
+      },
+      "hits": 2,
+      "hits_source": "wiki_desc_parsed"
+    },
+    "7140080": {
+      "name": "无影脚",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%97%A0%E5%BD%B1%E8%84%9A",
+      "description": "造成物伤，应对状态：本次技能威力变为2倍。",
+      "record_hash": "f4cba328097996e56bd572f6cda5f75e313ad8858b6df3356b836d0fb7ad65a6",
+      "native_hash": "eef192b0dc4918c23a5409dff52cdfc8d4fb7f70fc2e1961bc73ad4eb1fa68af",
+      "damage_rule": null,
+      "dam_para": [
+        85
+      ],
+      "components": [],
+      "response": {
+        "id": 7140081,
+        "native_hash": "502a5e481c29382763334e8b9cd330964c01021624215425e5e6c130ebaf5524",
+        "damage_rule": null,
+        "dam_para": [
+          170
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default",
+        "ignore_resistance": true
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7140090": {
+      "name": "斩断",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%96%A9%E6%96%AD",
+      "description": "造成物伤，应对状态：额外打断被应对技能。",
+      "record_hash": "7520643b1d7c68195383db10563196e14fb0c0cb673f9e22763c9e2e81560fe0",
+      "native_hash": "59377995b914bb1f59fe24b4c24d8d5c4b27f6c26690858e81421694a4d25c59",
+      "damage_rule": null,
+      "dam_para": [
+        70
+      ],
+      "components": [],
+      "response": {
+        "id": 7140091,
+        "native_hash": "7e9baca3fbf4223069e0f8b598ffffed431860e2ff6db2860b59e8a3be0580b5",
+        "damage_rule": null,
+        "dam_para": [
+          70
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7140120": {
+      "name": "技巧打击",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8A%80%E5%B7%A7%E6%89%93%E5%87%BB",
+      "description": "造成物伤，应对状态：本次技能威力变为10倍。",
+      "record_hash": "5a737865767faee3d43d42f26eba12c6b9034261b9b8062451162e95bb56c576",
+      "native_hash": "79fb4bd305819c74faa4977c680a3e21a7b734c86710aca548d4abe619da6c33",
+      "damage_rule": null,
+      "dam_para": [
+        35
+      ],
+      "components": [],
+      "response": {
+        "id": 7140121,
+        "native_hash": "c173bcb78580716dc4604d64653f5ca728852dd99c51d81a1e960515aa6abb64",
+        "damage_rule": null,
+        "dam_para": [
+          350
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7140130": {
+      "name": "截拳",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%88%AA%E6%8B%B3",
+      "description": "造成物伤，应对状态：造成打断，回复被打断技能能耗的能量。",
+      "record_hash": "6b44d6c3a7c80396ecd78e622f84de27bee2cfd1122ef474aecffbf3bae73120",
+      "native_hash": "452800e6dd99579f91d0b09ec96f616a6c085aea0e7854fcb6f46a6422e0eafe",
+      "damage_rule": null,
+      "dam_para": [
+        85
+      ],
+      "components": [],
+      "response": {
+        "id": 7140131,
+        "native_hash": "7a39426590c0cd77baf74e031949aa4e3a8039b1d49177566f3d9769997b1847",
+        "damage_rule": null,
+        "dam_para": [
+          85
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7140220": {
+      "name": "爆冲",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%88%86%E5%86%B2",
+      "description": "造成物伤，应对状态：本次技能威力变为5倍。",
+      "record_hash": "69001c002d8ac5a6fd5031a05eecd641047dcd84472311ed5c398bc45db8d20d",
+      "native_hash": "07a93bd7c12a5f9484f3564dcd625de892a3b70c5fea638a347a100f541d7389",
+      "damage_rule": null,
+      "dam_para": [
+        65
+      ],
+      "components": [],
+      "response": {
+        "id": 7140221,
+        "native_hash": "1c4fe4d0b7f1f26bc620d9755e344ae224b499d519a84cf29114deb73f565bf6",
+        "damage_rule": null,
+        "dam_para": [
+          325
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7150110": {
+      "name": "龙卷风",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%BE%99%E5%8D%B7%E9%A3%8E",
+      "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。",
+      "record_hash": "c0041320dba12a3f8a14517764ad37012dc9e5d02dc9522d481230b44b6cb8ce",
+      "native_hash": "5de048cb5be9509d64b264122ee862474b8b3f97b95907942b13bf9be9e3585c",
+      "damage_rule": null,
+      "dam_para": [
+        70
+      ],
+      "components": [],
+      "response": {
+        "id": 7150111,
+        "native_hash": "1d981d4200a6362933277fceca4bef7d78424ac789ddd6d54b77f62fb88425db",
+        "damage_rule": null,
+        "dam_para": [
+          105
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7150200": {
+      "name": "羽刃",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%BE%BD%E5%88%83",
+      "description": "造成物伤，应对状态：回合结束使敌方紧急脱离。",
+      "record_hash": "ba62b06cb8859b6fe7774805bc4d4482de073ccaa2819dd714496dfd6df1144e",
+      "native_hash": "0a9dd193428c98d56e8239fd8415853e2346d407a6d8f67af9d86c87996abd8d",
+      "damage_rule": null,
+      "dam_para": [
+        75
+      ],
+      "components": [],
+      "response": {
+        "id": 7150201,
+        "native_hash": "cc223b8ce76eee89a157358c8a9514c92df275dabf504d2b01bf1dacca985bb9",
+        "damage_rule": null,
+        "dam_para": [
+          75
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7160210": {
+      "name": "破罐破摔",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%A0%B4%E7%BD%90%E7%A0%B4%E6%91%94",
+      "description": "造成魔伤，自己有减益时，本次技能威力+60。",
+      "record_hash": "ac054b5c3cc326f26596cfba38b4da0562223f67e2d994e4bb0315a6fbe8f53b",
+      "native_hash": "783bf0216367699be4be53ffe43817a3484b3fb4c9742fd2cf4e69d08e4541c8",
+      "damage_rule": 29,
+      "dam_para": [
+        80,
+        0,
+        2,
+        0,
+        60,
+        0,
+        0
+      ],
+      "components": [
+        {
+          "op": "if_buff",
+          "target": "self",
+          "selector": {
+            "type": 2
+          },
+          "add": 60
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7160330": {
+      "name": "拆礼物",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8B%86%E7%A4%BC%E7%89%A9",
+      "description": "造成物伤，若敌方有萌化，本次技能威力+100。",
+      "record_hash": "5819de1dab07c88e193329d1350d1b963e927ac6d8199f1a2f25430716f031c0",
+      "native_hash": "a1ec20f9869ca7faad218d9307852ce35b18806c310adb03a8dc17144f390e0f",
+      "damage_rule": 29,
+      "dam_para": [
+        50,
+        1,
+        21020040,
+        0,
+        100,
+        0,
+        1
+      ],
+      "components": [
+        {
+          "op": "if_buff",
+          "target": "opponent",
+          "selector": {
+            "id": 21020040
+          },
+          "add": 100
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7170100": {
+      "name": "惊吓盒子",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%83%8A%E5%90%93%E7%9B%92%E5%AD%90",
+      "description": "造成物伤，应对状态：使敌方失去6能量。",
+      "record_hash": "3a780b8cb4087542b112bccf9f89dcbf48b7e6cf515936269c3964236aef5a5d",
+      "native_hash": "321ba27dcea1cb2440c2171b67acac1e590fd27ea98a011d6382e5ffd1efd16b",
+      "damage_rule": null,
+      "dam_para": [
+        80
+      ],
+      "components": [],
+      "response": {
+        "id": 7170101,
+        "native_hash": "0d58729f0fee04fc012528439e8e8220c0862d5ac152fc59698898bbf904daab",
+        "damage_rule": null,
+        "dam_para": [
+          80
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7170110": {
+      "name": "背袭",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%83%8C%E8%A2%AD",
+      "description": "造成魔伤，若敌方能量等于0，造成20倍伤害。",
+      "record_hash": "f531a2738cce914f0e56081ff588b5f3530a41b07459483bd7c296ea2f043b5d",
+      "native_hash": "cfb9d193d12855eac80201e1a3c1697899dc303e92be87c156daddad8929f62c",
+      "damage_rule": 18,
+      "dam_para": [
+        40,
+        2,
+        0,
+        1,
+        1900
+      ],
+      "components": [
+        {
+          "op": "if_energy",
+          "target": "opponent",
+          "comparison": "eq",
+          "value": 0,
+          "damage_factor": 20
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7180100": {
+      "name": "撕裂",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%92%95%E8%A3%82",
+      "description": "造成物伤，应对状态：本次攻击吸血100%。",
+      "record_hash": "75e4ffeb005fad1c6572b7237ed051736687d384b0794763a444cf607d99bba9",
+      "native_hash": "1427c43f12f479b32fbf2522de574a8cb8d5eff70206876775b76bc4b9f51479",
+      "damage_rule": null,
+      "dam_para": [
+        85
+      ],
+      "components": [],
+      "response": {
+        "id": 7180101,
+        "native_hash": "b5670ca953aeeacffa06ce72a0dbf3865ed8bcb9d60286cef38561699480c539",
+        "damage_rule": null,
+        "dam_para": [
+          85
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7180120": {
+      "name": "暗突袭",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%9A%97%E7%AA%81%E8%A2%AD",
+      "description": "造成物伤，吸血50%，应对状态：本次技能威力翻倍。",
+      "record_hash": "340d39247d6778e118a5d09493ac3e525ec1eca19310aca7e373e98c812c1d99",
+      "native_hash": "4107f8fa0cb70b0fbb630c63b4cbcc419ddd2033e7d71505ab4f765b20037ead",
+      "damage_rule": null,
+      "dam_para": [
+        70
+      ],
+      "components": [],
+      "response": {
+        "id": 7180121,
+        "native_hash": "bf17e8fdd038f8ff4eba7d2dc057c4b9511f7463bedbba2eb916e7549819b402",
+        "damage_rule": null,
+        "dam_para": [
+          140
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7180140": {
+      "name": "灾厄",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%81%BE%E5%8E%84",
+      "description": "对自己造成物伤，应对状态：改为对敌方造成物伤，且本次技能威力+120。",
+      "record_hash": "c4203f07862dc72a1bef196243b1c24c2d68da7f846ceb6d5dc1c7428033b06d",
+      "native_hash": "24729e1c3dbfb7fe5c85e694779218d523fbc966fb44809f3b4cf2d8fef6a88c",
+      "damage_rule": null,
+      "dam_para": [
+        60
+      ],
+      "components": [],
+      "response": {
+        "id": 7180141,
+        "native_hash": "c62bb5bb695109aa22d0459fa3288d9f977ce8efeb6e3b273bf02d44b14a5df6",
+        "damage_rule": null,
+        "dam_para": [
+          180
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7180290": {
+      "name": "跌落",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%B7%8C%E8%90%BD",
+      "description": "造成大量物伤，自己获得物攻-50%，应对状态：改为获得物攻+50%。",
+      "record_hash": "ace204d106ee956e89800cd2c5050109a72713c7176f48b2e6f2558491754075",
+      "native_hash": "de48f3d8e43222636d43360900b887e66e4e582df2566b843690705a36968b92",
+      "damage_rule": null,
+      "dam_para": [
+        120
+      ],
+      "components": [],
+      "response": {
+        "id": 7180291,
+        "native_hash": "0e90ffc16c12b963fdd0bfa21a3611271aecda13480cd966de27e26d3bda9553",
+        "damage_rule": null,
+        "dam_para": [
+          120
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7180310": {
+      "name": "牵连",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%89%B5%E8%BF%9E",
+      "description": "造成魔伤，敌方每有1只力竭精灵，本次技能威力+30。",
+      "record_hash": "19e3b863eca09849676c1b495535d2797e9a054182ab586116af68c8e49c4247",
+      "native_hash": "bca474a7f456d0b79494dd4fa5c29d729b279ddda3deeeea5d4fcc1d494d7303",
+      "damage_rule": 40,
+      "dam_para": [
+        85,
+        2,
+        1,
+        30
+      ],
+      "components": [
+        {
+          "op": "per_fainted",
+          "target": "opponent",
+          "add": 30
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7180400": {
+      "name": "血契",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%A1%80%E5%A5%91",
+      "description": "造成物伤，自己每失去10%生命，本技能威力+15。",
+      "record_hash": "f79bd42fe0899f68e62c3da748d74a411cc39a505f7ffef378c0bf379f3e2677",
+      "native_hash": "37bcb9005898bd3d609c6bc44ff0a9b7f8bfe3fd02762721b4cd5c70bd96431c",
+      "damage_rule": 10,
+      "dam_para": [
+        75,
+        1000,
+        15,
+        0
+      ],
+      "components": [
+        {
+          "op": "hp_steps",
+          "target": "self",
+          "step_bp": 1000,
+          "add": 15
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7190270": {
+      "name": "错乱",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%94%99%E4%B9%B1",
+      "description": "造成魔伤，应对状态：敌方获得3层星陨印记。",
+      "record_hash": "c413400683dcaf46bf0b353772e1bcfabccf5de42fef6e97666157c35bbc48b2",
+      "native_hash": "f0cc16dc994fa92bbb0a233ed88274dc869196a1f0aa16d801c7b0cd274a912a",
+      "damage_rule": null,
+      "dam_para": [
+        65
+      ],
+      "components": [],
+      "response": {
+        "id": 7190271,
+        "native_hash": "605112f5d8b8251e676416ba19f03c63aeecb3703fa92840a3be79eee234e3ca",
+        "damage_rule": null,
+        "dam_para": [
+          65
+        ],
+        "components": [],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "single_hit_default"
+      },
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7190420": {
+      "name": "星痕",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%98%9F%E7%97%95",
+      "description": "造成魔伤，若敌方有印记，本次技能威力+40。",
+      "record_hash": "c9896e2280a22ada5ac248f806a440be6dadeb166d71f826c999a0708f305075",
+      "native_hash": "a800d8e84d78dc24de9e0bc97f43c10839b7582cd915875dbd127519632dac33",
+      "damage_rule": 29,
+      "dam_para": [
+        90,
+        2,
+        26,
+        0,
+        40,
+        0,
+        1
+      ],
+      "components": [
+        {
+          "op": "if_buff",
+          "target": "opponent",
+          "selector": {
+            "group": 26
+          },
+          "add": 40
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7190440": {
+      "name": "天体吸积",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%A4%A9%E4%BD%93%E5%90%B8%E7%A7%AF",
+      "description": "造成物伤，敌方每有1层印记，本次攻击威力+20。",
+      "record_hash": "081ff904b5d3bf5ba858d3ab34adbbc669d44ea46cc9d3dcf5b47c7ffcbada61",
+      "native_hash": "312e70ef184e76313c6ceb0a5e4e30a7f192d151fb86fc032be2ac8287248b32",
+      "damage_rule": 19,
+      "dam_para": [
+        20,
+        0,
+        2,
+        26,
+        0,
+        20
+      ],
+      "components": [
+        {
+          "op": "per_stack",
+          "target": "opponent",
+          "selector": {
+            "group": 26
+          },
+          "add": 20
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default"
+    },
+    "7040200": {
+      "name": "吹火",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%90%B9%E7%81%AB",
+      "description": "造成物伤，每次使用后，本技能威力永久+20。",
+      "record_hash": "bb82034cea00a85c09b32db70b5a14842c55ac90eecca9e7511929bec2c08d6d",
+      "native_hash": "0459913a74fccf12402eaee84eb0a92101e5063c5b65c98fb9b7bb738db43548",
+      "damage_rule": 4,
+      "dam_para": [
+        50,
+        20,
+        1
+      ],
+      "components": [
+        {
+          "op": "per_use",
+          "add": 20
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default",
+      "history_source": "data/rules/reviewed-skill-history-1.json",
+      "history_component": {
+        "when": "after.use",
+        "op": "power.add",
+        "amount": 20
+      }
+    },
+    "7020400": {
+      "name": "迫近攻击",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%BF%AB%E8%BF%91%E6%94%BB%E5%87%BB",
+      "description": "造成物伤。每次使用后，本技能威力永久+45。",
+      "record_hash": "45134f055c03057b19c4824004f1176a8a64b2341210c6aa1670c5331cb87069",
+      "native_hash": "9b82fd3df33d3a557a5d352b0ea654ec82e46e5e9a8fe86670ec7cf35b437479",
+      "damage_rule": 13,
+      "dam_para": [
+        90,
+        0,
+        45,
+        1,
+        1
+      ],
+      "components": [
+        {
+          "op": "per_use",
+          "add": 45
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default",
+      "history_source": "data/rules/reviewed-skill-history-1.json",
+      "history_component": {
+        "when": "after.use",
+        "op": "power.add",
+        "amount": 45
+      }
+    },
+    "7020550": {
+      "name": "魔能爆",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%AD%94%E8%83%BD%E7%88%86",
+      "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。",
+      "record_hash": "477fb9b6d1f20283e5a95a918afffce0a3c4f7ce44e2b7d010eb7dc94517f6f2",
+      "native_hash": "54ee93fcc263cb1b2bb05fbed402c0e6bd44399b949d8ecad9466f10341d89f0",
+      "damage_rule": 36,
+      "dam_para": [
+        1,
+        450000,
+        700000,
+        900000,
+        1100000,
+        1350000,
+        1550000,
+        1650000,
+        1800000,
+        1900000,
+        2000000,
+        2100000
+      ],
+      "components": [
+        {
+          "op": "energy_table",
+          "target": "self",
+          "powers": [
+            46,
+            71,
+            91,
+            111,
+            136,
+            156,
+            166,
+            181,
+            191,
+            201,
+            211
+          ],
+          "overflow": "clamp_to_last_user_confirmed"
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default",
+      "source_policy": "user_confirmed_existing_hud_energy_tiers_clamp_10_20261030",
+      "source_evidence": {
+        "path": "vendor/洛克PVP助手/app/wwwroot/assets/producer-session-runtime.js",
+        "symbols": [
+          "qkEnergyPowerTiers",
+          "qkEnergyPowerFromEnergy",
+          "qkEnergyPowerClampEnergy"
+        ],
+        "energy_index": "0..10; user confirmed saturation at 10, while payment consumes all actual energy"
+      },
+      "uncertainty": "用户已确认采用现有HUD能量档位；取整沿当前共享PVP数值规则，未声称原始damage_rule36编码已完全恢复或实战全档校准。",
+      "user_confirmation": {
+        "source": "user_message_20261030_rule_11",
+        "statement": "魔能爆0能量能释放，采用当前HUD候选表，超过10能量全部消耗但威力按10能量。",
+        "game_verified": false
+      }
+    },
+    "7160140": {
+      "name": "超级糖果",
+      "record_hash": "6b096a15eff40f00b66e23a1fcc21e8a8135a608ad106eda6ad14c690fe868ee",
+      "native_hash": "b2d84d1c975902e22d6013fb33b737d1577476f4c9bef0dc0910f5948db4826b",
+      "description": "造成物伤，自己获得萌化：本次技能威力+60。",
+      "components": [
+        {
+          "op": "cute_gain_on_cast",
+          "target": "self",
+          "add": 60
+        }
+      ],
+      "source_policy": "user_confirmed_cast_local_cute_gain_20261030",
+      "source_evidence": {
+        "path": "data/rules/reviewed-cute-components-1.json"
+      },
+      "uncertainty": "萌化获得条件由用户确认；形态HP取整沿既有版本策略，未全量实战校准。"
+    },
+    "7060270": {
+      "name": "色散",
+      "description": "造成魔伤，对混血精灵造成伤害+50%。",
+      "record_hash": "27c43c9e2dab70c208abef770154cfc64924e754ae0055d80b581ae06dedc074",
+      "native_hash": "33acc2fcb49dcac6ad58b54b10263fe26fb69d34e0a666781765e171d44caeee",
+      "components": [
+        {
+          "op": "mixed_blood_damage",
+          "target": "opponent",
+          "damage_factor": [
+            3,
+            2
+          ]
+        }
+      ],
+      "source_policy": "bwiki_term_3015_native_buff_20760050_final_damage_50_percent_v1",
+      "source_evidence": {
+        "path": "data/rules/reviewed-user-skill-extensions-1.json",
+        "term": 3015,
+        "buff_id": 20760050,
+        "base_id": 2076005
+      },
+      "uncertainty": "混血条件依Terms3015，未知血脉保留常规与1.5两分支；共享最终增伤取整沿当前版本，未全量实战校准。"
+    },
+    "7020570": {
+      "name": "能量刃",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%83%BD%E9%87%8F%E5%88%83",
+      "description": "造成物伤，每应对成功1次，本技能威力永久+90。",
+      "record_hash": "4436b27aed054f2344893d5f13aee1064abbb5381af6c5c21a313760d2a73dce",
+      "native_hash": "e7848836d9f7f1b1d33f54daaa8a70a95842ee64169146e2d66856c0d96cb01e",
+      "damage_rule": 9,
+      "dam_para": [
+        80,
+        90,
+        1,
+        0
+      ],
+      "components": [
+        {
+          "op": "response_history"
+        }
+      ],
+      "source_policy": "shared_reviewed_skill_history_carried_response_success",
+      "source_evidence": {
+        "path": "data/rules/reviewed-skill-history-1.json",
+        "skill_id": 7020570,
+        "component": "carried.response.success / power.add",
+        "amount": 90
+      },
+      "uncertainty": "仅统计该精灵实际应对成功的施放，不统计被应对、队友应对及重复通知。与模拟器共用每次+90永久威力组件；中途观战或技能携带历史缺失时阻断并显示起点，敌方未确认历史携带时保留0至已记录次数的范围。触发时序尚未全量实战校准。"
+    },
+    "7140190": {
+      "name": "听桥",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%90%AC%E6%A1%A5",
+      "description": "减伤60%，应对攻击：对敌方造成武系物理伤害，威力与被应对技能相等。",
+      "record_hash": "dc4e3ef684c08f495f6c3548460d26909fe63ba1fa3657a035125aa4c4af6a71",
+      "native_hash": "4d24f972fba6fefaed911d9b39ec611c362906cab38f2d7eeee33ee47c940f80",
+      "damage_rule": null,
+      "dam_para": [
+        0
+      ],
+      "components": [],
+      "counter_preview": true,
+      "response": {
+        "id": 7140191,
+        "native_hash": "8286946a617406bcf21ac23cc7b46e851d3253a833322c5c4a6db9a2d70109a9",
+        "damage_rule": 22,
+        "dam_para": [
+          0,
+          100
+        ],
+        "components": [
+          {
+            "op": "countered_power"
+          }
+        ],
+        "source": "EFFECT_CONF.order31",
+        "hits": 1,
+        "hits_source": "native_single_counter_attack"
+      },
+      "source_policy": "source_bound_countered_current_power_physical_martial_preview_v1",
+      "uncertainty": "武系物理反击复用共享伤害公式；被应对技能当前有效威力来自共享威力查询，非复制实际伤害。技能威力加成拷贝阶段及双方特性组合仍待实战校准。愿力四档是属性情景，反击本身仍按武系克制计算。"
+    },
+    "7060120": {
+      "name": "过曝",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%BF%87%E6%9B%9D",
+      "description": "造成魔伤，每使用过1个其他系别技能，本技能威力永久+30。",
+      "record_hash": "5ef5f049a98bdb078467757a1707f5fac3fd748cc1533d1d7825422d17d698ad",
+      "native_hash": "9989739d261985f05fcff04fa629d758cc39fd329cba762c845ae41b14bb7c8d",
+      "damage_rule": 5,
+      "dam_para": [
+        60,
+        -1,
+        0,
+        0,
+        30,
+        1,
+        0
+      ],
+      "components": [
+        {
+          "op": "distinct_type_history"
+        }
+      ],
+      "source_policy": "shared_reviewed_skill_history_carried_distinct_other_type_use",
+      "source_evidence": {
+        "path": "data/rules/reviewed-skill-history-1.json",
+        "skill_id": 7060120,
+        "component": "carried.distinct_other_type.use / power.add"
+      },
+      "uncertainty": "只统计本精灵使用过的不同非光系属性，每种一次。中途观战等历史缺失时，按当前真实四槽中其他非光属性的去重数估计上界，已确认本人记录作下界；四槽未知不按全属性补值，换槽导致与已确认历史冲突时明确提示。",
+      "forecast_bound_policy": {
+        "basis": "user_confirmed_current_carried_distinct_types",
+        "confirmed_on": "2026-11-01",
+        "applies_to": "incomplete_live_history_only",
+        "full_history_execution_unchanged": true
+      }
+    }
+  },
+  "aliases": {
+    "7880058": {
+      "skill_id": 7020550,
+      "native_hash": "7f6bc4773be09af622db84a2cbdc493813e87193cbd43ab7b626d4c24a0f13c8",
+      "source": "vendor qkEnergyPowerIsTarget matches the same native name; absolute A table, not an inferred native dam_para formula"
+    }
+  }
+}

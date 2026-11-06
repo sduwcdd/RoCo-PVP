@@ -1,0 +1,1320 @@
+{
+  "schema": "reviewed-charge-components-1",
+  "policy": "charge-observed-attack-and-file-layers-v1",
+  "snapshot_id": "20261025T013619+0800",
+  "source_files": {
+    "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db",
+    "docs/verification/game-mirror-patch2-20261025.resources.json": "5f289bbe0a625eb861f3643db1873db28a0303bde7d26e8e2d75e16d7bba4c2b"
+  },
+  "skills": [
+    {
+      "skill_id": 7100130,
+      "record_hash": "2826cf6a179720f75a2aeb9736be74e83989ce2b8c1fc4f9a8d677a684111af8",
+      "components": [
+        {
+          "op": "damage.power.multiply",
+          "when": "response.success",
+          "factor": 2
+        }
+      ],
+      "responses": [
+        "status"
+      ],
+      "charge_buff_id": 20880010,
+      "evidence": {
+        "bwiki_raw": {
+          "id": 7100130,
+          "wiki_id": "skill_000565",
+          "name": {
+            "zh": "吹炎"
+          },
+          "type": "龙系",
+          "kind": "physical",
+          "energy": 3,
+          "desc": {
+            "zh": "蓄力，造成物伤，应对状态：本次技能威力翻倍。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%90%B9%E7%82%8E",
+          "source_module": "Skills",
+          "power": 170,
+          "desc_notes": [
+            1007,
+            1015
+          ]
+        },
+        "patch2_skill_raw": {
+          "Skill_Type": 1,
+          "can_changed": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "contact_type": 2,
+          "dam_para": [
+            170
+          ],
+          "damage_type": 2,
+          "desc": {
+            "localization_id": 2576,
+            "text": "<desc_id=1007>蓄力</>，造成物伤，<desc_id=1015>应对状态</>：本次技能威力翻倍。"
+          },
+          "describe_type": [
+            5,
+            1,
+            23
+          ],
+          "energy_cost": [
+            3
+          ],
+          "hit_para": 10000,
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/209002.209002'",
+          "id": 7100130,
+          "name": {
+            "localization_id": 2575,
+            "text": "吹炎"
+          },
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_CY_209002",
+          "skill_dam_type": 10,
+          "skill_feature": 4,
+          "skill_priority": 5,
+          "skill_result": [
+            {
+              "buff_group_level": 1,
+              "cast_moment": 25,
+              "effect_id": 20880010,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {
+              "cast_moment": 11,
+              "effect_id": 1031113,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {},
+            {},
+            {
+              "buff_group_level": 1,
+              "cast_moment": 27,
+              "effect_id": 20530072,
+              "result_target_type": 1,
+              "success_rate": 10000
+            }
+          ],
+          "target_blood_limit": [
+            0
+          ],
+          "target_count": 1,
+          "target_type": 1,
+          "type": 1
+        },
+        "patch2_result_field_spans": [
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333811,
+            "raw_hex": "8a9a3e01",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 20880010
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333815,
+            "raw_hex": "01000000",
+            "slot": 0,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333819,
+            "raw_hex": "19000000",
+            "slot": 0,
+            "type": "EInt32",
+            "value": 25
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333823,
+            "raw_hex": "10270000",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333827,
+            "raw_hex": "01000000",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 1
+          },
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333832,
+            "raw_hex": "c9bb0f00",
+            "slot": 1,
+            "type": "EUint32",
+            "value": 1031113
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333836,
+            "raw_hex": "01000000",
+            "slot": 1,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333840,
+            "raw_hex": "0b000000",
+            "slot": 1,
+            "type": "EInt32",
+            "value": 11
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333844,
+            "raw_hex": "10270000",
+            "slot": 1,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333849,
+            "raw_hex": "98433901",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 20530072
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333853,
+            "raw_hex": "01000000",
+            "slot": 4,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333857,
+            "raw_hex": "1b000000",
+            "slot": 4,
+            "type": "EInt32",
+            "value": 27
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333861,
+            "raw_hex": "10270000",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333865,
+            "raw_hex": "01000000",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 1
+          }
+        ],
+        "patch2_source_id": "resource-group-c40d72d37c3c43a12b3f",
+        "patch2_sources": {
+          "declaration": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "online_applicability_verified": false,
+            "runtime_precedence_verified": false,
+            "schema_version": "roco-explicit-resource-group-1",
+            "tables": {
+              "BUFFBASE_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "b9238546dcdf74c7da015645cc141ed9205bcadcf8459c2d9825751003ca361e",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "fac7530767357c039a049a4d8b03b7d2fe08f8f2614ce222c616174f4f9a7508",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+                  "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+                }
+              },
+              "BUFF_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "568ad0c28a4303ff34ea8fac6673006b171e2e6ee671630e39deda115b0b02ae",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "de2efc82e53f77d59c8ada1c03bc5a69a19891acc54169d34dcd0874dcecca49",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+                  "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+                }
+              },
+              "EFFECT_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+                  "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+                  "payload_sha256": "359e5b99309b9b3ff825d0ef99838e32b13e9b665235bd9df5df44015e14faae",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+                  "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+                  "payload_sha256": "9383101d2d016f2fe3648f431b9f4c132abd3b76f86748d1ab949dfd727f8f5b",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                }
+              },
+              "SKILL_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "f5da728497e1f0c59b1da705970acf777bfac46c7997e95232133e49eaab6325",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILL_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "localization": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "37716a360e50bb2d7f640f6f87112d64420e3417b97120fd7d4e37d16797b6d3",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/SKILL_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "dcb2671c9898b6f69a5c8a23136701efa48fcc5da522bf916858f0c4cbe55c15",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILL_CONF.non",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                }
+              }
+            }
+          },
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\docs\\verification\\game-mirror-patch2-20261025.resources.json",
+          "sha256": "5f289bbe0a625eb861f3643db1873db28a0303bde7d26e8e2d75e16d7bba4c2b"
+        },
+        "current_game_layer_operands_available": false,
+        "runtime_precedence_verified": false,
+        "game_buff_graph_fully_interpreted": false,
+        "unresolved": [
+          "Historical patch2 operands remain version-isolated; patch3 missing fields are not backfilled.",
+          "Charge/pay/ordering and observed resolved power are explicit research policies, not verified server timing.",
+          "Different incoming attack powers block release because the source does not specify first/last/max/sum selection."
+        ],
+        "patch2_bases_raw": {},
+        "patch2_response_effect_raw": {
+          "effect_order": 31,
+          "effect_param": [
+            {
+              "params": [
+                7100131
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            }
+          ],
+          "id": 1031113,
+          "type": 3
+        },
+        "patch2_response_skill_raw": {
+          "Skill_Type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "contact_type": 2,
+          "dam_para": [
+            340
+          ],
+          "damage_type": 2,
+          "desc": {
+            "localization_id": 2578,
+            "text": "<desc_id=1007>蓄力</>，造成物伤，<desc_id=1015>应对状态</>：本次技能威力翻倍。"
+          },
+          "describe_type": [
+            5,
+            1,
+            23
+          ],
+          "energy_cost": [
+            3
+          ],
+          "hit_para": 10000,
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/209002.209002'",
+          "id": 7100131,
+          "name": {
+            "localization_id": 2577,
+            "text": "应对！吹炎"
+          },
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_CY_209003",
+          "skill_dam_type": 10,
+          "skill_feature": 4,
+          "skill_priority": 5,
+          "skill_result": [
+            {
+              "buff_group_level": 1,
+              "cast_moment": 25,
+              "effect_id": 20880010,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {},
+            {},
+            {},
+            {
+              "buff_group_level": 1,
+              "cast_moment": 27,
+              "effect_id": 20530072,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {
+              "buff_group_level": 1,
+              "cast_moment": 6,
+              "effect_id": 20231140,
+              "result_target_type": 1,
+              "success_rate": 10000
+            }
+          ],
+          "target_blood_limit": [
+            0
+          ],
+          "target_count": 1,
+          "target_type": 1,
+          "type": 1
+        }
+      }
+    },
+    {
+      "skill_id": 7100140,
+      "record_hash": "ce64c90b03abf34641688b67444bb730b25ad8696babe53c9bb015d3593dbd35",
+      "components": [
+        {
+          "op": "damage.power.from_charge_attack",
+          "when": "charge.attacked",
+          "factor": 3
+        }
+      ],
+      "responses": [],
+      "charge_buff_id": 20880020,
+      "evidence": {
+        "bwiki_raw": {
+          "id": 7100140,
+          "wiki_id": "skill_000566",
+          "name": {
+            "zh": "怨力打击"
+          },
+          "type": "龙系",
+          "kind": "magical",
+          "energy": 3,
+          "desc": {
+            "zh": "蓄力，造成魔伤，若蓄力期间受到攻击，本技能威力变为敌方技能威力的3倍。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E6%80%A8%E5%8A%9B%E6%89%93%E5%87%BB",
+          "source_module": "Skills",
+          "power": 1,
+          "desc_notes": [
+            1007
+          ]
+        },
+        "patch2_skill_raw": {
+          "Skill_Type": 1,
+          "can_changed": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "contact_type": 2,
+          "dam_para": [
+            1
+          ],
+          "damage_type": 3,
+          "desc": {
+            "localization_id": 2580,
+            "text": "<desc_id=1007>蓄力</>，造成魔伤，若蓄力期间受到攻击，本技能威力变为敌方技能威力的3倍。"
+          },
+          "describe_type": [
+            5,
+            23
+          ],
+          "energy_cost": [
+            3
+          ],
+          "flavor_text": {
+            "localization_id": 2581,
+            "text": "必将加倍奉还。"
+          },
+          "hit_para": 10000,
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/109004.109004'",
+          "id": 7100140,
+          "name": {
+            "localization_id": 2579,
+            "text": "怨力打击"
+          },
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_YLDJ_109004",
+          "skill_dam_type": 10,
+          "skill_feature": 4,
+          "skill_priority": 5,
+          "skill_result": [
+            {
+              "buff_group_level": 1,
+              "cast_moment": 25,
+              "effect_id": 20880020,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {},
+            {},
+            {},
+            {
+              "buff_group_level": 1,
+              "cast_moment": 27,
+              "effect_id": 20530072,
+              "result_target_type": 1,
+              "success_rate": 10000
+            }
+          ],
+          "target_blood_limit": [
+            0
+          ],
+          "target_count": 1,
+          "target_type": 1,
+          "type": 1
+        },
+        "patch2_result_field_spans": [
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333870,
+            "raw_hex": "949a3e01",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 20880020
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333874,
+            "raw_hex": "01000000",
+            "slot": 0,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333878,
+            "raw_hex": "19000000",
+            "slot": 0,
+            "type": "EInt32",
+            "value": 25
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333882,
+            "raw_hex": "10270000",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333886,
+            "raw_hex": "01000000",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 1
+          },
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333849,
+            "raw_hex": "98433901",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 20530072
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333853,
+            "raw_hex": "01000000",
+            "slot": 4,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333857,
+            "raw_hex": "1b000000",
+            "slot": 4,
+            "type": "EInt32",
+            "value": 27
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333861,
+            "raw_hex": "10270000",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333865,
+            "raw_hex": "01000000",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 1
+          }
+        ],
+        "patch2_source_id": "resource-group-c40d72d37c3c43a12b3f",
+        "patch2_sources": {
+          "declaration": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "online_applicability_verified": false,
+            "runtime_precedence_verified": false,
+            "schema_version": "roco-explicit-resource-group-1",
+            "tables": {
+              "BUFFBASE_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "b9238546dcdf74c7da015645cc141ed9205bcadcf8459c2d9825751003ca361e",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "fac7530767357c039a049a4d8b03b7d2fe08f8f2614ce222c616174f4f9a7508",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+                  "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+                }
+              },
+              "BUFF_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "568ad0c28a4303ff34ea8fac6673006b171e2e6ee671630e39deda115b0b02ae",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "de2efc82e53f77d59c8ada1c03bc5a69a19891acc54169d34dcd0874dcecca49",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+                  "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+                }
+              },
+              "EFFECT_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+                  "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+                  "payload_sha256": "359e5b99309b9b3ff825d0ef99838e32b13e9b665235bd9df5df44015e14faae",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+                  "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+                  "payload_sha256": "9383101d2d016f2fe3648f431b9f4c132abd3b76f86748d1ab949dfd727f8f5b",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                }
+              },
+              "SKILL_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "f5da728497e1f0c59b1da705970acf777bfac46c7997e95232133e49eaab6325",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILL_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "localization": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "37716a360e50bb2d7f640f6f87112d64420e3417b97120fd7d4e37d16797b6d3",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/SKILL_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "dcb2671c9898b6f69a5c8a23136701efa48fcc5da522bf916858f0c4cbe55c15",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILL_CONF.non",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                }
+              }
+            }
+          },
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\docs\\verification\\game-mirror-patch2-20261025.resources.json",
+          "sha256": "5f289bbe0a625eb861f3643db1873db28a0303bde7d26e8e2d75e16d7bba4c2b"
+        },
+        "current_game_layer_operands_available": false,
+        "runtime_precedence_verified": false,
+        "game_buff_graph_fully_interpreted": false,
+        "unresolved": [
+          "Historical patch2 operands remain version-isolated; patch3 missing fields are not backfilled.",
+          "Charge/pay/ordering and observed resolved power are explicit research policies, not verified server timing.",
+          "Different incoming attack powers block release because the source does not specify first/last/max/sum selection."
+        ],
+        "patch2_bases_raw": {
+          "2088002": {
+            "buffbase_order": 88,
+            "buffbase_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  30000
+                ]
+              },
+              {
+                "params": [
+                  20010800
+                ]
+              }
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "id": 2088002,
+            "show_letters": [
+              1
+            ]
+          }
+        }
+      }
+    },
+    {
+      "skill_id": 7100170,
+      "record_hash": "afb25e228291852ee7913667e6281b816692f621b3638060f915ed740b6fcc23",
+      "components": [
+        {
+          "op": "stat.percent.layers",
+          "target": "self",
+          "attributes": [
+            "patk"
+          ],
+          "layers": 15,
+          "per_layer_basis_points": 1000
+        },
+        {
+          "op": "stat.percent.layers",
+          "target": "self",
+          "attributes": [
+            "matk"
+          ],
+          "layers": 15,
+          "per_layer_basis_points": 1000
+        },
+        {
+          "op": "stat.flat.layers",
+          "target": "self",
+          "attribute": "spd",
+          "layers": 8,
+          "per_layer": 10
+        }
+      ],
+      "responses": [],
+      "charge_buff_id": 20880010,
+      "evidence": {
+        "bwiki_raw": {
+          "id": 7100170,
+          "wiki_id": "skill_000569",
+          "name": {
+            "zh": "龙吟"
+          },
+          "type": "龙系",
+          "kind": "status",
+          "energy": 3,
+          "desc": {
+            "zh": "蓄力，自己获得双攻+150%和速度+80。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E9%BE%99%E5%90%9F",
+          "source_module": "Skills",
+          "desc_notes": [
+            1007
+          ]
+        },
+        "patch2_skill_raw": {
+          "Skill_Type": 2,
+          "can_changed": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "contact_type": 1,
+          "dam_para": [
+            0
+          ],
+          "damage_type": 1,
+          "desc": {
+            "localization_id": 2588,
+            "text": "<desc_id=1007>蓄力</>，自己获得双攻+150%和速度+80。"
+          },
+          "describe_type": [
+            12,
+            6
+          ],
+          "energy_cost": [
+            3
+          ],
+          "hit_para": 10000,
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/710003.710003'",
+          "id": 7100170,
+          "name": {
+            "localization_id": 2587,
+            "text": "龙吟"
+          },
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_LW_710003",
+          "skill_dam_type": 10,
+          "skill_feature": 3,
+          "skill_priority": 5,
+          "skill_result": [
+            {
+              "buff_group_level": 1,
+              "cast_moment": 25,
+              "effect_id": 20880010,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {
+              "buff_group_level": 15,
+              "cast_moment": 11,
+              "effect_id": 20010010,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {
+              "buff_group_level": 15,
+              "cast_moment": 11,
+              "effect_id": 20010020,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {
+              "buff_group_level": 8,
+              "cast_moment": 11,
+              "effect_id": 20010100,
+              "result_target_type": 1,
+              "success_rate": 10000
+            },
+            {
+              "buff_group_level": 1,
+              "cast_moment": 27,
+              "effect_id": 20530072,
+              "result_target_type": 1,
+              "success_rate": 10000
+            }
+          ],
+          "target_blood_limit": [
+            0
+          ],
+          "target_count": 1,
+          "target_type": 9,
+          "type": 1
+        },
+        "patch2_result_field_spans": [
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333811,
+            "raw_hex": "8a9a3e01",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 20880010
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333815,
+            "raw_hex": "01000000",
+            "slot": 0,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333819,
+            "raw_hex": "19000000",
+            "slot": 0,
+            "type": "EInt32",
+            "value": 25
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333823,
+            "raw_hex": "10270000",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333827,
+            "raw_hex": "01000000",
+            "slot": 0,
+            "type": "EUint32",
+            "value": 1
+          },
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333908,
+            "raw_hex": "1a543101",
+            "slot": 1,
+            "type": "EUint32",
+            "value": 20010010
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333912,
+            "raw_hex": "01000000",
+            "slot": 1,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333916,
+            "raw_hex": "0b000000",
+            "slot": 1,
+            "type": "EInt32",
+            "value": 11
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333920,
+            "raw_hex": "10270000",
+            "slot": 1,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333924,
+            "raw_hex": "0f000000",
+            "slot": 1,
+            "type": "EUint32",
+            "value": 15
+          },
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333929,
+            "raw_hex": "24543101",
+            "slot": 2,
+            "type": "EUint32",
+            "value": 20010020
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333933,
+            "raw_hex": "01000000",
+            "slot": 2,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333937,
+            "raw_hex": "0b000000",
+            "slot": 2,
+            "type": "EInt32",
+            "value": 11
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333941,
+            "raw_hex": "10270000",
+            "slot": 2,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333945,
+            "raw_hex": "0f000000",
+            "slot": 2,
+            "type": "EUint32",
+            "value": 15
+          },
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 327745,
+            "raw_hex": "74543101",
+            "slot": 3,
+            "type": "EUint32",
+            "value": 20010100
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 327749,
+            "raw_hex": "01000000",
+            "slot": 3,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 327753,
+            "raw_hex": "0b000000",
+            "slot": 3,
+            "type": "EInt32",
+            "value": 11
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 327757,
+            "raw_hex": "10270000",
+            "slot": 3,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 327761,
+            "raw_hex": "08000000",
+            "slot": 3,
+            "type": "EUint32",
+            "value": 8
+          },
+          {
+            "field": "effect_id",
+            "length": 4,
+            "offset": 333849,
+            "raw_hex": "98433901",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 20530072
+          },
+          {
+            "field": "result_target_type",
+            "length": 4,
+            "offset": 333853,
+            "raw_hex": "01000000",
+            "slot": 4,
+            "type": "EInt32",
+            "value": 1
+          },
+          {
+            "field": "cast_moment",
+            "length": 4,
+            "offset": 333857,
+            "raw_hex": "1b000000",
+            "slot": 4,
+            "type": "EInt32",
+            "value": 27
+          },
+          {
+            "field": "success_rate",
+            "length": 4,
+            "offset": 333861,
+            "raw_hex": "10270000",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 10000
+          },
+          {
+            "field": "buff_group_level",
+            "length": 4,
+            "offset": 333865,
+            "raw_hex": "01000000",
+            "slot": 4,
+            "type": "EUint32",
+            "value": 1
+          }
+        ],
+        "patch2_source_id": "resource-group-c40d72d37c3c43a12b3f",
+        "patch2_sources": {
+          "declaration": {
+            "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "online_applicability_verified": false,
+            "runtime_precedence_verified": false,
+            "schema_version": "roco-explicit-resource-group-1",
+            "tables": {
+              "BUFFBASE_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "b9238546dcdf74c7da015645cc141ed9205bcadcf8459c2d9825751003ca361e",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFFBASE_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "fac7530767357c039a049a4d8b03b7d2fe08f8f2614ce222c616174f4f9a7508",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFFBASE_CONF.non",
+                  "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+                }
+              },
+              "BUFF_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "568ad0c28a4303ff34ea8fac6673006b171e2e6ee671630e39deda115b0b02ae",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/BUFF_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_0_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/status_chain_manifest.json",
+                  "manifest_sha256": "e766936de9e485b549343042be41466a69a595323acfe862105cbd921b1de9b7",
+                  "payload_sha256": "de2efc82e53f77d59c8ada1c03bc5a69a19891acc54169d34dcd0874dcecca49",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/BUFF_CONF.non",
+                  "selection_basis": "Explicit patch-0 schema candidate selected in existing status_chain_manifest.json; patch-2 data has no same-package schema in this extraction. All record lengths are rechecked; no runtime mount order is asserted."
+                }
+              },
+              "EFFECT_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+                  "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+                  "payload_sha256": "359e5b99309b9b3ff825d0ef99838e32b13e9b665235bd9df5df44015e14faae",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/EFFECT_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/related_manifest.json",
+                  "manifest_sha256": "eac9b32d075fe099297be5373c48a07812abc265155b3cb74831bb2a37f2a70c",
+                  "payload_sha256": "9383101d2d016f2fe3648f431b9f4c132abd3b76f86748d1ab949dfd727f8f5b",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/EFFECT_CONF.non",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                }
+              },
+              "SKILL_CONF": {
+                "binary": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "f5da728497e1f0c59b1da705970acf777bfac46c7997e95232133e49eaab6325",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/SKILL_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "localization": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "37716a360e50bb2d7f640f6f87112d64420e3417b97120fd7d4e37d16797b6d3",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinLocalize/dev_CN/SKILL_CONF.bytes",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                },
+                "schema": {
+                  "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+                  "manifest": "../../artifacts/strength_buff_probe_20261025/mirror/manifest.json",
+                  "manifest_sha256": "c643621124877f6b4f49c5dce96e19ea1687e72df21f130f57864914ff9fb48a",
+                  "payload_sha256": "dcb2671c9898b6f69a5c8a23136701efa48fcc5da522bf916858f0c4cbe55c15",
+                  "resource_path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/SKILL_CONF.non",
+                  "selection_basis": "Explicit same-patch-2 resource from the retained extraction manifest; no automatic version fallback."
+                }
+              }
+            }
+          },
+          "path": "D:\\Users\\86195\\Desktop\\workspace\\roco_pvp\\docs\\verification\\game-mirror-patch2-20261025.resources.json",
+          "sha256": "5f289bbe0a625eb861f3643db1873db28a0303bde7d26e8e2d75e16d7bba4c2b"
+        },
+        "current_game_layer_operands_available": false,
+        "runtime_precedence_verified": false,
+        "game_buff_graph_fully_interpreted": false,
+        "unresolved": [
+          "Historical patch2 operands remain version-isolated; patch3 missing fields are not backfilled.",
+          "Charge/pay/ordering and observed resolved power are explicit research policies, not verified server timing.",
+          "Different incoming attack powers block release because the source does not specify first/last/max/sum selection."
+        ],
+        "patch2_bases_raw": {
+          "2001001": {
+            "buffbase_order": 1,
+            "buffbase_param": [
+              {
+                "params": [
+                  29
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1000
+                ]
+              }
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "id": 2001001,
+            "show_letters": [
+              3
+            ]
+          },
+          "2001002": {
+            "buffbase_order": 1,
+            "buffbase_param": [
+              {
+                "params": [
+                  30
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1000
+                ]
+              }
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "id": 2001002,
+            "show_letters": [
+              3
+            ]
+          },
+          "2001010": {
+            "buffbase_order": 1,
+            "buffbase_param": [
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  10
+                ]
+              }
+            ],
+            "client_trigger_type": [
+              -1
+            ],
+            "id": 2001010,
+            "show_letters": [
+              3
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

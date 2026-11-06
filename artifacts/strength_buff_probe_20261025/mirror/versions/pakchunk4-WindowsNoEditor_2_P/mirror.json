@@ -1,0 +1,120 @@
+{
+  "data_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+  "schema_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+  "localization_pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+  "same_package_schema_and_localization": true,
+  "selection": "same package when available; otherwise nearest prior numeric patch candidate, not mounted-version proof",
+  "rows": 1894,
+  "all_row_lengths_verified": true,
+  "skill_result_fields": [
+    "effect_id",
+    "result_target_type",
+    "cast_moment",
+    "success_rate",
+    "buff_level_rule",
+    "buff_group_level"
+  ],
+  "matches": [
+    {
+      "record": {
+        "id": 7170280,
+        "name": {
+          "localization_id": 3190,
+          "text": "魔镜"
+        },
+        "desc": {
+          "localization_id": 3191,
+          "text": "敌方获得魔防​-50%，​且​失​去​3​能量​。"
+        },
+        "flavor_text": {
+          "localization_id": 3192,
+          "text": "魔镜魔镜告诉我，谁是最棒的果？"
+        },
+        "can_changed": 1,
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 17,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "contact_type": 1,
+        "skill_priority": 5,
+        "target_type": 1,
+        "target_count": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "hit_para": 10000,
+        "skill_result": [
+          {
+            "effect_id": 20010080,
+            "result_target_type": 2,
+            "cast_moment": 11,
+            "success_rate": 10000,
+            "buff_group_level": 5
+          },
+          {
+            "effect_id": 1019013,
+            "result_target_type": 2,
+            "cast_moment": 11,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gho_JY_116023",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/116023.116023'",
+        "describe_type": [
+          12,
+          7
+        ]
+      },
+      "row_offset": 131457,
+      "declared_length": 93,
+      "consumed_length": 93,
+      "trace": [
+        {
+          "field": "effect_id",
+          "offset": 333394,
+          "raw_hex": "60543101",
+          "value": 20010080
+        },
+        {
+          "field": "cast_moment",
+          "offset": 333402,
+          "raw_hex": "0b000000",
+          "value": 11
+        },
+        {
+          "field": "buff_group_level",
+          "offset": 333410,
+          "raw_hex": "05000000",
+          "value": 5
+        },
+        {
+          "field": "effect_id",
+          "offset": 338153,
+          "raw_hex": "858c0f00",
+          "value": 1019013
+        },
+        {
+          "field": "cast_moment",
+          "offset": 338161,
+          "raw_hex": "0b000000",
+          "value": 11
+        },
+        {
+          "field": "buff_group_level",
+          "offset": 338169,
+          "raw_hex": "01000000",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}

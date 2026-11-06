@@ -1,0 +1,19 @@
+{
+  "url": "https://rocoarena.com/damage-ui-B2QaE2G3.js",
+  "sha256": "c2bdfb350a714f4e06239847c45d4fa5c2fb7ed7953eac05badec9df009721f9",
+  "bytes": 21330,
+  "retrieved_on": "2026-10-25",
+  "source_kind": "community_published_implementation",
+  "raw_saved": false,
+  "snippets": [
+    {
+      "offset": 9180,
+      "text": "),{up:c,down:l}=e(r),u=c===g[n]?1.2:l===g[n]?.9:1,d=n===`hp`,f=Number((o*.01+s*.005).toFixed(10)),p=Math.fround(o*.01)+s*.005,m=d?170:110,h=d?1.7:1.1,_=d?.85:.55,v=d?70:10,y=d?100:50,b=Math.fround(m*p+v),x=Math.round(b),S=x*u+y,C=Math.round(S),w=Number(a)||0;return{race:o,iv:s,gr"
+    },
+    {
+      "offset": 9265,
+      "text": "toFixed(10)),p=Math.fround(o*.01)+s*.005,m=d?170:110,h=d?1.7:1.1,_=d?.85:.55,v=d?70:10,y=d?100:50,b=Math.fround(m*p+v),x=Math.round(b),S=x*u+y,C=Math.round(S),w=Number(a)||0;return{race:o,iv:s,growth:f,effectiveGrowth:p,growthFactor:m,raceFactor:h,ivFactor:_,startingConstant:v,ra"
+    }
+  ],
+  "real_game_verified": false
+}

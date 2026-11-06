@@ -1,0 +1,29 @@
+{
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "progress",
+  "related_python_tests": {
+    "passed": 250,
+    "seconds": 107.978,
+    "not_game_calibration": true
+  },
+  "new_regressions": 15,
+  "independent_review": "docs/verification/rule-reuse-review-20261025.md",
+  "baseline_sha256": "c28d808cc0ad0926af38257add25ef86c32921338dc5f0536f061560eae3dea2",
+  "performance_report": "docs/verification/rule-reuse-benchmark-20261025.json",
+  "live_api_equal_to_pre_optimization_result": true,
+  "environment": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "full_simulator_completed": false,
+  "training_started": false,
+  "current_pvp_calibration_cases_added": 0,
+  "files_sha256": {
+    "lab/prepared_rules.py": "3c52565ae2cf30d4105ffe6bfeab4a9710055f78c44a7e0a676aebe9c116ffd3",
+    "lab/ruleset.py": "8a08ecf4f11356058d6111c01665985dc8f4b118b27a2f9266e5807530e9ace1",
+    "lab/turn_plan.py": "0245c41f7aaafe3347cfea29cd095b5808e426a382dc60c24ac590304190a678",
+    "lab/action_runtime.py": "e0743f1a04275a7f89f05ea7d71e94f049e2fe3850ca8856cdf334a893234e19",
+    "tests/test_prepared_rules.py": "1d6ff46f397da8c84ef7621439966a39e65fbe831b350197eb68989aaaf93ede",
+    "tests/test_ruleset.py": "38a95ba0e5c372afda35926a80f412f4598f51fd48a23ec0f8e9dce8600fb49e"
+  }
+}

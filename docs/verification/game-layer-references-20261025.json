@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-25",
+  "artifact": "artifacts/layer_reference_probe_20261025/layer-reference-candidates-1.json",
+  "artifact_sha256": "48b33f945d55c62bdc6a419f438543448e7fdbba7d1b70917fb9b9ec74973a14",
+  "artifact_bytes": 58967721,
+  "schema_version": "roco-game-layer-references-1",
+  "counts": {
+    "pakchunk4-WindowsNoEditor_3_P.pak": {
+      "buff_references": 1986,
+      "buff_refs_with_explicit_layer_operand": 0,
+      "explicit_layer_operands": 0,
+      "layer_field_absent_in_record": 0,
+      "layer_field_not_in_schema": 6485,
+      "result_slots": 6485,
+      "skill_records": 1988
+    },
+    "pakchunk4-WindowsNoEditor.pak": {
+      "buff_references": 1118,
+      "buff_refs_with_explicit_layer_operand": 1117,
+      "explicit_layer_operands": 1257,
+      "layer_field_absent_in_record": 1418,
+      "layer_field_not_in_schema": 0,
+      "result_slots": 2675,
+      "skill_records": 1378
+    }
+  },
+  "source_ids": {
+    "pakchunk4-WindowsNoEditor_3_P.pak": "archive-7eaa655a5d7950b7d58a",
+    "pakchunk4-WindowsNoEditor.pak": "archive-a45a57add3edf933f964"
+  },
+  "source_verified_before_save": true,
+  "tests": [
+    {
+      "modules": [
+        "tests.test_game_layer_references"
+      ],
+      "passed": 12,
+      "failed": 0,
+      "seconds": 40.619
+    },
+    {
+      "modules": [
+        "tests.test_game_rule_candidates",
+        "tests.test_game_table_probe"
+      ],
+      "passed": 23,
+      "failed": 0,
+      "seconds": 11.173
+    }
+  ],
+  "independent_review": "docs/verification/game-layer-review-20261025.md",
+  "independent_byte_spans": {
+    "base": 8854,
+    "patch_3": 6931
+  },
+  "capabilities": {
+    "source_layer_operands_structured": true,
+    "same_archive_reference_chains": true,
+    "runtime_executable": false,
+    "full_battle_executable": false,
+    "real_game_calibrated": false,
+    "training_eligible": false,
+    "active_rules_modified": false
+  },
+  "representative_findings": {
+    "7020620": {
+      "base_layer_operand": 10,
+      "binary_offset": 253703,
+      "raw_hex": "0a000000",
+      "patch_layer_field": "not_in_schema"
+    },
+    "7020630": {
+      "base_layer_operand": 7,
+      "raw_hex": "07000000",
+      "patch_layer_field": "not_in_schema"
+    },
+    "7170280": {
+      "base_record": "absent",
+      "patch_layer_field": "not_in_schema",
+      "five_layers_source": "previous_user_explanation"
+    },
+    "7880001": {
+      "base_record": "absent",
+      "patch_layer_field": "not_in_schema",
+      "historical_value_copied": false
+    }
+  },
+  "hashes": {
+    "lab/game_layer_references.py": "d1404682e9b4ec81f1214e3cf80d3226d5e8030bcf8778b0ad699173f49754e1",
+    "scripts/build_game_layer_references.py": "7cd68cbc3c16b19f82df29e676faac9de7b60cba7712d0de9dab454860ba14f5",
+    "tests/test_game_layer_references.py": "13fac198f3094f0df919bd6a1be6df0355ea4283f77eecd85dc252acc19eaa1d",
+    "docs/verification/game-layer-evidence-20261025.json": "db34beef82dbc796bc6467e3b16aeceb4958f68b3a89650ca6f36543a0b446fd",
+    "docs/verification/game-layer-review-20261025.md": "5daff3516ebdf7d8d1a602a3862877bf65b5ec701bebb7683299d27a03742c3c",
+    "artifacts/strength_buff_probe_20261025/historical_table_manifest.json": "09a3b95c4261f014d05be599c53e3ea68fb6f9991b38a569ad82f0019e88fc96",
+    "artifacts/layer_reference_probe_20261025/manifest.json": "c98df408f9a892d3a6e3f46b78a15c4b0d77344641c7ca3091d4bcb7e2cae794"
+  },
+  "unchanged_hashes": {
+    "data/rules/20261025T013619+0800/rule-config-1.json": "c190c98d3a2e67153ac1c77f96adc2018e1ea6a3198880e5343451a7f87871cf",
+    "data/rules/20261025T013619+0800/phase-config-1.json": "bff95607298bbe1cb2633f21a97f1a7963a887a3cd910d408a4f8476cfc69b5b",
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/game_rules_followup_20261025/game-rule-candidates-1.json": "3e79c40c23bff5ce16125f70e4685fe6f3047cc9c6b42aaf53830812c6934450"
+  },
+  "remaining_questions": [
+    "Current runtime archive priority and online applicability",
+    "Missing layer-rule defaults and explicit rule meanings",
+    "Layer calculation, caps and exact per-stack attribute formula",
+    "Authoritative target and trigger semantics"
+  ],
+  "old_snapshot_note": "Prior highest-per-path candidate was a mixed archive selection. Same-package patch-3 EFFECT is1257; old patch-3 schema plus patch-26 data had1259. No original candidate was rewritten."
+}

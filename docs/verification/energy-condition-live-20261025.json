@@ -1,0 +1,734 @@
+{
+  "case_kind": "synthetic conditional arithmetic, not real-game evidence",
+  "test_damage_resolver": "a returns7;b returns2*declared multiplier",
+  "cases": [
+    {
+      "caller_cost_a": 2,
+      "observed_enemy_energy": 2,
+      "damage_multiplier": {
+        "numerator": 5,
+        "denominator": 1
+      },
+      "hp_a": 290,
+      "result": {
+        "status": "applied",
+        "scope": "isolated_joint_action_experiment",
+        "state": {
+          "snapshot_id": "20261025T013619+0800",
+          "turn": 2,
+          "teams": {
+            "a": {
+              "active_slot": 1,
+              "members": [
+                {
+                  "member_id": "a-reserve",
+                  "form_id": 3016,
+                  "hp": 300,
+                  "max_hp": 350,
+                  "energy": 10,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020360,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {}
+                },
+                {
+                  "member_id": "a-active",
+                  "form_id": 3001,
+                  "hp": 290,
+                  "max_hp": 350,
+                  "energy": 2,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020360,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {},
+                  "types": [
+                    "草系"
+                  ]
+                }
+              ],
+              "marks": {
+                "positive": null,
+                "negative": null
+              }
+            },
+            "b": {
+              "active_slot": 1,
+              "members": [
+                {
+                  "member_id": "b-reserve",
+                  "form_id": 3016,
+                  "hp": 300,
+                  "max_hp": 350,
+                  "energy": 10,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020360,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {}
+                },
+                {
+                  "member_id": "b-active",
+                  "form_id": 3001,
+                  "hp": 293,
+                  "max_hp": 350,
+                  "energy": 8,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020530,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {},
+                  "types": [
+                    "草系"
+                  ]
+                }
+              ],
+              "marks": {
+                "positive": null,
+                "negative": null
+              }
+            }
+          }
+        },
+        "events": [
+          {
+            "op": "energy.pay",
+            "amount": 2,
+            "source": "caller_resolved_cost",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "97ed672ec913c1be8d98692ca0fe1347d292f69c257f51be9e44510086eab4d6",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 0,
+            "actor_side": "a",
+            "actor_member_id": "a-active",
+            "target_side": "a",
+            "target_member_id": "a-active",
+            "skill_slot": 1,
+            "skill_id": 7020360,
+            "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682"
+          },
+          {
+            "op": "damage",
+            "target": "opponent",
+            "params": {
+              "target": "opponent",
+              "kind": "physical",
+              "power": 35,
+              "type": "普通系"
+            },
+            "before": 300,
+            "after": 293,
+            "damage": 7,
+            "source": "caller_supplied_unvalidated_resolver",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "97ed672ec913c1be8d98692ca0fe1347d292f69c257f51be9e44510086eab4d6",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 0,
+            "actor_side": "a",
+            "actor_member_id": "a-active",
+            "target_side": "b",
+            "target_member_id": "b-active",
+            "skill_slot": 1,
+            "skill_id": 7020360,
+            "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682"
+          },
+          {
+            "op": "energy.restore",
+            "target": "self",
+            "params": {
+              "target": "self",
+              "amount": 1
+            },
+            "before": 1,
+            "after": 2,
+            "policy": "caller_declared_cap",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "97ed672ec913c1be8d98692ca0fe1347d292f69c257f51be9e44510086eab4d6",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 0,
+            "actor_side": "a",
+            "actor_member_id": "a-active",
+            "target_side": "a",
+            "target_member_id": "a-active",
+            "skill_slot": 1,
+            "skill_id": 7020360,
+            "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682"
+          },
+          {
+            "op": "energy.pay",
+            "amount": 2,
+            "source": "caller_resolved_cost",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "d8c8a4072158798d8eebc660ba89dd8264f788e24fb2c3a93574793274ea0ba2",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 1,
+            "actor_side": "b",
+            "actor_member_id": "b-active",
+            "target_side": "b",
+            "target_member_id": "b-active",
+            "skill_slot": 1,
+            "skill_id": 7020530,
+            "source_hash": "beb9f7c2c31ac32c4caa860c77c4004fa8dd4a6acfe4097788d9135a161291ee"
+          },
+          {
+            "op": "damage",
+            "target": "opponent",
+            "params": {
+              "target": "opponent",
+              "kind": "physical",
+              "power": 65,
+              "type": "普通系",
+              "condition": {
+                "target": "opponent",
+                "attribute": "energy",
+                "comparison": "lte",
+                "value": 2,
+                "source_timing": "unspecified"
+              },
+              "modifier": {
+                "kind": "damage_multiply",
+                "amount": 5
+              }
+            },
+            "source_op": "damage.conditional",
+            "before": 300,
+            "after": 290,
+            "damage": 10,
+            "base_power": 65,
+            "resolved_power": 65,
+            "condition": {
+              "target": "opponent",
+              "attribute": "energy",
+              "comparison": "lte",
+              "value": 2,
+              "source_timing": "unspecified"
+            },
+            "condition_observed": 2,
+            "condition_matched": true,
+            "damage_multiplier": {
+              "numerator": 5,
+              "denominator": 1
+            },
+            "resolved_params": {
+              "target": "opponent",
+              "kind": "physical",
+              "power": 65,
+              "type": "普通系",
+              "condition": {
+                "target": "opponent",
+                "attribute": "energy",
+                "comparison": "lte",
+                "value": 2,
+                "source_timing": "unspecified"
+              },
+              "modifier": {
+                "kind": "damage_multiply",
+                "amount": 5
+              },
+              "base_power": 65,
+              "condition_observed": 2,
+              "condition_matched": true,
+              "damage_multiplier": {
+                "numerator": 5,
+                "denominator": 1
+              }
+            },
+            "conditional_policy": {
+              "timing": "after_payment_before_damage_experiment"
+            },
+            "source": "caller_supplied_unvalidated_resolver",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "d8c8a4072158798d8eebc660ba89dd8264f788e24fb2c3a93574793274ea0ba2",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 1,
+            "actor_side": "b",
+            "actor_member_id": "b-active",
+            "target_side": "a",
+            "target_member_id": "a-active",
+            "skill_slot": 1,
+            "skill_id": 7020530,
+            "source_hash": "beb9f7c2c31ac32c4caa860c77c4004fa8dd4a6acfe4097788d9135a161291ee"
+          }
+        ],
+        "blockers": [],
+        "snapshot_id": "20261025T013619+0800",
+        "state_hash": "3b3735076ac2016ddf0dcc1a15c65575a2bbd5b947f315714133272b9ccc523e",
+        "actions_hash": "483d40b8a771b5a93d1ad3666904dbd28c35bd47c6635d03d676a46c10741848",
+        "context_hash": "40e2bcb0816b0d431517c9a01bf846efd8aca382859856ab2e55dca0ae2de10d",
+        "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+        "plan_hash": "6319cf50640c3bd1e2ff760c431e2bee158fb6dd4f682a23c691669d6dbdf88d",
+        "order": [
+          "a",
+          "b"
+        ],
+        "input_state_mutated": false,
+        "full_turn_executed": false,
+        "battle_executable": false,
+        "calibrated": false,
+        "training_eligible": false,
+        "implementation_unvalidated": true,
+        "final_state_hash": "1c1754f59cf9117b4a3139558b45d19030d87e5ae1bd1cd12e65da886d580553",
+        "assumptions": {
+          "mode": "isolated_joint_action_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "fragments": {
+            "a": {
+              "mode": "isolated_skill_experiment",
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682",
+              "operation_order": "source_text_order_experiment",
+              "unresolved_dependencies": [],
+              "excluded_hooks": [
+                "bloodlines",
+                "event_triggers",
+                "field",
+                "marks",
+                "traits"
+              ],
+              "energy_policy": "clamp_to_declared_max",
+              "stat_policy": "record_signed_percentage_terms",
+              "damage_policy": "resolver_returns_actual_integer_hp_loss"
+            },
+            "b": {
+              "mode": "isolated_skill_experiment",
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "beb9f7c2c31ac32c4caa860c77c4004fa8dd4a6acfe4097788d9135a161291ee",
+              "operation_order": "source_text_order_experiment",
+              "unresolved_dependencies": [],
+              "excluded_hooks": [
+                "bloodlines",
+                "event_triggers",
+                "field",
+                "marks",
+                "traits"
+              ],
+              "energy_policy": "clamp_to_declared_max",
+              "stat_policy": "record_signed_percentage_terms",
+              "damage_policy": "resolver_returns_actual_integer_hp_loss",
+              "conditional_policy": {
+                "timing": "after_payment_before_damage_experiment"
+              }
+            }
+          }
+        },
+        "unresolved": [
+          {
+            "side": "both",
+            "reason": "配招学习条件、完整伤害、资源结算、特性触发和胜负仍未校准；此结果仅为行动阶段计划，不证明阵容合法。"
+          }
+        ],
+        "end_of_turn_executed": false
+      }
+    },
+    {
+      "caller_cost_a": 1,
+      "observed_enemy_energy": 3,
+      "damage_multiplier": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "hp_a": 298,
+      "result": {
+        "status": "applied",
+        "scope": "isolated_joint_action_experiment",
+        "state": {
+          "snapshot_id": "20261025T013619+0800",
+          "turn": 2,
+          "teams": {
+            "a": {
+              "active_slot": 1,
+              "members": [
+                {
+                  "member_id": "a-reserve",
+                  "form_id": 3016,
+                  "hp": 300,
+                  "max_hp": 350,
+                  "energy": 10,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020360,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {}
+                },
+                {
+                  "member_id": "a-active",
+                  "form_id": 3001,
+                  "hp": 298,
+                  "max_hp": 350,
+                  "energy": 3,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020360,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {},
+                  "types": [
+                    "草系"
+                  ]
+                }
+              ],
+              "marks": {
+                "positive": null,
+                "negative": null
+              }
+            },
+            "b": {
+              "active_slot": 1,
+              "members": [
+                {
+                  "member_id": "b-reserve",
+                  "form_id": 3016,
+                  "hp": 300,
+                  "max_hp": 350,
+                  "energy": 10,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020360,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {}
+                },
+                {
+                  "member_id": "b-active",
+                  "form_id": 3001,
+                  "hp": 293,
+                  "max_hp": 350,
+                  "energy": 8,
+                  "max_energy": 20,
+                  "speed": 100,
+                  "entered_turn": 1,
+                  "rooted": false,
+                  "charge": null,
+                  "skill_slots": [
+                    0,
+                    7020530,
+                    0,
+                    7020780
+                  ],
+                  "statuses": {},
+                  "stat_modifiers": {},
+                  "types": [
+                    "草系"
+                  ]
+                }
+              ],
+              "marks": {
+                "positive": null,
+                "negative": null
+              }
+            }
+          }
+        },
+        "events": [
+          {
+            "op": "energy.pay",
+            "amount": 1,
+            "source": "caller_resolved_cost",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "97ed672ec913c1be8d98692ca0fe1347d292f69c257f51be9e44510086eab4d6",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 0,
+            "actor_side": "a",
+            "actor_member_id": "a-active",
+            "target_side": "a",
+            "target_member_id": "a-active",
+            "skill_slot": 1,
+            "skill_id": 7020360,
+            "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682"
+          },
+          {
+            "op": "damage",
+            "target": "opponent",
+            "params": {
+              "target": "opponent",
+              "kind": "physical",
+              "power": 35,
+              "type": "普通系"
+            },
+            "before": 300,
+            "after": 293,
+            "damage": 7,
+            "source": "caller_supplied_unvalidated_resolver",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "97ed672ec913c1be8d98692ca0fe1347d292f69c257f51be9e44510086eab4d6",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 0,
+            "actor_side": "a",
+            "actor_member_id": "a-active",
+            "target_side": "b",
+            "target_member_id": "b-active",
+            "skill_slot": 1,
+            "skill_id": 7020360,
+            "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682"
+          },
+          {
+            "op": "energy.restore",
+            "target": "self",
+            "params": {
+              "target": "self",
+              "amount": 1
+            },
+            "before": 2,
+            "after": 3,
+            "policy": "caller_declared_cap",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "97ed672ec913c1be8d98692ca0fe1347d292f69c257f51be9e44510086eab4d6",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 0,
+            "actor_side": "a",
+            "actor_member_id": "a-active",
+            "target_side": "a",
+            "target_member_id": "a-active",
+            "skill_slot": 1,
+            "skill_id": 7020360,
+            "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682"
+          },
+          {
+            "op": "energy.pay",
+            "amount": 2,
+            "source": "caller_resolved_cost",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "d8c8a4072158798d8eebc660ba89dd8264f788e24fb2c3a93574793274ea0ba2",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 1,
+            "actor_side": "b",
+            "actor_member_id": "b-active",
+            "target_side": "b",
+            "target_member_id": "b-active",
+            "skill_slot": 1,
+            "skill_id": 7020530,
+            "source_hash": "beb9f7c2c31ac32c4caa860c77c4004fa8dd4a6acfe4097788d9135a161291ee"
+          },
+          {
+            "op": "damage",
+            "target": "opponent",
+            "params": {
+              "target": "opponent",
+              "kind": "physical",
+              "power": 65,
+              "type": "普通系",
+              "condition": {
+                "target": "opponent",
+                "attribute": "energy",
+                "comparison": "lte",
+                "value": 2,
+                "source_timing": "unspecified"
+              },
+              "modifier": {
+                "kind": "damage_multiply",
+                "amount": 5
+              }
+            },
+            "source_op": "damage.conditional",
+            "before": 300,
+            "after": 298,
+            "damage": 2,
+            "base_power": 65,
+            "resolved_power": 65,
+            "condition": {
+              "target": "opponent",
+              "attribute": "energy",
+              "comparison": "lte",
+              "value": 2,
+              "source_timing": "unspecified"
+            },
+            "condition_observed": 3,
+            "condition_matched": false,
+            "damage_multiplier": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "resolved_params": {
+              "target": "opponent",
+              "kind": "physical",
+              "power": 65,
+              "type": "普通系",
+              "condition": {
+                "target": "opponent",
+                "attribute": "energy",
+                "comparison": "lte",
+                "value": 2,
+                "source_timing": "unspecified"
+              },
+              "modifier": {
+                "kind": "damage_multiply",
+                "amount": 5
+              },
+              "base_power": 65,
+              "condition_observed": 3,
+              "condition_matched": false,
+              "damage_multiplier": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            },
+            "conditional_policy": {
+              "timing": "after_payment_before_damage_experiment"
+            },
+            "source": "caller_supplied_unvalidated_resolver",
+            "snapshot_id": "20261025T013619+0800",
+            "program_hash": "d8c8a4072158798d8eebc660ba89dd8264f788e24fb2c3a93574793274ea0ba2",
+            "implementation_unvalidated": true,
+            "training_eligible": false,
+            "action_index": 1,
+            "actor_side": "b",
+            "actor_member_id": "b-active",
+            "target_side": "a",
+            "target_member_id": "a-active",
+            "skill_slot": 1,
+            "skill_id": 7020530,
+            "source_hash": "beb9f7c2c31ac32c4caa860c77c4004fa8dd4a6acfe4097788d9135a161291ee"
+          }
+        ],
+        "blockers": [],
+        "snapshot_id": "20261025T013619+0800",
+        "state_hash": "3b3735076ac2016ddf0dcc1a15c65575a2bbd5b947f315714133272b9ccc523e",
+        "actions_hash": "18fd681450e6b1e37da964c762f9f805264d696e42b22f819e4c9f20f6e65962",
+        "context_hash": "40e2bcb0816b0d431517c9a01bf846efd8aca382859856ab2e55dca0ae2de10d",
+        "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+        "plan_hash": "03b3e4cd4b0705faf337bc3cbf2ae28e1998f038ef4bcb9f52231f8636c6e8b0",
+        "order": [
+          "a",
+          "b"
+        ],
+        "input_state_mutated": false,
+        "full_turn_executed": false,
+        "battle_executable": false,
+        "calibrated": false,
+        "training_eligible": false,
+        "implementation_unvalidated": true,
+        "final_state_hash": "219b0d18c6548508c0dba3245457a20f0109237523eb6f8a6b2c23093bb571a9",
+        "assumptions": {
+          "mode": "isolated_joint_action_experiment",
+          "excluded_hooks": [
+            "bloodlines",
+            "event_triggers",
+            "field",
+            "marks",
+            "traits"
+          ],
+          "fragments": {
+            "a": {
+              "mode": "isolated_skill_experiment",
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "fc898676a0e79d1c9a78cf003d21d61095a7cdaca0c96cda2596ef7d0fdfb682",
+              "operation_order": "source_text_order_experiment",
+              "unresolved_dependencies": [],
+              "excluded_hooks": [
+                "bloodlines",
+                "event_triggers",
+                "field",
+                "marks",
+                "traits"
+              ],
+              "energy_policy": "clamp_to_declared_max",
+              "stat_policy": "record_signed_percentage_terms",
+              "damage_policy": "resolver_returns_actual_integer_hp_loss"
+            },
+            "b": {
+              "mode": "isolated_skill_experiment",
+              "snapshot_id": "20261025T013619+0800",
+              "source_hash": "beb9f7c2c31ac32c4caa860c77c4004fa8dd4a6acfe4097788d9135a161291ee",
+              "operation_order": "source_text_order_experiment",
+              "unresolved_dependencies": [],
+              "excluded_hooks": [
+                "bloodlines",
+                "event_triggers",
+                "field",
+                "marks",
+                "traits"
+              ],
+              "energy_policy": "clamp_to_declared_max",
+              "stat_policy": "record_signed_percentage_terms",
+              "damage_policy": "resolver_returns_actual_integer_hp_loss",
+              "conditional_policy": {
+                "timing": "after_payment_before_damage_experiment"
+              }
+            }
+          }
+        },
+        "unresolved": [
+          {
+            "side": "both",
+            "reason": "配招学习条件、完整伤害、资源结算、特性触发和胜负仍未校准；此结果仅为行动阶段计划，不证明阵容合法。"
+          }
+        ],
+        "end_of_turn_executed": false
+      }
+    }
+  ],
+  "api_compiler_version": "bwiki-declarative-4",
+  "http_formula_missing_blocked": true,
+  "full_simulator_completed": false,
+  "training_started": false
+}

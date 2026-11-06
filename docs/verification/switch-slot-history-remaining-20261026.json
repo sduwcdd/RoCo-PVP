@@ -1,0 +1,815 @@
+{
+  "snapshot_id": "20261025T013619+0800",
+  "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+  "reviewed_overrides": 325,
+  "all_unadmitted_count": 83,
+  "all_non_dynamic_unadmitted_count": 80,
+  "scope_non_dynamic_unadmitted_count": 21,
+  "dynamic_originals_excluded": [
+    7020840,
+    7020850,
+    7020860
+  ],
+  "scope_unadmitted": [
+    {
+      "skill_id": 7020840,
+      "name": "借用",
+      "description": "每回合随机变成己方队伍中其他精灵的技能。",
+      "record_hash": "e6a5b2c3a3c04f44bff9582bba55de1994fcc78950611e4a72b65a053d2dbe8f",
+      "record": {
+        "id": 7020840,
+        "wiki_id": "skill_000291",
+        "name": {
+          "zh": "借用"
+        },
+        "type": "普通系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "每回合随机变成己方队伍中其他精灵的技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%80%9F%E7%94%A8",
+        "source_module": "Skills"
+      },
+      "tags": [],
+      "classification": "dynamic_original_excluded",
+      "reason": "Runtime-generated candidate is checked after draw; original generator is not an unimplemented ordinary executable skill.",
+      "blockers": [
+        "description_not_fully_supported"
+      ]
+    },
+    {
+      "skill_id": 7020850,
+      "name": "取念",
+      "description": "每回合随机变成敌方任意精灵的技能，且该技能能耗-2。",
+      "record_hash": "9b1ed3554f7def3388f1dc2a406a01e697e7287cac59088c06e7a35b5a6bc540",
+      "record": {
+        "id": 7020850,
+        "wiki_id": "skill_000295",
+        "name": {
+          "zh": "取念"
+        },
+        "type": "普通系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "每回合随机变成敌方任意精灵的技能，且该技能能耗-2。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8F%96%E5%BF%B5",
+        "source_module": "Skills"
+      },
+      "tags": [],
+      "classification": "dynamic_original_excluded",
+      "reason": "Runtime-generated candidate is checked after draw; original generator is not an unimplemented ordinary executable skill.",
+      "blockers": [
+        "description_not_fully_supported"
+      ]
+    },
+    {
+      "skill_id": 7020860,
+      "name": "复写",
+      "description": "每回合随机变成自己未携带的技能，且该技能能耗-2。",
+      "record_hash": "b633403af24010b253e28f8c0cdec9ecd0e769ff60f589d95568337a99da8600",
+      "record": {
+        "id": 7020860,
+        "wiki_id": "skill_000299",
+        "name": {
+          "zh": "复写"
+        },
+        "type": "普通系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "每回合随机变成自己未携带的技能，且该技能能耗-2。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%A4%8D%E5%86%99",
+        "source_module": "Skills"
+      },
+      "tags": [
+        "slot_bundle"
+      ],
+      "classification": "dynamic_original_excluded",
+      "reason": "Runtime-generated candidate is checked after draw; original generator is not an unimplemented ordinary executable skill.",
+      "blockers": [
+        "description_not_fully_supported"
+      ]
+    },
+    {
+      "skill_id": 7070060,
+      "name": "轴承支撑",
+      "description": "主动：本技能被动永久额外-1能耗，被动：两侧技能能耗-1，传动1。",
+      "record_hash": "8d392bae8dcf060d4f16cd590f41be7d960ed9d61948859214169faae3b876e4",
+      "record": {
+        "id": 7070060,
+        "wiki_id": "skill_000474",
+        "name": {
+          "zh": "轴承支撑"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 6,
+        "desc": {
+          "zh": "主动：本技能被动永久额外-1能耗，被动：两侧技能能耗-1，传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BD%B4%E6%89%BF%E6%94%AF%E6%92%91",
+        "source_module": "Skills",
+        "desc_notes": [
+          1033
+        ]
+      },
+      "tags": [
+        "slot_bundle",
+        "history"
+      ],
+      "classification": "slot_modifier_composition",
+      "reason": "Persistent growing adjacent discount needs source-bound per-target-slot modifiers and edge-neighbor selector; existing global skill-ID discounts differ.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7070070,
+      "name": "联动装置",
+      "description": "使用后两侧技能的威力永久+20，应对防御：变为威力永久+30。",
+      "record_hash": "a3802728137604dff00525d7cb84c2df9f23d80c1baca7b83593a69c51500006",
+      "record": {
+        "id": 7070070,
+        "wiki_id": "skill_000475",
+        "name": {
+          "zh": "联动装置"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "使用后两侧技能的威力永久+20，应对防御：变为威力永久+30。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%81%94%E5%8A%A8%E8%A3%85%E7%BD%AE",
+        "source_module": "Skills",
+        "desc_notes": [
+          1017
+        ]
+      },
+      "tags": [
+        "slot_bundle",
+        "history"
+      ],
+      "classification": "slot_modifier_composition",
+      "reason": "Adjacent slot power+20/+30 needs per-slot source target identity across movement and the edge selector.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7070080,
+      "name": "能量守恒",
+      "description": "减伤80%，应对攻击：两侧技能能耗永久-1。",
+      "record_hash": "49681cdcabb9731ea863db859340f5f39cd5320b0213736fbb3739bdeca373a2",
+      "record": {
+        "id": 7070080,
+        "wiki_id": "skill_000476",
+        "name": {
+          "zh": "能量守恒"
+        },
+        "type": "机械系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤80%，应对攻击：两侧技能能耗永久-1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016
+        ]
+      },
+      "tags": [
+        "slot_bundle",
+        "history"
+      ],
+      "classification": "slot_modifier_composition",
+      "reason": "Defense response adjacent permanent cost-1 requires the same per-slot modifier target contract.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7070250,
+      "name": "减压阀",
+      "description": "主动：本技能被动永久额外+20威力，被动：两侧技能威力+10，传动1。",
+      "record_hash": "75ef10d07ad66fdedb73aa8a06a9eab6f89db1dc7f6ead6180bee68c76a99b72",
+      "record": {
+        "id": 7070250,
+        "wiki_id": "skill_000490",
+        "name": {
+          "zh": "减压阀"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "主动：本技能被动永久额外+20威力，被动：两侧技能威力+10，传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%87%8F%E5%8E%8B%E9%98%80",
+        "source_module": "Skills",
+        "desc_notes": [
+          1033
+        ]
+      },
+      "tags": [
+        "slot_bundle",
+        "history"
+      ],
+      "classification": "slot_modifier_composition",
+      "reason": "Growing adjacent power aura plus transmission needs per-slot modifier target contract and edge selector.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7070290,
+      "name": "过山车",
+      "description": "使己方队伍中的所有精灵携带的技能跨精灵向下移动1个位置，巧变：机械系技能。",
+      "record_hash": "096554f95a987ac1fa982638f0923cdd28bea12f3f9db9436b8134e6aee025a5",
+      "record": {
+        "id": 7070290,
+        "wiki_id": "skill_000494",
+        "name": {
+          "zh": "过山车"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 8,
+        "desc": {
+          "zh": "使己方队伍中的所有精灵携带的技能跨精灵向下移动1个位置，巧变：机械系技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%87%E5%B1%B1%E8%BD%A6",
+        "source_module": "Skills",
+        "desc_notes": [
+          3011
+        ]
+      },
+      "tags": [
+        "slot_bundle"
+      ],
+      "classification": "cross_member_identity_gap",
+      "reason": "Cross-member one-slot rotation splits original bundles; current original-owner identity supports whole bundles only. Requires per-slot origin migration, not dropping histories.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7100250,
+      "name": "龙血",
+      "description": "减伤70%，本技能可以在蓄力状态下使用，应对攻击：下次技能无需蓄力。",
+      "record_hash": "2243f3863e0bc9bb91cb30bf91808265f9e8d4c5cb5c61babcc899315e24d182",
+      "record": {
+        "id": 7100250,
+        "wiki_id": "skill_000577",
+        "name": {
+          "zh": "龙血"
+        },
+        "type": "龙系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤70%，本技能可以在蓄力状态下使用，应对攻击：下次技能无需蓄力。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%BE%99%E8%A1%80",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016,
+          1007
+        ]
+      },
+      "tags": [
+        "charge"
+      ],
+      "classification": "charge_action_admission",
+      "reason": "Defense usable during charge requires selected-action admission without discarding pending charge; cannot be replaced by next-charge bypass alone.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7100300,
+      "name": "龙守望",
+      "description": "下次技能无需蓄力，本技能可在蓄力状态下使用。选择：本次能耗-1或应对防御时打断，敌方下回合获得眩晕。",
+      "record_hash": "89f58b28752ff533b1c2cece530c398057f0b1cd977ba7515d6e5f424d205010",
+      "record": {
+        "id": 7100300,
+        "wiki_id": "skill_000579",
+        "name": {
+          "zh": "龙守望"
+        },
+        "type": "龙系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "下次技能无需蓄力，本技能可在蓄力状态下使用。选择：本次能耗-1或应对防御时打断，敌方下回合获得眩晕。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%BE%99%E5%AE%88%E6%9C%9B",
+        "source_module": "Skills",
+        "desc_notes": [
+          1007,
+          1007,
+          3019,
+          1017
+        ]
+      },
+      "tags": [
+        "delayed",
+        "charge"
+      ],
+      "classification": "charge_choice_stun_composition",
+      "reason": "During-charge alternate action, choice, defense interrupt and next-turn stun all need the full composite contract.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7110350,
+      "name": "双联脉冲",
+      "description": "造成魔伤，迸发：本技能使用次数+1。",
+      "record_hash": "a61737d8fa350e4a0cf52bf91e951a57ebb0f5320281e568c360491246273183",
+      "record": {
+        "id": 7110350,
+        "wiki_id": "skill_000599",
+        "name": {
+          "zh": "双联脉冲"
+        },
+        "type": "电系",
+        "kind": "magical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成魔伤，迸发：本技能使用次数+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8F%8C%E8%81%94%E8%84%89%E5%86%B2",
+        "source_module": "Skills",
+        "power": 50,
+        "desc_notes": [
+          1010
+        ]
+      },
+      "tags": [
+        "release_count"
+      ],
+      "classification": "whole_release_dispatch_gap",
+      "reason": "20930100/93 ->21080090/108; historical108 says consecutive skill release+1, not hit+1. See release-count-sources.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7110360,
+      "name": "过载回路",
+      "description": "回合结束自己返场，下回合所选技能使用次数+1。",
+      "record_hash": "1885717ce459a89a8ee790e7d7fe080222b2b99a787d5e5022e54e597815f08e",
+      "record": {
+        "id": 7110360,
+        "wiki_id": "skill_000600",
+        "name": {
+          "zh": "过载回路"
+        },
+        "type": "电系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "回合结束自己返场，下回合所选技能使用次数+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%87%E8%BD%BD%E5%9B%9E%E8%B7%AF",
+        "source_module": "Skills",
+        "desc_notes": [
+          1024
+        ]
+      },
+      "tags": [
+        "release_count",
+        "departure_entry",
+        "delayed"
+      ],
+      "classification": "whole_action_dispatch_gap",
+      "reason": "20171061/17 ->20150070/15 says next extra cast and historical15 says act twice; return is reusable but cannot admit only that prefix.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7110380,
+      "name": "感电",
+      "description": "造成魔伤，每离场1次，本技能使用次数永久+1。",
+      "record_hash": "5fc14d1c08d1bf916a0a1f8d0bcdb1b254f7cd2b90d05a1d122b4914823e37ef",
+      "record": {
+        "id": 7110380,
+        "wiki_id": "skill_000602",
+        "name": {
+          "zh": "感电"
+        },
+        "type": "电系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，每离场1次，本技能使用次数永久+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%84%9F%E7%94%B5",
+        "source_module": "Skills",
+        "power": 60,
+        "desc_notes": [
+          3009
+        ]
+      },
+      "tags": [
+        "release_count",
+        "departure_entry",
+        "history"
+      ],
+      "classification": "whole_release_dispatch_gap",
+      "reason": "20730110/73 ->20640560/64 ->21080091/108; departure growth source known, release payment/hooks dispatch still missing.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7110420,
+      "name": "电磁偏转",
+      "description": "减伤70%，应对攻击：下回合所选技能使用次数+1。",
+      "record_hash": "b286fcce74d3bb46e9251c79a44d243fc762d385013eff4787e4361880bb4f3a",
+      "record": {
+        "id": 7110420,
+        "wiki_id": "skill_000605",
+        "name": {
+          "zh": "电磁偏转"
+        },
+        "type": "电系",
+        "kind": "defense",
+        "energy": 3,
+        "desc": {
+          "zh": "减伤70%，应对攻击：下回合所选技能使用次数+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%94%B5%E7%A3%81%E5%81%8F%E8%BD%AC",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016
+        ]
+      },
+      "tags": [
+        "release_count",
+        "delayed"
+      ],
+      "classification": "whole_action_dispatch_gap",
+      "reason": "Defense response grants next-turn selected skill extra use; same15 dispatch boundary as overload.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7110460,
+      "name": "踏雷",
+      "description": "自己回合结束时返场，携带的攻击技能下回合获得1个已触发过的迸发效果，应对防御：改为获得所有触发过的迸发效果。",
+      "record_hash": "0bb01036912be3d3ea4537b41f7919480593534976b52649a86540a6a65dda44",
+      "record": {
+        "id": 7110460,
+        "wiki_id": "skill_000608",
+        "name": {
+          "zh": "踏雷"
+        },
+        "type": "电系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己回合结束时返场，携带的攻击技能下回合获得1个已触发过的迸发效果，应对防御：改为获得所有触发过的迸发效果。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%B8%8F%E9%9B%B7",
+        "source_module": "Skills",
+        "desc_notes": [
+          1024,
+          1010,
+          1017,
+          1010
+        ]
+      },
+      "tags": [
+        "departure_entry",
+        "delayed"
+      ],
+      "classification": "burst_history_copy_gap",
+      "reason": "Requires actual previously-triggered burst effect history and copied-effect replay pool, not just first-action predicate or return.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7130220,
+      "name": "掩护",
+      "description": "减伤70%，紧急脱离，应对攻击：下个入场精灵获得减伤。",
+      "record_hash": "972b2a5ba32486d41358f4f8a308ce536f2e7bac670cc3e114a90634b68c8be1",
+      "record": {
+        "id": 7130220,
+        "wiki_id": "skill_000645",
+        "name": {
+          "zh": "掩护"
+        },
+        "type": "虫系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤70%，紧急脱离，应对攻击：下个入场精灵获得减伤。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%8E%A9%E6%8A%A4",
+        "source_module": "Skills",
+        "desc_notes": [
+          1026,
+          1016
+        ]
+      },
+      "tags": [
+        "departure_entry"
+      ],
+      "classification": "incoming_defense_composition",
+      "reason": "Response21120010/base2112001 opcode112 parameter791337 matches BATTLE_GLOBAL_CONFIG.yanhu_buff112; the new-entry transfer algorithm/window remains unread, not a missing ordinary guard buff.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7150320,
+      "name": "疾风连袭",
+      "description": "释放自己释放过的迅捷技能，其能耗之和的二分之一加至本技能能耗，每次使用后能耗+1。",
+      "record_hash": "c1ad0240d70e55ab198b1170757a116083743e2700b95d2e542c301e2edc47a9",
+      "record": {
+        "id": 7150320,
+        "wiki_id": "skill_000708",
+        "name": {
+          "zh": "疾风连袭"
+        },
+        "type": "翼系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "释放自己释放过的迅捷技能，其能耗之和的二分之一加至本技能能耗，每次使用后能耗+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%96%BE%E9%A3%8E%E8%BF%9E%E8%A2%AD",
+        "source_module": "Skills"
+      },
+      "tags": [
+        "history"
+      ],
+      "classification": "whole_release_dispatch_gap",
+      "reason": "Replay actual past Swift releases plus sum-cost/2 and own cost growth; whole-skill release queue and retained Swift source trace needed.",
+      "blockers": [
+        "description_not_fully_supported"
+      ]
+    },
+    {
+      "skill_id": 7160170,
+      "name": "示弱",
+      "description": "自己获得萌化：速度永久+130。",
+      "record_hash": "63b0611190cccc58ee186fa0e0525171009b84b9c4a7fde8c27936b3e4e8abc2",
+      "record": {
+        "id": 7160170,
+        "wiki_id": "skill_000721",
+        "name": {
+          "zh": "示弱"
+        },
+        "type": "萌系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己获得萌化：速度永久+130。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%A4%BA%E5%BC%B1",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "tags": [
+        "history"
+      ],
+      "classification": "external_menghua_formula",
+      "reason": "Menghua conversion lifecycle/source semantics intentionally remain unresolved; outside slot/history implementation.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7160180,
+      "name": "赤子之心",
+      "description": "自己获得萌化：全技能能耗永久-2。",
+      "record_hash": "40c8fbde5ff3d8e0d74c20396a6028ab8e936f5dce960b0d3835b218526144af",
+      "record": {
+        "id": 7160180,
+        "wiki_id": "skill_000722",
+        "name": {
+          "zh": "赤子之心"
+        },
+        "type": "萌系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己获得萌化：全技能能耗永久-2。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%B5%A4%E5%AD%90%E4%B9%8B%E5%BF%83",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "tags": [
+        "history"
+      ],
+      "classification": "external_menghua_formula",
+      "reason": "Same Menghua lifecycle boundary; do not admit only cost prefix.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7160250,
+      "name": "撒娇",
+      "description": "造成魔伤，3连击。自己获得萌化：全技能威力永久+10。",
+      "record_hash": "ec251ebbf207a291c579a7725276cfc8202fea3bab165b696c736d8aba0e6ec2",
+      "record": {
+        "id": 7160250,
+        "wiki_id": "skill_000729",
+        "name": {
+          "zh": "撒娇"
+        },
+        "type": "萌系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，3连击。自己获得萌化：全技能威力永久+10。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%92%92%E5%A8%87",
+        "source_module": "Skills",
+        "power": 30,
+        "desc_notes": [
+          1006
+        ]
+      },
+      "tags": [
+        "history"
+      ],
+      "classification": "external_menghua_formula",
+      "reason": "Same Menghua lifecycle boundary; do not admit only three-hit prefix.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7160400,
+      "name": "做好事",
+      "description": "造成魔伤，自己每使用过1次选择技能，自己获得3层随机永久属性增益，使用后重置。",
+      "record_hash": "f970c1575d31fd6b812e5d9e108000f20912219134c233142e2e50c282ce2d7a",
+      "record": {
+        "id": 7160400,
+        "wiki_id": "skill_000741",
+        "name": {
+          "zh": "做好事"
+        },
+        "type": "萌系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，自己每使用过1次选择技能，自己获得3层随机永久属性增益，使用后重置。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%81%9A%E5%A5%BD%E4%BA%8B",
+        "source_module": "Skills",
+        "power": 80,
+        "desc_notes": [
+          3019,
+          3014
+        ]
+      },
+      "tags": [
+        "history"
+      ],
+      "classification": "choice_random_history_composition",
+      "reason": "Count committed choice uses, three random stat layers per use, then reset; random-stat/choice owners.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7170310,
+      "name": "吃独食",
+      "description": "造成魔伤，自己每使用过1次选择技能，敌方获得3层随机永久属性减益，使用后重置。",
+      "record_hash": "95821d288366833f81fd48989e9ae416fd597859f0fc34a01802372fd8897684",
+      "record": {
+        "id": 7170310,
+        "wiki_id": "skill_000762",
+        "name": {
+          "zh": "吃独食"
+        },
+        "type": "幽系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，自己每使用过1次选择技能，敌方获得3层随机永久属性减益，使用后重置。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%90%83%E7%8B%AC%E9%A3%9F",
+        "source_module": "Skills",
+        "power": 80,
+        "desc_notes": [
+          3019,
+          3018
+        ]
+      },
+      "tags": [
+        "history"
+      ],
+      "classification": "choice_random_history_composition",
+      "reason": "Same choice-use count/reset with opponent random debuffs; random-stat/choice owners.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7190310,
+      "name": "超新星馈赠",
+      "description": "敌方获得2层星陨印记，每使用1次，赋予的星陨印记层数永久+1。",
+      "record_hash": "01de6adf97c2437b5f97db0ff4e1608a9c5335086a58af54274e6cdf77fbf2e2",
+      "record": {
+        "id": 7190310,
+        "wiki_id": "skill_000814",
+        "name": {
+          "zh": "超新星馈赠"
+        },
+        "type": "幻系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "敌方获得2层星陨印记，每使用1次，赋予的星陨印记层数永久+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%B6%85%E6%96%B0%E6%98%9F%E9%A6%88%E8%B5%A0",
+        "source_module": "Skills",
+        "desc_notes": [
+          1035,
+          1035
+        ]
+      },
+      "tags": [
+        "history"
+      ],
+      "classification": "external_starmark_formula",
+      "reason": "Star-mark lifecycle/numeric trigger boundary; permanent grant-stack history alone cannot admit whole skill.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    },
+    {
+      "skill_id": 7190490,
+      "name": "观测者效应",
+      "description": "自己脱离，更换入场的精灵以月陨星状态登场。",
+      "record_hash": "222e828b0caa99689d2bb502ca70ac135c69eac2d303b02178ff3ae375465f72",
+      "record": {
+        "id": 7190490,
+        "wiki_id": "skill_000831",
+        "name": {
+          "zh": "观测者效应"
+        },
+        "type": "幻系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "自己脱离，更换入场的精灵以月陨星状态登场。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%A7%82%E6%B5%8B%E8%80%85%E6%95%88%E5%BA%94",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003,
+          3025
+        ]
+      },
+      "tags": [
+        "departure_entry"
+      ],
+      "classification": "external_form_transition",
+      "reason": "Next entrant forced Moonfall state needs complete form/stat/skill/source transition; no partial form-name substitution.",
+      "blockers": [
+        "description_not_fully_supported",
+        "unresolved_desc_notes"
+      ]
+    }
+  ]
+}

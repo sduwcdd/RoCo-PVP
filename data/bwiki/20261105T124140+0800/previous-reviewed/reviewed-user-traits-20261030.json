@@ -1,0 +1,753 @@
+{
+  "schema": "user-confirmed-trait-boundaries-1",
+  "source": {
+    "kind": "user_confirmation",
+    "date": "2026-10-30",
+    "scope": "answers 8-10, plus correction: phoenix retains 1 HP; cocoon immunizes its own lethal hit",
+    "clarifications": {
+      "gene_first_turn": "keep original base cost",
+      "swift_payment": "actual released skill payment counts, parent switch is not a second skill payment",
+      "guardian_fainted_teammates": "exclude; count living teammates other than owner",
+      "jealousy_cross_charge": "existing charge can release a different charging skill; consume original charge only after successful execution",
+      "jealousy_ordinary_skill": "ordinary carried skill also consumes original charge only after successful execution",
+      "repeated_cast_cost": {
+        "basis": "user-confirmed example: A casts three times at 2 energy, B once at 3",
+        "gene_next_round": 5,
+        "comparison": "use per-cast actual payment once per side, not total round spending",
+        "different_unit_payments_same_side": "unconfirmed; fail closed rather than last/max/sum"
+      }
+    }
+  },
+  "snapshot_id": "20261025T013619+0800",
+  "policies": {
+    "fatal": "each_direct_or_indirect_hp_loss_before_clipping_idempotent_token",
+    "revival": "faint_turn_plus_four_round_ends_max_hp_energy_ten_no_magic_refund",
+    "paid_cost": "actual_committed_energy_pay_per_cast_identical_repeats_fold_for_round_cost_queries_raw_history_retained",
+    "roster_exhaustion": "immediate_loss_even_pending_revival",
+    "dual_departure": "effective_speed_before_departures_seeded_tie",
+    "encore": "other_automatic_departure_in_same_turn_suppresses_return"
+  },
+  "skills": [
+    {
+      "trait_id": 200151,
+      "name": "不死鸟",
+      "record_hash": "390b188c06e3d5910b495432c8e3aeca36a8e878f3da032ad88051c4717a2a93",
+      "record": {
+        "id": 200151,
+        "wiki_id": "skill_000069",
+        "name": {
+          "zh": "不死鸟"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "每场战斗1次，受到致命伤害时保留1血，且敌方获得15层灼烧。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%B8%8D%E6%AD%BB%E9%B8%9F",
+        "source_module": "Skills",
+        "desc_notes": [
+          1002
+        ]
+      },
+      "event": "damage.before",
+      "when": {},
+      "components": [
+        {
+          "op": "fatal.retain",
+          "hp": 1,
+          "limit": 1,
+          "opponent_burn": 15
+        }
+      ],
+      "confirmation": {
+        "kind": "user_confirmation",
+        "date": "2026-10-30",
+        "scope": "answers 8-10, plus correction: phoenix retains 1 HP; cocoon immunizes its own lethal hit"
+      }
+    },
+    {
+      "trait_id": 200195,
+      "name": "化茧",
+      "record_hash": "ec0c7468a8ce962bd59a698153b57319abe0a8de635505967c6388889aeec301",
+      "record": {
+        "id": 200195,
+        "wiki_id": "skill_000104",
+        "name": {
+          "zh": "化茧"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "受到致命伤害时，获得1层萌化，并免疫此次伤害。（最多触发2次）"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8C%96%E8%8C%A7",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "event": "damage.before",
+      "when": {},
+      "components": [
+        {
+          "op": "fatal.immunity",
+          "limit": 2,
+          "cute_layers": 1
+        }
+      ],
+      "confirmation": {
+        "kind": "user_confirmation",
+        "date": "2026-10-30",
+        "scope": "answers 8-10, plus correction: phoenix retains 1 HP; cocoon immunizes its own lethal hit"
+      }
+    },
+    {
+      "trait_id": 200230,
+      "name": "不朽",
+      "record_hash": "8e9d66e9b17406cab124e1a942ea664a69d2708c00285f722dda8bf60d36bcf6",
+      "record": {
+        "id": 200230,
+        "wiki_id": "skill_000129",
+        "name": {
+          "zh": "不朽"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "力竭4回合后复活。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%B8%8D%E6%9C%BD",
+        "source_module": "Skills"
+      },
+      "event": "member.faint",
+      "when": {},
+      "components": [
+        {
+          "op": "revival.schedule",
+          "rounds": 4,
+          "hp_percent": 100,
+          "energy": 10
+        }
+      ],
+      "confirmation": {
+        "kind": "user_confirmation",
+        "date": "2026-10-30",
+        "scope": "answers 8-10, plus correction: phoenix retains 1 HP; cocoon immunizes its own lethal hit"
+      }
+    },
+    {
+      "trait_id": 200104,
+      "name": "石天平",
+      "record_hash": "a8eba39cec968888caa5b9c957d7dc2f9091b650bc9139c3810a476d420db470",
+      "record": {
+        "id": 200104,
+        "wiki_id": "skill_000027",
+        "name": {
+          "zh": "石天平"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "若使用技能能耗高于敌方，回合结束敌方失去能耗之差的能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%9F%B3%E5%A4%A9%E5%B9%B3",
+        "source_module": "Skills"
+      },
+      "event": "turn.end",
+      "when": {},
+      "components": [
+        {
+          "op": "paid.energy_difference"
+        }
+      ],
+      "confirmation": {
+        "kind": "user_confirmation",
+        "date": "2026-10-30",
+        "scope": "answers 8-10, plus correction: phoenix retains 1 HP; cocoon immunizes its own lethal hit"
+      }
+    },
+    {
+      "trait_id": 200275,
+      "name": "合拍",
+      "record_hash": "06b928703256a5895a7711e44f33dcd0e8ca97f6bfe9efed82850c0428ee1ddb",
+      "record": {
+        "id": 200275,
+        "wiki_id": "skill_000162",
+        "name": {
+          "zh": "合拍"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "本回合与敌方使用的技能在系别/类型/能耗上每有1项相同，回合结束时获得物攻和物防永久+10%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%90%88%E6%8B%8D",
+        "source_module": "Skills"
+      },
+      "event": "turn.end",
+      "when": {},
+      "components": [
+        {
+          "op": "paid.match_permanent_stats",
+          "attributes": [
+            "patk",
+            "pdef"
+          ],
+          "percent_per_match": 10
+        }
+      ],
+      "confirmation": {
+        "kind": "user_confirmation",
+        "date": "2026-10-30",
+        "scope": "answers 8-10, plus correction: phoenix retains 1 HP; cocoon immunizes its own lethal hit"
+      }
+    },
+    {
+      "trait_id": 200318,
+      "name": "基因编辑",
+      "record_hash": "874b7fa5fc8d851b398cb8f41e696b9877b42f70d933e09c314729eec89b122f",
+      "record": {
+        "id": 200318,
+        "wiki_id": "skill_000200",
+        "name": {
+          "zh": "基因编辑"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "自己携带技能的基础能耗，变为上回合双方使用的技能能耗之和。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91",
+        "source_module": "Skills"
+      },
+      "event": "cost.query",
+      "when": {},
+      "components": [
+        {
+          "op": "paid.previous_round_base"
+        }
+      ],
+      "confirmation": {
+        "kind": "user_confirmation",
+        "date": "2026-10-30",
+        "scope": "answers 8-10, plus correction: phoenix retains 1 HP; cocoon immunizes its own lethal hit"
+      }
+    },
+    {
+      "trait_id": 200210,
+      "name": "守望星",
+      "record_hash": "29a63c3c977e330d7bd22cfb0db0b3cff6ed3caabfc66860f49248c800b754c0",
+      "record": {
+        "id": 200210,
+        "wiki_id": "skill_000112",
+        "name": {
+          "zh": "守望星"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "触发星陨印记时仅消耗一半层数，仍造成满层伤害。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%AE%88%E6%9C%9B%E6%98%9F",
+        "source_module": "Skills",
+        "desc_notes": [
+          1035
+        ]
+      },
+      "event": "mark.consume",
+      "when": {},
+      "components": [
+        {
+          "op": "mark.star_half_floor_full_power"
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answer": 5
+      }
+    },
+    {
+      "trait_id": 200110,
+      "name": "水翼推进",
+      "record_hash": "80fc15cd869eaa53c0da8e1b998e27d1419c4dc0bed5a071c9745ec0b1fed57d",
+      "record": {
+        "id": 200110,
+        "wiki_id": "skill_000033",
+        "name": {
+          "zh": "水翼推进"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "己方精灵每使用1次水系技能，自己入场时获得全技能能耗-1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B0%B4%E7%BF%BC%E6%8E%A8%E8%BF%9B",
+        "source_module": "Skills"
+      },
+      "event": "confirmed.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "entry.history_cost",
+          "type": "水系",
+          "amount_per": -1
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answers": [
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "trait_id": 200153,
+      "name": "蒸汽膨胀",
+      "record_hash": "4d29af1951b2606d487093b44f6c6b2d0c2a4d080d12479041fb6348f9211135",
+      "record": {
+        "id": 200153,
+        "wiki_id": "skill_000071",
+        "name": {
+          "zh": "蒸汽膨胀"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "己方精灵每使用1次火系技能，自己入场时获得全技能威力+10。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%92%B8%E6%B1%BD%E8%86%A8%E8%83%80",
+        "source_module": "Skills"
+      },
+      "event": "confirmed.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "entry.history_power",
+          "type": "火系",
+          "amount_per": 10
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answers": [
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "trait_id": 200302,
+      "name": "淬炼火",
+      "record_hash": "a1f5617ed446cb71f85e19c08a55e05561e649d6e605e1205d5d449b79ac4637",
+      "record": {
+        "id": 200302,
+        "wiki_id": "skill_000184",
+        "name": {
+          "zh": "淬炼火"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "入场前己方精灵每使用1次火系技能，获得攻防+10%，速度+10。（最多触发10次）"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B7%AC%E7%82%BC%E7%81%AB",
+        "source_module": "Skills"
+      },
+      "event": "confirmed.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "entry.history_stats",
+          "type": "火系",
+          "percent_per": 10,
+          "speed_per": 10,
+          "cap": 10
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answers": [
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "trait_id": 200325,
+      "name": "旧玩具",
+      "record_hash": "7c6b74faefb12481ddc31eb81e6583ca2d539adc0472bbcf04f46ce350388efc",
+      "record": {
+        "id": 200325,
+        "wiki_id": "skill_000207",
+        "name": {
+          "zh": "旧玩具"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "己方精灵每使用过1个不同系别的技能，自己入场时获得双攻+10%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%97%A7%E7%8E%A9%E5%85%B7",
+        "source_module": "Skills"
+      },
+      "event": "confirmed.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "entry.history_distinct_stats",
+          "percent_per": 10
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answers": [
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "trait_id": 200147,
+      "name": "散热",
+      "record_hash": "f31ca1fc36c7ae2ac5aee789c3063be881b1bfdb2bf1d7f6ce944f88eb4feb97",
+      "record": {
+        "id": 200147,
+        "wiki_id": "skill_000065",
+        "name": {
+          "zh": "散热"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "初始能量为0，入场前己方精灵每放1次火系技能，回复3能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%95%A3%E7%83%AD",
+        "source_module": "Skills"
+      },
+      "event": "confirmed.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "initial.energy_zero"
+        },
+        {
+          "op": "entry.history_energy",
+          "type": "火系",
+          "amount_per": 3
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answers": [
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "trait_id": 200177,
+      "name": "慢热型",
+      "record_hash": "10e539811eaeec7bc0758d3fea71a6e4cf7184bd8c1707fae8d3f3d2cfaa4929",
+      "record": {
+        "id": 200177,
+        "wiki_id": "skill_000090",
+        "name": {
+          "zh": "慢热型"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "初始能量为0，入场前己方精灵每成功应对1次，回复5能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%85%A2%E7%83%AD%E5%9E%8B",
+        "source_module": "Skills"
+      },
+      "event": "confirmed.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "initial.energy_zero"
+        },
+        {
+          "op": "entry.history_energy",
+          "response_success": true,
+          "amount_per": 5
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answers": [
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "trait_id": 200262,
+      "name": "哨兵",
+      "record_hash": "3dfd807ec4f429a5c62e8732e60b7540a03aa37c1483f17c8f81a8b8770a19df",
+      "record": {
+        "id": 200262,
+        "wiki_id": "skill_000155",
+        "name": {
+          "zh": "哨兵"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "回合开始时若敌方技能足够击败自己，自己获得速度+50，行动后脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%93%A8%E5%85%B5",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "event": "confirmed.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "sentry.predict_single_hit",
+          "speed": 50
+        }
+      ],
+      "confirmation": {
+        "source": "user_confirmation",
+        "date": "2026-10-30",
+        "answers": [
+          8,
+          10,
+          12
+        ]
+      }
+    },
+    {
+      "trait_id": 200100,
+      "name": "石头大餐",
+      "record_hash": "f36a0c7d3bec5466c4c89d477d0624c572f7ee468c1e29fa7e41e16a41e5a8ce",
+      "record": {
+        "id": 200100,
+        "wiki_id": "skill_000024",
+        "name": {
+          "zh": "石头大餐"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "能量不足时，消耗5%生命，代替1能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%9F%B3%E5%A4%B4%E5%A4%A7%E9%A4%90",
+        "source_module": "Skills"
+      },
+      "event": "delegated.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "delegate.health_payment"
+        }
+      ],
+      "confirmation": {
+        "basis": "existing BWIKI and installed-file source-bound runtime; user clarification where present",
+        "date": "2026-10-30"
+      },
+      "runtime_delegate": "payment_runtime"
+    },
+    {
+      "trait_id": 200141,
+      "name": "付给恶魔的赎价",
+      "record_hash": "3668efa6f8d2141118e56fe28fff96e8c0c3c9c7455e2de6a3d87fefa69c7f6b",
+      "record": {
+        "id": 200141,
+        "wiki_id": "skill_000060",
+        "name": {
+          "zh": "付给恶魔的赎价"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "击败敌方精灵时，敌方额外损失1点魔力。被敌方精灵击败时，自己额外损失1点魔力。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%BB%98%E7%BB%99%E6%81%B6%E9%AD%94%E7%9A%84%E8%B5%8E%E4%BB%B7",
+        "source_module": "Skills"
+      },
+      "event": "delegated.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "delegate.direct_defeat_extra_magic_loss"
+        }
+      ],
+      "confirmation": {
+        "basis": "existing BWIKI and installed-file source-bound runtime; user clarification where present",
+        "date": "2026-10-30"
+      },
+      "runtime_delegate": "victory_rules"
+    },
+    {
+      "trait_id": 200109,
+      "name": "守护者",
+      "record_hash": "93ef57e7dfd4e1fb71f6473df632d191409f6ed758626f81a9a4fdc067d38d98",
+      "record": {
+        "id": 200109,
+        "wiki_id": "skill_000032",
+        "name": {
+          "zh": "守护者"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "己方其他精灵每有1层萌化，自己入场时全技能能耗-1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%AE%88%E6%8A%A4%E8%80%85",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "event": "delegated.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "entry.party_cute_cost",
+          "amount_per": -1
+        }
+      ],
+      "confirmation": {
+        "basis": "existing BWIKI and installed-file source-bound runtime; user clarification where present",
+        "date": "2026-10-30"
+      }
+    },
+    {
+      "trait_id": 200182,
+      "name": "无忧无虑",
+      "record_hash": "d18d21f821a8beb268d8251a8978309c366a3cc5b453ff6d2eb7ef2728ecb4e6",
+      "record": {
+        "id": 200182,
+        "wiki_id": "skill_000094",
+        "name": {
+          "zh": "无忧无虑"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "可获得的萌化层数不受限制。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%97%A0%E5%BF%A7%E6%97%A0%E8%99%91",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "event": "delegated.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "delegate.unlimited_cute"
+        }
+      ],
+      "confirmation": {
+        "basis": "existing BWIKI and installed-file source-bound runtime; user clarification where present",
+        "date": "2026-10-30"
+      },
+      "runtime_delegate": "cute_runtime"
+    },
+    {
+      "trait_id": 200192,
+      "name": "绒粉星光",
+      "record_hash": "7b7950febf435afe40024d79dfca19d197aa16b8817dfd7a6198e321d64f1581",
+      "record": {
+        "id": 200192,
+        "wiki_id": "skill_000102",
+        "name": {
+          "zh": "绒粉星光"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "攻击时，若敌方血脉是非本系的系别血脉，技能威力+100%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%BB%92%E7%B2%89%E6%98%9F%E5%85%89",
+        "source_module": "Skills"
+      },
+      "event": "delegated.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "power.foreign_elemental_bloodline",
+          "factor": 2
+        }
+      ],
+      "confirmation": {
+        "basis": "existing BWIKI and installed-file source-bound runtime; user clarification where present",
+        "date": "2026-10-30"
+      }
+    },
+    {
+      "trait_id": 200174,
+      "name": "嫉妒",
+      "record_hash": "744cf272041f0f9ca992a02e553d714850cce5bda2fbe659f6d578211346c346",
+      "record": {
+        "id": 200174,
+        "wiki_id": "skill_000089",
+        "name": {
+          "zh": "嫉妒"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "蓄力状态下，可以使用任一携带技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%AB%89%E5%A6%92",
+        "source_module": "Skills",
+        "desc_notes": [
+          1007
+        ]
+      },
+      "event": "delegated.runtime",
+      "when": {},
+      "components": [
+        {
+          "op": "action.carried_during_charge_consume_on_success"
+        }
+      ],
+      "confirmation": {
+        "basis": "existing BWIKI and installed-file source-bound runtime; user clarification where present",
+        "date": "2026-10-30"
+      }
+    }
+  ]
+}

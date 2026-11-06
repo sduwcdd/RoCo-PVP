@@ -1,0 +1,5029 @@
+{
+  "schema": "world-npc-config-evidence-1",
+  "training_eligible": false,
+  "scope": "Read-only game archives; numeric config rows only; highest numeric package candidate is not proof of runtime mounting order.",
+  "fresh_archive_checks": [
+    {
+      "pak": "pakchunk4-WindowsNoEditor_36_P.pak",
+      "stat_unchanged": true,
+      "index_verified": true
+    },
+    {
+      "pak": "pakchunk4-WindowsNoEditor_37_P.pak",
+      "stat_unchanged": true,
+      "index_verified": true
+    },
+    {
+      "pak": "pakchunk4-WindowsNoEditor_38_P.pak",
+      "stat_unchanged": true,
+      "index_verified": true
+    },
+    {
+      "pak": "pakchunk4-WindowsNoEditor_39_P.pak",
+      "stat_unchanged": true,
+      "index_verified": true
+    },
+    {
+      "pak": "pakchunk4-WindowsNoEditor_40_P.pak",
+      "stat_unchanged": true,
+      "index_verified": true
+    },
+    {
+      "pak": "pakchunk4-WindowsNoEditor_41_P.pak",
+      "stat_unchanged": true,
+      "index_verified": true
+    }
+  ],
+  "errors": [],
+  "tables": {
+    "ATTR_GLOBAL_CONFIG": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/ATTR_GLOBAL_CONFIG.non",
+          "offset": 2625536,
+          "declared_size": 912,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "1b8aa48c39aab09cca028cc24e22ab9a849e427d53167aef564ec8e15d898e49",
+          "source_ranges_sha256": [
+            {
+              "offset": 2625589,
+              "size": 912,
+              "sha256": "73439bd7c41ee1b3369af863a43d3ad5a7ad6f0363f384a917ec64f70069f329"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/ATTR_GLOBAL_CONFIG.bytes",
+          "offset": 15343616,
+          "declared_size": 4448,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "1986cd3339846e755ac13f4ebb255ca89fe2db0ab3b92b4c14ad86f623ce5a11",
+          "source_ranges_sha256": [
+            {
+              "offset": 15343669,
+              "size": 4448,
+              "sha256": "b6133a04df638aa4e314361d74c14a7a640a5e9573dc76e1a364f77d3746e18e"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 65,
+      "property_names": [
+        "id",
+        "key",
+        "num",
+        "numList",
+        "str"
+      ],
+      "rows": {
+        "hp_max_race_constant": {
+          "id": 18,
+          "num": 200
+        },
+        "hp_max_talent_constant": {
+          "id": 19,
+          "num": 100
+        },
+        "hp_max_level_constant": {
+          "id": 21,
+          "num": 10000
+        },
+        "phy_attack_race_constant": {
+          "id": 22,
+          "num": 100
+        },
+        "phy_attack_talent_constant": {
+          "id": 23,
+          "num": 50
+        },
+        "phy_attack_level_constant": {
+          "id": 25
+        },
+        "spe_attack_race_constant": {
+          "id": 26,
+          "num": 100
+        },
+        "spe_attack_talent_constant": {
+          "id": 27,
+          "num": 50
+        },
+        "spe_attack_level_constant": {
+          "id": 29
+        },
+        "phy_defence_race_constant": {
+          "id": 30,
+          "num": 100
+        },
+        "phy_defence_talent_constant": {
+          "id": 31,
+          "num": 50
+        },
+        "phy_defence_level_constant": {
+          "id": 33
+        },
+        "spe_defence_race_constant": {
+          "id": 34,
+          "num": 100
+        },
+        "spe_defence_talent_constant": {
+          "id": 35,
+          "num": 50
+        },
+        "spe_defence_level_constant": {
+          "id": 37
+        },
+        "speed_race_constant": {
+          "id": 38,
+          "num": 100
+        },
+        "speed_talent_constant": {
+          "id": 39,
+          "num": 50
+        },
+        "speed_level_constant": {
+          "id": 41
+        },
+        "talent_random_minimum": {
+          "id": 50,
+          "num": 1
+        },
+        "talent_random_maximum": {
+          "id": 51,
+          "num": 50
+        },
+        "race_hp_maximum": {
+          "id": 105,
+          "num": 255
+        },
+        "race_attack_maximum": {
+          "id": 106,
+          "num": 200
+        },
+        "race_special_attack_maximum": {
+          "id": 107,
+          "num": 200
+        },
+        "race_defense_maximium": {
+          "id": 108,
+          "num": 200
+        },
+        "race_special_defense_maximum": {
+          "id": 109,
+          "num": 200
+        },
+        "race_speed_maximum": {
+          "id": 110,
+          "num": 200
+        },
+        "talent_hp_maximum": {
+          "id": 111,
+          "num": 50
+        },
+        "talent_attack_maximum": {
+          "id": 112,
+          "num": 50
+        },
+        "talent_special_attack_maximum": {
+          "id": 113,
+          "num": 50
+        },
+        "talent_defense_maximium": {
+          "id": 114,
+          "num": 50
+        },
+        "talent_special_defense_maximum": {
+          "id": 115,
+          "num": 50
+        },
+        "talent_speed_maximum": {
+          "id": 116,
+          "num": 50
+        },
+        "hp_max_race_add_level": {
+          "id": 163,
+          "num": 25
+        },
+        "phy_attack_race_add_level": {
+          "id": 164,
+          "num": 50
+        },
+        "spe_attack_race_add_level": {
+          "id": 165,
+          "num": 50
+        },
+        "phy_defence_race_add_level": {
+          "id": 166,
+          "num": 50
+        },
+        "spe_defence_race_add_level": {
+          "id": 167,
+          "num": 50
+        },
+        "speed_race_add_level": {
+          "id": 168,
+          "num": 50
+        },
+        "hp_max_talent_add_level": {
+          "id": 169,
+          "num": 25
+        },
+        "phy_attack_talent_add_level": {
+          "id": 170,
+          "num": 50
+        },
+        "spe_attack_talent_add_level": {
+          "id": 171,
+          "num": 50
+        },
+        "phy_defence_talent_add_level": {
+          "id": 172,
+          "num": 50
+        },
+        "spe_defence_talent_add_level": {
+          "id": 173,
+          "num": 50
+        },
+        "speed_talent_add_level": {
+          "id": 174,
+          "num": 50
+        },
+        "phy_dam_param": {
+          "id": 175,
+          "num": 41
+        },
+        "spe_dam_param": {
+          "id": 176,
+          "num": 41
+        },
+        "phy_dam_level_mag": {
+          "id": 177,
+          "num": 45
+        },
+        "spe_dam_level_mag": {
+          "id": 178,
+          "num": 45
+        },
+        "phy_dam_level_add": {
+          "id": 179,
+          "num": 10
+        },
+        "spe_dam_level_add": {
+          "id": 180,
+          "num": 10
+        },
+        "phy_dam_floor": {
+          "id": 181,
+          "num": 2
+        },
+        "spe_dam_floor": {
+          "id": 182,
+          "num": 2
+        },
+        "dam_floor": {
+          "id": 183
+        }
+      }
+    },
+    "GLOBAL_CONFIG": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/GLOBAL_CONFIG.non",
+          "offset": 2974149,
+          "declared_size": 1360,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "69ade79b936c910b648a0dc1aa67ac8fdec56da251d826bd870707d8a57855b2",
+          "source_ranges_sha256": [
+            {
+              "offset": 2974202,
+              "size": 1360,
+              "sha256": "40af8c8402e54c097dc3808898f56f5fe5d766a861e6947b20d637b72d71dbc7"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_15_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/GLOBAL_CONFIG.bytes",
+          "offset": 722944,
+          "declared_size": 42256,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "bead60242fe22446b5755ecf23255905fa030f5b739aa3bb938c0f81df5a118d",
+          "source_ranges_sha256": [
+            {
+              "offset": 722997,
+              "size": 42256,
+              "sha256": "c45aa7fedad648073757f0f048afc9ea901b7a2a7f6ebd7da858bf68d766f332"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 572,
+      "property_names": [
+        "id",
+        "key",
+        "num",
+        "numList",
+        "str",
+        "title",
+        "button_left",
+        "button_right"
+      ],
+      "rows": {
+        "prob_calculate_param": {
+          "id": 57,
+          "num": 10000
+        },
+        "magic_change_npcid": {
+          "id": 346,
+          "num": 65326
+        },
+        "magic_change_ban_npcid": {
+          "id": 355,
+          "num": 60280
+        },
+        "magic_change_ban_npcrange": {
+          "id": 356,
+          "num": 1000
+        },
+        "magic_change_level_minimum": {
+          "id": 357,
+          "num": 2
+        },
+        "open_npc_uninstall": {
+          "id": 403,
+          "num": 1
+        },
+        "travel_npc_conf_id": {
+          "id": 424,
+          "num": 20003
+        },
+        "prob_calculate_million_param": {
+          "id": 494,
+          "num": 1000000
+        },
+        "share_specialeffect_nature_conf_1": {
+          "id": 495
+        },
+        "share_specialeffect_nature_conf_2": {
+          "id": 496
+        },
+        "share_specialeffect_nature_conf_3": {
+          "id": 497
+        },
+        "share_specialeffect_nature_conf_4": {
+          "id": 498
+        },
+        "share_specialeffect_nature_conf_5": {
+          "id": 499
+        },
+        "share_specialeffect_nature_conf_6": {
+          "id": 500
+        },
+        "share_specialeffect_nature_conf_7": {
+          "id": 501
+        },
+        "share_specialeffect_nature_conf_8": {
+          "id": 502
+        },
+        "share_specialeffect_nature_conf_9": {
+          "id": 503
+        },
+        "share_specialeffect_nature_conf_10": {
+          "id": 504
+        },
+        "share_specialeffect_nature_conf_11": {
+          "id": 505
+        },
+        "share_specialeffect_nature_conf_12": {
+          "id": 506
+        },
+        "share_specialeffect_nature_conf_13": {
+          "id": 507
+        },
+        "share_specialeffect_nature_conf_14": {
+          "id": 508
+        },
+        "share_specialeffect_nature_conf_15": {
+          "id": 509
+        },
+        "share_specialeffect_nature_conf_16": {
+          "id": 510
+        },
+        "share_specialeffect_nature_conf_17": {
+          "id": 511
+        },
+        "share_specialeffect_nature_conf_18": {
+          "id": 512
+        },
+        "share_specialeffect_nature_conf_19": {
+          "id": 513
+        },
+        "share_specialeffect_nature_conf_20": {
+          "id": 514
+        },
+        "share_specialeffect_nature_conf_21": {
+          "id": 515
+        },
+        "share_specialeffect_nature_conf_22": {
+          "id": 516
+        },
+        "share_specialeffect_nature_conf_23": {
+          "id": 517
+        },
+        "share_specialeffect_nature_conf_24": {
+          "id": 518
+        },
+        "share_specialeffect_nature_conf_25": {
+          "id": 519
+        },
+        "share_specialeffect_nature_conf_26": {
+          "id": 520
+        },
+        "share_specialeffect_nature_conf_27": {
+          "id": 521
+        },
+        "share_specialeffect_nature_conf_28": {
+          "id": 522
+        },
+        "share_specialeffect_nature_conf_29": {
+          "id": 523
+        },
+        "share_specialeffect_nature_conf_30": {
+          "id": 524
+        },
+        "share_specialeffect_nature_conf_31": {
+          "id": 525
+        },
+        "bp_gift_friend_level_limit": {
+          "id": 609,
+          "num": 12
+        },
+        "MAX_TIME_FOR_LOADING_NPC": {
+          "id": 611,
+          "num": 8000
+        },
+        "MAX_NUM_OF_MOST_IMPORTANT_NPC": {
+          "id": 612,
+          "num": 5
+        },
+        "max_delay_home_npc_action": {
+          "id": 674,
+          "num": 200
+        },
+        "mark_ban_npc_blacklist": {
+          "id": 736,
+          "numList": [
+            58007,
+            68000,
+            68001,
+            68002,
+            68003,
+            68004,
+            68005,
+            640006,
+            640007,
+            20128,
+            20129,
+            20130,
+            20131,
+            20132,
+            20133,
+            20134,
+            20135,
+            20136,
+            20137,
+            20138,
+            20139,
+            20140,
+            20141,
+            20142,
+            20143,
+            20144,
+            20145,
+            700001,
+            700002,
+            700003,
+            700004,
+            700005,
+            700006,
+            700007,
+            700008,
+            700009,
+            700010,
+            700011,
+            700012,
+            700013,
+            700014,
+            700015,
+            700016,
+            700017,
+            700018,
+            55700,
+            55701,
+            55702,
+            50330,
+            50900,
+            50908,
+            50916,
+            50924,
+            50331,
+            50901,
+            50909,
+            50917,
+            50925,
+            50332,
+            50902,
+            50910,
+            50918,
+            50926,
+            20707,
+            20767,
+            19162,
+            68006,
+            68007,
+            68008,
+            68009,
+            55554,
+            55555,
+            55556,
+            60280,
+            68010,
+            68011,
+            68012,
+            55575,
+            55576,
+            55577,
+            55598,
+            55599,
+            55600
+          ]
+        },
+        "status_signature_num_sum": {
+          "id": 760,
+          "num": 27
+        },
+        "combat_star_magic_weak_hit_level": {
+          "id": 770,
+          "num": 2
+        },
+        "excced_level_ban_bigword_catch": {
+          "id": 775,
+          "numList": [
+            1,
+            10
+          ]
+        },
+        "role_max_world_level": {
+          "id": 778,
+          "num": 5
+        },
+        "ai_coach_pet_level": {
+          "id": 782,
+          "num": 60
+        },
+        "pet_npc_tracking_scene_whitelist": {
+          "id": 789,
+          "numList": [
+            10003,
+            10018
+          ]
+        },
+        "npc_option_whitelist": {
+          "id": 795,
+          "numList": [
+            680074
+          ]
+        },
+        "npc_option_blacklist": {
+          "id": 796,
+          "numList": [
+            680075
+          ]
+        },
+        "recover_set_npc_pos_ai_id": {
+          "id": 808,
+          "num": 10045
+        },
+        "level1_pumpkin_role_aura_effect_id": {
+          "id": 824,
+          "num": 670000001
+        },
+        "level2_pumpkin_role_aura_effect_id": {
+          "id": 825,
+          "num": 670000003
+        },
+        "level3_pumpkin_role_aura_effect_id": {
+          "id": 826,
+          "num": 670000005
+        },
+        "building_npc_stable": {
+          "id": 834,
+          "numList": [
+            5000,
+            7500,
+            10000
+          ]
+        },
+        "building_npc_stable_by_goddess": {
+          "id": 835,
+          "numList": [
+            7500,
+            10000,
+            15000
+          ]
+        }
+      }
+    },
+    "GROW_LEVEL_CONF": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/GROW_LEVEL_CONF.non",
+          "offset": 3012608,
+          "declared_size": 2448,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "338f38d78ab6b97c5e5b78bfc7d9fd6adae2a0c213ac102885ade05fdbd2d8ec",
+          "source_ranges_sha256": [
+            {
+              "offset": 3012661,
+              "size": 2448,
+              "sha256": "a9cf1fe1b9d87d2768fe31f1bd3c2927e7007fec0a772cafc698899ca8413d2a"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/GROW_LEVEL_CONF.bytes",
+          "offset": 28934144,
+          "declared_size": 12848,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "2e179546c8d6ab920a2e2407926306a7eff4e304a046e591c60683b0ca47a701",
+          "source_ranges_sha256": [
+            {
+              "offset": 28934197,
+              "size": 12848,
+              "sha256": "c9e62d45af987510b245b2268e7740893ab9b89827cc88ac6ae3217a4cfdb587"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 50,
+      "property_names": [
+        "id",
+        "require_pet_level",
+        "require_item",
+        "attr"
+      ],
+      "rows": {
+        "1": {
+          "id": 1,
+          "require_pet_level": 1,
+          "require_item": [
+            {
+              "Type": 1,
+              "require_item_id": 100201,
+              "require_item_count": 2
+            },
+            {
+              "Type": 2,
+              "require_item_id": 1,
+              "require_item_count": 2400
+            }
+          ],
+          "attr": [
+            {
+              "attr_type": 1,
+              "attr_data": 2
+            },
+            {
+              "attr_type": 2,
+              "attr_data": 1
+            },
+            {
+              "attr_type": 3,
+              "attr_data": 1
+            },
+            {
+              "attr_type": 4,
+              "attr_data": 1
+            },
+            {
+              "attr_type": 5,
+              "attr_data": 1
+            },
+            {
+              "attr_type": 6,
+              "attr_data": 1
+            }
+          ]
+        },
+        "10": {
+          "id": 10,
+          "require_pet_level": 1,
+          "require_item": [
+            {
+              "Type": 1,
+              "require_item_id": 100201,
+              "require_item_count": 2
+            },
+            {
+              "Type": 2,
+              "require_item_id": 1,
+              "require_item_count": 2400
+            }
+          ],
+          "attr": [
+            {
+              "attr_type": 1,
+              "attr_data": 20
+            },
+            {
+              "attr_type": 2,
+              "attr_data": 10
+            },
+            {
+              "attr_type": 3,
+              "attr_data": 10
+            },
+            {
+              "attr_type": 4,
+              "attr_data": 10
+            },
+            {
+              "attr_type": 5,
+              "attr_data": 10
+            },
+            {
+              "attr_type": 6,
+              "attr_data": 10
+            }
+          ]
+        },
+        "20": {
+          "id": 20,
+          "require_pet_level": 25,
+          "require_item": [
+            {
+              "Type": 1,
+              "require_item_id": 100201,
+              "require_item_count": 5
+            },
+            {
+              "Type": 2,
+              "require_item_id": 1,
+              "require_item_count": 4800
+            }
+          ],
+          "attr": [
+            {
+              "attr_type": 1,
+              "attr_data": 40
+            },
+            {
+              "attr_type": 2,
+              "attr_data": 20
+            },
+            {
+              "attr_type": 3,
+              "attr_data": 20
+            },
+            {
+              "attr_type": 4,
+              "attr_data": 20
+            },
+            {
+              "attr_type": 5,
+              "attr_data": 20
+            },
+            {
+              "attr_type": 6,
+              "attr_data": 20
+            }
+          ]
+        },
+        "30": {
+          "id": 30,
+          "require_pet_level": 35,
+          "require_item": [
+            {
+              "Type": 1,
+              "require_item_id": 100201,
+              "require_item_count": 10
+            },
+            {
+              "Type": 2,
+              "require_item_id": 1,
+              "require_item_count": 9600
+            }
+          ],
+          "attr": [
+            {
+              "attr_type": 1,
+              "attr_data": 60
+            },
+            {
+              "attr_type": 2,
+              "attr_data": 30
+            },
+            {
+              "attr_type": 3,
+              "attr_data": 30
+            },
+            {
+              "attr_type": 4,
+              "attr_data": 30
+            },
+            {
+              "attr_type": 5,
+              "attr_data": 30
+            },
+            {
+              "attr_type": 6,
+              "attr_data": 30
+            }
+          ]
+        },
+        "40": {
+          "id": 40,
+          "require_pet_level": 45,
+          "require_item": [
+            {
+              "Type": 1,
+              "require_item_id": 100201,
+              "require_item_count": 15
+            },
+            {
+              "Type": 2,
+              "require_item_id": 1,
+              "require_item_count": 14400
+            }
+          ],
+          "attr": [
+            {
+              "attr_type": 1,
+              "attr_data": 80
+            },
+            {
+              "attr_type": 2,
+              "attr_data": 40
+            },
+            {
+              "attr_type": 3,
+              "attr_data": 40
+            },
+            {
+              "attr_type": 4,
+              "attr_data": 40
+            },
+            {
+              "attr_type": 5,
+              "attr_data": 40
+            },
+            {
+              "attr_type": 6,
+              "attr_data": 40
+            }
+          ]
+        },
+        "50": {
+          "id": 50,
+          "require_pet_level": 55,
+          "require_item": [
+            {
+              "Type": 1,
+              "require_item_id": 100201,
+              "require_item_count": 30
+            },
+            {
+              "Type": 2,
+              "require_item_id": 1,
+              "require_item_count": 43200
+            }
+          ],
+          "attr": [
+            {
+              "attr_type": 1,
+              "attr_data": 100
+            },
+            {
+              "attr_type": 2,
+              "attr_data": 50
+            },
+            {
+              "attr_type": 3,
+              "attr_data": 50
+            },
+            {
+              "attr_type": 4,
+              "attr_data": 50
+            },
+            {
+              "attr_type": 5,
+              "attr_data": 50
+            },
+            {
+              "attr_type": 6,
+              "attr_data": 50
+            }
+          ]
+        }
+      }
+    },
+    "MONSTER_CONF": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_CONF.non",
+          "offset": 3209216,
+          "declared_size": 4672,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "43d496ead86c165af58a685cdf1449746c99f321e93148f4ea9539d168b221e6",
+          "source_ranges_sha256": [
+            {
+              "offset": 3209269,
+              "size": 4672,
+              "sha256": "240a525b7c322714ff52af8f5ea4370dd5f43e0c5fc0b5d52e77894c5ed68785"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_27_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_CONF.bytes",
+          "offset": 20752384,
+          "declared_size": 856400,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "64782f73c7fe37e2369d1fac16e5ed769b8aefb074543245bf650a9dcc40da41",
+          "source_ranges_sha256": [
+            {
+              "offset": 20752437,
+              "size": 856400,
+              "sha256": "2d6a0e76c24dc690bac554849c447b59f2037d603e04ce66175d45aa031645ea"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 13925,
+      "property_names": [
+        "id",
+        "name",
+        "base_id",
+        "petbase_find_enum",
+        "find_param",
+        "level",
+        "new_level",
+        "difficulty",
+        "shining_prob",
+        "chaos_prob",
+        "glass_prob",
+        "custom_glass",
+        "gender",
+        "nature_id",
+        "blood_id",
+        "catch_difficulty",
+        "Catch_difficulty_OverThreshold",
+        "Catch_difficulty_UnderThreshold",
+        "catch_prob_max",
+        "inspire_time",
+        "model_scale",
+        "is_nightmare",
+        "buff_icon_offset_z",
+        "difficulty_level",
+        "death_exist"
+      ],
+      "rows": {
+        "410451": {
+          "id": 410451,
+          "base_id": 3455,
+          "petbase_find_enum": 1,
+          "find_param": [
+            3455
+          ],
+          "level": 1,
+          "difficulty": 1,
+          "custom_glass": {},
+          "catch_difficulty": 10000,
+          "Catch_difficulty_OverThreshold": 2000,
+          "Catch_difficulty_UnderThreshold": 1800,
+          "catch_prob_max": 9500
+        }
+      }
+    },
+    "MONSTER_GROWTH_CONF": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_GROWTH_CONF.non",
+          "offset": 3213941,
+          "declared_size": 544,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "7e7e680320a90a5c3fae3aa49ab854e042540f383df5a6e84fb8a5f9fdad5d72",
+          "source_ranges_sha256": [
+            {
+              "offset": 3213994,
+              "size": 544,
+              "sha256": "6d8c0dcf004b2f31d8fcdea47ae3b0154e55b2570d3118859e68be9b31ca535a"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_GROWTH_CONF.bytes",
+          "offset": 32948224,
+          "declared_size": 60704,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "1f5f2781ffec36ea563b0ed8b10f2175b9fc6586b36ea20392991231c405ff68",
+          "source_ranges_sha256": [
+            {
+              "offset": 32948277,
+              "size": 60704,
+              "sha256": "48c763340a30c5a227d8a26d7d30b7a760e521ae632f29dbbc1ff80979ced3ad"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 2090,
+      "property_names": [
+        "id",
+        "difficulty",
+        "level"
+      ],
+      "rows": {
+        "1001": {
+          "id": 1001,
+          "difficulty": 1,
+          "level": 1
+        },
+        "1024": {
+          "id": 1024,
+          "difficulty": 1,
+          "level": 24
+        },
+        "1060": {
+          "id": 1060,
+          "difficulty": 1,
+          "level": 60
+        },
+        "2024": {
+          "id": 2024,
+          "difficulty": 2,
+          "level": 24
+        }
+      }
+    },
+    "NATURE_CONF": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/NATURE_CONF.non",
+          "offset": 3229696,
+          "declared_size": 3168,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "75bccd75c2b7488a825bab7e67e02498af03abc836e214efb013f67fffb8f154",
+          "source_ranges_sha256": [
+            {
+              "offset": 3229749,
+              "size": 3168,
+              "sha256": "242f738a12a147df71ab9244ee1d772a88e6ccf44d9650c62ba3005b6bb27e02"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/NATURE_CONF.bytes",
+          "offset": 33992704,
+          "declared_size": 7168,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "bad463e98683c58cf6a537fdb69c74c71df671e3a1a7d672e7ee8043d906aa7e",
+          "source_ranges_sha256": [
+            {
+              "offset": 33992757,
+              "size": 7168,
+              "sha256": "9e686d4a7b2cf02baa77b523ad0421113fab5b081cfc4372bbdf8f662cf2f875"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 31,
+      "property_names": [
+        "id",
+        "name",
+        "positive_effect",
+        "positive_effect_proportion",
+        "positive_effect_grow",
+        "negative_effect",
+        "negative_effect_proportion",
+        "relative_emotion",
+        "random_desc",
+        "emotion_desc",
+        "morph_target_data"
+      ],
+      "rows": {
+        "30": {
+          "id": 30,
+          "positive_effect": 79,
+          "positive_effect_proportion": 1000,
+          "positive_effect_grow": 200,
+          "negative_effect": 84,
+          "negative_effect_proportion": 1000
+        }
+      }
+    },
+    "NPC_GLOBAL_CONFIG": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/NPC_GLOBAL_CONFIG.non",
+          "offset": 3291136,
+          "declared_size": 912,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "808a434ee55373695c7227b8093f23be044785b7cbe2a8aecd4d1425d43fad45",
+          "source_ranges_sha256": [
+            {
+              "offset": 3291189,
+              "size": 912,
+              "sha256": "8d2db0fab1231b6b17df8c4fbf7680973e90efa7c9185a11318266af32339fc4"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/NPC_GLOBAL_CONFIG.bytes",
+          "offset": 36421632,
+          "declared_size": 18304,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "da0d9d62a7e279a20ef808ef1903b9bce5cc6e5ce794f6a3cd4386064647c56e",
+          "source_ranges_sha256": [
+            {
+              "offset": 36421685,
+              "size": 18304,
+              "sha256": "0cefcb4bc9da4c17e30edfffb31596b50b428cad6558fe7de3051898e704f4c3"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 223,
+      "property_names": [
+        "id",
+        "key",
+        "num",
+        "numList",
+        "str"
+      ],
+      "rows": {
+        "trace_npc_maximum": {
+          "id": 2,
+          "num": 10
+        },
+        "trace_npc_response_time": {
+          "id": 52,
+          "num": 1
+        },
+        "trace_npc_last_time": {
+          "id": 53,
+          "num": 3
+        },
+        "npc_exist_time": {
+          "id": 120,
+          "num": 24
+        },
+        "npc_instantiate_policy": {
+          "id": 155
+        },
+        "throw_linetrace_distance": {
+          "id": 183,
+          "num": 3000
+        },
+        "npc_turn_time": {
+          "id": 193
+        },
+        "online_npc_option_visible": {
+          "id": 221,
+          "num": 1
+        },
+        "throw_pet_ball_npcid": {
+          "id": 222,
+          "num": 65460
+        },
+        "npc_behavior_close_recover_CD": {
+          "id": 225,
+          "num": 4500
+        },
+        "starmagic_damage": {
+          "id": 230,
+          "numList": [
+            100,
+            150,
+            300,
+            450
+          ]
+        },
+        "ai_release_npc_play_skill": {
+          "id": 238
+        },
+        "npc_overlap_cooldown": {
+          "id": 240,
+          "num": 500
+        },
+        "owl_npc_refresh_content_id_min": {
+          "id": 241,
+          "num": 9000000
+        },
+        "owl_npc_refresh_content_id_max": {
+          "id": 242,
+          "num": 9999999
+        },
+        "scene_npc_bp_path_prefix": {
+          "id": 249
+        },
+        "npc_block_size": {
+          "id": 254,
+          "num": 50400
+        },
+        "ai_npc_retrieval_interval": {
+          "id": 256
+        },
+        "trig_npc_refresh_content_id_min": {
+          "id": 263,
+          "num": 8100000
+        },
+        "trig_npc_refresh_content_id_max": {
+          "id": 264,
+          "num": 8999999
+        },
+        "detect_position_npc_id": {
+          "id": 267,
+          "numList": [
+            29179,
+            29189
+          ]
+        },
+        "set_npc_pos_check_param": {
+          "id": 268,
+          "numList": [
+            0,
+            2000,
+            5000,
+            6000,
+            7000
+          ]
+        },
+        "drop_npc_auto_interact_time": {
+          "id": 290,
+          "num": 5
+        },
+        "default_npc_lookat_distance": {
+          "id": 291,
+          "num": 400
+        },
+        "default_npc_impact_vibration_cd": {
+          "id": 292,
+          "num": 5000
+        },
+        "throw_npc_ai_pause_timeout": {
+          "id": 295,
+          "num": 3
+        },
+        "npc_option_hint_scan_distance": {
+          "id": 297,
+          "num": 1000
+        },
+        "online_battle_show_player_npc_refresh_radius": {
+          "id": 313,
+          "numList": [
+            300,
+            200
+          ]
+        },
+        "online_battle_show_enemy_npc_refresh_radius": {
+          "id": 314,
+          "numList": [
+            500,
+            400
+          ]
+        },
+        "online_battle_show_npc_refresh_angle": {
+          "id": 315,
+          "numList": [
+            -30,
+            30
+          ]
+        },
+        "visit_owl_npc_check_gap": {
+          "id": 335
+        },
+        "visit_owl_npc_refresh_content_id_min": {
+          "id": 336,
+          "num": 15000000
+        },
+        "visit_owl_npc_refresh_content_id_max": {
+          "id": 337,
+          "num": 19999999
+        },
+        "visit_owl_npc_refresh_rule": {
+          "id": 338,
+          "num": 30
+        },
+        "tongyongnpc_default_mfbt_tree_path": {
+          "id": 340
+        },
+        "owl_npc_pet_habitat_group_id_min": {
+          "id": 346,
+          "num": 10001
+        },
+        "owl_npc_pet_habitat_group_id_max": {
+          "id": 347,
+          "num": 12000
+        },
+        "npc_option_hint_num__max": {
+          "id": 364,
+          "num": 12
+        },
+        "owl_sanctuary_unlock_picnic_level": {
+          "id": 365,
+          "num": 3
+        },
+        "owl_sanctuary_unlock_owl_enhance_level": {
+          "id": 366,
+          "num": 4
+        },
+        "owl_sanctuary_unlock_owl_effect_level": {
+          "id": 367,
+          "num": 2
+        },
+        "npc_info_change_action_stay_time": {
+          "id": 369,
+          "num": 604800
+        },
+        "npc_music_input_interval_time": {
+          "id": 370,
+          "num": 1000
+        },
+        "datarecover_skip_npc": {
+          "id": 371,
+          "numList": [
+            5461234,
+            5461255,
+            5461585,
+            5461400,
+            5461460,
+            5461521,
+            5461580,
+            5461401,
+            5461461,
+            5461522,
+            5461581,
+            5461402,
+            5461462,
+            5461523,
+            5461526,
+            5461582,
+            5461403,
+            5461463,
+            5461524,
+            5461404,
+            5461464,
+            5461525,
+            5461592,
+            5461445,
+            5461511,
+            5461547,
+            5461569,
+            5461587,
+            5461446,
+            5461512,
+            5461548,
+            5461570,
+            5461588,
+            5461447,
+            5461513,
+            5461571,
+            5461589,
+            5461448,
+            5461514,
+            5461449,
+            5461515,
+            5461549,
+            5461573,
+            5461599,
+            5461450,
+            5461516,
+            5461594,
+            5461451,
+            5461517,
+            5461574,
+            5461595,
+            5461452,
+            5461518,
+            5461575,
+            5461596,
+            5461453,
+            5461519,
+            5461454,
+            5461520,
+            5461577,
+            5461650,
+            5461440,
+            5461506,
+            5461550,
+            5461559,
+            5461645,
+            5461441,
+            5461507,
+            5461646,
+            5461442,
+            5461508,
+            5461647,
+            5461443,
+            5461509,
+            5461444,
+            5461510,
+            5461637,
+            5461430,
+            5461496,
+            5461562,
+            5461633,
+            5461431,
+            5461497,
+            5461563,
+            5461634,
+            5461432,
+            5461498,
+            5461635,
+            5461433,
+            5461499,
+            5461564,
+            5461636,
+            5461434,
+            5461500,
+            5461606,
+            5461405,
+            5461527,
+            5461535,
+            5461601,
+            5461406,
+            5461465,
+            5461528,
+            5461602,
+            5461407,
+            5461466,
+            5461529,
+            5461532,
+            5461603,
+            5461408,
+            5461467,
+            5461530,
+            5461409,
+            5461468,
+            5461531,
+            5461536,
+            5461619,
+            5461415,
+            5461477,
+            5461542,
+            5461614,
+            5461416,
+            5461478,
+            5461615,
+            5461417,
+            5461479,
+            5461543,
+            5461418,
+            5461480,
+            5461533,
+            5461618,
+            5461419,
+            5461481,
+            5461534,
+            5461619,
+            5461632,
+            5461425,
+            5461489,
+            5461556,
+            5461557,
+            5461558,
+            5461627,
+            5461426,
+            5461490,
+            5461628,
+            5461427,
+            5461491,
+            5461428,
+            5461494,
+            5461631,
+            5461429,
+            5461495,
+            5461632,
+            5461644,
+            5461435,
+            5461501,
+            5461639,
+            5461436,
+            5461502,
+            5461640,
+            5461437,
+            5461503,
+            5461565,
+            5461641,
+            5461438,
+            5461504,
+            5461439,
+            5461505,
+            5461567,
+            5461644,
+            5461625,
+            5461420,
+            5461482,
+            5461537,
+            5461550,
+            5461620,
+            5461421,
+            5461483,
+            5461554,
+            5461621,
+            5461422,
+            5461484,
+            5461551,
+            5461578,
+            5461622,
+            5461423,
+            5461487,
+            5461552,
+            5461424,
+            5461488,
+            5461553,
+            5461555,
+            5461612,
+            5461410,
+            5461469,
+            5461538,
+            5461608,
+            5461411,
+            5461470,
+            5461609,
+            5461412,
+            5461471,
+            5461474,
+            5461539,
+            5461610,
+            5461413,
+            5461472,
+            5461475,
+            5461540,
+            5461611,
+            5461414,
+            5461473,
+            5461476,
+            5461541
+          ]
+        }
+      }
+    },
+    "PET_GLOBAL_CONFIG": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/PET_GLOBAL_CONFIG.non",
+          "offset": 3495936,
+          "declared_size": 912,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "3076e3dc2a69d5baecb6fb867652e8ba01b10dc6d00c1c4947441ff653ebd89c",
+          "source_ranges_sha256": [
+            {
+              "offset": 3495989,
+              "size": 912,
+              "sha256": "c30e1e1e00432cf3acef609f4fb50f272e4db61e6733073eb881393727db110b"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_27_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/PET_GLOBAL_CONFIG.bytes",
+          "offset": 28526592,
+          "declared_size": 29648,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "821133f8b2859772fc9aea5fbc8ad75b1f590a2da1ee7a55342232601e7a2401",
+          "source_ranges_sha256": [
+            {
+              "offset": 28526645,
+              "size": 29648,
+              "sha256": "59f48f498587ca31562e73078cb40b414bfd764d2578f98e0e483b80ed950b55"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 375,
+      "property_names": [
+        "id",
+        "key",
+        "num",
+        "numList",
+        "str"
+      ],
+      "rows": {
+        "level_exp_get_param": {
+          "id": 58,
+          "num": 2400
+        },
+        "pet_level_toplimit": {
+          "id": 161,
+          "num": 60
+        },
+        "pet_level_boundary": {
+          "id": 166,
+          "num": 21
+        },
+        "default_pet_nature": {
+          "id": 180,
+          "num": 23
+        },
+        "pet_setich_attribute_time": {
+          "id": 189,
+          "num": 500
+        },
+        "pet_level_show_length": {
+          "id": 191,
+          "num": 6000
+        },
+        "pet_level_show_width": {
+          "id": 192,
+          "num": 6000
+        },
+        "travel_inherit_nature": {
+          "id": 214,
+          "num": 5000
+        },
+        "pet_level_show_num_max": {
+          "id": 221,
+          "num": 5
+        },
+        "team_battle_npc_blood_20128": {
+          "id": 222,
+          "numList": [
+            20128,
+            1,
+            5,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20129": {
+          "id": 223,
+          "numList": [
+            20129,
+            2,
+            0,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20130": {
+          "id": 224,
+          "numList": [
+            20130,
+            3,
+            4,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20131": {
+          "id": 225,
+          "numList": [
+            20131,
+            4,
+            6,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20132": {
+          "id": 226,
+          "numList": [
+            20132,
+            5,
+            3,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20133": {
+          "id": 227,
+          "numList": [
+            20133,
+            6,
+            7,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20134": {
+          "id": 228,
+          "numList": [
+            20134,
+            7,
+            11,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20135": {
+          "id": 229,
+          "numList": [
+            20135,
+            8,
+            16,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20136": {
+          "id": 230,
+          "numList": [
+            20136,
+            9,
+            12,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20137": {
+          "id": 231,
+          "numList": [
+            20137,
+            10,
+            13,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20138": {
+          "id": 232,
+          "numList": [
+            20138,
+            11,
+            1,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20139": {
+          "id": 233,
+          "numList": [
+            20139,
+            12,
+            14,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20140": {
+          "id": 234,
+          "numList": [
+            20140,
+            13,
+            8,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20141": {
+          "id": 235,
+          "numList": [
+            20141,
+            14,
+            15,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20142": {
+          "id": 236,
+          "numList": [
+            20142,
+            15,
+            9,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20143": {
+          "id": 237,
+          "numList": [
+            20143,
+            16,
+            2,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20144": {
+          "id": 238,
+          "numList": [
+            20144,
+            17,
+            17,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20145": {
+          "id": 239,
+          "numList": [
+            20145,
+            18,
+            10,
+            5
+          ]
+        },
+        "team_battle_assist_npc": {
+          "id": 244,
+          "numList": [
+            21001,
+            21003
+          ]
+        },
+        "team_battle_star_level_glass_1": {
+          "id": 255,
+          "numList": [
+            1,
+            15,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_2": {
+          "id": 256,
+          "numList": [
+            2,
+            25,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_3": {
+          "id": 257,
+          "numList": [
+            3,
+            35,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_4": {
+          "id": 258,
+          "numList": [
+            4,
+            45,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_5": {
+          "id": 259,
+          "numList": [
+            5,
+            55,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_6": {
+          "id": 260,
+          "numList": [
+            6,
+            55,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_7": {
+          "id": 261,
+          "numList": [
+            7,
+            60,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_8": {
+          "id": 262,
+          "numList": [
+            8,
+            60,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_9": {
+          "id": 263,
+          "numList": [
+            9,
+            60,
+            100
+          ]
+        },
+        "team_battle_star_level_glass_10": {
+          "id": 264,
+          "numList": [
+            10,
+            60,
+            100
+          ]
+        },
+        "pet_talent_text1": {
+          "id": 279,
+          "num": 1
+        },
+        "pet_talent_text2": {
+          "id": 280,
+          "num": 2
+        },
+        "pet_talent_text3": {
+          "id": 281,
+          "num": 3
+        },
+        "pet_talent_text4": {
+          "id": 282,
+          "num": 4
+        },
+        "pet_attr_version": {
+          "id": 294,
+          "num": 6
+        },
+        "pet_available_nature": {
+          "id": 307,
+          "numList": [
+            1,
+            30
+          ]
+        },
+        "team_battle_npc_blood_90001": {
+          "id": 313,
+          "numList": [
+            90001,
+            1,
+            5
+          ]
+        },
+        "team_battle_npc_blood_90002": {
+          "id": 314,
+          "numList": [
+            90002,
+            2,
+            0
+          ]
+        },
+        "team_battle_npc_blood_90003": {
+          "id": 315,
+          "numList": [
+            90003,
+            3,
+            4
+          ]
+        },
+        "team_battle_npc_blood_90004": {
+          "id": 316,
+          "numList": [
+            90004,
+            4,
+            6
+          ]
+        },
+        "team_battle_npc_blood_90005": {
+          "id": 317,
+          "numList": [
+            90005,
+            5,
+            3
+          ]
+        },
+        "team_battle_npc_blood_90006": {
+          "id": 318,
+          "numList": [
+            90006,
+            6,
+            7
+          ]
+        },
+        "team_battle_npc_blood_90007": {
+          "id": 319,
+          "numList": [
+            90007,
+            7,
+            11
+          ]
+        },
+        "team_battle_npc_blood_90008": {
+          "id": 320,
+          "numList": [
+            90008,
+            8,
+            16
+          ]
+        },
+        "team_battle_npc_blood_90009": {
+          "id": 321,
+          "numList": [
+            90009,
+            9,
+            12
+          ]
+        },
+        "team_battle_npc_blood_90010": {
+          "id": 322,
+          "numList": [
+            90010,
+            10,
+            13
+          ]
+        },
+        "team_battle_npc_blood_90011": {
+          "id": 323,
+          "numList": [
+            90011,
+            11,
+            1
+          ]
+        },
+        "team_battle_npc_blood_90012": {
+          "id": 324,
+          "numList": [
+            90012,
+            12,
+            14
+          ]
+        },
+        "team_battle_npc_blood_90013": {
+          "id": 325,
+          "numList": [
+            90013,
+            13,
+            8
+          ]
+        },
+        "team_battle_npc_blood_90014": {
+          "id": 326,
+          "numList": [
+            90014,
+            14,
+            15
+          ]
+        },
+        "team_battle_npc_blood_90015": {
+          "id": 327,
+          "numList": [
+            90015,
+            15,
+            9
+          ]
+        },
+        "team_battle_npc_blood_90016": {
+          "id": 328,
+          "numList": [
+            90016,
+            16,
+            2
+          ]
+        },
+        "team_battle_npc_blood_90017": {
+          "id": 329,
+          "numList": [
+            90017,
+            17,
+            17
+          ]
+        },
+        "team_battle_npc_blood_90018": {
+          "id": 330,
+          "numList": [
+            90018,
+            18,
+            10
+          ]
+        },
+        "talent_effect_item": {
+          "id": 333,
+          "numList": [
+            100422,
+            100424
+          ]
+        },
+        "nature_effect_item": {
+          "id": 334,
+          "numList": [
+            100420,
+            100421
+          ]
+        },
+        "pet_recommend_option_icon_nature_unselect": {
+          "id": 337
+        },
+        "pet_recommend_option_icon_nature_selected": {
+          "id": 338
+        },
+        "pet_recommend_option_icon_talent_unselect": {
+          "id": 339
+        },
+        "pet_recommend_option_icon_talent_selected": {
+          "id": 340
+        },
+        "team_battle_npc_blood_20189": {
+          "id": 350,
+          "numList": [
+            20189,
+            1,
+            5
+          ]
+        },
+        "team_battle_npc_blood_20190": {
+          "id": 351,
+          "numList": [
+            20190,
+            2,
+            0
+          ]
+        },
+        "team_battle_npc_blood_20191": {
+          "id": 352,
+          "numList": [
+            20191,
+            3,
+            4
+          ]
+        },
+        "team_battle_npc_blood_20192": {
+          "id": 353,
+          "numList": [
+            20192,
+            4,
+            6
+          ]
+        },
+        "team_battle_npc_blood_20193": {
+          "id": 354,
+          "numList": [
+            20193,
+            5,
+            3
+          ]
+        },
+        "team_battle_npc_blood_20194": {
+          "id": 355,
+          "numList": [
+            20194,
+            6,
+            7
+          ]
+        },
+        "team_battle_npc_blood_20195": {
+          "id": 356,
+          "numList": [
+            20195,
+            7,
+            11
+          ]
+        },
+        "team_battle_npc_blood_20196": {
+          "id": 357,
+          "numList": [
+            20196,
+            8,
+            16
+          ]
+        },
+        "team_battle_npc_blood_20197": {
+          "id": 358,
+          "numList": [
+            20197,
+            9,
+            12
+          ]
+        },
+        "team_battle_npc_blood_20198": {
+          "id": 359,
+          "numList": [
+            20198,
+            10,
+            13
+          ]
+        },
+        "team_battle_npc_blood_20199": {
+          "id": 360,
+          "numList": [
+            20199,
+            11,
+            1
+          ]
+        },
+        "team_battle_npc_blood_20200": {
+          "id": 361,
+          "numList": [
+            20200,
+            12,
+            14
+          ]
+        },
+        "team_battle_npc_blood_20201": {
+          "id": 362,
+          "numList": [
+            20201,
+            13,
+            8
+          ]
+        },
+        "team_battle_npc_blood_20202": {
+          "id": 363,
+          "numList": [
+            20202,
+            14,
+            15
+          ]
+        },
+        "team_battle_npc_blood_20203": {
+          "id": 364,
+          "numList": [
+            20203,
+            15,
+            9
+          ]
+        },
+        "team_battle_npc_blood_20204": {
+          "id": 365,
+          "numList": [
+            20204,
+            16,
+            2
+          ]
+        },
+        "team_battle_npc_blood_20205": {
+          "id": 366,
+          "numList": [
+            20205,
+            17,
+            17
+          ]
+        },
+        "team_battle_npc_blood_20206": {
+          "id": 367,
+          "numList": [
+            20206,
+            18,
+            10
+          ]
+        },
+        "team_battle_npc_blood_700001": {
+          "id": 377,
+          "numList": [
+            700001,
+            1,
+            5
+          ]
+        },
+        "team_battle_npc_blood_700002": {
+          "id": 378,
+          "numList": [
+            700002,
+            2,
+            0
+          ]
+        },
+        "team_battle_npc_blood_700003": {
+          "id": 379,
+          "numList": [
+            700003,
+            3,
+            4
+          ]
+        },
+        "team_battle_npc_blood_700004": {
+          "id": 380,
+          "numList": [
+            700004,
+            4,
+            6
+          ]
+        },
+        "team_battle_npc_blood_700005": {
+          "id": 381,
+          "numList": [
+            700005,
+            5,
+            3
+          ]
+        },
+        "team_battle_npc_blood_700006": {
+          "id": 382,
+          "numList": [
+            700006,
+            6,
+            7
+          ]
+        },
+        "team_battle_npc_blood_700007": {
+          "id": 383,
+          "numList": [
+            700007,
+            7,
+            11
+          ]
+        },
+        "team_battle_npc_blood_700008": {
+          "id": 384,
+          "numList": [
+            700008,
+            8,
+            16
+          ]
+        },
+        "team_battle_npc_blood_700009": {
+          "id": 385,
+          "numList": [
+            700009,
+            9,
+            12
+          ]
+        },
+        "team_battle_npc_blood_700010": {
+          "id": 386,
+          "numList": [
+            700010,
+            10,
+            13
+          ]
+        },
+        "team_battle_npc_blood_700011": {
+          "id": 387,
+          "numList": [
+            700011,
+            11,
+            1
+          ]
+        },
+        "team_battle_npc_blood_700012": {
+          "id": 388,
+          "numList": [
+            700012,
+            12,
+            14
+          ]
+        },
+        "team_battle_npc_blood_700013": {
+          "id": 389,
+          "numList": [
+            700013,
+            13,
+            8
+          ]
+        },
+        "team_battle_npc_blood_700014": {
+          "id": 390,
+          "numList": [
+            700014,
+            14,
+            15
+          ]
+        },
+        "team_battle_npc_blood_700015": {
+          "id": 391,
+          "numList": [
+            700015,
+            15,
+            9
+          ]
+        },
+        "team_battle_npc_blood_700016": {
+          "id": 392,
+          "numList": [
+            700016,
+            16,
+            2
+          ]
+        },
+        "team_battle_npc_blood_700017": {
+          "id": 393,
+          "numList": [
+            700017,
+            17,
+            17
+          ]
+        },
+        "team_battle_npc_blood_700018": {
+          "id": 394,
+          "numList": [
+            700018,
+            18,
+            10
+          ]
+        },
+        "high_value_pet_rule_level": {
+          "id": 397,
+          "num": 50
+        },
+        "unlock_attribute_quantity": {
+          "id": 399,
+          "num": 8
+        },
+        "travel_exp_level_diff": {
+          "id": 406,
+          "num": 30
+        },
+        "talent_change_rate": {
+          "id": 407,
+          "num": 5000
+        },
+        "talent_change_coefficient": {
+          "id": 408,
+          "num": 1500
+        },
+        "talent_change_level_diff": {
+          "id": 409,
+          "num": 30
+        },
+        "pet_inheritance_talent_rate": {
+          "id": 414,
+          "num": 30000
+        },
+        "pet_inheritance_attribute_num": {
+          "id": 415,
+          "num": 30000
+        },
+        "no_pet_inheritance_attribute_rate": {
+          "id": 416,
+          "num": 1000
+        },
+        "pet_inheritance_attribute_swing_rate": {
+          "id": 417,
+          "num": 3000
+        },
+        "pet_inheritance_attribute_swing_range": {
+          "id": 418,
+          "num": 2
+        },
+        "pet_talent_version": {
+          "id": 430,
+          "num": 2
+        },
+        "pet_talent_random_ban": {
+          "id": 433,
+          "numList": [
+            1
+          ]
+        },
+        "normal_talent_id": {
+          "id": 434,
+          "num": 1
+        },
+        "pet_attribute_num_initial_weigh": {
+          "id": 450,
+          "numList": [
+            0,
+            100,
+            100
+          ]
+        },
+        "pet_attribute_content_initial_weigh": {
+          "id": 451,
+          "numList": [
+            100,
+            100,
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        "pet_inheritance_attribute_num_weigh_male": {
+          "id": 452,
+          "numList": [
+            0,
+            300,
+            300
+          ]
+        },
+        "pet_inheritance_attribute_num_weigh_female": {
+          "id": 453,
+          "numList": [
+            0,
+            300,
+            300
+          ]
+        },
+        "pet_inheritance_attribute_content_weigh_male": {
+          "id": 454,
+          "numList": [
+            300,
+            300,
+            300,
+            300,
+            300,
+            300
+          ]
+        },
+        "pet_inheritance_attribute_content_weigh_female": {
+          "id": 455,
+          "numList": [
+            300,
+            300,
+            300,
+            300,
+            300,
+            300
+          ]
+        },
+        "pet_inheritance_attribute_detail": {
+          "id": 456,
+          "numList": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "pet_inheritance_attribute_detail_weigh": {
+          "id": 457,
+          "numList": [
+            100,
+            100,
+            100,
+            100
+          ]
+        },
+        "level_up_show_time": {
+          "id": 492,
+          "num": 1600
+        },
+        "blood_fantastic_talent_value_lower": {
+          "id": 493,
+          "num": 8
+        },
+        "blood_fantastic_talent_value_upper": {
+          "id": 494,
+          "num": 10
+        },
+        "mix_blood_skill_dam_type": {
+          "id": 497,
+          "numList": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "academy_nest_nature_CD": {
+          "id": 517,
+          "num": 43200
+        }
+      }
+    },
+    "INSPIRE_LEVEL_CONF": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/INSPIRE_LEVEL_CONF.non",
+          "offset": 3074048,
+          "declared_size": 2688,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "ffdbc04e6aaf02bfe9b621f42a1a0fdfe2c6cd384a0408f805b738bb096a3a7f",
+          "source_ranges_sha256": [
+            {
+              "offset": 3074101,
+              "size": 2688,
+              "sha256": "873361bb6aa21a49e35976864ca6e3c819edb74a6da6bb90429379fb7163b4af"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/INSPIRE_LEVEL_CONF.bytes",
+          "offset": 29931520,
+          "declared_size": 1200,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "9f9bd80ee0239ebca676b1b7d528f36164fdaa1c0ff41bf9706ae010d683af7a",
+          "source_ranges_sha256": [
+            {
+              "offset": 29931573,
+              "size": 1200,
+              "sha256": "d07b56cf15ef840f7571fbf0460eba01965db7a96882f44d1bc4824cae9ed484"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 5,
+      "property_names": [
+        "id",
+        "require_item",
+        "grow_level",
+        "type_enhance_data",
+        "attr"
+      ],
+      "rows": {
+        "1": {
+          "id": 1,
+          "require_item": [
+            {
+              "item_type": 1,
+              "item_id": 100205,
+              "item_num": 1
+            },
+            {
+              "item_type": 2,
+              "item_id": 1,
+              "item_num": 240000
+            }
+          ],
+          "type_enhance_data": [
+            1500,
+            1500
+          ],
+          "attr": [
+            {
+              "attr_type": 93,
+              "attr_data": 4500
+            },
+            {
+              "attr_type": 94,
+              "attr_data": 4500
+            }
+          ]
+        },
+        "2": {
+          "id": 2,
+          "require_item": [
+            {
+              "item_type": 1,
+              "item_id": 100205,
+              "item_num": 3
+            },
+            {
+              "item_type": 2,
+              "item_id": 1,
+              "item_num": 480000
+            }
+          ],
+          "type_enhance_data": [
+            1500,
+            1500
+          ],
+          "attr": [
+            {
+              "attr_type": 93,
+              "attr_data": 9000
+            },
+            {
+              "attr_type": 94,
+              "attr_data": 9000
+            }
+          ]
+        },
+        "3": {
+          "id": 3,
+          "require_item": [
+            {
+              "item_type": 1,
+              "item_id": 100205,
+              "item_num": 6
+            },
+            {
+              "item_type": 2,
+              "item_id": 1,
+              "item_num": 960000
+            }
+          ],
+          "type_enhance_data": [
+            1500,
+            1500
+          ],
+          "attr": [
+            {
+              "attr_type": 93,
+              "attr_data": 13500
+            },
+            {
+              "attr_type": 94,
+              "attr_data": 13500
+            }
+          ]
+        },
+        "4": {
+          "id": 4,
+          "require_item": [
+            {
+              "item_type": 1,
+              "item_id": 100206,
+              "item_num": 1
+            },
+            {
+              "item_type": 1,
+              "item_id": 100205,
+              "item_num": 10
+            },
+            {
+              "item_type": 2,
+              "item_id": 1,
+              "item_num": 1440000
+            }
+          ],
+          "type_enhance_data": [
+            1500,
+            1500
+          ],
+          "attr": [
+            {
+              "attr_type": 93,
+              "attr_data": 18000
+            },
+            {
+              "attr_type": 94,
+              "attr_data": 18000
+            }
+          ]
+        },
+        "5": {
+          "id": 5,
+          "require_item": [
+            {
+              "item_type": 1,
+              "item_id": 100206,
+              "item_num": 1
+            },
+            {
+              "item_type": 1,
+              "item_id": 100205,
+              "item_num": 15
+            },
+            {
+              "item_type": 2,
+              "item_id": 1,
+              "item_num": 2400000
+            }
+          ],
+          "type_enhance_data": [
+            1500,
+            1500
+          ],
+          "attr": [
+            {
+              "attr_type": 93,
+              "attr_data": 22500
+            },
+            {
+              "attr_type": 94,
+              "attr_data": 22500
+            }
+          ]
+        }
+      }
+    },
+    "PET_TALENT_CONF": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/PET_TALENT_CONF.non",
+          "offset": 3551232,
+          "declared_size": 4288,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "7f8de4dcd3cfe2522a62a8770188f10a3dad9e7a202834da8b66acb5d9a35f80",
+          "source_ranges_sha256": [
+            {
+              "offset": 3551285,
+              "size": 4288,
+              "sha256": "3854b36cfacf82b9f2263e7a136347ded27ee16d7d3c48db2f7caf95edbc4c44"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/PET_TALENT_CONF.bytes",
+          "offset": 47079424,
+          "declared_size": 12032,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "7f05f05b806606b32406effe737869499a7658922aa51093c12d75e6e182a6ca",
+          "source_ranges_sha256": [
+            {
+              "offset": 47079477,
+              "size": 12032,
+              "sha256": "b44c3222962cde273df179863e2f7e45ba816cb5ac5b0efc5eaaca53263c4c8e"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 99,
+      "property_names": [
+        "id",
+        "editor_name1",
+        "editor_name2",
+        "name",
+        "spec_desc",
+        "desc",
+        "active_type",
+        "type",
+        "filter_enum_value",
+        "priority",
+        "condition_group",
+        "can_add",
+        "effect_group",
+        "remove",
+        "new_talent_id",
+        "icon",
+        "talent_color",
+        "icon_visible_switch"
+      ],
+      "rows": {
+        "1": {
+          "id": 1,
+          "desc": {
+            "localization_id": 2,
+            "text": null
+          },
+          "condition_group": [
+            {}
+          ],
+          "can_add": 1,
+          "effect_group": [
+            {}
+          ]
+        }
+      }
+    },
+    "PET_TALENT_RANDOM_CONF": {
+      "source": {
+        "schema": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/PET_TALENT_RANDOM_CONF.non",
+          "offset": 3555573,
+          "declared_size": 656,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "57d18b843ddff0383e03f3bb4f6d1da74e6a2bcbada4b60b6a26b8ccd93869d0",
+          "source_ranges_sha256": [
+            {
+              "offset": 3555626,
+              "size": 656,
+              "sha256": "63fbe9348c0b2ad4b32fdd83caa1333ecd0c93039f91481cdc672e03b172e628"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        },
+        "binary": {
+          "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+          "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/PET_TALENT_RANDOM_CONF.bytes",
+          "offset": 47091712,
+          "declared_size": 928,
+          "compression": 0,
+          "payload_strategy": 13,
+          "payload_sha256": "0ce49cb6a5ac6f0618212b5edef076c964826da21e27783412d55a41fee06eb9",
+          "source_ranges_sha256": [
+            {
+              "offset": 47091765,
+              "size": 928,
+              "sha256": "4a1674632accda9ab05fa4dd1b5b5d7acb013290caea3d2fca1feab89cdc57b3"
+            }
+          ],
+          "source_ranges_unchanged": true,
+          "stat_unchanged": true
+        }
+      },
+      "row_count": 8,
+      "property_names": [
+        "id",
+        "editor_name",
+        "probability"
+      ],
+      "rows": {
+        "1": {
+          "id": 1,
+          "probability": [
+            10
+          ]
+        }
+      }
+    }
+  },
+  "packet_source": {
+    "database": "data/replays/human-battles.sqlite3",
+    "recording_id": "d8ab052280a9068c3179513c276cd07b0fa76c1d2a142087fc65c1574b17a50e",
+    "packet_row": 3094,
+    "opcode": "0x1316",
+    "content_json_sha256_utf8": "8ad0b9ef70bf38dd460c588b580104eb86aaa8256bf99e80d58a31aebff9a4e1",
+    "target_numeric_fields": {
+      "conf_id": 410451,
+      "base_conf_id": 3455,
+      "level": 24,
+      "nature": 30,
+      "grow_times": 0,
+      "last_breakthrough_lv": 0,
+      "inspire_lv": 0,
+      "max_hp": 158,
+      "current_hp": 158,
+      "speed_min": 62,
+      "speed_max": 90,
+      "attribute_info_present": false,
+      "other_five_panel_values": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "historical_protocol_database_monster": {
+    "source": "vendor/rkpp/rkpp_data.sqlite:entity/monster/410451",
+    "payload_sha256": "66a0552c27ea9604df80dc0f537d3891f8634a5150b4d585e6311a846b67250b",
+    "status": "Historical metadata differs from the current extracted schema; not proof of active NPC presets.",
+    "numeric_fields": {
+      "id": 410451,
+      "base_id": 3455,
+      "petbase_find_enum": 1,
+      "find_param": [
+        3455
+      ],
+      "level": 1,
+      "difficulty": 1,
+      "height_percent": [
+        0,
+        10000
+      ],
+      "active_skill1": 41045101,
+      "active_skill2": 41045102,
+      "active_skill3": 41045103,
+      "active_skill4": 41045104,
+      "catch_difficulty": 10000,
+      "Catch_difficulty_OverThreshold": 2000,
+      "Catch_difficulty_UnderThreshold": 1800,
+      "catch_prob_max": 9500,
+      "attr_enum_break_set": [
+        1,
+        4,
+        5
+      ],
+      "hp_max_upper_mag": 10000,
+      "phy_attack_upper_mag": 10000,
+      "spe_attack_upper_mag": 10000,
+      "phy_defence_upper_mag": 10000,
+      "spe_defence_upper_mag": 10000,
+      "speed_upper_mag": 10000,
+      "level_skill_id": 3455,
+      "exp_award_fight_stage": [
+        100
+      ],
+      "exp_award_catch_stage": [
+        100
+      ],
+      "defeat_award": 970208,
+      "exp_award_throwcatch_stage": [
+        100
+      ],
+      "pre_type": 1,
+      "pre_num": [
+        0
+      ],
+      "monster_bornmagic": 80,
+      "bottle_reward_switch": true
+    }
+  },
+  "species_numeric": {
+    "source": "data/external/petbase.json",
+    "source_sha256": "19281022feb168595f62916109da61c73611984c7c04066e77c9ae613400881b",
+    "fields": {
+      "hp_max_race": 89,
+      "phy_attack_race": 94,
+      "spe_attack_race": 18,
+      "phy_defence_race": 68,
+      "spe_defence_race": 105,
+      "speed_race": 80,
+      "hp_max_first": 10,
+      "phy_attack_first": 10,
+      "spe_attack_first": 10,
+      "phy_defence_first": 10,
+      "spe_defence_first": 10,
+      "speed_first": 10
+    }
+  },
+  "battle_global_parameters": {
+    "source": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BATTLE_GLOBAL_CONFIG.json",
+    "source_sha256": "0e43b58db5cc6cf04771c6e17af7c5a4564b3bee671da236706c3667dd9a527e",
+    "status": "Actual configuration values; PVE invocation, denominators and operation order are not established.",
+    "rows": {
+      "level_modify": {
+        "id": 223,
+        "num": 10800
+      },
+      "damage_over_level_ratio": {
+        "id": 1668,
+        "num": 140
+      },
+      "over_level_cutoff": {
+        "id": 1670,
+        "num": 1
+      },
+      "damage_over_star_ratio": {
+        "id": 1669,
+        "num": 114
+      },
+      "damage_over_evo_ratio": {
+        "id": 1672,
+        "numList": [
+          130,
+          150
+        ]
+      },
+      "lordevo_breakthrough_lv_damage": {
+        "id": 1675,
+        "numList": [
+          100,
+          150,
+          200,
+          250,
+          300
+        ]
+      },
+      "lordevo_inspire_lv_damage": {
+        "id": 1676,
+        "numList": [
+          350,
+          400,
+          450,
+          600,
+          900
+        ]
+      },
+      "auto_battle_damage_level": {
+        "id": 1662,
+        "num": 50
+      },
+      "auto_battle_damage_star": {
+        "id": 1663,
+        "num": 112
+      },
+      "pvp_balance_effort_grow_level": {
+        "id": 1476,
+        "num": 50
+      }
+    }
+  },
+  "parser_sources": {
+    "artifacts/unpack_probe_20261025/parse_roco_tables.py": "49eac8b1c84335bf4f1a8d84a1a88805a435e2a2d8739cb51f6357222cdd5473",
+    "artifacts/unpack_probe_20261025/extract_targeted.py": "40f5906a324492c35b03214605dcc60bc4491614e41fbe093b5156b0c247b8d9"
+  },
+  "conclusions": {
+    "npc_complete_panel_in_entry": false,
+    "npc_hp_158_explained_by_confirmed_formula": false,
+    "owned_zero_star_candidate_max_hp_at_level24_race89_display0to10_and_up1p1": 139,
+    "owned_talent_domain_applicable_to_npc": false,
+    "npc_talent_domain_confirmed": false,
+    "raw_talent_range_fields": {
+      "minimum": 1,
+      "maximum": 50,
+      "status": "ATTR_GLOBAL_CONFIG fields exist; an active NPC call site has not been identified. They are not adopted as this NPC talent domain."
+    },
+    "stat_formula_parameters": "HP race/talent constants=200/100, offsets=25/25, level constant=10000; other race/talent=100/50, offsets=50/50; prob_calculate_param=10000. These agree algebraically with the captured owned zero-star candidate; server execution is not recovered.",
+    "damage_level_term_candidate": "(45*attacker_level/100+10)/41; equals 20.8/41 at level24 and 37/41 at level60. Field values and community expression are evidence; the complete server operation order is unconfirmed.",
+    "damage_floor_2_semantics_confirmed": false,
+    "inspire_level_rows": "Five additional inspire levels with only attr_type93/94 and type_enhance_data=[1500,1500]. Inspire level is not established as the total breakthrough-plus-inspire star count; no speed +50 is declared in this table.",
+    "limitations": [
+      "No fixed IV or broadened six-dimensional talent range was inferred from HP158.",
+      "MONSTER_CONF baseline/0_P retain server-facing attr_enum_break_set, upper_mag and monster_bornmagic; 2_P/3_P schemas omit them. Their disappearance from client schema is not proof that the server removed the rules.",
+      "MONSTER_GROWTH_CONF baseline row1024 has break_times1/effort_grow_level10; 0_P/3_P client schemas omit these fields. This is a historical preset, not confirmed current server state.",
+      "The active runtime mounting order, complete server NPC formulas, raw talent domain and operation order remain unconfirmed.",
+      "Damage parameter values do not prove whether phy_dam_floor2 is a minimum or an additive term, or how the separate PVE over-level/star/evolution ratios apply."
+    ],
+    "monster_bornmagic_80_hp_stat_semantics_confirmed": false,
+    "npc_hp_158_has_source_bound_candidate_witness": true,
+    "candidate_rule_scope": "Only conf410451/base3455/difficulty1/level24: baseline NPC growth10 adds HP20/others10, user below60 nature0-star1.1/0.9, and existing owned core/talent0..10 as an explicit uncalibrated candidate. Not a universal NPC formula."
+  },
+  "same_archive_schema_comparison": {
+    "MONSTER_CONF": [
+      {
+        "pak": "pakchunk4-WindowsNoEditor.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_CONF.non",
+            "offset": 1974272,
+            "declared_size": 12456,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "d110ec04129a825bc682650d53fb4b7d6dd89b9fee79e04380239dc0742e3359",
+            "source_ranges_sha256": [
+              {
+                "offset": 1974345,
+                "size": 1184,
+                "sha256": "dd27b7408f116b2fb269425337e4232663c3441b208a0211d80ff584a59cd2e4"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_CONF.bytes",
+            "offset": 11866112,
+            "declared_size": 1545548,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "80ff1f5d7e2978cc39f5f9d474162d5efd3d3ce9dbc273d05752531801ba27cc",
+            "source_ranges_sha256": [
+              {
+                "offset": 11866553,
+                "size": 12144,
+                "sha256": "88132baff20bac5a57ae208bfdcf278150dc8d3a6d39b5fee84e84fc217288a9"
+              },
+              {
+                "offset": 11878697,
+                "size": 10864,
+                "sha256": "f5c74f77fda5147a27b95d35afb2a8ec7fc7cb9ca806d4f26ba040d7902af21d"
+              },
+              {
+                "offset": 11889561,
+                "size": 11312,
+                "sha256": "8741ff4eb12a8fa10d8c8c7244e1ec820e4f7ee76b55316abde624eee243f4eb"
+              },
+              {
+                "offset": 11900873,
+                "size": 9952,
+                "sha256": "1bc92221a2603127174be2a23a3999c80526b106ac671f36961a683badef5cb2"
+              },
+              {
+                "offset": 11910825,
+                "size": 12688,
+                "sha256": "f6608255a0c5b859ab7dce1f15c1e4a2883dc9932341286e3adc2f8d270a3ee5"
+              },
+              {
+                "offset": 11923513,
+                "size": 11328,
+                "sha256": "4b43d250e1a8ca9532be13c038058d8f96e8c24d209bcbae429a6adf88ed0192"
+              },
+              {
+                "offset": 11934841,
+                "size": 7824,
+                "sha256": "37741af78071860bbc0be22f5e5a3e9ae41c2f8824b8f3b5c1126c4d48330122"
+              },
+              {
+                "offset": 11942665,
+                "size": 10064,
+                "sha256": "1eab1296448783c2d71c1bdcedf9d2d9a4b148380cb98b34e3c5e71782c82477"
+              },
+              {
+                "offset": 11952729,
+                "size": 9696,
+                "sha256": "c59f085d6d59a0442cb57249b58d880a189ddcd995dffe0595bffbc2bf1e2b6b"
+              },
+              {
+                "offset": 11962425,
+                "size": 7408,
+                "sha256": "e0213700703043b872bb2b8a1d911b7748e7a87898ab3f3140f7ab89bcc82845"
+              },
+              {
+                "offset": 11969833,
+                "size": 8384,
+                "sha256": "116342ff044fa4d8b855a17a33af926345469526f4212fc2dd4b5c36dc6679b1"
+              },
+              {
+                "offset": 11978217,
+                "size": 8144,
+                "sha256": "b178e4c9b35078ec21d29ccdc257457d4eb67c4d6b8206a19f2c3df8d4c93bac"
+              },
+              {
+                "offset": 11986361,
+                "size": 8288,
+                "sha256": "5001a8a744596a24bd2fac6df6fb816d8a89504384d86a24372894d41634848f"
+              },
+              {
+                "offset": 11994649,
+                "size": 5280,
+                "sha256": "9266902f09243a36aab8194e065bd24ecca0d28ff796cea8a348c42923eb7bbc"
+              },
+              {
+                "offset": 11999929,
+                "size": 8800,
+                "sha256": "54dfedeb48039b512f703a37ab4588082712767b15684c452ff310bdccc42c61"
+              },
+              {
+                "offset": 12008729,
+                "size": 12608,
+                "sha256": "217003520d3fea47845316329296761f0305491a880b4a52666cf9e4a2f170be"
+              },
+              {
+                "offset": 12021337,
+                "size": 12080,
+                "sha256": "b9b167fce4dff25f166b1df4ecf7168109a865844998491b56189a19e93f309d"
+              },
+              {
+                "offset": 12033417,
+                "size": 10112,
+                "sha256": "40a17acf1ff9063421e2aceb79064d59e2fe16dc4287eda4a8e6148dd6307b37"
+              },
+              {
+                "offset": 12043529,
+                "size": 5152,
+                "sha256": "035aacce35abc74d69b2420c2b9876a01d4f8f367f71e430c3108b0186a96358"
+              },
+              {
+                "offset": 12048681,
+                "size": 12192,
+                "sha256": "8b00f6fcbb6424bb724478337d636519919cb86cd80dcdf1db3eca46d0d8f13b"
+              },
+              {
+                "offset": 12060873,
+                "size": 19328,
+                "sha256": "4f3cdc4ef3f50b3f3019e012f2ac07927f2f7da3b96cdb245c1417ab7ffd561d"
+              },
+              {
+                "offset": 12080201,
+                "size": 17296,
+                "sha256": "d7f7c6a208cf905da51e024e63a7e7ac4b908d12ce935159166653b44c1c677a"
+              },
+              {
+                "offset": 12097497,
+                "size": 16864,
+                "sha256": "8449b64481995eea33b272faa3ff5bb17141f7666fed4a2e60dde55f0e876892"
+              },
+              {
+                "offset": 12114361,
+                "size": 9680,
+                "sha256": "fc44d65b982243256031ad3389947691d036591e5e4d71eb3b4b41f0f4a96baf"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 11176,
+        "property_names": [
+          "id",
+          "name",
+          "base_id",
+          "petbase_find_enum",
+          "find_param",
+          "level",
+          "monster_level_script",
+          "new_level",
+          "difficulty",
+          "shining_prob",
+          "chaos_prob",
+          "glass_prob",
+          "custom_glass",
+          "height_percent",
+          "voice_percent",
+          "monster_carry_on",
+          "habit_stage",
+          "catch_pet_back_level",
+          "active_skill1",
+          "active_skill2",
+          "active_skill3",
+          "active_skill4",
+          "gender",
+          "nature_id",
+          "blood_id",
+          "catch_difficulty",
+          "Catch_difficulty_OverThreshold",
+          "Catch_difficulty_UnderThreshold",
+          "catch_prob_max",
+          "individuality_num",
+          "break_times",
+          "inspire_time",
+          "sharpen_data",
+          "blunt_data",
+          "attr_enum_break_set",
+          "individuality",
+          "hp_max_plus",
+          "phy_attack_plus",
+          "spe_attack_plus",
+          "phy_defence_plus",
+          "spe_defence_plus",
+          "speed_plus",
+          "hp_max_upper_mag",
+          "phy_attack_upper_mag",
+          "spe_attack_upper_mag",
+          "phy_defence_upper_mag",
+          "spe_defence_upper_mag",
+          "speed_upper_mag",
+          "level_skill_id",
+          "level_skill_find_enum",
+          "skill_find_param",
+          "exp_award_fight_stage",
+          "exp_award_catch_stage",
+          "defeat_award",
+          "catch_award",
+          "glass_award",
+          "exp_award_throwcatch_stage",
+          "mf_behavior_tree_fight",
+          "pre_type",
+          "pre_num",
+          "monster_bornmagic",
+          "unit_skill",
+          "bottle_reward_switch",
+          "model_scale",
+          "is_nightmare",
+          "buff_icon_offset_z",
+          "difficulty_level",
+          "death_exist"
+        ],
+        "rows": {
+          "410451": {
+            "id": 410451,
+            "base_id": 3455,
+            "petbase_find_enum": 1,
+            "find_param": [
+              3455
+            ],
+            "level": 1,
+            "difficulty": 1,
+            "custom_glass": {},
+            "height_percent": [
+              0,
+              10000
+            ],
+            "active_skill1": 41045101,
+            "active_skill2": 41045102,
+            "active_skill3": 41045103,
+            "active_skill4": 41045104,
+            "catch_difficulty": 10000,
+            "Catch_difficulty_OverThreshold": 2000,
+            "Catch_difficulty_UnderThreshold": 1800,
+            "catch_prob_max": 9500,
+            "attr_enum_break_set": [
+              1,
+              4,
+              5
+            ],
+            "hp_max_upper_mag": 10000,
+            "phy_attack_upper_mag": 10000,
+            "spe_attack_upper_mag": 10000,
+            "phy_defence_upper_mag": 10000,
+            "spe_defence_upper_mag": 10000,
+            "speed_upper_mag": 10000,
+            "level_skill_id": 3455,
+            "exp_award_fight_stage": [
+              100
+            ],
+            "exp_award_catch_stage": [
+              100
+            ],
+            "defeat_award": 970208,
+            "exp_award_throwcatch_stage": [
+              100
+            ],
+            "pre_type": 1,
+            "pre_num": [
+              0
+            ],
+            "monster_bornmagic": 80,
+            "bottle_reward_switch": true
+          }
+        }
+      },
+      {
+        "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_CONF.non",
+            "offset": 2004992,
+            "declared_size": 12582,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "452155057873a808aa3e2245623d1d70cca49e94c66392a251da398e70261b35",
+            "source_ranges_sha256": [
+              {
+                "offset": 2005065,
+                "size": 1200,
+                "sha256": "96162c9c67f45ea15e791e2173e98b13c39913f7b4838ee37451fa38ab05ba0e"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_CONF.bytes",
+            "offset": 8833024,
+            "declared_size": 1649994,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "3f1029a3582c63e6d0d1d008527ae2ee6453e26a4c359ce321025e4237233faa",
+            "source_ranges_sha256": [
+              {
+                "offset": 8833497,
+                "size": 11600,
+                "sha256": "ec6e3834deab0eb14df9c35cb490aed431a07630851eaf4811d5fa96a0c0f7b9"
+              },
+              {
+                "offset": 8845097,
+                "size": 11168,
+                "sha256": "08838df9872c7b358e94af5c92cba75245085d915c9a20b41364a608f5dfe989"
+              },
+              {
+                "offset": 8856265,
+                "size": 11520,
+                "sha256": "a89db2c4af878a2dce410337650edc12991a4542c2e4af1270cd29e70dfd55a5"
+              },
+              {
+                "offset": 8867785,
+                "size": 9696,
+                "sha256": "36ae4b5573049ef3bfb5834b33097164156f2f2b78851e7b476957dcb4f8ec60"
+              },
+              {
+                "offset": 8877481,
+                "size": 10704,
+                "sha256": "335b1c1ea9fe6720a3d687309aa476f2763df77a114a5b06204d3a80e2c9a58d"
+              },
+              {
+                "offset": 8888185,
+                "size": 13344,
+                "sha256": "a0ae61f2398c4b236f7a130e1fa87e3acb33808a5e662d4c9c74243f9cf2796e"
+              },
+              {
+                "offset": 8901529,
+                "size": 7808,
+                "sha256": "ab9b4549b93e6c052831dbbd1c68997975ecabb5758df8eea579ede1c4f9b59e"
+              },
+              {
+                "offset": 8909337,
+                "size": 7792,
+                "sha256": "1e09b6c8aabc6041c7c0981e9fe854c4f54c546ae2a6ec9c9a6b7a4b5b8c4dd4"
+              },
+              {
+                "offset": 8917129,
+                "size": 11328,
+                "sha256": "8eb8a031103c60dbd056a8f5f4b1e8a7afe2f03213a2a6268e799983f7d18827"
+              },
+              {
+                "offset": 8928457,
+                "size": 8496,
+                "sha256": "695300094bdf80a30e39883c9c51af834cbf89a1b586b525c23eebd7872b5fdc"
+              },
+              {
+                "offset": 8936953,
+                "size": 7920,
+                "sha256": "12e03dc836541efbcf8247330b8534a5488c33e69c1ec8b084f25fb134c22c99"
+              },
+              {
+                "offset": 8944873,
+                "size": 8048,
+                "sha256": "c0745d797a2f3c6b03fe2577a02fe1d046d5507853a9770753a6823adcdeca16"
+              },
+              {
+                "offset": 8952921,
+                "size": 7904,
+                "sha256": "a66daaf222a8f3a18228905b46eab34fe62559dcced2b0d902cc5e108946b5c3"
+              },
+              {
+                "offset": 8960825,
+                "size": 8208,
+                "sha256": "60d715ffe06e3c3b752f4aba495b8554d3f1e737a7ed98ffbcc14da8dc1f7525"
+              },
+              {
+                "offset": 8969033,
+                "size": 5840,
+                "sha256": "4bbafa3535bfa51cecaf33c9abb4148e5c49fc7c8e3771c3d339597a5410cf6d"
+              },
+              {
+                "offset": 8974873,
+                "size": 9568,
+                "sha256": "dc9636a76044d968a333bf33c1e77e5f39cab18a1982726d10697ef80b420e6e"
+              },
+              {
+                "offset": 8984441,
+                "size": 11408,
+                "sha256": "070c0f8fc7568cd44a13780f13786cc7371f0cadce45a61949d967e8e2b6ce06"
+              },
+              {
+                "offset": 8995849,
+                "size": 12464,
+                "sha256": "60821d021f1f43acab4bea513347bb857a0a3077b5b788532e37caa736981db6"
+              },
+              {
+                "offset": 9008313,
+                "size": 11904,
+                "sha256": "ad952d003468f9df8385ea406aac20397028bf26364b980965c192c843e2edc3"
+              },
+              {
+                "offset": 9020217,
+                "size": 7408,
+                "sha256": "891f84f1b58cf99a64407c58407071e6b151feecbe347a7f2430ad2d8f7bf5af"
+              },
+              {
+                "offset": 9027625,
+                "size": 5664,
+                "sha256": "a75f164d03ffbbfed71b5792779e2d8b8367f3b7336cbdf6a1c9af71e5851f79"
+              },
+              {
+                "offset": 9033289,
+                "size": 12880,
+                "sha256": "2934cc76dcea8d763644d9f74ab430a06d0a33f3562e796930cf713f6e9f0cf5"
+              },
+              {
+                "offset": 9046169,
+                "size": 17712,
+                "sha256": "27c993c47f75cfb9d73127546db72974b616a47e93747b25a4fd755d1cc8a039"
+              },
+              {
+                "offset": 9063881,
+                "size": 17568,
+                "sha256": "bf8bf3cb66f5df02e5bba32284961c3f2b48345fc39343c0c41a90029f013646"
+              },
+              {
+                "offset": 9081449,
+                "size": 16736,
+                "sha256": "f418cae663b3b37bfba35edc4b5f8f40fd275dbabcae5d21ae185635d9716251"
+              },
+              {
+                "offset": 9098185,
+                "size": 3056,
+                "sha256": "6737c4e3c7a4b1562581127318e8cdc7b1ca8b5b75876f56a2457ae53346a69f"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 11415,
+        "property_names": [
+          "id",
+          "name",
+          "base_id",
+          "petbase_find_enum",
+          "find_param",
+          "level",
+          "monster_level_script",
+          "new_level",
+          "difficulty",
+          "shining_prob",
+          "chaos_prob",
+          "glass_prob",
+          "custom_glass",
+          "height_percent",
+          "voice_percent",
+          "monster_carry_on",
+          "habit_stage",
+          "catch_pet_back_level",
+          "active_skill1",
+          "active_skill2",
+          "active_skill3",
+          "active_skill4",
+          "gender",
+          "nature_id",
+          "blood_id",
+          "catch_difficulty",
+          "Catch_difficulty_OverThreshold",
+          "Catch_difficulty_UnderThreshold",
+          "catch_prob_max",
+          "individuality_num",
+          "break_times",
+          "inspire_time",
+          "sharpen_data",
+          "blunt_data",
+          "attr_enum_break_set",
+          "individuality",
+          "hp_max_plus",
+          "phy_attack_plus",
+          "spe_attack_plus",
+          "phy_defence_plus",
+          "spe_defence_plus",
+          "speed_plus",
+          "hp_max_upper_mag",
+          "phy_attack_upper_mag",
+          "spe_attack_upper_mag",
+          "phy_defence_upper_mag",
+          "spe_defence_upper_mag",
+          "speed_upper_mag",
+          "level_skill_id",
+          "level_skill_find_enum",
+          "skill_find_param",
+          "exp_award_fight_stage",
+          "exp_award_catch_stage",
+          "defeat_award",
+          "catch_award",
+          "glass_award",
+          "exp_award_throwcatch_stage",
+          "mf_behavior_tree_fight",
+          "pre_type",
+          "pre_num",
+          "monster_bornmagic",
+          "unit_skill",
+          "bottle_reward_switch",
+          "model_scale",
+          "is_nightmare",
+          "buff_icon_offset_z",
+          "difficulty_level",
+          "death_exist",
+          "monitor_data_version"
+        ],
+        "rows": {
+          "410451": {
+            "id": 410451,
+            "base_id": 3455,
+            "petbase_find_enum": 1,
+            "find_param": [
+              3455
+            ],
+            "level": 1,
+            "difficulty": 1,
+            "custom_glass": {},
+            "height_percent": [
+              0,
+              10000
+            ],
+            "voice_percent": [
+              0,
+              100
+            ],
+            "active_skill1": 41045101,
+            "active_skill2": 41045102,
+            "active_skill3": 41045103,
+            "active_skill4": 41045104,
+            "catch_difficulty": 10000,
+            "Catch_difficulty_OverThreshold": 2000,
+            "Catch_difficulty_UnderThreshold": 1800,
+            "catch_prob_max": 9500,
+            "attr_enum_break_set": [
+              1,
+              4,
+              5
+            ],
+            "hp_max_upper_mag": 10000,
+            "phy_attack_upper_mag": 10000,
+            "spe_attack_upper_mag": 10000,
+            "phy_defence_upper_mag": 10000,
+            "spe_defence_upper_mag": 10000,
+            "speed_upper_mag": 10000,
+            "level_skill_id": 3455,
+            "exp_award_fight_stage": [
+              100
+            ],
+            "exp_award_catch_stage": [
+              100
+            ],
+            "defeat_award": 970208,
+            "exp_award_throwcatch_stage": [
+              100
+            ],
+            "pre_type": 1,
+            "pre_num": [
+              0
+            ],
+            "monster_bornmagic": 80,
+            "bottle_reward_switch": true,
+            "monitor_data_version": 100
+          }
+        }
+      },
+      {
+        "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_CONF.non",
+            "offset": 2252050,
+            "declared_size": 5593,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "5d919f862638128ae440309f84a3936d6e657d907be5839209479407e82d8b78",
+            "source_ranges_sha256": [
+              {
+                "offset": 2252123,
+                "size": 672,
+                "sha256": "e02dc49c79379b362c2e9ef4a825f26174f23c4128a8ed6a5a9b2a93e9b3bbd3"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor_2_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_CONF.bytes",
+            "offset": 9762816,
+            "declared_size": 925990,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "7116f78995204649bce0bf44c1bbc57ca696a082b740b11a064b2ee24e7c8d0f",
+            "source_ranges_sha256": [
+              {
+                "offset": 9763113,
+                "size": 12368,
+                "sha256": "74f3df2079b35556e9bd3c0988c33c74ee2f0a2867be83efd9327a3ea94bf5cb"
+              },
+              {
+                "offset": 9775481,
+                "size": 12944,
+                "sha256": "9efcb741cd0c73512407a780fa768c2e3e98e2cd251bb8edd8731e14d7aaed25"
+              },
+              {
+                "offset": 9788425,
+                "size": 12160,
+                "sha256": "5669d3fd79006cc1fa3bb41ec689463f00c2a9c9324e6049f8830c219d373825"
+              },
+              {
+                "offset": 9800585,
+                "size": 14672,
+                "sha256": "c81b9d9decc563ead2b1484d2fee1f3d8bd8fdf051aa52cefa55852790c3a09f"
+              },
+              {
+                "offset": 9815257,
+                "size": 11168,
+                "sha256": "5ff856b86161425ec06130120d12d52b21278cd76fcab64c6be39d7069fb0a5f"
+              },
+              {
+                "offset": 9826425,
+                "size": 9488,
+                "sha256": "6d2ea26e94e198caec85ac42f12e1b9a6ac49963c581f922f5a7049e6f30ae1d"
+              },
+              {
+                "offset": 9835913,
+                "size": 13600,
+                "sha256": "55d581b6cd96f646e97f8572655e26c05e146172ff04cdc049217dee2958d6de"
+              },
+              {
+                "offset": 9849513,
+                "size": 14816,
+                "sha256": "9eb4188233385cfcf138683b444b02e474496abb3f49aadc86cc3af66c834392"
+              },
+              {
+                "offset": 9864329,
+                "size": 13040,
+                "sha256": "22d073f9d6a8ac50dab97ecfe47dbc12ecb1e612ae62a5670580789b2e37943a"
+              },
+              {
+                "offset": 9877369,
+                "size": 11520,
+                "sha256": "510b7c2431447498fd43e50e28e1df625c5a0215c7db2a0b155e5f5a8c921f8c"
+              },
+              {
+                "offset": 9888889,
+                "size": 17504,
+                "sha256": "4dcaf3c7fb5ee3d8fbb6d42de834816fde1267905d6e3c44287c3c489b325057"
+              },
+              {
+                "offset": 9906393,
+                "size": 15712,
+                "sha256": "191ff29fbd6e59c8e9e2ef715d10ce4c38abdddc76b9166f935ae1c00c48d814"
+              },
+              {
+                "offset": 9922105,
+                "size": 15280,
+                "sha256": "1fe0e3cd8ce34a4b7e1b8e2bf4e03eaccc1db2a853f09ad096a2bbb7bd86f401"
+              },
+              {
+                "offset": 9937385,
+                "size": 15104,
+                "sha256": "d667468c3f232e04bf5ea48c7a2224a6c4a65d3e841e49db6e24a3f5150f1121"
+              },
+              {
+                "offset": 9952489,
+                "size": 2016,
+                "sha256": "6f366f1a49666bdfc4b54b356edd81e0b07862dffcde631aa84ad2c525af2a12"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 13577,
+        "property_names": [
+          "id",
+          "name",
+          "base_id",
+          "petbase_find_enum",
+          "find_param",
+          "level",
+          "new_level",
+          "difficulty",
+          "shining_prob",
+          "chaos_prob",
+          "glass_prob",
+          "custom_glass",
+          "voice_percent",
+          "gender",
+          "nature_id",
+          "blood_id",
+          "catch_difficulty",
+          "Catch_difficulty_OverThreshold",
+          "Catch_difficulty_UnderThreshold",
+          "catch_prob_max",
+          "inspire_time",
+          "sharpen_data",
+          "blunt_data",
+          "exp_award_fight_stage",
+          "exp_award_catch_stage",
+          "model_scale",
+          "is_nightmare",
+          "buff_icon_offset_z",
+          "difficulty_level",
+          "death_exist"
+        ],
+        "rows": {
+          "410451": {
+            "id": 410451,
+            "base_id": 3455,
+            "petbase_find_enum": 1,
+            "find_param": [
+              3455
+            ],
+            "level": 1,
+            "difficulty": 1,
+            "custom_glass": {},
+            "voice_percent": [
+              0,
+              100
+            ],
+            "catch_difficulty": 10000,
+            "Catch_difficulty_OverThreshold": 2000,
+            "Catch_difficulty_UnderThreshold": 1800,
+            "catch_prob_max": 9500,
+            "exp_award_fight_stage": [
+              100
+            ],
+            "exp_award_catch_stage": [
+              100
+            ]
+          }
+        }
+      },
+      {
+        "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_CONF.non",
+            "offset": 3209216,
+            "declared_size": 4672,
+            "compression": 0,
+            "payload_strategy": 13,
+            "payload_sha256": "43d496ead86c165af58a685cdf1449746c99f321e93148f4ea9539d168b221e6",
+            "source_ranges_sha256": [
+              {
+                "offset": 3209269,
+                "size": 4672,
+                "sha256": "240a525b7c322714ff52af8f5ea4370dd5f43e0c5fc0b5d52e77894c5ed68785"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_CONF.bytes",
+            "offset": 32092160,
+            "declared_size": 855632,
+            "compression": 0,
+            "payload_strategy": 13,
+            "payload_sha256": "76befe11bc38546c314ee88caa1782bc64b6acdaba6366a8ae8ab7949dba87be",
+            "source_ranges_sha256": [
+              {
+                "offset": 32092213,
+                "size": 855632,
+                "sha256": "a860f442bcff1c66bcc693129ee383f38f297c3dbdd7270746731c045ab62b2f"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 13916,
+        "property_names": [
+          "id",
+          "name",
+          "base_id",
+          "petbase_find_enum",
+          "find_param",
+          "level",
+          "new_level",
+          "difficulty",
+          "shining_prob",
+          "chaos_prob",
+          "glass_prob",
+          "custom_glass",
+          "gender",
+          "nature_id",
+          "blood_id",
+          "catch_difficulty",
+          "Catch_difficulty_OverThreshold",
+          "Catch_difficulty_UnderThreshold",
+          "catch_prob_max",
+          "inspire_time",
+          "model_scale",
+          "is_nightmare",
+          "buff_icon_offset_z",
+          "difficulty_level",
+          "death_exist"
+        ],
+        "rows": {
+          "410451": {
+            "id": 410451,
+            "base_id": 3455,
+            "petbase_find_enum": 1,
+            "find_param": [
+              3455
+            ],
+            "level": 1,
+            "difficulty": 1,
+            "custom_glass": {},
+            "catch_difficulty": 10000,
+            "Catch_difficulty_OverThreshold": 2000,
+            "Catch_difficulty_UnderThreshold": 1800,
+            "catch_prob_max": 9500
+          }
+        }
+      }
+    ],
+    "MONSTER_GROWTH_CONF": [
+      {
+        "pak": "pakchunk4-WindowsNoEditor.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_GROWTH_CONF.non",
+            "offset": 1975529,
+            "declared_size": 2623,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "84d64b448f33ac87a2ec1a532f8d7d521241640d42729a637989ab96138caeec",
+            "source_ranges_sha256": [
+              {
+                "offset": 1975602,
+                "size": 416,
+                "sha256": "b5d0717ad9e26bb60d20ec64aa7da279ec02ca4a71440446d0ceed26d5511c5a"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_GROWTH_CONF.bytes",
+            "offset": 12124160,
+            "declared_size": 99694,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "66e584fdf3fd7c759ccf83e93c40da6e2ceaf2545daf1d01999174f9b30e2a1a",
+            "source_ranges_sha256": [
+              {
+                "offset": 12124249,
+                "size": 9040,
+                "sha256": "2a7c3844457758f93e266310951f45043de92f16dfd5c8b8b6b0fb6aea2eb1c2"
+              },
+              {
+                "offset": 12133289,
+                "size": 7392,
+                "sha256": "b27e5201c5a1f00ac1e0853f4e39f4aed655ee64db720905720c27ebcca36f6a"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 1655,
+        "property_names": [
+          "id",
+          "difficulty",
+          "level",
+          "break_times",
+          "effort_grow_level",
+          "effort_growth",
+          "habit_stage",
+          "hp_max_mag",
+          "phy_attack_mag",
+          "spe_attack_mag",
+          "phy_defence_mag",
+          "spe_defence_mag",
+          "speed_mag"
+        ],
+        "rows": {
+          "1024": {
+            "id": 1024,
+            "difficulty": 1,
+            "level": 24,
+            "break_times": 1,
+            "effort_grow_level": 10,
+            "effort_growth": [
+              {
+                "effort_type": 1
+              },
+              {
+                "effort_type": 2
+              },
+              {
+                "effort_type": 3
+              },
+              {
+                "effort_type": 4
+              },
+              {
+                "effort_type": 5
+              },
+              {
+                "effort_type": 6
+              }
+            ],
+            "hp_max_mag": 10000,
+            "phy_attack_mag": 10000,
+            "spe_attack_mag": 10000,
+            "phy_defence_mag": 10000,
+            "spe_defence_mag": 10000,
+            "speed_mag": 10000
+          },
+          "1060": {
+            "id": 1060,
+            "difficulty": 1,
+            "level": 60,
+            "break_times": 5,
+            "effort_grow_level": 50,
+            "effort_growth": [
+              {
+                "effort_type": 1
+              },
+              {
+                "effort_type": 2
+              },
+              {
+                "effort_type": 3
+              },
+              {
+                "effort_type": 4
+              },
+              {
+                "effort_type": 5
+              },
+              {
+                "effort_type": 6
+              }
+            ],
+            "hp_max_mag": 10000,
+            "phy_attack_mag": 10000,
+            "spe_attack_mag": 10000,
+            "phy_defence_mag": 10000,
+            "spe_defence_mag": 10000,
+            "speed_mag": 10000
+          }
+        }
+      },
+      {
+        "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_GROWTH_CONF.non",
+            "offset": 2006265,
+            "declared_size": 518,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "7e7e680320a90a5c3fae3aa49ab854e042540f383df5a6e84fb8a5f9fdad5d72",
+            "source_ranges_sha256": [
+              {
+                "offset": 2006338,
+                "size": 176,
+                "sha256": "88535e30f1ce8192412b25b3ccb19acdd5d96c72e1e700ae5ed7f4c361208306"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_GROWTH_CONF.bytes",
+            "offset": 9101312,
+            "declared_size": 51547,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "3ee74d31db1c07cd3196ff0b79163ad26022c3a3e93127cfe60b5bdf3139af8d",
+            "source_ranges_sha256": [
+              {
+                "offset": 9101385,
+                "size": 12480,
+                "sha256": "99472505bc48568adf356e22e5654e85246471162542031f8c921103dae744f1"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 1775,
+        "property_names": [
+          "id",
+          "difficulty",
+          "level"
+        ],
+        "rows": {
+          "1024": {
+            "id": 1024,
+            "difficulty": 1,
+            "level": 24
+          },
+          "1060": {
+            "id": 1060,
+            "difficulty": 1,
+            "level": 60
+          }
+        }
+      },
+      {
+        "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/MONSTER_GROWTH_CONF.non",
+            "offset": 3213941,
+            "declared_size": 544,
+            "compression": 0,
+            "payload_strategy": 13,
+            "payload_sha256": "7e7e680320a90a5c3fae3aa49ab854e042540f383df5a6e84fb8a5f9fdad5d72",
+            "source_ranges_sha256": [
+              {
+                "offset": 3213994,
+                "size": 544,
+                "sha256": "6d8c0dcf004b2f31d8fcdea47ae3b0154e55b2570d3118859e68be9b31ca535a"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/MONSTER_GROWTH_CONF.bytes",
+            "offset": 32948224,
+            "declared_size": 60704,
+            "compression": 0,
+            "payload_strategy": 13,
+            "payload_sha256": "1f5f2781ffec36ea563b0ed8b10f2175b9fc6586b36ea20392991231c405ff68",
+            "source_ranges_sha256": [
+              {
+                "offset": 32948277,
+                "size": 60704,
+                "sha256": "48c763340a30c5a227d8a26d7d30b7a760e521ae632f29dbbc1ff80979ced3ad"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 2090,
+        "property_names": [
+          "id",
+          "difficulty",
+          "level"
+        ],
+        "rows": {
+          "1024": {
+            "id": 1024,
+            "difficulty": 1,
+            "level": 24
+          },
+          "1060": {
+            "id": 1060,
+            "difficulty": 1,
+            "level": 60
+          }
+        }
+      }
+    ],
+    "ATTR_GLOBAL_CONFIG": [
+      {
+        "pak": "pakchunk4-WindowsNoEditor.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/ATTR_GLOBAL_CONFIG.non",
+            "offset": 1869824,
+            "declared_size": 1229,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "3c9134653791452067a6df2a58939f0968f08950b3b5325085da1a6b0b2b73f8",
+            "source_ranges_sha256": [
+              {
+                "offset": 1869897,
+                "size": 272,
+                "sha256": "a4654966db2f9559a2593a8abc83d4fabfa5db2b5f0cfa0de8c1140b1b85fbbf"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/ATTR_GLOBAL_CONFIG.bytes",
+            "offset": 6123520,
+            "declared_size": 9823,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "597d3ab0b1dd960d8a9100a67d9ec885d69487c040c98ff043769469b3261b60",
+            "source_ranges_sha256": [
+              {
+                "offset": 6123593,
+                "size": 2416,
+                "sha256": "dd92b902c59e2238ecfe3ba966ee84e177f250e0454f3ce0f7c04527095447d4"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 65,
+        "property_names": [
+          "id",
+          "key",
+          "editor_name",
+          "num",
+          "numList",
+          "str",
+          "is_svr_ctl"
+        ],
+        "rows": {
+          "at_hp_maximum": {
+            "id": 4,
+            "num": 500
+          },
+          "hp_max_race_constant": {
+            "id": 18,
+            "num": 200
+          },
+          "hp_max_talent_constant": {
+            "id": 19,
+            "num": 100
+          },
+          "hp_max_base_point_constant": {
+            "id": 20,
+            "num": 10000
+          },
+          "hp_max_level_constant": {
+            "id": 21,
+            "num": 10000
+          },
+          "phy_attack_talent_constant": {
+            "id": 23,
+            "num": 50
+          },
+          "phy_attack_base_point_constant": {
+            "id": 24,
+            "num": 10000
+          },
+          "spe_attack_talent_constant": {
+            "id": 27,
+            "num": 50
+          },
+          "spe_attack_base_point_constant": {
+            "id": 28,
+            "num": 10000
+          },
+          "phy_defence_talent_constant": {
+            "id": 31,
+            "num": 50
+          },
+          "phy_defence_base_point_constant": {
+            "id": 32,
+            "num": 10000
+          },
+          "spe_defence_talent_constant": {
+            "id": 35,
+            "num": 50
+          },
+          "spe_defence_base_point_constant": {
+            "id": 36,
+            "num": 10000
+          },
+          "speed_talent_constant": {
+            "id": 39,
+            "num": 50
+          },
+          "speed_base_point_constant": {
+            "id": 40,
+            "num": 10000
+          },
+          "talent_random_minimum": {
+            "id": 50,
+            "num": 1
+          },
+          "talent_random_maximum": {
+            "id": 51,
+            "num": 50
+          },
+          "race_hp_maximum": {
+            "id": 105,
+            "num": 255
+          },
+          "talent_hp_maximum": {
+            "id": 111,
+            "num": 50
+          },
+          "talent_attack_maximum": {
+            "id": 112,
+            "num": 50
+          },
+          "talent_special_attack_maximum": {
+            "id": 113,
+            "num": 50
+          },
+          "talent_defense_maximium": {
+            "id": 114,
+            "num": 50
+          },
+          "talent_special_defense_maximum": {
+            "id": 115,
+            "num": 50
+          },
+          "talent_speed_maximum": {
+            "id": 116,
+            "num": 50
+          },
+          "hp_max_race_add_level": {
+            "id": 163,
+            "num": 25
+          },
+          "hp_max_talent_add_level": {
+            "id": 169,
+            "num": 25
+          },
+          "phy_attack_talent_add_level": {
+            "id": 170,
+            "num": 50
+          },
+          "spe_attack_talent_add_level": {
+            "id": 171,
+            "num": 50
+          },
+          "phy_defence_talent_add_level": {
+            "id": 172,
+            "num": 50
+          },
+          "spe_defence_talent_add_level": {
+            "id": 173,
+            "num": 50
+          },
+          "speed_talent_add_level": {
+            "id": 174,
+            "num": 50
+          },
+          "phy_dam_param": {
+            "id": 175,
+            "num": 41
+          },
+          "spe_dam_param": {
+            "id": 176,
+            "num": 41
+          },
+          "phy_dam_level_mag": {
+            "id": 177,
+            "num": 45
+          },
+          "spe_dam_level_mag": {
+            "id": 178,
+            "num": 45
+          },
+          "phy_dam_level_add": {
+            "id": 179,
+            "num": 10
+          },
+          "spe_dam_level_add": {
+            "id": 180,
+            "num": 10
+          },
+          "phy_dam_floor": {
+            "id": 181,
+            "num": 2
+          },
+          "spe_dam_floor": {
+            "id": 182,
+            "num": 2
+          },
+          "dam_floor": {
+            "id": 183
+          }
+        }
+      },
+      {
+        "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/ATTR_GLOBAL_CONFIG.non",
+            "offset": 1935938,
+            "declared_size": 1164,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "b0b0223ea6e2e393e1a101915c7c8ba85c0b91c5114ed305c3eb1bb8bda0d7fa",
+            "source_ranges_sha256": [
+              {
+                "offset": 1936011,
+                "size": 272,
+                "sha256": "9d09eb459599a8d5b00c24d6c90c846c590d801b4058b3dd5f20d8b33b990fd1"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor_0_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/ATTR_GLOBAL_CONFIG.bytes",
+            "offset": 5040128,
+            "declared_size": 4688,
+            "compression": 1,
+            "payload_strategy": 0,
+            "payload_sha256": "9b79c9a402bc6641e31ef4b9c5c2c41c71eef5d49ceb90055fcc0c9751638774",
+            "source_ranges_sha256": [
+              {
+                "offset": 5040201,
+                "size": 1344,
+                "sha256": "4684b0b57e3f40d7693fd7bab45fa446a48451a2d0f7880d3fab381f38cd2eae"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 65,
+        "property_names": [
+          "id",
+          "key",
+          "num",
+          "numList",
+          "str",
+          "is_svr_ctl",
+          "is_loc"
+        ],
+        "rows": {
+          "at_hp_maximum": {
+            "id": 4,
+            "num": 500,
+            "is_loc": 2
+          },
+          "hp_max_race_constant": {
+            "id": 18,
+            "num": 200,
+            "is_loc": 2
+          },
+          "hp_max_talent_constant": {
+            "id": 19,
+            "num": 100,
+            "is_loc": 2
+          },
+          "hp_max_base_point_constant": {
+            "id": 20,
+            "num": 10000,
+            "is_loc": 2
+          },
+          "hp_max_level_constant": {
+            "id": 21,
+            "num": 10000,
+            "is_loc": 2
+          },
+          "phy_attack_talent_constant": {
+            "id": 23,
+            "num": 50,
+            "is_loc": 2
+          },
+          "phy_attack_base_point_constant": {
+            "id": 24,
+            "num": 10000,
+            "is_loc": 2
+          },
+          "spe_attack_talent_constant": {
+            "id": 27,
+            "num": 50,
+            "is_loc": 2
+          },
+          "spe_attack_base_point_constant": {
+            "id": 28,
+            "num": 10000,
+            "is_loc": 2
+          },
+          "phy_defence_talent_constant": {
+            "id": 31,
+            "num": 50,
+            "is_loc": 2
+          },
+          "phy_defence_base_point_constant": {
+            "id": 32,
+            "num": 10000,
+            "is_loc": 2
+          },
+          "spe_defence_talent_constant": {
+            "id": 35,
+            "num": 50,
+            "is_loc": 2
+          },
+          "spe_defence_base_point_constant": {
+            "id": 36,
+            "num": 10000,
+            "is_loc": 2
+          },
+          "speed_talent_constant": {
+            "id": 39,
+            "num": 50,
+            "is_loc": 2
+          },
+          "speed_base_point_constant": {
+            "id": 40,
+            "num": 10000,
+            "is_loc": 2
+          },
+          "talent_random_minimum": {
+            "id": 50,
+            "num": 1,
+            "is_loc": 2
+          },
+          "talent_random_maximum": {
+            "id": 51,
+            "num": 50,
+            "is_loc": 2
+          },
+          "race_hp_maximum": {
+            "id": 105,
+            "num": 255,
+            "is_loc": 2
+          },
+          "talent_hp_maximum": {
+            "id": 111,
+            "num": 50,
+            "is_loc": 2
+          },
+          "talent_attack_maximum": {
+            "id": 112,
+            "num": 50,
+            "is_loc": 2
+          },
+          "talent_special_attack_maximum": {
+            "id": 113,
+            "num": 50,
+            "is_loc": 2
+          },
+          "talent_defense_maximium": {
+            "id": 114,
+            "num": 50,
+            "is_loc": 2
+          },
+          "talent_special_defense_maximum": {
+            "id": 115,
+            "num": 50,
+            "is_loc": 2
+          },
+          "talent_speed_maximum": {
+            "id": 116,
+            "num": 50,
+            "is_loc": 2
+          },
+          "hp_max_race_add_level": {
+            "id": 163,
+            "num": 25,
+            "is_loc": 2
+          },
+          "hp_max_talent_add_level": {
+            "id": 169,
+            "num": 25,
+            "is_loc": 2
+          },
+          "phy_attack_talent_add_level": {
+            "id": 170,
+            "num": 50,
+            "is_loc": 2
+          },
+          "spe_attack_talent_add_level": {
+            "id": 171,
+            "num": 50,
+            "is_loc": 2
+          },
+          "phy_defence_talent_add_level": {
+            "id": 172,
+            "num": 50,
+            "is_loc": 2
+          },
+          "spe_defence_talent_add_level": {
+            "id": 173,
+            "num": 50,
+            "is_loc": 2
+          },
+          "speed_talent_add_level": {
+            "id": 174,
+            "num": 50,
+            "is_loc": 2
+          },
+          "phy_dam_param": {
+            "id": 175,
+            "num": 41,
+            "is_loc": 2
+          },
+          "spe_dam_param": {
+            "id": 176,
+            "num": 41,
+            "is_loc": 2
+          },
+          "phy_dam_level_mag": {
+            "id": 177,
+            "num": 45,
+            "is_loc": 2
+          },
+          "spe_dam_level_mag": {
+            "id": 178,
+            "num": 45,
+            "is_loc": 2
+          },
+          "phy_dam_level_add": {
+            "id": 179,
+            "num": 10,
+            "is_loc": 2
+          },
+          "spe_dam_level_add": {
+            "id": 180,
+            "num": 10,
+            "is_loc": 2
+          },
+          "phy_dam_floor": {
+            "id": 181,
+            "num": 2,
+            "is_loc": 2
+          },
+          "spe_dam_floor": {
+            "id": 182,
+            "num": 2,
+            "is_loc": 2
+          },
+          "dam_floor": {
+            "id": 183,
+            "is_loc": 2
+          }
+        }
+      },
+      {
+        "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+        "sources": {
+          "schema": {
+            "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinConf/ATTR_GLOBAL_CONFIG.non",
+            "offset": 2625536,
+            "declared_size": 912,
+            "compression": 0,
+            "payload_strategy": 13,
+            "payload_sha256": "1b8aa48c39aab09cca028cc24e22ab9a849e427d53167aef564ec8e15d898e49",
+            "source_ranges_sha256": [
+              {
+                "offset": 2625589,
+                "size": 912,
+                "sha256": "73439bd7c41ee1b3369af863a43d3ad5a7ad6f0363f384a917ec64f70069f329"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          },
+          "binary": {
+            "pak": "pakchunk4-WindowsNoEditor_3_P.pak",
+            "path": "../../../NRC/Content/ScriptC/Data/Bin/BinDataCompressed/ATTR_GLOBAL_CONFIG.bytes",
+            "offset": 15343616,
+            "declared_size": 4448,
+            "compression": 0,
+            "payload_strategy": 13,
+            "payload_sha256": "1986cd3339846e755ac13f4ebb255ca89fe2db0ab3b92b4c14ad86f623ce5a11",
+            "source_ranges_sha256": [
+              {
+                "offset": 15343669,
+                "size": 4448,
+                "sha256": "b6133a04df638aa4e314361d74c14a7a640a5e9573dc76e1a364f77d3746e18e"
+              }
+            ],
+            "source_ranges_unchanged": true,
+            "stat_unchanged": true
+          }
+        },
+        "row_count": 65,
+        "property_names": [
+          "id",
+          "key",
+          "num",
+          "numList",
+          "str"
+        ],
+        "rows": {
+          "at_hp_maximum": {
+            "id": 4,
+            "num": 500
+          },
+          "hp_max_race_constant": {
+            "id": 18,
+            "num": 200
+          },
+          "hp_max_talent_constant": {
+            "id": 19,
+            "num": 100
+          },
+          "hp_max_base_point_constant": {
+            "id": 20,
+            "num": 10000
+          },
+          "hp_max_level_constant": {
+            "id": 21,
+            "num": 10000
+          },
+          "phy_attack_talent_constant": {
+            "id": 23,
+            "num": 50
+          },
+          "phy_attack_base_point_constant": {
+            "id": 24,
+            "num": 10000
+          },
+          "spe_attack_talent_constant": {
+            "id": 27,
+            "num": 50
+          },
+          "spe_attack_base_point_constant": {
+            "id": 28,
+            "num": 10000
+          },
+          "phy_defence_talent_constant": {
+            "id": 31,
+            "num": 50
+          },
+          "phy_defence_base_point_constant": {
+            "id": 32,
+            "num": 10000
+          },
+          "spe_defence_talent_constant": {
+            "id": 35,
+            "num": 50
+          },
+          "spe_defence_base_point_constant": {
+            "id": 36,
+            "num": 10000
+          },
+          "speed_talent_constant": {
+            "id": 39,
+            "num": 50
+          },
+          "speed_base_point_constant": {
+            "id": 40,
+            "num": 10000
+          },
+          "talent_random_minimum": {
+            "id": 50,
+            "num": 1
+          },
+          "talent_random_maximum": {
+            "id": 51,
+            "num": 50
+          },
+          "race_hp_maximum": {
+            "id": 105,
+            "num": 255
+          },
+          "talent_hp_maximum": {
+            "id": 111,
+            "num": 50
+          },
+          "talent_attack_maximum": {
+            "id": 112,
+            "num": 50
+          },
+          "talent_special_attack_maximum": {
+            "id": 113,
+            "num": 50
+          },
+          "talent_defense_maximium": {
+            "id": 114,
+            "num": 50
+          },
+          "talent_special_defense_maximum": {
+            "id": 115,
+            "num": 50
+          },
+          "talent_speed_maximum": {
+            "id": 116,
+            "num": 50
+          },
+          "hp_max_race_add_level": {
+            "id": 163,
+            "num": 25
+          },
+          "hp_max_talent_add_level": {
+            "id": 169,
+            "num": 25
+          },
+          "phy_attack_talent_add_level": {
+            "id": 170,
+            "num": 50
+          },
+          "spe_attack_talent_add_level": {
+            "id": 171,
+            "num": 50
+          },
+          "phy_defence_talent_add_level": {
+            "id": 172,
+            "num": 50
+          },
+          "spe_defence_talent_add_level": {
+            "id": 173,
+            "num": 50
+          },
+          "speed_talent_add_level": {
+            "id": 174,
+            "num": 50
+          },
+          "phy_dam_param": {
+            "id": 175,
+            "num": 41
+          },
+          "spe_dam_param": {
+            "id": 176,
+            "num": 41
+          },
+          "phy_dam_level_mag": {
+            "id": 177,
+            "num": 45
+          },
+          "spe_dam_level_mag": {
+            "id": 178,
+            "num": 45
+          },
+          "phy_dam_level_add": {
+            "id": 179,
+            "num": 10
+          },
+          "spe_dam_level_add": {
+            "id": 180,
+            "num": 10
+          },
+          "phy_dam_floor": {
+            "id": 181,
+            "num": 2
+          },
+          "spe_dam_floor": {
+            "id": 182,
+            "num": 2
+          },
+          "dam_floor": {
+            "id": 183
+          }
+        }
+      }
+    ]
+  },
+  "historical_npc_growth_profile": {
+    "source": "same_archive_schema_comparison.MONSTER_GROWTH_CONF:pakchunk4-WindowsNoEditor.pak/1024",
+    "numeric_profile": {
+      "id": 1024,
+      "difficulty": 1,
+      "level": 24,
+      "break_times": 1,
+      "effort_grow_level": 10,
+      "effort_growth": [
+        {
+          "effort_type": 1
+        },
+        {
+          "effort_type": 2
+        },
+        {
+          "effort_type": 3
+        },
+        {
+          "effort_type": 4
+        },
+        {
+          "effort_type": 5
+        },
+        {
+          "effort_type": 6
+        }
+      ],
+      "hp_max_mag": 10000,
+      "phy_attack_mag": 10000,
+      "spe_attack_mag": 10000,
+      "phy_defence_mag": 10000,
+      "spe_defence_mag": 10000,
+      "speed_mag": 10000
+    },
+    "growth_level10_attributes": [
+      {
+        "attr_type": 1,
+        "attr_data": 20
+      },
+      {
+        "attr_type": 2,
+        "attr_data": 10
+      },
+      {
+        "attr_type": 3,
+        "attr_data": 10
+      },
+      {
+        "attr_type": 4,
+        "attr_data": 10
+      },
+      {
+        "attr_type": 5,
+        "attr_data": 10
+      },
+      {
+        "attr_type": 6,
+        "attr_data": 10
+      }
+    ],
+    "matches_packet_difficulty_level_pair": true,
+    "active_server_verified": false,
+    "interpretation": "Historical difficulty1/level24 NPC config declares one breakthrough and growth level10, unlike an owned zero-star/no-growth assumption. The packet does not downlink the full NPC growth state or raw talent values."
+  },
+  "conditional_npc_candidate_validation": {
+    "status": "one_consistency_witness_not_identified_true_configuration",
+    "attacker_level_term_24": 0.5073170731707317,
+    "attacker_level_term_60": 0.9024390243902439,
+    "illustrative_raw_talents": {
+      "hp": 8,
+      "patk": 0,
+      "mdef": 10
+    },
+    "panels": {
+      "hp": 158,
+      "patk": 90,
+      "mdef": 101
+    },
+    "damage_cases": [
+      {
+        "skill_id": 7020970,
+        "actor_level": 24,
+        "attack": 90,
+        "power": 55,
+        "defense": 175,
+        "combined_multiplier": 1,
+        "predicted": 14,
+        "observed": 14
+      },
+      {
+        "skill_id": 7080300,
+        "actor_level": 60,
+        "attack": 181,
+        "power": 80,
+        "defense": 101,
+        "combined_multiplier": 1,
+        "predicted": 129,
+        "observed": 129
+      },
+      {
+        "skill_id": 7080300,
+        "actor_level": 60,
+        "attack": 181,
+        "power": 80,
+        "defense": 101,
+        "combined_multiplier": 1,
+        "critical_multiplier": 2,
+        "predicted": 258,
+        "observed": 258
+      }
+    ],
+    "limits": [
+      "The HP/raw-talent and mdef/raw-talent witness is not unique under integer rounding; do not mark these as actual NPC talents.",
+      "The selected HP/physical-defense/magical-defense pattern is a historical source candidate, not an observed online fact.",
+      "Damage examples keep the existing round-then-divide candidate and use combined multiplier1 for this case; no new +2/minimum operation is inferred from dam_floor2.",
+      "The critical example does not distinguish multiply-before versus multiply-after flooring because both agree for these inputs."
+    ]
+  }
+}

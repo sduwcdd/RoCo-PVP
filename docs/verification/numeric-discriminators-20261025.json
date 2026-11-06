@@ -1,0 +1,226 @@
+{
+  "calibrated": false,
+  "cases": [
+    {
+      "difference_second_minus_first": 1,
+      "id": "damage-rounding",
+      "inputs": {
+        "attack": 100,
+        "defense": 102,
+        "effective_power": 75,
+        "multiplier": 1.25
+      },
+      "is_real_game_observation": false,
+      "kind": "damage60",
+      "models_disagree": true,
+      "predictions": [
+        {
+          "calibrated": false,
+          "candidate_id": "arena_documented_damage60_v1",
+          "inputs": {
+            "attack": 100,
+            "defense": 102,
+            "effective_power": 75,
+            "multiplier": 1.25
+          },
+          "nominal_damage": 82,
+          "real_game_verified": false,
+          "scope": "level60_single_hit_documented_expression",
+          "source": {
+            "evidence_ref": "data/reference/mechanics-20261025/evidence.json",
+            "implementation_parity_claimed": false,
+            "kind": "community_documented_expression",
+            "recorded_on": "2026-10-25",
+            "sha256": "e754f0e370b97dbe95d4222f75695960546c5428e7d3c00d41bdf040934f1f29",
+            "url": "https://rocoarena.com/calculation-notes"
+          },
+          "trace": {
+            "attack_power": 7500.0,
+            "coefficient_binary64": 0.9024390243902439,
+            "coefficient_evaluated_before_multiplication": true,
+            "coefficient_fraction": {
+              "denominator": 41,
+              "numerator": 37
+            },
+            "final_multiplier_applied": false,
+            "hp_clipping_applied": false,
+            "intermediate_power_rounding": false,
+            "level": 60,
+            "minimum_damage_applied": false,
+            "nominal_damage": 82,
+            "numerator_rounded": 8460,
+            "numerator_unrounded": 8460.365853658537,
+            "quotient": 82.94117647058823,
+            "weighted_attack_power": 9375.0
+          },
+          "training_eligible": false,
+          "uncertainties": [
+            "Community expression, not verified current-game mechanics.",
+            "Agreement with another candidate is not game calibration."
+          ]
+        },
+        {
+          "calibrated": false,
+          "candidate_id": "showdown_documented_damage60_v1",
+          "inputs": {
+            "attack": 100,
+            "defense": 102,
+            "effective_power": 75,
+            "multiplier": 1.25
+          },
+          "nominal_damage": 83,
+          "real_game_verified": false,
+          "scope": "level60_single_hit_documented_expression",
+          "source": {
+            "evidence_ref": "data/reference/mechanics-20261025/evidence.json",
+            "implementation_parity_claimed": false,
+            "kind": "community_documented_expression",
+            "recorded_on": "2026-10-25",
+            "sha256": "73ae320c39401123709f5e704017c6808d789e443d5e720004478d522cb80e2e",
+            "url": "https://roco-showdown.com/battle-use-guide"
+          },
+          "trace": {
+            "attack_display_power": 9400.0,
+            "coefficient_binary64": 0.9024390243902439,
+            "coefficient_evaluated_before_multiplication": true,
+            "coefficient_fraction": {
+              "denominator": 41,
+              "numerator": 37
+            },
+            "display_power": 94,
+            "display_power_unrounded": 93.75,
+            "final_multiplier_applied": false,
+            "hp_clipping_applied": false,
+            "intermediate_power_rounding": true,
+            "level": 60,
+            "minimum_damage_applied": false,
+            "nominal_damage": 83,
+            "numerator_rounded": 8483,
+            "numerator_unrounded": 8482.926829268294,
+            "quotient": 83.16666666666667
+          },
+          "training_eligible": false,
+          "uncertainties": [
+            "Community expression, not verified current-game mechanics.",
+            "Agreement with another candidate is not game calibration."
+          ]
+        }
+      ],
+      "quantity": "nominal_damage"
+    },
+    {
+      "difference_second_minus_first": 1,
+      "id": "stat-float32",
+      "inputs": {
+        "base_stat": 105,
+        "display_iv": 0,
+        "iv_mapping_assumption": "raw_iv_equals_six_display_iv",
+        "nature_multiplier": 1,
+        "raw_iv": 0,
+        "stat": "patk"
+      },
+      "is_real_game_observation": false,
+      "kind": "non_hp_stat60",
+      "models_disagree": true,
+      "predictions": [
+        {
+          "calibrated": false,
+          "candidate_id": "arena_stat60_v1",
+          "inputs": {
+            "base_stat": 105,
+            "nature_multiplier": 1,
+            "raw_iv": 0,
+            "stat": "patk"
+          },
+          "real_game_verified": false,
+          "scope": "level60_five_stars_no_user_offset",
+          "source": {
+            "evidence_ref": "data/reference/mechanics-20261025/evidence.json",
+            "kind": "community_published_stat_expression",
+            "recheck_ref": "data/reference/formula-followup-20261025/arena-source-recheck.json",
+            "recorded_on": "2026-10-25",
+            "sha256": "c2bdfb350a714f4e06239847c45d4fa5c2fb7ed7953eac05badec9df009721f9",
+            "url": "https://rocoarena.com/damage-ui-B2QaE2G3.js"
+          },
+          "stat_value": 175,
+          "trace": {
+            "base_growth": 1.05,
+            "base_growth_f32": 1.0499999523162842,
+            "before_final_round": 175.0,
+            "core": 125,
+            "core_f32": 125.49999237060547,
+            "core_unrounded": 125.49999475479126,
+            "final": 175,
+            "five_star_bonus": 50,
+            "float32_casts": [
+              "base_growth",
+              "core_unrounded"
+            ],
+            "growth": 1.0499999523162842,
+            "growth_factor": 110,
+            "iv_growth": 0.0,
+            "nature_adjusted": 125.0,
+            "rounding": "Math.round_nonnegative_binary64",
+            "scaled_growth": 115.49999475479126,
+            "starting_constant": 10,
+            "user_offset_included": false
+          },
+          "training_eligible": false,
+          "uncertainties": [
+            "Community expression, not verified current-game mechanics.",
+            "Agreement with another candidate is not game calibration."
+          ]
+        },
+        {
+          "calibrated": false,
+          "candidate_id": "showdown_non_hp_stat60_v1",
+          "inputs": {
+            "base_stat": 105,
+            "display_iv": 0,
+            "nature_multiplier": 1,
+            "stat": "patk"
+          },
+          "real_game_verified": false,
+          "scope": "level60_five_stars_non_hp_documented_expression",
+          "source": {
+            "evidence_ref": "data/reference/mechanics-20261025/evidence.json",
+            "implementation_parity_claimed": false,
+            "kind": "community_documented_expression",
+            "recorded_on": "2026-10-25",
+            "sha256": "73ae320c39401123709f5e704017c6808d789e443d5e720004478d522cb80e2e",
+            "url": "https://roco-showdown.com/battle-use-guide"
+          },
+          "stat_value": 176,
+          "trace": {
+            "combined_base": 105,
+            "core": 126,
+            "final": 176,
+            "five_star_bonus": 50,
+            "float32_casts": [],
+            "iv_contribution": 0,
+            "nature_adjusted": 126.0,
+            "rounded_nature": 126,
+            "rounded_scaled_base": 116,
+            "rounding": "Math.round_nonnegative_binary64",
+            "scaled_base": 115.50000000000001,
+            "starting_constant": 10
+          },
+          "training_eligible": false,
+          "uncertainties": [
+            "Community expression, not verified current-game mechanics.",
+            "Agreement with another candidate is not game calibration."
+          ]
+        }
+      ],
+      "quantity": "stat_value"
+    }
+  ],
+  "disagreement_cases": 2,
+  "implementation_sha256": "f7edb90ff9f2ca47d0c355baba7d11e6a34d5da0f28f275354bfbdb6a637d24c",
+  "input_sha256": "a6b02188060ce9261f263cbb632eb4b6a961d1ce97e099f3778d428c0367819e",
+  "real_game_verified": false,
+  "schema_version": 1,
+  "scope": "community_formula_discrimination",
+  "training_eligible": false,
+  "warning": "Agreement only compares candidate arithmetic; disagreement identifies a possible measurement condition. Neither certifies a game rule."
+}

@@ -1,0 +1,703 @@
+{
+  "schema": "reviewed-trainer-magic-loss-1",
+  "policy": "source_bound_self_knockout_magic_loss_components_v1",
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "traits": {
+    "200081": {
+      "trait_id": 200081,
+      "record_hash": "a1544eb68e1ccadaa0b2119e7806a072d6c651e3f5ad9b60829a714fb0c561cb",
+      "scope": "self_knockout_magic_loss_component_only",
+      "components": [
+        {
+          "op": "loss.add",
+          "amount": -1
+        }
+      ],
+      "evidence": {
+        "catalog_raw": {
+          "id": 200081,
+          "wiki_id": "skill_000007",
+          "name": {
+            "zh": "诈死"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "自己力竭时，少损失1点魔力。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E8%AF%88%E6%AD%BB",
+          "source_module": "Skills"
+        },
+        "game_skill_raw": {
+          "id": 200081,
+          "name": {
+            "localization_id": 164,
+            "text": "诈死"
+          },
+          "desc": {
+            "localization_id": 165,
+            "text": "自己力竭时，少损失1点魔力。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "skill_feature": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21040020,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21040020,
+              "cast_moment": 26
+            },
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200081.200081'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff_raw": {
+          "id": 21040020,
+          "buff_base_ids": [
+            2104002
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "bases_raw": [
+          {
+            "id": 2104002,
+            "buffbase_order": 104,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "unresolved": [
+        "Other trait effects, including royal racial stat adjustments, are not admitted by this loss component.",
+        "Generic HP observations do not establish a killer or a direct defeat cause."
+      ]
+    },
+    "280019": {
+      "trait_id": 280019,
+      "record_hash": "0db6fca8eb6c2f31cb51f4e440edd41cb27adeee60ead08aaf9b55b6776c6e47",
+      "scope": "self_knockout_magic_loss_component_only",
+      "components": [
+        {
+          "op": "loss.set",
+          "amount": 4
+        }
+      ],
+      "evidence": {
+        "catalog_raw": {
+          "id": 280019,
+          "wiki_id": "skill_000227",
+          "name": {
+            "zh": "御驾亲征"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "棋契陛下大幅提升种族资质，力竭时扣除4魔力。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%BE%A1%E9%A9%BE%E4%BA%B2%E5%BE%81",
+          "source_module": "Skills"
+        },
+        "game_skill_raw": {
+          "id": 280019,
+          "name": {
+            "localization_id": 691,
+            "text": "御驾亲征"
+          },
+          "desc": {
+            "localization_id": 692,
+            "text": "棋契陛下大幅提升种族资质，力竭时扣除4魔力。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21040012,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1004060,
+              "cast_moment": 6
+            },
+            {
+              "effect_id": 1042013,
+              "cast_moment": 7
+            },
+            {
+              "effect_id": 1004115,
+              "cast_moment": 7
+            },
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200212.200212'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff_raw": {
+          "id": 21040012,
+          "buff_base_ids": [
+            2104001,
+            2104001,
+            2104001
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 4,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "bases_raw": [
+          {
+            "id": 2104001,
+            "buffbase_order": 104,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  -1
+                ]
+              }
+            ]
+          },
+          {
+            "id": 2104001,
+            "buffbase_order": 104,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  -1
+                ]
+              }
+            ]
+          },
+          {
+            "id": 2104001,
+            "buffbase_order": 104,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  -1
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "unresolved": [
+        "Other trait effects, including royal racial stat adjustments, are not admitted by this loss component.",
+        "Generic HP observations do not establish a killer or a direct defeat cause."
+      ]
+    }
+  },
+  "forms": {
+    "3040": {
+      "trait_id": 200081,
+      "record_hash": "abeda5757f678c20c5c28a9740c13cf3174440ccc6777210196055a5cb5d2e8e"
+    },
+    "3041": {
+      "trait_id": 200081,
+      "record_hash": "713175d59eb60ff7220201dd3cd2038cfb70e5b986a70b598b0f4fed40defb5c"
+    },
+    "3042": {
+      "trait_id": 200081,
+      "record_hash": "2594de80d03cafbeea392a9a46cea443c62afd1d0a4f55b19a43f17beb453c51"
+    },
+    "3180": {
+      "trait_id": 200141,
+      "record_hash": "b6f2eef7f05eadbc63fc688750516225a838ec97cfdfa1e54b845861e0f2ece9"
+    },
+    "3181": {
+      "trait_id": 200141,
+      "record_hash": "913e49c07888005c594e5d0b25b7c3021a5ba637a23d4d116e22fe931e4372cc"
+    },
+    "3182": {
+      "trait_id": 200141,
+      "record_hash": "b776ecadbc38ae375de9b5d6651bfcc4ce2bb80ec501dd3277db5c3aca97d023"
+    },
+    "3288": {
+      "trait_id": 200081,
+      "record_hash": "71c165eb74a59315584a67e69d259157b402c8527aac71207adc2dd8a252d259"
+    },
+    "3289": {
+      "trait_id": 200081,
+      "record_hash": "c1b797549d158181172fadea5d28adbb7d367536854af5d01c255bc93ac8b31a"
+    },
+    "3290": {
+      "trait_id": 200081,
+      "record_hash": "27cd723b8202a32ff4f89e3742d6c667bdeb7ce667b2e1b3d50d417087d6c5be"
+    },
+    "3291": {
+      "trait_id": 200081,
+      "record_hash": "d4697dab8d42687bdac4025ed1c4265229c10f6c1d6b8ad1cc1f7d16a873301d"
+    },
+    "3292": {
+      "trait_id": 200081,
+      "record_hash": "f792ecf9b7114e3425b30577498b0ab662ce7c95ba5bf0fc9f9a77e4e3021fb1"
+    },
+    "3293": {
+      "trait_id": 200081,
+      "record_hash": "fcd27cbd43c313a61164e6733b1c0f765199556a1460e6c668acd7b37ad06732"
+    },
+    "3294": {
+      "trait_id": 200081,
+      "record_hash": "32eee3932c84622ec9f8b19f4fdf37400f596d9aba7d9c28cc9c2544ff0193da"
+    },
+    "3295": {
+      "trait_id": 200081,
+      "record_hash": "0569951adef01b09294c9f792955987783d8c00ea51e654f5c4328053b2d91bb"
+    },
+    "3296": {
+      "trait_id": 200081,
+      "record_hash": "836a9d3741008b5799a072efff69d2109df61503718a9b7304ea3cc0f4f684c4"
+    },
+    "5023": {
+      "trait_id": 280019,
+      "record_hash": "904fc0029da1d2988e4b9d521ac3cc0581d86c7d16cc5b201145470cd54be0bd"
+    },
+    "5040": {
+      "trait_id": 280019,
+      "record_hash": "58dee73b2c4b3f5e85977cef0a03fc8bdcc1a63491cca335ce895d6a93dd8670"
+    },
+    "5041": {
+      "trait_id": 280019,
+      "record_hash": "e94d14d8a95dedb04577d5673bbfea0a53be7d5635bd59ae5e543f240e93216e"
+    },
+    "5042": {
+      "trait_id": 280019,
+      "record_hash": "264592ca2f0dd5186460d419e8de0f3c8d9ce59f8fbf5f3c522ea832c3a245cb"
+    },
+    "5043": {
+      "trait_id": 280019,
+      "record_hash": "ea989cde53672c7898e24bf4a572c070d753c504f51389bed62beb2cbcbb8b06"
+    },
+    "5044": {
+      "trait_id": 280019,
+      "record_hash": "3de7a9be6b3c9f7d99e4f6f120a6e2b840f25dff2f8d12764586218e1cd7b966"
+    },
+    "5045": {
+      "trait_id": 280019,
+      "record_hash": "6b47772df2392235c7aeec9abbe869f4ae7e4b5a2a25250941a1bfd828e27857"
+    },
+    "5046": {
+      "trait_id": 280019,
+      "record_hash": "04d451f8d494314c39fac7ee832ec160e9e81e23309ca4e66585772686595aba"
+    }
+  },
+  "unadapted_traits": {
+    "200141": {
+      "record_hash": "3668efa6f8d2141118e56fe28fff96e8c0c3c9c7455e2de6a3d87fefa69c7f6b",
+      "reason": "Extra magic loss requires a proved direct defeat attribution; generic living-to-zero HP edges do not supply it."
+    }
+  },
+  "direct_defeat_extras": {
+    "200141": {
+      "trait_id": 200141,
+      "record_hash": "3668efa6f8d2141118e56fe28fff96e8c0c3c9c7455e2de6a3d87fefa69c7f6b",
+      "amount": 1,
+      "roles": [
+        "attacker",
+        "target"
+      ],
+      "scope": "proved_opposing_direct_defeat_extra_loss",
+      "evidence": {
+        "catalog_raw": {
+          "id": 200141,
+          "wiki_id": "skill_000060",
+          "name": {
+            "zh": "付给恶魔的赎价"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "击败敌方精灵时，敌方额外损失1点魔力。被敌方精灵击败时，自己额外损失1点魔力。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E4%BB%98%E7%BB%99%E6%81%B6%E9%AD%94%E7%9A%84%E8%B5%8E%E4%BB%B7",
+          "source_module": "Skills"
+        },
+        "game_skill_raw": {
+          "id": 200141,
+          "name": {
+            "localization_id": 284,
+            "text": "付给恶魔的赎价"
+          },
+          "desc": {
+            "localization_id": 285,
+            "text": "击败敌方精灵时，敌方额外损失1点魔力。被敌方精灵击败时，自己额外损失1点魔力。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20460140,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21040011,
+              "cast_moment": 26
+            },
+            {
+              "effect_id": 21040011,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200141.200141'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {
+          "20460140": {
+            "id": 20460140,
+            "buff_base_ids": [
+              2046014
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              3
+            ],
+            "name": "付给恶魔的赎价",
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "21040011": {
+            "id": 21040011,
+            "buff_base_ids": [
+              2104001
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 2
+          }
+        },
+        "bases_raw": {
+          "2046014": {
+            "id": 2046014,
+            "buffbase_order": 46,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  21040010
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2104001": {
+            "id": 2104001,
+            "buffbase_order": 104,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  -1
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "200211": {
+      "trait_id": 200211,
+      "record_hash": "bdd8ea4e8ce6a42b40145a436cf0afce7d7cdead70a27152c0b44de74ccb82c1",
+      "amount": 1,
+      "roles": [
+        "target"
+      ],
+      "scope": "proved_opposing_direct_defeat_extra_loss",
+      "evidence": {
+        "catalog_raw": {
+          "id": 200211,
+          "wiki_id": "skill_000113",
+          "name": {
+            "zh": "飓风"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "对本精灵的技能，若其他翼系精灵携带相同技能，则获得迅捷。被敌方精灵击败时，自己额外损失1点魔力。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E9%A3%93%E9%A3%8E",
+          "source_module": "Skills",
+          "desc_notes": [
+            1005
+          ]
+        },
+        "game_skill_raw": {
+          "id": 200211,
+          "name": {
+            "localization_id": 423,
+            "text": "飓风"
+          },
+          "desc": {
+            "localization_id": 424,
+            "text": "对本精灵的技能，若其他翼系精灵携带相同技能，则获得<desc_id=1005>迅捷</>。被敌方精灵击败时，自己额外损失1点魔力。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "skill_feature": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20830010,
+              "cast_moment": 26
+            },
+            {
+              "effect_id": 21040011,
+              "cast_moment": 26
+            },
+            {
+              "effect_id": 21040011,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20830010,
+              "cast_moment": 11
+            },
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200211.200211'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "basis": "whole source text: when defeated by opposing pet, owner loses one extra trainer magic; Swift is a separate complete switch trait delegate"
+      }
+    }
+  },
+  "retaliation_defeat_sources": {
+    "200103": {
+      "trait_id": 200103,
+      "record_hash": "d413998d360c1ea3ac32381b6ea300493f4f24a3475fc09112ee0bd523bb6774",
+      "power": 50,
+      "damage_kind": "physical",
+      "damage_type": "无系别",
+      "stab": 1,
+      "type_multiplier": 1,
+      "can_trigger_retaliation": false,
+      "scope": "proved_source_pet_direct_retaliation_defeat",
+      "evidence": {
+        "catalog_raw": {
+          "id": 200103,
+          "wiki_id": "skill_000026",
+          "name": {
+            "zh": "刺肤"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "每受到1次攻击伤害，对攻击自己的精灵造成50威力物理伤害。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E5%88%BA%E8%82%A4",
+          "source_module": "Skills"
+        }
+      },
+      "attribution_policy": "enemy_pet_defeat_text_includes_this_audited_direct_retaliation_version_policy",
+      "source_may_be_exhausted": "user_confirmed_final_hit_retaliation_even_if_owner_reaches_zero_hp",
+      "calibrated": false
+    }
+  }
+}

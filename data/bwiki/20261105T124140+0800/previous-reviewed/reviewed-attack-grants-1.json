@@ -1,0 +1,1502 @@
+{
+  "schema": "reviewed-attack-grants-1",
+  "snapshot_id": "20261025T013619+0800",
+  "skills": {
+    "7040450": {
+      "record": {
+        "id": 7040450,
+        "wiki_id": "skill_000406",
+        "name": {
+          "zh": "淬火"
+        },
+        "type": "火系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤80%，应对攻击：下次攻击技能威力翻倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B7%AC%E7%81%AB",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016
+        ]
+      },
+      "record_hash": "95d2ea748d5ea250a3eb60fa6f5a0d12c6af97bf15d7e05fed587d1b022ddd25",
+      "kind": "next_attack_power",
+      "amount": 2,
+      "buff_id": 20230355,
+      "base_id": 2023035,
+      "clear_on_departure": true,
+      "when": "response.success",
+      "responses": [
+        "attack"
+      ],
+      "operations": [],
+      "historical_child": {
+        "id": 7040451,
+        "name": {
+          "localization_id": 2085,
+          "text": "应对！淬火"
+        },
+        "desc": {
+          "localization_id": 2086,
+          "text": "减伤80%，<desc_id=1016>应对攻击</>：下次攻击技能威力翻倍。"
+        },
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 3,
+        "skill_dam_type": 4,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "contact_type": 2,
+        "skill_priority": 5,
+        "target_type": 9,
+        "target_count": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "hit_para": 10000,
+        "skill_result": [
+          {
+            "effect_id": 20110310,
+            "result_target_type": 1,
+            "cast_moment": 11,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          },
+          {
+            "effect_id": 20230350,
+            "result_target_type": 1,
+            "cast_moment": 11,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          },
+          {
+            "effect_id": 1037001,
+            "result_target_type": 1,
+            "cast_moment": 11,
+            "success_rate": 10000
+          },
+          {},
+          {},
+          {
+            "effect_id": 20190360,
+            "result_target_type": 1,
+            "cast_moment": 6,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_YH_103035_Y",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/103034.103034'",
+        "describe_type": [
+          1,
+          11
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      }
+    },
+    "7040220": {
+      "record": {
+        "id": 7040220,
+        "wiki_id": "skill_000384",
+        "name": {
+          "zh": "持续高温"
+        },
+        "type": "火系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，应对状态：下次攻击技能威力翻倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%8C%81%E7%BB%AD%E9%AB%98%E6%B8%A9",
+        "source_module": "Skills",
+        "power": 70,
+        "desc_notes": [
+          1015
+        ]
+      },
+      "record_hash": "3f987ddc39babb380aa477f12a3cb7b51da1fd65fbabcc99daa515496d924cdc",
+      "kind": "next_attack_power",
+      "amount": 2,
+      "buff_id": 20230350,
+      "base_id": 2023035,
+      "clear_on_departure": true,
+      "when": "response.success",
+      "responses": [
+        "status"
+      ],
+      "operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "power": 70,
+            "type": "火系"
+          }
+        }
+      ],
+      "historical_child": {
+        "id": 7040221,
+        "name": {
+          "localization_id": 2027,
+          "text": "应对！持续高温"
+        },
+        "desc": {
+          "localization_id": 2028,
+          "text": "造成魔伤，<desc_id=1015>应对状态</>：下次攻击技能威力翻倍。"
+        },
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          70
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 4,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "contact_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "target_count": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "hit_para": 10000,
+        "skill_result": [
+          {
+            "effect_id": 20230350,
+            "result_target_type": 1,
+            "cast_moment": 11,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          },
+          {},
+          {},
+          {},
+          {},
+          {
+            "effect_id": 20231140,
+            "result_target_type": 1,
+            "cast_moment": 6,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_HGCJ_704014_Y",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/704014.704014'",
+        "describe_type": [
+          5,
+          1
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      }
+    },
+    "7180210": {
+      "record": {
+        "id": 7180210,
+        "wiki_id": "skill_000781",
+        "name": {
+          "zh": "等价交换"
+        },
+        "type": "恶系",
+        "kind": "defense",
+        "energy": 3,
+        "desc": {
+          "zh": "减伤90%，应对攻击：自己获得50%吸血。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%AD%89%E4%BB%B7%E4%BA%A4%E6%8D%A2",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016,
+          1029
+        ]
+      },
+      "record_hash": "cafad4a2c2a856e2b9ccea0c4babfa533330ecc5ae23c3ad0774d79feee09aae",
+      "kind": "lifesteal",
+      "amount": 50,
+      "buff_id": 20540010,
+      "base_id": 2054001,
+      "clear_on_departure": true,
+      "when": "response.success",
+      "responses": [
+        "attack"
+      ],
+      "operations": [],
+      "historical_child": {
+        "id": 7180211,
+        "name": {
+          "localization_id": 3252,
+          "text": "应对！等价交换"
+        },
+        "desc": {
+          "localization_id": 3253,
+          "text": "减伤90%，<desc_id=1016>应对攻击</>：自己获得50%<desc_id=1029>吸血</>。"
+        },
+        "flavor_text": {
+          "localization_id": 3254,
+          "text": "“这是彼得大道上最公平的交易了，放在天平上都不会倾斜——毕竟托盘在我手中”。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 3,
+        "skill_dam_type": 18,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "contact_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "target_count": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "hit_para": 10000,
+        "skill_result": [
+          {
+            "effect_id": 20110230,
+            "result_target_type": 1,
+            "cast_moment": 7,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          },
+          {
+            "effect_id": 20540010,
+            "result_target_type": 1,
+            "cast_moment": 11,
+            "success_rate": 10000,
+            "buff_group_level": 5
+          },
+          {
+            "effect_id": 1037001,
+            "result_target_type": 1,
+            "cast_moment": 11,
+            "success_rate": 10000
+          },
+          {},
+          {},
+          {
+            "effect_id": 20190360,
+            "result_target_type": 1,
+            "cast_moment": 6,
+            "success_rate": 10000,
+            "buff_group_level": 1
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_DJJH_317019_Y",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/317018.317018'",
+        "describe_type": [
+          1,
+          11
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      }
+    },
+    "7180160": {
+      "record": {
+        "id": 7180160,
+        "wiki_id": "skill_000776",
+        "name": {
+          "zh": "贪婪"
+        },
+        "type": "恶系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己获得100%吸血。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%B4%AA%E5%A9%AA",
+        "source_module": "Skills",
+        "desc_notes": [
+          1029
+        ]
+      },
+      "record_hash": "7484a3723cb74b82c48d3dc371a8f4ce35107296eb37c47463cb8ddda1aa199d",
+      "kind": "lifesteal",
+      "amount": 100,
+      "buff_id": 20540010,
+      "base_id": 2054001,
+      "clear_on_departure": true,
+      "when": "always",
+      "responses": [],
+      "operations": [],
+      "historical_child": {
+        "id": 7180160,
+        "name": {
+          "localization_id": 3232,
+          "text": "贪婪"
+        },
+        "desc": {
+          "localization_id": 3233,
+          "text": "自己获得100%<desc_id=1029>吸血</>。"
+        },
+        "can_changed": 1,
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 18,
+        "skill_feature": 3,
+        "damage_type": 1,
+        "contact_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "target_count": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "hit_para": 10000,
+        "skill_result": [
+          {
+            "effect_id": 20540010,
+            "result_target_type": 1,
+            "cast_moment": 11,
+            "success_rate": 10000,
+            "buff_group_level": 10
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_TL_718014",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/718014.718014'",
+        "describe_type": [
+          12,
+          6
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      }
+    },
+    "7040270": {
+      "record": {
+        "id": 7040270,
+        "wiki_id": "skill_000389",
+        "name": {
+          "zh": "热身"
+        },
+        "type": "火系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "下一次攻击时，技能威力翻倍，应对防御：改为威力变为4倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%83%AD%E8%BA%AB",
+        "source_module": "Skills",
+        "desc_notes": [
+          1017
+        ]
+      },
+      "record_hash": "c1b01c20a6869eeac18642d2e79ef628deee8876fccb37155e028c3b339186fa",
+      "kind": "next_attack_power",
+      "amount": 2,
+      "buff_id": 20230350,
+      "base_id": 2023035,
+      "clear_on_departure": true,
+      "when": "always",
+      "responses": [
+        "defense"
+      ],
+      "operations": [],
+      "response_variant": {
+        "amount": 4,
+        "buff_id": 20231070,
+        "base_id": 2023107,
+        "clear_on_departure": true
+      },
+      "installation_evidence": {
+        "skills": {
+          "7040270": {
+            "id": 7040270,
+            "name": {
+              "localization_id": 2120,
+              "text": "热身"
+            },
+            "desc": {
+              "localization_id": 2121,
+              "text": "下一次攻击时，技能威力翻倍，<desc_id=1017>应对防御</>：改为威力变为4倍。"
+            },
+            "flavor_text": {
+              "localization_id": 2122,
+              "text": "把精灵的耳朵揉搓得热热的，准备接下来的战斗。"
+            },
+            "energy_cost": [
+              1
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 4,
+            "skill_feature": 3,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 9,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 20230350,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 1031151,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_HYJJ_704011",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/704011.704011'",
+            "describe_type": [
+              12,
+              1,
+              6
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "7040271": {
+            "id": 7040271,
+            "name": {
+              "localization_id": 2123,
+              "text": "应对！热身"
+            },
+            "desc": {
+              "localization_id": 2124,
+              "text": "下一次攻击技能威力翻倍，<desc_id=1017>应对防御</>：改为威力变为4倍。"
+            },
+            "energy_cost": [
+              1
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 4,
+            "skill_feature": 3,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 9,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 20231070,
+                "cast_moment": 11
+              },
+              {},
+              {},
+              {},
+              {},
+              {
+                "effect_id": 1019047,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_HYJJ_704011_Y",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/704011.704011'",
+            "describe_type": [
+              12,
+              1,
+              6
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          }
+        },
+        "effects": {
+          "1031151": {
+            "id": 1031151,
+            "effect_order": 31,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  7040271
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          }
+        },
+        "buffs": {
+          "20230350": {
+            "id": 20230350,
+            "buff_base_ids": [
+              2023035
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "热身",
+            "type_id": "3",
+            "type": 3,
+            "add_max": 1,
+            "desc": "下次攻击威力翻倍",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830007_png.830007_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 7,
+                "reduce_param": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20231070": {
+            "id": 20231070,
+            "buff_base_ids": [
+              2023107
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "热身",
+            "type_id": "3",
+            "type": 3,
+            "add_max": 1,
+            "desc": "下次攻击威力变为4倍",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830007_png.830007_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 7,
+                "reduce_param": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "bases": {
+          "2023035": {
+            "id": 2023035,
+            "buffbase_order": 23,
+            "trigger_type": 12,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2023107": {
+            "id": 2023107,
+            "buffbase_order": 23,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  30000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "sources": [
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+      "rows": {
+        "7040450": {
+          "id": 7040450,
+          "name": {
+            "localization_id": 2164,
+            "text": "淬火"
+          },
+          "desc": {
+            "localization_id": 2165,
+            "text": "减伤80%，<desc_id=1016>应对攻击</>：下次攻击技能威力翻倍。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20110310,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1031129,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_YH_103034",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/103034.103034'",
+          "describe_type": [
+            1,
+            11
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7040451": {
+          "id": 7040451,
+          "name": {
+            "localization_id": 2166,
+            "text": "应对！淬火"
+          },
+          "desc": {
+            "localization_id": 2167,
+            "text": "减伤80%，<desc_id=1016>应对攻击</>：下次攻击技能威力翻倍。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20110310,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20230355,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {
+              "effect_id": 20190360,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_YH_103035_Y",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/103034.103034'",
+          "describe_type": [
+            1,
+            11
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7040220": {
+          "id": 7040220,
+          "name": {
+            "localization_id": 2106,
+            "text": "持续高温"
+          },
+          "desc": {
+            "localization_id": 2107,
+            "text": "造成魔伤，<desc_id=1015>应对状态</>：下次攻击技能威力翻倍。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            70
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1031056,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_HGCJ_704014",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/704014.704014'",
+          "describe_type": [
+            5,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7040221": {
+          "id": 7040221,
+          "name": {
+            "localization_id": 2108,
+            "text": "应对！持续高温"
+          },
+          "desc": {
+            "localization_id": 2109,
+            "text": "造成魔伤，<desc_id=1015>应对状态</>：下次攻击技能威力翻倍。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            70
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20230350,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "effect_id": 20231140,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_HGCJ_704014_Y",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/704014.704014'",
+          "describe_type": [
+            5,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7180210": {
+          "id": 7180210,
+          "name": {
+            "localization_id": 3380,
+            "text": "等价交换"
+          },
+          "desc": {
+            "localization_id": 3381,
+            "text": "减伤90%，<desc_id=1016>应对攻击</>：自己获得50%<desc_id=1029>吸血</>。"
+          },
+          "flavor_text": {
+            "localization_id": 3382,
+            "text": "“这是彼得大道上最公平的交易了，放在天平上都不会倾斜——毕竟托盘在我手中”。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20110230,
+              "cast_moment": 7
+            },
+            {
+              "effect_id": 1031075,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_DJJH_317018",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/317018.317018'",
+          "describe_type": [
+            1,
+            11
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7180211": {
+          "id": 7180211,
+          "name": {
+            "localization_id": 3383,
+            "text": "应对！等价交换"
+          },
+          "desc": {
+            "localization_id": 3384,
+            "text": "减伤90%，<desc_id=1016>应对攻击</>：自己获得50%<desc_id=1029>吸血</>。"
+          },
+          "flavor_text": {
+            "localization_id": 3385,
+            "text": "“这是彼得大道上最公平的交易了，放在天平上都不会倾斜——毕竟托盘在我手中”。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20110230,
+              "cast_moment": 7
+            },
+            {
+              "effect_id": 20540010,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {
+              "effect_id": 20190360,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_DJJH_317019_Y",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/317018.317018'",
+          "describe_type": [
+            1,
+            11
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7180160": {
+          "id": 7180160,
+          "name": {
+            "localization_id": 3363,
+            "text": "贪婪"
+          },
+          "desc": {
+            "localization_id": 3364,
+            "text": "自己获得100%<desc_id=1029>吸血</>。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 18,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20540010,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_TL_718014",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/718014.718014'",
+          "describe_type": [
+            12,
+            6
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+      "rows": {
+        "20230350": {
+          "id": 20230350,
+          "buff_base_ids": [
+            2023035
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "name": "热身",
+          "type_id": "3",
+          "type": 3,
+          "add_max": 1,
+          "desc": "下次攻击威力翻倍",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830007_png.830007_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 7,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20230355": {
+          "id": 20230355,
+          "buff_base_ids": [
+            2023035
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "name": "淬火",
+          "type_id": "3",
+          "type": 3,
+          "add_max": 1,
+          "desc": "下次攻击威力翻倍",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830007_png.830007_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 7,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20540010": {
+          "id": 20540010,
+          "buff_base_ids": [
+            2054001
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "name": "吸血",
+          "type_id": "1",
+          "add_des": "吸血",
+          "add_icon": 10,
+          "type": 1,
+          "add_max": 99,
+          "desc": "造成伤害的10%转化为生命。",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830070_png.830070_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+      "rows": {
+        "2023035": {
+          "id": 2023035,
+          "buffbase_order": 23,
+          "trigger_type": 12,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2,
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2054001": {
+          "id": 2054001,
+          "buffbase_order": 54,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json",
+      "sha256": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db"
+    }
+  ],
+  "transformations": {
+    "7160160": {
+      "record": {
+        "id": 7160160,
+        "wiki_id": "skill_000720",
+        "name": {
+          "zh": "生日蛋糕"
+        },
+        "type": "萌系",
+        "kind": "status",
+        "energy": 4,
+        "desc": {
+          "zh": "驱散自己的减益，自己的增益翻倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95",
+        "source_module": "Skills",
+        "desc_notes": [
+          1013,
+          1012
+        ]
+      },
+      "record_hash": "144f8486acbdb64a90484d14cdee20402f1c58df0da59e0638d66464dca1840c",
+      "operation": "double"
+    },
+    "7080200": {
+      "record": {
+        "id": 7080200,
+        "wiki_id": "skill_000507",
+        "name": {
+          "zh": "泥浆铠甲"
+        },
+        "type": "地系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己获得物攻和物防+60%，应对防御：额外使自己的增益翻倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B3%A5%E6%B5%86%E9%93%A0%E7%94%B2",
+        "source_module": "Skills",
+        "desc_notes": [
+          1017,
+          1012
+        ]
+      },
+      "record_hash": "d69dbc8dfc8fbb4e43e91018f526f9d1fb0f591b38420b3e1ed0ae47bab28ea5",
+      "operation": "double"
+    }
+  },
+  "traits": {
+    "200247": {
+      "record": {
+        "id": 200247,
+        "wiki_id": "skill_000145",
+        "name": {
+          "zh": "圣火骑士"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "应对成功后，下次攻击威力翻倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%9C%A3%E7%81%AB%E9%AA%91%E5%A3%AB",
+        "source_module": "Skills"
+      },
+      "record_hash": "8870baf03b2f3d871ea4a9e0e7de12502af66e316b29fe644a3d5b46ad88b31a",
+      "kind": "next_attack_power",
+      "amount": 2,
+      "buff_id": 20230353,
+      "base_id": 2023035,
+      "clear_on_departure": true,
+      "source_kind": "trait"
+    }
+  },
+  "reductions": {
+    "7021070": {
+      "record": {
+        "id": 7021070,
+        "wiki_id": "skill_000323",
+        "name": {
+          "zh": "消毒法"
+        },
+        "type": "普通系",
+        "kind": "magical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成魔伤，驱散敌方5层增益。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B6%88%E6%AF%92%E6%B3%95",
+        "source_module": "Skills",
+        "power": 115,
+        "desc_notes": [
+          1012
+        ]
+      },
+      "record_hash": "50c76d14c05e9ff1fe70e03eb4f487eb4877f71f83af8b68c188b3bbae7de2b6",
+      "max_layers": 5
+    },
+    "7150260": {
+      "record": {
+        "id": 7150260,
+        "wiki_id": "skill_000704",
+        "name": {
+          "zh": "飞羽"
+        },
+        "type": "翼系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "迅捷，驱散敌方1种增益。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%A3%9E%E7%BE%BD",
+        "source_module": "Skills",
+        "desc_notes": [
+          1005,
+          1012
+        ]
+      },
+      "record_hash": "459e430c89bc70962f2df8a2cdf3b98af5d4719e958c2feb93f52ceaf7f3a084",
+      "max_layers": 99
+    },
+    "7120270": {
+      "record": {
+        "id": 7120270,
+        "wiki_id": "skill_000629",
+        "name": {
+          "zh": "溶解"
+        },
+        "type": "毒系",
+        "kind": "defense",
+        "energy": 2,
+        "desc": {
+          "zh": "减伤90%，应对攻击：驱散敌方1种增益。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%BA%B6%E8%A7%A3",
+        "source_module": "Skills",
+        "desc_notes": [
+          1016,
+          1012
+        ]
+      },
+      "record_hash": "77398e0ed44af5a1069991aa84dffe9ed71c65efffb67d452ff4c2b1a57d2fd1",
+      "max_layers": 99
+    }
+  }
+}

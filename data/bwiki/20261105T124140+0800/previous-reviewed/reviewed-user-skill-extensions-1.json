@@ -1,0 +1,1330 @@
+{
+  "schema": "reviewed-user-skill-extensions-1",
+  "snapshot_id": "20261025T013619+0800",
+  "policy": "source_bound_conditional_damage_with_explicit_unresolved_releases_v1",
+  "sources": [
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab"
+    }
+  ],
+  "term": {
+    "key": 3015,
+    "zh": "混血精灵",
+    "definition": "非本系血脉的精灵，包括非本系的系别血脉、首领血脉、奇异血脉、污染血脉等。"
+  },
+  "skills": {
+    "7060270": {
+      "record_hash": "27c43c9e2dab70c208abef770154cfc64924e754ae0055d80b581ae06dedc074",
+      "raw": {
+        "id": 7060270,
+        "wiki_id": "skill_000466",
+        "name": {
+          "zh": "色散"
+        },
+        "type": "光系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，对混血精灵造成伤害+50%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%89%B2%E6%95%A3",
+        "source_module": "Skills",
+        "power": 80,
+        "desc_notes": [
+          3015
+        ]
+      },
+      "native_skill": {
+        "id": 7060270,
+        "name": {
+          "localization_id": 2365,
+          "text": "色散"
+        },
+        "desc": {
+          "localization_id": 2366,
+          "text": "造成魔伤，对<desc_id=3015>混血精灵</>造成伤害+50%。"
+        },
+        "flavor_text": {
+          "localization_id": 2367,
+          "text": "战斗学科的某位老师，望着彩虹思索配队的时候，领悟到不同系别魔法穿过空气的速率是不一样的。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          80
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 6,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20760050,
+            "cast_moment": 6
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Lig_GL_118029",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/118029.118029'",
+        "describe_type": [
+          5
+        ]
+      },
+      "status": "reviewed",
+      "components": [
+        {
+          "op": "damage.multiply",
+          "condition": "opponent.mixed_blood",
+          "factor": [
+            3,
+            2
+          ]
+        }
+      ],
+      "evidence": {
+        "buff": {
+          "id": 20760050,
+          "buff_base_ids": [
+            2076005
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base": {
+          "id": 2076005,
+          "buffbase_order": 76,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                5
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                5000
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "uncertainties": [
+        "Common final damage multiplication and floor use the existing shared HUD version; not broader live calibration."
+      ]
+    },
+    "7110380": {
+      "record_hash": "5fc14d1c08d1bf916a0a1f8d0bcdb1b254f7cd2b90d05a1d122b4914823e37ef",
+      "raw": {
+        "id": 7110380,
+        "wiki_id": "skill_000602",
+        "name": {
+          "zh": "感电"
+        },
+        "type": "电系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，每离场1次，本技能使用次数永久+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%84%9F%E7%94%B5",
+        "source_module": "Skills",
+        "power": 60,
+        "desc_notes": [
+          3009
+        ]
+      },
+      "native_skill": {
+        "id": 7110380,
+        "name": {
+          "localization_id": 2796,
+          "text": "感电"
+        },
+        "desc": {
+          "localization_id": 2797,
+          "text": "造成魔伤，每<desc_id=3009>离场</>1次，本技能使用次数永久+1。"
+        },
+        "energy_cost": [
+          2
+        ],
+        "dam_para": [
+          60
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 11,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20730110,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ele_GD_110023",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/110023.110023'",
+        "describe_type": [
+          5,
+          18
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "status": "reviewed_repeat_driver_required",
+      "components": [
+        {
+          "op": "repeat.skill",
+          "power_per_release": 60,
+          "extra_per_departure": 1,
+          "payment": "per_release_actual_cost",
+          "hooks": "per_release"
+        }
+      ],
+      "evidence": {
+        "buffs": {
+          "20730110": {
+            "id": 20730110,
+            "buff_base_ids": [
+              2073011
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "20640560": {
+            "id": 20640560,
+            "buff_base_ids": [
+              2064056
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 10,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ]
+          },
+          "21080091": {
+            "id": 21080091,
+            "buff_base_ids": [
+              2108009
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 99,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "bases": {
+          "2073011": {
+            "id": 2073011,
+            "buffbase_order": 73,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  20640560
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "2064056": {
+            "id": 2064056,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  7
+                ]
+              },
+              {
+                "params": [
+                  7110380
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  21080091
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2108009": {
+            "id": 2108009,
+            "buffbase_order": 108,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  5
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "blockers": [],
+      "user_confirmation": {
+        "source": "user_message_20261030_multicast_followup",
+        "statement": "每次额外释放都额外支付当次费用，分别触发攻击/受击特性，不作为普通多连击。 能量不足支付下一次时停止后续释放。 首次使用前，携带该技能离场也累计。"
+      }
+    },
+    "7190430": {
+      "record_hash": "df9c147495c694c5bd1462c3336dc424d7c04d401075a333d4737a28b35ebb0f",
+      "raw": {
+        "id": 7190430,
+        "wiki_id": "skill_000825",
+        "name": {
+          "zh": "叠加态"
+        },
+        "type": "幻系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "自己获得随机16层属性增益，巧变：幻系攻击技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%8F%A0%E5%8A%A0%E6%80%81",
+        "source_module": "Skills",
+        "desc_notes": [
+          3014,
+          3011
+        ]
+      },
+      "native_skill": {
+        "id": 7190430,
+        "name": {
+          "localization_id": 3510,
+          "text": "叠加态"
+        },
+        "desc": {
+          "localization_id": 3511,
+          "text": "自己获得随机16层<desc_id=3014>属性增益</>，<desc_id=3011>巧变</>：幻系攻击技能。"
+        },
+        "flavor_text": {
+          "localization_id": 3512,
+          "text": "宇宙是无尽梦，尚未醒来的时候，什么都可能发生。"
+        },
+        "energy_cost": [
+          1
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 20,
+        "skill_feature": 3,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1016021,
+            "cast_moment": 11
+          },
+          {
+            "effect_id": 21460290,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Cha_CZ_118033",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/118033.118033'",
+        "describe_type": [
+          12,
+          6
+        ]
+      },
+      "status": "reviewed_composite",
+      "components": [
+        {
+          "op": "random.stats",
+          "count": 16,
+          "sampling": "uniform_independent_with_replacement",
+          "cap_behavior": "waste_no_redraw"
+        }
+      ],
+      "evidence": {
+        "effect": {
+          "id": 1016021,
+          "effect_order": 16,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                16
+              ]
+            },
+            {
+              "params": [
+                20010010
+              ]
+            },
+            {
+              "params": [
+                20010020
+              ]
+            },
+            {
+              "params": [
+                20010050
+              ]
+            },
+            {
+              "params": [
+                20010060
+              ]
+            },
+            {
+              "params": [
+                20010100
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "pool": {
+          "20010010": {
+            "buff": {
+              "id": 20010010,
+              "buff_base_ids": [
+                2001001
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                1,
+                31
+              ],
+              "name": "物攻等级提升",
+              "type_id": "1",
+              "add_des": "物理攻击",
+              "add_icon": 1,
+              "type": 1,
+              "add_max": 99,
+              "desc": "物攻+<span color=\"#73c715\">10%</>。",
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800001_png.800001_png'",
+              "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 1
+            },
+            "bases": [
+              {
+                "id": 2001001,
+                "buffbase_order": 1,
+                "show_letters": [
+                  3
+                ],
+                "buffbase_param": [
+                  {
+                    "params": [
+                      29
+                    ]
+                  },
+                  {
+                    "params": [
+                      0
+                    ]
+                  },
+                  {
+                    "params": [
+                      1000
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "20010020": {
+            "buff": {
+              "id": 20010020,
+              "buff_base_ids": [
+                2001002
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                1,
+                31
+              ],
+              "name": "魔攻等级提升",
+              "type_id": "1",
+              "add_des": "魔法攻击",
+              "add_icon": 1,
+              "type": 1,
+              "add_max": 99,
+              "desc": "魔攻+<span color=\"#73c715\">10%</>。",
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800002_png.800002_png'",
+              "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 1
+            },
+            "bases": [
+              {
+                "id": 2001002,
+                "buffbase_order": 1,
+                "show_letters": [
+                  3
+                ],
+                "buffbase_param": [
+                  {
+                    "params": [
+                      30
+                    ]
+                  },
+                  {
+                    "params": [
+                      0
+                    ]
+                  },
+                  {
+                    "params": [
+                      1000
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "20010050": {
+            "buff": {
+              "id": 20010050,
+              "buff_base_ids": [
+                2001005
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                1,
+                31
+              ],
+              "name": "物防等级提升",
+              "type_id": "1",
+              "add_des": "物理防御",
+              "add_icon": 1,
+              "type": 1,
+              "add_max": 99,
+              "desc": "物防+<span color=\"#73c715\">10%</>。",
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800005_png.800005_png'",
+              "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 1
+            },
+            "bases": [
+              {
+                "id": 2001005,
+                "buffbase_order": 1,
+                "show_letters": [
+                  3
+                ],
+                "buffbase_param": [
+                  {
+                    "params": [
+                      31
+                    ]
+                  },
+                  {
+                    "params": [
+                      0
+                    ]
+                  },
+                  {
+                    "params": [
+                      1000
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "20010060": {
+            "buff": {
+              "id": 20010060,
+              "buff_base_ids": [
+                2001006
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                1,
+                31
+              ],
+              "name": "魔防等级提升",
+              "type_id": "1",
+              "add_des": "魔法防御",
+              "add_icon": 1,
+              "type": 1,
+              "add_max": 99,
+              "desc": "魔防+<span color=\"#73c715\">10%</>。",
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800006_png.800006_png'",
+              "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 1
+            },
+            "bases": [
+              {
+                "id": 2001006,
+                "buffbase_order": 1,
+                "show_letters": [
+                  3
+                ],
+                "buffbase_param": [
+                  {
+                    "params": [
+                      32
+                    ]
+                  },
+                  {
+                    "params": [
+                      0
+                    ]
+                  },
+                  {
+                    "params": [
+                      1000
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "20010100": {
+            "buff": {
+              "id": 20010100,
+              "buff_base_ids": [
+                2001010
+              ],
+              "buff_list_priority": 1,
+              "buff_groupsigns": [
+                1,
+                31
+              ],
+              "name": "速度提升",
+              "type_id": "1",
+              "add_des": "速度",
+              "add_icon": 1,
+              "type": 1,
+              "add_max": 99,
+              "desc": "速度<span color=\"#73c715\">+10</>。",
+              "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800033_png.800033_png'",
+              "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800001",
+              "buff_group_reduce": [
+                {
+                  "reduce_type": 13,
+                  "reduce_param": [
+                    999,
+                    0
+                  ]
+                }
+              ],
+              "is_clean_when_rest": 1
+            },
+            "bases": [
+              {
+                "id": 2001010,
+                "buffbase_order": 1,
+                "show_letters": [
+                  3
+                ],
+                "buffbase_param": [
+                  {
+                    "params": [
+                      6
+                    ]
+                  },
+                  {
+                    "params": [
+                      0
+                    ]
+                  },
+                  {
+                    "params": [
+                      10
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "transformation_buff": {
+          "id": 21460290,
+          "buff_base_ids": [
+            2146029
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 2
+        },
+        "transformation_base": {
+          "id": 2146029,
+          "buffbase_order": 146,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                19
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3,
+                20
+              ]
+            },
+            {
+              "params": [
+                -1
+              ]
+            }
+          ]
+        }
+      },
+      "blockers": [],
+      "user_confirmation": {
+        "source": "user_message_20261030_random_stats_followup",
+        "statement": "16次独立均匀抽物攻/魔攻/物防/魔防/速度，允许重复，达到上限浪费不重抽。"
+      },
+      "random_pool": [
+        {
+          "buff_id": 20010010,
+          "stat": "patk",
+          "unit": [
+            1,
+            10
+          ],
+          "flat": false,
+          "cap": 99
+        },
+        {
+          "buff_id": 20010020,
+          "stat": "matk",
+          "unit": [
+            1,
+            10
+          ],
+          "flat": false,
+          "cap": 99
+        },
+        {
+          "buff_id": 20010050,
+          "stat": "pdef",
+          "unit": [
+            1,
+            10
+          ],
+          "flat": false,
+          "cap": 99
+        },
+        {
+          "buff_id": 20010060,
+          "stat": "mdef",
+          "unit": [
+            1,
+            10
+          ],
+          "flat": false,
+          "cap": 99
+        },
+        {
+          "buff_id": 20010100,
+          "stat": "spd",
+          "unit": [
+            10,
+            1
+          ],
+          "flat": true,
+          "cap": 99
+        }
+      ]
+    },
+    "7190510": {
+      "status": "reviewed_conditional_mark",
+      "record_hash": "4a4bd3ed21e8710bd7b94fe9505cbce719036b2bb6ba94c1ae23086a8fba8592",
+      "raw": {
+        "id": 7190510,
+        "wiki_id": "skill_000833",
+        "name": {
+          "zh": "奇点"
+        },
+        "type": "幻系",
+        "kind": "magical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成魔伤，若上回合双方有精灵使用水系技能，敌方获得4层星陨印记。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%A5%87%E7%82%B9",
+        "source_module": "Skills",
+        "power": 60,
+        "desc_notes": [
+          1035
+        ]
+      },
+      "native_skill": {
+        "id": 7190510,
+        "name": {
+          "localization_id": 3534,
+          "text": "奇点"
+        },
+        "desc": {
+          "localization_id": 3535,
+          "text": "造成魔伤，若上回合双方有精灵使用水系技能，敌方获得4层<desc_id=1035>星陨印记</>。"
+        },
+        "flavor_text": {
+          "localization_id": 3536,
+          "text": "假想的未来时间点里，无数未说出口的愿望在一瞬间被实现。"
+        },
+        "energy_cost": [
+          4
+        ],
+        "dam_para": [
+          60
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 20,
+        "skill_feature": 3,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 21600070,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Cha_QD_118043",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/118043.118043'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "components": [
+        {
+          "op": "mark.add",
+          "condition": "previous_turn.any_team_skill_type",
+          "type": "水系",
+          "mark_id": 1035,
+          "layers": 4,
+          "target": "opponent"
+        }
+      ],
+      "evidence": {
+        "buff": {
+          "id": 21600070,
+          "buff_base_ids": [
+            2160007
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base": {
+          "id": 2160007,
+          "buffbase_order": 160,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                5
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3,
+                100
+              ]
+            },
+            {
+              "params": [
+                20641970
+              ]
+            }
+          ]
+        }
+      },
+      "uncertainties": [
+        "Condition reads only complete source-owned preceding-turn effective skill types, never missing history as zero."
+      ]
+    },
+    "7060140": {
+      "status": "reviewed_per_type_power",
+      "record_hash": "170ac35cd6e22d0799cd242868504c9d083b223de0026b2e6f6ef659bc0a788f",
+      "raw": {
+        "id": 7060140,
+        "wiki_id": "skill_000453",
+        "name": {
+          "zh": "漫反射"
+        },
+        "type": "光系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "每种系别中的至多1个技能，威力+35。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%BC%AB%E5%8F%8D%E5%B0%84",
+        "source_module": "Skills"
+      },
+      "native_skill": {
+        "id": 7060140,
+        "name": {
+          "localization_id": 2322,
+          "text": "漫反射"
+        },
+        "desc": {
+          "localization_id": 2323,
+          "text": "每种系别中的至多1个技能，威力+35。"
+        },
+        "energy_cost": [
+          1
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 6,
+        "skill_feature": 3,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 20640130,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Lig_GMZX_706008",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/706008.706008'",
+        "describe_type": [
+          12,
+          6
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "components": [
+        {
+          "op": "power.select_per_type",
+          "amount": 35,
+          "candidate_kind": [
+            "physical",
+            "magical",
+            "higher"
+          ],
+          "candidate_scope": "self_carried",
+          "on_recast": "resample_keep_existing",
+          "clear_on_source_departure": true,
+          "cap": 99
+        }
+      ],
+      "evidence": {
+        "buff": {
+          "id": 20640130,
+          "buff_base_ids": [
+            2064013,
+            2064140
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 99,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "bases": [
+          {
+            "id": 2064013,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  8
+                ]
+              },
+              {
+                "params": [
+                  4
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  35
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": 2064140,
+            "buffbase_order": 64,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  6
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "blockers": [],
+      "user_confirmation": {
+        "source": "user_message_20261030_diffuse_selection_followup",
+        "statement": "每系攻击技能随机选一个，不含状态/防御；再次施放重新选择且旧加成保留；传动/替换不重选。"
+      },
+      "sampling_policy": "existing_counter_uniform_per_type_v1"
+    }
+  }
+}

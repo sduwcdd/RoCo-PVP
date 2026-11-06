@@ -1,0 +1,190 @@
+{
+  "schema": "user-confirmed-pvp-mechanisms-20261030",
+  "source": "本对话用户规则回答及后续澄清",
+  "source_kind": "user_confirmed",
+  "real_game_calibrated": false,
+  "rules": {
+    "core_magic": {
+      "extra_action": true,
+      "active_target_only": true
+    },
+    "wish": {
+      "uses_per_battle": 2,
+      "next_cast_turn_delta": 3,
+      "restore_first_slot": "next_turn",
+      "refund_on_unused_or_switch": false
+    },
+    "evolution": {
+      "hp_transfer": "percentage",
+      "preserve": [
+        "energy",
+        "statuses",
+        "marks",
+        "permanent_modifiers",
+        "skill_slots",
+        "cooldowns"
+      ],
+      "persists_on_departure": true
+    },
+    "photosynthesis": {
+      "include_cast_round_end": true,
+      "clear_on_departure": true
+    },
+    "star": {
+      "power_per_layer": 20,
+      "damage_type": "幻系",
+      "apply_combat_multipliers": true,
+      "one_explosion_per_multi_hit_skill": true,
+      "watcher_consumption": "floor(layers/2)",
+      "attack_and_defense": "按引爆技能物理或魔法类型，使用引爆者对应攻击和持有者对应防御"
+    },
+    "cute": {
+      "gain_condition": "this_cast",
+      "at_cap_counts_as_gain": false,
+      "cap_exception_trait": 200182,
+      "moonlight_all_reserves": true,
+      "moonlight_excludes_fainted": true,
+      "hp_transfer": "percentage",
+      "preserve": [
+        "energy",
+        "statuses",
+        "marks",
+        "permanent_modifiers"
+      ]
+    },
+    "generators": {
+      "mind_read_pool": "opponent_original_four_slots",
+      "refresh": "every_round_before_selection_including_unused",
+      "rewrite_filters": [
+        "bloodline",
+        "legendary_unlock"
+      ],
+      "clever_hold": "until_generated_skill_used_once_including_across_switches",
+      "generator_can_be_drawn": true,
+      "drawn_generator_execution": "zero_energy_no_damage_waste_one_action"
+    },
+    "dual_departure": {
+      "order": "pre_departure_speed_descending",
+      "tie": "seeded_random",
+      "other_automatic_switch_suppresses_encore": true,
+      "replacement_choice": "each_owner_precommits_own_reserve",
+      "choice_status": "user_confirmed_current_rule",
+      "confirmation_date": "2026-10-30"
+    },
+    "lethal": {
+      "per_hit": true,
+      "indirect_damage_included": true,
+      "phoenix_keep_hp": 1,
+      "cocoon": "immune_this_damage_self",
+      "immortal_revive_hp_percent": 100,
+      "immortal_revive_energy": 10,
+      "all_fainted_is_loss_even_pending_revive": true
+    },
+    "history": {
+      "cost_basis": "single_cast_actual_paid",
+      "include_self": true,
+      "include_swift": true,
+      "include_borrowed": true,
+      "entry_effects_count_before_entry_only": true,
+      "gene_first_turn": "original_base_cost",
+      "swift_payment": "count_actual_skill_payment_not_parent_switch",
+      "repeated_example": {
+        "a_each": 2,
+        "a_casts": 3,
+        "b_each": 3,
+        "gene_next_base": 5,
+        "balance_compare": [
+          2,
+          3
+        ],
+        "match_a_cost": 2
+      }
+    },
+    "energy_burst": {
+      "zero_energy_allowed": true,
+      "power_table": "existing_HUD_candidate_now_user_confirmed",
+      "above_ten": "spend_all_energy_power_clamped_at_ten"
+    },
+    "sentry": {
+      "basis": "current_shared_damage_estimate",
+      "critical": false,
+      "response": false,
+      "multi_hit": "single_hit",
+      "mark_extra": false
+    },
+    "legendary": "highest_evolution_stage_defaults_unlocked",
+    "repeat_casts": {
+      "skill_id": 7110380,
+      "pay_each_cast": true,
+      "attack_and_received_hooks_each_cast": true,
+      "stop_if_next_energy_unaffordable": true,
+      "departures_before_first_use_count": true
+    },
+    "random_positive_stats": {
+      "skill_id": 7190430,
+      "draws": 16,
+      "attributes": [
+        "patk",
+        "matk",
+        "pdef",
+        "mdef",
+        "spd"
+      ],
+      "independent_uniform": true,
+      "with_replacement": true,
+      "at_cap": "waste_no_reroll"
+    },
+    "charge": {
+      "ordinary": "next_turn_same_skill_release_or_recharge_or_voluntary_switch_to_abandon",
+      "jealousy": "any_carried_skill_can_spend_previous_charge",
+      "cross_charge_skill": "release_directly",
+      "ordinary_skill_also_consumes_charge": true,
+      "consume_when": "successful_commit"
+    },
+    "slot_traits": {
+      "greedy_and_axis": "current_slot_zero_after_transmission_not_original_skill",
+      "hurricane_comparison": "other_own_team_wing_members_only"
+    },
+    "guardian": {
+      "exclude_fainted_allies": true
+    },
+    "thorns": {
+      "trait_id": 200103,
+      "power": 50,
+      "kind": "physical",
+      "type": "none",
+      "stab": false,
+      "type_matchup": false,
+      "per_hit": true,
+      "fatal_received_hit_still_retaliates": true,
+      "retaliation_does_not_chain": true
+    },
+    "diffuse": {
+      "skill_id": 7060140,
+      "one_random_attacking_skill_per_type": true,
+      "exclude_status_defense": true,
+      "power_gain": 35,
+      "transmission_reselects": false,
+      "slot_replacement_reselects": false,
+      "recast_reselects": true,
+      "previous_grants_preserved": true
+    },
+    "selected_skill_cost": {
+      "source_kind": "user_confirmed",
+      "confirmed_at": "2026-10-31",
+      "policy": "user_confirmed_selected_skill_cost_lock_20261031",
+      "queued_ordinary_cast": "pay_selected_cost_despite_subsequent_cost_increase",
+      "example": {
+        "skill_id": 7080180,
+        "selected_cost": 10,
+        "later_increase": 3,
+        "actual_energy_payment": 10
+      },
+      "trait_comparison": "actual_energy_paid",
+      "source_text": "如果已选10费地震，那么仍然是消耗10费使用地震，巨灵石的特性按照真实使用的能量计算",
+      "scope": "selected ordinary cast; automatic casts/repeats and consume-all-energy skills retain their separately sourced rules",
+      "real_game_calibrated": false
+    }
+  },
+  "pending": []
+}

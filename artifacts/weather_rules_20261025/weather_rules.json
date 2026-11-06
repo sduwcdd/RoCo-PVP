@@ -1,0 +1,885 @@
+{
+  "schema_version": 1,
+  "profile": "game_files_weather_research_v1",
+  "snapshot_id": "20261105T124140+0800",
+  "weather": {
+    "rain": {
+      "id": 3,
+      "weather_id": 3,
+      "name": "雨天",
+      "label": "雨天",
+      "type": "水系",
+      "duration": 8,
+      "description": "双方的水系技能威力+75%。",
+      "weather_buff_ids": [
+        20230030,
+        20170870
+      ],
+      "source": {
+        "table": "WEATHER_CONF",
+        "id": 3,
+        "current": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_3_P/WEATHER_CONF.json",
+          "sha256": "bd72fd24f537caf6342d3bd4b7940484c7db439739ed3cef915b8bed37af4b9a"
+        },
+        "historical_structured": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_2_P/WEATHER_CONF.json",
+          "sha256": "0a922f90e1ab53059968e7850dd6f17545642edb0834441244dea89ca2939294"
+        }
+      },
+      "effects": [
+        {
+          "op": "power_multiplier",
+          "phase": "before_damage",
+          "when": {
+            "skill_type": "水系"
+          },
+          "value": 1.75,
+          "source_buff_id": 20230030
+        }
+      ]
+    },
+    "sandstorm": {
+      "id": 6,
+      "weather_id": 6,
+      "name": "沙暴",
+      "label": "沙暴",
+      "type": "地系",
+      "duration": 8,
+      "description": "双方的地系技能能耗减半。",
+      "weather_buff_ids": [
+        20170900,
+        20320490
+      ],
+      "source": {
+        "table": "WEATHER_CONF",
+        "id": 6,
+        "current": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_3_P/WEATHER_CONF.json",
+          "sha256": "bd72fd24f537caf6342d3bd4b7940484c7db439739ed3cef915b8bed37af4b9a"
+        },
+        "historical_structured": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_2_P/WEATHER_CONF.json",
+          "sha256": "0a922f90e1ab53059968e7850dd6f17545642edb0834441244dea89ca2939294"
+        }
+      },
+      "effects": [
+        {
+          "op": "energy_multiplier",
+          "phase": "before_cost",
+          "when": {
+            "skill_type": "地系"
+          },
+          "value": 0.5,
+          "rounding_policy": "ceil_after_modifiers",
+          "source_buff_id": 20320490
+        }
+      ]
+    },
+    "blizzard": {
+      "id": 5,
+      "weather_id": 5,
+      "name": "暴风雪",
+      "label": "暴风雪",
+      "type": "冰系",
+      "duration": 8,
+      "description": "双方每回合结束获得2层冻结。（冰系精灵免疫此效果）",
+      "weather_buff_ids": [
+        20170910,
+        20171230
+      ],
+      "source": {
+        "table": "WEATHER_CONF",
+        "id": 5,
+        "current": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_3_P/WEATHER_CONF.json",
+          "sha256": "bd72fd24f537caf6342d3bd4b7940484c7db439739ed3cef915b8bed37af4b9a"
+        },
+        "historical_structured": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_2_P/WEATHER_CONF.json",
+          "sha256": "0a922f90e1ab53059968e7850dd6f17545642edb0834441244dea89ca2939294"
+        }
+      },
+      "effects": [
+        {
+          "op": "add_status",
+          "phase": "round_end",
+          "when": {
+            "exclude_target_types": [
+              "冰系"
+            ]
+          },
+          "value": 2,
+          "status": "freeze",
+          "target": "both_active",
+          "source_buff_id": 20171230
+        }
+      ]
+    },
+    "thunder": {
+      "id": 14,
+      "weather_id": 14,
+      "name": "雷鸣",
+      "label": "雷鸣",
+      "type": "电系",
+      "duration": 8,
+      "description": "双方每回合结束获得1层引电。（电系精灵免疫此效果）",
+      "weather_buff_ids": [
+        20170930,
+        20173420
+      ],
+      "source": {
+        "table": "WEATHER_CONF",
+        "id": 14,
+        "current": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_3_P/WEATHER_CONF.json",
+          "sha256": "bd72fd24f537caf6342d3bd4b7940484c7db439739ed3cef915b8bed37af4b9a"
+        },
+        "historical_structured": {
+          "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_2_P/WEATHER_CONF.json",
+          "sha256": "0a922f90e1ab53059968e7850dd6f17545642edb0834441244dea89ca2939294"
+        }
+      },
+      "effects": [
+        {
+          "op": "add_status",
+          "phase": "round_end",
+          "when": {
+            "exclude_target_types": [
+              "电系"
+            ]
+          },
+          "value": 1,
+          "status": "conductive",
+          "target": "both_active",
+          "source_buff_id": 20173420
+        }
+      ]
+    }
+  },
+  "game_weather_aliases": {
+    "3": "rain",
+    "4": "rain",
+    "5": "blizzard",
+    "9": "blizzard",
+    "6": "sandstorm",
+    "14": "thunder"
+  },
+  "setters": {
+    "7050250": {
+      "weather": "rain",
+      "duration": 8,
+      "name": "落雨",
+      "energy_cost": 5,
+      "effect_ids": [
+        1028001
+      ],
+      "source": {
+        "table": "SKILL_CONF",
+        "id": 7050250
+      },
+      "raw_skill_result": [
+        {
+          "effect_id": 1028001,
+          "cast_moment": 11
+        }
+      ]
+    },
+    "7080210": {
+      "weather": "sandstorm",
+      "duration": 8,
+      "name": "沙涌",
+      "energy_cost": 7,
+      "effect_ids": [
+        1028003
+      ],
+      "source": {
+        "table": "SKILL_CONF",
+        "id": 7080210
+      },
+      "raw_skill_result": [
+        {
+          "effect_id": 1028003,
+          "cast_moment": 11
+        }
+      ]
+    },
+    "7090370": {
+      "weather": "blizzard",
+      "duration": 8,
+      "name": "冬至",
+      "energy_cost": 7,
+      "effect_ids": [
+        1028005
+      ],
+      "source": {
+        "table": "SKILL_CONF",
+        "id": 7090370
+      },
+      "raw_skill_result": [
+        {
+          "effect_id": 1028005,
+          "cast_moment": 11
+        }
+      ]
+    },
+    "7110440": {
+      "weather": "thunder",
+      "duration": 8,
+      "name": "惊雷",
+      "energy_cost": 5,
+      "effect_ids": [
+        1028006
+      ],
+      "source": {
+        "table": "SKILL_CONF",
+        "id": 7110440
+      },
+      "raw_skill_result": [
+        {
+          "effect_id": 1028006,
+          "cast_moment": 12
+        }
+      ]
+    }
+  },
+  "skill_modifiers": {
+    "7050490": [
+      {
+        "op": "energy_add",
+        "phase": "before_cost",
+        "when": {
+          "weather": "rain"
+        },
+        "value": -2,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 7050490,
+          "description": "造成物伤，天气为<desc_id=3008>雨天</>时，本技能能耗-2。",
+          "skill_result": [
+            {
+              "effect_id": 20400880,
+              "cast_moment": 24
+            }
+          ]
+        }
+      }
+    ],
+    "7050530": [
+      {
+        "op": "extend_weather",
+        "phase": "after_skill",
+        "when": {
+          "weather": "rain"
+        },
+        "value": 4,
+        "response_success_value": 8,
+        "response_kind": "defense",
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 7050530,
+          "description": "<desc_id=3008>雨天</>的回合数延长4回合，<desc_id=1017>应对防御</>：改为延长8回合。",
+          "skill_result": [
+            {
+              "effect_id": 1092002,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1031580,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1092004,
+              "cast_moment": 11
+            }
+          ]
+        }
+      }
+    ],
+    "7050531": [
+      {
+        "op": "extend_weather",
+        "phase": "after_skill",
+        "when": {
+          "weather": "rain"
+        },
+        "value": 8,
+        "response_kind": "defense",
+        "source_variant": true,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 7050531,
+          "description": "<desc_id=3008>雨天</>的回合数延长4回合，<desc_id=1017>应对防御</>：改为延长8回合。",
+          "skill_result": [
+            {
+              "effect_id": 1092003,
+              "cast_moment": 11
+            },
+            {},
+            {
+              "effect_id": 1092005,
+              "cast_moment": 11
+            }
+          ]
+        }
+      }
+    ],
+    "7060220": [
+      {
+        "op": "skill_type_from_weather",
+        "phase": "before_cost",
+        "when": {},
+        "value": null,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 7060220,
+          "description": "造成魔伤，本技能系别和天气系别相同。",
+          "skill_result": [
+            {
+              "effect_id": 20400420,
+              "cast_moment": 24
+            }
+          ]
+        }
+      }
+    ],
+    "7080450": [
+      {
+        "op": "priority_add",
+        "phase": "action_order",
+        "when": {
+          "weather": "sandstorm"
+        },
+        "value": 1,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 7080450,
+          "description": "造成魔伤，天气为<desc_id=3006>沙暴</>时，<desc_id=1020>先手</>+1。",
+          "skill_result": [
+            {
+              "effect_id": 20400900,
+              "cast_moment": 24
+            }
+          ]
+        }
+      }
+    ],
+    "7090460": [
+      {
+        "op": "power_add",
+        "phase": "before_damage",
+        "when": {
+          "weather": "blizzard"
+        },
+        "value": 50,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 7090460,
+          "description": "造成物伤，天气为<desc_id=3007>暴风雪</>时，本次技能威力+50",
+          "skill_result": [
+            {
+              "effect_id": 20400920,
+              "cast_moment": 24
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "trait_modifiers": {
+    "200144": [
+      {
+        "op": "drain",
+        "phase": "after_damage",
+        "when": {
+          "weather": "rain",
+          "skill_type": "水系",
+          "attack_only": true
+        },
+        "value": 1.0,
+        "source_buff_id": 20641440,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 200144,
+          "description": "天气为<desc_id=3008>雨天</>时，使用水系攻击技能时<desc_id=1029>吸血</>50%。",
+          "skill_result": [
+            {
+              "effect_id": 20400790,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20400800,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ]
+        }
+      }
+    ],
+    "200213": [
+      {
+        "op": "stat_multiplier",
+        "phase": "before_damage",
+        "when": {
+          "weather_or_environment": [
+            "rain",
+            "水系"
+          ]
+        },
+        "value": 2.0,
+        "stats": [
+          "attack",
+          "sp_attack"
+        ],
+        "source_buff_id": 20230920,
+        "uncertainty": "Description says both attacks; BUFFBASE opcode23 resembles power modifier; research uses stat multiplier and marks exact stage uncalibrated.",
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 200213,
+          "description": "天气为<desc_id=3008>雨天</>，或处于其他水系环境中时，获得双攻+100%。",
+          "skill_result": [
+            {
+              "effect_id": 20390010,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ]
+        }
+      }
+    ],
+    "200298": [
+      {
+        "op": "stat_add",
+        "phase": "action_order",
+        "when": {
+          "weather": "sandstorm"
+        },
+        "value": 50,
+        "stats": [
+          "speed"
+        ],
+        "source_buff_id": 20641430,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 200298,
+          "description": "天气为<desc_id=3006>沙暴</>时，自己获得速度+50。",
+          "skill_result": [
+            {
+              "effect_id": 20400760,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20400770,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ]
+        }
+      }
+    ],
+    "200303": [
+      {
+        "op": "add_status",
+        "phase": "after_skill",
+        "when": {
+          "weather": "thunder",
+          "skill_type": "电系"
+        },
+        "value": 1,
+        "status": "conductive",
+        "target": "opponent_active",
+        "source_buff_id": 20641450,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 200303,
+          "description": "天气为<desc_id=3021>雷鸣</>时，使用电系技能后敌方获得引电。",
+          "skill_result": [
+            {
+              "effect_id": 20400810,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20400820,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ]
+        }
+      }
+    ],
+    "200311": [
+      {
+        "op": "power_multiplier",
+        "phase": "before_damage",
+        "when": {
+          "weather": "blizzard",
+          "skill_type": "冰系"
+        },
+        "value": 2.0,
+        "source_buff_id": 20231260,
+        "source": {
+          "table": "SKILL_CONF",
+          "id": 200311,
+          "description": "天气为<desc_id=3007>暴风雪</>时，冰系技能威力+100%。",
+          "skill_result": [
+            {
+              "effect_id": 20400940,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20400950,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "status_rules": {
+    "freeze": {
+      "buff_id": 20580010,
+      "base_id": 2058001,
+      "per_stack_max_hp_ratio": 0.05,
+      "threshold_comparison": "strict_less",
+      "immune_types": [
+        "冰系"
+      ],
+      "max_stacks": 99,
+      "raw_clean_when_rest": 2,
+      "switch_policy": "retain",
+      "effect": "faint_below_frozen_threshold",
+      "source": "BUFF_CONF/20580010 + BUFFBASE_CONF/2058001"
+    },
+    "conductive": {
+      "buff_id": 20011586,
+      "base_id": 2001081,
+      "threshold_stacks": 2,
+      "damage_max_hp_ratio": 0.25,
+      "damage_type": "电系",
+      "max_stacks": 2,
+      "raw_clean_when_rest": 1,
+      "switch_policy": "clear",
+      "threshold_consume_policy": 2,
+      "source": "BUFF_CONF/20011586"
+    }
+  },
+  "policy": {
+    "round_end_order": [
+      "weather_effects",
+      "status_thresholds",
+      "duration_decrement"
+    ],
+    "include_setting_turn": true,
+    "same_weather": "reset_duration",
+    "different_weather": "replace",
+    "switch_weather": "preserve",
+    "energy_rounding": "ceil_after_modifiers",
+    "damage_rounding": "floor_min_one",
+    "conductive_consume_threshold": true,
+    "calibrated": false
+  },
+  "client_weather_state": {
+    "fields": [
+      "weather_id",
+      "weather_expire_round"
+    ],
+    "remaining_formula": "max(0, weather_expire_round - roundIndex + 1)",
+    "debug_expiry_formula": "roundIndex + remaining - 1",
+    "source": "scripts/pakchunk4-WindowsNoEditor_3_P/BattleRuntimeData.decompiled.lua:369"
+  },
+  "sources": [
+    {
+      "path": "data/bwiki/20261105T124140+0800/catalog.json",
+      "sha256": "4f46200f8b7fa8e1a8415aa579f532c5f745b0ab08482b64d8bf55fb50e6ad15"
+    },
+    {
+      "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_3_P/WEATHER_CONF.json",
+      "sha256": "bd72fd24f537caf6342d3bd4b7940484c7db439739ed3cef915b8bed37af4b9a"
+    },
+    {
+      "path": "artifacts/weather_rules_20261025/parsed/pakchunk4-WindowsNoEditor_2_P/WEATHER_CONF.json",
+      "sha256": "0a922f90e1ab53059968e7850dd6f17545642edb0834441244dea89ca2939294"
+    },
+    {
+      "path": "artifacts/weather_rules_20261025/manifest.json",
+      "sha256": "3266f4d20252b3884a8a1130ce25102ec89f6efaa85dcc8ff35e8991b09b14d3"
+    },
+    {
+      "path": "artifacts/weather_rules_20261025/dependency_records.json",
+      "sha256": "bec9212d205e6c6a3c24027b82374822513d4db8f29cc9d270ff3915948accbb"
+    },
+    {
+      "path": "artifacts/weather_rules_20261025/script_manifest.json",
+      "sha256": "d989067a3c340d782b56cf729524c818a57f8c253566e0ba3c22c2313583c5d5"
+    },
+    {
+      "path": "artifacts/weather_rules_20261025/scripts/pakchunk4-WindowsNoEditor_3_P/BattleRuntimeData.decompiled.lua",
+      "sha256": "3162f18f5b5e81aaac43881e6a32038e3529385a2be1f35a72de09eebc470bb4"
+    },
+    {
+      "path": "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua",
+      "sha256": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BATTLE_GLOBAL_CONFIG.json",
+      "sha256": "0e43b58db5cc6cf04771c6e17af7c5a4564b3bee671da236706c3667dd9a527e"
+    }
+  ],
+  "coverage": {
+    "skills": [
+      {
+        "id": "7050250",
+        "name": "落雨",
+        "description": "将天气改为雨天，持续8回合。",
+        "configured": true
+      },
+      {
+        "id": "7050490",
+        "name": "沉溺",
+        "description": "造成物伤，天气为雨天时，本技能能耗-2。",
+        "configured": true
+      },
+      {
+        "id": "7050530",
+        "name": "汇流",
+        "description": "雨天的回合数延长4回合，应对防御：改为延长8回合。",
+        "configured": true
+      },
+      {
+        "id": "7060220",
+        "name": "天光",
+        "description": "造成魔伤，本技能系别和天气系别相同。",
+        "configured": true
+      },
+      {
+        "id": "7080210",
+        "name": "沙涌",
+        "description": "将天气改为沙暴，持续8回合。",
+        "configured": true
+      },
+      {
+        "id": "7080450",
+        "name": "扬尘",
+        "description": "造成魔伤，天气为沙暴时，先手+1。",
+        "configured": true
+      },
+      {
+        "id": "7090370",
+        "name": "冬至",
+        "description": "将天气改为暴风雪，持续8回合。",
+        "configured": true
+      },
+      {
+        "id": "7090460",
+        "name": "雪原狩猎",
+        "description": "造成物伤，天气为暴风雪时，本次技能威力+50",
+        "configured": true
+      },
+      {
+        "id": "7110440",
+        "name": "惊雷",
+        "description": "将天气改为雷鸣，持续8回合。",
+        "configured": true
+      }
+    ],
+    "traits": [
+      {
+        "id": "200144",
+        "name": "滴眼液",
+        "description": "天气为雨天时，使用水系攻击技能时吸血50%。",
+        "configured": true
+      },
+      {
+        "id": "200213",
+        "name": "得寸进尺",
+        "description": "天气为雨天，或处于其他水系环境中时，获得双攻+100%。",
+        "configured": true
+      },
+      {
+        "id": "200298",
+        "name": "流沙统治者",
+        "description": "天气为沙暴时，自己获得速度+50。",
+        "configured": true
+      },
+      {
+        "id": "200303",
+        "name": "电子音乐",
+        "description": "天气为雷鸣时，使用电系技能后敌方获得引电。",
+        "configured": true
+      },
+      {
+        "id": "200311",
+        "name": "冰雪魂魄",
+        "description": "天气为暴风雪时，冰系技能威力+100%。",
+        "configured": true
+      }
+    ],
+    "forms": [
+      {
+        "form_id": "3008",
+        "trait_id": 200213,
+        "trait_name": "得寸进尺"
+      },
+      {
+        "form_id": "3067",
+        "trait_id": 200213,
+        "trait_name": "得寸进尺"
+      },
+      {
+        "form_id": "3341",
+        "trait_id": 200311,
+        "trait_name": "冰雪魂魄"
+      },
+      {
+        "form_id": "3342",
+        "trait_id": 200311,
+        "trait_name": "冰雪魂魄"
+      },
+      {
+        "form_id": "3343",
+        "trait_id": 200311,
+        "trait_name": "冰雪魂魄"
+      },
+      {
+        "form_id": "3347",
+        "trait_id": 200144,
+        "trait_name": "滴眼液"
+      },
+      {
+        "form_id": "3348",
+        "trait_id": 200144,
+        "trait_name": "滴眼液"
+      },
+      {
+        "form_id": "3349",
+        "trait_id": 200144,
+        "trait_name": "滴眼液"
+      },
+      {
+        "form_id": "3351",
+        "trait_id": 200303,
+        "trait_name": "电子音乐"
+      },
+      {
+        "form_id": "3352",
+        "trait_id": 200303,
+        "trait_name": "电子音乐"
+      },
+      {
+        "form_id": "3353",
+        "trait_id": 200303,
+        "trait_name": "电子音乐"
+      },
+      {
+        "form_id": "3402",
+        "trait_id": 200298,
+        "trait_name": "流沙统治者"
+      },
+      {
+        "form_id": "3403",
+        "trait_id": 200298,
+        "trait_name": "流沙统治者"
+      },
+      {
+        "form_id": "3404",
+        "trait_id": 200298,
+        "trait_name": "流沙统治者"
+      }
+    ],
+    "excluded_name_only_matches": [
+      {
+        "id": "7090110",
+        "name": "暴风雪",
+        "reason": "Name is not a weather mechanic; description does not change weather."
+      }
+    ]
+  },
+  "uncertainties": [
+    {
+      "id": "patch_runtime_priority",
+      "text": "Historical _2_P structured fields and _3_P current descriptions agree; installed resources do not prove online overrides."
+    },
+    {
+      "id": "round_order",
+      "text": "Weather effects are described at round end; ordering relative to other end-of-round statuses is not recovered. Research: weather then threshold statuses then duration decrement; setting turn included."
+    },
+    {
+      "id": "energy_rounding",
+      "text": "Sandstorm half-energy rounding and modifier composition order not recovered. Research: flat additions then multipliers then ceiling, minimum zero."
+    },
+    {
+      "id": "replace_refresh",
+      "text": "Single weather sync state supports replacement. Research: same weather resets to eight, different weather replaces, switching preserves field duration."
+    },
+    {
+      "id": "conductive_threshold",
+      "text": "2 stacks and 25% max-HP electric damage confirmed by BUFF_CONF; threshold stack consumption and multiplier/rounding sequence are research policies."
+    },
+    {
+      "id": "freeze_parameter_4",
+      "text": "BUFFBASE2058001 fourth ordered parameter is50; its exact cap/rounding meaning is not recovered and is not interpreted as a second known rule."
+    },
+    {
+      "id": "attack_stage",
+      "text": "得寸进尺 says both attacks +100%; shared BUFFBASE opcode23 can also modify power; exact formula stage remains uncalibrated."
+    },
+    {
+      "id": "switch_status_cleanup",
+      "text": "Freeze raw is_clean_when_rest=2 matches enum DEAD=2; conductive1 semantics not fully recovered. Research: freeze retained across ordinary switch, conductive cleared."
+    },
+    {
+      "id": "expiry_timing",
+      "text": "Duration8 confirmed in BATTLE_GLOBAL_CONFIG weather_duration; whether setter turn counts is an explicit research policy, not bytecode-proven settlement."
+    }
+  ],
+  "server_semantics_verified": false,
+  "formal_training_eligible": false
+}

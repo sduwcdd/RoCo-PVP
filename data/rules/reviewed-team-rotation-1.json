@@ -1,0 +1,86 @@
+{
+  "schema": "reviewed-team-rotation-1",
+  "policy": "source_bound_team_down_rotation_experiment_v1",
+  "skills": {
+    "7070290": {
+      "record_hash": "096554f95a987ac1fa982638f0923cdd28bea12f3f9db9436b8134e6aee025a5",
+      "raw": {
+        "id": 7070290,
+        "wiki_id": "skill_000494",
+        "name": {
+          "zh": "过山车"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 8,
+        "desc": {
+          "zh": "使己方队伍中的所有精灵携带的技能跨精灵向下移动1个位置，巧变：机械系技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%BF%87%E5%B1%B1%E8%BD%A6",
+        "source_module": "Skills",
+        "desc_notes": [
+          3011
+        ]
+      },
+      "direction": "down",
+      "wrap": true,
+      "installation_evidence": {
+        "skill": {
+          "id": 7070290,
+          "name": {
+            "localization_id": 2453,
+            "text": "过山车"
+          },
+          "desc": {
+            "localization_id": 2454,
+            "text": "使己方队伍中的所有精灵携带的技能跨精灵向下移动1个位置，<desc_id=3011>巧变</>：机械系技能。"
+          },
+          "flavor_text": {
+            "localization_id": 2455,
+            "text": "请全体精灵抓好扶手。"
+          },
+          "energy_cost": [
+            8
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1087001,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 21460180,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_DNFC_306029",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/306029.306029'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      },
+      "installation_uncertainty": "history rows are keyed by member+slot, so cross-member moves lose row identity; buff 21460180 treated as trigger marker; direction 'down' = toward higher slot index."
+    }
+  },
+  "installation_sources": [
+    "unpacked SKILL_CONF (snapshot 20261025T013619+0800)",
+    "bwiki catalog"
+  ]
+}

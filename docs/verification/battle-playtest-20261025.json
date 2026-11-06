@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-25",
+  "scope": "HP percentage observations, three-of-six individual settings, own confirmed moves, patch2 mirror source binding",
+  "verified_sha256": {
+    "web/battle.js": "da2218c5bcc295c992c7ecca726cf78e68f474b77c104746484620f0fefaae59",
+    "web/battle_workspace.html": "4d65b70f662682509d80c0d6caa29ccf1942907f1c56c031738dfff2202bb324",
+    "tests/test_battle_team_code.js": "35900369be4301161977d065841e8ccb02b96c66845317bb10e826df4de6919f",
+    "lab/game_layer_references.py": "774a73e9446a01569dd1909b9c570d6d75d53a6c1a128f709dd6803d6d9d4252",
+    "scripts/build_game_layer_references.py": "7311ac1c604949f831bcd286cb2ad8acc7abb267f0d45c5599343c166b4802f8",
+    "tests/test_game_layer_references.py": "52189d8553fe7b0a3dd43dccb4c5b53761275dd9007e85b8f4815acbf01c32fe",
+    "docs/verification/game-mirror-patch2-20261025.resources.json": "5f289bbe0a625eb861f3643db1873db28a0303bde7d26e8e2d75e16d7bba4c2b",
+    "docs/verification/game-mirror-patch2-review-20261025.md": "614ad14c1896cada0b0dbee0091ec21ebde0f26c2ea0b8e098c383f1260d0567"
+  },
+  "tests": [
+    {
+      "command": "node --test tests/test_battle_team_code.js",
+      "passed": 28,
+      "failed": 0
+    },
+    {
+      "command": "python -m unittest tests.test_game_layer_references -v",
+      "passed": 18,
+      "failed": 0,
+      "run_by": "implementation agent; independently checked new 6 and saved artifact"
+    },
+    {
+      "command": "python -m unittest tests.test_lab_server tests.test_team_import tests.test_rl_contract -q",
+      "passed": 57,
+      "failed": 0,
+      "seconds": 25.903
+    }
+  ],
+  "browser_checks": [
+    "own three checked dimensions default10",
+    "fourth checkbox disabled",
+    "opponent unknown selection saved",
+    "own confirmed four moves only in ordered action selector",
+    "input synchronization without blur before submit",
+    "my damage38 and HP72.5%, opponent damage18 and HP90% stored in round",
+    "round and configurations retained after reload",
+    "primary8766 page refreshed; original0/6 teams retained"
+  ],
+  "test_observations_are_synthetic_ui_fixtures": true,
+  "browser_screenshots": [
+    "docs/previews/battle-percent-ui-20261025.png",
+    "docs/previews/battle-percent-record-20261025.png"
+  ],
+  "temporary_servers_stopped": [
+    8767,
+    19387
+  ],
+  "main_server_port": 8766,
+  "policy_available": false,
+  "full_battle_executable": false,
+  "training_allowed": false,
+  "mirror_artifact": "artifacts/game_layer_references_mirror_patch2_20261025/layer_references.json",
+  "mirror_artifact_sha256": "b70b11bc24423fa7f8e8e795614366ac08dccb6fe684f7460bf5e0816b5195aa",
+  "mirror_layer_evidence": {
+    "archive": "pakchunk4-WindowsNoEditor_2_P.pak",
+    "skill_id": 7170280,
+    "slot": 0,
+    "effect_id": 20010080,
+    "buff_group_level": 5,
+    "binary_offset": 333410,
+    "raw_hex": "05000000",
+    "online_applicability_verified": false
+  },
+  "remaining_gaps": [
+    "full six-on-six runtime integration",
+    "exact formula and authoritative event order",
+    "online resource version applicability",
+    "hidden-configuration prior and trustworthy damage predictor",
+    "three-selection-to-engine configuration adapter",
+    "trained policy unavailable"
+  ]
+}

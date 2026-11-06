@@ -1,0 +1,315 @@
+{
+  "snapshot_id": "20261025T013619+0800",
+  "sources": {
+    "data/bwiki/20261025T013619+0800/catalog.json": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "schema": "reviewed-mark-steal-1",
+  "policy": "unique_enemy_mark_same_kind_or_empty_recipient_one_layer_transfer_v1",
+  "terms": [
+    {
+      "key": 3010,
+      "zh": "印记",
+      "definition": "精灵下场后印记不会消失，新入场的精灵会继承印记效果。精灵最多同时拥有1种正面印记和1种负面印记。"
+    }
+  ],
+  "skill": {
+    "record": {
+      "id": 7130340,
+      "wiki_id": "skill_000656",
+      "name": {
+        "zh": "拟寄生"
+      },
+      "type": "虫系",
+      "kind": "magical",
+      "energy": 3,
+      "desc": {
+        "zh": "造成魔伤，偷取敌方1层印记。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8B%9F%E5%AF%84%E7%94%9F",
+      "source_module": "Skills",
+      "power": 80,
+      "desc_notes": [
+        3010
+      ]
+    },
+    "record_hash": "ba30414dbe066e4b13e302ef181925647664daacca8e634b6bd8db97d7f88769",
+    "game_skill_raw": {
+      "id": 7130340,
+      "name": {
+        "localization_id": 2968,
+        "text": "拟寄生"
+      },
+      "desc": {
+        "localization_id": 2969,
+        "text": "造成魔伤，偷取敌方1层<desc_id=3010>印记</>。"
+      },
+      "energy_cost": [
+        3
+      ],
+      "dam_para": [
+        80
+      ],
+      "type": 1,
+      "Skill_Type": 1,
+      "skill_dam_type": 13,
+      "skill_feature": 4,
+      "damage_type": 3,
+      "skill_priority": 5,
+      "target_type": 1,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 1050010,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Wor_HJ_212035",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/212035.212035'",
+      "describe_type": [
+        5
+      ]
+    }
+  },
+  "trait": {
+    "record": {
+      "id": 200256,
+      "wiki_id": "skill_000153",
+      "name": {
+        "zh": "特殊清洁场景"
+      },
+      "type": "无系别",
+      "kind": "trait",
+      "energy": 0,
+      "desc": {
+        "zh": "回合结束时偷取敌方1层印记。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E7%89%B9%E6%AE%8A%E6%B8%85%E6%B4%81%E5%9C%BA%E6%99%AF",
+      "source_module": "Skills",
+      "desc_notes": [
+        3010
+      ]
+    },
+    "record_hash": "d70a104daa215099c14cd2ec29716a481c6e985be472ca967f700f84313e3099",
+    "game_skill_raw": {
+      "id": 200256,
+      "name": {
+        "localization_id": 511,
+        "text": "特殊清洁场景"
+      },
+      "desc": {
+        "localization_id": 512,
+        "text": "回合结束时偷取敌方1层<desc_id=3010>印记</>。"
+      },
+      "energy_cost": [
+        0
+      ],
+      "dam_para": [
+        0
+      ],
+      "type": 2,
+      "skill_dam_type": 1,
+      "skill_feature": 1,
+      "damage_type": 1,
+      "skill_priority": 1,
+      "target_type": 9,
+      "cd_round": [
+        0,
+        0
+      ],
+      "skill_result": [
+        {
+          "effect_id": 20171530,
+          "cast_moment": 11
+        },
+        {},
+        {},
+        {},
+        {},
+        {
+          "effect_id": 1004117,
+          "cast_moment": 11
+        }
+      ],
+      "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+      "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200256.200256'",
+      "describe_type": [
+        0
+      ],
+      "target_blood_limit": [
+        0
+      ]
+    },
+    "buff_raw": {
+      "id": 20171530,
+      "buff_base_ids": [
+        2017153
+      ],
+      "buff_list_priority": 4,
+      "buff_groupsigns": [
+        0
+      ],
+      "type": 3,
+      "add_max": 1,
+      "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+      "buff_group_reduce": [
+        {
+          "reduce_type": 13,
+          "reduce_param": [
+            999,
+            0
+          ]
+        }
+      ],
+      "is_clean_when_rest": 1
+    },
+    "base_raw": {
+      "id": 2017153,
+      "buffbase_order": 17,
+      "trigger_type": 7,
+      "show_letters": [
+        0
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            1050010
+          ]
+        },
+        {
+          "params": [
+            10000
+          ]
+        },
+        {
+          "params": [
+            2
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "effect_raw": {
+    "id": 1050010,
+    "effect_order": 50,
+    "type": 1,
+    "effect_param": [
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          20230022,
+          20490031,
+          20210042,
+          20210061,
+          20530071,
+          20490021,
+          20170012,
+          20320071,
+          20010092,
+          20930081,
+          20070012,
+          20940011,
+          20230020,
+          20490030,
+          20210040,
+          20210060,
+          20530070,
+          20490020,
+          20170011,
+          20320070,
+          20010090,
+          20930080,
+          20070011,
+          20940010,
+          20370200,
+          20370201,
+          20490390,
+          20490391
+        ]
+      },
+      {
+        "params": [
+          1
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          1
+        ]
+      }
+    ]
+  },
+  "forms": {
+    "3605": {
+      "trait_id": 200256,
+      "record_hash": "a45cd7ae30c735a602171667528da163e1e3d74e6c035df27103c3d41205f052"
+    }
+  },
+  "eligibility_buff_ids": [
+    20230022,
+    20490031,
+    20210042,
+    20210061,
+    20530071,
+    20490021,
+    20170012,
+    20320071,
+    20010092,
+    20930081,
+    20070012,
+    20940011,
+    20230020,
+    20490030,
+    20210040,
+    20210060,
+    20530070,
+    20490020,
+    20170011,
+    20320070,
+    20010090,
+    20930080,
+    20070011,
+    20940010,
+    20370200,
+    20370201,
+    20490390,
+    20490391
+  ],
+  "unknowns": [
+    "Which polarity/type is selected if both are present.",
+    "Whether transfer replaces a different recipient mark of the same polarity.",
+    "Attribution of one stolen layer among multiple donor contribution histories.",
+    "Order of simultaneous stealing traits."
+  ]
+}

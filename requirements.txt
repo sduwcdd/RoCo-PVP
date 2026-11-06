@@ -1,0 +1,5 @@
+# Versions installed in the verified local capture environment.
+scapy==2.8.0
+pycryptodome==4.2.0
+protobuf==7.36.2
+msgpack==1.2.4

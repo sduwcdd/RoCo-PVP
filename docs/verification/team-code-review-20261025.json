@@ -1,0 +1,179 @@
+{
+  "scope": "Independent parser/source/real-code audit; browser review performed by root",
+  "fixture_sha256": "09e44a2af0d3639b64939735ff28735267b73a68920240d3525bd2fa060ed690",
+  "snapshot_id": "20261025T013619+0800",
+  "real_codes": 33,
+  "format_valid": 31,
+  "format_invalid_lines": [
+    22,
+    38
+  ],
+  "all_training_blocked": true,
+  "known_examples_match": true,
+  "zero_compatibility_scoped": true,
+  "diagnostic_conflicts": [
+    {
+      "line": 1,
+      "issues": [
+        {
+          "category": "database_conflict",
+          "code": "learning_condition_conflict",
+          "message": "火羽：当前 BWIKI 的所有学习来源均与码内条件冲突。",
+          "member_slot": 4,
+          "field": "moves[2]",
+          "raw_value": 7060200,
+          "evidence": {
+            "source": "BWIKI 洛克王国世界",
+            "snapshot_id": "20261025T013619+0800",
+            "source_version": "s4-2026-10-16",
+            "sources": [
+              {
+                "source": "legacy",
+                "move": 7060200,
+                "bloodline": "光",
+                "level": 15,
+                "status": "database_conflict",
+                "pending": [
+                  "所需血脉与码内血脉不符"
+                ]
+              }
+            ],
+            "bloodline_id": 4
+          }
+        },
+        {
+          "category": "user_confirmed_error",
+          "code": "user_confirmed_huoyu_bloodline",
+          "message": "火羽：阵容码指定水血脉，却携带当前图鉴列为光血脉来源的虹光冲击；用户已确认该阵容码有误。",
+          "member_slot": 4,
+          "field": "moves[2]",
+          "raw_value": {
+            "form_id": 3080,
+            "bloodline_id": 4,
+            "move_id": 7060200
+          },
+          "evidence": {
+            "source": "user_confirmed_example",
+            "bwiki_snapshot_id": "20261025T013619+0800"
+          }
+        }
+      ]
+    },
+    {
+      "line": 16,
+      "issues": [
+        {
+          "category": "database_conflict",
+          "code": "learning_condition_conflict",
+          "message": "冰钻布鲁斯：当前 BWIKI 的所有学习来源均与码内条件冲突。",
+          "member_slot": 4,
+          "field": "moves[3]",
+          "raw_value": 7080120,
+          "evidence": {
+            "source": "BWIKI 洛克王国世界",
+            "snapshot_id": "20261025T013619+0800",
+            "source_version": "s4-2026-10-16",
+            "sources": [
+              {
+                "source": "legacy",
+                "move": 7080120,
+                "bloodline": "地",
+                "level": 15,
+                "status": "database_conflict",
+                "pending": [
+                  "所需血脉与码内血脉不符"
+                ]
+              }
+            ],
+            "bloodline_id": 7
+          }
+        }
+      ]
+    },
+    {
+      "line": 18,
+      "issues": [
+        {
+          "category": "database_conflict",
+          "code": "learning_condition_conflict",
+          "message": "玳塔：当前 BWIKI 的所有学习来源均与码内条件冲突。",
+          "member_slot": 3,
+          "field": "moves[2]",
+          "raw_value": 7020640,
+          "evidence": {
+            "source": "BWIKI 洛克王国世界",
+            "snapshot_id": "20261025T013619+0800",
+            "source_version": "s4-2026-10-16",
+            "sources": [
+              {
+                "source": "legacy",
+                "move": 7020640,
+                "bloodline": "普通",
+                "level": 15,
+                "status": "database_conflict",
+                "pending": [
+                  "所需血脉与码内血脉不符"
+                ]
+              }
+            ],
+            "bloodline_id": 15
+          }
+        }
+      ]
+    },
+    {
+      "line": 22,
+      "issues": [
+        {
+          "category": "format_error",
+          "code": "invalid_length",
+          "message": "6 只精灵的阵容码应为 242 字符",
+          "member_slot": null,
+          "field": "length",
+          "raw_value": 241,
+          "evidence": {
+            "source": "https://roco-showdown.com/_next/static/chunks/2427-9b9809421a06aa9e.js"
+          }
+        }
+      ]
+    },
+    {
+      "line": 38,
+      "issues": [
+        {
+          "category": "format_error",
+          "code": "invalid_length",
+          "message": "6 只精灵的阵容码应为 242 字符",
+          "member_slot": null,
+          "field": "length",
+          "raw_value": 241,
+          "evidence": {
+            "source": "https://roco-showdown.com/_next/static/chunks/2427-9b9809421a06aa9e.js"
+          }
+        }
+      ]
+    }
+  ],
+  "parser_sha256": "f58e0644fab6d39ac78fa2966a503ce2d2a8c6f5d822ba1af077f7a8bed11133",
+  "ui_checks": {
+    "node_regressions_passed": 10,
+    "real_bwiki_code_import_roundtrip": true,
+    "raw_code_and_protocol_source_retained": true,
+    "four_slots_retained": true,
+    "templates_keep_provenance": true,
+    "unknown_talents_remain_null": true,
+    "confirmed_invalid_code_rejected": true
+  },
+  "reviewed_files_sha256": {
+    "lab\\team_code.py": "4552a63d97564f1408b2125e3bb96a69b860079b1b41e999cf6f54b70a5cb2b9",
+    "web\\battle.js": "952014e5b5ee0c6033685eb7e2ec7df5e90f3f00e512dccb4f73c32104ba08aa",
+    "web\\battle_workspace.html": "58d5694e6d237756eb90ec3dca9e83facf3c8711f04ee13bbd8d6ff9ee21cde7",
+    "tests\\test_battle_team_code.js": "53ab8d4f614a54e206805bb90cb965d475d7564d22395f43e6a2ee8a94855775"
+  },
+  "root_followup": {
+    "batch_whitespace": "Preserved original nonblank line; regression added and passed",
+    "browser": "Main agent verified actual name filtering, known-error import block, batch, ordered empty slots, template persistence",
+    "python_related_tests_passed": 99,
+    "node_tests_passed": 10
+  }
+}

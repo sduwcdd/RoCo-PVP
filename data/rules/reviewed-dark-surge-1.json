@@ -1,0 +1,396 @@
+{
+  "schema": "dark-surge-pool-1",
+  "effect": {
+    "id": 1016027,
+    "effect_order": 16,
+    "type": 3,
+    "effect_param": [
+      {
+        "params": [
+          5
+        ]
+      },
+      {
+        "params": [
+          20010030
+        ]
+      },
+      {
+        "params": [
+          20010040
+        ]
+      },
+      {
+        "params": [
+          20010070
+        ]
+      },
+      {
+        "params": [
+          20010080
+        ]
+      },
+      {
+        "params": [
+          20010091
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          0
+        ]
+      },
+      {
+        "params": [
+          1
+        ]
+      }
+    ]
+  },
+  "mark_id": 3020,
+  "layers_per_mark": 5,
+  "pool": [
+    {
+      "buff_id": 20010030,
+      "stat": "patk",
+      "flat": false,
+      "amount": -10,
+      "buff": {
+        "id": 20010030,
+        "buff_base_ids": [
+          2001003
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          1,
+          31
+        ],
+        "name": "物攻等级降低",
+        "type_id": "2",
+        "add_des": "物理攻击",
+        "add_icon": 2,
+        "type": 2,
+        "add_max": 99,
+        "desc": "物攻-<span color=\"#c7494a\">10%</>。",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800003_png.800003_png'",
+        "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "bases": [
+        {
+          "id": 2001003,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                33
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "buff_id": 20010040,
+      "stat": "matk",
+      "flat": false,
+      "amount": -10,
+      "buff": {
+        "id": 20010040,
+        "buff_base_ids": [
+          2001004
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          1,
+          31
+        ],
+        "name": "魔攻等级降低",
+        "type_id": "2",
+        "add_des": "魔法攻击",
+        "add_icon": 2,
+        "type": 2,
+        "add_max": 99,
+        "desc": "魔攻-<span color=\"#c7494a\">10%</>。",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800004_png.800004_png'",
+        "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "bases": [
+        {
+          "id": 2001004,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                34
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "buff_id": 20010070,
+      "stat": "pdef",
+      "flat": false,
+      "amount": -10,
+      "buff": {
+        "id": 20010070,
+        "buff_base_ids": [
+          2001007
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          1,
+          31
+        ],
+        "name": "物防等级降低",
+        "type_id": "2",
+        "add_des": "物理防御",
+        "add_icon": 2,
+        "type": 2,
+        "add_max": 99,
+        "desc": "物防-<span color=\"#c7494a\">10%</>。",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800007_png.800007_png'",
+        "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "bases": [
+        {
+          "id": 2001007,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                35
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "buff_id": 20010080,
+      "stat": "mdef",
+      "flat": false,
+      "amount": -10,
+      "buff": {
+        "id": 20010080,
+        "buff_base_ids": [
+          2001008
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          1,
+          31
+        ],
+        "name": "魔防等级降低",
+        "type_id": "2",
+        "add_des": "魔法防御",
+        "add_icon": 2,
+        "type": 2,
+        "add_max": 99,
+        "desc": "魔防-<span color=\"#c7494a\">10%</>。",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800008_png.800008_png'",
+        "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "bases": [
+        {
+          "id": 2001008,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                36
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1000
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "buff_id": 20010091,
+      "stat": "spd",
+      "flat": true,
+      "amount": -10,
+      "buff": {
+        "id": 20010091,
+        "buff_base_ids": [
+          2001009
+        ],
+        "buff_list_priority": 1,
+        "buff_groupsigns": [
+          1,
+          31
+        ],
+        "name": "速度降低",
+        "type_id": "2",
+        "add_des": "速度",
+        "add_icon": 2,
+        "type": 2,
+        "add_max": 99,
+        "desc": "速度<span color=\"#c7494a\">-10</>。",
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800034_png.800034_png'",
+        "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "bases": [
+        {
+          "id": 2001009,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                6
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                -10
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0"
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab"
+    }
+  ],
+  "uncertainties": [
+    "Uniform independent sampling with replacement, seed 0 is an experiment. Distribution and cross-source buff cap ordering are not calibrated."
+  ]
+}

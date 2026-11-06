@@ -1,0 +1,835 @@
+{
+  "kind": "synthetic Swift entry experiment, not real-game observation",
+  "test_resolver": "fixed 13 actual HP loss",
+  "payload": {
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 5,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a-out",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            },
+            {
+              "member_id": "a-in",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 9,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7150080,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b-out",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            },
+            {
+              "member_id": "b-in",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 9,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "side": "a",
+    "target_slot": 1,
+    "context": {
+      "mode": "isolated_voluntary_switch_experiment",
+      "snapshot_id": "20261025T013619+0800",
+      "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+      "excluded_hooks": [
+        "bloodlines",
+        "event_triggers",
+        "field",
+        "marks",
+        "traits"
+      ],
+      "unresolved_dependencies": [],
+      "cleanup_policy": "retain_member_fields_experiment",
+      "swift_policy": "intrinsic_source_only_experiment",
+      "incoming_effective_costs": [
+        null,
+        null,
+        3,
+        null
+      ],
+      "entry_timing": "after_position_change_experiment",
+      "entry_skill_context": {
+        "mode": "isolated_skill_experiment",
+        "snapshot_id": "20261025T013619+0800",
+        "source_hash": "91460ebff088e150742cf9d00413f5a3ebba4be9ceab43c6dedc80e48f91600d",
+        "operation_order": "source_text_order_experiment",
+        "excluded_hooks": [
+          "bloodlines",
+          "event_triggers",
+          "field",
+          "marks",
+          "traits"
+        ],
+        "unresolved_dependencies": [],
+        "damage_policy": "resolver_returns_actual_integer_hp_loss"
+      }
+    },
+    "predicted_damage": 13
+  },
+  "http_skill_program": {
+    "game_id": 7150080,
+    "name": "翼击",
+    "category": "skill",
+    "compiler_version": "bwiki-declarative-5",
+    "source_description": "造成魔伤，迅捷。",
+    "source_details": {
+      "desc_notes": [
+        1005
+      ]
+    },
+    "source_hash": "91460ebff088e150742cf9d00413f5a3ebba4be9ceab43c6dedc80e48f91600d",
+    "source": {
+      "wiki_id": "skill_000689",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%BF%BC%E5%87%BB",
+      "source_module": "Skills"
+    },
+    "static_fields": {
+      "kind": "magical",
+      "type": "翼系",
+      "power": 50,
+      "energy": 3
+    },
+    "status": "compiled",
+    "operations": [
+      {
+        "op": "damage",
+        "params": {
+          "target": "opponent",
+          "kind": "magical",
+          "power": 50,
+          "type": "翼系"
+        }
+      }
+    ],
+    "blockers": [],
+    "dependency_ids": [
+      1005
+    ],
+    "snapshot_id": "20261025T013619+0800",
+    "source_version": "s4-2026-10-16",
+    "order_semantics": "source_text_order_not_validated_timing",
+    "executable": false,
+    "real_game_verified": false,
+    "execution_blockers": [
+      "尚未通过当前版本的真实对战校准。",
+      "操作顺序仅保留描述顺序，不声明回合时序、取整或叠加规则。",
+      "关联术语的免疫、公共冷却、数值及结算时序需由绑定版本的规则解释器核验。",
+      "迅捷的入场选槽、最终能耗及与入场触发链的顺序须由换人阶段显式解析；普通使用不自动增加一次入场攻击。"
+    ],
+    "intrinsic_swift": true,
+    "entry_trigger": {
+      "kind": "voluntary_switch",
+      "term_id": 1005
+    },
+    "term_source": {
+      "title": "Module:Pets/data/Terms",
+      "page_id": 6401,
+      "revision_id": 7078,
+      "revision_timestamp": "2026-09-09T10:00:15Z",
+      "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078"
+    },
+    "skill_source": {
+      "title": "Module:Pets/data/Skills",
+      "page_id": 6396,
+      "revision_id": 18764,
+      "revision_timestamp": "2026-10-19T12:08:03Z",
+      "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+    },
+    "swift_term": {
+      "key": 1005,
+      "zh": "迅捷",
+      "definition": "通过主动更换精灵的方式入场时，使用第一个能量满足要求，并带有迅捷的技能。"
+    }
+  },
+  "http_missing_formula": {
+    "status": "blocked",
+    "scope": "isolated_voluntary_switch_experiment",
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 5,
+      "teams": {
+        "a": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "a-out",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            },
+            {
+              "member_id": "a-in",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 9,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7150080,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b-out",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            },
+            {
+              "member_id": "b-in",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 9,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "events": [],
+    "blockers": [
+      "Entry skill rejected; entire switch rolled back: damage formula/rounding unresolved: provide an explicit experimental resolver"
+    ],
+    "snapshot_id": "20261025T013619+0800",
+    "state_hash": "8b2cb43f75e7a0e04d88db6021d6773ea60405dc33b74c6cb3e16201efd5be3a",
+    "context_hash": "c11808a911118e2e817567976a3b6dbe9873187e675c20526544eca86ea8b8bb",
+    "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+    "final_state_hash": null,
+    "entry_swift": {
+      "scope": "source_bound_switch_component",
+      "snapshot_id": "20261025T013619+0800",
+      "term_ids": [
+        1005
+      ],
+      "evidence": {
+        "title": "Module:Pets/data/Terms",
+        "page_id": 6401,
+        "revision_id": 7078,
+        "revision_timestamp": "2026-09-09T10:00:15Z",
+        "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+        "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078",
+        "terms": [
+          {
+            "key": 1005,
+            "zh": "迅捷",
+            "definition": "通过主动更换精灵的方式入场时，使用第一个能量满足要求，并带有迅捷的技能。"
+          }
+        ]
+      },
+      "training_eligible": false,
+      "real_game_verified": false,
+      "full_switch_executed": false,
+      "status": "selected",
+      "slot": 2,
+      "skill_id": 7150080,
+      "reason": "按保留的技能槽顺序选中首个能量满足的迅捷技能。",
+      "effective_cost": 3,
+      "skill_executed": false
+    },
+    "switch_fragment_executed": false,
+    "entry_skill_executed": false,
+    "full_switch_executed": false,
+    "full_turn_executed": false,
+    "battle_executable": false,
+    "calibrated": false,
+    "real_game_verified": false,
+    "training_eligible": false,
+    "input_state_mutated": false,
+    "unresolved": [
+      "Retaining member fields on departure is an explicit experiment, not verified game cleanup.",
+      "Only intrinsic source Swift is considered; external Swift grants and all other entry/exit hooks are excluded.",
+      "Field marks are retained, but their effects and trigger order are not executed.",
+      "Skill ID presence does not establish learnset, bloodline, level or team-configuration legality.",
+      "This single position change does not determine joint action order, resource regeneration, replacement or victory."
+    ],
+    "snapshot_sha256": "161e0aa10585ceac51ba1d5679ec14dcedb54be9a6311e9e80ed35034cd9c9f9"
+  },
+  "python_explicit_resolver": {
+    "status": "applied",
+    "scope": "isolated_voluntary_switch_experiment",
+    "state": {
+      "snapshot_id": "20261025T013619+0800",
+      "turn": 5,
+      "teams": {
+        "a": {
+          "active_slot": 1,
+          "members": [
+            {
+              "member_id": "a-out",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            },
+            {
+              "member_id": "a-in",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 6,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 5,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7150080,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        },
+        "b": {
+          "active_slot": 0,
+          "members": [
+            {
+              "member_id": "b-out",
+              "form_id": 3001,
+              "hp": 287,
+              "max_hp": 350,
+              "energy": 10,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            },
+            {
+              "member_id": "b-in",
+              "form_id": 3001,
+              "hp": 300,
+              "max_hp": 350,
+              "energy": 9,
+              "max_energy": 20,
+              "speed": 100,
+              "entered_turn": 1,
+              "rooted": false,
+              "charge": null,
+              "skill_slots": [
+                0,
+                0,
+                7030220,
+                0
+              ],
+              "statuses": {},
+              "stat_modifiers": {}
+            }
+          ],
+          "marks": {
+            "positive": null,
+            "negative": null
+          }
+        }
+      }
+    },
+    "events": [
+      {
+        "op": "switch.voluntary",
+        "side": "a",
+        "from_slot": 0,
+        "to_slot": 1,
+        "departing_member_id": "a-out",
+        "entering_member_id": "a-in",
+        "entered_turn_before": 1,
+        "entered_turn_after": 5,
+        "departure": {
+          "scope": "source_bound_switch_component",
+          "snapshot_id": "20261025T013619+0800",
+          "term_ids": [
+            3009
+          ],
+          "evidence": {
+            "title": "Module:Pets/data/Terms",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078",
+            "terms": [
+              {
+                "key": 3009,
+                "zh": "离场",
+                "definition": "通过主动更换精灵或触发脱离效果的方式下场。（不包括精灵力竭后下场）"
+              }
+            ]
+          },
+          "training_eligible": false,
+          "real_game_verified": false,
+          "full_switch_executed": false,
+          "status": "allowed",
+          "emits_departure": true,
+          "reason": "已知离场资格条件允许；目标选择及完整触发链尚未结算。"
+        },
+        "inherited_marks": {
+          "scope": "source_bound_switch_component",
+          "snapshot_id": "20261025T013619+0800",
+          "term_ids": [
+            3010
+          ],
+          "evidence": {
+            "title": "Module:Pets/data/Terms",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078",
+            "terms": [
+              {
+                "key": 3010,
+                "zh": "印记",
+                "definition": "精灵下场后印记不会消失，新入场的精灵会继承印记效果。精灵最多同时拥有1种正面印记和1种负面印记。"
+              }
+            ]
+          },
+          "training_eligible": false,
+          "real_game_verified": false,
+          "full_switch_executed": false,
+          "status": "applied",
+          "marks": {
+            "positive": null,
+            "negative": null
+          },
+          "reason": "印记属于场上继承状态；不因精灵离场而清除。",
+          "mark_effects_resolved": false
+        },
+        "entry_swift": {
+          "scope": "source_bound_switch_component",
+          "snapshot_id": "20261025T013619+0800",
+          "term_ids": [
+            1005
+          ],
+          "evidence": {
+            "title": "Module:Pets/data/Terms",
+            "page_id": 6401,
+            "revision_id": 7078,
+            "revision_timestamp": "2026-09-09T10:00:15Z",
+            "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+            "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078",
+            "terms": [
+              {
+                "key": 1005,
+                "zh": "迅捷",
+                "definition": "通过主动更换精灵的方式入场时，使用第一个能量满足要求，并带有迅捷的技能。"
+              }
+            ]
+          },
+          "training_eligible": false,
+          "real_game_verified": false,
+          "full_switch_executed": false,
+          "status": "selected",
+          "slot": 2,
+          "skill_id": 7150080,
+          "reason": "按保留的技能槽顺序选中首个能量满足的迅捷技能。",
+          "effective_cost": 3,
+          "skill_executed": false
+        },
+        "swift_candidates": [
+          null,
+          null,
+          {
+            "skill_id": 7150080,
+            "swift": true,
+            "effective_cost": 3,
+            "source_metadata": {
+              "scope": "source_bound_switch_component",
+              "snapshot_id": "20261025T013619+0800",
+              "term_ids": [
+                1005
+              ],
+              "evidence": {
+                "title": "Module:Pets/data/Terms",
+                "page_id": 6401,
+                "revision_id": 7078,
+                "revision_timestamp": "2026-09-09T10:00:15Z",
+                "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+                "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078",
+                "terms": [
+                  {
+                    "key": 1005,
+                    "zh": "迅捷",
+                    "definition": "通过主动更换精灵的方式入场时，使用第一个能量满足要求，并带有迅捷的技能。"
+                  }
+                ]
+              },
+              "training_eligible": false,
+              "real_game_verified": false,
+              "full_switch_executed": false,
+              "status": "known",
+              "skill_id": 7150080,
+              "swift": true,
+              "source_record": {
+                "id": 7150080,
+                "wiki_id": "skill_000689",
+                "name": {
+                  "zh": "翼击"
+                },
+                "type": "翼系",
+                "kind": "magical",
+                "energy": 3,
+                "desc": {
+                  "zh": "造成魔伤，迅捷。"
+                },
+                "source_url": "https://wiki.biligame.com/nrc/%E7%BF%BC%E5%87%BB",
+                "source_module": "Skills",
+                "power": 50,
+                "desc_notes": [
+                  1005
+                ]
+              },
+              "skill_record_hash": "91460ebff088e150742cf9d00413f5a3ebba4be9ceab43c6dedc80e48f91600d",
+              "skills_evidence": {
+                "title": "Module:Pets/data/Skills",
+                "page_id": 6396,
+                "revision_id": 18764,
+                "revision_timestamp": "2026-10-19T12:08:03Z",
+                "content_sha256": "f6a9ab91a71575d5a03f6ba0e61dacad7add7a551f0c735e499ee4ead17dcbb0",
+                "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=18764"
+              },
+              "metadata_scope": "intrinsic_source_only",
+              "external_swift_modifiers_resolved": false,
+              "reason": "已核对完整技能记录的固有迅捷标识；不包含外部授予或移除。"
+            }
+          },
+          null
+        ],
+        "cleanup_policy": "retain_member_fields_experiment",
+        "snapshot_id": "20261025T013619+0800",
+        "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+        "real_game_verified": false,
+        "full_switch_executed": false
+      },
+      {
+        "op": "energy.pay",
+        "amount": 3,
+        "source": "caller_resolved_cost",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "356ec7b4a76e3b58d8ce1e1c64721d6548f1d143524dd98c1fa80e7dad1d18e7",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "origin": "entry_swift",
+        "actor_side": "a",
+        "actor_member_id": "a-in",
+        "target_side": "a",
+        "target_member_id": "a-in",
+        "skill_slot": 2,
+        "skill_id": 7150080,
+        "source_hash": "91460ebff088e150742cf9d00413f5a3ebba4be9ceab43c6dedc80e48f91600d",
+        "entry_timing": "after_position_change_experiment"
+      },
+      {
+        "op": "damage",
+        "target": "opponent",
+        "params": {
+          "target": "opponent",
+          "kind": "magical",
+          "power": 50,
+          "type": "翼系"
+        },
+        "before": 300,
+        "after": 287,
+        "damage": 13,
+        "source": "caller_supplied_unvalidated_resolver",
+        "snapshot_id": "20261025T013619+0800",
+        "program_hash": "356ec7b4a76e3b58d8ce1e1c64721d6548f1d143524dd98c1fa80e7dad1d18e7",
+        "implementation_unvalidated": true,
+        "training_eligible": false,
+        "origin": "entry_swift",
+        "actor_side": "a",
+        "actor_member_id": "a-in",
+        "target_side": "b",
+        "target_member_id": "b-out",
+        "skill_slot": 2,
+        "skill_id": 7150080,
+        "source_hash": "91460ebff088e150742cf9d00413f5a3ebba4be9ceab43c6dedc80e48f91600d",
+        "entry_timing": "after_position_change_experiment"
+      }
+    ],
+    "blockers": [],
+    "snapshot_id": "20261025T013619+0800",
+    "state_hash": "8b2cb43f75e7a0e04d88db6021d6773ea60405dc33b74c6cb3e16201efd5be3a",
+    "context_hash": "c11808a911118e2e817567976a3b6dbe9873187e675c20526544eca86ea8b8bb",
+    "catalog_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+    "final_state_hash": "ff9f8f9e00fabae589bc9711ed9f0e3bc6c78efd02ac08306b5452738cb869bf",
+    "entry_swift": {
+      "scope": "source_bound_switch_component",
+      "snapshot_id": "20261025T013619+0800",
+      "term_ids": [
+        1005
+      ],
+      "evidence": {
+        "title": "Module:Pets/data/Terms",
+        "page_id": 6401,
+        "revision_id": 7078,
+        "revision_timestamp": "2026-09-09T10:00:15Z",
+        "content_sha256": "f1830685d31732d3634f8857e14eec75b85ea56b923ceef218ede18182056488",
+        "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Terms&oldid=7078",
+        "terms": [
+          {
+            "key": 1005,
+            "zh": "迅捷",
+            "definition": "通过主动更换精灵的方式入场时，使用第一个能量满足要求，并带有迅捷的技能。"
+          }
+        ]
+      },
+      "training_eligible": false,
+      "real_game_verified": false,
+      "full_switch_executed": false,
+      "status": "selected",
+      "slot": 2,
+      "skill_id": 7150080,
+      "reason": "按保留的技能槽顺序选中首个能量满足的迅捷技能。",
+      "effective_cost": 3,
+      "skill_executed": true
+    },
+    "switch_fragment_executed": true,
+    "entry_skill_executed": true,
+    "full_switch_executed": false,
+    "full_turn_executed": false,
+    "battle_executable": false,
+    "calibrated": false,
+    "real_game_verified": false,
+    "training_eligible": false,
+    "input_state_mutated": false,
+    "unresolved": [
+      "Retaining member fields on departure is an explicit experiment, not verified game cleanup.",
+      "Only intrinsic source Swift is considered; external Swift grants and all other entry/exit hooks are excluded.",
+      "Field marks are retained, but their effects and trigger order are not executed.",
+      "Skill ID presence does not establish learnset, bloodline, level or team-configuration legality.",
+      "This single position change does not determine joint action order, resource regeneration, replacement or victory."
+    ],
+    "assumptions": {
+      "mode": "isolated_voluntary_switch_experiment",
+      "snapshot_id": "20261025T013619+0800",
+      "catalog_content_hash": "a131080d043c489911a1198e72580f95b6dc02050bb8337f3bdda5e2bf0c5ea2",
+      "excluded_hooks": [
+        "bloodlines",
+        "event_triggers",
+        "field",
+        "marks",
+        "traits"
+      ],
+      "unresolved_dependencies": [],
+      "cleanup_policy": "retain_member_fields_experiment",
+      "swift_policy": "intrinsic_source_only_experiment",
+      "incoming_effective_costs": [
+        null,
+        null,
+        3,
+        null
+      ],
+      "entry_timing": "after_position_change_experiment",
+      "entry_skill_context": {
+        "mode": "isolated_skill_experiment",
+        "snapshot_id": "20261025T013619+0800",
+        "source_hash": "91460ebff088e150742cf9d00413f5a3ebba4be9ceab43c6dedc80e48f91600d",
+        "operation_order": "source_text_order_experiment",
+        "excluded_hooks": [
+          "bloodlines",
+          "event_triggers",
+          "field",
+          "marks",
+          "traits"
+        ],
+        "unresolved_dependencies": [],
+        "damage_policy": "resolver_returns_actual_integer_hp_loss"
+      }
+    },
+    "entry_skill_assumptions": {
+      "mode": "isolated_skill_experiment",
+      "snapshot_id": "20261025T013619+0800",
+      "source_hash": "91460ebff088e150742cf9d00413f5a3ebba4be9ceab43c6dedc80e48f91600d",
+      "operation_order": "source_text_order_experiment",
+      "excluded_hooks": [
+        "bloodlines",
+        "event_triggers",
+        "field",
+        "marks",
+        "traits"
+      ],
+      "unresolved_dependencies": [],
+      "damage_policy": "resolver_returns_actual_integer_hp_loss",
+      "resolved_energy_cost": 3,
+      "actor_side": "a",
+      "actor_member_id": "a-in",
+      "opponent_member_id": "b-out",
+      "entry_origin": "voluntary_switch",
+      "skill_slot": 2
+    }
+  },
+  "full_simulator_completed": false,
+  "training_started": false
+}
