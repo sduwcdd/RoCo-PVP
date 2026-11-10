@@ -61,6 +61,13 @@ if (process.argv.includes('--hud-only')) {
           if (action === 'stop-service') { closeHud(); return controller.stopService() }
           if (action === 'capture-start') return await controller.capture('Start', payload)
           if (action === 'capture-stop') return await controller.capture('Stop')
+          if (action === 'environment-check') return await controller.checkEnvironment()
+          if (action === 'environment-report') {
+            if (!controller.environmentReportPath) throw Error('请先完成环境检查')
+            const error = await shell.openPath(controller.environmentReportPath)
+            if (error) throw Error(error)
+            return { ok: true }
+          }
           if (action === 'hud-open') {
             await controller.ensureService()
             if (!huds.size) {
@@ -109,6 +116,7 @@ if (process.argv.includes('--hud-only')) {
         if (stoppingResources) return stoppingResources
         stoppingResources = (async () => {
           // A pending Start may acquire an elevated child after quit was requested.
+          if (controller.environmentCheckOperation) { try { await controller.environmentCheckOperation } catch (_) {} }
           if (controller.captureOperation) { try { await controller.captureOperation } catch (_) {} }
           if (controller.captureOwned()) await controller.capture('Stop')
           const children = [...huds]

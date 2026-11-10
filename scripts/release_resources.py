@@ -12,6 +12,7 @@ import json
 import re
 from pathlib import Path, PureWindowsPath
 from urllib.parse import unquote, urlsplit
+from lab.source_paths import evidence_path
 
 
 EXTERNAL = frozenset({"buff.json", "level_skill.json", "petbase.json",
@@ -118,9 +119,13 @@ def discover(root):
             parts = windows.parts
             markers = [i for i, part in enumerate(parts) if part.casefold() == root.name.casefold()]
             if not markers:
-                report("forbidden", text, source, "outside_project")
-                return None
-            text = "/".join(parts[markers[-1] + 1:])
+                try:
+                    text = evidence_path(text, root).relative_to(root).as_posix()
+                except ValueError:
+                    report("forbidden", text, source, "outside_project")
+                    return None
+            else:
+                text = "/".join(parts[markers[-1] + 1:])
         path = Path(text)
         if ":" in text and not PureWindowsPath(text).drive:
             report("forbidden", text, source, "invalid_path")

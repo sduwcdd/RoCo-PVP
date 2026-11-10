@@ -1,6 +1,6 @@
 # 第二台设备继续开发
 
-仓库：https://github.com/sduwcdd/RoCo-PVP ，桌面版本1.1.6。源码直接位于根目录，不再进入RoCo_PVP/source，也没有AI_try、旧APP和private-source分区。旧历史在原设备单独保留。
+仓库：https://github.com/sduwcdd/RoCo-PVP ，桌面版本1.1.8。源码直接位于根目录，不再进入RoCo_PVP/source，也没有AI_try、旧APP和private-source分区。旧历史在原设备单独保留。
 
 ## 获取与运行
 
@@ -19,7 +19,7 @@ npm --prefix overlay start
 
 ## 当前边界
 
-Windows1.1.6包含退出清理、身高/体重/音调与奖牌预测，战斗规则与HUD共用。图鉴快照20261105T124140+0800，限制见PROJECT_STATUS.md。
+Windows1.1.8包含退出清理、中文日志编码修复、敌方原始性格箭头、HUD内容高度适配及本机环境检查，保留身高/体重/音调与奖牌预测，战斗规则与HUD共用。图鉴快照20261105T124140+0800，限制见PROJECT_STATUS.md。
 
 mobile保留在研源码：Android内部0.2尚无真实手机游戏协议验收；iOS未编译，采集转发未接通。它们不是已完成的Windows1.1.6功能。步骤见../mobile/README.md。HEV子模块固定提交；SDK、本机Python路径和签名条件需在目标设备配置。
 

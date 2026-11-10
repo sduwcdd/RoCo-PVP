@@ -61,7 +61,7 @@
   .name { font-size: 16px; font-weight: 900; letter-spacing: 0.5px; white-space: nowrap;
           overflow: hidden; text-overflow: ellipsis; }
   .lv { color: var(--muted); font-weight: 700; font-size: 13px; white-space: nowrap; }
-  .types { display: flex; gap: 4px; margin-top: 3px; }
+  .types { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
   .physical-info { display: flex; flex-wrap: wrap; gap: 2px 8px; margin-top: 3px; font-size: 12px; color: var(--muted); }
   .physical-medal { margin-left: 4px; color: var(--warm); font-weight: 700; }
   .type-chip {
@@ -997,11 +997,25 @@
       var bits = [];
       if (natureUp) bits.push("↑" + (NATURE_LABEL[natureUp] || natureUp));
       if (natureDown) bits.push("↓" + (NATURE_LABEL[natureDown] || natureDown));
-      var changes = entry.natureRewritten ? '；原方向 ↑' + (NATURE_LABEL[entry.natureOriginalUp] || '?') + ' ↓' +
+      var changes = entry.natureRewritten && !unknownOverride ? '；原方向 ↑' + (NATURE_LABEL[entry.natureOriginalUp] || '?') + ' ↓' +
         (NATURE_LABEL[entry.natureOriginalDown] || '?') + '；修正后 ' + bits.join(' ') : '';
-      if (unknownOverride) changes += '；原性格：' + (originalNatureName || '未知') + '；后天方向未下发，仅展示已确认方向';
+      var originalBits = [];
+      if (entry.natureOriginalUp) originalBits.push('↑' + (NATURE_LABEL[entry.natureOriginalUp] || entry.natureOriginalUp));
+      if (entry.natureOriginalDown) originalBits.push('↓' + (NATURE_LABEL[entry.natureOriginalDown] || entry.natureOriginalDown));
+      if (unknownOverride) changes += '；原性格：' + (originalNatureName || '未知') +
+        (originalBits.length ? ' ' + originalBits.join(' ') : '') + '；后天方向未下发，仅展示已确认方向' +
+        (bits.length ? '；当前已确认 ' + bits.join(' ') : '');
+      var natureText = natureName || bits.join(' ') || '性格待确认';
+      if (side === 'enemy' && (natureName || (entry.natureName && originalBits.length))) {
+        var originalKnown = Boolean(entry.natureName);
+        var showOriginal = originalKnown && (entry.natureRewritten || unknownOverride);
+        natureText = (showOriginal ? '原性格 ' : '') + (originalKnown ? entry.natureName : natureName);
+        var directions = originalBits;
+        if (!directions.length && !showOriginal) directions = bits;
+        if (directions.length) natureText += ' ' + directions.join(' ');
+      }
       natureTag = '<span class="tag-nature" title="' + esc(changes ? changes.replace(/^；/, '') : bits.join(' ')) +
-        '">' + esc(natureName || bits.join(' ') || '性格待确认') + '</span>';
+        '">' + esc(natureText) + '</span>';
     }
 
     var speciality = entry.speciality || {};

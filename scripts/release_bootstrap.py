@@ -237,6 +237,9 @@ def _self_test():
 
 
 def main(mount_resources):
+    for stream in (sys.stdout, sys.stderr):
+        if stream is not None and hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8', errors='backslashreplace')
     os.environ['ROCO_RELEASE'] = '1'
     os.environ.pop('PYTHONPATH', None)
     if len(sys.argv) < 2:
@@ -244,6 +247,10 @@ def main(mount_resources):
     command, args = sys.argv[1], sys.argv[2:]
     if command == 'capture-control':
         return _capture_control(args)
+    if command == 'environment-check':
+        from lab.npcap_environment import main as check_environment
+        sys.argv = [sys.executable, *args]
+        return check_environment()
     mount_resources()
     if command == 'self-test':
         return _self_test()

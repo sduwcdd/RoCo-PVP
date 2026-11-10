@@ -1,9 +1,9 @@
 {
-  "version": "1.1.6",
+  "version": "1.1.8",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5262,
-  "bytes": 385792498,
+  "file_count": 5265,
+  "bytes": 385830406,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2274,
-      "sha256": "2ade5dc58f76eedcaad98d26235a255d62823a81de8e5701542a5f4defd0e97b"
+      "bytes": 2475,
+      "sha256": "8c9e94d69c0f8a156aaed9c9aee4ba3cbd8a8e95a0cacf1225d99b6f23205d62"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -1797,8 +1797,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 1921,
-      "sha256": "10c8217debee5ab6cb9418c7b706605256032a841f995271f6358072824e18dd"
+      "bytes": 2026,
+      "sha256": "92efab48dfb00449dce116915c0cd0a2f21dcc8994e4160c6e3a5c83c75bcb63"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
@@ -1837,8 +1837,8 @@
     },
     {
       "path": "docs/PROJECT_STATUS.md",
-      "bytes": 6954,
-      "sha256": "099963dcfc6d85e7ac567effba8a962e80c6914124c85d50dd5670d60b910d7f"
+      "bytes": 7696,
+      "sha256": "573072273d81b6756457be1c300c7bae92cba0024dee084ae3fa39803f876466"
     },
     {
       "path": "docs/RELEASE_SECURITY.md",
@@ -1863,7 +1863,7 @@
     {
       "path": "docs/UPDATABLE_APP.md",
       "bytes": 2457,
-      "sha256": "f8df0f012f371de10518dc438dcb69480caaf71f676001747ac0b13edd98e7ac"
+      "sha256": "8b0b6da36fcdf78ac3aeafe5304c70bdaef44d24202e1d3fb33e9076775bdb6c"
     },
     {
       "path": "docs/verification/STARFALL_PARAMETER_AUDIT_20261026.md",
@@ -2811,6 +2811,11 @@
       "sha256": "161cda44e6510669fc022217aad6a7d6b8d956f78cdc8e919645051e3ee80f37"
     },
     {
+      "path": "lab/npcap_environment.py",
+      "bytes": 8231,
+      "sha256": "272fbd947a5148e820c613da5fa142dd7b40478d040160aacfc28d4aa9af0ee7"
+    },
+    {
       "path": "lab/numeric_candidates.py",
       "bytes": 14691,
       "sha256": "7d7a77a033844ba0e19faea41c802519439587c4a345742306d72995cbccd8b9"
@@ -3347,33 +3352,33 @@
     },
     {
       "path": "overlay/desktop.css",
-      "bytes": 4043,
-      "sha256": "71d02dcb581c3d1ea6e406ae68b141934cd2b437c759b18b90b9d30ef028ce23"
+      "bytes": 4513,
+      "sha256": "91bda97439c5e7256fdcf868be0f2c45c170de22b5ca16c3109735a600bd349c"
     },
     {
       "path": "overlay/desktop.html",
-      "bytes": 3951,
-      "sha256": "5106737349591b677d8046645da508dc427be27afc2d69207a8d297864cf3043"
+      "bytes": 4846,
+      "sha256": "c95eff11db2d170633b9b35d2cad921acd61aa9eac0e5c1f5bf98c4ac27bdfeb"
     },
     {
       "path": "overlay/desktop.js",
-      "bytes": 11645,
-      "sha256": "ba8458be5b085554ae9fd725f30202bfdd5caa26d83796409fcd4c8d38fa0d64"
+      "bytes": 12169,
+      "sha256": "8cfdceecd8b62ade129730c7cceda8402ab610e1b32dae43765e35534c1e09d8"
     },
     {
       "path": "overlay/desktop_preload.js",
-      "bytes": 535,
-      "sha256": "86ac9a6139c210c7c7e641409d3a7dd1011be2f761a5ea0dbbc481be7d2bb396"
+      "bytes": 578,
+      "sha256": "323634566a3b8832a90ba890c02df4b30fb0a70f048fea20d2419255d1ee53bc"
     },
     {
       "path": "overlay/desktop_renderer.js",
-      "bytes": 6006,
-      "sha256": "552cb4c1fc4c42e3d6a82a0286c668d1a9fc26d4218fdd707f4db37a925d5cce"
+      "bytes": 9206,
+      "sha256": "3294a440c870e2e86285f7b97525a836195ba4bde5dcf8d3ce3bcab2d51bad0f"
     },
     {
       "path": "overlay/desktop_services.js",
-      "bytes": 12236,
-      "sha256": "52f9a49abcd14ab9dd5e4d52a9a031ea7867ac2bde3ddfe04658c1072d134157"
+      "bytes": 14579,
+      "sha256": "504762404a06f1d89fb463b2cbabb7c33ebbe4eb933671a9ad879a267fd4cf4b"
     },
     {
       "path": "overlay/desktop_updater.js",
@@ -3387,8 +3392,8 @@
     },
     {
       "path": "overlay/main.js",
-      "bytes": 28089,
-      "sha256": "3583b87effe86f8434d466fa1e8f0b90a3c1c22e6c5e6dd1b8f85116242e609c"
+      "bytes": 29083,
+      "sha256": "bc2785deff706563388dc1c3d99005ee14a02fa4df26d542bed52c9a5c28355d"
     },
     {
       "path": "overlay/offline.html",
@@ -3398,22 +3403,22 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150986,
-      "sha256": "6596cc866017b94bc3cf14767e02ee3bcc70ebc893c0f23ade21bba56e81306b"
+      "sha256": "c9b240b228c4b841cef1c8ecdbd86cb40d341219fc9508a24177a8edd9452ee6"
     },
     {
       "path": "overlay/package.json",
       "bytes": 430,
-      "sha256": "e920a56a9feac53f1cc0a6db1fa425d94964da964e5382aa7536eb71e8303b8f"
+      "sha256": "bdc500a209edbd76dcb9e368ef4d0f5ad23ee246737c3a371ff0ec1dc8058e95"
     },
     {
       "path": "overlay/preload.js",
-      "bytes": 649,
-      "sha256": "77d71d89c880fdf89f076cf081d31952b202e8d912cc45a2fbcef42bfc22aade"
+      "bytes": 1809,
+      "sha256": "7fc2d23fd1cb4a56945c5b8832163d84a299de673c91526a5ab141cadd8766b7"
     },
     {
       "path": "overlay/update_config.json",
       "bytes": 74,
-      "sha256": "75b512fdc70c420acc8801692323906f9954ae697347c3aa4d7025bd38991687"
+      "sha256": "1ae141bcecb226eedeb72e6a90af834261ca47cc5291e0d535392bf0d89d30e2"
     },
     {
       "path": "requirements-release.txt",
@@ -3521,6 +3526,11 @@
       "sha256": "64f95dfdf45ed8e6ac4d54dd496f5c9e63e5865080919a6f67c35213c45681c3"
     },
     {
+      "path": "scripts/check_npcap_environment.py",
+      "bytes": 276,
+      "sha256": "30d0936c614f0b312febea33cb88ea1c422d74bbb0aa8f570fc6987fa8ed408c"
+    },
+    {
       "path": "scripts/compare_numeric_candidates.py",
       "bytes": 5194,
       "sha256": "34cb8c2678f8beb9422bb22cd46e29dcbb8a2d5f2ee6e1d17ac9c30cc465c6d9"
@@ -3567,8 +3577,8 @@
     },
     {
       "path": "scripts/release_bootstrap.py",
-      "bytes": 12959,
-      "sha256": "7d5587c748e73257d676953cbda6f747fea541daaf173d523d90199c297992a3"
+      "bytes": 13337,
+      "sha256": "9e1e96a235df9959ae949a50e5e8097b40c1e23d745d2315a40cfddd0c93a429"
     },
     {
       "path": "scripts/release_common.py",
@@ -3577,8 +3587,8 @@
     },
     {
       "path": "scripts/release_resources.py",
-      "bytes": 17075,
-      "sha256": "a4cb2e43079d77aa36c67f3b391ec1ca21e354fdb76b00145e73d1198194ee1a"
+      "bytes": 17286,
+      "sha256": "432009c9914128a2a5f9b91ab96c6ec97101de4599892501d030951399557b4c"
     },
     {
       "path": "scripts/release_tools.package-lock.json",
@@ -3822,13 +3832,13 @@
     },
     {
       "path": "tests/test_desktop_app.js",
-      "bytes": 12580,
-      "sha256": "8f8a8502d97c8d1b291d8bb35bd30c9243336ae6b805a57ad68ea5e58197cc1a"
+      "bytes": 19335,
+      "sha256": "b4336028ffab1af9fff0e3da12fda974a13a8b5f35c060b7b2186869bfc2a821"
     },
     {
       "path": "tests/test_desktop_updater.js",
-      "bytes": 4549,
-      "sha256": "a11b9934e4e5395fcbcfbe28557072dd3a8bdf3e1230e98cd7e709cdccd0aad9"
+      "bytes": 4540,
+      "sha256": "497d5caa8a4fcdae91ba0f5e0ca1df6f4e8753522c37db8594bfa7d7e3a1fb9b"
     },
     {
       "path": "tests/test_dex_snapshot.py",
@@ -3922,8 +3932,8 @@
     },
     {
       "path": "tests/test_hud_duel.js",
-      "bytes": 33874,
-      "sha256": "4eda3eedc24da2fc97b90912a46dfb9d7b0fb60cb8143720cb3f173f196e6db8"
+      "bytes": 35484,
+      "sha256": "f7527880e6663c89adc22abc8a7c2540aadc1e44ec8a8ae5026aae08879f2ce9"
     },
     {
       "path": "tests/test_hud_render.js",
@@ -4046,6 +4056,11 @@
       "sha256": "043ab70842dac0ff8fba60cce939f8fa2a694354f34dd3c144da24acd005ff87"
     },
     {
+      "path": "tests/test_npcap_environment.py",
+      "bytes": 4491,
+      "sha256": "b1e363a8067e0d95d642a614428a3c2c1f430fbdd88fc8e0721ed6982f028235"
+    },
+    {
       "path": "tests/test_numeric_candidates.py",
       "bytes": 9095,
       "sha256": "6fd041f605d98d813aa019549df0881ddbe5a07c97ec9952448d8e7d57b96236"
@@ -4062,8 +4077,8 @@
     },
     {
       "path": "tests/test_overlay_release_security.js",
-      "bytes": 7961,
-      "sha256": "c7025ce8cbaa8f267e2caf92e252eb749cb6349390141090fd8fc35cec0deff3"
+      "bytes": 11311,
+      "sha256": "d8a926d05d7f58c2188cb0e666eec68be72ebe0bc03276b66559ddd9210a06b6"
     },
     {
       "path": "tests/test_party_fainted_live.py",
@@ -4117,8 +4132,8 @@
     },
     {
       "path": "tests/test_release_resources.py",
-      "bytes": 6371,
-      "sha256": "12c477faa4ac8c79156e41a1ba2f91a922fb2344a3362adf21c38750c7afb84a"
+      "bytes": 7267,
+      "sha256": "bccc47632e9562ddf31a820c0fe410cf45e7031096689285683e2781af3d9972"
     },
     {
       "path": "tests/test_release_runtime.py",
@@ -26282,8 +26297,8 @@
     },
     {
       "path": "web/hud_duel.html",
-      "bytes": 73996,
-      "sha256": "b52af919f3cced081b05e0556ceb77af2c04dd1b72ce31f0b334c65b5e92ac32"
+      "bytes": 75038,
+      "sha256": "81ef2ea4add558377ebf272b00d12e9cab631f290b437747c678bf3739c188c3"
     },
     {
       "path": "web/lab.html",

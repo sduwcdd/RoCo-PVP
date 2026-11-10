@@ -31,7 +31,7 @@ test('public update lifecycle is anonymous, validates before install, then clean
   await c.ready
   await assert.rejects(c.install(), /校验完成/)
   await c.check()
-  assert.equal(f.updater.feed.repo, 'RoCo-PVP-Releases'); assert.equal(f.updater.feed.private, false)
+  assert.equal(f.updater.feed.repo, 'RoCo-PVP'); assert.equal(f.updater.feed.private, false)
   assert.equal(Object.hasOwn(f.updater.feed, 'token'), false)
   assert.equal(f.updater.autoInstallOnAppQuit, false)
   await c.download(); assert.equal(c.snapshot().canInstall, true)

@@ -108,6 +108,21 @@ class ReleaseResourceTests(unittest.TestCase):
         self.assertTrue(any(r["reason"] == "ValueError" for r in result["missing"]))
         self.assertTrue(any(r["reason"] == "invalid_path" for r in result["forbidden"]))
 
+    def test_old_checkout_paths_relocate_extraction_under_its_real_manifest(self):
+        self.seed()
+        self.write("lab/runtime.py", "VALUE=1\n")
+        self.write("data/rules/reviewed-test.json", {"sources": [{
+            "manifest": r"D:\old\roco_pvp\artifacts\original\manifest.json",
+            "path": r"D:\old\roco_pvp\artifacts\original\raw\table.bytes",
+            "extraction": {"path": "../../../NRC/member.bytes", "output": "raw/table.bytes"},
+        }]})
+        self.write("artifacts/original/manifest.json", {})
+        self.write("artifacts/original/raw/table.bytes", "data")
+        result = discover(self.root)
+        self.assertIn("artifacts/original/raw/table.bytes", result["resources"])
+        self.assertFalse(any("data/rules/raw" in row["path"] for row in result["missing"]))
+        self.assertFalse(any("D:" in row["path"] for row in result["forbidden"]))
+
 
 if __name__ == "__main__":
     unittest.main()

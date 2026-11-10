@@ -445,8 +445,30 @@ ipcMain.on('overlay:drag', function (event, phase) {
       // Native getBounds/setPosition accumulates invisible frame pixels at Windows 150% scaling.
       target.setBounds({ x: duelDrag.position[0] + cursor.x - duelDrag.cursor.x,
         y: duelDrag.position[1] + cursor.y - duelDrag.cursor.y, ...duelDrag.size })
-    } else if (phase === 'end') duelDrag = null
+    } else if (phase === 'end') {
+      duelDrag = null
+      fitDuelWindow(target)
+    }
   }
+})
+
+function fitDuelWindow (target) {
+  if (target.isDestroyed() || !target.duelContentHeight || (duelDrag && duelDrag.target === target)) return
+  const bounds = target.getBounds()
+  const area = screen.getDisplayMatching(bounds).workArea
+  const height = Math.min(target.duelContentHeight, Math.max(1, area.height - 24))
+  const y = Math.max(area.y + 12, Math.min(bounds.y, area.y + area.height - height - 12))
+  target.duelSize.height = height
+  if (bounds.height !== height || bounds.y !== y) {
+    target.setBounds({ x: bounds.x, y, width: target.duelSize.width, height })
+  }
+}
+
+ipcMain.on('overlay:content-height', function (event, height) {
+  const target = duelWins.find(w => !w.isDestroyed() && w.webContents === event.sender)
+  if (!target || target.duelSide === 'history' || !Number.isFinite(height) || height < 24) return
+  target.duelContentHeight = Math.ceil(height)
+  fitDuelWindow(target)
 })
 
 function duelBounds (side) {
@@ -602,6 +624,7 @@ async function runDuel () {
       const bounds = duelBounds(w.duelSide || (index === 0 ? 'my' : 'enemy'))
       w.duelSize = { width: bounds.width, height: bounds.height }
       w.setBounds(bounds)
+      fitDuelWindow(w)
     })
   })
   globalShortcut.register('Control+Alt+Q', function () { console.log('[overlay] hotkey quit'); app.quit() })

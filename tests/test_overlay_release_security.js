@@ -52,7 +52,9 @@ function harness (packaged, env = {}) {
   })
   const electron = { app, BrowserWindow: Window, Tray, ipcMain, Menu: { buildFromTemplate: value => value },
     globalShortcut: { register () {}, unregisterAll () {} },
-    screen: { getPrimaryDisplay: () => ({ workArea: { x: 0, y: 0, width: 1920, height: 1080 } }), getCursorScreenPoint: () => ({ x: 10, y: 20 }) },
+    screen: { getPrimaryDisplay: () => ({ workArea: { x: 0, y: 0, width: 1920, height: 1080 } }),
+      getDisplayMatching: () => ({ workArea: { x: 0, y: 0, width: 1920, height: 1080 } }),
+      getCursorScreenPoint: () => ({ x: 10, y: 20 }) },
     nativeImage: { createFromPath: () => ({ isEmpty: () => true }), createEmpty: () => ({}) }, shell: { openExternal () {} } }
   const filename = path.join(__dirname, '../overlay/main.js')
   const context = vm.createContext({ __dirname: path.dirname(filename), URL, setTimeout, clearTimeout,
@@ -143,4 +145,61 @@ test('development preserves state path, page override, GPU workaround and devtoo
   assert.equal(h.windows[0].options.webPreferences.devTools, true)
   assert.equal(h.windows[0].urls[0], 'http://127.0.0.1:8766/hud')
   assert.equal(h.reads[0], path.join(__dirname, '../overlay/state.json'))
+})
+
+test('duel windows fit each side independently, clamp to the screen and retain width while dragging', async () => {
+  const h = harness(true, { ROCO_HUD_MODE: 'duel' }); await h.ready()
+  const [my, enemy, history] = h.windows
+  const fit = (window, height) => h.ipcMain.emit('overlay:content-height', { sender: window.webContents }, height)
+  fit(my, 260.2); fit(enemy, 500)
+  assert.equal(my.bounds.height, 261); assert.equal(enemy.bounds.height, 500)
+  assert.equal(my.bounds.width, 300)
+  fit(my, 10000); assert.equal(my.bounds.height, 1056)
+  fit(my, 180); assert.equal(my.bounds.height, 180)
+  const before = { ...my.bounds }
+  for (const value of [NaN, Infinity, -1, 0, 23, '300', null]) fit(my, value)
+  h.ipcMain.emit('overlay:content-height', { sender: {} }, 500)
+  assert.deepEqual(my.bounds, before)
+  const historyHeight = history.bounds.height
+  fit(history, 40); assert.equal(history.bounds.height, historyHeight)
+  h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'start')
+  fit(my, 400); assert.equal(my.bounds.height, 180)
+  h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'end')
+  assert.equal(my.bounds.height, 400)
+  h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'start')
+  h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'move')
+  h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'end')
+  assert.equal(my.bounds.width, 300); assert.equal(my.bounds.height, 400)
+})
+
+test('preload reports natural panel height after content changes and excludes the history pane', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../overlay/preload.js'), 'utf8')
+  function preload (side) {
+    const listeners = {}, frames = [], messages = [], observers = []
+    const panel = { scrollHeight: 140 }, body = {}
+    class Observer {
+      constructor (callback) { this.callback = callback; observers.push(this) }
+      observe (target) { assert.equal(target, panel) }
+    }
+    vm.runInNewContext(source, {
+      require: () => ({ contextBridge: { exposeInMainWorld () {} }, ipcRenderer: { send: (...args) => messages.push(args) } }),
+      window: { addEventListener: (name, callback) => { listeners[name] = callback } },
+      document: { body, getElementById: () => panel }, location: { pathname: '/hud-duel', search: '?side=' + side },
+      URLSearchParams, ResizeObserver: Observer, MutationObserver: Observer,
+      requestAnimationFrame: callback => frames.push(callback),
+      getComputedStyle: target => target === body ? { paddingTop: '18px', paddingBottom: '6px' } : { borderTopWidth: '1px', borderBottomWidth: '1px' }
+    })
+    listeners.DOMContentLoaded()
+    return { frames, messages, observers, panel }
+  }
+  const h = preload('enemy')
+  h.frames.shift()(); assert.deepEqual(h.messages, [['overlay:content-height', 166]])
+  h.panel.scrollHeight = 400
+  for (const observer of h.observers) observer.callback()
+  assert.equal(h.frames.length, 1)
+  h.frames.shift()(); assert.equal(h.messages.at(-1)[1], 426)
+  h.panel.scrollHeight = 90; h.observers[0].callback(); h.frames.shift()()
+  assert.equal(h.messages.at(-1)[1], 116)
+  h.observers[0].callback(); h.frames.shift()(); assert.equal(h.messages.length, 3)
+  assert.equal(preload('history').frames.length, 0)
 })

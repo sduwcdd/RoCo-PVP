@@ -44,6 +44,52 @@ for (const id of ['start-service','stop-service','capture-start','capture-stop',
 }
 refresh(); setInterval(refresh, 2000)
 
+function renderEnvironment (report) {
+  const analysis = report.analysis
+  const errors = analysis.query_errors
+  const states = { running: '驱动运行中', observed: '已发现相关组件', not_observed: '本次查询未发现', unknown: '状态未确认' }
+  const gameKnown = report.observations?.processes?.status === 'ok'
+  const games = gameKnown ? analysis.game_processes.length ? '运行中' : '本次未发现游戏进程' : '状态未确认'
+  const candidates = analysis.anti_cheat_name_candidates
+  const running = candidates.filter(row => row.State === 'Running' || row.section === 'processes').length
+  const events = analysis.npcap_related_events
+  const failures = events.filter(row => row.failure_or_block_wording).length
+  const time = new Date(report.collected_at)
+  text('environment-time', Number.isFinite(time.getTime()) ? '检查时间 ' + time.toLocaleString('zh-CN') : '检查时间未记录')
+  text('environment-status', errors.length ? '部分查询未完成 · 专门检测能力无法确认' : '查询已完成 · 专门检测能力无法确认', 'waiting')
+  text('environment-summary', 'Npcap ' + (states[analysis.npcap_state] || states.unknown) + ' · 游戏 ' + games + '\n' +
+    '反作弊名称候选 ' + candidates.length + ' 项，其中运行中 ' + running + ' 项\n' +
+    'Npcap 相关系统记录 ' + events.length + ' 条，其中含失败或限制用词 ' + failures + ' 条 · 查询失败 ' + errors.length + ' 项')
+  const sections = { services: '服务', drivers: '驱动', processes: '进程' }
+  const lines = candidates.map(row => (sections[row.section] || row.section) + ' · ' + row.Name + ' · ' + (row.State || '进程已观察到'))
+  for (const event of events) lines.push('\n系统记录 · ' + event.Time + ' · ' + event.ProviderName + ' · ID ' + event.Id + '\n' + event.Message)
+  for (const error of errors) lines.push('\n查询未完成 · ' + error.section + '\n' + error.error)
+  lines.push('\n' + analysis.limits.join('\n'))
+  text('environment-details', lines.join('\n'))
+  $('environment-details-container').open = errors.length > 0
+  $('environment-result').hidden = false
+  $('environment-report').disabled = false
+}
+$('environment-check').addEventListener('click', async () => {
+  $('environment-check').disabled = true
+  $('environment-check').textContent = '正在检查…'
+  $('environment-report').disabled = true
+  $('environment-result').hidden = true
+  text('environment-status', '正在读取本机环境，通常数秒，最长约50秒…', 'waiting')
+  try {
+    const result = await window.rocoApp.invoke('environment-check')
+    if (result.error) throw Error(result.error)
+    renderEnvironment(result.report)
+  } catch (error) { text('environment-status', '检查未完成 · ' + error.message, 'bad') }
+  finally { $('environment-check').disabled = false; $('environment-check').textContent = '检查反抓包' }
+})
+$('environment-report').addEventListener('click', async () => {
+  try {
+    const result = await window.rocoApp.invoke('environment-report')
+    if (result.error) throw Error(result.error)
+  } catch (error) { text('environment-status', '打开报告失败 · ' + error.message, 'bad') }
+})
+
 let updatePolling = false
 async function refreshUpdates () {
   if (updatePolling) return

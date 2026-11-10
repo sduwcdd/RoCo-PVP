@@ -3,7 +3,8 @@ const fs = require('node:fs')
 const path = require('node:path')
 const http = require('node:http')
 const crypto = require('node:crypto')
-const { spawn } = require('node:child_process')
+const { StringDecoder } = require('node:string_decoder')
+const { spawn, execFile } = require('node:child_process')
 
 function readJson(file) { try { return JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '')) } catch (_) { return null } }
 function electronEnv(overrides = {}) {
@@ -35,8 +36,12 @@ function tail(file) {
   try {
     fd = fs.openSync(file, 'r')
     const size = fs.fstatSync(fd).size, buffer = Buffer.alloc(Math.min(size, 8000))
-    fs.readSync(fd, buffer, 0, buffer.length, Math.max(0, size - buffer.length))
-    return buffer.toString('utf8').split(/\r?\n/).slice(-15).join('\n').replace(/(key_(?:hex|ascii)\s*=\s*)\S+/gi, '$1[hidden]')
+    const offset = Math.max(0, size - buffer.length)
+    const bytesRead = fs.readSync(fd, buffer, 0, buffer.length, offset)
+    let start = 0
+    if (offset > 0) while (start < bytesRead && (buffer[start] & 0xc0) === 0x80) start++
+    const text = new StringDecoder('utf8').write(buffer.subarray(start, bytesRead))
+    return text.split(/\r?\n/).slice(-15).join('\n').replace(/(key_(?:hex|ascii)\s*=\s*)\S+/gi, '$1[hidden]')
   } catch (_) { return '' } finally { if (fd != null) fs.closeSync(fd) }
 }
 function fetchJson(url) {
@@ -69,8 +74,12 @@ class DesktopServices {
     if (['错误', '启动失败', '异常'].includes(kind)) this.lastError = value
   }
   watch(child, kind) {
-    child.stdout?.on('data', b => this.log(kind, b.toString('utf8')))
-    child.stderr?.on('data', b => this.log(kind, b.toString('utf8')))
+    for (const stream of [child.stdout, child.stderr]) {
+      if (!stream) continue
+      const decoder = new StringDecoder('utf8')
+      stream.on('data', chunk => this.log(kind, typeof chunk === 'string' ? chunk : decoder.write(chunk)))
+      stream.on('end', () => this.log(kind, decoder.end()))
+    }
     child.on('error', e => this.log('错误', kind + ': ' + e.message))
     child.on('exit', code => this.log(code ? '异常' : '进程退出', kind + ' exit=' + code))
   }
@@ -147,6 +156,38 @@ class DesktopServices {
     return { ok: true }
   }
   receipt() { return readJson(path.join(this.logsDir, 'capture-owner.json')) }
+  checkEnvironment() {
+    if (this.environmentCheckOperation) return this.environmentCheckOperation
+    this.environmentReportPath = null
+    this.environmentCheckOperation = this._checkEnvironment().finally(() => { this.environmentCheckOperation = null })
+    return this.environmentCheckOperation
+  }
+  async _checkEnvironment() {
+    if (!fs.existsSync(this.python)) throw Error('环境检查所需的Python后端缺失')
+    const output = path.join(this.logsDir, 'npcap-environment-' + Date.now() + '.json')
+    const args = this.release ? ['environment-check', '--output', output]
+      : [path.join(this.root, 'scripts', 'check_npcap_environment.py'), '--output', output]
+    this.log('环境检查', '正在读取驱动、服务、进程和系统日志')
+    return new Promise((resolve, reject) => {
+      execFile(this.python, args, { cwd: this.root, windowsHide: true, timeout: 50000, maxBuffer: 256 * 1024,
+        env: { ...process.env, PYTHONUTF8: '1', PYTHONIOENCODING: 'utf-8' } }, error => {
+        if (error && error.code !== 2) {
+          reject(Error(error.killed ? '环境检查超时，请稍后重试' : '环境检查失败：' + error.message))
+          return
+        }
+        const report = readJson(output)
+        const analysis = report?.analysis
+        if (report?.schema !== 'npcap-environment-1' || !analysis ||
+            !['anti_cheat_name_candidates', 'npcap_related_events', 'query_errors', 'game_processes', 'limits'].every(key => Array.isArray(analysis[key]))) {
+          reject(Error('环境检查未返回有效报告，请查看日志'))
+          return
+        }
+        this.environmentReportPath = output
+        this.log('环境检查', analysis.query_errors.length ? '部分查询未完成，具体原因已写入报告' : '查询已完成，专门检测能力仍待核实')
+        resolve({ ok: true, report })
+      })
+    })
+  }
   captureOwned() { return Boolean(this.receipt()?.pid) }
   capture(mode, iface = 'WLAN') {
     if (this.captureOperation) return Promise.reject(Error('正在等待管理员授权或进程启动，请稍候'))
@@ -204,4 +245,4 @@ class DesktopServices {
       hudCount, lastError: this.lastError, logs: this.entries.slice(-35) }
   }
 }
-module.exports = { DesktopServices, fetchJson, readJson, electronEnv, waitForHud }
+module.exports = { DesktopServices, fetchJson, readJson, electronEnv, waitForHud, tail }

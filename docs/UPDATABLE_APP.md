@@ -14,7 +14,7 @@ New-Item -ItemType Directory -Force artifacts/release-tools
 Copy-Item scripts/release_tools.package.json artifacts/release-tools/package.json
 Copy-Item scripts/release_tools.package-lock.json artifacts/release-tools/package-lock.json
 npm --prefix artifacts/release-tools ci
-.venv-release/Scripts/python.exe scripts/build_updatable.py --version 1.1.6 --id <唯一构建ID>
+.venv-release/Scripts/python.exe scripts/build_updatable.py --version 1.1.8 --id <唯一构建ID>
 ```
 
 发布Electron固定45.2.1。新版本同步overlay/package.json、package-lock.json及update_config.json。完整构建包含当前后端、资源和桌面，不修改原工作区或自动上传。

@@ -229,6 +229,31 @@ test("only established talents are yellow; nature is under the name with correct
   assert.doesNotMatch(html,/selection_cases|panel_fit|inferenceRows/);
 });
 
+test("enemy nature shows original directions while corrections remain in the hover",()=>{
+  const api=hud('enemy');
+  const entry={petId:1,name:'精灵',natureName:'开朗',natureUp:'spd',natureDown:'matk',
+    natureOriginalUp:'spd',natureOriginalDown:'matk',moves:[]};
+  const snapshot={runtime:{sessionId:'enemy-nature',enemyTeam:[entry]}};
+  api.render(snapshot);
+  assert.match(api.panel.innerHTML,/>开朗 ↑速度 ↓魔攻<\/span>/);
+  entry.natureRewritten=true;entry.natureUp='hp';entry.natureDown='mdef';
+  api.render(snapshot);
+  assert.match(api.panel.innerHTML,/>原性格 开朗 ↑速度 ↓魔攻<\/span>/);
+  assert.match(api.panel.innerHTML,/原方向 ↑速度 ↓魔攻；修正后 ↑生命 ↓魔防/);
+  entry.natureOverrideKnown={up:false,down:false};entry.natureUp=null;entry.natureDown=null;
+  api.render(snapshot);
+  assert.match(api.panel.innerHTML,/>原性格 开朗 ↑速度 ↓魔攻<\/span>/);
+  assert.match(api.panel.innerHTML,/原性格：开朗 ↑速度 ↓魔攻；后天方向未下发/);
+  entry.configurationInference={known_nature:{up:'hp',down:'pdef'}};api.render(snapshot);
+  assert.match(api.panel.innerHTML,/>原性格 开朗 ↑速度 ↓魔攻<\/span>/);
+  assert.match(api.panel.innerHTML,/当前已确认 ↑生命 ↓物防/);
+  delete entry.natureOriginalUp;delete entry.natureOriginalDown;
+  entry.configurationInference={known_nature:{up:'hp',down:'pdef'}};
+  api.render(snapshot);
+  assert.match(api.panel.innerHTML,/>↑生命 ↓物防<\/span>/);
+  assert.doesNotMatch(api.panel.innerHTML,/>原性格 开朗 ↑生命/);
+});
+
 test("polling preserves the open wish preview and scroll only for the same active pet",()=>{
   const api=hud("enemy"), detail={dataset:{inferenceKey:"wish"},open:true};
   const snapshot={runtime:{sessionId:"test",enemyTeam:[{petId:401,name:"敌方",maxHp:400,currentHp:300}],active:{enemy:{rosterIndex:0}}}};
@@ -480,7 +505,7 @@ test("HUD drag IPC moves only the sender's own window and stops on end or click-
   const start=source.indexOf("let duelWins = []"),end=source.indexOf("function duelBounds",start);
   let listener,cursor={x:20,y:40};const moves=[],sender={};
   const window={isDestroyed:()=>false,webContents:sender,getPosition:()=>[100,200],duelSize:{width:268,height:780},setBounds:b=>moves.push([b.x,b.y,b.width,b.height])};
-  const context={ipcMain:{on:(_name,fn)=>{listener=fn}},screen:{getCursorScreenPoint:()=>cursor}};
+  const context={ipcMain:{on:(name,fn)=>{if(name==='overlay:drag')listener=fn}},screen:{getCursorScreenPoint:()=>cursor}};
   vm.runInNewContext(source.slice(start,end)+"\nglobalThis.setWindows = w => { duelWins=w }; globalThis.through=()=>{duelThrough=true};",context);
   context.setWindows([window]);listener({sender:{}},"start");listener({sender:{}},"move");assert.equal(moves.length,0);
   listener({sender},"start");cursor={x:35,y:37};listener({sender},"move");assert.deepEqual(moves,[[115,197,268,780]]);
