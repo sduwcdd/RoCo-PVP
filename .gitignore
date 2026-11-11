@@ -90,6 +90,10 @@ mobile/ios/DerivedData/
 *.mobileprovision
 *.pcap
 *.pcapng
+artifacts/mobile_protocol_research_*/
+artifacts/mobile_protocol_samples/
+*.rocodiag.zip
+roco-mobile-protocol*.zip
 *.key
 .env
 .env.*

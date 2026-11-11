@@ -42,6 +42,8 @@ function mobile(overlay = false) {
   let device = { state: "running", overlay_allowed: true };
   const status = { capture_running: true, battle_detected: true, battle_round: 3 };
   let offline = false;
+  let heldResponse = null;
+  const delays = [];
   const calls = [];
   const document = {
     body: element(),
@@ -57,24 +59,53 @@ function mobile(overlay = false) {
       status: () => JSON.stringify(device),
       requestOverlay: () => calls.push("overlay"),
       stopCapture: () => calls.push("stop"),
+      exportProtocolSamples: () => calls.push("export"),
+      setMode: mode => { calls.push(mode); status.mode = mode; device.mode = mode; },
     }, addEventListener() {} },
     URLSearchParams, AbortController,
-    setTimeout() { return 1; }, clearTimeout() {},
+    setTimeout(callback, delay) { delays.push(delay); return 1; }, clearTimeout() {},
     fetch: async () => {
       if (offline) throw new Error("engine unavailable");
+      if (heldResponse) { const response = heldResponse; heldResponse = null; return response; }
       return { ok: true, json: async () => status };
     },
   });
   // Keep startup side effects separate while exercising the actual page functions.
   vm.runInContext(script.slice(0, script.indexOf("if(android){try{apps=")), context);
   return {
-    nodes, pages, rounds, calls,
+    nodes, pages, rounds, calls, status, delays,
     run: code => vm.runInContext(code, context),
     pause() { device = { ...device, analysis_state: "paused", analysis_message: "解析已暂停，VPN 转发继续。" }; },
     resume() { device = { ...device, analysis_state: "running" }; },
+    queue(depth) { device = { ...device, transport: { mirror_queue_depth: depth } }; },
+    holdResponse() {
+      let release;
+      heldResponse = new Promise(resolve => {
+        release = () => resolve({
+          ok: true,
+          json: async () => ({
+            mode: "pve", capture_running: true,
+            pve: { ready: true, enemy: { name: "过期响应" } },
+          }),
+        });
+      });
+      return release;
+    },
     disconnect() { offline = true; },
   };
 }
+
+test("protocol sample export is available after game bytes are collected", async () => {
+  const app = mobile();
+  await app.run("refresh()");
+  assert.equal(app.nodes.get("export-samples").disabled, true);
+  app.run("parser.protocol_samples={active:true,game_flows:1,events:3,bytes:321,seconds_remaining:15}");
+  await app.run("refresh()");
+  assert.equal(app.nodes.get("export-samples").disabled, false);
+  assert.match(app.nodes.get("sample-status").textContent, /15秒/);
+  app.nodes.get("export-samples").events.click();
+  assert.deepEqual(app.calls, ["export"]);
+});
 
 test("overlay uses the shared HUD and unloads inactive panels", async () => {
   const app = mobile(true);
@@ -127,6 +158,91 @@ test("a lost parser response hides previous battle data and reports connection f
   assert.equal(app.nodes.get("status-pill").dataset.kind, "error");
   assert.equal(app.pages[1].frames[0].src, undefined);
   assert.equal(app.rounds[0].textContent, "连接中断");
+});
+
+test("PVE mode exposes connection and enemy tabs and unloads all PVP frames", async () => {
+  const app = mobile(true);
+  await app.run("refresh()");
+  await app.run("setMode('pve')");
+  assert.equal(app.run("selected"), "enemy");
+  assert.equal(app.nodes.get("pve-panel").hidden, false);
+  assert.equal(app.nodes.get("enemy-frames").hidden, true);
+  for (const name of ["setup", "enemy"]) assert.equal(app.nodes.get(name + "-tab").hidden, false);
+  for (const name of ["my", "both", "history", "dex"]) assert.equal(app.nodes.get(name + "-tab").hidden, true);
+  for (const page of app.pages) for (const frame of page.frames) assert.equal(frame.src, undefined);
+  app.run("showView('setup')");
+  assert.equal(app.run("selected"), "setup");
+  assert.equal(app.nodes.get("mode-select").value, "pve");
+  app.run("showView('my')");
+  assert.equal(app.run("selected"), "setup");
+  await app.run("setMode('pvp')");
+  assert.equal(app.nodes.get("pve-panel").hidden, true);
+  assert.equal(app.pages[1].frames[0].src, "/hud-duel?side=my");
+  assert.deepEqual(app.calls, ["pve", "pvp"]);
+});
+
+test("PVE renders the current creature facts and polls without loading the HUD", async () => {
+  const app = mobile();
+  app.status.mode = "pve";
+  app.status.pve = { ready: true, generation: 1, enemy: {
+    name: "测试精灵", icon: "/roco-pet-avatars-id/3004.png", natureName: "固执",
+    natureUp: "物攻", natureDown: "魔攻", weightText: "12.5 kg", voiceText: "高音",
+    medals: ["勋章甲（已确认）", "勋章乙（范围提示）"],
+  } };
+  await app.run("refresh()");
+  assert.equal(app.nodes.get("pve-card").hidden, false);
+  assert.equal(app.nodes.get("pve-name").textContent, "测试精灵");
+  assert.equal(app.nodes.get("pve-icon").src, "/roco-pet-avatars-id/3004.png");
+  assert.equal(app.nodes.get("pve-icon").hidden, false);
+  assert.equal(app.nodes.get("pve-nature").textContent, "固执");
+  assert.equal(app.nodes.get("pve-nature-up").textContent, "↑ 物攻");
+  assert.equal(app.nodes.get("pve-nature-down").textContent, "↓ 魔攻");
+  assert.equal(app.nodes.get("pve-weight").textContent, "12.5 kg");
+  assert.equal(app.nodes.get("pve-voice").textContent, "高音");
+  assert.equal(app.nodes.get("pve-medals").textContent, "勋章甲（已确认） · 勋章乙（范围提示）");
+  assert.equal(app.delays.at(-1), 250);
+  assert.ok(app.pages.every(page => page.frames.every(frame => frame.src === undefined)));
+});
+
+test("PVE clears the previous enemy while waiting, disconnected, or changing modes", async () => {
+  const app = mobile();
+  app.status.mode = "pve";
+  app.status.pve = { ready: true, generation: 1, enemy: { name: "上一只精灵", icon: "/assets/pet.png" } };
+  await app.run("refresh()");
+  app.status.pve = { ready: false, generation: 2, enemy: null, notice: "等待下一只精灵" };
+  await app.run("refresh()");
+  assert.equal(app.nodes.get("pve-card").hidden, true);
+  assert.equal(app.nodes.get("pve-name").textContent, "");
+  assert.equal(app.nodes.get("pve-icon").src, undefined);
+  assert.equal(app.nodes.get("pve-notice").textContent, "等待下一只精灵");
+  app.status.pve = { ready: true, generation: 3, enemy: { name: "新的精灵" } };
+  await app.run("refresh()");
+  app.queue(1);
+  await app.run("refresh()");
+  assert.equal(app.nodes.get("pve-name").textContent, "");
+  assert.match(app.nodes.get("pve-notice").textContent, /正在同步/);
+  app.queue(0);
+  await app.run("refresh()");
+  const switching = app.run("setMode('pvp')");
+  assert.equal(app.nodes.get("pve-name").textContent, "");
+  await switching;
+  await app.run("setMode('pve')");
+  await app.run("refresh()");
+  assert.equal(app.nodes.get("pve-name").textContent, "新的精灵");
+  const release = app.holdResponse();
+  const previousRequest = app.run("refresh()");
+  await app.run("refresh()");
+  await app.run("setMode('pvp')");
+  release();
+  await previousRequest;
+  assert.equal(app.nodes.get("pve-name").textContent, "");
+  assert.equal(app.run("mode"), "pvp");
+  await app.run("setMode('pve')");
+  app.disconnect();
+  await app.run("refresh()");
+  assert.equal(app.nodes.get("pve-card").hidden, true);
+  assert.equal(app.nodes.get("pve-name").textContent, "");
+  assert.match(app.nodes.get("pve-notice").textContent, /连接中断/);
 });
 
 test("mobile HUD puts skills ahead of the radar and keeps short panels touch sized", () => {

@@ -344,6 +344,7 @@ def _decode_payload_once(
     *,
     start: int = 0,
     decode_message: MessageDecoder | None = None,
+    preserve_unknown: bool = True,
 ) -> tuple[dict, int, int, int]:
     fields = (schema or {}).get("fields") or []
     by_no = {f["no"]: f for f in fields}
@@ -365,7 +366,8 @@ def _decode_payload_once(
             break
         f = by_no.get(fn)
         if f is None:
-            _add_decoded_value(out, f"field_{fn}", _decode_unknown_value(wt, raw))
+            if preserve_unknown:
+                _add_decoded_value(out, f"field_{fn}", _decode_unknown_value(wt, raw))
             unknown_count += 1
             continue
         field_count += 1
@@ -424,9 +426,11 @@ def decode_payload_once(
     *,
     start: int = 0,
     decode_message: MessageDecoder | None = None,
+    preserve_unknown: bool = True,
 ) -> tuple[dict, int, int, int]:
     return _decode_payload_once(
-        schema, payload, resolve_message, start=start, decode_message=decode_message
+        schema, payload, resolve_message, start=start, decode_message=decode_message,
+        preserve_unknown=preserve_unknown
     )
 
 

@@ -11,6 +11,7 @@ final class RuntimeBridge {
     static volatile int port;
     static volatile String selectedPackage = "", capturePackage = "";
     static volatile String analysisState = "stopped", analysisMessage = "";
+    static volatile String mode = "pvp";
     static volatile org.json.JSONObject transport = new org.json.JSONObject();
     static synchronized int start(Context context) throws IOException {
         if (port != 0) return port;
@@ -22,6 +23,7 @@ final class RuntimeBridge {
         }
         Files.move(temporary.toPath(), new File(root, "resources.rpk").toPath(), StandardCopyOption.REPLACE_EXISTING);
         port = module().callAttr("start", root.getAbsolutePath()).toInt();
+        mode = module().callAttr("get_mode").toString();
         if (port <= 0 || port > 65535) { port = 0; throw new IOException("Invalid local backend port"); }
         return port;
     }
@@ -36,6 +38,7 @@ final class RuntimeBridge {
             result.put("analysis_state", analysisState);
             result.put("analysis_message", analysisMessage);
             result.put("transport", transport);
+            result.put("mode", mode);
             return result.toString();
         } catch (org.json.JSONException e) { throw new IllegalStateException(e); }
     }

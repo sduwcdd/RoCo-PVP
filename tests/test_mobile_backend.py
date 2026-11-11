@@ -83,6 +83,7 @@ class MobileStreamTests(unittest.TestCase):
             mirror.submit("game", "192.0.2.1", 17000, "s2c", b"fixture")
             mirror.close_flow("game")
             mirror.pending.join()
+            self.assertEqual(mirror.queued_bytes, 0)
             self.assertFalse(mirror.flows)
             self.assertEqual(mirror.totals["key_hits"], 1)
             self.assertEqual(mirror.totals["parsed_business_records"], 2)
@@ -125,6 +126,24 @@ class MobileStreamTests(unittest.TestCase):
         self.assertFalse(mirror.accepting)
         self.assertIn("queue full", mirror.error)
         self.assertFalse(mirror.close_flow("one"))
+
+    def test_byte_budget_and_small_fragment_bursts_are_both_bounded(self):
+        mirror = OrderedMirror(None, None, lambda: None, byte_capacity=4)
+        self.assertTrue(mirror.submit("one", "192.0.2.1", 17000, "c2s", b"abc"))
+        self.assertEqual(mirror.queued_bytes, 3)
+        self.assertFalse(mirror.submit("one", "192.0.2.1", 17000, "c2s", b"de"))
+        self.assertIn("byte budget", mirror.error)
+        self.assertEqual(mirror.queued_bytes, 3)
+        burst = OrderedMirror(None, None, lambda: None)
+        for _ in range(460):
+            self.assertTrue(burst.submit("one", "192.0.2.1", 17000, "c2s", b"x"))
+        self.assertEqual(burst.queued_bytes, 460)
+
+    def test_mobile_payload_policy_keeps_battle_and_unknown_messages(self):
+        self.assertTrue(roco_mobile.should_decode_mobile_payload(0x1316))
+        self.assertFalse(roco_mobile.should_decode_mobile_payload(0x0102))
+        with patch("rkpp_analysis.lookup_opcode", return_value={}):
+            self.assertTrue(roco_mobile.should_decode_mobile_payload(0xFFFF))
 
     def test_signed_java_bytes_keep_the_original_octets(self):
         mirror = OrderedMirror(None, None, lambda: None)
@@ -171,6 +190,7 @@ class MobileStreamTests(unittest.TestCase):
         try:
             with patch.object(roco_mobile, "_backend", backend):
                 self.assertTrue(roco_mobile.pause_analysis("decoder overloaded"))
+                self.assertTrue(roco_mobile.pause_analysis("generic queue rejection"))
                 self.assertTrue(cleared.wait(2))
                 self.assertFalse(mirror.accepting)
                 self.assertTrue(backend.capture_running)

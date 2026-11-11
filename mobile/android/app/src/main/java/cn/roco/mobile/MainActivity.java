@@ -29,6 +29,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.OutputStream;
 
 public final class MainActivity extends Activity {
     private WebView web;
@@ -168,6 +171,39 @@ public final class MainActivity extends Activity {
             if (result == RESULT_OK) startVpn();
             else RuntimeBridge.status("denied", "VPN 授权未通过，请允许连接后重试。");
         }
+        if (request == 11 && result == RESULT_OK && data != null && data.getData() != null)
+            exportProtocolSamples(data.getData());
+    }
+
+    private void exportProtocolSamples(Uri destination) {
+        new Thread(() -> {
+            String message;
+            try {
+                JSONObject nativeState = new JSONObject(RuntimeBridge.status());
+                nativeState.put("device_model", Build.MANUFACTURER + " " + Build.MODEL);
+                nativeState.put("android_version", Build.VERSION.RELEASE);
+                nativeState.put("android_sdk", Build.VERSION.SDK_INT);
+                if (!RuntimeBridge.selectedPackage.isEmpty()) {
+                    android.content.pm.PackageInfo game = getPackageManager().getPackageInfo(RuntimeBridge.selectedPackage, 0);
+                    nativeState.put("game_version", game.versionName);
+                    nativeState.put("game_version_code", game.getLongVersionCode());
+                }
+                String path = RuntimeBridge.module().callAttr("export_protocol_samples", nativeState.toString()).toString();
+                File archive = new File(path).getCanonicalFile();
+                File allowed = new File(getFilesDir(), "protocol-samples/roco-mobile-protocol.zip").getCanonicalFile();
+                if (!archive.equals(allowed)) throw new java.io.IOException("Unexpected sample path");
+                try (FileInputStream input = new FileInputStream(archive);
+                     OutputStream output = getContentResolver().openOutputStream(destination, "wt")) {
+                    if (output == null) throw new java.io.IOException("无法写入所选位置");
+                    byte[] buffer = new byte[65536];
+                    int size;
+                    while ((size = input.read(buffer)) != -1) output.write(buffer, 0, size);
+                }
+                message = "协议样本已保存，请通过私密渠道提供给开发者";
+            } catch (Exception error) { message = "导出失败：" + error.getMessage(); }
+            String feedback = message;
+            ui.post(() -> { if (!isDestroyed()) Toast.makeText(this, feedback, Toast.LENGTH_LONG).show(); });
+        }, "roco-sample-export").start();
     }
 
     @Override protected void onResume() {
@@ -198,6 +234,17 @@ public final class MainActivity extends Activity {
         @JavascriptInterface public void requestOverlay() { ui.post(MainActivity.this::overlayPermission); }
         @JavascriptInterface public void launchGame(String name) { ui.post(() -> MainActivity.this.launchGame(name)); }
         @JavascriptInterface public String listApps() { return appList; }
+        @JavascriptInterface public void setMode(String mode) {
+            if (!"pvp".equals(mode) && !"pve".equals(mode)) return;
+            RuntimeBridge.mode = RuntimeBridge.module().callAttr("set_mode", mode).toString();
+        }
+        @JavascriptInterface public void exportProtocolSamples() {
+            ui.post(() -> {
+                Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE)
+                    .setType("application/zip").putExtra(Intent.EXTRA_TITLE, "roco-mobile-protocol.zip");
+                startActivityForResult(intent, 11);
+            });
+        }
         @JavascriptInterface public void copyDiagnostics(String text) {
             if (text == null || text.length() > 65536) return;
             ui.post(() -> {

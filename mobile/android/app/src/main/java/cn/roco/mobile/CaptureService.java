@@ -29,13 +29,14 @@ public final class CaptureService extends VpnService {
     private final AtomicLong ignoredCount = new AtomicLong();
     private LocalSocks socks;
     private ParcelFileDescriptor tunnel;
-    private volatile boolean active, stopping, analysisPaused;
+    private volatile boolean active, stopping, analysisPaused, sampleActive;
     private String finalState = "stopped", finalMessage = "采集已停止";
     private View overlay;
     private WebView overlayWeb;
     private WindowManager windows;
     private WindowManager.LayoutParams overlayLayout;
     private boolean overlayExpanded;
+    private PvpOverlay pvpOverlay;
     public static final String STOP = "cn.roco.mobile.STOP", OVERLAY = "cn.roco.mobile.OVERLAY";
 
     @Override public int onStartCommand(Intent intent, int flags, int startId) {
@@ -66,18 +67,23 @@ public final class CaptureService extends VpnService {
             RuntimeBridge.analysisMessage = "";
             RuntimeBridge.start(this);
             RuntimeBridge.module().callAttr("reset_capture");
+            sampleActive = true;
             TProxyService.TProxyIsRunning(); // Load and check JNI before establishing the VPN.
             String password = UUID.randomUUID().toString();
             socks = new LocalSocks(new LocalSocks.Protector() {
                 public boolean tcp(Socket socket) { boolean ok = protect(socket); if (!ok) shutdown("error", "TCP 出口保护失败"); return ok; }
                 public boolean udp(DatagramSocket socket) { boolean ok = protect(socket); if (!ok) shutdown("error", "UDP 出口保护失败"); return ok; }
             }, new LocalSocks.Mirror() {
-                public boolean interested(String id) { return !analysisPaused && !ignoredFlows.contains(id); }
+                public boolean interested(String id) { return (!analysisPaused || sampleActive) && !ignoredFlows.contains(id); }
                 public void data(String id, String host, int port, String direction, byte[] bytes) {
                     enqueue(() -> {
                         if (ignoredFlows.contains(id)) return;
                         if (!RuntimeBridge.module().callAttr("feed", id, host, port, direction, bytes).toBoolean()) {
-                            pauseAnalysis("解析队列拒绝数据；本次观测不完整，请停止采集后重新连接");
+                            try {
+                                org.json.JSONObject state = new org.json.JSONObject(RuntimeBridge.module().callAttr("status").toString());
+                                String reason = state.optString("error");
+                                pauseAnalysis(reason.isEmpty() ? "解析数据不完整，请复制连接诊断" : reason);
+                            } catch (org.json.JSONException error) { pauseAnalysis("解析状态格式异常，请复制连接诊断"); }
                             return;
                         }
                         String protocol = RuntimeBridge.module().callAttr("flow_protocol", id).toString();
@@ -91,7 +97,7 @@ public final class CaptureService extends VpnService {
                         ignoredFlows.remove(id);
                     });
                 }
-                public void failed(String message) { pauseAnalysis(message); }
+                public void failed(String message) { sampleGap(message); pauseAnalysis(message); }
             }, password);
             File config = new File(getFilesDir(), "tunnel.yml");
             String yaml = "tunnel:\n  name: roco\n  mtu: 1500\n  ipv4: 198.18.0.1\n  ipv6: 'fd00:726f:636f::1'\n" +
@@ -121,9 +127,18 @@ public final class CaptureService extends VpnService {
         } catch (Throwable e) { shutdown("error", e.getClass().getSimpleName() + ": " + e.getMessage()); }
     }
     private void enqueue(Runnable task) {
-        if (stopping || analysisPaused) return;
-        try { mirror.execute(() -> { if (!stopping && !analysisPaused) try { task.run(); } catch (Exception e) { pauseAnalysis("解析失败: " + e.getMessage()); } }); }
-        catch (RejectedExecutionException e) { pauseAnalysis("镜像队列已满；本次观测不完整，请停止采集后重新连接"); }
+        if (stopping) return;
+        try { mirror.execute(() -> { if (!stopping) try { task.run(); } catch (Exception e) { sampleGap("镜像异常: " + e.getMessage()); pauseAnalysis("解析失败: " + e.getMessage()); } }); }
+        catch (RejectedExecutionException e) {
+            sampleGap("镜像队列已满，协议样本存在缺口");
+            pauseAnalysis("镜像队列已满；本次观测不完整，请停止采集后重新连接");
+        }
+    }
+    private void sampleGap(String reason) {
+        if (!sampleActive) return;
+        sampleActive = false;
+        try { lifecycle.execute(() -> RuntimeBridge.module().callAttr("sample_gap", reason)); }
+        catch (RejectedExecutionException ignored) { }
     }
     private synchronized void pauseAnalysis(String reason) {
         if (stopping || analysisPaused) return;
@@ -131,7 +146,6 @@ public final class CaptureService extends VpnService {
         RuntimeBridge.analysisState = "paused";
         RuntimeBridge.analysisMessage = reason;
         RuntimeBridge.message = "分析已暂停，游戏网络继续转发";
-        mirror.getQueue().clear();
         // Only the parser stops. Tearing down a healthy VPN also breaks the game's TCP sessions.
         try { mirror.execute(() -> {
             try { RuntimeBridge.module().callAttr("pause_analysis", reason); }
@@ -141,14 +155,22 @@ public final class CaptureService extends VpnService {
     private void watch() {
         if (!active || stopping) return;
         updateTransport();
+        refreshOverlayMode();
         if (!TProxyService.TProxyIsRunning() || socks == null || !socks.isRunning()) { shutdown("error", "转发器退出；已关闭 VPN 恢复直接联网"); return; }
         enqueue(() -> {
             try {
                 org.json.JSONObject state = new org.json.JSONObject(RuntimeBridge.module().callAttr("status").toString());
-                if (!state.optBoolean("decoder_ready", false)) pauseAnalysis("解析器已停止: " + state.optString("error"));
+                String mode = state.optString("mode", "pvp");
+                if (!mode.equals(RuntimeBridge.mode)) {
+                    RuntimeBridge.mode = mode;
+                    ui.post(this::refreshOverlayMode);
+                }
+                org.json.JSONObject samples = state.optJSONObject("protocol_samples");
+                sampleActive = samples != null && samples.optBoolean("active", false);
+                if (!state.optBoolean("decoder_ready", false)) pauseAnalysis(state.optString("error", "解析器已停止"));
             } catch (org.json.JSONException e) { pauseAnalysis("解析器状态格式错误"); }
         });
-        ui.postDelayed(this::watch, 1000);
+        ui.postDelayed(this::watch, "pve".equals(RuntimeBridge.mode) ? 250 : 1000);
     }
     private void updateTransport() {
         if (socks == null) return;
@@ -194,7 +216,17 @@ public final class CaptureService extends VpnService {
         return Math.round(value * getResources().getDisplayMetrics().density);
     }
     private void showOverlay() {
-        if (!active || overlay != null || !Settings.canDrawOverlays(this)) return;
+        if (!active || overlay != null || pvpOverlay != null || !Settings.canDrawOverlays(this)) return;
+        if ("pvp".equals(RuntimeBridge.mode)) {
+            try {
+                pvpOverlay = new PvpOverlay(this);
+                pvpOverlay.show();
+            } catch (RuntimeException error) {
+                pvpOverlay = null;
+                RuntimeBridge.message = "转发已运行，PVP悬浮窗创建失败: " + error.getMessage();
+            }
+            return;
+        }
         windows = getSystemService(WindowManager.class);
         LinearLayout panel = new LinearLayout(this);
         panel.setOrientation(LinearLayout.VERTICAL);
@@ -316,6 +348,10 @@ public final class CaptureService extends VpnService {
         }
     }
     private void removeOverlay() {
+        if (pvpOverlay != null) {
+            pvpOverlay.close();
+            pvpOverlay = null;
+        }
         if (overlay == null) return;
         windows.removeView(overlay);
         overlay = null;
@@ -327,9 +363,16 @@ public final class CaptureService extends VpnService {
         @JavascriptInterface public String status() { return RuntimeBridge.status(); }
         @JavascriptInterface public String listApps() { return "[]"; }
     }
+    private void refreshOverlayMode() {
+        if ((pvpOverlay != null && !"pvp".equals(RuntimeBridge.mode)) ||
+            (overlay != null && "pvp".equals(RuntimeBridge.mode))) {
+            removeOverlay();
+            showOverlay();
+        }
+    }
     @Override public void onConfigurationChanged(android.content.res.Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        if (overlay != null) { removeOverlay(); showOverlay(); }
+        if (overlay != null || pvpOverlay != null) { removeOverlay(); showOverlay(); }
     }
     @Override public void onRevoke() { shutdown("revoked", "系统已撤销 VPN 授权；采集停止"); }
     @Override public void onDestroy() {

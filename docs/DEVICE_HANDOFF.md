@@ -23,7 +23,11 @@ Windows1.1.8包含退出清理、中文日志编码修复、敌方原始性格�
 
 Android内部版已推进至0.3，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
 
+本地开发现为Android 0.10，已兼容华为Android 12回传的0x73上行前缀，139帧离线解析及两个编译模式验证通过。保留有界协议样本采集、原生文件导出和`scripts/replay_mobile_protocol.py`离线回放入口。默认PVP保留完整战况，新增只显示当前敌方身份、性格方向、体重、声音及奖牌提示的PVE模式。修复上行消息反复读取协议表的耗时，同份0.7用户记录的本机编译后端回放从13.45秒降至PVP4.29秒、PVE1.07秒，PVP最终战况相同，PVE元数据与完整解码相同。手机实际延迟和PVP 6v6仍待实测，尚未发布新GitHub版本。0.8延用既有内测签名。私密样本禁止纳入源码同步，步骤见mobile/README.md及docs/verification/android-pve-performance-20261111.md。
+
 ## 安卓0.3继续开发
+
+Android 0.9新增`PvpOverlay.java`三个独立原生窗口及`mobile/shared/pvp-panel.html`透明HUD包装页，横屏按左上我方、右上敌方、顶部居中历史布局。标题点按收放、拖动移动，收起卸载页面并缩小真实窗口边界。PVE沿用0.8界面。新版APK仅本机生成，未发布GitHub；真机触摸与横屏效果待验证。构建身份为`mobile-20261111-internal-09`。
 
 下载入口为 https://github.com/sduwcdd/RoCo-PVP/releases/tag/android-v0.3.0-internal ，包含APK、SHA-256校验文件和验证记录。此版本标为预发布，Windows更新使用稳定版本。
 

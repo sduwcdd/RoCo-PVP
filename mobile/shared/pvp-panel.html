@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PVP 对战面板</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 100%; height: 100%; background: transparent; overflow: hidden; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; background: transparent; }
+</style>
+</head>
+<body>
+<iframe id="hud" title="PVP 对战面板"></iframe>
+<script>
+(function () {
+  "use strict";
+  var requested = new URLSearchParams(location.search).get("side");
+  var side = ["my", "enemy", "history"].indexOf(requested) >= 0 ? requested : "my";
+  var frame = document.getElementById("hud");
+  var panel = null, frameWindow = null, resizeObserver = null, mutationObserver = null;
+  var timer = null, lastHeight = 0, disposed = false;
+  var compactStyle = `
+    html, body { width: 100%; height: 100%; margin: 0; padding: 0 !important; background: transparent !important; overflow: hidden; }
+    body { font-size: 12px !important; }
+    #panel, #panel[data-side="history"] { flex: 0 0 auto; min-height: 0; max-height: 100%;
+      width: 100%; padding: 6px; gap: 4px; box-shadow: none; overflow-y: auto;
+      scrollbar-width: thin; scrollbar-color: #c7d9e060 transparent; }
+    #panel::-webkit-scrollbar { width: 3px; }
+    #panel::-webkit-scrollbar-thumb { background: #c7d9e060; border-radius: 3px; }
+    #panel::-webkit-scrollbar-track { background: transparent; }
+    .head { grid-template-columns: 32px minmax(0, 1fr); gap: 5px; }
+    .avatar, .bench img { width: 32px; height: 32px; }
+    .name { font-size: 14px; }
+    .lv, .hp-text, .hp-text b, .hp-text .hp-pct, .active-energy, .trait-damage { font-size: 12px; }
+    .skill { grid-template-columns: 26px minmax(0, 1fr) auto 32px; padding: 3px 4px; gap: 3px; }
+    .skill-icon { width: 26px; height: 26px; }
+    .skill-name { font-size: 13px; }
+    .skill-meta, .skill-dmg, .radar-note, .dmg-note, .pool-source, .skill-tag,
+    .tag-cute, .tag-stage, .bench-energy, .bench-hp { font-size: 12px; }
+    button, select, input, .skill-query summary { min-height: 32px; font-size: 12px; touch-action: manipulation; }
+    button { min-width: 32px; }
+    .target-toggle { width: 32px; }
+    .skill-query summary { display: flex; align-items: center; }
+    .history-head { background: rgba(33, 60, 56, .9); }
+    .offline { padding: 10px 6px; }
+  `;
+
+  function reportHeight() {
+    timer = null;
+    if (disposed || !panel) return;
+    var style = frameWindow.getComputedStyle(panel);
+    var height = Math.ceil(panel.scrollHeight + parseFloat(style.borderTopWidth) +
+      parseFloat(style.borderBottomWidth));
+    if (!Number.isFinite(height) || height <= 0 || height === lastHeight) return;
+    try {
+      if (window.Android && window.Android.setContentHeight) {
+        window.Android.setContentHeight(height);
+        lastHeight = height;
+      }
+    } catch (_) {}
+  }
+
+  function scheduleFit() {
+    if (!disposed && timer === null) timer = setTimeout(reportHeight, 32);
+  }
+
+  function detachFrame() {
+    if (timer !== null) clearTimeout(timer);
+    timer = null;
+    if (resizeObserver) resizeObserver.disconnect();
+    if (mutationObserver) mutationObserver.disconnect();
+    if (frameWindow) {
+      frameWindow.removeEventListener("resize", scheduleFit);
+    }
+    resizeObserver = mutationObserver = null;
+    panel = frameWindow = null;
+  }
+
+  function attachFrame() {
+    detachFrame();
+    if (disposed) return;
+    var doc = frame.contentDocument;
+    panel = doc && doc.getElementById("panel");
+    if (!panel) return;
+    frameWindow = frame.contentWindow;
+    var viewport = doc.querySelector('meta[name="viewport"]');
+    if (!viewport) { viewport = doc.createElement("meta"); viewport.name = "viewport"; doc.head.appendChild(viewport); }
+    viewport.content = "width=device-width,initial-scale=1";
+    var style = doc.createElement("style");
+    style.textContent = compactStyle;
+    doc.head.appendChild(style);
+    lastHeight = 0;
+    resizeObserver = new ResizeObserver(scheduleFit);
+    resizeObserver.observe(panel);
+    mutationObserver = new MutationObserver(scheduleFit);
+    mutationObserver.observe(panel, { childList: true, subtree: true, attributes: true, characterData: true });
+    frameWindow.addEventListener("resize", scheduleFit);
+    scheduleFit();
+  }
+
+  frame.addEventListener("load", attachFrame);
+  window.addEventListener("resize", scheduleFit);
+  window.addEventListener("pagehide", function () {
+    disposed = true;
+    detachFrame();
+    frame.removeEventListener("load", attachFrame);
+    window.removeEventListener("resize", scheduleFit);
+  });
+  frame.title = side === "history" ? "本局回合记录" : side === "enemy" ? "敌方对战面板" : "我方对战面板";
+  frame.src = "/hud-duel?side=" + side;
+})();
+</script>
+</body>
+</html>

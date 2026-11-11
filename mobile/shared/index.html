@@ -41,6 +41,8 @@ button,.quick-actions button,.diagnostic summary,.diagnostic button,.empty-state
 @media(max-height:450px){.topbar{height:45px;padding-top:3px;padding-bottom:3px}.brand img{height:30px;width:30px}.brand h1{font-size:14px}.brand small{display:none}.dock{min-height:43px;padding-top:2px;padding-bottom:3px}.dock button{flex-direction:row;min-height:36px;font-size:11px;gap:6px}.dock button:after{display:none}.dock svg{width:17px;height:17px}.view-header{height:32px}.setup{padding-top:13px}.hero{padding:17px 20px}.hero h2{font-size:24px}}
 @media(max-height:450px){.dock button{min-height:44px}.connection-banner{padding:5px 12px}.connection-banner p{font-size:12px}.hero{padding:0 2px 6px}.hero h2{font-size:21px}.overlay .connection-banner{padding:3px 10px}.empty-state{justify-content:flex-start}.empty-state .empty-icon{display:none}}
 @media(prefers-reduced-motion:no-preference){.hero{animation:enter .3s ease-out}.page.active .frame-area{animation:enter .18s ease-out}@keyframes enter{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}}
+.mode-control{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:13px 0;font-size:13px;font-weight:700}.mode-control select{font:inherit;min-height:44px;border:1px solid #cbd4be;border-radius:10px;padding:7px 12px;color:var(--green);background:var(--paper)}
+.pve-panel{flex:1;min-height:0;overflow:auto;padding:0 16px 16px}.pve-panel .mode-control{margin:8px 0 12px}.pve-card{border:1px solid var(--line);border-radius:16px;background:var(--paper);padding:18px;max-width:600px;margin:0 auto}.pve-identity{display:flex;align-items:center;gap:14px}.pve-identity img{width:66px;height:66px;object-fit:contain}.pve-identity h2{margin:0;font-size:23px;overflow-wrap:anywhere}.pve-facts{margin:16px 0 0;display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;font-size:15px;line-height:1.6}.pve-facts dt{color:#7c847a}.pve-facts dd{margin:0;overflow-wrap:anywhere}.pve-nature-up{color:#a45338}.pve-nature-down{color:#3f718c}.pve-notice{margin:24px auto;max-width:360px;text-align:center;font-size:14px;line-height:1.8;color:#64745d}.pve .overlay-round{display:none}.overlay.pve #setup-tab{display:flex}
 </style>
 </head>
 <body>
@@ -69,6 +71,7 @@ button,.quick-actions button,.diagnostic summary,.diagnostic button,.empty-state
  <section id="setup-page" class="page setup active" role="tabpanel" aria-labelledby="setup-tab"><div class="setup-inner">
   <div class="hero"><div class="eyebrow">ROCO / BATTLE DESK</div><h2>连接游戏，进入对战。</h2><p>我方状态、对手已观测信息与回合记录，随战斗更新。</p></div>
   <div class="action-area"><div class="game-column">
+   <label class="mode-control" for="mode-select">助手模式<select id="mode-select"><option value="pvp">PVP 对战</option><option value="pve">PVE 敌方信息</option></select></label>
    <div class="section-label"><h3>连接游戏</h3><small>01 / CONNECT</small></div>
    <button id="game-picker" class="game-card" type="button" aria-haspopup="dialog"><span class="game-icon"><svg><use href="#i-play"/></svg></span><span class="game-info"><strong id="game-name">选择游戏应用</strong><small id="game-package">仅采集你选中的游戏</small></span><svg><use href="#i-down"/></svg></button>
    <button id="start" class="start-button" type="button" disabled><svg><use id="start-symbol" href="#i-arrow"/></svg><span id="start-label">开始采集</span></button>
@@ -78,11 +81,11 @@ button,.quick-actions button,.diagnostic summary,.diagnostic button,.empty-state
    <div class="section-label"><h3>连接进度</h3><small id="version">本机处理</small></div>
    <div id="connection" class="connection" aria-live="polite"><div class="steps"><div id="step-capture" class="step"><span>1</span>网络采集</div><div id="step-key" class="step"><span>2</span>游戏握手</div><div id="step-battle" class="step"><span>3</span>对局识别</div></div><h4 id="connection-title">正在准备本机引擎</h4><p id="connection-detail">首次载入需要验证图鉴与规则，请稍候。</p><div class="metrics"><div class="metric"><b id="metric-bytes">—</b><span>转发数据</span></div><div class="metric"><b id="metric-protocol">—</b><span>游戏协议帧</span></div><div class="metric"><b id="metric-decoded">—</b><span>已解码记录</span></div></div></div>
   </div></div>
-  <details class="diagnostic"><summary>连接诊断</summary><pre id="diagnostic-text">等待读取连接状态</pre><button id="copy" type="button">复制诊断信息</button></details>
+  <details class="diagnostic"><summary>连接诊断</summary><pre id="diagnostic-text">等待读取连接状态</pre><button id="copy" type="button">复制诊断信息</button> <button id="export-samples" type="button" hidden>导出协议样本</button><p id="sample-status" class="help-note"></p><p class="help-note">内部版自动保留最长3分钟、最多16 MB的游戏协议样本。分析失败后继续采集15秒。导出文件含会话密钥和账号流量，请通过私密渠道提供；重新开始采集会替换本机上一份样本。</p></details>
   <div id="build-note" class="build-note">内部测试版 · 数据在本机处理</div>
  </div></section>
  <section id="my-page" class="page view" role="tabpanel" aria-labelledby="my-tab"><div class="view-header"><h2>我方阵容</h2><small class="round-label">等待对局</small><button class="pip" type="button" hidden><svg><use href="#i-window"/></svg>小窗</button></div><div class="frame-area"><iframe title="我方对战面板" data-url="/hud-duel?side=my" hidden></iframe><div class="empty-state"><div class="empty-icon"><img src="/assets/roco/pet-avatars/3004.png" alt=""></div><h3>等待精灵入场</h3><p class="empty-message">连接游戏后进入对战，精灵与技能信息会自动显示。</p><button type="button" data-go="setup">查看连接进度</button></div></div></section>
- <section id="enemy-page" class="page view" role="tabpanel" aria-labelledby="enemy-tab"><div class="view-header"><h2>对方阵容</h2><small class="round-label">等待对局</small></div><div class="frame-area"><iframe title="对方对战面板" data-url="/hud-duel?side=enemy" hidden></iframe><div class="empty-state"><div class="empty-icon"><svg style="width:31px;height:31px;color:#819475"><use href="#i-target"/></svg></div><h3>等待对手出现</h3><p class="empty-message">已观测技能与属性估计会随战斗更新。</p><button type="button" data-go="setup">查看连接进度</button></div></div></section>
+ <section id="enemy-page" class="page view" role="tabpanel" aria-labelledby="enemy-tab"><div id="enemy-header" class="view-header"><h2>对方阵容</h2><small class="round-label">等待对局</small></div><div id="enemy-frames" class="frame-area"><iframe title="对方对战面板" data-url="/hud-duel?side=enemy" hidden></iframe><div class="empty-state"><div class="empty-icon"><svg style="width:31px;height:31px;color:#819475"><use href="#i-target"/></svg></div><h3>等待对手出现</h3><p class="empty-message">已观测技能与属性估计会随战斗更新。</p><button type="button" data-go="setup">查看连接进度</button></div></div><div id="pve-panel" class="pve-panel" hidden><label class="mode-control" for="pve-mode-select">助手模式<select id="pve-mode-select"><option value="pvp">PVP 对战</option><option value="pve">PVE 敌方信息</option></select></label><p id="pve-notice" class="pve-notice" role="status">等待当前敌方精灵</p><article id="pve-card" class="pve-card" hidden><div class="pve-identity"><img id="pve-icon" alt="" hidden><h2 id="pve-name"></h2></div><dl class="pve-facts"><dt>性格</dt><dd><span id="pve-nature"></span> <span id="pve-nature-up" class="pve-nature-up"></span> <span id="pve-nature-down" class="pve-nature-down"></span></dd><dt>体重</dt><dd id="pve-weight"></dd><dt>声音</dt><dd id="pve-voice"></dd><dt>勋章</dt><dd id="pve-medals"></dd></dl></article></div></section>
  <section id="both-page" class="page view dual" role="tabpanel" aria-labelledby="both-tab"><div class="view-header"><h2>双方对照</h2><small class="round-label">等待对局</small></div><div class="frame-area"><iframe title="我方对战面板" data-url="/hud-duel?side=my" hidden></iframe><iframe title="对方对战面板" data-url="/hud-duel?side=enemy" hidden></iframe><div class="empty-state"><h3>等待对局识别</h3><p class="empty-message">请先连接游戏。</p></div></div></section>
  <section id="history-page" class="page view" role="tabpanel" aria-labelledby="history-tab"><div class="view-header"><h2>本局记录</h2><small class="round-label">等待对局</small></div><div class="frame-area"><iframe title="本局回合记录" data-url="/hud-duel?side=history" hidden></iframe><div class="empty-state"><div class="empty-icon"><svg style="width:31px;height:31px;color:#819475"><use href="#i-history"/></svg></div><h3>这一局，从这里开始</h3><p class="empty-message">双方出招、换人和实际伤害会按回合记录在这里。</p><button type="button" data-go="setup">查看连接进度</button></div></div></section>
  <section id="dex-page" class="page view" role="tabpanel" aria-labelledby="dex-tab"><div class="view-header"><h2>精灵图鉴</h2><small>当前本机数据</small></div><div class="frame-area"><iframe title="精灵图鉴" data-url="/dex"></iframe></div></section>
@@ -104,22 +107,60 @@ const overlay=new URLSearchParams(location.search).get('overlay')==='1';
 const ios=window.webkit&&window.webkit.messageHandlers&&window.webkit.messageHandlers.rocoNative;
 const pages=[...document.querySelectorAll('.page')];
 let selected=overlay?'my':'setup',apps=[],selectedPackage='',parser={},native={},lastDiagnostic={},hasBattle=false,toastTimer;
+let mode='pvp',pendingMode=null,modeRevision=0,refreshController=null;
 if(overlay)document.body.classList.add('overlay');
 function toast(text){$('toast').textContent=text;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3000)}
 function bytes(value){if(!Number.isFinite(value))return '—';if(value<1024)return value+' B';if(value<1048576)return (value/1024).toFixed(1)+' KB';return (value/1048576).toFixed(1)+' MB'}
 function safeJSON(text){try{return JSON.parse(text)}catch{return {}}}
 function showView(name){
- if(overlay&&name==='setup')return;
+ if(mode==='pve'&&!['setup','enemy'].includes(name))return;
+ if(overlay&&mode==='pvp'&&name==='setup')return;
  selected=name;pages.forEach(page=>page.classList.toggle('active',page.id===name+'-page'));
  document.querySelectorAll('[data-view]').forEach(tab=>tab.setAttribute('aria-selected',String(tab.dataset.view===name)));
  updateFrames();
 }
 function updateFrames(){
- pages.forEach(page=>{const active=page.id===selected+'-page';const show=active&&(hasBattle||selected==='dex');
+ pages.forEach(page=>{const active=page.id===selected+'-page';const show=mode==='pvp'&&active&&(hasBattle||selected==='dex');
   page.querySelectorAll('iframe').forEach(frame=>{frame.hidden=!show;if(show&&!frame.hasAttribute('src'))frame.src=frame.dataset.url;if(!show&&frame.hasAttribute('src'))frame.removeAttribute('src')});
   const empty=page.querySelector('.empty-state');if(empty)empty.hidden=hasBattle;
  });
 }
+function clearPve(notice='等待当前敌方精灵'){
+ $('pve-card').hidden=true;$('pve-notice').hidden=false;$('pve-notice').textContent=notice;
+ ['name','nature','nature-up','nature-down','weight','voice','medals'].forEach(name=>$('pve-'+name).textContent='');
+ $('pve-icon').hidden=true;$('pve-icon').removeAttribute('src');
+}
+function applyMode(next){
+ if(next!=='pvp'&&next!=='pve')return;
+ const changed=next!==mode;mode=next;document.body.classList.toggle('pve',mode==='pve');
+ $('mode-select').value=mode;$('pve-mode-select').value=mode;
+ $('pve-panel').hidden=mode!=='pve';$('enemy-frames').hidden=mode==='pve';$('enemy-header').hidden=mode==='pve';
+ document.querySelectorAll('[data-view]').forEach(tab=>tab.hidden=mode==='pve'&&!['setup','enemy'].includes(tab.dataset.view));
+ if(changed){hasBattle=false;clearPve();showView(mode==='pve'?'enemy':overlay?'my':'setup')}
+ updateFrames();
+}
+function renderPve(data){
+ const enemy=data&&data.ready&&data.enemy;
+ if(!enemy||pendingMode){clearPve(pendingMode?'正在切换模式…':data&&data.notice||'等待当前敌方精灵');return}
+ $('pve-name').textContent=enemy.name||'未知精灵';$('pve-nature').textContent=enemy.natureName||'未识别';
+ $('pve-nature-up').textContent=enemy.natureUp?'↑ '+enemy.natureUp:'';$('pve-nature-down').textContent=enemy.natureDown?'↓ '+enemy.natureDown:'';
+ $('pve-weight').textContent=enemy.weightText||'未识别';$('pve-voice').textContent=enemy.voiceText||'未识别';
+ $('pve-medals').textContent=Array.isArray(enemy.medals)&&enemy.medals.length?enemy.medals.join(' · '):'暂无提示';
+ const icon=typeof enemy.icon==='string'&&/^\/(assets|data|roco-pet-avatars-id)\//.test(enemy.icon);
+ $('pve-icon').hidden=!icon;if(icon)$('pve-icon').src=enemy.icon;else $('pve-icon').removeAttribute('src');
+ $('pve-notice').hidden=true;$('pve-card').hidden=false;
+}
+async function setMode(next){
+ if(!['pvp','pve'].includes(next)||pendingMode||next===mode)return;
+ pendingMode=next;modeRevision++;if(refreshController)refreshController.abort();applyMode(next);clearPve('正在切换模式…');
+ $('mode-select').disabled=true;$('pve-mode-select').disabled=true;
+ try{
+  if(android&&typeof android.setMode==='function')android.setMode(next);
+  else{const response=await fetch('/api/mobile/mode',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:next})});if(!response.ok)throw Error('HTTP '+response.status)}
+ }catch{toast('模式切换未完成，正在重新读取状态')}
+ finally{pendingMode=null;$('mode-select').disabled=false;$('pve-mode-select').disabled=false;await refresh()}
+}
+['mode-select','pve-mode-select'].forEach(id=>$(id).addEventListener('change',event=>setMode(event.target.value)));
 document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>showView(button.dataset.view)));
 document.querySelectorAll('[data-go]').forEach(button=>{button.hidden=overlay;button.addEventListener('click',()=>showView(button.dataset.go))});
 document.querySelectorAll('iframe').forEach(frame=>frame.addEventListener('load',()=>{
@@ -152,12 +193,15 @@ $('start').addEventListener('click',()=>{try{if(native.state==='running')android
 $('overlay').addEventListener('click',()=>{try{android.requestOverlay()}catch{toast('无法打开悬浮窗设置')}});
 $('launch').addEventListener('click',()=>{try{android.launchGame(selectedPackage)}catch{toast('无法打开所选游戏')}});
 $('copy').addEventListener('click',async()=>{const text=JSON.stringify(lastDiagnostic,null,2);try{if(android&&android.copyDiagnostics)android.copyDiagnostics(text);else await navigator.clipboard.writeText(text);toast('诊断已复制，可粘贴反馈')}catch{toast('复制未完成，请在诊断区查看状态')}});
+$('export-samples').hidden=!(android&&android.exportProtocolSamples);
+$('export-samples').addEventListener('click',()=>{try{android.exportProtocolSamples();toast('请选择保存位置，文件含会话密钥，请私密提供')}catch{toast('导出未完成，请查看连接诊断')}});
 if(ios)document.querySelectorAll('.pip').forEach(button=>{button.hidden=false;button.addEventListener('click',()=>ios.postMessage({action:'pip'}))});
 function describeConnection(data,device){
  const protocols=data.protocol_counts||{},tcp=((device.transport||{}).tcp_connections)||0;
  if(device.state==='running'&&device.analysis_state==='paused')return {title:'分析已暂停 · 游戏转发继续运行',detail:device.analysis_message||'网络转发仍在运行，战况分析已暂停。可返回助手查看连接诊断。',kind:'paused'};
  if(data.error||['error','denied','revoked'].includes(device.state))return {title:'连接需要处理',detail:data.error||device.message||'请检查系统授权。',kind:'error'};
  if(!data.capture_running)return {title:device.state==='starting'?'正在建立本机采集':'准备好了，连接游戏吧',detail:device.state==='starting'?'等待系统完成网络授权。':'选择洛克王国：世界，开启采集后重新打开游戏。',kind:'idle'};
+ if(mode==='pve')return {title:data.pve&&data.pve.ready?'当前敌方精灵已识别':'等待当前敌方精灵',detail:data.pve&&data.pve.notice||'进入 PVE 对战后，当前敌方精灵信息会自动更新。',kind:data.pve&&data.pve.ready?'ready':'waiting'};
  if(data.battle_detected)return {title:data.battle_finished?'本局对战已结束':'对局已识别',detail:data.battle_finished?'可以切换查看本局精灵状态和回合记录。':'双方状态与技能信息正在自动更新，点击下方「我方」或「对方」查看。',kind:'ready'};
  if(data.active_key_flows)return {title:'握手已识别，等待对局',detail:'进入游戏对战后，精灵和技能信息会自动显示。',kind:'ready'};
  if(data.missing_key_records)return {title:'收到游戏流量，缺少登录握手',detail:'请完全退出游戏，再从助手打开游戏。仅切换到后台或直接进入对战，可能收不到握手。',kind:'waiting'};
@@ -173,20 +217,23 @@ function renderConnection(message){
 }
 let refreshTimer=null,refreshBusy=false;
 async function refresh(){
- if(refreshBusy)return;refreshBusy=true;clearTimeout(refreshTimer);const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),5000);
+ if(refreshBusy)return;refreshBusy=true;clearTimeout(refreshTimer);const revision=modeRevision,controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),5000);refreshController=controller;
  try{
   if(android)native=safeJSON(android.status());
-  const response=await fetch('/api/mobile/status',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);parser=await response.json();
+  const response=await fetch('/api/mobile/status',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();if(revision!==modeRevision||pendingMode)return;parser=data;
+  applyMode(parser.mode||native.mode||mode);
   if(native.capture_package&&['starting','running','stopping'].includes(native.state)&&apps.some(app=>app.package===native.capture_package))selectedPackage=native.capture_package;
   const message=describeConnection(parser,native);renderConnection(message);
   const complete=[Boolean(parser.capture_running),Boolean(parser.active_key_flows),Boolean(parser.battle_detected)];['capture','key','battle'].forEach((name,index)=>{const step=$('step-'+name);step.dataset.complete=String(complete[index]);step.dataset.current=String(!complete[index]&&(index===0||complete[index-1]))});
   const transport=native.transport||{};$('metric-bytes').textContent=bytes(typeof transport.tcp_bytes_up==='number'?transport.tcp_bytes_up+transport.tcp_bytes_down:parser.bytes_received);$('metric-protocol').textContent=String(parser.protocol_frames||0);$('metric-decoded').textContent=String(parser.schema_business_records||0);
-  const detected=Boolean(parser.battle_detected)&&message.kind!=='paused',changed=hasBattle!==detected;hasBattle=detected;if(changed)updateFrames();
+  const detected=mode==='pvp'&&Boolean(parser.battle_detected)&&message.kind!=='paused',changed=hasBattle!==detected;hasBattle=detected;if(changed)updateFrames();
+  if(mode==='pve'){if(transport.mirror_queue_depth>0)clearPve('正在同步当前精灵…');else if(message.kind==='error'||message.kind==='paused')clearPve(message.detail);else renderPve(parser.pve)}
   document.querySelectorAll('.round-label').forEach(label=>label.textContent=hasBattle?(parser.battle_finished?'本局结束':'第 '+(parser.battle_round??'—')+' 回合'):message.kind==='paused'?'分析暂停':'等待对局');
   lastDiagnostic={native,parser};$('diagnostic-text').textContent=JSON.stringify(lastDiagnostic,null,2);$('build-note').textContent=(parser.build_id||'内部测试版')+' · 数据在本机处理';
+  const samples=parser.protocol_samples||{};$('export-samples').disabled=!(samples.game_flows>0);$('sample-status').textContent=samples.events?(samples.active?'协议样本采集中，剩余约'+samples.seconds_remaining+'秒':'协议样本已保留，可导出')+' · '+samples.events+'段 · '+bytes(samples.bytes)+(samples.error?' · 采集异常，请同时提供诊断':''):'';
   renderControls();
- }catch(error){const paused=native.state==='running'&&native.analysis_state==='paused';renderConnection(paused?describeConnection({},native):{title:'本机引擎暂未响应',detail:'正在重试连接。若持续出现，请重新打开助手并复制诊断信息。',kind:'error'});hasBattle=false;updateFrames();document.querySelectorAll('.round-label').forEach(label=>label.textContent=paused?'分析暂停':'连接中断');lastDiagnostic={native,error:String(error)};$('diagnostic-text').textContent=JSON.stringify(lastDiagnostic,null,2);renderControls()}
- finally{clearTimeout(timeout);refreshBusy=false;refreshTimer=setTimeout(refresh,1500)}
+ }catch(error){if(revision!==modeRevision)return;clearPve('连接中断，正在重试…');const paused=native.state==='running'&&native.analysis_state==='paused';renderConnection(paused?describeConnection({},native):{title:'本机引擎暂未响应',detail:'正在重试连接。若持续出现，请重新打开助手并复制诊断信息。',kind:'error'});hasBattle=false;updateFrames();document.querySelectorAll('.round-label').forEach(label=>label.textContent=paused?'分析暂停':'连接中断');lastDiagnostic={native,error:String(error)};$('diagnostic-text').textContent=JSON.stringify(lastDiagnostic,null,2);renderControls()}
+ finally{clearTimeout(timeout);refreshController=null;refreshBusy=false;refreshTimer=setTimeout(refresh,mode==='pve'?250:1500)}
 }
 if(android){try{apps=safeJSON(android.listApps());if(!Array.isArray(apps))apps=[];native=safeJSON(android.status());let saved=native.selected_package;try{saved=saved||localStorage.getItem('roco.mobile.package.v2')}catch{}const game=apps.find(app=>app.label.includes('洛克')&&app.label.includes('世界'));if(apps.some(app=>app.package===saved))selectedPackage=saved;else if(game)selectedPackage=game.package}catch{toast('暂时无法读取游戏列表')}}
 fetch('/api/status').then(response=>response.json()).then(data=>{$('version').textContent=(data.counts||{}).forms?data.counts.forms+' 形态 · 本机图鉴':'本机图鉴'}).catch(()=>{});

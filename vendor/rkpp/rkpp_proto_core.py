@@ -606,7 +606,18 @@ def _empty_root() -> dict[str, Any]:
     return {"fields": [], "consumed": 0, "clean": True}
 
 
-def _build_payload_root(opcode: int, payload: bytes) -> tuple[dict[str, Any], str, dict[str, Any] | None]:
+def _build_payload_root(opcode: int, payload: bytes, common=None) -> tuple[dict[str, Any], str, dict[str, Any] | None]:
+    payload_filter = common.get("_payload_filter") if common else None
+    if payload_filter is not None and not payload_filter(opcode):
+        root = parse_proto_message(payload, max_depth=0)
+        special = parse_special_payload(opcode, payload)
+        if special:
+            root = {"fields": [], "consumed": len(payload), "clean": True}
+        root["clean"] = root["clean"] and all(
+            0 < f["field"] <= 0x1FFFFFFF and (f["wire"] != 0 or f["value"] < 1 << 64)
+            for f in root["fields"])
+        root["_deferred"] = True
+        return root, special[0] if special else "protobuf", special[1] if special else None
     special = parse_special_payload(opcode, payload)
     if special:
         return {"fields": [], "consumed": len(payload), "clean": True}, special[0], special[1]
@@ -655,7 +666,7 @@ def _parse_record_v14(body: bytes, common: dict[str, Any]) -> dict[str, Any] | N
         opcode = session_id & 0xFFFF
         normalized = False
 
-    root, payload_format, special_payload = _build_payload_root(opcode, payload)
+    root, payload_format, special_payload = _build_payload_root(opcode, payload, common)
     return {
         **common,
         "record_type": "business",
@@ -696,7 +707,7 @@ def _parse_record_live_s2c(body: bytes, common: dict[str, Any]) -> dict[str, Any
     raw_payload = body[10:]
     trailer_len = tsf4g_trailer_len(raw_payload)
     payload = strip_tsf4g_padding(raw_payload)
-    root, payload_format, special_payload = _build_payload_root(opcode, payload)
+    root, payload_format, special_payload = _build_payload_root(opcode, payload, common)
     return {
         **common,
         "record_type": "business",
@@ -729,7 +740,7 @@ def _parse_record_live_c2s(body: bytes, common: dict[str, Any]) -> dict[str, Any
     raw_payload = body[14:]
     trailer_len = tsf4g_trailer_len(raw_payload)
     payload = strip_tsf4g_padding(raw_payload)
-    root, payload_format, special_payload = _build_payload_root(opcode, payload)
+    root, payload_format, special_payload = _build_payload_root(opcode, payload, common)
     return {
         **common,
         "record_type": "business",
@@ -767,7 +778,7 @@ def _parse_record_live_c2s_alt_7ca2(body: bytes, common: dict[str, Any]) -> dict
     raw_payload = body[14:]
     trailer_len = tsf4g_trailer_len(raw_payload)
     payload = strip_tsf4g_padding(raw_payload)
-    root, payload_format, special_payload = _build_payload_root(opcode, payload)
+    root, payload_format, special_payload = _build_payload_root(opcode, payload, common)
     return {
         **common,
         "record_type": "business",
@@ -875,7 +886,7 @@ def _ivdecoder_c2s_1428_schema_matches(opcode: int, payload: bytes) -> bool:
         info = schema_decoder.lookup_opcode(opcode)
         if info.get("direction") != "c2s":
             return False
-        messages = Data.get_proto_schema().get("messages", {})
+        messages = schema_decoder._ensure_loaded()[1].get("messages", {})
         name = info.get("decode_as") or info.get("full_name") or info.get("name")
         schema = schema_decoder._codec_schema_for_message(messages, name)
         if schema is None:
@@ -912,7 +923,7 @@ def _parse_ivdecoder_c2s_e688(body: bytes, common: dict[str, Any],
     if not opcode:
         return None
     payload = inner[14:-trailer_len]
-    root, payload_format, special_payload = _build_payload_root(opcode, payload)
+    root, payload_format, special_payload = _build_payload_root(opcode, payload, common)
     if not root.get("clean") or root.get("consumed") != len(payload):
         return None
     marker = inner[8:10].hex()
@@ -935,6 +946,110 @@ def _parse_ivdecoder_c2s_e688(body: bytes, common: dict[str, Any],
     }
 
 
+def _schema_wire_complete(schema, payload, resolve_message, depth=0, *, allow_unknown=False):
+    import rkpp_codec as codec
+
+    if depth > RKPP_PROTO_PARSE_MAX_DEPTH:
+        return False
+    parsed = parse_proto_message(payload, max_depth=0)
+    if not parsed["clean"] or parsed["consumed"] != len(payload):
+        return False
+    fields = {field["no"]: field for field in schema.get("fields", [])}
+    try:
+        for entry in parsed["fields"]:
+            if not 0 < entry["field"] <= 0x1FFFFFFF or (entry["wire"] == 0 and entry["value"] >= 1 << 64):
+                return False
+            field = fields.get(entry["field"])
+            if field is None:
+                if allow_unknown:
+                    continue
+                return False
+            kind = codec.strip_generic(field["type"])
+            expected_wire = codec.wire_type_for(field["type"])
+            wire = entry["wire"]
+            if wire != expected_wire:
+                if field.get("repeated") and wire == 2 and expected_wire in (0, 1, 5):
+                    codec._decode_packed_values(field, bytes.fromhex(entry["raw_hex"]))
+                    continue
+                return False
+            if kind == "string":
+                bytes.fromhex(entry["raw_hex"]).decode("utf-8")
+            elif kind == "message":
+                nested = resolve_message(field.get("ref"))
+                if nested is None or not _schema_wire_complete(
+                        nested, bytes.fromhex(entry["raw_hex"]), resolve_message, depth + 1,
+                        allow_unknown=allow_unknown):
+                    return False
+    except (KeyError, TypeError, ValueError):
+        return False
+    return True
+
+
+def _parse_ivdecoder_c2s_schema(body, common, trailer_len):
+    # Unknown layouts need full schema agreement; the confirmed mobile signature
+    # also permits empty requests and preserves wire-valid, unrecognized fields.
+    if (common["direction"] != "c2s" or trailer_len <= 0 or len(body) < 32
+            or body[4:6] != b"\x55\xaa" or body[10:12] != b"\x00\x00"
+            or int.from_bytes(body[:4], "big") != common["seq"]
+            or int.from_bytes(body[6:10], "big") != len(body) - trailer_len - 4):
+        return None
+    inner = body[16:]
+    marker = inner[8:10]
+    if len(inner) - trailer_len < 14:
+        return None
+    payload = inner[14:-trailer_len]
+    import rkpp_analysis as decoder
+    import rkpp_codec as codec
+
+    raw_opcode = int.from_bytes(inner[4:8], "big")
+    opcode = raw_opcode & 0xFFFF
+    # Real phone samples confirm the prefix and opcode echo. The outer word at
+    # [12:16] varies even for empty requests; preserve it without assigning meaning.
+    if not opcode:
+        return None
+    # User-exported Android samples contain prefixes 0x73 and 0x78. Neither is
+    # a device-brand identifier; preserve the raw word and require its opcode echo.
+    mobile = raw_opcode >> 16 in {0x73, 0x78} and marker == opcode.to_bytes(2, "big")
+    if not mobile and marker in (b"\xe6\x88", b"\x14\x28"):
+        return None
+    if not mobile and int.from_bytes(body[12:16], "big") not in {0, 1}:
+        return None
+    if not payload and not mobile:
+        return None
+    info = decoder.lookup_opcode(opcode)
+    if info.get("direction") != "c2s" and not mobile:
+        return None
+    messages = decoder._ensure_loaded()[1].get("messages", {})
+    resolve = lambda name: decoder._codec_schema_for_message(messages, name)
+    schema = resolve(info.get("decode_as") or info.get("full_name") or info.get("name"))
+    complete = schema is not None and _schema_wire_complete(schema, payload, resolve)
+    if not complete and not (mobile and _schema_wire_complete(
+            schema or {"fields": []}, payload, resolve, allow_unknown=True)):
+        return None
+    if not mobile:
+        _, consumed, matched, unknown = codec.decode_payload_once(schema, payload, resolve)
+        if consumed != len(payload) or not matched or unknown:
+            return None
+    root, payload_format, special_payload = _build_payload_root(opcode, payload, common)
+    return {
+        **common, "record_type": "business", "transport_kind": "tgcp_data",
+        "transport_layout": "tgcp_4013_mobile_c2s" if mobile else "tgcp_4013_live_c2s_" + marker.hex(),
+        "transport_seq": int.from_bytes(inner[:4], "big"),
+        "opcode": opcode, "opcode_hex": f"0x{opcode:04X}",
+        "raw_opcode": raw_opcode, "raw_opcode_hex": f"0x{raw_opcode:08X}",
+        "opcode_normalized": raw_opcode != opcode,
+        "magic": int.from_bytes(marker, "big"), "magic_hex": "0x" + marker.hex().upper(),
+        "req_seq": int.from_bytes(inner[10:14], "big"),
+        "payload_len": len(payload), "payload_trailer_len": trailer_len,
+        "payload_hex": payload.hex(), "payload_format": payload_format,
+        "special_payload": special_payload, "root": root,
+        "mobile_header_word": int.from_bytes(body[12:16], "big") if mobile else None,
+        "schema_validated_envelope": complete,
+        "schema_direction_mismatch": bool(mobile and info.get("direction") not in (None, "c2s")),
+        "payload_schema_status": "complete" if complete else "unknown_fields" if schema else "schema_missing",
+    }
+
+
 def _parse_ivdecoder_record(body: bytes, common: dict[str, Any]) -> dict[str, Any] | None:
     if len(body) < 32:
         return None
@@ -945,12 +1060,17 @@ def _parse_ivdecoder_record(body: bytes, common: dict[str, Any]) -> dict[str, An
     if record is None:
         record = _parse_ivdecoder_c2s_e688(body, common, trailer_len)
     if record is None:
+        record = _parse_ivdecoder_c2s_schema(body, common, trailer_len)
+    if record is None:
         return None
+    record.pop("_payload_filter", None)
+    if record.get("root", {}).get("_deferred"):
+        record["payload_deferred"] = True
     record.update(_ivdecoder_meta(body, trailer_len))
     return record
 
 
-def parse_record(packet: dict[str, Any]) -> dict[str, Any] | None:
+def parse_record(packet: dict[str, Any], *, payload_filter=None) -> dict[str, Any] | None:
     if packet.get("cmd") != 0x4013 or not packet.get("decrypted_body_hex"):
         return None
     if packet.get("decrypt_mode") != "Ivdecoder":
@@ -960,6 +1080,8 @@ def parse_record(packet: dict[str, Any]) -> dict[str, Any] | None:
         "seq": packet["seq"], "direction": packet["direction"],
         "first_frame": packet.get("first_frame"), "first_time": packet.get("first_time"),
     }
+    if payload_filter is not None:
+        common["_payload_filter"] = payload_filter
     record = _parse_ivdecoder_record(body, common)
     if record is None and common["direction"] == "c2s" and len(body) >= 8:
         logger.debug(

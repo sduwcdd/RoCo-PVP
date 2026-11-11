@@ -724,7 +724,8 @@ class RkppAnalyzer:
                 self.parsed_business_records += 1
                 self._consecutive_errors = 0  # 成功则重置连续错误计数
                 self._capture_integrity_note_decode(
-                    flow, be21, failed=not bool(parsed_info.get("record", {}).get("_schema_decoded")))
+                    flow, be21, failed=not bool(parsed_info.get("record", {}).get("_schema_decoded")
+                                                or parsed_info.get("record", {}).get("payload_deferred")))
                 return trial_row, parsed_info
             last_error = f"parse_unparsed:{RKPP_IVDECODER_MODE}:{trial_row.get('decrypt_status')}"
         except Exception as exc:
@@ -837,6 +838,12 @@ class RkppAnalyzer:
         )
         return {"record": record, "inner": None, "summary_kind": "tgcp_control", "summary_obj": summary}
 
+    def _should_decode_payload(self, opcode: int) -> bool:
+        return True
+
+    def _should_build_payload_tree(self, opcode: int) -> bool:
+        return self._should_decode_payload(opcode)
+
     def _parse_decrypted(self, row: dict[str, Any], flow: FlowState, be21: Be21Packet,
                          packet, frame_no: int | None, plain: bytes) -> dict[str, Any] | None:
         pkt_dict = {
@@ -847,12 +854,22 @@ class RkppAnalyzer:
             "decrypt_mode": row.get("decrypt_mode", ""),
             "decrypted_body_hex": plain.hex(),
         }
-        record = proto.parse_record(pkt_dict)
+        record = proto.parse_record(pkt_dict, payload_filter=self._should_build_payload_tree)
         if record is None:
             row["decrypt_status"] = "ok_unparsed"
             return None
 
         self._update_row_from_record(row, record)
+
+        if record.get("payload_deferred") and self._should_decode_payload(record["opcode"]):
+            record.pop("payload_deferred")
+        if record.get("payload_deferred"):
+            if not record["root"].get("clean"):
+                row["decrypt_status"] = "parse_error:invalid_deferred_wire"
+                return None
+            row["decode_source"] = "deferred_nonbattle"
+            return {"record": record, "inner": None,
+                    "summary_kind": "deferred_nonbattle", "summary_obj": {}}
 
         # schema-driven 解码（Mode 2 增强）
         self._update_opcode_metadata(row, record)

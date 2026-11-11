@@ -21,6 +21,13 @@ MAX_CHUNK = 65536
 MAX_FLOWS = 128
 MAX_STREAM_BUFFERS = 32 * 1024 * 1024
 MAX_PROBE_BYTES = 65536
+MAX_PENDING_BYTES = 8 * 1024 * 1024
+
+
+def should_decode_mobile_payload(opcode):
+    from lab.live_battle import _is_battle_code
+    from rkpp_analysis import lookup_opcode
+    return _is_battle_code(f"0x{opcode:04X}") or not lookup_opcode(opcode)
 
 
 class ProtocolProbe:
@@ -65,7 +72,8 @@ class ProtocolProbe:
 
 
 _COUNT_FIELDS = ("packet_count", "key_hits", "decoded_rows", "business_frames_seen",
-                 "parsed_business_records", "missing_key_records", "unknown_nonbattle_records")
+                 "parsed_business_records", "missing_key_records", "unknown_nonbattle_records",
+                 "deferred_nonbattle_records", "metadata_business_records")
 
 
 def _flow_counts(entry):
@@ -76,9 +84,11 @@ def _flow_counts(entry):
 class OrderedMirror:
     """One parser and key lifetime per native TCP flow; bounded fail-closed input."""
 
-    def __init__(self, make_flow, publish, clear, *, capacity=128):
+    def __init__(self, make_flow, publish, clear, *, capacity=1024, byte_capacity=MAX_PENDING_BYTES):
         self.make_flow, self.publish, self.clear = make_flow, publish, clear
         self.pending = queue.Queue(maxsize=capacity)
+        self.byte_capacity = byte_capacity
+        self.queued_bytes = 0
         self.flows = {}
         self.error = ""
         self.accepting = True
@@ -110,8 +120,14 @@ class OrderedMirror:
         with self._lock:
             if not self.accepting:
                 return False
+            size = len(item[-1]) if item[-1] is not None else 0
+            if self.queued_bytes + size > self.byte_capacity:
+                self.error = "Decoder byte budget exceeded; analysis paused, export protocol samples"
+                self.accepting = False
+                return False
             try:
                 self.pending.put_nowait(item)
+                self.queued_bytes += size
                 return True
             except queue.Full:
                 self.error = "Decoder queue full; analysis paused, reconnect before retrying"
@@ -120,7 +136,8 @@ class OrderedMirror:
 
     def fail(self, message):
         with self._lock:
-            self.error = str(message)
+            if not self.error:
+                self.error = str(message)
             self.accepting = False
 
     def _run(self):
@@ -176,6 +193,8 @@ class OrderedMirror:
             except Exception as exc:
                 self.fail(f"{type(exc).__name__}: {exc}")
             finally:
+                with self._lock:
+                    self.queued_bytes -= len(item[-1]) if item[-1] is not None else 0
                 self.pending.task_done()
 
     def stop(self):
@@ -197,6 +216,7 @@ class _Backend:
         files_root.mkdir(parents=True, exist_ok=True)
         self.files_root = files_root
         self.release_id = BUILD_ID
+        self.source_hashes = dict(SOURCE_HASHES)
         release_paths.configure_mobile(files_root, {"release_id": BUILD_ID, "source_hash": SOURCE_HASH})
         raw = (files_root / "resources.rpk").read_bytes()
         if hashlib.sha256(raw).hexdigest() != RESOURCE_HASH:
@@ -216,7 +236,7 @@ class _Backend:
         # Source-tree tests and compiled staging use the same vendor modules.
         sys.path.insert(0, str(self.root / "vendor/rkpp"))
         from lab import server, live_battle
-        from lab.catalog_store import load_catalog
+        from lab.catalog_store import runtime_catalog
         from lab.ruleset import BwikiRuleset
         from rkpp_analyzer import RkppAnalyzer
         from rkpp_io import build_opcode_summary
@@ -228,14 +248,27 @@ class _Backend:
         self.live_battle = live_battle
         self.capture_running = False
         self.native_error = ""
+        settings = files_root / "mobile-mode.json"
+        try:
+            self.mode = json.loads(settings.read_text("utf8")).get("mode", "pvp")
+        except (OSError, ValueError, AttributeError):
+            self.mode = "pvp"
+        if self.mode not in ("pvp", "pve"):
+            self.mode = "pvp"
+        self.mode_generation = 0
+        self.applied_mode_generation = 0
+        self.mode_lock = threading.Lock()
+        self.pvp_ready = False
+        self.samples = None
         self.decode_issues = deque(maxlen=12)
         self.battle_flow = None
         self.wire_commands = Counter()
         self.ack_extra_sizes = Counter()
         self.unknown_opcodes = Counter()
-        catalog, self.catalog_hash, _ = load_catalog()
+        catalog, self.catalog_hash, _ = runtime_catalog()
         self.rules = BwikiRuleset(catalog)
-        self.rules.programs()  # Verify the published rule release before HTTP readiness.
+        from lab.mobile_pve import PveMetadata
+        self.pve = PveMetadata(catalog)
         backend = self
 
         class Feed(live_battle.LiveBattleFeed):
@@ -262,6 +295,12 @@ class _Backend:
         self.previous_feed = live_battle._SHARED_FEED
         live_battle._SHARED_FEED = self.feed
         server._start_live_battle_feed()
+        original_publish = self.feed.on_snapshot
+        self.poll_generation = 0
+        def publish_snapshot(payload, state):
+            if self.mode == "pvp" and self.poll_generation == self.mode_generation and original_publish:
+                original_publish(payload, state)
+        self.feed.on_snapshot = publish_snapshot
 
         class QuietLog:
             def log(self, message):
@@ -272,6 +311,16 @@ class _Backend:
                 self.flow_id = flow_id
 
             def handle(self, index, row, info):
+                if not live_battle._is_battle_code(row.get("opcode_hex") or row.get("opcode")):
+                    return
+                backend.apply_mode()
+                if info.get("discard_mode_event"):
+                    return
+                if backend.mode == "pve":
+                    backend.battle_flow = self.flow_id
+                    record = info.get("record") or {}
+                    backend.pve.handle(record["opcode"], record.get("_decoded") or {})
+                    return
                 summary = build_opcode_summary(row, parse_content=True)
                 if summary is not None:
                     if live_battle._is_battle_code(summary.get("opencode")):
@@ -282,6 +331,31 @@ class _Backend:
             missing_key_records = 0
             unknown_nonbattle_records = 0
             hard_decode_errors = 0
+            deferred_nonbattle_records = 0
+            metadata_business_records = 0
+
+            def _should_decode_payload(self, opcode):
+                if backend.mode == "pve":
+                    return live_battle._is_battle_code(f"0x{opcode:04X}")
+                return should_decode_mobile_payload(opcode)
+
+            def _should_build_payload_tree(self, opcode):
+                return backend.mode != "pve" and self._should_decode_payload(opcode)
+
+            def _decode_schema_payload(self, record, seq):
+                if backend.mode != "pve" or not live_battle._is_battle_code(record.get("opcode_hex")):
+                    return super()._decode_schema_payload(record, seq)
+                if record["opcode"] == 0x1316:
+                    backend.pve.reset("正在识别当前精灵")
+                decoded = backend.pve.decode(record)
+                record.update(_decoded=decoded, _schema_found=True, _schema_decoded=True,
+                              _decode_source="pve_metadata", payload_metadata_only=True)
+                return decoded, True
+
+            def _summarize(self, record, inner):
+                if backend.mode == "pve":
+                    return "pve_metadata", {}
+                return super()._summarize(record, inner)
 
             def _write_key_outputs(self, key, flow_id):
                 return Path("memory-only"), Path("memory-only")
@@ -292,7 +366,10 @@ class _Backend:
                     backend.wire_commands[command] += 1
                 if be21.cmd == 0x1002:
                     backend.ack_extra_sizes[str(len(be21.header_extra))] += 1
+                generation = backend.mode_generation
                 row, info = super()._decode_be21_core(flow, be21, packet, frame_no)
+                if info is not None and generation != backend.mode_generation:
+                    info["discard_mode_event"] = True
                 status = str(row.get("decrypt_status", ""))
                 if status == "no_key":
                     self.missing_key_records += 1
@@ -301,9 +378,17 @@ class _Backend:
                     self.hard_decode_errors += 1
                 elif info is not None and be21.cmd == 0x4013:
                     record = info.get("record") or {}
-                    if not (record.get("_schema_decoded") and record.get("_schema_found")):
-                        if live_battle._is_battle_code(row.get("opcode_hex") or row.get("opcode")):
-                            backend.record_decode_issue(row, be21, category="battle_schema_missing")
+                    if record.get("payload_deferred"):
+                        self.deferred_nonbattle_records += 1
+                        return row, info
+                    if record.get("payload_metadata_only"):
+                        self.metadata_business_records += 1
+                    battle = live_battle._is_battle_code(row.get("opcode_hex") or row.get("opcode"))
+                    incomplete = record.get("payload_schema_status") == "unknown_fields"
+                    if not (record.get("_schema_decoded") and record.get("_schema_found")) or (battle and incomplete):
+                        if battle:
+                            category = "battle_schema_incomplete" if incomplete else "battle_schema_missing"
+                            backend.record_decode_issue(row, be21, category=category)
                             self.hard_decode_errors += 1
                         else:
                             self.unknown_nonbattle_records += 1
@@ -363,9 +448,26 @@ class _Backend:
                 if any(state.gap_skipped or state.dropped_pending_segments or state.trimmed_buffers for state in states):
                     raise RuntimeError("Ordered stream parser discarded bytes; capture stopped")
 
-        self.mirror = OrderedMirror(Flow, self.feed.poll_once, self.clear)
+        self.mirror = OrderedMirror(Flow, self.publish, self.clear)
 
         class Handler(server.Handler):
+            def do_POST(self):
+                if urlparse(self.path).path != "/api/mobile/mode":
+                    return super().do_POST()
+                if not self.local_request_allowed():
+                    return
+                try:
+                    length = int(self.headers.get("Content-Length", "0"))
+                    if not 0 < length <= 128:
+                        raise ValueError("模式请求大小无效")
+                    data = json.loads(self.rfile.read(length))
+                    if not isinstance(data, dict) or set(data) != {"mode"}:
+                        raise ValueError("模式请求格式无效")
+                    backend.set_mode(data["mode"])
+                    self.send_body(200, {"mode": backend.mode})
+                except (ValueError, TypeError) as error:
+                    self.send_body(400, {"error": str(error)})
+
             def do_GET(self):
                 path = urlparse(self.path).path
                 if path in ("/mobile", "/mobile/", "/api/mobile/status", "/mobile/state") or path.startswith("/mobile/"):
@@ -391,11 +493,52 @@ class _Backend:
         if flow_id is not None and flow_id != self.battle_flow:
             return
         self.battle_flow = None
+        if getattr(self, "pve", None):
+            self.pve.reset()
         self.feed.tracker.reset()
         self.feed.rows.clear()
         self.feed._published_snapshot = None
         with self.server_module.HUD_LOCK:
             self.server_module.HUD_SNAPSHOT.update(at=time.time(), payload=None, source="ordered-stream")
+
+    def set_mode(self, mode):
+        if mode not in ("pvp", "pve"):
+            raise ValueError("请选择PVP或PVE模式")
+        with self.mode_lock:
+            if mode == self.mode:
+                return
+            target = self.files_root / "mobile-mode.json"
+            temporary = target.with_suffix(".tmp")
+            temporary.write_text(json.dumps({"mode": mode}), encoding="utf8")
+            temporary.replace(target)
+            self.mode = mode
+            self.mode_generation += 1
+            self.pve.reset("模式已切换，请进入下一场对局")
+            self.feed._published_snapshot = None
+            with self.server_module.HUD_LOCK:
+                self.server_module.HUD_SNAPSHOT.update(at=time.time(), payload=None, source="ordered-stream")
+
+    def apply_mode(self):
+        if self.applied_mode_generation != self.mode_generation:
+            self.feed.tracker.reset()
+            self.feed.rows.clear()
+            self.feed._published_snapshot = None
+            self.applied_mode_generation = self.mode_generation
+
+    def publish(self):
+        self.apply_mode()
+        if self.mode != "pvp":
+            return
+        if self.feed.rows and not self.pvp_ready:
+            self.rules.programs()
+            self.pvp_ready = True
+        generation = self.mode_generation
+        self.poll_generation = generation
+        self.feed.poll_once()
+        if generation != self.mode_generation:
+            self.feed._published_snapshot = None
+            with self.server_module.HUD_LOCK:
+                self.server_module.HUD_SNAPSHOT.update(at=time.time(), payload=None, source="ordered-stream")
 
     def record_decode_issue(self, row, packet, category=None):
         # Keep structural diagnostics only. Ciphertext, plaintext and handshake keys stay in memory.
@@ -417,11 +560,21 @@ class _Backend:
                          outer_magic_matches=plain[4:6] == b"\x55\xaa",
                          outer_length_matches=(len(plain) >= 16 and
                              int.from_bytes(plain[6:10], "big") == len(plain) - trailer - 4))
+            if len(plain) >= 30:
+                issue.update(outer_sequence_matches=int.from_bytes(plain[:4], "big") == packet.seq,
+                             outer_reserved_zero=plain[10:12] == b"\x00\x00",
+                             outer_version=int.from_bytes(plain[12:16], "big"),
+                             outer_word_12_16=int.from_bytes(plain[12:16], "big"),
+                             inner_marker_hex=plain[24:26].hex(),
+                             candidate_c2s_opcode=f"0x{int.from_bytes(plain[20:24], 'big') & 0xFFFF:04X}")
             issue["known_marker_offsets"] = {
                 marker.hex(): [offset for offset in range(min(len(plain) - 1, 64))
                                if plain[offset:offset + 2] == marker]
-                for marker in (b"\x55\xaa", b"\x39\x63", b"\xe6\x88", b"\x14\x28")}
+                for marker in (b"\x55\xaa", b"\x39\x63", b"\xe6\x88", b"\x14\x28", b"\x7c\xa2")}
         self.decode_issues.append(issue)
+        samples = getattr(self, "samples", None)
+        if samples:
+            samples.mark_failure(issue["category"])
 
     def diagnostics(self):
         mirror = getattr(self, "mirror", None)
@@ -435,6 +588,8 @@ class _Backend:
             "decoder_ready": bool(mirror and mirror.accepting),
             "error": (mirror.error if mirror else "") or self.native_error,
             "queue_depth": mirror.pending.qsize() if mirror else 0,
+            "queue_bytes": mirror.queued_bytes if mirror else 0,
+            "queue_byte_limit": mirror.byte_capacity if mirror else MAX_PENDING_BYTES,
             "bytes_received": mirror.received if mirror else 0, "active_flows": len(flows),
             "protocol_counts": protocol_counts, "active_game_flows": len(analyzers),
             "active_key_flows": active_keys,
@@ -447,9 +602,16 @@ class _Backend:
             "ack_extra_sizes": dict(self.ack_extra_sizes),
             "unknown_opcodes": dict(self.unknown_opcodes),
             "decode_issues": list(self.decode_issues),
+            "protocol_samples": self.samples.status() if self.samples else {},
             "parsed_business_records": totals.get("parsed_business_records", 0),
             "schema_business_records": max(0, totals.get("parsed_business_records", 0) -
-                                           totals.get("unknown_nonbattle_records", 0)),
+                                           totals.get("unknown_nonbattle_records", 0) -
+                                           totals.get("deferred_nonbattle_records", 0) -
+                                           totals.get("metadata_business_records", 0)),
+            "deferred_nonbattle_records": totals.get("deferred_nonbattle_records", 0),
+            "metadata_business_records": totals.get("metadata_business_records", 0),
+            "mode": self.mode,
+            "pve": self.pve.snapshot(bool(self.capture_running and mirror and mirror.accepting and mirror.queued_bytes == 0)),
             "build_id": self.release_id,
             "battle_detected": bool(self.feed.tracker.battle_id is not None and
                                     any(self.feed.tracker.teams.values())),
@@ -463,10 +625,19 @@ class _Backend:
         self.http.server_close()
         self.http_thread.join()
         self.mirror.stop()
+        if self.samples:
+            self.samples.finish()
         self.live_battle._SHARED_FEED = self.previous_feed
         self.mount.uninstall()
 
     def reset_capture(self):
+        from lab.mobile_protocol_capture import ProtocolSamples
+        from lab.release_paths import build_identity
+        if self.samples:
+            self.samples.finish()
+        self.samples = ProtocolSamples(self.files_root, ProtocolProbe,
+            {**build_identity(), "source_hashes": self.source_hashes,
+             "catalog_sha256": self.catalog_hash, "snapshot_id": self.rules.snapshot_id})
         self.capture_running = False
         self.native_error = ""
         self.decode_issues.clear()
@@ -475,7 +646,7 @@ class _Backend:
         self.unknown_opcodes.clear()
         old = self.mirror
         old.stop()
-        self.mirror = OrderedMirror(old.make_flow, self.feed.poll_once, self.clear)
+        self.mirror = OrderedMirror(old.make_flow, self.publish, self.clear)
         self.mirror.thread.start()
 
 
@@ -491,22 +662,47 @@ def start(filesRoot):
 
 def feed(flowId, remoteAddress, remotePort, direction, chunk):
     backend = _backend
-    return bool(backend and backend.mirror.submit(flowId, remoteAddress, remotePort, direction, chunk))
+    if backend is None:
+        return False
+    samples = getattr(backend, "samples", None)
+    if samples:
+        raw = bytes(chunk) if isinstance(chunk, (bytes, bytearray, memoryview)) else bytes(int(v) & 255 for v in chunk)
+        samples.feed(flowId, remoteAddress, remotePort, direction, raw)
+    accepted = backend.mirror.submit(flowId, remoteAddress, remotePort, direction, chunk)
+    return accepted or bool(samples and samples.status()["active"])
 
 
 def close_flow(flowId):
     backend = _backend
+    if backend and getattr(backend, "samples", None):
+        backend.samples.close_flow(flowId)
     return bool(backend and backend.mirror.close_flow(flowId))
 
 
 def flow_protocol(flowId):
     backend = _backend
+    if backend and backend.samples:
+        protocol = backend.samples.protocol(flowId)
+        if protocol != "pending":
+            return protocol
     entry = backend.mirror.flows.get(str(flowId)) if backend else None
     return entry[2].probe.protocol if entry else "pending"
 
 
 def status():
     return json.dumps(_backend.diagnostics() if _backend else {"capture_running": False, "error": "Backend not started"})
+
+
+def set_mode(mode):
+    with _lifecycle:
+        if _backend is None:
+            raise ValueError("本机引擎尚未就绪")
+        _backend.set_mode(str(mode))
+        return _backend.mode
+
+
+def get_mode():
+    return _backend.mode if _backend else "pvp"
 
 
 def reset_capture():
@@ -522,6 +718,8 @@ def pause_analysis(reason):
     if backend is None:
         return False
     backend.mirror.fail(str(reason))
+    if getattr(backend, "samples", None):
+        backend.samples.mark_failure(reason)
     return True
 
 
@@ -533,7 +731,25 @@ def set_capture_state(running, error=""):
         _backend.native_error = str(error)
         if not running:
             _backend.mirror.close_flow("")
+            if getattr(_backend, "samples", None):
+                _backend.samples.finish()
         return _backend.capture_running if running else True
+
+
+def export_protocol_samples(native_json="{}"):
+    backend = _backend
+    if backend is None or not backend.samples:
+        raise ValueError("请先开始采集并重新打开游戏")
+    if len(native_json) > 65536:
+        raise ValueError("Native diagnostics too large")
+    return backend.samples.export(backend.diagnostics(), json.loads(native_json))
+
+
+def sample_gap(reason):
+    backend = _backend
+    if backend and backend.samples:
+        backend.samples.error = str(reason)
+        backend.samples.finish("native_stream_gap")
 
 
 def hud_snapshot():
