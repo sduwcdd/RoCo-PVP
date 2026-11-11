@@ -14,6 +14,7 @@ public final class LocalSocks implements AutoCloseable {
         default boolean interested(String id) { return true; }
         void data(String id, String host, int port, String direction, byte[] data);
         void closed(String id);
+        default void failed(String message) { }
     }
     private final Protector protector;
     private final Mirror mirror;
@@ -27,9 +28,11 @@ public final class LocalSocks implements AutoCloseable {
     private final AtomicLong tcpUp = new AtomicLong(), tcpDown = new AtomicLong();
     private final AtomicLong udpUp = new AtomicLong(), udpDown = new AtomicLong();
     private final AtomicLong failures = new AtomicLong();
+    private final AtomicLong mirrorFailures = new AtomicLong();
     private final Map<Integer, AtomicLong> ports = new ConcurrentHashMap<>();
     private volatile String lastError = "", lastRemote = "";
     private volatile boolean closed;
+    private volatile boolean mirrorFailed;
 
     public LocalSocks(Protector protector, Mirror mirror, String password) throws IOException {
         this.protector = protector; this.mirror = mirror; this.password = password;
@@ -47,6 +50,7 @@ public final class LocalSocks implements AutoCloseable {
         result.put("udp_packets_up", udpUp.get());
         result.put("udp_packets_down", udpDown.get());
         result.put("transport_errors", failures.get());
+        result.put("mirror_errors", mirrorFailures.get());
         result.put("last_transport_error", lastError);
         result.put("last_tcp_remote", lastRemote);
         Map<String, Long> portCounts = new TreeMap<>();
@@ -110,21 +114,33 @@ public final class LocalSocks implements AutoCloseable {
             reply(out, 0, upstream.getLocalAddress(), upstream.getLocalPort());
             Future<?> receive = workers.submit(() -> {
                 try { copy(upstream.getInputStream(), out, id, remote, "s2c"); client.shutdownOutput(); }
-                catch (IOException e) { closeSocket(client); }
+                catch (IOException e) { recordFailure(e); closeSocket(client); }
             });
             try { copy(in, upstream.getOutputStream(), id, remote, "c2s"); upstream.shutdownOutput(); }
-            catch (IOException e) { closeSocket(upstream); }
+            catch (IOException e) { recordFailure(e); closeSocket(upstream); }
             try { receive.get(); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
             catch (ExecutionException ignored) { }
-        } finally { closeSocket(upstream); mirror.closed(id); }
+        } finally {
+            closeSocket(upstream);
+            if (!mirrorFailed) try { mirror.closed(id); } catch (RuntimeException error) { mirrorFailure(error); }
+        }
+    }
+    private synchronized void mirrorFailure(RuntimeException error) {
+        if (mirrorFailed) return;
+        mirrorFailed = true;
+        mirrorFailures.incrementAndGet();
+        try { mirror.failed("镜像分析暂停: " + error.getClass().getSimpleName() + ": " + error.getMessage()); }
+        catch (RuntimeException ignored) { }
     }
     private void copy(InputStream in, OutputStream out, String id, InetSocketAddress remote, String dir) throws IOException {
         byte[] buffer = new byte[32768]; int n;
         while ((n = in.read(buffer)) != -1) {
             if ("c2s".equals(dir)) tcpUp.addAndGet(n); else tcpDown.addAndGet(n);
             // Queue each observed chunk before forwarding can trigger a response in the other direction.
-            if (mirror.interested(id))
-                mirror.data(id, remote.getAddress().getHostAddress(), remote.getPort(), dir, Arrays.copyOf(buffer, n));
+            if (!mirrorFailed) try {
+                if (mirror.interested(id))
+                    mirror.data(id, remote.getAddress().getHostAddress(), remote.getPort(), dir, Arrays.copyOf(buffer, n));
+            } catch (RuntimeException error) { mirrorFailure(error); }
             out.write(buffer, 0, n);
         }
     }
@@ -143,8 +159,11 @@ public final class LocalSocks implements AutoCloseable {
                     if (peer == null) peer = packet.getSocketAddress();
                     if (!peer.equals(packet.getSocketAddress())) continue;
                     DataInputStream input = new DataInputStream(new ByteArrayInputStream(buffer, 0, packet.getLength()));
-                    if (input.readUnsignedShort() != 0 || input.readUnsignedByte() != 0) continue;
-                    InetSocketAddress destination = address(input);
+                    InetSocketAddress destination;
+                    try {
+                        if (input.readUnsignedShort() != 0 || input.readUnsignedByte() != 0) continue;
+                        destination = address(input);
+                    } catch (IOException invalidPacket) { recordFailure(invalidPacket); continue; }
                     byte[] payload = new byte[input.available()]; input.readFully(payload);
                     DatagramSocket upstream = remotes.get(destination);
                     if (upstream == null) {

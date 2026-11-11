@@ -75,6 +75,7 @@ public final class LocalSocksTest {
                 Future<?> responder=echo.submit(()->{try {byte[] buffer=new byte[2048];DatagramPacket p=new DatagramPacket(buffer,buffer.length);remote.receive(p);remote.send(p);}catch(IOException e){throw new RuntimeException(e);}});
                 try(Socket control=authenticate(relay.port(),PASSWORD);DatagramSocket client=new DatagramSocket()) {
                     InetSocketAddress endpoint=request(control,3,InetAddress.getByName("0.0.0.0"),0);
+                    client.send(new DatagramPacket(new byte[]{0}, 1, endpoint));
                     ByteArrayOutputStream encoded=new ByteArrayOutputStream();encoded.write(new byte[]{0,0,0});byte[] address=remote.getLocalAddress().getAddress();encoded.write(address.length==4?1:4);encoded.write(address);encoded.write(remote.getLocalPort()>>>8);encoded.write(remote.getLocalPort()&255);encoded.write("dns-probe".getBytes(StandardCharsets.UTF_8));
                     byte[] sent=encoded.toByteArray();client.send(new DatagramPacket(sent,sent.length,endpoint));client.setSoTimeout(5000);byte[] buffer=new byte[2048];DatagramPacket response=new DatagramPacket(buffer,buffer.length);client.receive(response);
                     check(Arrays.equals(sent,Arrays.copyOf(buffer,response.getLength())),"UDP dual stack response");
@@ -85,6 +86,43 @@ public final class LocalSocksTest {
             int previousPort=relay.port();relay.close();
             try (Socket ignored=new Socket("127.0.0.1",previousPort)) { throw new AssertionError("listener remains open"); } catch(ConnectException expected) { }
         } finally { echo.shutdownNow(); }
+        mirrorFailureKeepsTcpConnected(protect);
         System.out.println("PASS non-8195 TCP 200000 bytes, bidirectional mirror, ignored-flow forwarding, diagnostics, half close, IPv4+IPv6 UDP, auth, protect, shutdown");
+    }
+    static void mirrorFailureKeepsTcpConnected(LocalSocks.Protector protect) throws Exception {
+        AtomicInteger failures = new AtomicInteger();
+        LocalSocks.Mirror broken = new LocalSocks.Mirror() {
+            public void data(String id, String host, int port, String direction, byte[] bytes) {
+                throw new IllegalStateException("decoder unavailable");
+            }
+            public void closed(String id) { throw new IllegalStateException("decoder already paused"); }
+            public void failed(String reason) { failures.incrementAndGet(); }
+        };
+        ExecutorService server = Executors.newSingleThreadExecutor();
+        try (LocalSocks relay = new LocalSocks(protect, broken, PASSWORD);
+             ServerSocket endpoint = new ServerSocket(0, 1, InetAddress.getLoopbackAddress())) {
+            Future<?> echo = server.submit(() -> {
+                try (Socket socket = endpoint.accept()) {
+                    socket.getInputStream().transferTo(socket.getOutputStream());
+                } catch (IOException error) { throw new RuntimeException(error); }
+            });
+            try (Socket client = authenticate(relay.port(), PASSWORD)) {
+                request(client, 1, endpoint.getInetAddress(), endpoint.getLocalPort());
+                DataInputStream input = new DataInputStream(client.getInputStream());
+                for (int turn = 0; turn < 3; turn++) {
+                    byte[] message = ("game turn " + turn).getBytes(StandardCharsets.UTF_8);
+                    client.getOutputStream().write(message);
+                    byte[] echoed = new byte[message.length]; input.readFully(echoed);
+                    check(Arrays.equals(message, echoed), "game connection survives decoder failure");
+                }
+                client.shutdownOutput();
+                check(input.read() == -1, "TCP half close after decoder failure");
+            }
+            echo.get(5, TimeUnit.SECONDS);
+            check(failures.get() == 1, "one explicit analysis failure notification");
+            check(((Number)relay.diagnostics().get("mirror_errors")).intValue() == 1, "mirror failure is distinct from network failure");
+            check(relay.isRunning(), "relay stays running after decoder failure");
+        } finally { server.shutdownNow(); }
+        System.out.println("PASS game TCP remains connected across three exchanges after decoder exception");
     }
 }

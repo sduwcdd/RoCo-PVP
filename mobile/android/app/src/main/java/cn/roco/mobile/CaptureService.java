@@ -29,11 +29,13 @@ public final class CaptureService extends VpnService {
     private final AtomicLong ignoredCount = new AtomicLong();
     private LocalSocks socks;
     private ParcelFileDescriptor tunnel;
-    private volatile boolean active, stopping;
+    private volatile boolean active, stopping, analysisPaused;
     private String finalState = "stopped", finalMessage = "采集已停止";
     private View overlay;
     private WebView overlayWeb;
     private WindowManager windows;
+    private WindowManager.LayoutParams overlayLayout;
+    private boolean overlayExpanded;
     public static final String STOP = "cn.roco.mobile.STOP", OVERLAY = "cn.roco.mobile.OVERLAY";
 
     @Override public int onStartCommand(Intent intent, int flags, int startId) {
@@ -60,6 +62,8 @@ public final class CaptureService extends VpnService {
             RuntimeBridge.selectedPackage = selected;
             RuntimeBridge.transport = new org.json.JSONObject();
             RuntimeBridge.status("starting", "正在启动本机转发");
+            RuntimeBridge.analysisState = "running";
+            RuntimeBridge.analysisMessage = "";
             RuntimeBridge.start(this);
             RuntimeBridge.module().callAttr("reset_capture");
             TProxyService.TProxyIsRunning(); // Load and check JNI before establishing the VPN.
@@ -68,12 +72,12 @@ public final class CaptureService extends VpnService {
                 public boolean tcp(Socket socket) { boolean ok = protect(socket); if (!ok) shutdown("error", "TCP 出口保护失败"); return ok; }
                 public boolean udp(DatagramSocket socket) { boolean ok = protect(socket); if (!ok) shutdown("error", "UDP 出口保护失败"); return ok; }
             }, new LocalSocks.Mirror() {
-                public boolean interested(String id) { return !ignoredFlows.contains(id); }
+                public boolean interested(String id) { return !analysisPaused && !ignoredFlows.contains(id); }
                 public void data(String id, String host, int port, String direction, byte[] bytes) {
                     enqueue(() -> {
                         if (ignoredFlows.contains(id)) return;
                         if (!RuntimeBridge.module().callAttr("feed", id, host, port, direction, bytes).toBoolean()) {
-                            shutdown("error", "解析队列拒绝数据；已停止 VPN，避免显示不完整战况");
+                            pauseAnalysis("解析队列拒绝数据；本次观测不完整，请停止采集后重新连接");
                             return;
                         }
                         String protocol = RuntimeBridge.module().callAttr("flow_protocol", id).toString();
@@ -87,6 +91,7 @@ public final class CaptureService extends VpnService {
                         ignoredFlows.remove(id);
                     });
                 }
+                public void failed(String message) { pauseAnalysis(message); }
             }, password);
             File config = new File(getFilesDir(), "tunnel.yml");
             String yaml = "tunnel:\n  name: roco\n  mtu: 1500\n  ipv4: 198.18.0.1\n  ipv6: 'fd00:726f:636f::1'\n" +
@@ -116,9 +121,22 @@ public final class CaptureService extends VpnService {
         } catch (Throwable e) { shutdown("error", e.getClass().getSimpleName() + ": " + e.getMessage()); }
     }
     private void enqueue(Runnable task) {
-        if (stopping) return;
-        try { mirror.execute(() -> { if (!stopping) try { task.run(); } catch (Throwable e) { shutdown("error", "解析失败: " + e.getMessage()); } }); }
-        catch (RejectedExecutionException e) { shutdown("error", "镜像队列已满；已停止 VPN"); }
+        if (stopping || analysisPaused) return;
+        try { mirror.execute(() -> { if (!stopping && !analysisPaused) try { task.run(); } catch (Exception e) { pauseAnalysis("解析失败: " + e.getMessage()); } }); }
+        catch (RejectedExecutionException e) { pauseAnalysis("镜像队列已满；本次观测不完整，请停止采集后重新连接"); }
+    }
+    private synchronized void pauseAnalysis(String reason) {
+        if (stopping || analysisPaused) return;
+        analysisPaused = true;
+        RuntimeBridge.analysisState = "paused";
+        RuntimeBridge.analysisMessage = reason;
+        RuntimeBridge.message = "分析已暂停，游戏网络继续转发";
+        mirror.getQueue().clear();
+        // Only the parser stops. Tearing down a healthy VPN also breaks the game's TCP sessions.
+        try { mirror.execute(() -> {
+            try { RuntimeBridge.module().callAttr("pause_analysis", reason); }
+            catch (Exception ignored) { }
+        }); } catch (RejectedExecutionException ignored) { }
     }
     private void watch() {
         if (!active || stopping) return;
@@ -127,8 +145,8 @@ public final class CaptureService extends VpnService {
         enqueue(() -> {
             try {
                 org.json.JSONObject state = new org.json.JSONObject(RuntimeBridge.module().callAttr("status").toString());
-                if (!state.optBoolean("decoder_ready", false)) shutdown("error", "解析器已停止: " + state.optString("error"));
-            } catch (org.json.JSONException e) { shutdown("error", "解析器状态格式错误"); }
+                if (!state.optBoolean("decoder_ready", false)) pauseAnalysis("解析器已停止: " + state.optString("error"));
+            } catch (org.json.JSONException e) { pauseAnalysis("解析器状态格式错误"); }
         });
         ui.postDelayed(this::watch, 1000);
     }
@@ -151,6 +169,7 @@ public final class CaptureService extends VpnService {
         if (stopping) return;
         stopping = true;
         active = false;
+        RuntimeBridge.analysisState = "stopped";
         finalState = state;
         finalMessage = message;
         RuntimeBridge.status("stopping", message);
@@ -171,63 +190,143 @@ public final class CaptureService extends VpnService {
             lifecycle.shutdown();
         });
     }
+    private int dp(int value) {
+        return Math.round(value * getResources().getDisplayMetrics().density);
+    }
     private void showOverlay() {
         if (!active || overlay != null || !Settings.canDrawOverlays(this)) return;
         windows = getSystemService(WindowManager.class);
-        float density = getResources().getDisplayMetrics().density;
-        int screenWidth = getResources().getDisplayMetrics().widthPixels;
-        int screenHeight = getResources().getDisplayMetrics().heightPixels;
-        LinearLayout panel = new LinearLayout(this); panel.setOrientation(LinearLayout.VERTICAL); panel.setBackgroundColor(0xff101b28);
+        LinearLayout panel = new LinearLayout(this);
+        panel.setOrientation(LinearLayout.VERTICAL);
+        android.graphics.drawable.GradientDrawable background = new android.graphics.drawable.GradientDrawable();
+        background.setColor(0xff163e35);
+        background.setCornerRadius(dp(16));
+        background.setStroke(dp(1), 0xffb8953f);
+        panel.setBackground(background);
+        panel.setClipToOutline(true);
+        panel.setElevation(dp(8));
+        LinearLayout header = new LinearLayout(this);
+        header.setGravity(Gravity.CENTER_VERTICAL);
         TextView handle = new TextView(this);
-        handle.setText("洛克助手　·　拖动 / 点按收起");
+        handle.setTextColor(0xfffff7dc);
         handle.setTextSize(12);
-        handle.setTextColor(0xffd8e5ec);
-        handle.setPadding((int)(12 * density), (int)(8 * density), (int)(12 * density), (int)(8 * density));
-        handle.setContentDescription("拖动悬浮窗，点按展开或收起");
-        panel.addView(handle);
+        handle.setGravity(Gravity.CENTER);
+        handle.setContentDescription("拖动助手标签，点按展开或收起");
+        header.addView(handle, new LinearLayout.LayoutParams(0, dp(48), 1));
+        Button collapse = new Button(this);
+        collapse.setText("收起");
+        collapse.setTextSize(12);
+        collapse.setPadding(0, 0, 0, 0);
+        collapse.setContentDescription("收起为边缘标签");
+        header.addView(collapse, new LinearLayout.LayoutParams(dp(56), dp(48)));
+        Button dismiss = new Button(this);
+        dismiss.setText("×");
+        dismiss.setPadding(0, 0, 0, 0);
+        dismiss.setContentDescription("关闭悬浮面板，继续采集");
+        header.addView(dismiss, new LinearLayout.LayoutParams(dp(48), dp(48)));
+        panel.addView(header);
         overlayWeb = new WebView(this);
+        overlayWeb.setBackgroundColor(0xfff5f3eb);
         overlayWeb.getSettings().setJavaScriptEnabled(true);
         overlayWeb.getSettings().setDomStorageEnabled(true);
         overlayWeb.getSettings().setAllowFileAccess(false);
         overlayWeb.getSettings().setAllowContentAccess(false);
+        overlayWeb.addJavascriptInterface(new OverlayStatus(), "Android");
         overlayWeb.setWebViewClient(new WebViewClient() {
             @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 android.net.Uri uri = request.getUrl();
                 return !"http".equals(uri.getScheme()) || !"127.0.0.1".equals(uri.getHost()) || uri.getPort() != RuntimeBridge.port;
             }
         });
-        overlayWeb.loadUrl("http://127.0.0.1:" + RuntimeBridge.port + "/mobile?overlay=1");
-        int contentHeight = Math.min((int)(380 * density), Math.max((int)(160 * density), screenHeight - (int)(96 * density)));
-        panel.addView(overlayWeb, new LinearLayout.LayoutParams(-1, contentHeight));
-        WindowManager.LayoutParams layout = new WindowManager.LayoutParams(Math.min((int)(320 * density), screenWidth - (int)(24 * density)), -2,
-            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
-        layout.gravity = Gravity.TOP | Gravity.START; layout.x = 20; layout.y = 100;
-        handle.setOnClickListener(view -> {
-            boolean expanded = overlayWeb.getVisibility() == View.VISIBLE;
-            overlayWeb.setVisibility(expanded ? View.GONE : View.VISIBLE);
-            handle.setText(expanded ? "洛克助手　·　点按展开" : "洛克助手　·　拖动 / 点按收起");
-        });
+        panel.addView(overlayWeb, new LinearLayout.LayoutParams(-1, 0));
+        overlayLayout = new WindowManager.LayoutParams(dp(48), dp(48),
+            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
+            PixelFormat.TRANSLUCENT);
+        overlayLayout.gravity = Gravity.TOP | Gravity.START;
+        android.content.SharedPreferences prefs = getSharedPreferences("overlay", MODE_PRIVATE);
+        overlayLayout.x = prefs.getInt("x", dp(8));
+        overlayLayout.y = prefs.getInt("y", dp(96));
+        Runnable resize = () -> {
+            if (overlay == null) return;
+            int screenWidth = getResources().getDisplayMetrics().widthPixels;
+            int screenHeight = getResources().getDisplayMetrics().heightPixels;
+            overlayLayout.width = overlayExpanded ? Math.min(dp(360), screenWidth - dp(16)) : dp(48);
+            int height = Math.max(dp(48), screenHeight - dp(24));
+            overlayLayout.height = overlayExpanded ? height : dp(48);
+            overlayWeb.getLayoutParams().height = Math.max(0, height - dp(48));
+            overlayWeb.setVisibility(overlayExpanded ? View.VISIBLE : View.GONE);
+            collapse.setVisibility(overlayExpanded ? View.VISIBLE : View.GONE);
+            dismiss.setVisibility(overlayExpanded ? View.VISIBLE : View.GONE);
+            handle.setText(overlayExpanded ? "洛克助手 · 拖动" : "洛克\n助手");
+            if (overlayExpanded) {
+                overlayWeb.onResume();
+                if (overlayWeb.getUrl() == null)
+                    overlayWeb.loadUrl("http://127.0.0.1:" + RuntimeBridge.port + "/mobile?overlay=1");
+            } else overlayWeb.onPause();
+            overlayLayout.x = Math.max(0, Math.min(screenWidth - overlayLayout.width, overlayLayout.x));
+            overlayLayout.y = Math.max(0, Math.min(screenHeight - overlayLayout.height, overlayLayout.y));
+            windows.updateViewLayout(panel, overlayLayout);
+        };
+        handle.setOnClickListener(view -> { overlayExpanded = !overlayExpanded; resize.run(); });
+        collapse.setOnClickListener(view -> { overlayExpanded = false; resize.run(); });
+        dismiss.setOnClickListener(view -> removeOverlay());
         handle.setOnTouchListener(new View.OnTouchListener() {
-            float x,y; int startX,startY;
-            public boolean onTouch(View v, android.view.MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) { x=event.getRawX(); y=event.getRawY(); startX=layout.x; startY=layout.y; return true; }
-                if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    layout.x = Math.max(0, Math.min(screenWidth - layout.width, startX + (int)(event.getRawX() - x)));
-                    layout.y = Math.max(0, Math.min(screenHeight - handle.getHeight(), startY + (int)(event.getRawY() - y)));
-                    windows.updateViewLayout(panel, layout);
-                    return true;
+            float x, y;
+            int startX, startY;
+            boolean dragged;
+            final int slop = ViewConfiguration.get(CaptureService.this).getScaledTouchSlop();
+            public boolean onTouch(View view, MotionEvent event) {
+                switch (event.getActionMasked()) {
+                    case MotionEvent.ACTION_DOWN:
+                        x = event.getRawX(); y = event.getRawY();
+                        startX = overlayLayout.x; startY = overlayLayout.y;
+                        dragged = false;
+                        return true;
+                    case MotionEvent.ACTION_MOVE:
+                        float dx = event.getRawX() - x, dy = event.getRawY() - y;
+                        if (Math.abs(dx) + Math.abs(dy) > slop) dragged = true;
+                        if (dragged) {
+                            int width = getResources().getDisplayMetrics().widthPixels;
+                            int height = getResources().getDisplayMetrics().heightPixels;
+                            overlayLayout.x = Math.max(0, Math.min(width - overlayLayout.width, startX + (int)dx));
+                            overlayLayout.y = Math.max(0, Math.min(height - overlayLayout.height, startY + (int)dy));
+                            windows.updateViewLayout(panel, overlayLayout);
+                        }
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        if (!dragged) view.performClick();
+                        prefs.edit().putInt("x", overlayLayout.x).putInt("y", overlayLayout.y).apply();
+                        return true;
+                    case MotionEvent.ACTION_CANCEL:
+                        return true;
+                    default:
+                        return false;
                 }
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    if (Math.abs(event.getRawX() - x) + Math.abs(event.getRawY() - y) < 12 * density) v.performClick();
-                    return true;
-                }
-                return false;
             }
         });
-        try { windows.addView(panel, layout); overlay = panel; }
-        catch (RuntimeException e) { RuntimeBridge.message = "转发已运行，悬浮窗创建失败: " + e.getMessage(); }
+        try {
+            windows.addView(panel, overlayLayout);
+            overlay = panel;
+            resize.run();
+        } catch (RuntimeException error) {
+            if (overlay == null) { overlayWeb.destroy(); overlayWeb = null; }
+            else removeOverlay();
+            RuntimeBridge.message = "转发已运行，悬浮窗创建失败: " + error.getMessage();
+        }
     }
-    private void removeOverlay() { if (overlay != null) { windows.removeView(overlay); overlay = null; overlayWeb.destroy(); overlayWeb = null; } }
+    private void removeOverlay() {
+        if (overlay == null) return;
+        windows.removeView(overlay);
+        overlay = null;
+        overlayLayout = null;
+        overlayWeb.destroy();
+        overlayWeb = null;
+    }
+    public static final class OverlayStatus {
+        @JavascriptInterface public String status() { return RuntimeBridge.status(); }
+        @JavascriptInterface public String listApps() { return "[]"; }
+    }
     @Override public void onConfigurationChanged(android.content.res.Configuration configuration) {
         super.onConfigurationChanged(configuration);
         if (overlay != null) { removeOverlay(); showOverlay(); }

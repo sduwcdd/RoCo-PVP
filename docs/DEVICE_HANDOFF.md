@@ -5,7 +5,7 @@
 ## 获取与运行
 
 ```powershell
-git clone --recurse-submodules https://github.com/sduwcdd/RoCo-PVP.git
+git -c core.autocrlf=false clone --recurse-submodules https://github.com/sduwcdd/RoCo-PVP.git
 cd RoCo-PVP
 py -3.13 -m venv .venv-rkpp
 .venv-rkpp/Scripts/python.exe -m pip install -r requirements.txt
@@ -21,7 +21,33 @@ npm --prefix overlay start
 
 Windows1.1.8包含退出清理、中文日志编码修复、敌方原始性格箭头、HUD内容高度适配及本机环境检查，保留身高/体重/音调与奖牌预测，战斗规则与HUD共用。图鉴快照20261105T124140+0800，限制见PROJECT_STATUS.md。
 
-mobile保留在研源码：Android内部0.2尚无真实手机游戏协议验收；iOS未编译，采集转发未接通。它们不是已完成的Windows1.1.6功能。步骤见../mobile/README.md。HEV子模块固定提交；SDK、本机Python路径和签名条件需在目标设备配置。
+Android内部版已推进至0.3，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
+
+## 安卓0.3继续开发
+
+下载入口为 https://github.com/sduwcdd/RoCo-PVP/releases/tag/android-v0.3.0-internal ，包含APK、SHA-256校验文件和验证记录。此版本标为预发布，Windows更新使用稳定版本。
+
+已有仓库先执行 `git pull --ff-only` 和 `git submodule update --init --recursive`。构建使用Python3.13、JDK17、Android SDK36基础平台和build-tools35.0.0；Gradle8.11.1及插件版本沿用仓库锁定值。
+
+在仓库根目录配置本次PowerShell会话并构建：
+
+```powershell
+py -3.13 -m venv .venv-release
+.venv-release/Scripts/python.exe -m pip install -r requirements-release.txt
+$env:JAVA_HOME = '<JDK17目录>'
+$env:ANDROID_HOME = '<Android SDK目录>'
+$env:PATH = "$env:JAVA_HOME/bin;$env:PATH"
+$env:ROCO_BUILD_PYTHON = (Resolve-Path .venv-release/Scripts/python.exe).Path
+.venv-release/Scripts/python.exe scripts/build_mobile_resources.py --android-source-stage
+Set-Location mobile/android
+./gradlew.bat assembleDebug
+```
+
+若新设备已有local.properties，请核对其中SDK路径。输出为mobile/android/app/build/outputs/apk/debug/app-debug.apk。完整构建与来源说明见mobile/README.md、mobile/android/DEPENDENCIES.md。打包完成并核对后，删除mobile/build/generated/android-python临时编译输入。
+
+签名文件单独通过安全渠道迁移。0.3测试证书SHA-256为 `f62169ddc3fd0df6d55ec550717e31692ec4ebce6d0d0a5fb1e43e1178758354`。继续覆盖安装同一测试应用时，将原debug.keystore放到目标设备ANDROID_USER_HOME指定目录；使用新密钥签名会产生安装冲突。APK中的资源与模块由构建脚本重新生成，签名私钥和生成的密钥配置只保存在本机。
+
+0.3已通过12项Python边界测试、5项移动界面测试、主机TCP/UDP故障回归，以及APK构建、签名和资源核对。真实手机0x4013首包兼容性仍需新诊断确认。下一步优先查看用户0.3诊断的decode_issues；协议入口为mobile/python/roco_mobile.py，转发与悬浮窗入口为mobile/android/app/src/main/java/cn/roco/mobile/CaptureService.java，移动界面为mobile/shared/index.html。
 
 ## 数据与打包
 

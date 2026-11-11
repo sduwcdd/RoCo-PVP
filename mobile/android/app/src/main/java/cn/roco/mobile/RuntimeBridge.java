@@ -10,6 +10,7 @@ final class RuntimeBridge {
     static volatile String state = "idle", message = "尚未启动采集";
     static volatile int port;
     static volatile String selectedPackage = "", capturePackage = "";
+    static volatile String analysisState = "stopped", analysisMessage = "";
     static volatile org.json.JSONObject transport = new org.json.JSONObject();
     static synchronized int start(Context context) throws IOException {
         if (port != 0) return port;
@@ -32,6 +33,8 @@ final class RuntimeBridge {
             result.put("message", message);
             result.put("selected_package", selectedPackage);
             result.put("capture_package", capturePackage);
+            result.put("analysis_state", analysisState);
+            result.put("analysis_message", analysisMessage);
             result.put("transport", transport);
             return result.toString();
         } catch (org.json.JSONException e) { throw new IllegalStateException(e); }

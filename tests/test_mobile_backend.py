@@ -5,11 +5,13 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from collections import deque
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "vendor/rkpp"))
 from mobile.python.roco_mobile import OrderedMirror, ProtocolProbe, _Backend
+from mobile.python import roco_mobile
 from rkpp_network import DirectionState
 from lab import release_paths
 
@@ -21,6 +23,23 @@ def frame(cmd, extra=b"", body=b"", seq=1):
 
 
 class MobileStreamTests(unittest.TestCase):
+    def test_decode_diagnostics_keep_structure_without_secrets(self):
+        backend = object.__new__(_Backend)
+        backend.decode_issues = deque(maxlen=12)
+        packet = SimpleNamespace(direction="c2s", cmd=0x4013, seq=7,
+                                 body=b"private encrypted content", header_extra=b"secret")
+        for _ in range(15):
+            backend.record_decode_issue({"decrypt_status": "parse_error:PRIVATE PAYLOAD",
+                                         "decrypted_body_hex": b"PRIVATE PAYLOAD".hex()}, packet)
+        self.assertEqual(len(backend.decode_issues), 12)
+        issue = backend.decode_issues[-1]
+        self.assertEqual(issue["category"], "parse_error")
+        self.assertEqual(issue["body_bytes"], len(packet.body))
+        self.assertEqual(issue["cipher_remainder"], len(packet.body) % 16)
+        self.assertFalse(issue["trailer_valid"])
+        self.assertNotIn("PRIVATE", str(issue))
+        self.assertNotIn("secret", str(issue))
+
     def test_protocol_probe_replays_fragmented_header_and_both_directions(self):
         seen = []
         probe = ProtocolProbe(lambda direction, data: seen.append((direction, data)))
@@ -141,6 +160,25 @@ class MobileStreamTests(unittest.TestCase):
             self.assertTrue(cleared.wait(2))
             self.assertFalse(mirror.accepting)
             self.assertIn("Rejected real stream", mirror.error)
+        finally:
+            mirror.stop()
+
+    def test_analysis_pause_clears_estimates_without_claiming_vpn_stopped(self):
+        cleared = threading.Event()
+        mirror = OrderedMirror(None, lambda: None, cleared.set)
+        backend = SimpleNamespace(mirror=mirror, capture_running=True, native_error="")
+        mirror.thread.start()
+        try:
+            with patch.object(roco_mobile, "_backend", backend):
+                self.assertTrue(roco_mobile.pause_analysis("decoder overloaded"))
+                self.assertTrue(cleared.wait(2))
+                self.assertFalse(mirror.accepting)
+                self.assertTrue(backend.capture_running)
+                self.assertIn("overloaded", mirror.error)
+                self.assertTrue(roco_mobile.set_capture_state(True))
+                self.assertFalse(roco_mobile.feed("game", "192.0.2.1", 17000, "s2c", b"incomplete"))
+                self.assertTrue(roco_mobile.set_capture_state(False))
+                self.assertFalse(backend.capture_running)
         finally:
             mirror.stop()
 

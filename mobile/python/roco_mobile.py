@@ -8,7 +8,7 @@ from __future__ import annotations
 import hashlib
 import ipaddress
 import json
-from collections import Counter
+from collections import Counter, deque
 import queue
 import threading
 import time
@@ -114,7 +114,7 @@ class OrderedMirror:
                 self.pending.put_nowait(item)
                 return True
             except queue.Full:
-                self.error = "Decoder queue full; capture stopped, reconnect before retrying"
+                self.error = "Decoder queue full; analysis paused, reconnect before retrying"
                 self.accepting = False
                 return False
 
@@ -228,6 +228,7 @@ class _Backend:
         self.live_battle = live_battle
         self.capture_running = False
         self.native_error = ""
+        self.decode_issues = deque(maxlen=12)
         self.battle_flow = None
         self.wire_commands = Counter()
         self.ack_extra_sizes = Counter()
@@ -296,11 +297,13 @@ class _Backend:
                 if status == "no_key":
                     self.missing_key_records += 1
                 elif status.startswith(("decrypt_error", "parse_error")) or status == "ok_unparsed":
+                    backend.record_decode_issue(row, be21)
                     self.hard_decode_errors += 1
                 elif info is not None and be21.cmd == 0x4013:
                     record = info.get("record") or {}
                     if not (record.get("_schema_decoded") and record.get("_schema_found")):
                         if live_battle._is_battle_code(row.get("opcode_hex") or row.get("opcode")):
+                            backend.record_decode_issue(row, be21, category="battle_schema_missing")
                             self.hard_decode_errors += 1
                         else:
                             self.unknown_nonbattle_records += 1
@@ -349,7 +352,9 @@ class _Backend:
                 if self.analyzer.listener_errors != before:
                     raise RuntimeError("Shared protocol listener failed")
                 if self.analyzer.hard_decode_errors:
-                    raise RuntimeError("游戏报文解密或战斗协议解析失败，请导出连接诊断")
+                    issue = backend.decode_issues[-1] if backend.decode_issues else {}
+                    raise RuntimeError("游戏协议分析已暂停（" + issue.get("category", "unknown") +
+                        "，" + direction + "），请复制连接诊断；游戏网络继续转发")
                 states = [state for _, _, mirrored in list(backend.mirror.flows.values())
                           if mirrored.analyzer is not None
                           for flow in mirrored.analyzer.flows.values() for state in (flow.c2s, flow.s2c)]
@@ -392,6 +397,32 @@ class _Backend:
         with self.server_module.HUD_LOCK:
             self.server_module.HUD_SNAPSHOT.update(at=time.time(), payload=None, source="ordered-stream")
 
+    def record_decode_issue(self, row, packet, category=None):
+        # Keep structural diagnostics only. Ciphertext, plaintext and handshake keys stay in memory.
+        issue = {
+            "category": category or str(row.get("decrypt_status", "unknown")).split(":", 1)[0],
+            "direction": packet.direction,
+            "command": f"0x{packet.cmd:04X}",
+            "sequence": packet.seq,
+            "body_bytes": len(packet.body),
+            "cipher_remainder": len(packet.body) % 16,
+            "header_extra_bytes": len(packet.header_extra),
+        }
+        plain_hex = row.get("decrypted_body_hex")
+        if plain_hex:
+            from rkpp_proto_core import tsf4g_trailer_len
+            plain = bytes.fromhex(plain_hex)
+            trailer = tsf4g_trailer_len(plain)
+            issue.update(plain_bytes=len(plain), trailer_valid=bool(trailer),
+                         outer_magic_matches=plain[4:6] == b"\x55\xaa",
+                         outer_length_matches=(len(plain) >= 16 and
+                             int.from_bytes(plain[6:10], "big") == len(plain) - trailer - 4))
+            issue["known_marker_offsets"] = {
+                marker.hex(): [offset for offset in range(min(len(plain) - 1, 64))
+                               if plain[offset:offset + 2] == marker]
+                for marker in (b"\x55\xaa", b"\x39\x63", b"\xe6\x88", b"\x14\x28")}
+        self.decode_issues.append(issue)
+
     def diagnostics(self):
         mirror = getattr(self, "mirror", None)
         flows = list(mirror.flows.values()) if mirror else []
@@ -400,7 +431,7 @@ class _Backend:
         active_keys = sum(any(flow.key is not None for flow in a.flows.values()) for a in analyzers)
         protocol_counts = dict(mirror.protocol_counts) if mirror else {}
         return {"platform": "mobile", "provenance": "ordered_stream", "same_device": True,
-            "capture_running": bool(self.capture_running and mirror and mirror.accepting),
+            "capture_running": bool(self.capture_running),
             "decoder_ready": bool(mirror and mirror.accepting),
             "error": (mirror.error if mirror else "") or self.native_error,
             "queue_depth": mirror.pending.qsize() if mirror else 0,
@@ -415,6 +446,7 @@ class _Backend:
             "wire_commands": dict(self.wire_commands),
             "ack_extra_sizes": dict(self.ack_extra_sizes),
             "unknown_opcodes": dict(self.unknown_opcodes),
+            "decode_issues": list(self.decode_issues),
             "parsed_business_records": totals.get("parsed_business_records", 0),
             "schema_business_records": max(0, totals.get("parsed_business_records", 0) -
                                            totals.get("unknown_nonbattle_records", 0)),
@@ -437,6 +469,7 @@ class _Backend:
     def reset_capture(self):
         self.capture_running = False
         self.native_error = ""
+        self.decode_issues.clear()
         self.wire_commands.clear()
         self.ack_extra_sizes.clear()
         self.unknown_opcodes.clear()
@@ -484,11 +517,19 @@ def reset_capture():
         return True
 
 
+def pause_analysis(reason):
+    backend = _backend
+    if backend is None:
+        return False
+    backend.mirror.fail(str(reason))
+    return True
+
+
 def set_capture_state(running, error=""):
     with _lifecycle:
         if _backend is None:
             return False
-        _backend.capture_running = bool(running) and _backend.mirror.accepting
+        _backend.capture_running = bool(running)
         _backend.native_error = str(error)
         if not running:
             _backend.mirror.close_flow("")

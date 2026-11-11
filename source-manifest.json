@@ -2,8 +2,8 @@
   "version": "1.1.8",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5265,
-  "bytes": 385830406,
+  "file_count": 5266,
+  "bytes": 385859005,
   "files": [
     {
       "path": ".gitattributes",
@@ -1797,8 +1797,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 2026,
-      "sha256": "92efab48dfb00449dce116915c0cd0a2f21dcc8994e4160c6e3a5c83c75bcb63"
+      "bytes": 4181,
+      "sha256": "749c4f5b1061c84dcd9d94af699880be4edd3bf1534ab8d545dce7e95409fd8c"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
@@ -3087,8 +3087,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 5447,
-      "sha256": "4404ae8968a65de0fa57512721c82ac4acc20cf1ace23816f5aad0c0f19425b0"
+      "bytes": 6883,
+      "sha256": "7557d6bb40ef7bb789ef5177924b9c54c1528b0e4d6e5cf48e62a62232dff2e4"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3097,13 +3097,13 @@
     },
     {
       "path": "mobile/android/DEPENDENCIES.md",
-      "bytes": 3057,
-      "sha256": "e863297620806d89b1a0c2925b51bf944637457d6ec1cd0783358415f414d960"
+      "bytes": 3317,
+      "sha256": "6ebcfc1005a005588e6a385c942c4db40ea768894bffa5ef1d9af6f0fe27c078"
     },
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2467,
-      "sha256": "1477a1320ba934df22e20a98db2f11b0302702b37ab064cff0bb37bccc943c74"
+      "sha256": "a04eb76ae35088b0ffbf1d151d7c2749b4d31cedcfb11f6f6e450891fc03ebda"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3172,13 +3172,13 @@
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/CaptureService.java",
-      "bytes": 15298,
-      "sha256": "8aa479ab3b917e2313852401b60327010c5b09363dcc7be20ea1e3ebf407aeb6"
+      "bytes": 19983,
+      "sha256": "27c3ddf954ffa4d6e2d99a012aac1d82822ef9131448bd37254bdc60fd4b3140"
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/LocalSocks.java",
-      "bytes": 12088,
-      "sha256": "e348e07c25f6f62e036531de2b5883abd920f8421b47efbaff1732288a189be1"
+      "bytes": 13081,
+      "sha256": "4ef689e3c172eff0190631c93e464425ed429aa71b0ce2054942cee8d84279e9"
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/MainActivity.java",
@@ -3187,8 +3187,8 @@
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/RuntimeBridge.java",
-      "bytes": 1927,
-      "sha256": "57a3d261e3190a45cd5d13e701b95641ee5aae9da0dbafbd55f16084aa19f253"
+      "bytes": 2121,
+      "sha256": "d10bfea31a897c462322008fbefdab972e6ee25ecca5de70bd731fcb5d832b20"
     },
     {
       "path": "mobile/android/app/src/main/res/drawable/dimo.png",
@@ -3197,8 +3197,8 @@
     },
     {
       "path": "mobile/android/app/src/test/java/cn/roco/mobile/LocalSocksTest.java",
-      "bytes": 7695,
-      "sha256": "695a5596f09f4f35f1d9bc66b2462d715314d7674798824d085bed1efd68eb34"
+      "bytes": 10257,
+      "sha256": "6757fae47f8fb8204eb57bf6b679bafa6a6f47ed657d283acaecfcaaa8afc8d9"
     },
     {
       "path": "mobile/android/build.gradle",
@@ -3337,13 +3337,13 @@
     },
     {
       "path": "mobile/python/roco_mobile.py",
-      "bytes": 22423,
-      "sha256": "6a0916f0a013ecabb16279e0f3ac771ecafb73dac7d38756430e165833e5c6ff"
+      "bytes": 24432,
+      "sha256": "a0748bf41b219de74bf0f1480a1ac5441d7db4075e7871b43729dc3a3ded1c25"
     },
     {
       "path": "mobile/shared/index.html",
-      "bytes": 33808,
-      "sha256": "9d0e756f7e8f430d5ce63ebebd2171630a7c846ab4a75f96b0dfa3f4623e06fc"
+      "bytes": 39317,
+      "sha256": "50ece9357483c8698b41f08bf483d2bd552305338a48119649fa94521b50aeba"
     },
     {
       "path": "overlay/Launcher.cs",
@@ -4042,8 +4042,13 @@
     },
     {
       "path": "tests/test_mobile_backend.py",
-      "bytes": 8899,
-      "sha256": "d321db32eb631fc308afe2559d39441104181ee28a52ef9644d8e78d8def3f45"
+      "bytes": 10964,
+      "sha256": "8d57f9be6849fb9e398598d8b2140cf891b6c5ab1b1d7f210fcfb5c7f1d0b5c6"
+    },
+    {
+      "path": "tests/test_mobile_ui.js",
+      "bytes": 6731,
+      "sha256": "a3f7ae5e3b4a302f399c99c5e38647448e9336334d499f02966e66aa5936636b"
     },
     {
       "path": "tests/test_modifier_ledger.py",
