@@ -97,10 +97,10 @@ async function refreshUpdates () {
   try {
     const state = await window.rocoApp.invoke('update-status')
     if (state.error) throw Error(state.error)
-    text('app-version', '当前版本 ' + state.version)
+    text('app-version', '当前版本 ' + state.version + (state.availableVersion ? ' · 可更新至 ' + state.availableVersion : ''))
     text('update-status', state.message, state.stage === 'error' ? 'bad' : state.stage === 'ready' || state.stage === 'current' ? 'good' : 'waiting')
     $('update-check').disabled = state.busy || !state.installed
-    $('update-download').disabled = state.busy || !state.installed || !state.availableVersion || state.canInstall
+    $('update-download').disabled = state.busy || !state.installed || state.canInstall
     $('update-install').disabled = state.busy || !state.canInstall
     $('update-progress').hidden = state.progress == null
     if (state.progress != null) $('update-progress').value = state.progress

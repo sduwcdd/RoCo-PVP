@@ -82,6 +82,7 @@ button,.quick-actions button,.diagnostic summary,.diagnostic button,.empty-state
    <div id="connection" class="connection" aria-live="polite"><div class="steps"><div id="step-capture" class="step"><span>1</span>网络采集</div><div id="step-key" class="step"><span>2</span>游戏握手</div><div id="step-battle" class="step"><span>3</span>对局识别</div></div><h4 id="connection-title">正在准备本机引擎</h4><p id="connection-detail">首次载入需要验证图鉴与规则，请稍候。</p><div class="metrics"><div class="metric"><b id="metric-bytes">—</b><span>转发数据</span></div><div class="metric"><b id="metric-protocol">—</b><span>游戏协议帧</span></div><div class="metric"><b id="metric-decoded">—</b><span>已解码记录</span></div></div></div>
   </div></div>
   <details class="diagnostic"><summary>连接诊断</summary><pre id="diagnostic-text">等待读取连接状态</pre><button id="copy" type="button">复制诊断信息</button> <button id="export-samples" type="button" hidden>导出协议样本</button><p id="sample-status" class="help-note"></p><p class="help-note">内部版自动保留最长3分钟、最多16 MB的游戏协议样本。分析失败后继续采集15秒。导出文件含会话密钥和账号流量，请通过私密渠道提供；重新开始采集会替换本机上一份样本。</p></details>
+  <section id="app-update" class="diagnostic" hidden aria-label="应用更新"><p id="update-version" class="help-note"></p><p id="update-message" class="help-note" role="status" aria-live="polite"></p><progress id="update-progress" max="100" value="0" hidden aria-label="更新下载进度"></progress><div><button id="check-update" type="button">检查更新</button> <button id="download-update" type="button" hidden>下载更新</button> <button id="install-update" type="button" hidden>安装更新</button></div></section>
   <div id="build-note" class="build-note">内部测试版 · 数据在本机处理</div>
  </div></section>
  <section id="my-page" class="page view" role="tabpanel" aria-labelledby="my-tab"><div class="view-header"><h2>我方阵容</h2><small class="round-label">等待对局</small><button class="pip" type="button" hidden><svg><use href="#i-window"/></svg>小窗</button></div><div class="frame-area"><iframe title="我方对战面板" data-url="/hud-duel?side=my" hidden></iframe><div class="empty-state"><div class="empty-icon"><img src="/assets/roco/pet-avatars/3004.png" alt=""></div><h3>等待精灵入场</h3><p class="empty-message">连接游戏后进入对战，精灵与技能信息会自动显示。</p><button type="button" data-go="setup">查看连接进度</button></div></div></section>
@@ -170,7 +171,20 @@ document.querySelectorAll('iframe').forEach(frame=>frame.addEventListener('load'
 }));
 window.addEventListener('resize',()=>{if(selected==='both'&&innerWidth<600)showView('my')});
 function setGame(name){if(!apps.some(app=>app.package===name))return;selectedPackage=name;try{localStorage.setItem('roco.mobile.package.v2',name)}catch{}renderControls()}
+function renderUpdate(){
+ const supported=!overlay&&android&&typeof android.updateStatus==='function';$('app-update').hidden=!supported;if(!supported)return;
+ try{const update=JSON.parse(android.updateStatus()),busy=!!update.busy;
+  $('update-version').textContent='当前版本 '+update.currentVersion+(update.versionName?' · 更新版本 '+update.versionName:'');
+  $('update-message').textContent=update.message||'';$('check-update').disabled=busy;
+  $('download-update').hidden=!update.versionCode||update.state==='ready';$('download-update').disabled=busy;
+  $('install-update').hidden=update.state!=='ready';$('install-update').disabled=busy;
+  $('update-progress').hidden=!['downloading','verifying'].includes(update.state);$('update-progress').value=update.progress||0;
+  if(update.state==='downloading')$('update-message').textContent+=' '+(update.progress||0)+'% · '+bytes(update.downloaded)+' / '+bytes(update.size);
+ }catch{$('update-message').textContent='无法读取更新状态，请重新打开助手'}
+}
+['check','download','install'].forEach(action=>$(action+'-update').addEventListener('click',()=>{try{android[action+'Update']();renderUpdate()}catch{toast('更新操作未完成，请重试')}}));
 function renderControls(){
+ renderUpdate();
  const state=native.state||'idle',busy=['starting','running','stopping'].includes(state),running=state==='running';
  const target=apps.find(app=>app.package===selectedPackage);
  $('game-name').textContent=target?target.label:'选择游戏应用';$('game-package').textContent=target?target.package:'仅采集你选中的游戏';

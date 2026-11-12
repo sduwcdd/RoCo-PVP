@@ -1,9 +1,9 @@
 {
-  "version": "1.1.8",
+  "version": "1.1.9",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5280,
-  "bytes": 385988475,
+  "file_count": 5284,
+  "bytes": 386028850,
   "files": [
     {
       "path": ".gitattributes",
@@ -1862,8 +1862,8 @@
     },
     {
       "path": "docs/UPDATABLE_APP.md",
-      "bytes": 2457,
-      "sha256": "8b0b6da36fcdf78ac3aeafe5304c70bdaef44d24202e1d3fb33e9076775bdb6c"
+      "bytes": 3928,
+      "sha256": "20190780e72fccb88667d7e508070e00d249cd6fd3d79ed3ec72e4261d74eda6"
     },
     {
       "path": "docs/verification/STARFALL_PARAMETER_AUDIT_20261026.md",
@@ -3122,8 +3122,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 16571,
-      "sha256": "3913a33cbd1aad526828da780129bc9ec0e94a26258abe2281ea99fde9f2167d"
+      "bytes": 17401,
+      "sha256": "0566e05cbcefcf6245fa67d1821ff479343c47d77e3ac97a6c37ff55331d7cfd"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3137,8 +3137,8 @@
     },
     {
       "path": "mobile/android/app/build.gradle",
-      "bytes": 2469,
-      "sha256": "6d29bae80d1589ef55e1814aa1058e6eaa9c8ac9c5c91c008cdc293d6ebe728b"
+      "bytes": 2575,
+      "sha256": "e4c0f84d236b092184ce216a4f5146c46c28ab3272524e42ce7e26b9dc59d7e3"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3171,14 +3171,19 @@
       "sha256": "4f6eeae31814a324c4d14d8689290b27855f6b284e8106f8b5916d60e5ac3cc2"
     },
     {
+      "path": "mobile/android/app/src/androidTest/java/cn/roco/mobile/UpdateTest.java",
+      "bytes": 5100,
+      "sha256": "6dc74614d059b82b5b3b7994b701a6cc9bb8b7d87424177db8968c2dac4609c7"
+    },
+    {
       "path": "mobile/android/app/src/androidTest/java/cn/roco/mobile/VpnForwardingTest.java",
       "bytes": 6179,
       "sha256": "36488f1ffa02312ef655f77954afa8da4b6872a7b2a19fb15824a5160b22b9fb"
     },
     {
       "path": "mobile/android/app/src/main/AndroidManifest.xml",
-      "bytes": 1701,
-      "sha256": "8a7b6e0b09dc0017133a70701f612239c2cef4bf174398f3add1e21312f5b55c"
+      "bytes": 1943,
+      "sha256": "524e6c4b1f1f0ca3d240b9111041bbfe32fd260c5bbb340128fb6f5f227c6bde"
     },
     {
       "path": "mobile/android/app/src/main/assets/licenses/hev-socks5-core.txt",
@@ -3206,6 +3211,11 @@
       "sha256": "863bb2c11fd2a6bf7f61f46e4e6ca46d008db5aad3b47e12de9ac2ee047752c0"
     },
     {
+      "path": "mobile/android/app/src/main/java/cn/roco/mobile/AppUpdater.java",
+      "bytes": 18425,
+      "sha256": "527a19c5722d954e28f4a9cc309647c22565bf04aa574186be11495ea2d415f4"
+    },
+    {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/CaptureService.java",
       "bytes": 22088,
       "sha256": "a60115cc156e92d3486fac1f58075422eaae45a5cf05bb4dfaeb90b8a4fe8aba"
@@ -3217,8 +3227,8 @@
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/MainActivity.java",
-      "bytes": 12847,
-      "sha256": "b5e9177718a4c4c8a2b31ec35fea7484f70051a1dde273f7067e0cf5b25f34a6"
+      "bytes": 13834,
+      "sha256": "83f38b2e66dd11703bc725f16f753442c16e350dc8c50e924b4bc43dae840df6"
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/PvpOverlay.java",
@@ -3229,6 +3239,11 @@
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/RuntimeBridge.java",
       "bytes": 2257,
       "sha256": "b69ef6375cf3f0fceb53f9e87af4846c63ea29bcfee3cb1514bf6853504d62e3"
+    },
+    {
+      "path": "mobile/android/app/src/main/java/cn/roco/mobile/UpdateProvider.java",
+      "bytes": 2423,
+      "sha256": "6f7f883504e8e5c54230668664da05f34cc4997aebea1a39912344627cd19df8"
     },
     {
       "path": "mobile/android/app/src/main/res/drawable/dimo.png",
@@ -3382,8 +3397,8 @@
     },
     {
       "path": "mobile/shared/index.html",
-      "bytes": 46199,
-      "sha256": "1dae13dd17e60cf09af09e5c546eb383489f79bb8c8ce5a13d7390de91857f7f"
+      "bytes": 47980,
+      "sha256": "b4093079541f74771a6508dd7e2eb1f9e99a6af04f8083edf09b33c4f301f1a9"
     },
     {
       "path": "mobile/shared/pvp-panel.html",
@@ -3402,13 +3417,13 @@
     },
     {
       "path": "overlay/desktop.html",
-      "bytes": 4846,
-      "sha256": "c95eff11db2d170633b9b35d2cad921acd61aa9eac0e5c1f5bf98c4ac27bdfeb"
+      "bytes": 4911,
+      "sha256": "48ba1a4ead60950979ebd76fa0ae0bfc7dc53f99833377b5f701ef983dbb1274"
     },
     {
       "path": "overlay/desktop.js",
-      "bytes": 12169,
-      "sha256": "8cfdceecd8b62ade129730c7cceda8402ab610e1b32dae43765e35534c1e09d8"
+      "bytes": 12209,
+      "sha256": "8dee2757d553e1f586e90fe56208e8e5930708e9be010a1c32a6960b8ed029ab"
     },
     {
       "path": "overlay/desktop_preload.js",
@@ -3417,8 +3432,8 @@
     },
     {
       "path": "overlay/desktop_renderer.js",
-      "bytes": 9206,
-      "sha256": "3294a440c870e2e86285f7b97525a836195ba4bde5dcf8d3ce3bcab2d51bad0f"
+      "bytes": 9258,
+      "sha256": "8bb86f565a4e3dda91da53a55b0f6a7dd7692fa667e9865ececf66356efa22a6"
     },
     {
       "path": "overlay/desktop_services.js",
@@ -3427,8 +3442,8 @@
     },
     {
       "path": "overlay/desktop_updater.js",
-      "bytes": 4717,
-      "sha256": "91ce414cab41ab0f4ec4d59cc61b4370b58c7e9b151e737b318cf2907ac4de0b"
+      "bytes": 5223,
+      "sha256": "9e49619e82208fc4d8bbffe7fbd30d04cf146d723349ed1970283f59866bc347"
     },
     {
       "path": "overlay/dimo.ico",
@@ -3448,12 +3463,12 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150986,
-      "sha256": "c9b240b228c4b841cef1c8ecdbd86cb40d341219fc9508a24177a8edd9452ee6"
+      "sha256": "f6571412331935d1e2f38ae976cf5fc162917b6ba6d3e9e604849d4bdec3484b"
     },
     {
       "path": "overlay/package.json",
       "bytes": 430,
-      "sha256": "bdc500a209edbd76dcb9e368ef4d0f5ad23ee246737c3a371ff0ec1dc8058e95"
+      "sha256": "f2d285768a1ede22f11bb90ff7163cbfccae0d80b9e4c045b1acd2177273d8a8"
     },
     {
       "path": "overlay/preload.js",
@@ -3463,7 +3478,7 @@
     {
       "path": "overlay/update_config.json",
       "bytes": 74,
-      "sha256": "1ae141bcecb226eedeb72e6a90af834261ca47cc5291e0d535392bf0d89d30e2"
+      "sha256": "7b4752a326a47eed1ec5972b96b94ac670a9466f5e0aca903f1d91be8c382a0a"
     },
     {
       "path": "requirements-release.txt",
@@ -3619,6 +3634,11 @@
       "path": "scripts/publish_app_update.py",
       "bytes": 9696,
       "sha256": "022ad06df8e55e38d9cb3f1c7fe2c4a908e43f225aca3f119440e5a27a136310"
+    },
+    {
+      "path": "scripts/publish_mobile_update.py",
+      "bytes": 5483,
+      "sha256": "bb3d8b7e114dad6b8e280cebe2dbb4732ca3c8349412917906691f874be7dc57"
     },
     {
       "path": "scripts/release_bootstrap.py",
@@ -3887,8 +3907,8 @@
     },
     {
       "path": "tests/test_desktop_updater.js",
-      "bytes": 4540,
-      "sha256": "497d5caa8a4fcdae91ba0f5e0ca1df6f4e8753522c37db8594bfa7d7e3a1fb9b"
+      "bytes": 5943,
+      "sha256": "5ef59aec9e2d8da3de6a7bc988ca7fa1591af1210929740935d299684171174b"
     },
     {
       "path": "tests/test_dex_snapshot.py",
@@ -4117,8 +4137,8 @@
     },
     {
       "path": "tests/test_mobile_ui.js",
-      "bytes": 12364,
-      "sha256": "5231f14efe135f8f814248f2b4270f5ebc188b6db1bb2938168b19730b7ed55c"
+      "bytes": 13825,
+      "sha256": "5a324cb5eee6aa7fc6dd24cc35ea963dc902a40296fd4208bdfa05aaa02d0d09"
     },
     {
       "path": "tests/test_modifier_ledger.py",
@@ -26413,5 +26433,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261106-public-116"
+  "release_build_id": "20261112-inapp-update-119-final"
 }

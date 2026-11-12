@@ -35,6 +35,10 @@ class DesktopUpdater {
   }
   set (stage, message) { this.state.stage = stage; this.state.message = message }
   snapshot () { return { ...this.state, busy: Boolean(this.operation) } }
+  start () {
+    if (!this.updater) return Promise.resolve(this.snapshot())
+    return this.check().catch(() => this.snapshot())
+  }
   safeError (error) {
     let message = String(error?.message || error)
     message = message.replace(/(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]+/g, '[hidden]')
@@ -54,28 +58,37 @@ class DesktopUpdater {
     if (!this.updater) throw Error('开发版不覆盖本地源码，请使用安装版进行在线更新')
     this.updater.setFeedURL({ provider: 'github', owner: config.owner, repo: config.repo, private: false })
   }
-  async check () {
-    return this.exclusive(async () => {
-      this.configureFeed(); this.info = null; this.state.availableVersion = null; this.state.progress = null; this.state.canInstall = false
-      await this.updater.checkForUpdates(); return this.snapshot()
-    })
+  async checkAvailable () {
+    this.configureFeed(); this.info = null; this.state.availableVersion = null; this.state.progress = null; this.state.canInstall = false
+    await this.updater.checkForUpdates()
+    return this.snapshot()
   }
-  async download () {
-    return this.exclusive(async () => {
-      this.configureFeed()
-      if (!this.info || !['available', 'error'].includes(this.state.stage)) throw Error('请先检查并选择可用的新版本')
-      this.set('downloading', '正在开始下载…'); this.state.progress = 0
-      await this.updater.downloadUpdate(); return this.snapshot()
-    })
+  async downloadAvailable () {
+    this.configureFeed()
+    if (!this.info || !['available', 'error'].includes(this.state.stage)) throw Error('请先检查并选择可用的新版本')
+    this.set('downloading', '正在开始下载…'); this.state.progress = 0
+    await this.updater.downloadUpdate()
+    if (!this.state.canInstall) throw Error('安装包尚未完成校验，请重试下载')
+    return this.snapshot()
   }
-  async install () {
+  async installVerified () {
+    if (!this.updater || !this.state.canInstall) throw Error('更新尚未下载和校验完成')
+    this.set('installing', '正在关闭本APP的抓包及窗口，安装后会重新启动…')
+    await this.beforeInstall()
+    this.updater.quitAndInstall(true, true)
+    return this.snapshot()
+  }
+  check () { return this.exclusive(() => this.checkAvailable()) }
+  download () { return this.exclusive(() => this.downloadAvailable()) }
+  install () { return this.exclusive(() => this.installVerified()) }
+  update () {
     return this.exclusive(async () => {
-      if (!this.updater || !this.state.canInstall) throw Error('更新尚未下载和校验完成')
-      this.set('installing', '正在关闭本APP的抓包及窗口，安装后会重新启动…')
-      try { await this.beforeInstall() }
-      catch (error) { this.set('ready', '尚未关闭本APP的采集或后台，更新未安装；请重试'); throw error }
-      this.updater.quitAndInstall(true, true)
-      return this.snapshot()
+      if (!this.state.canInstall) {
+        if (!this.info || !['available', 'error'].includes(this.state.stage)) await this.checkAvailable()
+        if (!this.info) return this.snapshot()
+        await this.downloadAvailable()
+      }
+      return this.installVerified()
     })
   }
 }

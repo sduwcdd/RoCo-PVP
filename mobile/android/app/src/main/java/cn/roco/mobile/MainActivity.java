@@ -44,6 +44,7 @@ public final class MainActivity extends Activity {
 
     @Override public void onCreate(Bundle saved) {
         super.onCreate(saved);
+        AppUpdater.get(this);
         if (RuntimeBridge.selectedPackage.isEmpty())
             RuntimeBridge.selectedPackage = getPreferences(MODE_PRIVATE).getString("game_package", "");
         loadApps();
@@ -62,6 +63,11 @@ public final class MainActivity extends Activity {
         web.getSettings().setAllowContentAccess(false);
         web.addJavascriptInterface(new Bridge(), "Android");
         web.setWebViewClient(new WebViewClient() {
+            @Override public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                Uri uri = request.getUrl();
+                if ("http".equals(uri.getScheme()) && "127.0.0.1".equals(uri.getHost()) && uri.getPort() == RuntimeBridge.port) return null;
+                return new WebResourceResponse("text/plain", "UTF-8", new java.io.ByteArrayInputStream(new byte[0]));
+            }
             @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 Uri uri = request.getUrl();
                 return !"http".equals(uri.getScheme()) || !"127.0.0.1".equals(uri.getHost()) || uri.getPort() != RuntimeBridge.port;
@@ -167,6 +173,7 @@ public final class MainActivity extends Activity {
 
     @Override protected void onActivityResult(int request, int result, Intent data) {
         super.onActivityResult(request, result, data);
+        if (request == 12) AppUpdater.get(this).installationResult(result);
         if (request == 10) {
             if (result == RESULT_OK) startVpn();
             else RuntimeBridge.status("denied", "VPN 授权未通过，请允许连接后重试。");
@@ -219,6 +226,10 @@ public final class MainActivity extends Activity {
     }
 
     public final class Bridge {
+        @JavascriptInterface public String updateStatus() { return AppUpdater.get(MainActivity.this).snapshot(); }
+        @JavascriptInterface public void checkUpdate() { AppUpdater.get(MainActivity.this).check(); }
+        @JavascriptInterface public void downloadUpdate() { AppUpdater.get(MainActivity.this).download(); }
+        @JavascriptInterface public void installUpdate() { AppUpdater.get(MainActivity.this).install(MainActivity.this); }
         @JavascriptInterface public String status() {
             try {
                 JSONObject result = new JSONObject(RuntimeBridge.status());

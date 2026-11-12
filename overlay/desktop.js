@@ -100,7 +100,7 @@ if (process.argv.includes('--hud-only')) {
           if (action === 'logs') { await shell.openPath(controller.logsDir); return { ok: true } }
           if (action === 'update-status') { await updates.ready; return updates.snapshot() }
           if (action === 'update-check') return await updates.check()
-          if (action === 'update-download') { await updates.download(); return await updates.install() }
+          if (action === 'update-download') return await updates.update()
           if (action === 'update-install') return await updates.install()
           if (action === 'update-help') { await shell.openExternal('https://github.com/sduwcdd/RoCo-PVP/releases'); return { ok: true } }
           throw Error('Unknown action')
@@ -156,6 +156,7 @@ if (process.argv.includes('--hud-only')) {
         if (!quitting) { e.preventDefault(); consoleWindow.hide() }
       })
       await consoleWindow.loadFile(path.join(__dirname, 'desktop.html'))
+      if (!process.argv.includes('--verify-desktop')) updates.start()
       if (!quitting) controller.ensureService().catch(error => controller.log('启动失败', error.message))
       if (process.argv.includes('--verify-desktop')) {
         await controller.ensureService()

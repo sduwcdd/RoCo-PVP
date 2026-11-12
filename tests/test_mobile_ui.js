@@ -45,6 +45,7 @@ function mobile(overlay = false) {
   let heldResponse = null;
   const delays = [];
   const calls = [];
+  const update = { state: "idle", busy: false, currentVersion: "0.10-internal", message: "点击检查更新" };
   const document = {
     body: element(),
     getElementById: id => nodes.get(id),
@@ -57,6 +58,10 @@ function mobile(overlay = false) {
     document, location: { search: overlay ? "?overlay=1" : "" },
     window: { Android: {
       status: () => JSON.stringify(device),
+      updateStatus: () => JSON.stringify(update),
+      checkUpdate: () => calls.push("check-update"),
+      downloadUpdate: () => calls.push("download-update"),
+      installUpdate: () => calls.push("install-update"),
       requestOverlay: () => calls.push("overlay"),
       stopCapture: () => calls.push("stop"),
       exportProtocolSamples: () => calls.push("export"),
@@ -73,7 +78,7 @@ function mobile(overlay = false) {
   // Keep startup side effects separate while exercising the actual page functions.
   vm.runInContext(script.slice(0, script.indexOf("if(android){try{apps=")), context);
   return {
-    nodes, pages, rounds, calls, status, delays,
+    nodes, pages, rounds, calls, status, delays, update,
     run: code => vm.runInContext(code, context),
     pause() { device = { ...device, analysis_state: "paused", analysis_message: "解析已暂停，VPN 转发继续。" }; },
     resume() { device = { ...device, analysis_state: "running" }; },
@@ -266,4 +271,26 @@ test("mobile HUD puts skills ahead of the radar and keeps short panels touch siz
   assert.match(style, /button,select,input\{min-height:44px!important\}/);
   assert.match(html, /\.overlay \.topbar,\.overlay \.view-header\{display:none\}/);
   assert.match(html, /\.overlay \.connection-banner\{height:28px/);
+});
+
+test("Android update UI exposes progress and retryable installation", () => {
+  const app = mobile();
+  app.run("renderUpdate()");
+  assert.equal(app.nodes.get("app-update").hidden, false);
+  assert.match(app.nodes.get("update-version").textContent, /0.10-internal/);
+  app.nodes.get("check-update").events.click();
+  assert.ok(app.calls.includes("check-update"));
+  Object.assign(app.update, { state: "downloading", busy: true, versionCode: 11, versionName: "0.11-internal", progress: 42, downloaded: 42, size: 100 });
+  app.run("renderUpdate()");
+  assert.equal(app.nodes.get("update-progress").value, 42);
+  assert.equal(app.nodes.get("check-update").disabled, true);
+  assert.equal(app.nodes.get("install-update").hidden, true);
+  Object.assign(app.update, { state: "ready", busy: false });
+  app.run("renderUpdate()");
+  assert.equal(app.nodes.get("install-update").hidden, false);
+  app.nodes.get("install-update").events.click();
+  assert.ok(app.calls.includes("install-update"));
+  const overlay = mobile(true);
+  overlay.run("renderUpdate()");
+  assert.equal(overlay.nodes.get("app-update").hidden, true);
 });

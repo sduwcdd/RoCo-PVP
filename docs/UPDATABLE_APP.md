@@ -14,7 +14,7 @@ New-Item -ItemType Directory -Force artifacts/release-tools
 Copy-Item scripts/release_tools.package.json artifacts/release-tools/package.json
 Copy-Item scripts/release_tools.package-lock.json artifacts/release-tools/package-lock.json
 npm --prefix artifacts/release-tools ci
-.venv-release/Scripts/python.exe scripts/build_updatable.py --version 1.1.8 --id <唯一构建ID>
+.venv-release/Scripts/python.exe scripts/build_updatable.py --version 1.1.9 --id <唯一构建ID>
 ```
 
 发布Electron固定45.2.1。新版本同步overlay/package.json、package-lock.json及update_config.json。完整构建包含当前后端、资源和桌面，不修改原工作区或自动上传。
@@ -37,3 +37,18 @@ npm --prefix artifacts/release-tools ci
 退出/更新先停止本APP采集、HUD和工作台；失败时保留APP并提示，不结束外部服务。旧更新源安装版需手动安装一次新源1.1.6，之后在设置内更新。
 
 数据仍位于LOCALAPPDATA/RocoPVP，覆盖安装不主动删除配置或回放。手机版当前内部资源格式另行维护，不能以Windows验证替代手机实测。
+
+## 应用内更新
+
+Windows安装版启动时自动检查公开稳定版，连接控制台直接显示版本更新区。点击“一键更新并重启”后，依次检查版本、下载安装包、校验SHA-512、停止本APP后台、安装和重新启动。网络中断可重试，已校验文件由更新器缓存。源码开发入口继续使用本地代码。
+
+安卓从0.10更新引导包开始提供“应用更新”。启动自动检查，点击下载后显示进度，完成长度、SHA-256、包名、版本和签名校验后可安装。系统需要用户允许此来源安装并确认；取消可重试。新旧APK使用同一签名时保留应用数据覆盖更新。
+
+安卓发布使用同一仓库的android-v版本预发布，与Windows稳定更新分开。将构建APK交给下列命令，自动从APK提取并校验身份，生成android-update.json，先上传草稿全部附件并核对GitHub摘要，再公开预发布：
+
+```powershell
+.venv-release/Scripts/python.exe scripts/publish_mobile_update.py --apk mobile/build/roco-mobile-android-internal-0.11.apk --dry-run
+.venv-release/Scripts/python.exe scripts/publish_mobile_update.py --apk mobile/build/roco-mobile-android-internal-0.11.apk
+```
+
+发布设备应持续使用相同签名文件，私钥保存在本机。更新清单包含versionCode、versionName、packageName、minSdk、apk、sha256、size、signerSha256。普通用户从APP下载，开发者发布时使用本机GitHub凭据。

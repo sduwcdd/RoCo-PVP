@@ -38,6 +38,39 @@ test('public update lifecycle is anonymous, validates before install, then clean
   await c.install(); assert.deepEqual(f.events, [['cleanup'], ['install', true, true]])
 })
 
+test('startup checks without downloading and one action downloads, cleans up and installs', async t => {
+  const f = fixture(t), c = f.create()
+  await c.start()
+  assert.equal(c.snapshot().stage, 'available')
+  assert.deepEqual(f.events, [])
+  await c.update()
+  assert.deepEqual(f.events, [['cleanup'], ['install', true, true]])
+})
+
+test('one-click check handles the current version and refuses an unverified download', async t => {
+  const f = fixture(t), c = f.create()
+  f.updater.checkForUpdates = async () => f.updater.emit('update-not-available')
+  await c.update()
+  assert.equal(c.snapshot().stage, 'current')
+  assert.deepEqual(f.events, [])
+  f.updater.checkForUpdates = async () => f.updater.emit('update-available', { version: '1.2.0' })
+  await c.check()
+  f.updater.downloadUpdate = async () => {}
+  await assert.rejects(c.update(), /尚未完成校验/)
+  assert.deepEqual(f.events, [])
+})
+
+test('startup network failure stays visible and can be retried', async t => {
+  const f = fixture(t), c = f.create()
+  f.updater.checkForUpdates = async () => { throw Error('network timeout') }
+  await c.start()
+  assert.equal(c.snapshot().stage, 'error')
+  assert.match(c.snapshot().message, /timeout/)
+  f.updater.checkForUpdates = async () => f.updater.emit('update-available', { version: '1.2.0' })
+  await c.update()
+  assert.deepEqual(f.events, [['cleanup'], ['install', true, true]])
+})
+
 test('download excludes duplicate operations and a capture-stop failure preserves a verified retry', async t => {
   const f = fixture(t); let unblock
   const c = f.create(async () => { throw Error('采集未退出') }); await c.ready; await c.check()
