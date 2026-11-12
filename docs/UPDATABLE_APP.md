@@ -14,7 +14,7 @@ New-Item -ItemType Directory -Force artifacts/release-tools
 Copy-Item scripts/release_tools.package.json artifacts/release-tools/package.json
 Copy-Item scripts/release_tools.package-lock.json artifacts/release-tools/package-lock.json
 npm --prefix artifacts/release-tools ci
-.venv-release/Scripts/python.exe scripts/build_updatable.py --version 1.1.9 --id <唯一构建ID>
+.venv-release/Scripts/python.exe scripts/build_updatable.py --version 1.1.10 --id <唯一构建ID>
 ```
 
 发布Electron固定45.2.1。新版本同步overlay/package.json、package-lock.json及update_config.json。完整构建包含当前后端、资源和桌面，不修改原工作区或自动上传。
@@ -52,3 +52,7 @@ Windows安装版启动时自动检查公开稳定版，连接控制台直接显�
 ```
 
 发布设备应持续使用相同签名文件，私钥保存在本机。更新清单包含versionCode、versionName、packageName、minSdk、apk、sha256、size、signerSha256。普通用户从APP下载，开发者发布时使用本机GitHub凭据。
+
+## CNB国内更新源
+
+Windows1.1.10与安卓0.12优先从CNB检查和下载，GitHub提供备用源。国内仓库为https://cnb.cool/sduwcgg/roco-pvp，发布命令、令牌保存及公开指针见CNB_UPDATES.md。

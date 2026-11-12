@@ -6,7 +6,11 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.net.Uri;
 import androidx.test.platform.app.InstrumentationRegistry;
+import java.io.IOException;
+import java.net.URL;
 import java.security.MessageDigest;
+import java.util.ArrayList;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -46,6 +50,67 @@ public final class UpdateTest {
         AppUpdater.validateSignatures(signatures, archive.signingInfo.getApkContentsSigners(), signer);
         rejects(() -> AppUpdater.validateSignatures(signatures, new Signature[]{new Signature(new byte[]{1, 2, 3})}, signer), "签名");
         rejects(() -> AppUpdater.validateSignatures(signatures, signatures, AppUpdater.hex(new byte[32])), "签名");
+    }
+
+    @Test public void cnbPointerSelectsUpdatesAndStopsAtCurrentVersion() throws Exception {
+        JSONObject value = manifest().put("downloadUrl", "https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/android-v0.12-internal/roco.apk");
+        ArrayList<String> requests = new ArrayList<>();
+        AppUpdater.MetadataFetcher fetcher = (url, limit) -> {
+            requests.add(url);
+            assertEquals(AppUpdater.CNB_LATEST, url);
+            return value.toString();
+        };
+        AppUpdater.UpdateSelection available = AppUpdater.findUpdate(10, fetcher);
+        assertEquals("CNB", available.source);
+        assertEquals(999, available.manifest.getLong("versionCode"));
+        assertEquals("CNB", available.manifest.getString("source"));
+        assertNull(AppUpdater.findUpdate(999, fetcher).manifest);
+        assertNull(AppUpdater.findUpdate(1000, fetcher).manifest);
+        assertEquals(3, requests.size());
+    }
+
+    @Test public void cnbFailureAndInvalidManifestFallBackToGithub() throws Exception {
+        String tag = "android-v0.12-internal";
+        String prefix = "https://github.com/sduwcdd/RoCo-PVP/releases/download/" + tag + "/";
+        JSONObject value = manifest();
+        JSONArray assets = new JSONArray().put(new JSONObject().put("name", "android-update.json").put("browser_download_url", prefix + "android-update.json"))
+            .put(new JSONObject().put("name", "roco.apk").put("size", 100).put("browser_download_url", prefix + "roco.apk"));
+        String releases = new JSONArray().put(new JSONObject().put("tag_name", tag).put("assets", assets)).toString();
+        for (String invalid : new String[]{"unavailable", "{}", new JSONObject(value.toString()).put("downloadUrl", "https://cnb.cool/other/roco-pvp/-/releases/download/" + tag + "/roco.apk").toString(),
+            new JSONObject(value.toString()).put("sha256", "invalid").put("downloadUrl", "https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/" + tag + "/roco.apk").toString()}) {
+            ArrayList<String> requests = new ArrayList<>();
+            AppUpdater.UpdateSelection selected = AppUpdater.findUpdate(10, (url, limit) -> {
+                requests.add(url);
+                if (url.equals(AppUpdater.CNB_LATEST)) {
+                    if (invalid.equals("unavailable")) throw new IOException("offline");
+                    return invalid;
+                }
+                if (url.equals(AppUpdater.RELEASES)) return releases;
+                assertEquals(prefix + "android-update.json", url);
+                return value.toString();
+            });
+            assertEquals("GitHub 备用", selected.source);
+            assertEquals(prefix + "roco.apk", selected.manifest.getString("downloadUrl"));
+            assertEquals(AppUpdater.CNB_LATEST, requests.get(0));
+            assertEquals(AppUpdater.RELEASES, requests.get(1));
+        }
+    }
+
+    @Test public void cnbUrlsKeepRepositoryHttpsAndRedirectBoundaries() throws Exception {
+        String url = "https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/android-v0.12-internal/roco.apk";
+        AppUpdater.validateCnbAssetUrl(url, "roco.apk");
+        for (String invalid : new String[]{url.replace("sduwcgg", "sduwcdd"), url.replace("https:", "http:"), url + "?token=x", url + "#fragment",
+            url.replace("/android-v0.12-internal/", "/../"), url.replace("/roco.apk", "/other.apk"), "https://example.com/roco.apk", ""})
+            rejects(() -> AppUpdater.validateCnbAssetUrl(invalid, "roco.apk"), "地址");
+        AppUpdater.validateConnectionUrl(new URL(url), true);
+        AppUpdater.validateConnectionUrl(new URL("https://cdn.cnb.cool/asset?signature=x"), true);
+        AppUpdater.validateConnectionUrl(new URL("https://release-assets.githubusercontent.com/asset?signature=x"), false);
+        for (String invalid : new String[]{"https://cnb.cool.evil.example/asset", "https://api.cnb.cool/asset", "https://github.com/asset", "https://example.com/asset"})
+            rejects(() -> AppUpdater.validateConnectionUrl(new URL(invalid), true), "目标");
+        rejects(() -> AppUpdater.validateConnectionUrl(new URL("http://cnb.cool/asset"), true), "HTTPS");
+        rejects(() -> AppUpdater.validateConnectionUrl(new URL("https://user@cnb.cool/asset"), true), "HTTPS");
+        rejects(() -> AppUpdater.validateConnectionUrl(new URL("https://cnb.cool:8443/asset"), true), "HTTPS");
+        rejects(() -> AppUpdater.validateConnectionUrl(new URL("https://cdn.cnb.cool/asset"), false), "目标");
     }
     @Test public void providerRejectsTraversalAndWrites() throws Exception {
         Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();

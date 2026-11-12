@@ -27,13 +27,15 @@ import java.util.concurrent.Executors;
 /** Application-scoped worker keeps update IO independent from capture and Activity lifetime. */
 final class AppUpdater {
     static final String RELEASES = "https://api.github.com/repos/sduwcdd/RoCo-PVP/releases?per_page=100";
+    static final String CNB_LATEST = "https://cnb.cool/sduwcgg/roco-pvp/-/git/raw/main/updates/android/latest.json";
     private static final String ASSET_PREFIX = "https://github.com/sduwcdd/RoCo-PVP/releases/download/";
+    private static final String CNB_ASSET_PREFIX = "https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/";
     private static AppUpdater instance;
     private final Context context;
     private final ExecutorService worker = Executors.newSingleThreadExecutor();
     private final File directory;
     private JSONObject candidate;
-    private String state = "idle", message = "点击检查更新";
+    private String state = "idle", message = "点击检查更新", source = "";
     private long downloaded, size;
     private boolean busy;
 
@@ -54,7 +56,7 @@ final class AppUpdater {
                     try (InputStream input = new FileInputStream(metadata)) { saved = new JSONObject(readText(input, 65536)); }
                     validateManifest(saved, current().getLongVersionCode());
                     verify(apk(), saved);
-                    synchronized (this) { candidate = saved; size = saved.getLong("size"); downloaded = size; }
+                    synchronized (this) { candidate = saved; source = saved.optString("source", "GitHub 备用"); size = saved.getLong("size"); downloaded = size; }
                     status("ready", "已校验更新，可继续安装");
                 }
             } catch (Exception ignored) { status("idle", "点击检查更新"); }
@@ -69,7 +71,7 @@ final class AppUpdater {
     synchronized String snapshot() {
         JSONObject result = new JSONObject();
         try {
-            result.put("state", state).put("message", message).put("busy", busy);
+            result.put("state", state).put("message", message).put("busy", busy).put("source", source);
             result.put("currentVersion", current().versionName).put("currentVersionCode", current().getLongVersionCode());
             result.put("downloaded", downloaded).put("size", size).put("progress", size > 0 ? downloaded * 100 / size : 0);
             if (candidate != null) result.put("versionName", candidate.getString("versionName")).put("versionCode", candidate.getLong("versionCode"));
@@ -83,32 +85,14 @@ final class AppUpdater {
 
     void check() {
         if (!begin()) return;
-        status("checking", "正在检查 GitHub 发布…");
+        status("checking", "正在检查 CNB 国内更新…");
         worker.execute(() -> {
             try {
-                JSONArray releases = new JSONArray(fetchText(RELEASES, 4 * 1024 * 1024));
-                JSONObject newest = null;
-                long installed = current().getLongVersionCode();
-                for (int i = 0; i < releases.length(); i++) {
-                    JSONObject release = releases.getJSONObject(i);
-                    if (release.optBoolean("draft") || !release.optString("tag_name").startsWith("android-v")) continue;
-                    JSONArray assets = release.getJSONArray("assets");
-                    JSONObject manifestAsset = asset(assets, "android-update.json");
-                    if (manifestAsset == null) continue;
-                    String manifestUrl = manifestAsset.getString("browser_download_url");
-                    validateAssetUrl(manifestUrl, release.getString("tag_name"), "android-update.json");
-                    JSONObject manifest = new JSONObject(fetchText(manifestUrl, 65536));
-                    if (manifest.optLong("versionCode") <= installed) continue;
-                    validateManifest(manifest, installed);
-                    JSONObject binary = asset(assets, manifest.getString("apk"));
-                    if (binary == null || binary.getLong("size") != manifest.getLong("size")) throw new IOException("发布 APK 与更新清单不匹配");
-                    String url = binary.getString("browser_download_url");
-                    validateAssetUrl(url, release.getString("tag_name"), manifest.getString("apk"));
-                    manifest.put("downloadUrl", url);
-                    if (newest == null || manifest.getLong("versionCode") > newest.getLong("versionCode")) newest = manifest;
-                }
+                UpdateSelection selection = findUpdate(current().getLongVersionCode(), AppUpdater::fetchText);
+                JSONObject newest = selection.manifest;
                 synchronized (this) {
                     candidate = newest;
+                    source = selection.source;
                     size = newest == null ? 0 : newest.getLong("size");
                     downloaded = 0;
                 }
@@ -126,6 +110,47 @@ final class AppUpdater {
             }
             finally { finish(); }
         });
+    }
+
+    interface MetadataFetcher { String fetch(String url, int limit) throws Exception; }
+
+    static final class UpdateSelection {
+        final JSONObject manifest;
+        final String source;
+        UpdateSelection(JSONObject manifest, String source) { this.manifest = manifest; this.source = source; }
+    }
+
+    static UpdateSelection findUpdate(long installed, MetadataFetcher fetcher) throws Exception {
+        try {
+            JSONObject manifest = new JSONObject(fetcher.fetch(CNB_LATEST, 65536));
+            validateManifest(manifest, 0);
+            validateCnbAssetUrl(manifest.getString("downloadUrl"), manifest.getString("apk"));
+            manifest.put("source", "CNB");
+            return new UpdateSelection(manifest.getLong("versionCode") > installed ? manifest : null, "CNB");
+        } catch (Exception unavailable) {
+            // Public CNB metadata is optional so existing GitHub releases remain usable.
+        }
+        JSONArray releases = new JSONArray(fetcher.fetch(RELEASES, 4 * 1024 * 1024));
+        JSONObject newest = null;
+        for (int i = 0; i < releases.length(); i++) {
+            JSONObject release = releases.getJSONObject(i);
+            if (release.optBoolean("draft") || !release.optString("tag_name").startsWith("android-v")) continue;
+            JSONArray assets = release.getJSONArray("assets");
+            JSONObject manifestAsset = asset(assets, "android-update.json");
+            if (manifestAsset == null) continue;
+            String manifestUrl = manifestAsset.getString("browser_download_url");
+            validateAssetUrl(manifestUrl, release.getString("tag_name"), "android-update.json");
+            JSONObject manifest = new JSONObject(fetcher.fetch(manifestUrl, 65536));
+            if (manifest.optLong("versionCode") <= installed) continue;
+            validateManifest(manifest, installed);
+            JSONObject binary = asset(assets, manifest.getString("apk"));
+            if (binary == null || binary.getLong("size") != manifest.getLong("size")) throw new IOException("发布 APK 与更新清单不匹配");
+            String url = binary.getString("browser_download_url");
+            validateAssetUrl(url, release.getString("tag_name"), manifest.getString("apk"));
+            manifest.put("downloadUrl", url).put("source", "GitHub 备用");
+            if (newest == null || manifest.getLong("versionCode") > newest.getLong("versionCode")) newest = manifest;
+        }
+        return new UpdateSelection(newest, "GitHub 备用");
     }
 
     void download() {
@@ -211,6 +236,17 @@ final class AppUpdater {
             throw new IOException("更新地址不属于此仓库发布");
     }
 
+    static void validateCnbAssetUrl(String value, String name) throws IOException {
+        Uri uri = Uri.parse(value);
+        String suffix = value.startsWith(CNB_ASSET_PREFIX) ? value.substring(CNB_ASSET_PREFIX.length()) : "";
+        int slash = suffix.indexOf('/');
+        String tag = slash < 0 ? "" : suffix.substring(0, slash);
+        if (!tag.matches("[A-Za-z0-9][A-Za-z0-9._-]*") || !value.equals(CNB_ASSET_PREFIX + tag + "/" + name)
+            || !"https".equals(uri.getScheme()) || !"cnb.cool".equals(uri.getHost()) || uri.getPort() != -1
+            || uri.getQuery() != null || uri.getFragment() != null || uri.getUserInfo() != null)
+            throw new IOException("CNB 更新地址不属于此仓库发布");
+    }
+
     static void validateManifest(JSONObject manifest, long installed) throws Exception {
         Object code = manifest.get("versionCode"), minimum = manifest.get("minSdk"), length = manifest.get("size");
         if (!(code instanceof Integer || code instanceof Long) || !(minimum instanceof Integer || minimum instanceof Long)
@@ -276,21 +312,28 @@ final class AppUpdater {
 
     private static HttpURLConnection connect(String address) throws Exception {
         URL url = new URL(address);
+        boolean cnb = "cnb.cool".equals(url.getHost());
         for (int redirect = 0; redirect < 6; redirect++) {
-            if (!"https".equals(url.getProtocol()) || url.getUserInfo() != null || (url.getPort() != -1 && url.getPort() != 443)) throw new IOException("更新连接必须使用 HTTPS");
-            String host = url.getHost();
-            if (!host.equals("api.github.com") && !host.equals("github.com") && !host.equals("release-assets.githubusercontent.com")
-                && !host.equals("objects.githubusercontent.com")) throw new IOException("更新重定向目标无效");
+            validateConnectionUrl(url, cnb);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setConnectTimeout(20000); connection.setReadTimeout(30000); connection.setInstanceFollowRedirects(false);
             connection.setRequestProperty("User-Agent", "RoCo-Mobile-Updater");
             int response = connection.getResponseCode();
             if (response == 200) return connection;
             String location = connection.getHeaderField("Location"); connection.disconnect();
-            if (response < 300 || response > 399 || location == null) throw new IOException("GitHub HTTP " + response);
+            if (response < 300 || response > 399 || location == null) throw new IOException((cnb ? "CNB" : "GitHub") + " HTTP " + response);
             url = new URL(url, location);
         }
         throw new IOException("更新重定向次数过多");
+    }
+
+    static void validateConnectionUrl(URL url, boolean cnb) throws IOException {
+        if (!"https".equals(url.getProtocol()) || url.getUserInfo() != null || (url.getPort() != -1 && url.getPort() != 443))
+            throw new IOException("更新连接必须使用 HTTPS");
+        String host = url.getHost().toLowerCase(java.util.Locale.ROOT);
+        boolean allowed = cnb ? (host.equals("cnb.cool") || host.endsWith(".cnb.cool")) && !host.equals("api.cnb.cool")
+            : host.equals("api.github.com") || host.equals("github.com") || host.equals("release-assets.githubusercontent.com") || host.equals("objects.githubusercontent.com");
+        if (!allowed) throw new IOException("更新重定向目标无效");
     }
 
     private static String fetchText(String url, int limit) throws Exception {

@@ -18,7 +18,7 @@ class DesktopUpdater {
       this.updater.on('checking-for-update', () => this.set('checking', '正在检查新版本…'))
       this.updater.on('update-available', info => {
         this.info = info; this.state.availableVersion = info.version
-        this.set('available', '发现新版本 ' + info.version + '，可下载更新')
+        this.set('available', '发现新版本 ' + info.version + (this.state.source === 'cnb' ? '，可从国内源下载' : '，可从备用源下载'))
       })
       this.updater.on('update-not-available', () => { this.info = null; this.state.availableVersion = null; this.set('current', '当前已是最新版本') })
       this.updater.on('download-progress', data => {
@@ -29,7 +29,7 @@ class DesktopUpdater {
         this.info = info; this.state.availableVersion = info.version; this.state.progress = 100; this.state.canInstall = true
         this.set('ready', '下载和校验完成，可以安装并重启')
       })
-      this.updater.on('error', error => this.fail(error))
+      this.updater.on('error', error => { if (!this.checkingSources) this.fail(error) })
     }
     this.ready = Promise.resolve()
   }
@@ -54,17 +54,37 @@ class DesktopUpdater {
     try { return await this.operation } catch (error) { this.fail(error); throw Error(this.state.message) }
     finally { this.operation = null }
   }
-  configureFeed () {
+  configureFeed (source = 'cnb') {
     if (!this.updater) throw Error('开发版不覆盖本地源码，请使用安装版进行在线更新')
-    this.updater.setFeedURL({ provider: 'github', owner: config.owner, repo: config.repo, private: false })
+    if (source === 'cnb') {
+      if (!/^[A-Za-z0-9_-]+\/[A-Za-z0-9_.-]+$/.test(config.cnbRepo)) throw Error('国内更新仓库配置无效')
+      this.updater.setFeedURL({ provider: 'generic', url: 'https://cnb.cool/' + config.cnbRepo + '/-/git/raw/main/updates/windows/', useMultipleRangeRequest: false })
+    } else {
+      this.updater.setFeedURL({ provider: 'github', owner: config.owner, repo: config.repo, private: false })
+    }
+    this.state.source = source
   }
   async checkAvailable () {
-    this.configureFeed(); this.info = null; this.state.availableVersion = null; this.state.progress = null; this.state.canInstall = false
-    await this.updater.checkForUpdates()
-    return this.snapshot()
+    if (!this.updater) throw Error('开发版不覆盖本地源码，请使用安装版进行在线更新')
+    this.info = null; this.state.availableVersion = null; this.state.progress = null; this.state.canInstall = false
+    this.checkingSources = true
+    let lastError
+    try {
+      for (const source of ['cnb', 'github']) {
+        try {
+          this.configureFeed(source)
+          await this.updater.checkForUpdates()
+          return this.snapshot()
+        } catch (error) {
+          lastError = error
+          this.info = null; this.state.availableVersion = null; this.state.canInstall = false
+          this.log('更新', (source === 'cnb' ? '国内源' : 'GitHub备用源') + '暂时无法读取')
+        }
+      }
+      throw Error('国内和备用更新源均不可用。' + this.safeError(lastError))
+    } finally { this.checkingSources = false }
   }
   async downloadAvailable () {
-    this.configureFeed()
     if (!this.info || !['available', 'error'].includes(this.state.stage)) throw Error('请先检查并选择可用的新版本')
     this.set('downloading', '正在开始下载…'); this.state.progress = 0
     await this.updater.downloadUpdate()

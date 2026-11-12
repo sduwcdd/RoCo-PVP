@@ -174,7 +174,7 @@ function setGame(name){if(!apps.some(app=>app.package===name))return;selectedPac
 function renderUpdate(){
  const supported=!overlay&&android&&typeof android.updateStatus==='function';$('app-update').hidden=!supported;if(!supported)return;
  try{const update=JSON.parse(android.updateStatus()),busy=!!update.busy;
-  $('update-version').textContent='当前版本 '+update.currentVersion+(update.versionName?' · 更新版本 '+update.versionName:'');
+  $('update-version').textContent='当前版本 '+update.currentVersion+(update.versionName?' · 更新版本 '+update.versionName:'')+(update.source?' · 来源 '+update.source:'');
   $('update-message').textContent=update.message||'';$('check-update').disabled=busy;
   $('download-update').hidden=!update.versionCode||update.state==='ready';$('download-update').disabled=busy;
   $('install-update').hidden=update.state!=='ready';$('install-update').disabled=busy;

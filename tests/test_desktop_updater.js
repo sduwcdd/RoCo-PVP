@@ -31,11 +31,36 @@ test('public update lifecycle is anonymous, validates before install, then clean
   await c.ready
   await assert.rejects(c.install(), /校验完成/)
   await c.check()
-  assert.equal(f.updater.feed.repo, 'RoCo-PVP'); assert.equal(f.updater.feed.private, false)
+  assert.equal(f.updater.feed.provider, 'generic')
+  assert.equal(f.updater.feed.url, 'https://cnb.cool/sduwcgg/roco-pvp/-/git/raw/main/updates/windows/')
   assert.equal(Object.hasOwn(f.updater.feed, 'token'), false)
   assert.equal(f.updater.autoInstallOnAppQuit, false)
   await c.download(); assert.equal(c.snapshot().canInstall, true)
   await c.install(); assert.deepEqual(f.events, [['cleanup'], ['install', true, true]])
+})
+
+test('CNB failure uses the public GitHub fallback and retains it for download', async t => {
+  const f = fixture(t), c = f.create(), attempted = []
+  f.updater.checkForUpdates = async () => {
+    attempted.push(f.updater.feed.provider)
+    if (f.updater.feed.provider === 'generic') { f.updater.emit('error', Error('HTTP 403')); throw Error('HTTP 403') }
+    f.updater.emit('update-available', { version: '1.2.0' })
+  }
+  await c.check()
+  assert.deepEqual(attempted, ['generic', 'github'])
+  assert.equal(c.snapshot().source, 'github')
+  assert.equal(f.updater.feed.private, false)
+  await c.download()
+  assert.equal(f.updater.feed.provider, 'github')
+  assert.equal(c.snapshot().canInstall, true)
+})
+
+test('a current CNB version completes without contacting GitHub', async t => {
+  const f = fixture(t), c = f.create(), attempted = []
+  f.updater.checkForUpdates = async () => { attempted.push(f.updater.feed.provider); f.updater.emit('update-not-available') }
+  await c.check()
+  assert.deepEqual(attempted, ['generic'])
+  assert.equal(c.snapshot().stage, 'current')
 })
 
 test('startup checks without downloading and one action downloads, cleans up and installs', async t => {

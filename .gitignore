@@ -97,6 +97,7 @@ roco-mobile-protocol*.zip
 *.key
 .env
 .env.*
+cnb.txt
 
 # Private team imports
 data/reference/team-code-20261025/user-source.json

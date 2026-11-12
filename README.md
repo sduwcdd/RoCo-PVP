@@ -1,14 +1,14 @@
-# 洛克 PVP 辅助工具 · 1.1.9
+# 洛克 PVP 辅助工具 · 1.1.10
 
 用于洛克王国：世界的本地Windows辅助APP，提供实时HUD、对局记录、伤害估计与配置推断。维护源码直接位于仓库根目录；源码和安装包统一在本公开仓库维护。
 
 ## 使用安装包
 
-从 [Releases](https://github.com/sduwcdd/RoCo-PVP/releases/latest) 下载Windows安装包。抓包需要Npcap及Windows管理员授权。关闭窗口收起到托盘，托盘退出等待本APP的采集、HUD和工作台停止；授权取消时不会假装退出。
+从 [国内下载](https://cnb.cool/sduwcgg/roco-pvp) 获取Windows及安卓安装包，亦可使用 [GitHub Releases](https://github.com/sduwcdd/RoCo-PVP/releases/latest)。抓包需要Npcap及Windows管理员授权。关闭窗口收起到托盘，托盘退出等待本APP的采集、HUD和工作台停止；授权取消时不会假装退出。
 
 1.1.8修复中文日志乱码、敌方原始性格增减箭头显示，并改进HUD窗口遮挡范围；包含本机抓包环境检查，检查结果不代表游戏检测策略或账号安全结论。身高、体重、音调参数及奖牌条件预测继续提供，未确认取得的奖牌明确显示预计。当前图鉴快照为20261105T124140+0800。范围与限制见 [当前进度](docs/PROJECT_STATUS.md)。
 
-Windows安装版启动自动检查更新，连接控制台提供“一键更新并重启”。安卓0.10更新引导包与0.11支持APP内检查、下载、校验及系统确认安装。安装说明见[手机版](mobile/README.md)，实际验证见[更新记录](docs/verification/in-app-update-20261112.md)。
+Windows1.1.10与安卓0.12优先使用CNB国内更新源。Windows安装版启动自动检查更新，连接控制台提供“一键更新并重启”。安卓0.10更新引导包与0.11支持APP内检查、下载、校验及系统确认安装。安装说明见[手机版](mobile/README.md)，实际验证见[更新记录](docs/verification/in-app-update-20261112.md)。
 
 ## 从源码开发
 

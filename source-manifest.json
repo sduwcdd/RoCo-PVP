@@ -1,9 +1,9 @@
 {
-  "version": "1.1.9",
+  "version": "1.1.10",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5285,
-  "bytes": 386033459,
+  "file_count": 5289,
+  "bytes": 386066640,
   "files": [
     {
       "path": ".gitattributes",
@@ -12,8 +12,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 2028,
-      "sha256": "e8b389947069a32361b367a6c3fa98c502b60d903f712b59435eb3e9ce8b4eed"
+      "bytes": 2037,
+      "sha256": "a147caec736f2372dc89705582fd9f293bbb0576a8547c470d66f0bd7eed0b83"
     },
     {
       "path": ".gitmodules",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2787,
-      "sha256": "a9ae70957ae265d113fd8667cd5b6cd75c3fd74a49a9a04d6beada0800c5c334"
+      "bytes": 2928,
+      "sha256": "bac6bffbaa8e7f0230625932da4c74fa59c18f30e358608f1236e1587e5e3c95"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -1781,6 +1781,11 @@
       "sha256": "1c87b8a4427c24ca4272cecd5500ddc8d34bd4d21bcae7d7d5ca02ebfc46f526"
     },
     {
+      "path": "docs/CNB_UPDATES.md",
+      "bytes": 2397,
+      "sha256": "8261890878759e1c5aefe4775d309f77c8039127021f552b3ac68608bfbd2e5c"
+    },
+    {
       "path": "docs/DAMAGE_BELIEFS.md",
       "bytes": 3728,
       "sha256": "3dd9bdc0394eff2a39cdd0fe28c585aca49e1dfcb147e52a4d6773f97b1de732"
@@ -1797,8 +1802,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 5574,
-      "sha256": "a0363663152584c12181f7e384d43ed380204476e392124a31de4dd02641f771"
+      "bytes": 5747,
+      "sha256": "16241a4d9220ba173eb19331d3271165a41fd3c3555729d1e6452526e8b32f43"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
@@ -1862,8 +1867,8 @@
     },
     {
       "path": "docs/UPDATABLE_APP.md",
-      "bytes": 3928,
-      "sha256": "20190780e72fccb88667d7e508070e00d249cd6fd3d79ed3ec72e4261d74eda6"
+      "bytes": 4147,
+      "sha256": "72743d71765740359a25dc607f1083505c2e597b4b8cb3e43c810109a9b2050b"
     },
     {
       "path": "docs/verification/STARFALL_PARAMETER_AUDIT_20261026.md",
@@ -1989,6 +1994,11 @@
       "path": "docs/verification/charge-program-adapter-20261025.md",
       "bytes": 2884,
       "sha256": "e6155e0fdb0df81a5dc4c25e3c87a6e271a211e714e386d40410c43437bd44c1"
+    },
+    {
+      "path": "docs/verification/cnb-updates-20261112.md",
+      "bytes": 3772,
+      "sha256": "9ee72d996fcc4d56fcc0a80c6f4f880164b3dfa710905381969e591a0c8833b9"
     },
     {
       "path": "docs/verification/compact-battle-20261025.json",
@@ -3127,8 +3137,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 17401,
-      "sha256": "0566e05cbcefcf6245fa67d1821ff479343c47d77e3ac97a6c37ff55331d7cfd"
+      "bytes": 17799,
+      "sha256": "156cf86edfc97822d72a0d956c2ef5af49ae53485da26ea65df8a42a901595bb"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3143,7 +3153,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2575,
-      "sha256": "e4c0f84d236b092184ce216a4f5146c46c28ab3272524e42ce7e26b9dc59d7e3"
+      "sha256": "00415b4db5cbe93fbe47792399230579a7550dde62bc65534d6be99e24d76705"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3177,8 +3187,8 @@
     },
     {
       "path": "mobile/android/app/src/androidTest/java/cn/roco/mobile/UpdateTest.java",
-      "bytes": 5100,
-      "sha256": "6dc74614d059b82b5b3b7994b701a6cc9bb8b7d87424177db8968c2dac4609c7"
+      "bytes": 9719,
+      "sha256": "8aea0a39ff52c1f91dafed83ec7a88f111439e934f6999045a19ff17e599c104"
     },
     {
       "path": "mobile/android/app/src/androidTest/java/cn/roco/mobile/VpnForwardingTest.java",
@@ -3217,8 +3227,8 @@
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/AppUpdater.java",
-      "bytes": 18425,
-      "sha256": "527a19c5722d954e28f4a9cc309647c22565bf04aa574186be11495ea2d415f4"
+      "bytes": 20886,
+      "sha256": "4c411c42dba1fbb7f679de0b18934a201b59105c312fe33220a4397c1f6d3c86"
     },
     {
       "path": "mobile/android/app/src/main/java/cn/roco/mobile/CaptureService.java",
@@ -3402,8 +3412,8 @@
     },
     {
       "path": "mobile/shared/index.html",
-      "bytes": 47980,
-      "sha256": "b4093079541f74771a6508dd7e2eb1f9e99a6af04f8083edf09b33c4f301f1a9"
+      "bytes": 48026,
+      "sha256": "b3e4a4a10457ca68f7c175ee1b184d49d585629f3622cc920c3507f3e0d1dfce"
     },
     {
       "path": "mobile/shared/pvp-panel.html",
@@ -3447,8 +3457,8 @@
     },
     {
       "path": "overlay/desktop_updater.js",
-      "bytes": 5223,
-      "sha256": "9e49619e82208fc4d8bbffe7fbd30d04cf146d723349ed1970283f59866bc347"
+      "bytes": 6337,
+      "sha256": "aa5d066213a9d68bcc94ccf407cbc07b2035626b8b4b7038d399a8fa88f3c7d6"
     },
     {
       "path": "overlay/dimo.ico",
@@ -3467,13 +3477,13 @@
     },
     {
       "path": "overlay/package-lock.json",
-      "bytes": 150986,
-      "sha256": "f6571412331935d1e2f38ae976cf5fc162917b6ba6d3e9e604849d4bdec3484b"
+      "bytes": 150988,
+      "sha256": "511a89ae69a769e3355fdc869a3a6e192c2cd9f5d7c8cfe8b36d9deeab8da384"
     },
     {
       "path": "overlay/package.json",
-      "bytes": 430,
-      "sha256": "f2d285768a1ede22f11bb90ff7163cbfccae0d80b9e4c045b1acd2177273d8a8"
+      "bytes": 431,
+      "sha256": "dbe1c245374afbc7ec0e3c2cb363126ed2b5c2eefaa05f8fe10dd859e1c46197"
     },
     {
       "path": "overlay/preload.js",
@@ -3482,8 +3492,8 @@
     },
     {
       "path": "overlay/update_config.json",
-      "bytes": 74,
-      "sha256": "7b4752a326a47eed1ec5972b96b94ac670a9466f5e0aca903f1d91be8c382a0a"
+      "bytes": 109,
+      "sha256": "716923c42e672eef9efce2134a3fb261594495f0bef9957f1e027603cc5a9e64"
     },
     {
       "path": "requirements-release.txt",
@@ -3639,6 +3649,11 @@
       "path": "scripts/publish_app_update.py",
       "bytes": 9696,
       "sha256": "022ad06df8e55e38d9cb3f1c7fe2c4a908e43f225aca3f119440e5a27a136310"
+    },
+    {
+      "path": "scripts/publish_cnb_updates.py",
+      "bytes": 14840,
+      "sha256": "7e86456c8d6a1fabeef3cd9164396e78e7f7c7bbfe09661a1a5245496e04d258"
     },
     {
       "path": "scripts/publish_mobile_update.py",
@@ -3866,6 +3881,11 @@
       "sha256": "18fbeecd34258d7a9e3eb6487287c2d07303d5a1fbaa53899e1433ae419f76b7"
     },
     {
+      "path": "tests/test_cnb_updates.py",
+      "bytes": 1555,
+      "sha256": "b686882465c6196e3e63fd03346ab835cdad9088a4d9c86fc614b98bf942b2da"
+    },
+    {
       "path": "tests/test_confirmed_inputs.py",
       "bytes": 4464,
       "sha256": "74c993592222ba1fe14509e8d2375219f8738c7258f290557e293fe0eb6c3df7"
@@ -3912,8 +3932,8 @@
     },
     {
       "path": "tests/test_desktop_updater.js",
-      "bytes": 5943,
-      "sha256": "5ef59aec9e2d8da3de6a7bc988ca7fa1591af1210929740935d299684171174b"
+      "bytes": 7080,
+      "sha256": "08c4d2c33a74b27a49d499476d97853c3f0befb7396653ad85eaaa92bf76ea5f"
     },
     {
       "path": "tests/test_dex_snapshot.py",
@@ -4142,8 +4162,8 @@
     },
     {
       "path": "tests/test_mobile_ui.js",
-      "bytes": 13825,
-      "sha256": "5a324cb5eee6aa7fc6dd24cc35ea963dc902a40296fd4208bdfa05aaa02d0d09"
+      "bytes": 14087,
+      "sha256": "b8a06ed435d674d37ec16bcace48894c3949e227527b68e2a3430a08209f34cd"
     },
     {
       "path": "tests/test_modifier_ledger.py",
@@ -26438,5 +26458,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261112-inapp-update-119-final"
+  "release_build_id": "20261112-cnb-1110"
 }

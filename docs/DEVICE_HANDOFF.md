@@ -1,6 +1,6 @@
 # 第二台设备继续开发
 
-仓库：https://github.com/sduwcdd/RoCo-PVP ，桌面版本1.1.9。源码直接位于根目录，不再进入RoCo_PVP/source，也没有AI_try、旧APP和private-source分区。旧历史在原设备单独保留。
+仓库：https://github.com/sduwcdd/RoCo-PVP ，桌面版本1.1.10。源码直接位于根目录，不再进入RoCo_PVP/source，也没有AI_try、旧APP和private-source分区。旧历史在原设备单独保留。
 
 ## 获取与运行
 
@@ -21,7 +21,7 @@ npm --prefix overlay start
 
 Windows1.1.8包含退出清理、中文日志编码修复、敌方原始性格箭头、HUD内容高度适配及本机环境检查，保留身高/体重/音调与奖牌预测，战斗规则与HUD共用。图鉴快照20261105T124140+0800，限制见PROJECT_STATUS.md。
 
-Android内部版已推进至0.11，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
+Android内部版已推进至0.12，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
 
 本地开发现为Android 0.10，已兼容华为Android 12回传的0x73上行前缀，139帧离线解析及两个编译模式验证通过。保留有界协议样本采集、原生文件导出和`scripts/replay_mobile_protocol.py`离线回放入口。默认PVP保留完整战况，新增只显示当前敌方身份、性格方向、体重、声音及奖牌提示的PVE模式。修复上行消息反复读取协议表的耗时，同份0.7用户记录的本机编译后端回放从13.45秒降至PVP4.29秒、PVE1.07秒，PVP最终战况相同，PVE元数据与完整解码相同。手机实际延迟和PVP 6v6仍待实测，尚未发布新GitHub版本。0.8延用既有内测签名。私密样本禁止纳入源码同步，步骤见mobile/README.md及docs/verification/android-pve-performance-20261111.md。
 
@@ -60,3 +60,5 @@ Set-Location mobile/android
 第二台实际安装、构建与运行仍需目标机验证。Git不迁移Codex聊天、账号或设备设置；聊天应单独安全传输，不提交公开仓库。
 
 应用内更新已接通Windows1.1.9与Android0.10引导包→0.11。测试与签名条件见verification/in-app-update-20261112.md，构建发布见UPDATABLE_APP.md。
+
+国内安装包与更新指针托管于https://cnb.cool/sduwcgg/roco-pvp，维护流程见CNB_UPDATES.md。发布令牌使用本机被忽略的.env.cnb或cnb.txt文件。

@@ -1,6 +1,6 @@
 {
   "name": "roco-pvp-hud-overlay",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "private": true,
   "description": "洛克王国:世界 PVP 模拟平台 —— 贴游戏半透明悬浮 HUD（复用 web/hud.html）",
   "main": "desktop.js",
