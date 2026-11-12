@@ -2,8 +2,8 @@
   "version": "1.1.9",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5284,
-  "bytes": 386028850,
+  "file_count": 5285,
+  "bytes": 386033459,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2475,
-      "sha256": "8c9e94d69c0f8a156aaed9c9aee4ba3cbd8a8e95a0cacf1225d99b6f23205d62"
+      "bytes": 2787,
+      "sha256": "a9ae70957ae265d113fd8667cd5b6cd75c3fd74a49a9a04d6beada0800c5c334"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -1797,8 +1797,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 5403,
-      "sha256": "722a5fb7d11e9bbd9105fb8c9ea249b24fb775ccc47c8fe03f6920cedb43926e"
+      "bytes": 5574,
+      "sha256": "a0363663152584c12181f7e384d43ed380204476e392124a31de4dd02641f771"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
@@ -2194,6 +2194,11 @@
       "path": "docs/verification/immortality-chain-20261026.json",
       "bytes": 7778,
       "sha256": "725ff9a1163f001a42370f24865bfd10ca7c9b2190d9285d3fe80c6e0463a5ce"
+    },
+    {
+      "path": "docs/verification/in-app-update-20261112.md",
+      "bytes": 4126,
+      "sha256": "6658f945f9d78d58c331af8e6edd253feb12e65fe37a8ff4058d2fe0068fa208"
     },
     {
       "path": "docs/verification/ladder-and-rkpp-20261028.md",
