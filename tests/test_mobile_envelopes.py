@@ -113,6 +113,21 @@ class MobileEnvelopeTests(unittest.TestCase):
                 self.assertIsNone(self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=0x730055, version=110)))
         self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x56", raw_opcode=0x730055)))
 
+    def test_confirmed_7a_prefix_checks_echo_and_preserves_unknown_fields(self):
+        # 2026-11-14 real phone export, game 1.112.0.116, four uplink frames.
+        for payload, status in [(b"", "complete"), (b"\x08\x01", "complete"),
+                                (b"\x30\x01", "unknown_fields")]:
+            with self.subTest(payload=payload):
+                record = self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=0x7A0055, version=0))
+                self.assertIsNotNone(record)
+                self.assertEqual(record["raw_opcode"], 0x7A0055)
+                self.assertEqual(record["payload_schema_status"], status)
+                self.assertEqual(record["transport_layout"], "tgcp_4013_mobile_c2s")
+        for payload in (b"\x00\x00", b"\x08\x80", b"\x12\x01\x08"):
+            self.assertIsNone(self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=0x7A0055)))
+        self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x56", raw_opcode=0x7A0055)))
+        self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x55", raw_opcode=0x7B0055)))
+
     def test_payload_filter_is_scoped_and_full_decode_stays_identical(self):
         packet = {"cmd": 0x4013, "seq": 4, "direction": "c2s", "decrypt_mode": "Ivdecoder",
                   "decrypted_body_hex": envelope(b"\x08\x01").hex()}

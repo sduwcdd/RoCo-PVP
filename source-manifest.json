@@ -2,8 +2,8 @@
   "version": "1.1.10",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5289,
-  "bytes": 386066640,
+  "file_count": 5290,
+  "bytes": 386071201,
   "files": [
     {
       "path": ".gitattributes",
@@ -1911,6 +1911,11 @@
       "sha256": "80730b7b40f6e49b47d2422d0318ea723ca432f15c7b301aab883b0db34fabe7"
     },
     {
+      "path": "docs/verification/android-prefix-7a-20261114.md",
+      "bytes": 3002,
+      "sha256": "a2e8cbd8fd9999830fea31c66cff3f4a77d5577dc8f1f77c59cb179e9deb94a3"
+    },
+    {
       "path": "docs/verification/android-protocol-20261111.md",
       "bytes": 2481,
       "sha256": "9fd2215ebee4859c34c8c9504fbcf46aed24351066715186c5f3d5ed08817438"
@@ -3137,8 +3142,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 17799,
-      "sha256": "156cf86edfc97822d72a0d956c2ef5af49ae53485da26ea65df8a42a901595bb"
+      "bytes": 18229,
+      "sha256": "68a5c60336bece21598c9617ec44f48cd18f8ee282162bfc23f00c6f63305561"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3153,7 +3158,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2575,
-      "sha256": "00415b4db5cbe93fbe47792399230579a7550dde62bc65534d6be99e24d76705"
+      "sha256": "7515c3d86edeb69dd06db6da09ef49dc324f21dc344abd44242337e461e0734d"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -4142,8 +4147,8 @@
     },
     {
       "path": "tests/test_mobile_envelopes.py",
-      "bytes": 9761,
-      "sha256": "a9441005154545a0128addcbce95469bddd42b902fde85e85970d28370136d9c"
+      "bytes": 10878,
+      "sha256": "069e328a363db6e2aa3eeab106928ed165d28054a2fa41cafcd7c71172e8d6d4"
     },
     {
       "path": "tests/test_mobile_protocol_capture.py",
@@ -4602,8 +4607,8 @@
     },
     {
       "path": "vendor/rkpp/rkpp_proto_core.py",
-      "bytes": 47433,
-      "sha256": "5610ca334aac3b83013643aad2c40477a8ad2930bdf1e42b804644294ec3f5ad"
+      "bytes": 47445,
+      "sha256": "dacd4949ff8b121723a35d79f441f6f0b60932b227bbfcab993586af3c5c02ab"
     },
     {
       "path": "vendor/rkpp/rkpp_relay.py",

@@ -1007,9 +1007,9 @@ def _parse_ivdecoder_c2s_schema(body, common, trailer_len):
     # [12:16] varies even for empty requests; preserve it without assigning meaning.
     if not opcode:
         return None
-    # User-exported Android samples contain prefixes 0x73 and 0x78. Neither is
+    # User-exported Android samples contain prefixes 0x73, 0x78 and 0x7A. Neither is
     # a device-brand identifier; preserve the raw word and require its opcode echo.
-    mobile = raw_opcode >> 16 in {0x73, 0x78} and marker == opcode.to_bytes(2, "big")
+    mobile = raw_opcode >> 16 in {0x73, 0x78, 0x7A} and marker == opcode.to_bytes(2, "big")
     if not mobile and marker in (b"\xe6\x88", b"\x14\x28"):
         return None
     if not mobile and int.from_bytes(body[12:16], "big") not in {0, 1}:
