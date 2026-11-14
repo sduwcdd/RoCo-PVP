@@ -57,7 +57,23 @@ const clone = x => JSON.parse(JSON.stringify(x));
 const hasId = (x,y) => String(x) === String(y);
 function toast(message){$("toast").textContent=message;$("toast").classList.add("visible");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("visible"),4000)}
 function safeImage(url){try{const u=new URL(url,location.href);return ["https:","http:"].includes(u.protocol) ? u.href : null}catch{return null}}
-function portrait(f,cls){const url=safeImage(f.portrait_url||f.image_url||"");const box=el("span",cls);if(url && (f.portrait_url||f.image_url)){const img=el("img");img.src=url;img.alt="";img.loading="lazy";img.referrerPolicy="no-referrer";img.addEventListener("error",()=>{img.remove();box.append(el("span","art-fallback",name(f).slice(0,1)))},{once:true});box.append(img)}else box.append(el("span","art-fallback",name(f).slice(0,1)));return box}
+function portrait(f,cls){
+  const box=el("span",cls);
+  const local=/^\d+$/.test(String(f.id))?"/roco-pet-avatars-id/"+f.id+".png":"";
+  const urls=[...new Set([local,f.portrait_url||f.image_url||""].filter(Boolean).map(safeImage).filter(Boolean))];
+  if(urls.length){
+    const img=el("img");
+    let index=0;
+    img.src=urls[index];img.alt="";img.loading="lazy";img.referrerPolicy="no-referrer";
+    img.addEventListener("error",()=>{
+      index+=1;
+      if(index<urls.length)img.src=urls[index];
+      else{img.remove();box.append(el("span","art-fallback",name(f).slice(0,1)))}
+    });
+    box.append(img);
+  }else box.append(el("span","art-fallback",name(f).slice(0,1)));
+  return box;
+}
 function badges(f){const b=el("div","types");for(const t of types(f)){const s=el("span","type",t.replace(/系$/,"")+"系");s.style.background=color(t)+"22";b.append(s)}return b}
 function sourcesFor(f){const detail=catalog?.details?.[f.id]||{};const learn=detail.learnset||{};const out=new Map();const add=(id,label)=>{if(id===undefined||id===null)return;const key=String(id);if(!out.has(key))out.set(key,{id,sources:[]});if(!out.get(key).sources.includes(label))out.get(key).sources.push(label)};for(const x of learn.pool||[])add(typeof x==="object"?x.move??x.id:x,"技能池");for(const x of learn.stones||[])add(typeof x==="object"?x.move??x.id:x,"技能石");for(const x of learn.legacy||[])add(typeof x==="object"?x.move??x.id:x,typeof x==="object"&&x.bloodline?"传承 · "+String(x.bloodline)+"血脉（需核对血脉条件）":"传承（需核对血脉条件）");for(const x of learn.legendary||[])add(typeof x==="object"?x.move??x.id:x,"特殊 / 传说技能（需核对条件）");for(const x of learn.native||[]){if(typeof x==="object"&&x.move!==undefined)add(x.move,"自然习得"+(x.level!==undefined?" · Lv."+x.level:"")+(x.stage!==undefined?" · "+x.stage+"阶":""))}return [...out.values()]}
 function persist(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch{toast("浏览器保存失败，请及时导出手札备份。")}}

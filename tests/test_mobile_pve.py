@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "vendor/rkpp"))
 import unittest
 
 from lab.catalog_store import load_catalog
@@ -85,3 +89,50 @@ class MobilePveTests(unittest.TestCase):
             for raw in (b"\x0a\x01x", b"\x08\x80"):
                 with self.subTest(raw=raw), self.assertRaises(ValueError):
                     self.pve.decode({"opcode": 0x1316, "payload_hex": raw.hex()})
+
+    def test_packet_name_survives_projection_for_unlisted_pve_creature(self):
+        import Data
+        import rkpp_analysis as analysis
+        import rkpp_codec as codec
+        messages = Data.get_proto_schema()["messages"]
+        resolve = lambda name: analysis._codec_schema_for_message(messages, name)
+        # Identity fields from a saved encounter, with player/battle identifiers removed.
+        enemy = pet_record(401, 9006, enemy=True)
+        enemy["battle_inside_pet_info"].pop("skill_round_data")
+        enemy["battle_inside_pet_info"].update(pos=1, conf_id=1646)
+        enemy["battle_common_pet_info"].update(base_conf_id=9006, conf_id=1646,
+            name="龙棋士".encode("utf8").hex(), nature=2)
+        value = {"init_info": {"battle_id": 1, "enemy_team": [{"pets": [enemy]}]}}
+        payload = codec.encode_payload(resolve("ZoneBattleEnterNotify"), value, resolve_message=resolve)
+        decoded = self.pve.decode({"opcode": 0x1316, "payload_hex": payload.hex()})
+        self.pve.handle(0x1316, decoded)
+        result = self.pve.snapshot()["enemy"]
+        self.assertEqual(result["name"], "龙棋士")
+        self.assertEqual(result["formId"], 9006)
+        self.assertEqual(result["identitySource"], "reported_name")
+        self.assertEqual(result["natureName"], "固执")
+        self.pve.handle(0x1324, {"perform_cmd": {"perform_info": []}})
+        self.assertEqual(self.pve.snapshot()["enemy"]["name"], "龙棋士")
+
+    def test_native_form_lookup_preserves_raw_id_without_bwiki_entry(self):
+        self.enter(base=9004, common={"nature": 2, "name": "昵称".encode("utf8").hex()})
+        enemy = self.pve.snapshot()["enemy"]
+        self.assertEqual(enemy["name"], "金月陨星")
+        self.assertEqual(enemy["formId"], 9004)
+        self.assertEqual(enemy["identitySource"], "historical_external")
+
+    def test_known_form_precedes_nickname_and_unknown_id_is_explicit(self):
+        self.enter(common={"name": "其他昵称".encode("utf8").hex()})
+        expected = self.pve.forms["3602"]["name"]["zh"]
+        self.assertEqual(self.pve.snapshot()["enemy"]["name"], expected)
+        self.enter(battle=2, base=987654321)
+        enemy = self.pve.snapshot()["enemy"]
+        self.assertEqual(enemy["name"], "未收录精灵（ID 987654321）")
+        self.assertEqual(enemy["identitySource"], "unresolved")
+
+    def test_catalog_portraits_are_local_pngs(self):
+        folder = Path(__file__).resolve().parents[1] / "web/assets/roco/pet-avatars"
+        for form in self.catalog["forms"]:
+            with self.subTest(form_id=form["id"]):
+                with (folder / f"{form['id']}.png").open("rb") as image:
+                    self.assertEqual(image.read(8), b"\x89PNG\r\n\x1a\n")

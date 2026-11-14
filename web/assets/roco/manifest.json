@@ -1180,7 +1180,45 @@
   "5065": "5065.png",
   "3870": "3870.png",
   "3871": "3871.png",
-  "5075": "5075.png"
+  "5075": "5075.png",
+  "3785": "3785.png",
+  "3872": "3872.png",
+  "3784": "3784.png",
+  "5029": "5029.png",
+  "3874": "3874.png",
+  "3875": "3875.png",
+  "3873": "3873.png",
+  "3876": "3876.png",
+  "3877": "3877.png",
+  "3878": "3878.png",
+  "3797": "3797.png",
+  "3798": "3798.png",
+  "3799": "3799.png",
+  "3800": "3800.png",
+  "3801": "3801.png",
+  "3802": "3802.png",
+  "3803": "3803.png",
+  "3804": "3804.png",
+  "3805": "3805.png",
+  "3806": "3806.png",
+  "3807": "3807.png",
+  "3808": "3808.png",
+  "3809": "3809.png",
+  "3810": "3810.png",
+  "3811": "3811.png",
+  "3812": "3812.png",
+  "3814": "3814.png",
+  "3813": "3813.png",
+  "3816": "3816.png",
+  "3815": "3815.png",
+  "3817": "3817.png",
+  "3818": "3818.png",
+  "3821": "3821.png",
+  "3820": "3820.png",
+  "5066": "5066.png",
+  "3819": "3819.png",
+  "5067": "5067.png",
+  "5068": "5068.png"
  },
  "type_icons": {
   "光系": "光.png",
@@ -1224,5 +1262,202 @@
   "7": "7.webp",
   "8": "8.webp",
   "9": "9.webp"
+ },
+ "bwiki_portraits": {
+  "3785": {
+   "url": "https://patchwiki.biligame.com/images/nrc/4/46/fmp2c9y1knur9nfah33hpznoxkvuwaq.png",
+   "sha256": "610321d4472819a0b471a0edddf75c679d02177e7ff6910052234d339e7a5fd0",
+   "bytes": 460893
+  },
+  "3872": {
+   "url": "https://patchwiki.biligame.com/images/nrc/6/68/hcz0l2yk31dh0uru65ccd0mpmne3req.png",
+   "sha256": "f78d6f49bdd1c95a5f05cfa8d9d87a2b7ee6ff1d5b2422b35dbd5e7786d14dca",
+   "bytes": 423305
+  },
+  "3784": {
+   "url": "https://patchwiki.biligame.com/images/nrc/5/5d/r2nfkbcq0yhy48tpth456ztup3bc23f.png",
+   "sha256": "e1dade9cd45772174365893f2ffeaeadb95737ecddbbf25741d942cd0c6a2127",
+   "bytes": 394884
+  },
+  "5029": {
+   "url": "https://patchwiki.biligame.com/images/nrc/e/e7/nadwdky316qpr6974k2z6tyqmp10wdd.png",
+   "sha256": "4ce8713124e4ed1565b3b5883e8f8c68588268b6f5176cbbdaffc89ad747da1f",
+   "bytes": 562520
+  },
+  "3874": {
+   "url": "https://patchwiki.biligame.com/images/nrc/9/9e/mchxl89loi66icb74fsfjexf483pb18.png",
+   "sha256": "f31656801514601a75846b27cb6f430d250176a1cb8e381704f3f69e9106c52f",
+   "bytes": 502880
+  },
+  "3875": {
+   "url": "https://patchwiki.biligame.com/images/nrc/5/5e/rzbg4halcz6jrn9n348gtvw7abfsg2r.png",
+   "sha256": "b279785a8be44d17098592836be52a0ab193b0386ebe4de650b9c76c2442b8ad",
+   "bytes": 376299
+  },
+  "3873": {
+   "url": "https://patchwiki.biligame.com/images/nrc/e/ef/pu8p5jhhdl3gbrusyggqk7ylw58fskg.png",
+   "sha256": "1ca07625d3970a5c6baf120069ac75e6f201ca9ecf86d51a764e76281b61ce1a",
+   "bytes": 410064
+  },
+  "3876": {
+   "url": "https://patchwiki.biligame.com/images/nrc/e/ea/okkkeonejydd7pfjmcosqn095cuvlj3.png",
+   "sha256": "c6bade07693c4617a1f7dfacbac4a8d382838c47ca9baf34b7cb9e1d33ba67fb",
+   "bytes": 590683
+  },
+  "3877": {
+   "url": "https://patchwiki.biligame.com/images/nrc/c/c2/5enwify92dd0381orh0motjmdn42fmu.png",
+   "sha256": "ef13423f85a08b6ac7bbb96914c0131f6e46a5a3fbc2975eb05022ffaee79561",
+   "bytes": 378690
+  },
+  "3878": {
+   "url": "https://patchwiki.biligame.com/images/nrc/5/5c/bzduz83e53svsvt48tc2eodmzd1m41x.png",
+   "sha256": "b107f6a2442d6174e00dbbc4bf51fdf8be830dbc49ac96f76108da7c83530509",
+   "bytes": 458516
+  },
+  "3797": {
+   "url": "https://patchwiki.biligame.com/images/nrc/2/27/1338abxa4rc9xur88ququuru2pgqq2i.png",
+   "sha256": "b43364fb86d5c905f5272f29c8bee764faad1727743716f99116b1d092b9775a",
+   "bytes": 431609
+  },
+  "3798": {
+   "url": "https://patchwiki.biligame.com/images/nrc/d/d5/j0a3p13gjadj7zdbrno1o6hkafe9hr0.png",
+   "sha256": "57dbaa54a0cbfd6ac6cac9a812151c80e178eb0b400cd176d3f6537ede84e6af",
+   "bytes": 498758
+  },
+  "3799": {
+   "url": "https://patchwiki.biligame.com/images/nrc/d/d9/oj53hbcwfw7uyu4hc3zs42c2s56s4iz.png",
+   "sha256": "3bdeb60780ff74d2b12073cd6d5762bf41912f0a074a1070e848173dd45e511f",
+   "bytes": 325789
+  },
+  "3800": {
+   "url": "https://patchwiki.biligame.com/images/nrc/d/d6/l45f5ag78ctm9mookf3b08m4ys9eg3e.png",
+   "sha256": "e070d8c96afb98a8dfd597efb35576b58619c63d1bf1a5b41ddb30b227881f74",
+   "bytes": 466144
+  },
+  "3801": {
+   "url": "https://patchwiki.biligame.com/images/nrc/8/8a/9gzupux5k9lkvrtol494s5pmlsgflus.png",
+   "sha256": "01c14f0882a28c29cea1cb98c390980c9cccb462c5e295ffe747075da3c2dcd2",
+   "bytes": 553408
+  },
+  "3802": {
+   "url": "https://patchwiki.biligame.com/images/nrc/5/53/igistzlg3aa2ytoz58qpntzqbgpvzuw.png",
+   "sha256": "b27da3e273033d802568532d8a31a3d1f4887034ba0a3430987b985afab4a33a",
+   "bytes": 260449
+  },
+  "3803": {
+   "url": "https://patchwiki.biligame.com/images/nrc/8/81/mreka0axoouzmyh1lz9rmno08jehu7y.png",
+   "sha256": "47217061c176a13f8c7fcd31fc9fb0dd9e857e70af2b712e4f33d0a16c797468",
+   "bytes": 469413
+  },
+  "3804": {
+   "url": "https://patchwiki.biligame.com/images/nrc/b/bc/iskpnmfkwt0p040e19imrzadug0y779.png",
+   "sha256": "5415d4acbf5ca735aeca165023a5c2c02cb7237d40e9386b7183924defcf23a1",
+   "bytes": 530097
+  },
+  "3805": {
+   "url": "https://patchwiki.biligame.com/images/nrc/6/6d/3z1axg1rdzoeyngkk4tbbf8x19e2by7.png",
+   "sha256": "d625d40b9cad50e995a836feb570c0a5709e7bdd95b9ed3bd24736d8ce0ceaee",
+   "bytes": 351094
+  },
+  "3806": {
+   "url": "https://patchwiki.biligame.com/images/nrc/3/3a/9g0vayrjnienh36tqtipl9u9frsa82r.png",
+   "sha256": "aedd7c6fde172935aecb25db0cc40947df6ce4350a625660d40322c967005f6c",
+   "bytes": 556343
+  },
+  "3807": {
+   "url": "https://patchwiki.biligame.com/images/nrc/3/37/k31rdf4e0liirdz69j0lvju803l44x3.png",
+   "sha256": "8d0dee7b5fa032c00e535a603ea9393881adf232efd60c4f4c473689b5ade31e",
+   "bytes": 536010
+  },
+  "3808": {
+   "url": "https://patchwiki.biligame.com/images/nrc/7/7d/5bjz2ojkgpsrk69uxpd6xm39cfuoqbb.png",
+   "sha256": "a90fead3e511a94220ca9f56fd8c9e12241a11f561bad0dece63528c57e53ed3",
+   "bytes": 300105
+  },
+  "3809": {
+   "url": "https://patchwiki.biligame.com/images/nrc/6/6b/qifvyi2gy764o0wrbo8w7hlozbxhr9j.png",
+   "sha256": "269f4ea59799732ff8ad0db3fc6b73b6c5f5a8bb8c988006866365f1987eae76",
+   "bytes": 538012
+  },
+  "3810": {
+   "url": "https://patchwiki.biligame.com/images/nrc/3/3c/acdp5ax3i8iupxja3tirjagcw9sv3ps.png",
+   "sha256": "b1afb5fb7e24b8778ae3535ac8d1c5289b37d159cac5442fb9736c06b8223dfc",
+   "bytes": 509805
+  },
+  "3811": {
+   "url": "https://patchwiki.biligame.com/images/nrc/c/cf/221i8tcgc5f47znf2x7s6z7wwpotkva.png",
+   "sha256": "23873e39c31b232aa292958e3fcb3573170fb1b1ac20eefa751ba6dfe6a8d160",
+   "bytes": 395583
+  },
+  "3812": {
+   "url": "https://patchwiki.biligame.com/images/nrc/6/66/chgk1u1sommhc2zeeni0v9dpep2oboe.png",
+   "sha256": "c0902ba137d4a66cd082567c5f0802c43529f84552386919e2764dc7c78b5c00",
+   "bytes": 265776
+  },
+  "3814": {
+   "url": "https://patchwiki.biligame.com/images/nrc/8/84/1363c27cetafp637mn152hlvi1yd6my.png",
+   "sha256": "217ee0b36b675a33a3f42f331ec5b044e9897b936882fd3f20acf1ac38082ee5",
+   "bytes": 225513
+  },
+  "3813": {
+   "url": "https://patchwiki.biligame.com/images/nrc/f/fe/62bijr0lzasasx1difjunw6ezoiojcv.png",
+   "sha256": "322af8a3b3380bd284861f7335dee600cdc7619050a160d16dac5ee3a51d9c42",
+   "bytes": 365119
+  },
+  "3816": {
+   "url": "https://patchwiki.biligame.com/images/nrc/d/de/9n8i73uallik1nxxqnt6csogj1lib5v.png",
+   "sha256": "a7503ecdecccdd1289deca748e9a0ee764ab43dc09cbc3458a3e35ba06a3a665",
+   "bytes": 342434
+  },
+  "3815": {
+   "url": "https://patchwiki.biligame.com/images/nrc/b/b4/bovcos2ouvzl07p3emwx8mo7xoqmi6w.png",
+   "sha256": "9424fc0adc8461d9744c75f7b0d053fe3dc9fc00f4916bdad08809aa57238eea",
+   "bytes": 347370
+  },
+  "3817": {
+   "url": "https://patchwiki.biligame.com/images/nrc/f/fd/59mm6l1dfeqj1tvi1vsr4fqhhe0lczy.png",
+   "sha256": "3dfe373cb73b2af0fe5a60a48ed0f8de235e64a474a7097cd33959ed3c7d21d0",
+   "bytes": 322839
+  },
+  "3818": {
+   "url": "https://patchwiki.biligame.com/images/nrc/4/43/i6b2eb56fcb1viliw2ca3wfoj38ksln.png",
+   "sha256": "53ffd894cbe558c5d9820060e308fda424471b1ce0412158e25da37ff1b4fcd4",
+   "bytes": 260811
+  },
+  "3821": {
+   "url": "https://patchwiki.biligame.com/images/nrc/2/2e/dxea2u45nrmgmbco2ympophvg25zwcl.png",
+   "sha256": "0f43fc3317fe1e44c0fae8fc94fd18049a009883075a19a8fdb4db6f1cfa9f43",
+   "bytes": 233555
+  },
+  "3820": {
+   "url": "https://patchwiki.biligame.com/images/nrc/f/f4/mb9fx10emihsm947qn54mui7df87x8t.png",
+   "sha256": "2740a868f6eecfabda6ddb4eb582746e24b5e4a954fb7217ec4100f54da29f31",
+   "bytes": 293985
+  },
+  "5066": {
+   "url": "https://patchwiki.biligame.com/images/nrc/e/ec/orbqswx2vjngqcs57sjeqwgyy6vtbrv.png",
+   "sha256": "41d8910b416276b78f96e344a5f0c18a0afadf34f81a5a4d5fb70e835f5087f8",
+   "bytes": 596560
+  },
+  "3819": {
+   "url": "https://patchwiki.biligame.com/images/nrc/3/37/33hyo2j4v1y8wf0lmw1y498sl3bcpj5.png",
+   "sha256": "6db3a51073dfb00d94b5779dc68cfc05b7abac4c0067f65901c922ca61871648",
+   "bytes": 495608
+  },
+  "5067": {
+   "url": "https://patchwiki.biligame.com/images/nrc/8/85/2avek67c1dfglta1lzy3fw49gjsqr4s.png",
+   "sha256": "8622a1434c746861d6a91478a5d74d0a5ed83190ebc1635d0d42b60236932a83",
+   "bytes": 701379
+  },
+  "5068": {
+   "url": "https://patchwiki.biligame.com/images/nrc/5/5c/men4ik1vob1cxrc26bh7bt1bizyhoxp.png",
+   "sha256": "c70d5b9ce41295b3b03f4ca4100937b9e34af1cd3def2680360186528364d358",
+   "bytes": 384870
+  },
+  "3001": {
+   "url": "https://patchwiki.biligame.com/images/nrc/2/24/oz3rw0p59i5ithijoul5wl0ma96n06p.png",
+   "sha256": "d4cd1fa58c235bf7895664cc1fd6d1ce967c413c2742df2d303df0acb161e92c",
+   "bytes": 366082
+  }
  }
 }

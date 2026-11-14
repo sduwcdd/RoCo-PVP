@@ -6,7 +6,7 @@ import threading
 from types import SimpleNamespace
 
 from . import battle_data
-from .live_battle import _execution_order, _pos_is_field, _same_band_as_enemy, _walk_pet_infos
+from .live_battle import _execution_order, _hex_name, _pos_is_field, _same_band_as_enemy, _walk_pet_infos
 
 _EDGES = {"init_info", "enemy_team", "player_team", "pets", "base", "state_info",
           "perform_cmd", "perform_info", "sync_data", "pet_sync_info", "pet_info",
@@ -14,7 +14,7 @@ _EDGES = {"init_info", "enemy_team", "player_team", "pets", "base", "state_info"
           "supply_pet", "pet_infos", "data_update", "change_model", "model_change",
           "dead_info", "settle_info"}
 _VALUES = {"battle_id", "pet_id", "owner_uin", "role_uin", "is_player_enemy", "pos",
-           "base_conf_id", "conf_id", "conf_name", "nature", "height", "weight", "voice",
+           "base_conf_id", "conf_id", "conf_name", "name", "nature", "height", "weight", "voice",
            "wear_medal_conf_id", "changed_nature_pos_attr_type", "changed_nature_neg_attr_type",
            "exec_index", "pet_pos", "battle_pet_id", "rest_pet_id", "target_id", "dead_type", "hp_result"}
 _STAT_NAMES = {"hp": "生命", "patk": "物攻", "matk": "魔攻", "pdef": "物防", "mdef": "魔防", "spd": "速度"}
@@ -174,6 +174,10 @@ class PveMetadata:
         inside, common = pet["inside"], pet["common"]
         base = inside.get("base_conf_id") or common.get("base_conf_id")
         form = self.forms.get(str(base), {})
+        native_form = battle_data.pet_form(base) if not form else {}
+        name = ((form.get("name") or {}).get("zh") or native_form.get("name")
+                or inside.get("conf_name") or common.get("conf_name")
+                or _hex_name(inside.get("name")) or _hex_name(common.get("name")))
         nature = self.natures.get(common.get("nature"), {})
         up = _OVERRIDES.get(common.get("changed_nature_pos_attr_type")) or nature.get("up")
         down = _OVERRIDES.get(common.get("changed_nature_neg_attr_type")) or nature.get("down")
@@ -183,7 +187,9 @@ class PveMetadata:
                                              worn_medal_id=common.get("wear_medal_conf_id"))
         medals = [m["name"] + ({"predicted": "（范围提示）", "boundary": "（边界待确认）"}.get(m["status"], ""))
                   for m in physical["medals"]]
-        self.enemy = {"name": (form.get("name") or {}).get("zh") or inside.get("conf_name") or "未识别精灵",
+        self.enemy = {"name": name or (f"未收录精灵（ID {base}）" if base else "精灵身份未下发"),
+                      "formId": base,
+                      "identitySource": "BWIKI" if form else native_form.get("data_source") or ("reported_name" if name else "unresolved"),
                       "icon": f"/roco-pet-avatars-id/{base}.png" if base else "",
                       "natureName": (nature.get("name") or {}).get("zh") or "性格未下发",
                       "natureUp": _STAT_NAMES.get(up, ""), "natureDown": _STAT_NAMES.get(down, ""),

@@ -298,3 +298,29 @@ test("Android update UI exposes progress and retryable installation", () => {
   overlay.run("renderUpdate()");
   assert.equal(overlay.nodes.get("app-update").hidden, true);
 });
+
+test("dex portraits use packaged images and keep remote and text fallbacks", () => {
+  const dex = fs.readFileSync(path.join(__dirname, "../web/lab.html"), "utf8");
+  function node(tag, cls, text) {
+    return { tag, cls, text, children: [], events: {}, removed: false,
+      append(child) { this.children.push(child); },
+      addEventListener(event, fn) { this.events[event] = fn; },
+      remove() { this.removed = true; },
+    };
+  }
+  const context = vm.createContext({ URL, location: { href: "http://127.0.0.1:1234/dex" },
+    el: node, name: f => f.name.zh,
+  });
+  vm.runInContext(dex.slice(dex.indexOf("function safeImage("), dex.indexOf("function badges(")), context);
+  const box = context.portrait({ id: 3001, name: { zh: "喵喵" },
+    portrait_url: "https://patchwiki.biligame.com/example.png" }, "pet-art");
+  const image = box.children[0];
+  assert.equal(image.src, "http://127.0.0.1:1234/roco-pet-avatars-id/3001.png");
+  image.events.error();
+  assert.equal(image.src, "https://patchwiki.biligame.com/example.png");
+  image.events.error();
+  assert.equal(image.removed, true);
+  assert.equal(box.children[1].text, "喵");
+  const offline = context.portrait({ id: 3002, name: { zh: "水蓝蓝" } }, "pet-art");
+  assert.equal(offline.children[0].src, "http://127.0.0.1:1234/roco-pet-avatars-id/3002.png");
+});
