@@ -102,3 +102,9 @@ cnb.txt
 # Private team imports
 data/reference/team-code-20261025/user-source.json
 docs/verification/team-codes-20261025.json
+
+# Project-local temporary workspace files
+/.tmp/
+
+# Archived local release and verification workspace
+/archive/20261114_workspace暂存/

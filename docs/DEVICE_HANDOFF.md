@@ -21,9 +21,9 @@ npm --prefix overlay start
 
 Windows1.1.8包含退出清理、中文日志编码修复、敌方原始性格箭头、HUD内容高度适配及本机环境检查，保留身高/体重/音调与奖牌预测，战斗规则与HUD共用。图鉴快照20261105T124140+0800，限制见PROJECT_STATUS.md。
 
-Android内部版已推进至0.12，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
+Android内部版已推进至0.14，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
 
-本地开发现为Android 0.10，已兼容华为Android 12回传的0x73上行前缀，139帧离线解析及两个编译模式验证通过。保留有界协议样本采集、原生文件导出和`scripts/replay_mobile_protocol.py`离线回放入口。默认PVP保留完整战况，新增只显示当前敌方身份、性格方向、体重、声音及奖牌提示的PVE模式。修复上行消息反复读取协议表的耗时，同份0.7用户记录的本机编译后端回放从13.45秒降至PVP4.29秒、PVE1.07秒，PVP最终战况相同，PVE元数据与完整解码相同。手机实际延迟和PVP 6v6仍待实测，尚未发布新GitHub版本。0.8延用既有内测签名。私密样本禁止纳入源码同步，步骤见mobile/README.md及docs/verification/android-pve-performance-20261111.md。
+0.10阶段的本地开发记录，已兼容华为Android 12回传的0x73上行前缀，139帧离线解析及两个编译模式验证通过。保留有界协议样本采集、原生文件导出和`scripts/replay_mobile_protocol.py`离线回放入口。默认PVP保留完整战况，新增只显示当前敌方身份、性格方向、体重、声音及奖牌提示的PVE模式。修复上行消息反复读取协议表的耗时，同份0.7用户记录的本机编译后端回放从13.45秒降至PVP4.29秒、PVE1.07秒，PVP最终战况相同，PVE元数据与完整解码相同。该阶段手机实际延迟和PVP 6v6仍待实测，当时尚未发布新GitHub版本。0.8延用既有内测签名。私密样本禁止纳入源码同步，步骤见mobile/README.md及docs/verification/android-pve-performance-20261111.md。
 
 ## 安卓0.3继续开发
 
@@ -49,7 +49,26 @@ Set-Location mobile/android
 
 若新设备已有local.properties，请核对其中SDK路径。输出为mobile/android/app/build/outputs/apk/debug/app-debug.apk。完整构建与来源说明见mobile/README.md、mobile/android/DEPENDENCIES.md。打包完成并核对后，删除mobile/build/generated/android-python临时编译输入。
 
-签名文件单独通过安全渠道迁移。0.3测试证书SHA-256为 `f62169ddc3fd0df6d55ec550717e31692ec4ebce6d0d0a5fb1e43e1178758354`。继续覆盖安装同一测试应用时，将原debug.keystore放到目标设备ANDROID_USER_HOME指定目录；使用新密钥签名会产生安装冲突。APK中的资源与模块由构建脚本重新生成，签名私钥和生成的密钥配置只保存在本机。
+## 跨设备保持安卓签名一致
+
+2026-11-15已核对本机签名文件与已验证的0.14安装包证书一致。现有debug构建使用Android默认签名配置，设备迁移时需要复制同一份私钥文件。
+
+- 本机签名文件为 `%USERPROFILE%\.android\debug.keystore`，当前实际路径为 `C:\Users\86195\.android\debug.keystore`。
+- 通过U盘或私密传输将该文件复制到新设备的 `%USERPROFILE%\.android\debug.keystore`。目标位置已有文件时先备份，再放入本项目使用的原文件。Mac/Linux默认位置为 `~/.android/debug.keystore`。
+- 当前别名为 `androiddebugkey`，沿用默认debug配置的库密码和密钥密码 `android`。
+- 在新设备运行 `./gradlew.bat :app:signingReport`，核对实际Store路径及下面的SHA-256，再构建APK。同包名的后续版本继续递增versionCode。
+
+当前0.14证书SHA-256为
+
+```text
+b6a6896a62a5d84a377b064e745f4d492d551e89272db10b26894aa2289b19f2
+```
+
+Git同步源码和这份说明，签名私钥通过私密渠道单独迁移。仓库已忽略`*.keystore`、`*.jks`等签名材料。仅复制APK或上述证书摘要无法代替私钥。
+
+历史0.3证书SHA-256为 `f62169ddc3fd0df6d55ec550717e31692ec4ebce6d0d0a5fb1e43e1178758354`，属于此前另一设备的签名记录。覆盖当前0.14时以上述已核对的当前证书为准。
+
+当前核对使用本机PKCS#12证书及安装包验证记录，安装包文件SHA-256与该记录一致。新设备尚需执行上述Store和证书核对。平台依据见[Android官方签名说明](https://developer.android.com/studio/publish/app-signing)。
 
 0.3已通过12项Python边界测试、5项移动界面测试、主机TCP/UDP故障回归，以及APK构建、签名和资源核对。真实手机0x4013首包兼容性仍需新诊断确认。下一步优先查看用户0.3诊断的decode_issues；协议入口为mobile/python/roco_mobile.py，转发与悬浮窗入口为mobile/android/app/src/main/java/cn/roco/mobile/CaptureService.java，移动界面为mobile/shared/index.html。
 

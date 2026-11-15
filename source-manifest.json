@@ -3,7 +3,7 @@
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
   "file_count": 5329,
-  "bytes": 402556451,
+  "bytes": 402557815,
   "files": [
     {
       "path": ".gitattributes",
@@ -12,8 +12,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 2037,
-      "sha256": "a147caec736f2372dc89705582fd9f293bbb0576a8547c470d66f0bd7eed0b83"
+      "bytes": 2175,
+      "sha256": "9ece6d490747f56c9afa18bf90fcca7c1e0d641b77b8fcb507e891a267a654c7"
     },
     {
       "path": ".gitmodules",
@@ -1802,8 +1802,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 5747,
-      "sha256": "16241a4d9220ba173eb19331d3271165a41fd3c3555729d1e6452526e8b32f43"
+      "bytes": 6973,
+      "sha256": "1b8a3c8bdfab6f749566679c3dede8defa29ce7961cbf03eb263ea07415e9b5f"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
