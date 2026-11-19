@@ -21,7 +21,7 @@ npm --prefix overlay start
 
 Windows1.1.8包含退出清理、中文日志编码修复、敌方原始性格箭头、HUD内容高度适配及本机环境检查，保留身高/体重/音调与奖牌预测，战斗规则与HUD共用。图鉴快照20261105T124140+0800，限制见PROJECT_STATUS.md。
 
-Android内部版已推进至0.14，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
+Android内部版已推进至0.15，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
 
 0.10阶段的本地开发记录，已兼容华为Android 12回传的0x73上行前缀，139帧离线解析及两个编译模式验证通过。保留有界协议样本采集、原生文件导出和`scripts/replay_mobile_protocol.py`离线回放入口。默认PVP保留完整战况，新增只显示当前敌方身份、性格方向、体重、声音及奖牌提示的PVE模式。修复上行消息反复读取协议表的耗时，同份0.7用户记录的本机编译后端回放从13.45秒降至PVP4.29秒、PVE1.07秒，PVP最终战况相同，PVE元数据与完整解码相同。该阶段手机实际延迟和PVP 6v6仍待实测，当时尚未发布新GitHub版本。0.8延用既有内测签名。私密样本禁止纳入源码同步，步骤见mobile/README.md及docs/verification/android-pve-performance-20261111.md。
 
@@ -50,6 +50,14 @@ Set-Location mobile/android
 若新设备已有local.properties，请核对其中SDK路径。输出为mobile/android/app/build/outputs/apk/debug/app-debug.apk。完整构建与来源说明见mobile/README.md、mobile/android/DEPENDENCIES.md。打包完成并核对后，删除mobile/build/generated/android-python临时编译输入。
 
 ## 跨设备保持安卓签名一致
+
+2026-11-20回到当前设备开发，已同步源码至`0d19f48`，0.15在此基础上兼容实录中的`0x6E`上行前缀。实际项目位于`D:\workspace\projects\RoCo-PVP-public`，此前C盘入口通过现有路径兼容访问。临时文件、构建缓存、SDK和本轮安装包均位于D盘。
+
+用户确认尚未迁移下述0.14私钥，并要求0.15使用本机已有签名。当前私钥实际文件为`D:\workspace\.roco-tools\roco-android-internal\android-user\debug.keystore`，由本机构建环境的`ANDROID_USER_HOME`选择。别名为`androiddebugkey`，沿用默认debug配置口令。证书SHA-256为`f62169ddc3fd0df6d55ec550717e31692ec4ebce6d0d0a5fb1e43e1178758354`。
+
+将这一私钥通过私密渠道复制到另一设备的实际debug Store位置，默认是`%USERPROFILE%\.android\debug.keystore`；已有文件先备份。目标设备运行`:app:signingReport`核对实际Store与上述证书后再构建。私钥不进入Git。使用下述`b6a6896a`证书安装的0.14无法由此签名直接覆盖，应先备份用户数据再重新安装；之后各设备持续使用统一私钥。
+
+### 0.14阶段的签名记录
 
 2026-11-15已核对本机签名文件与已验证的0.14安装包证书一致。现有debug构建使用Android默认签名配置，设备迁移时需要复制同一份私钥文件。
 

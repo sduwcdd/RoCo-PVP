@@ -2,8 +2,8 @@
   "version": "1.1.10",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5329,
-  "bytes": 402557815,
+  "file_count": 5330,
+  "bytes": 402564074,
   "files": [
     {
       "path": ".gitattributes",
@@ -1802,8 +1802,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 6973,
-      "sha256": "1b8a3c8bdfab6f749566679c3dede8defa29ce7961cbf03eb263ea07415e9b5f"
+      "bytes": 8120,
+      "sha256": "0c79713d8d1e346d20dc8592a55583f4a3fcde55cd0e397c0d13ab9eb3393ee6"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
@@ -1909,6 +1909,11 @@
       "path": "docs/verification/android-dex-pve-20261114.md",
       "bytes": 3282,
       "sha256": "22693f18d4acb21e4f7ef0701dc2ea6528ae25ec07b95dd6899afc036dc4b811"
+    },
+    {
+      "path": "docs/verification/android-prefix-6e-20261120.md",
+      "bytes": 2996,
+      "sha256": "9d2c5b96c7c940fcd27ac9dfb1c687d2cd3306fae85ef686bfa015f250a1f8df"
     },
     {
       "path": "docs/verification/android-prefix-73-20261111.md",
@@ -3147,8 +3152,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 18655,
-      "sha256": "ca27a6195f4f42e70fa421803021ac7405ad6cde9cfad207e77e95ab2daee798"
+      "bytes": 19514,
+      "sha256": "5866aa4f7ad84ab5005288e16d362b9d55c8f120c929bd005d263fe4c73cc421"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3163,7 +3168,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2575,
-      "sha256": "8e0c239eaadf4ef13dbbde1991394dce9894ed3491de4bc91ed4f8970dfea2f8"
+      "sha256": "17739b588ed4d4a8a46dba0306d808a46c2e6cbba06194cd406194ff31a99785"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -4152,8 +4157,8 @@
     },
     {
       "path": "tests/test_mobile_envelopes.py",
-      "bytes": 10878,
-      "sha256": "069e328a363db6e2aa3eeab106928ed165d28054a2fa41cafcd7c71172e8d6d4"
+      "bytes": 12126,
+      "sha256": "0d3dde6e112782225b9574ae987c75dda689daf3a63a8a2457bdcb4c14491b52"
     },
     {
       "path": "tests/test_mobile_protocol_capture.py",
@@ -4612,8 +4617,8 @@
     },
     {
       "path": "vendor/rkpp/rkpp_proto_core.py",
-      "bytes": 47445,
-      "sha256": "dacd4949ff8b121723a35d79f441f6f0b60932b227bbfcab993586af3c5c02ab"
+      "bytes": 47454,
+      "sha256": "7271a52b00ff8f6a32ce534030fc9f9a186f310ab93cd4f03d5626992690cafc"
     },
     {
       "path": "vendor/rkpp/rkpp_relay.py",

@@ -2,6 +2,12 @@
 
 手机版与游戏在同一台手机运行。计算在手机本机进行，复用 `lab`、现有 HUD、BWIKI 快照和来源校验，不要求电脑伴随服务。桌面安装包和既有用户数据没有迁移或覆盖。
 
+## 0.15 上行封装兼容
+
+同步GitHub的0.14功能后，修复新实录中`0x6E`上行前缀导致的`ok_unparsed`。该前缀与既有已验证手机布局复用同一解析路径，保留原始操作码及回显、长度、序号、填充和已知字段校验。207帧完整离线回放通过，原23条未识别降为0；样本没有战斗通知，进场仍需真机验证。构建版本为15 / 0.15-internal，详见[核查记录](../docs/verification/android-prefix-6e-20261120.md)。
+
+本轮按用户要求使用当前设备签名，证书SHA-256为`f62169ddc3fd0df6d55ec550717e31692ec4ebce6d0d0a5fb1e43e1178758354`。它与另一设备签署的0.14证书不同，无法覆盖该签名的已安装版本；换签名前应先备份用户数据。后续各开发设备应使用相同私钥，迁移位置见[设备交接](../docs/DEVICE_HANDOFF.md)。
+
 ## 0.14 图鉴图片与 PVE 身份
 
 图鉴优先使用包内图片，补齐38张缺失的 BWIKI 图片，当前662个形态均可从本地读取。PVE保留报文的精灵名称，并复用原生形态查询，修复特殊大世界精灵性格可见但名称未识别的问题，保留原始ID及身份来源。默认构建为14 / 0.14-internal。详见[核查记录](../docs/verification/android-dex-pve-20261114.md)。
@@ -20,7 +26,7 @@
 
 本机签名的0.10更新引导包为`mobile/build/roco-mobile-android-internal-0.10-bootstrap.apk`，用于首次接入更新；0.11通过GitHub预发布提供。此前另一设备签名的APK需要先完成签名迁移或重新安装本机签名包。同签名的后续覆盖更新保留数据。
 
-构建引导包时使用`./gradlew.bat '-ProcoVersionCode=10' '-ProcoVersionName=0.10-internal' assembleDebug`，当前默认构建为14 / 0.14-internal。发布步骤见[构建与更新](../docs/UPDATABLE_APP.md)。
+构建引导包时使用`./gradlew.bat '-ProcoVersionCode=10' '-ProcoVersionName=0.10-internal' assembleDebug`，当前默认构建为15 / 0.15-internal。发布步骤见[构建与更新](../docs/UPDATABLE_APP.md)。
 
 ## 0.10 华为回传样本协议兼容
 
