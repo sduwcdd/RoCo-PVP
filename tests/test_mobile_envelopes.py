@@ -81,12 +81,12 @@ class MobileEnvelopeTests(unittest.TestCase):
                 self.assertEqual(record["payload_schema_status"], expected)
                 self.assertEqual(record["schema_validated_envelope"], expected == "complete")
 
-    def test_mobile_compatibility_still_rejects_invalid_wire_and_unconfirmed_headers(self):
+    def test_mobile_compatibility_still_rejects_invalid_wire_and_opcode_mismatch(self):
         for payload in (b"\x00\x00", b"\x30", b"\x32\x03x", b"\x0a\x01x",
                         b"\x12\x01\x08", b"\x08" + b"\xff" * 9 + b"\x02"):
             with self.subTest(payload=payload.hex()):
                 self.assertIsNone(self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=0x780055, version=0)))
-        for marker, raw_opcode, version in [(b"\x00\x55", 0x790055, 0),
+        for marker, raw_opcode, version in [(b"\x00\x55", 0x790056, 0),
                                              (b"\x00\x56", 0x780055, 0)]:
             self.assertIsNone(self.parse(envelope(b"\x30\x01", marker, raw_opcode, version)))
 
@@ -126,7 +126,7 @@ class MobileEnvelopeTests(unittest.TestCase):
         for payload in (b"\x00\x00", b"\x08\x80", b"\x12\x01\x08"):
             self.assertIsNone(self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=0x7A0055)))
         self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x56", raw_opcode=0x7A0055)))
-        self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x55", raw_opcode=0x7B0055)))
+        self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x54", raw_opcode=0x7B0055)))
 
     def test_confirmed_6e_prefix_keeps_header_and_wire_validation(self):
         for payload, status in [(b"", "complete"), (b"\x08\x01", "complete"),
@@ -142,8 +142,24 @@ class MobileEnvelopeTests(unittest.TestCase):
             with self.subTest(payload=payload):
                 self.assertIsNone(self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=0x6E0055)))
         self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x56", raw_opcode=0x6E0055)))
-        self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x55", raw_opcode=0x6F0055)))
+        self.assertIsNone(self.parse(envelope(b"\x30\x01", marker=b"\x00\x54", raw_opcode=0x6F0055)))
         self.assertIsNone(self.parse(envelope(b"\x08\x01", marker=b"\x00\x55", raw_opcode=0x6E0055), seq=5))
+
+    def test_echo_layout_treats_upper_word_as_opaque_across_connections(self):
+        for prefix in (0, 1, 0x6E, 0x70, 0x73, 0x78, 0x79, 0x7A, 0x7B, 0xFF, 0x1234, 0xFFFF):
+            for payload, status in [(b"", "complete"), (b"\x08\x01", "complete"),
+                                    (b"\x30\x01", "unknown_fields")]:
+                with self.subTest(prefix=prefix, payload=payload):
+                    raw_opcode = (prefix << 16) | 0x55
+                    record = self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=raw_opcode))
+                    self.assertIsNotNone(record)
+                    self.assertEqual(record["raw_opcode"], raw_opcode)
+                    self.assertEqual(record["opcode"], 0x55)
+                    self.assertEqual(record["payload_hex"], payload.hex())
+                    self.assertEqual(record["payload_schema_status"], status)
+                    self.assertEqual(record["schema_validated_envelope"], status == "complete")
+            for payload in (b"\x00\x00", b"\x08\x80", b"\x0a\x01x", b"\x12\x01\x08"):
+                self.assertIsNone(self.parse(envelope(payload, marker=b"\x00\x55", raw_opcode=(prefix << 16) | 0x55)))
 
     def test_payload_filter_is_scoped_and_full_decode_stays_identical(self):
         packet = {"cmd": 0x4013, "seq": 4, "direction": "c2s", "decrypt_mode": "Ivdecoder",

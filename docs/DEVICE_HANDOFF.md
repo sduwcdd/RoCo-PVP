@@ -21,7 +21,7 @@ npm --prefix overlay start
 
 Windows1.1.8包含退出清理、中文日志编码修复、敌方原始性格箭头、HUD内容高度适配及本机环境检查，保留身高/体重/音调与奖牌预测，战斗规则与HUD共用。图鉴快照20261105T124140+0800，限制见PROJECT_STATUS.md。
 
-Android内部版已推进至0.15，APK以安卓内测预发布提供，源码位于mobile目录。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
+Android当前源码已推进至0.16，源码位于mobile目录；公开安卓内测包版本以Releases为准。0.16按完整封装和操作码回显识别变动的上部字，修复同版本连接中`0x70`再次触发暂停的问题。iOS前台共用移动界面，采集转发仍未接通。手机使用步骤见../mobile/README.md。HEV子模块固定提交，SDK、本机Python路径和签名条件需在目标设备配置。
 
 0.10阶段的本地开发记录，已兼容华为Android 12回传的0x73上行前缀，139帧离线解析及两个编译模式验证通过。保留有界协议样本采集、原生文件导出和`scripts/replay_mobile_protocol.py`离线回放入口。默认PVP保留完整战况，新增只显示当前敌方身份、性格方向、体重、声音及奖牌提示的PVE模式。修复上行消息反复读取协议表的耗时，同份0.7用户记录的本机编译后端回放从13.45秒降至PVP4.29秒、PVE1.07秒，PVP最终战况相同，PVE元数据与完整解码相同。该阶段手机实际延迟和PVP 6v6仍待实测，当时尚未发布新GitHub版本。0.8延用既有内测签名。私密样本禁止纳入源码同步，步骤见mobile/README.md及docs/verification/android-pve-performance-20261111.md。
 

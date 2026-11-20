@@ -566,6 +566,8 @@ class _Backend:
                              outer_version=int.from_bytes(plain[12:16], "big"),
                              outer_word_12_16=int.from_bytes(plain[12:16], "big"),
                              inner_marker_hex=plain[24:26].hex(),
+                             candidate_raw_c2s_opcode=f"0x{int.from_bytes(plain[20:24], 'big'):08X}",
+                             candidate_c2s_prefix=f"0x{int.from_bytes(plain[20:22], 'big'):04X}",
                              candidate_c2s_opcode=f"0x{int.from_bytes(plain[20:24], 'big') & 0xFFFF:04X}")
             issue["known_marker_offsets"] = {
                 marker.hex(): [offset for offset in range(min(len(plain) - 1, 64))

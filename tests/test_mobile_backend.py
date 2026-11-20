@@ -40,6 +40,20 @@ class MobileStreamTests(unittest.TestCase):
         self.assertNotIn("PRIVATE", str(issue))
         self.assertNotIn("secret", str(issue))
 
+    def test_decode_diagnostics_include_opaque_header_word(self):
+        backend = object.__new__(_Backend)
+        backend.decode_issues = deque(maxlen=12)
+        plain = bytearray(48)
+        plain[20:24] = (0x700101).to_bytes(4, "big")
+        plain[24:26] = b"\x01\x01"
+        packet = SimpleNamespace(direction="c2s", cmd=0x4013, seq=4, body=b"", header_extra=b"")
+        backend.record_decode_issue({"decrypt_status": "ok_unparsed", "decrypted_body_hex": plain.hex()}, packet)
+        issue = backend.decode_issues[-1]
+        self.assertEqual(issue["candidate_raw_c2s_opcode"], "0x00700101")
+        self.assertEqual(issue["candidate_c2s_prefix"], "0x0070")
+        self.assertEqual(issue["candidate_c2s_opcode"], "0x0101")
+        self.assertNotIn("decrypted_body_hex", issue)
+
     def test_protocol_probe_replays_fragmented_header_and_both_directions(self):
         seen = []
         probe = ProtocolProbe(lambda direction, data: seen.append((direction, data)))

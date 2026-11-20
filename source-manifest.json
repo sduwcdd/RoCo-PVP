@@ -2,8 +2,8 @@
   "version": "1.1.10",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5330,
-  "bytes": 402564074,
+  "file_count": 5331,
+  "bytes": 402570525,
   "files": [
     {
       "path": ".gitattributes",
@@ -1802,8 +1802,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 8120,
-      "sha256": "0c79713d8d1e346d20dc8592a55583f4a3fcde55cd0e397c0d13ab9eb3393ee6"
+      "bytes": 8258,
+      "sha256": "8903bc1693f42b1fdbaafae4040c1b7f937fbfec5cea8e0db3b8b8ec4456cb93"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
@@ -1944,6 +1944,11 @@
       "path": "docs/verification/android-pvp-overlay-20261111.md",
       "bytes": 2427,
       "sha256": "b02de1148cf7c9dc022f4ad8c49ec21bb6b97aa5a935721b2192697826d1d41f"
+    },
+    {
+      "path": "docs/verification/android-variable-header-20261120.md",
+      "bytes": 3217,
+      "sha256": "7471ec0ec6e8f60f57f3050558ddffc99f6e0d99c0b40ce22b506e429f74d56f"
     },
     {
       "path": "docs/verification/app-updates-20261102.md",
@@ -3152,8 +3157,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 19514,
-      "sha256": "5866aa4f7ad84ab5005288e16d362b9d55c8f120c929bd005d263fe4c73cc421"
+      "bytes": 20441,
+      "sha256": "2c8cbe47ea19580527b1441f9901dd2c45d9cf8e76b0b1469b1827c6997f0226"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3168,7 +3173,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2575,
-      "sha256": "17739b588ed4d4a8a46dba0306d808a46c2e6cbba06194cd406194ff31a99785"
+      "sha256": "5ccad75f33959d78c966ee242fe9cc2748fa332e90b9fcd762e45d0c3537a71b"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3422,8 +3427,8 @@
     },
     {
       "path": "mobile/python/roco_mobile.py",
-      "bytes": 34743,
-      "sha256": "ce32f5f77dc5dd39980e5538939bf11b04e36a2878ba4f4210f6ef8e2bfb61e8"
+      "bytes": 34943,
+      "sha256": "253de45b86e98306b4b68035e348e069815fbd968fe9c82cf62e6fa133ef29ae"
     },
     {
       "path": "mobile/shared/index.html",
@@ -4152,13 +4157,13 @@
     },
     {
       "path": "tests/test_mobile_backend.py",
-      "bytes": 12154,
-      "sha256": "7f472e9d8787244b28f13eec5fac5da16c0a1087ce412506e08fed4d209795dc"
+      "bytes": 12944,
+      "sha256": "4b42d267dc7f60979834d19ac043a99daa1e23119d2e853bd2356f1313b3076c"
     },
     {
       "path": "tests/test_mobile_envelopes.py",
-      "bytes": 12126,
-      "sha256": "0d3dde6e112782225b9574ae987c75dda689daf3a63a8a2457bdcb4c14491b52"
+      "bytes": 13306,
+      "sha256": "cd8e2763bc020de241d921b96030f242711e3ec7dc82d73b0ef5f84458825f04"
     },
     {
       "path": "tests/test_mobile_protocol_capture.py",
@@ -4617,8 +4622,8 @@
     },
     {
       "path": "vendor/rkpp/rkpp_proto_core.py",
-      "bytes": 47454,
-      "sha256": "7271a52b00ff8f6a32ce534030fc9f9a186f310ab93cd4f03d5626992690cafc"
+      "bytes": 47453,
+      "sha256": "02d7be0b7664ffddacd0558bd766a1d553feb23b8e238b2210f2b3eff0118cad"
     },
     {
       "path": "vendor/rkpp/rkpp_relay.py",

@@ -2,6 +2,12 @@
 
 手机版与游戏在同一台手机运行。计算在手机本机进行，复用 `lab`、现有 HUD、BWIKI 快照和来源校验，不要求电脑伴随服务。桌面安装包和既有用户数据没有迁移或覆盖。
 
+## 0.16 变动上行头字段兼容
+
+修复0.15重新连接后仍因`ok_unparsed`暂停的问题。新实录的同一封装使用`0x70`上部字，前份实录为`0x6E`，游戏报告版本均为1.112.0.116。原先把这些值当固定白名单的判断已撤销，现在依据完整外层封装、操作码回显和字段线格式识别该布局，保留上部字原值及未知字段标记。其他封装仍使用原有严格准入。
+
+构建版本为16 / 0.16-internal，APK为`mobile/build/roco-mobile-android-internal-0.16.apk`。新样本154帧全部解析，23条未识别降为0；207帧和1247帧旧样本的逐帧结构结果保持一致，47项定向检查通过。包内编译后端的PVE与PVP均无错误、队列归零。样本没有战斗通知，真实进场仍待反馈。沿用0.15本机签名，可覆盖同签名的0.15。详见[核查记录](../docs/verification/android-variable-header-20261120.md)。
+
 ## 0.15 上行封装兼容
 
 同步GitHub的0.14功能后，修复新实录中`0x6E`上行前缀导致的`ok_unparsed`。该前缀与既有已验证手机布局复用同一解析路径，保留原始操作码及回显、长度、序号、填充和已知字段校验。207帧完整离线回放通过，原23条未识别降为0；样本没有战斗通知，进场仍需真机验证。构建版本为15 / 0.15-internal，详见[核查记录](../docs/verification/android-prefix-6e-20261120.md)。
@@ -26,7 +32,7 @@
 
 本机签名的0.10更新引导包为`mobile/build/roco-mobile-android-internal-0.10-bootstrap.apk`，用于首次接入更新；0.11通过GitHub预发布提供。此前另一设备签名的APK需要先完成签名迁移或重新安装本机签名包。同签名的后续覆盖更新保留数据。
 
-构建引导包时使用`./gradlew.bat '-ProcoVersionCode=10' '-ProcoVersionName=0.10-internal' assembleDebug`，当前默认构建为15 / 0.15-internal。发布步骤见[构建与更新](../docs/UPDATABLE_APP.md)。
+构建引导包时使用`./gradlew.bat '-ProcoVersionCode=10' '-ProcoVersionName=0.10-internal' assembleDebug`，当前默认构建为16 / 0.16-internal。发布步骤见[构建与更新](../docs/UPDATABLE_APP.md)。
 
 ## 0.10 华为回传样本协议兼容
 
