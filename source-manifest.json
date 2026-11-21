@@ -3,7 +3,7 @@
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
   "file_count": 5425,
-  "bytes": 456374769,
+  "bytes": 456375088,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3430,
-      "sha256": "420f080aed022ddf9c46ddaa0c1617d47bf279324a336497dc89fcf237e657db"
+      "bytes": 3384,
+      "sha256": "11549207cadc6c8fc0f2f6c484570c9c0fe7ffb5e021f37ffb8639c7f0669c04"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -2897,8 +2897,8 @@
     },
     {
       "path": "docs/verification/speed-order-20261121.md",
-      "bytes": 3890,
-      "sha256": "a8351b58a4cad4d4d3a52d421b702a004e5fddca5d5fa597c24287b8f7f6ee14"
+      "bytes": 4475,
+      "sha256": "08e9b1b66a07061c11b020f731e7593914c309080eef465f0baa96e4bcb5f9e6"
     },
     {
       "path": "docs/verification/state-clone-20261025.json",
@@ -3597,8 +3597,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 21285,
-      "sha256": "77e9f8019bb7baa9dd09996943f9d82dd65292ad0fdc27555b6d17f5341d55b6"
+      "bytes": 21115,
+      "sha256": "a1aa074045730e1a3d317f3c407de18f2f4dc92ce82f55d64c660a7c39f37738"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3612,8 +3612,8 @@
     },
     {
       "path": "mobile/android/app/build.gradle",
-      "bytes": 2627,
-      "sha256": "839a09db6788f6a92d57426597c6493ecd5e135e5a6da5ab026f8a8e684a111a"
+      "bytes": 2577,
+      "sha256": "e687a423fd9db054ac63cfafaff42999bce6c102870582438ed4772b9b116d5c"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
