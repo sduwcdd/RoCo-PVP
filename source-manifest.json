@@ -3,7 +3,7 @@
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
   "file_count": 5417,
-  "bytes": 456298200,
+  "bytes": 456298976,
   "files": [
     {
       "path": ".gitattributes",
@@ -2387,8 +2387,8 @@
     },
     {
       "path": "docs/verification/bwiki-levels-20261121.md",
-      "bytes": 3776,
-      "sha256": "2d790d50cc6e5f378045fbffeb94077a9dfd58c60cb12e1538b680228f384c03"
+      "bytes": 4552,
+      "sha256": "78e47c7208e797e4c235f35746f5c7e1e75bd8b3370482ab1bfb07a4ed2a4e34"
     },
     {
       "path": "docs/verification/bwiki-numeric-followup-20261025.json",

@@ -100,3 +100,21 @@ Windows版本为1.1.11。
 现有真实回放没有这两种精灵的样本。
 下发等级与画面等级仍需实战对应。
 高等级未知资质映射仍需实战核对。
+
+## 发布验证
+
+Windows真实桌面验证已通过。
+验证覆盖渲染器、工作台与更新入口。
+CNB两端发布完成。
+匿名读取两端更新入口已通过校验。
+Windows GitHub发布已完成。
+
+Windows安装包SHA-256：
+`24a0b3edee87f27cd4744d9e47c224fa8c96d846c78cdf4931edddc8ce6be2ea`。
+安卓安装包SHA-256：
+`348dbdc94e904206702b597f2c532bec9091f6a520ab49edf57ae9a98fb512ef`。
+安卓签名SHA-256：
+`b6a6896a62a5d84a377b064e745f4d492d551e89272db10b26894aa2289b19f2`。
+
+[Windows国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/v1.1.11/RocoPVP-Setup-1.1.11.exe)。
+[安卓国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/android-v0.16.0-internal/roco-mobile-android-internal-0.16.apk)。
