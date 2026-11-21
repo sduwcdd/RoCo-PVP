@@ -121,3 +121,29 @@ Windows版本为1.1.14。
 资源清单只新增匿名实录摘要。
 9项资源与隐私边界检查通过。
 打包仍禁止原始回放数据库和私人资料。
+
+## 安装包检查
+
+桌面使用独立目录和端口验证通过。
+原APP三个进程在验证前后均保持存在。
+安卓APK编译后端18项检查通过。
+字段91与40在APK解码后保留为84和74。
+两端后端源码摘要相同。
+安卓签名保持原证书。
+未进行新APK的手机真机对局。
+
+Windows安装包SHA-256：
+`48aabcfced0c1024aa91ceeca7cf5bc80e9024e7052dfe5a44b71707b28a45ae`。
+安卓安装包SHA-256：
+`fbfcfb40d7ce2c44ae5c322b1086b636fb2aef667b394e5fbb9e1c34f8eeecf1`。
+
+## 发布结果
+
+GitHub与CNB发布均已完成。
+CNB匿名访问检查通过。
+APP内更新入口已指向新版本。
+
+- [Windows 1.1.14](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/v1.1.14/RocoPVP-Setup-1.1.14.exe)
+- [安卓0.16.3](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/android-v0.16.3-internal/roco-mobile-android-internal-0.16.3.apk)
+
+发布回执保存在本地核查目录。

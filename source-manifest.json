@@ -3,7 +3,7 @@
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
   "file_count": 5422,
-  "bytes": 456343568,
+  "bytes": 456344517,
   "files": [
     {
       "path": ".gitattributes",
@@ -2812,8 +2812,8 @@
     },
     {
       "path": "docs/verification/reference-damage-abu-20261121.md",
-      "bytes": 4443,
-      "sha256": "c9d13fc6fa190404ef9a001ece2088f75c46069250add226b5bfe548b14c4c64"
+      "bytes": 5392,
+      "sha256": "73f048fbf043c832801dbaed55296102df23c7b8c1668d8865428757a16cb59e"
     },
     {
       "path": "docs/verification/release-count-sources-20261026.json",
