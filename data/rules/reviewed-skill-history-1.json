@@ -2604,12 +2604,13 @@
         "buffs": {},
         "buff_bases": {},
         "uncertainties": [
-          "Growth applies after the committed triggering event, affecting future uses; server ordering uncalibrated.",
+          "The +20 conditional power applies to the triggering use, then is committed once for future uses; BWIKI description interpretation.",
           "Completed direct attack packets count once even with zero HP loss, never once per hit; miss/cancellation without damage events does not count.",
           "Resistance uses the same explicit defender combination table as research_damage, before other damage multipliers.",
           "No pre-simulation/imported history is inferred; generated/borrowed acquisition baseline remains blocked."
         ]
-      }
+      },
+      "conditional_timing": "triggering_use"
     },
     "7140270": {
       "record": {

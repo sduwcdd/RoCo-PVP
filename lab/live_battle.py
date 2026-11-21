@@ -343,6 +343,9 @@ class _Pet:
         self.entry_count = None
         self.skill_use_counts = {}
         self.skill_type_use_counts = {}
+        self.attack_rounds = set()
+        self.last_move_round = None
+        self.conditional_power_counts = {}
         self.response_success_count = 0
         self.skill_use_history_complete = False
         self.history_start_round = None
@@ -721,6 +724,9 @@ class _Pet:
             "entryCount": self.entry_count,
             "entryHistoryComplete": self.entry_count is not None,
             "skillUseCounts": dict(self.skill_use_counts),
+            "conditionalPowerCounts": dict(self.conditional_power_counts),
+            "observedAttackRounds": sorted(self.attack_rounds),
+            "lastMoveRound": self.last_move_round,
             "skillTypeUseCounts": deepcopy(self.skill_type_use_counts),
             "skillUseHistoryComplete": self.skill_use_history_complete,
             "responseSuccessCount": self.response_success_count,
@@ -813,6 +819,7 @@ class BattleTracker:
         self._pre_casts: set[tuple] = set()
         self._pre_commands = set()
         self._cast_use_before = {}
+        self._cast_conditional_before = {}
         self._cast_response_before = {}
         self._cast_energy_before = {}
         self._pre_cast_energy = {}
@@ -1130,6 +1137,7 @@ class BattleTracker:
         if token:
             self._pre_commands.add(token)
         self._cast_use_before.clear()
+        self._cast_conditional_before.clear()
         self._cast_response_before.clear()
         self._cast_energy_before.clear()
         self._prepare_power_context(cmd)
@@ -1165,6 +1173,7 @@ class BattleTracker:
             self._pre_cast_energy = {signature: value for signature, value in self._pre_cast_energy.items() if signature[0] != self.round}
             return False  # The complete ordered packet was already applied at round start.
         self._cast_use_before.clear()
+        self._cast_conditional_before.clear()
         self._cast_response_before.clear()
         self._cast_energy_before.clear()
         self._prepare_power_context(cmd)
@@ -1308,6 +1317,18 @@ class BattleTracker:
                         if response_success:
                             caster.response_success_count += 1
                     if not duplicate:
+                        from lab import live_power
+                        spec = live_power.specification(skill_info["skill_id"])
+                        if any(c["op"] == "previous_no_attack_history" for c in (spec or {}).get("components", [])):
+                            previous_count = caster.conditional_power_counts.get(history_id, 0)
+                            self._cast_conditional_before[(str(caster.pet_id), history_id)] = previous_count
+                            if self.round - 1 not in caster.attack_rounds:
+                                caster.conditional_power_counts[history_id] = previous_count + 1
+                        if skill_info.get("kind") in ("physical", "magical", "higher"):
+                            caster.attack_rounds.add(self.round)
+                        elif skill_info.get("kind") not in ("status", "defense"):
+                            caster.skill_use_history_complete = False
+                        caster.last_move_round = self.round
                         caster.skill_use_counts[history_id] = count + 1
                         from lab import weather_runtime
                         skill_type = next((name + '系' for name, code in battle_data.TYPE_CODES.items()
@@ -1398,6 +1419,10 @@ class BattleTracker:
                         before = self._cast_use_before.get((str(member.pet_id), source_id))
                         if before is not None:
                             payload["skillUseCounts"][source_id] = before
+                        conditional_before = self._cast_conditional_before.get((str(member.pet_id), source_id))
+                        if conditional_before is not None:
+                            payload["conditionalPowerCounts"][source_id] = conditional_before
+                            payload["lastMoveRound"] = None
                         response_before = self._cast_response_before.get((str(member.pet_id), source_id))
                         if response_before is not None:
                             payload['responseSuccessCount'] = response_before

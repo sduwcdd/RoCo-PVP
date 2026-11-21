@@ -2256,6 +2256,36 @@
         "applies_to": "incomplete_live_history_only",
         "full_history_execution_unchanged": true
       }
+    },
+    "7100260": {
+      "name": "绵里藏针",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%BB%B5%E9%87%8C%E8%97%8F%E9%92%88",
+      "description": "造成魔伤，若自己上回合未使用攻击技能，本技能威力永久+20。",
+      "record_hash": "77c27119cba5cd398fd7f8a9dda863744366b36cd01d0dc5aa0eedf520da692c",
+      "native_hash": "c037487fc2d19568b7a3347efc3b3546ce302b5e4616ba4a81a309a98311be0a",
+      "damage_rule": 39,
+      "dam_para": [
+        60,
+        2,
+        1,
+        20,
+        2,
+        2
+      ],
+      "components": [
+        {
+          "op": "previous_no_attack_history",
+          "add": 20
+        }
+      ],
+      "hits": 1,
+      "hits_source": "single_hit_default",
+      "history_source": "data/rules/reviewed-skill-history-1.json",
+      "history_component": {
+        "when": "after.use.no_previous_attack",
+        "op": "power.add",
+        "amount": 20
+      }
     }
   },
   "aliases": {

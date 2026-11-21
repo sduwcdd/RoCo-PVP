@@ -14,7 +14,7 @@ from lab.prepared_rules import prepare_rules
 from lab.trait_runtime import cached_source_query
 
 CONFIG = ROOT / 'data/rules/reviewed-skill-history-1.json'
-CONFIG_SHA256 = 'f552ec5cc07820aff27512117ea41188fe3ce29b5da09bb39b8573327b79258f'
+CONFIG_SHA256 = 'a7e2fd88599eba507360027a92970be0ee19f40ddcaeb50de7cb2449b6867167'
 POLICY = 'source_bound_original_slot_skill_history_after_committed_events_v1'
 POLICIES = {'identity': 'original_bundle_owner_and_original_slot_with_per_skill_history',
     'after_use': 'committed_successful_skill_once_before_future_uses',
@@ -227,14 +227,18 @@ def _validate_received(packet):
     return 0 < Fraction(ratio['numerator'], ratio['denominator']) < 1 and not ignored.pop()
 
 
-def _validate_previous(previous, turn, actor_member_id):
+def _validate_previous(previous, turn, actor_member_id, *, require_no_attack=True):
     from lab.action_outcome_runtime import committed_history
     if (not isinstance(previous, dict) or previous.get('turn') != turn - 1
             or previous.get('hash') != fingerprint({k:v for k,v in previous.items() if k != 'hash'})):
         raise ValueError('Previous-turn history snapshot changed')
     rows = committed_history({'member_id': actor_member_id, 'committed_skill_history': previous.get('rows')})
-    if any(r['turn'] != turn - 1 or r['kind'] in ('physical', 'magical') or not _observed_source_matches(r) for r in rows):
+    if any(r['turn'] != turn - 1 or not _observed_source_matches(r) for r in rows):
+        raise ValueError('Previous-turn condition differs from committed history')
+    attacked = any(r['kind'] in ('physical', 'magical') for r in rows)
+    if require_no_attack and attacked:
         raise ValueError('Previous-turn non-attack condition contradicts committed history')
+    return attacked
 
 
 def _totals(events, skill_id):
@@ -396,6 +400,14 @@ def _holder(state, binding):
     return member, carried_slot_order(member).index(binding['original_slot'])
 
 
+def conditional_power_bonus(skill_id, previous_attack):
+    row = _data()['skills'].get(str(skill_id), {})
+    if row.get('conditional_timing') != 'triggering_use':
+        return 0
+    return sum(c['amount'] for c in row['components']
+               if c['when'] == 'after.use.no_previous_attack' and c['op'] == 'power.add' and not previous_attack)
+
+
 def power_terms(state, binding):
     if binding is None:
         return None
@@ -405,6 +417,11 @@ def power_terms(state, binding):
     add, factor, _, cost_add, hits_add, _ = _totals(events, binding['skill_id'])
     terms = {'policy': POLICY, 'config_sha256': CONFIG_SHA256, 'skill_id': binding['skill_id'],
              'binding_hash': binding['binding_hash'], 'events': deepcopy(events), 'add': add, 'factor': factor, 'cost_add': cost_add, 'hits_add': hits_add}
+    if _data()['skills'][str(binding['skill_id'])].get('conditional_timing') == 'triggering_use':
+        from lab.action_outcome_runtime import committed_history
+        previous = {'turn': state['turn'] - 1, 'rows': [r for r in committed_history(member) if r['turn'] == state['turn'] - 1]}
+        previous['hash'] = fingerprint(previous)
+        terms.update(conditional_previous_turn=previous, conditional_turn=state['turn'], conditional_actor_member_id=member['member_id'])
     terms['terms_hash'] = fingerprint(terms)
     return terms
 
@@ -421,6 +438,10 @@ def modify_power(value, terms):
             or type(terms.get('hits_add')) is not int
             or (add, factor, cost_add, hits_add) != (terms['add'], terms['factor'], terms['cost_add'], terms['hits_add'])):
         raise ValueError('Power history totals differ from source event replay')
+    if _data()['skills'][str(terms['skill_id'])].get('conditional_timing') == 'triggering_use':
+        attacked = _validate_previous(terms['conditional_previous_turn'], terms['conditional_turn'],
+                                     terms['conditional_actor_member_id'], require_no_attack=False)
+        add += conditional_power_bonus(terms['skill_id'], attacked)
     return (value + add) * factor
 
 

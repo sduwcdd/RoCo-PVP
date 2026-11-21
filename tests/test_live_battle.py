@@ -505,6 +505,30 @@ class LiveBattleEvidenceTests(unittest.TestCase):
         self.assertEqual(tracker.round, 1)
         self.assertNotIn("402", tracker._pet_by_id)
 
+    def test_conditional_growth_tracks_only_the_same_pet_and_deduplicates_notifications(self):
+        tracker = BattleTracker(); enter(tracker, 100)
+        mine = tracker._pet_by_id["1"]
+        def command(turn, caster, skill):
+            return {"round": turn, "perform_info": [{"skill_cast": {"caster_id": caster, "skill_id": skill}}]}
+        tracker._on_perform({"perform_cmd": command(1, 1, 702078000)})
+        tracker._on_perform({"perform_cmd": command(1, 401, 704037000)})
+        cmd = command(2, 1, 710026000)
+        tracker._on_round_start({"state_info": {"round": 2}, "perform_cmd": cmd})
+        tracker._on_perform({"perform_cmd": deepcopy(cmd)})
+        self.assertEqual(mine.conditional_power_counts, {"7100260": 1})
+        self.assertEqual(mine.attack_rounds, {2})
+        tracker._on_perform({"perform_cmd": command(3, 1, 710026000)})
+        self.assertEqual(mine.conditional_power_counts, {"7100260": 1})
+        tracker._on_perform({"perform_cmd": command(4, 1, 702078000)})
+        tracker._on_perform({"perform_cmd": command(5, 1, 710026000)})
+        self.assertEqual(mine.conditional_power_counts, {"7100260": 2})
+        payload = mine.to_payload(hide_unobserved=False, observed={})
+        self.assertEqual(payload["conditionalPowerCounts"], {"7100260": 2})
+        payload["conditionalPowerCounts"].clear()
+        self.assertEqual(mine.conditional_power_counts, {"7100260": 2})
+        enter(tracker, 101)
+        self.assertEqual(tracker._pet_by_id["1"].conditional_power_counts, {})
+
     def test_level_change_invalidates_old_panels_but_keeps_configuration(self):
         tracker = BattleTracker(); enter(tracker, 100)
         pet = tracker._pet_by_id["401"]

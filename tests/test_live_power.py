@@ -61,6 +61,23 @@ class LivePowerTests(unittest.TestCase):
               skillTypeUseCounts={'7050180':{'水系':1}})
         self.assertIn('不能用当前配招覆盖',quote(7060120,attacker=p)['reason'])
 
+    def test_conditional_growth_includes_the_current_use_and_reports_missing_history(self):
+        p = pet(carriedSkillIds=[7100260, 7020780, 0, 0], skillUseHistoryComplete=True,
+                conditionalPowerCounts={"7100260": 2}, observedAttackRounds=[1], liveContext={"turn": 3})
+        before = deepcopy(p)
+        result = quote(7100260, attacker=p)
+        self.assertNotIn("reason", result)
+        self.assertEqual(result["effects"][0]["intrinsic_power_range"], [120, 120])
+        self.assertEqual(p, before)
+        p["liveContext"]["turn"] = 2
+        self.assertEqual(quote(7100260, attacker=p)["effects"][0]["intrinsic_power_range"], [100, 100])
+        p.update(conditionalPowerCounts={"7100260": 1}, observedAttackRounds=[2], lastMoveRound=2)
+        self.assertEqual(quote(7100260, attacker=p)["effects"][0]["intrinsic_power_range"], [80, 80])
+        p.update(skillUseHistoryComplete=False, historyIncompleteReason="从第10回合开始观测")
+        result = quote(7100260, attacker=p)
+        self.assertIn("从第10回合", result["reason"])
+        self.assertNotIn("动态伤害规则 39", result["reason"])
+
     def test_response_growth_matches_shared_ledger_without_double_application_or_hidden_slots(self):
         from lab import skill_history_runtime as history
         from lab.live_modifiers import damage_profile
@@ -194,7 +211,7 @@ class LivePowerTests(unittest.TestCase):
         self.assertEqual(drive[1]['normal'], nominal(7140340, 70))
         self.assertEqual(drive[1]['response']['normal'], nominal(7140340, 210))
         hidden = quote(7060260)['choices'][0]
-        self.assertEqual((hidden['normalMin'], hidden['normalMax']), (nominal(7060260, 115), nominal(7060260, 165)))
+        self.assertEqual((hidden['normalMin'], hidden['normalMax']), (nominal(7060260, 100), nominal(7060260, 150)))
         self.assertNotIn('choices', quote(7090450))
         self.assertIn('累计威力', quote(7150360)['choices'][0]['reason'])
 
@@ -356,7 +373,7 @@ class LivePowerTests(unittest.TestCase):
         frozen = quote(7090310, defender=pet(battleBuffs=[{"id": 20580010, "layers": 4}]))
         self.assertEqual(frozen["normal"], nominal(7090310, 40 + 80))
         energy = quote(7030570, attacker=pet(energy=3))
-        self.assertEqual(energy["normal"], nominal(7030570, 50 + 30))
+        self.assertEqual(energy["normal"], nominal(7030570, 60 + 30))
         self.assertIn("当前能量", quote(7030570, attacker=pet(energy=None))["reason"])
         self.assertIn("四槽当前能耗", quote(7090360)["reason"])
         self.assertEqual(quote(7090360, defender=pet(carriedSkillCosts=[1, 2, 3, 4]))["normal"], nominal(7090360, 100))

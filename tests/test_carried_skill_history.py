@@ -85,12 +85,12 @@ class CarriedSkillHistoryTests(unittest.TestCase):
         state = self.fixture([7040250, 7040690, 7150350, 7040210])
         self.commit(state, 0, 'mountain-first')
         self.assertEqual(self.power(state, 0), 15)
-        self.assertEqual(self.power(state, 1), 110)
+        self.assertEqual(self.power(state, 1), 125)
         self.assertEqual(self.power(state, 2), 75)
         state['turn'] = 2
         self.commit(state, 1, 'warm-swift', swift=True)
         self.assertEqual(self.power(state, 0), 30)
-        self.assertEqual(self.power(state, 1), 70)
+        self.assertEqual(self.power(state, 1), 65)
         self.assertEqual(self.power(state, 2), 75)
         state['turn'] = 3
         action = {'kind': 'recharge', 'actor_member_id': 'a0'}
@@ -175,11 +175,13 @@ class CarriedSkillHistoryTests(unittest.TestCase):
         self.assertEqual(result['status'], 'applied', result['blockers'])
         self.assertEqual(sum(e['op'] == 'damage' and e.get('source_op') == 'damage.sequence' for e in result['events']), 4)
         state['turn'] = 2
+        self.assertEqual(self.power(state, 1), 80)
         self.commit(state, 1, 'after-defense')
-        self.assertEqual(self.power(state, 1), 80)
         state['turn'] = 3
-        self.commit(state, 1, 'after-attack')
         self.assertEqual(self.power(state, 1), 80)
+        self.commit(state, 1, 'after-attack')
         state['turn'] = 5
+        self.assertEqual(self.power(state, 1), 100)
         self.commit(state, 1, 'after-empty-turn')
+        state['turn'] = 6
         self.assertEqual(self.power(state, 1), 100)

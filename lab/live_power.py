@@ -337,6 +337,35 @@ def source_power(attacker, defender, sid, profile):
                 # Enemy carried history is hidden; acquiring a skill after entry is possible.
                 counts = [count] if carried is not None else [0, count]
                 additions = [value * terms[0]["amount"] for value in counts]
+        elif op == "previous_no_attack_history":
+            from . import skill_history_runtime as history
+            canonical = battle_data.canonical_skill(sid).get("skill_id", sid)
+            row = history._data()["skills"].get(str(canonical), {})
+            if (row.get("record_hash") != spec["record_hash"] or row.get("components") !=
+                    [{"when": "after.use.no_previous_attack", "op": "power.add", "amount": component["add"]}]):
+                raise ValueError("上回合条件威力缺少一致的共享历史配置")
+            if "_simulation_actor" in attacker:
+                resolved = attacker.get("_execution_context", {}).get("skill_history_power")
+                if not resolved or resolved.get("skill_id") != canonical:
+                    raise ValueError("条件累计威力缺少当前原始槽位的完整来源历史")
+                continue
+            if attacker.get("skillUseHistoryComplete") is not True:
+                raise _missing_history(attacker, "上回合未攻击时施放的累计")
+            count = attacker.get("conditionalPowerCounts", {}).get(str(canonical), 0)
+            if type(count) is not int or count < 0:
+                raise ValueError("条件累计使用次数无效")
+            carried = attacker.get("carriedSkillIds")
+            if carried is not None and carried.count(canonical) != 1:
+                raise ValueError("条件累计威力无法匹配唯一的当前携带槽位")
+            turn = attacker.get("liveContext", {}).get("turn")
+            rounds = attacker.get("observedAttackRounds")
+            if type(turn) is not int or not isinstance(rounds, list):
+                raise ValueError("绵里藏针缺少当前回合或本人攻击记录")
+            # Once this pet has acted, HUD previews its next turn; hit inversion clears lastMoveRound.
+            if attacker.get("lastMoveRound") == turn:
+                turn += 1
+            current_bonus = history.conditional_power_bonus(canonical, turn - 1 in rounds)
+            additions = [n * component["add"] + current_bonus for n in ([count] if carried is not None else [0, count])]
         elif op == "per_use":
             if "_simulation_actor" in attacker:
                 terms = attacker.get("_execution_context", {}).get("skill_history_power")

@@ -1,9 +1,9 @@
 {
-  "version": "1.1.12",
+  "version": "1.1.13",
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
-  "file_count": 5417,
-  "bytes": 456299547,
+  "file_count": 5418,
+  "bytes": 456311205,
   "files": [
     {
       "path": ".gitattributes",
@@ -28,7 +28,7 @@
     {
       "path": "README.md",
       "bytes": 3145,
-      "sha256": "a839eee18ee18540bf128b73aaecd5dfe4c42241a64c6e2f3a514995df22b021"
+      "sha256": "d0bc9bc0252f2991844a95a1cfb7d5ccdf02897b4dd4401c3cd44c7aee7e2298"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -2042,8 +2042,8 @@
     },
     {
       "path": "data/rules/reviewed-live-power-1.json",
-      "bytes": 75105,
-      "sha256": "aac8ee8833f1b1a05d86c57ea710ac7a7dc1d443cd48ac8610a548042e678251"
+      "bytes": 76035,
+      "sha256": "fb9e2b356e16c35e7922286ed7bb9ac744b8d38bc1c8cf65a764e739eb7955db"
     },
     {
       "path": "data/rules/reviewed-mark-components-1.json",
@@ -2097,8 +2097,8 @@
     },
     {
       "path": "data/rules/reviewed-skill-history-1.json",
-      "bytes": 109346,
-      "sha256": "f552ec5cc07820aff27512117ea41188fe3ce29b5da09bb39b8573327b79258f"
+      "bytes": 109417,
+      "sha256": "a7e2fd88599eba507360027a92970be0ee19f40ddcaeb50de7cb2449b6867167"
     },
     {
       "path": "data/rules/reviewed-slot-components-1.json",
@@ -2387,8 +2387,8 @@
     },
     {
       "path": "docs/verification/bwiki-levels-20261121.md",
-      "bytes": 5091,
-      "sha256": "3b8452478747848fdf84cd8e887bfdd6b83ebebe6b1022d125401a68d782a506"
+      "bytes": 5437,
+      "sha256": "171b7fefc993eef2c4fdb445fa9541c1ad8c10dbef33e9f3c852aa8cd0f96194"
     },
     {
       "path": "docs/verification/bwiki-numeric-followup-20261025.json",
@@ -2454,6 +2454,11 @@
       "path": "docs/verification/compound-effects-review-20261025.md",
       "bytes": 3205,
       "sha256": "483eadf09d53df69ec33b2612fb2ae326d0e28efc3112e1a6beea76469404d27"
+    },
+    {
+      "path": "docs/verification/conditional-needle-20261121.md",
+      "bytes": 2208,
+      "sha256": "bbc766b3b88f009afacc8cc565907b4d2a16092cd40d5b3f5d0524eead78df63"
     },
     {
       "path": "docs/verification/conductive-and-mark-steal-20261026.md",
@@ -3227,8 +3232,8 @@
     },
     {
       "path": "lab/live_battle.py",
-      "bytes": 130247,
-      "sha256": "6bb4fff55a57153f9253e17bffe958577f4dc20d5180645eeb298cf2d0b41efa"
+      "bytes": 132026,
+      "sha256": "cfd6ddf0839b565709702199f2b2302a944b9972c3a67e4df6a37746083e2126"
     },
     {
       "path": "lab/live_bridge.py",
@@ -3252,8 +3257,8 @@
     },
     {
       "path": "lab/live_power.py",
-      "bytes": 26198,
-      "sha256": "e5ad56d889e1284fb817a48238d41d6800c12109d3498afc106c48aedade4ec2"
+      "bytes": 28372,
+      "sha256": "267bd6e4596e6e1af147f44e19c5006ffea1dcad33b1cb63a425cfe31b864c3e"
     },
     {
       "path": "lab/live_stat_model.py",
@@ -3432,8 +3437,8 @@
     },
     {
       "path": "lab/skill_history_runtime.py",
-      "bytes": 46901,
-      "sha256": "e314a78e82c537a7dff04c742f1411aefa3ae649b03d447f9445e237cee83400"
+      "bytes": 48297,
+      "sha256": "336fb3cbd1e0da2350f03f131fceca17ef32385e63681f643eac7563a1666232"
     },
     {
       "path": "lab/skill_hits.py",
@@ -3573,7 +3578,7 @@
     {
       "path": "mobile/README.md",
       "bytes": 21075,
-      "sha256": "cafb479f73c16a8feae07d573a1dde5a30377de941d378e46dc050cde9b759fc"
+      "sha256": "2c874de6994bd44501841253da24846cf6514c1b65c44b63c757b540c20f4eac"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3588,7 +3593,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2577,
-      "sha256": "5fccf225b1ace01e3585779c99602aa9083baa90c669a64f4f2282cb9b30dd37"
+      "sha256": "9eaf034adafed7dc417cf3ca41a06568b415f6b4f279c76328a14d904a9914fb"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3913,12 +3918,12 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150988,
-      "sha256": "6e95216f0c8e4313d0a3236303320fd74c2f1aa0a06a4fa0bd0faca9a5c78313"
+      "sha256": "83432382182192f72d67132ca744f413acc17f46d2978f34b7dd9a1986d092c1"
     },
     {
       "path": "overlay/package.json",
       "bytes": 431,
-      "sha256": "7fa9021b817d1acbb45c739588ceac26bb6ad6971dafe099d602d02aee1fca1d"
+      "sha256": "fee450904b9b9c4fa43238eaf8a967b22fcf1141508bd360d19dc4f6d97ed38e"
     },
     {
       "path": "overlay/preload.js",
@@ -3928,7 +3933,7 @@
     {
       "path": "overlay/update_config.json",
       "bytes": 109,
-      "sha256": "265a7dc8cc4a4eba22f462b441fcf1bd13d32ced9663e32a8833badc63906a44"
+      "sha256": "16f0694154d3806728cfd878503cdf3962c174ccdd184efb9e05106cf7e6258b"
     },
     {
       "path": "requirements-release.txt",
@@ -4297,8 +4302,8 @@
     },
     {
       "path": "tests/test_carried_skill_history.py",
-      "bytes": 10997,
-      "sha256": "3f93c890ec603e9edb8a36bbd5a5ca038f8f2bef5b9aba78a473b5dbbe3a367e"
+      "bytes": 11075,
+      "sha256": "4a72f9f36bd2b43bac9608cf24dfa699fc3b21770aada42eaf8a31970cf327ce"
     },
     {
       "path": "tests/test_charge_components.py",
@@ -4487,8 +4492,8 @@
     },
     {
       "path": "tests/test_live_battle.py",
-      "bytes": 32839,
-      "sha256": "c6a4060377029cf94693b113074f35ad92506fad697a1fbcbbd49e6a99dcc85b"
+      "bytes": 34361,
+      "sha256": "da0fe6dc525826c71d0934acfa061c1ce4e22c606c7ce0351b94e323b36aefee"
     },
     {
       "path": "tests/test_live_battle_world_stars.py",
@@ -4522,8 +4527,8 @@
     },
     {
       "path": "tests/test_live_power.py",
-      "bytes": 33343,
-      "sha256": "e733e11bb0d0d3a18f0b7d3dc5d412b19a702d0e3b5adad2a01672112ec3b6ed"
+      "bytes": 34497,
+      "sha256": "dca262d23c89b66c861d964dd112e530629bd593cfd41c83224635284bde6809"
     },
     {
       "path": "tests/test_mark_integration.py",
@@ -27098,5 +27103,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261121-bwiki-levels-iv"
+  "release_build_id": "20261121-bwiki-needle-final"
 }

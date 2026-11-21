@@ -6,8 +6,8 @@ android {
         applicationId 'cn.roco.mobile'
         minSdk 29
         targetSdk 35
-        versionCode = (project.findProperty('rocoVersionCode') ?: '19').toInteger()
-        versionName = project.findProperty('rocoVersionName') ?: '0.16.1-internal'
+        versionCode = (project.findProperty('rocoVersionCode') ?: '20').toInteger()
+        versionName = project.findProperty('rocoVersionName') ?: '0.16.2-internal'
         ndk { abiFilters 'arm64-v8a', 'x86_64' }
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
