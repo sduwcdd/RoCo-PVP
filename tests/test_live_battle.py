@@ -510,14 +510,14 @@ class LiveBattleEvidenceTests(unittest.TestCase):
         pet = tracker._pet_by_id["401"]
         tracker._record_panel(401, "magAtk", 200, 195, 205)
         pet.talent_evidence = {"selected_ids": [1, 2, 3], "dimensions": {
-            "magAtk": {"talent": 186, "base_value": 200, "effort_add": 10}}}
+            "magAtk": {"talent": 186, "talent_add_value": 31, "base_value": 200, "effort_add": 10}}}
         pet.refresh_stats({}, {"level": 99})
         self.assertEqual(pet.level, 99)
         self.assertEqual(pet.attr_stats, {})
         self.assertEqual(pet.panel_stats, {})
         self.assertIsNone(pet.max_hp)
         self.assertEqual(pet.talent_evidence["selected_ids"], [1, 2, 3])
-        self.assertEqual(pet.talent_evidence["dimensions"]["magAtk"], {"talent": 186})
+        self.assertEqual(pet.talent_evidence["dimensions"]["magAtk"], {"talent": 186, "talent_add_value": 31})
         self.assertEqual(tracker._learned_for(401), {})
         self.assertNotIn("401", tracker.learned_panel_ranges)
         tracker._record_panel(401, "magAtk", 300, 295, 305)

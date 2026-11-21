@@ -457,7 +457,7 @@ class _Pet:
             self.panel_stats = {}
             self.max_hp = None
             for fields in self.talent_evidence.get("dimensions", {}).values():
-                for key in ("base_value", "effort_add", "talent_add_value"):
+                for key in ("base_value", "effort_add"):
                     fields.pop(key, None)
         if (any(k in common and common[k] != getattr(self, k) for k in ("nature", "level")) or
             any(k in common and (common[k] or 0) != getattr(self, attr) for k,attr in

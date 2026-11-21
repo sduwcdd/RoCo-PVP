@@ -1,9 +1,9 @@
 {
-  "version": "1.1.11",
+  "version": "1.1.12",
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
   "file_count": 5417,
-  "bytes": 456298976,
+  "bytes": 456299547,
   "files": [
     {
       "path": ".gitattributes",
@@ -28,7 +28,7 @@
     {
       "path": "README.md",
       "bytes": 3145,
-      "sha256": "bb9c39aded31d143e66ff8c853bd7fba53e538ec121b0f062e8ecd866fe86ab8"
+      "sha256": "a839eee18ee18540bf128b73aaecd5dfe4c42241a64c6e2f3a514995df22b021"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -2387,8 +2387,8 @@
     },
     {
       "path": "docs/verification/bwiki-levels-20261121.md",
-      "bytes": 4552,
-      "sha256": "78e47c7208e797e4c235f35746f5c7e1e75bd8b3370482ab1bfb07a4ed2a4e34"
+      "bytes": 5091,
+      "sha256": "3b8452478747848fdf84cd8e887bfdd6b83ebebe6b1022d125401a68d782a506"
     },
     {
       "path": "docs/verification/bwiki-numeric-followup-20261025.json",
@@ -3227,8 +3227,8 @@
     },
     {
       "path": "lab/live_battle.py",
-      "bytes": 130267,
-      "sha256": "9cff93c529fd2196f1ae4d630e1fa08fbed1bd095f34c52bfb3588ced8958517"
+      "bytes": 130247,
+      "sha256": "6bb4fff55a57153f9253e17bffe958577f4dc20d5180645eeb298cf2d0b41efa"
     },
     {
       "path": "lab/live_bridge.py",
@@ -3572,8 +3572,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 21073,
-      "sha256": "2f6f3228e944c9a8c43efa752c2eeb58620b7a7f7d685a9b6e41161bcd4f6ca5"
+      "bytes": 21075,
+      "sha256": "cafb479f73c16a8feae07d573a1dde5a30377de941d378e46dc050cde9b759fc"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3587,8 +3587,8 @@
     },
     {
       "path": "mobile/android/app/build.gradle",
-      "bytes": 2575,
-      "sha256": "960a50c55eb3df6d3bb4e5aedc14b64ea56eb4c4736af4dff938ee703ea16935"
+      "bytes": 2577,
+      "sha256": "5fccf225b1ace01e3585779c99602aa9083baa90c669a64f4f2282cb9b30dd37"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3913,12 +3913,12 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150988,
-      "sha256": "182ee1ced612e2cd063b94b14432dde0408c9c4d1554388c050d4b2d5ca892d8"
+      "sha256": "6e95216f0c8e4313d0a3236303320fd74c2f1aa0a06a4fa0bd0faca9a5c78313"
     },
     {
       "path": "overlay/package.json",
       "bytes": 431,
-      "sha256": "9dd21f2fa554044186218760e6d413dafc19864f5f342222218836b4f882a126"
+      "sha256": "7fa9021b817d1acbb45c739588ceac26bb6ad6971dafe099d602d02aee1fca1d"
     },
     {
       "path": "overlay/preload.js",
@@ -3928,7 +3928,7 @@
     {
       "path": "overlay/update_config.json",
       "bytes": 109,
-      "sha256": "716923c42e672eef9efce2134a3fb261594495f0bef9957f1e027603cc5a9e64"
+      "sha256": "265a7dc8cc4a4eba22f462b441fcf1bd13d32ced9663e32a8833badc63906a44"
     },
     {
       "path": "requirements-release.txt",
@@ -4487,8 +4487,8 @@
     },
     {
       "path": "tests/test_live_battle.py",
-      "bytes": 32791,
-      "sha256": "d024340685bca5450e121f4bf3fccef12a3dacde77e523b1a88168669a4a6bfe"
+      "bytes": 32839,
+      "sha256": "c6a4060377029cf94693b113074f35ad92506fad697a1fbcbbd49e6a99dcc85b"
     },
     {
       "path": "tests/test_live_battle_world_stars.py",
@@ -27098,5 +27098,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261121-bwiki-levels"
+  "release_build_id": "20261121-bwiki-levels-iv"
 }

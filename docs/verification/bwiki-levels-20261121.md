@@ -118,3 +118,19 @@ Windows安装包SHA-256：
 
 [Windows国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/v1.1.11/RocoPVP-Setup-1.1.11.exe)。
 [安卓国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/android-v0.16.0-internal/roco-mobile-android-internal-0.16.apk)。
+
+## 个体值保留补丁
+
+最终核对发现个体值保留逻辑有遗漏。
+`talent_add_value`是已下发个体值。
+该字段不能随等级变化清除。
+当前仅清除旧等级面板相关字段。
+当前保留原始资质和个体值。
+35项观测检查重新通过。
+
+最终Windows版本为1.1.12。
+构建身份为 `20261121-bwiki-levels-iv`。
+最终安卓版本为0.16.1-internal。
+内部版本号为19。
+构建身份为 `mobile-20261121-0161-bwiki-levels-iv`。
+前述1.1.11与0.16由补丁版替代。
