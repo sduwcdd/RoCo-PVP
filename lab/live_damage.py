@@ -22,7 +22,7 @@ from typing import Any
 from .pvp_rules import SAME_TYPE_MULTIPLIER, CRITICAL_MULTIPLIER
 from . import battle_data
 from .numeric_candidates import arena_documented_damage60
-from .live_stat_model import damage_at_level, is_world, star_candidates, stat_candidates
+from .live_stat_model import damage_at_level, is_world, star_candidates, stat_candidates, uses_abu_panel
 
 # skill_dam_type 数字 ↔ 属性名。battle_data 里是「草」，规则快照里是「草系」，
 # 这里统一成规则侧写法，属性倍率才查得到。
@@ -447,7 +447,7 @@ def panel_values(pet, stat):
                                       "up" if up == dim else "down" if down == dim else None, stars=s)
                   for up, down in pairs for s in stars}
         return sorted(values), "基础面板+性格/星级候选"
-    if not is_world(pet) and pet.get("level") not in (None, 60):
+    if not is_world(pet) and pet.get("level") not in (None, 60) and not uses_abu_panel(pet):
         raise ValueError("缺少该等级面板：60级公式不能代算其他等级")
     race, source = _race_stats(_effective_base(pet))
     base = race.get(dim)
@@ -464,6 +464,8 @@ def panel_values(pet, stat):
         raise ValueError("；".join(sorted(failures)) + "；不能将局部星级候选当作完整范围")
     if not values:
         raise ValueError("基础面板与当前性格/资质候选不匹配")
+    if uses_abu_panel(pet):
+        source += "（高等级五星阿布实战面板候选）"
     return sorted(values), source + "+性格/个体候选"
 
 
@@ -500,6 +502,29 @@ def attack_bounds(pet: dict, stat: str):
         return None
 
 
+def _reference_panel(pet, stat, opponent):
+    """Counterfactual uninvested stat, keeping known positive nature and live modifiers."""
+    dim = _ATTR_TO_SHORT[stat]
+    race, _source = _race_stats(_effective_base(pet))
+    pairs = _nature_pairs(pet)
+    up = dim if pairs and all(pair[0] == dim for pair in pairs) else None
+    evidence = pet.get("talentEvidence") or {}
+    row = (evidence.get("dimensions") or {}).get(stat) or {}
+    # Protocol base panels contain the actual investment, so recompute this hypothesis.
+    fields = {k: v for k, v in row.items() if k not in ("talent", "talent_add_value", "base_value")}
+    fields.update(talent=0, talent_add_value=0)
+    hypothesis = {**pet, "talentEvidence": {**evidence, "dimensions": {
+        **evidence.get("dimensions", {}), stat: fields}},
+        "initialStats": {k: v for k, v in (pet.get("initialStats") or {}).items() if k != stat},
+        "stats": {k: v for k, v in (pet.get("stats") or {}).items() if k != stat}}
+    values = sorted({value for stars in star_candidates(pet)
+                     for value in stat_candidates(hypothesis, race, dim, 0, up, None, stars)})
+    if not values:
+        raise ValueError("该属性的未加点参考面板尚未核实")
+    from .live_modifiers import panel_candidates
+    return panel_candidates({**pet, "_referenceBaseStats": {stat: values}}, stat, opponent)[0]
+
+
 def _damage_case(attacker, defender, profile, kind, attack_values=None):
     from .live_modifiers import damage_profile, panel_candidates
     profile = damage_profile(attacker, defender, profile["skillId"], {**profile, "kind": kind})
@@ -519,7 +544,7 @@ def _damage_case(attacker, defender, profile, kind, attack_values=None):
     low_power, high_power = profile["powerRange"]
     low_final, high_final = profile.get("levelTraitBaseFinalRange", profile["finalMultiplierRange"])
     critical_multiplier = 2 if is_world(attacker) else _CRIT_MULTIPLIER
-    return {
+    result = {
         "minimum": hit(min(attack), max(defense), low_power, low_final),
         "maximum": hit(max(attack), min(defense), high_power, high_final),
         "criticalMinimum": hit(min(attack), max(defense), low_power, low_final, critical_multiplier),
@@ -529,6 +554,27 @@ def _damage_case(attacker, defender, profile, kind, attack_values=None):
         "atkSource": attack_source, "defSource": defense_source,
         "powerRange": profile["powerRange"], "finalMultiplierRange": profile["finalMultiplierRange"], "effects": profile["effects"],
     }
+    if (result["minimum"] != result["maximum"] or profile["kind"] == "higher") and "_simulation_actor" not in attacker:
+        try:
+            if attacker.get("side") == 1:
+                reference_attack = _reference_panel(attacker, attack_key, defender)
+                reference_defense = defense
+                if profile["kind"] == "higher":
+                    other_key = "magAtk" if kind == "physical" else "phyAtk"
+                    other_values = _reference_panel(attacker, other_key, defender)
+                    reference_attack = [value for value in reference_attack if any(
+                        value >= other if kind == "physical" else value > other for other in other_values)]
+            else:
+                reference_attack = attack
+                reference_defense = _reference_panel(defender, defense_key, attacker)
+            if reference_attack:
+                result.update(referenceMinimum=hit(min(reference_attack), max(reference_defense), low_power, low_final),
+                              referenceMaximum=hit(max(reference_attack), min(reference_defense), high_power, high_final))
+            else:
+                result["referenceInapplicable"] = True
+        except ValueError as error:
+            result["referenceUnavailable"] = str(error)
+    return result
 
 
 def _higher_attack_values(pet, opponent):
@@ -583,7 +629,16 @@ def _estimate_profile(attacker, defender, profile, higher_values=None):
              "perHitMin": minimum // hits, "perHitMax": maximum // hits,
              "criticalPerHitMin": crit_low // hits, "criticalPerHitMax": crit_high // hits,
              "effects": [c["effects"] for c in cases]}
-    if (attacker.get("level") or 60) > 60:
+    references = [case for case in cases if "referenceMinimum" in case]
+    if references and not any(case.get("referenceUnavailable") for case in cases):
+        reference_low = min(case["referenceMinimum"] for case in references)
+        reference_high = max(case["referenceMaximum"] for case in references)
+        entry.update(referenceMin=reference_low * hits, referenceMax=reference_high * hits,
+                     referencePerHitMin=reference_low, referencePerHitMax=reference_high,
+                     referenceAssumption="对方对应属性未加个体值；忽略性格减益，保留已知加成；状态、特性和天气照常计算")
+    if "referenceMin" not in entry and any(case.get("referenceUnavailable") for case in cases):
+        entry["referenceUnavailable"] = "；".join(dict.fromkeys(case["referenceUnavailable"] for case in cases if case.get("referenceUnavailable")))
+    if attacker.get("level") not in (None, 60):
         entry["levelDamageCandidate"] = {"attackerLevel": attacker["level"], "calibrated": False,
                                         "source": "data/rules/reviewed-world-npc-stats-1.json"}
     if exact:
@@ -638,8 +693,13 @@ def wish_scenarios(attacker, defender):
         def bounds(quotes):
             if not quotes:
                 return {'normalMin': None, 'normalMax': None}
-            return {'normalMin': min(q['normalMin'] for q in quotes), 'normalMax': max(q['normalMax'] for q in quotes),
-                    'oneShot': all(q.get('oneShot', False) for q in quotes)}
+            result = {'normalMin': min(q['normalMin'] for q in quotes), 'normalMax': max(q['normalMax'] for q in quotes),
+                      'oneShot': all(q.get('oneShot', False) for q in quotes)}
+            references = [q for q in quotes if q.get('referenceMin') is not None]
+            if references:
+                result.update(referenceMin=min(q['referenceMin'] for q in references),
+                              referenceMax=max(q['referenceMax'] for q in references))
+            return result
         rows.append({'label': group['label'], 'multiplier': group['multiplier'], 'types': group['types'],
                      **bounds(group[False]), 'response': bounds(group[True])})
     return {'hypothetical': True, 'rows': rows, 'note': '按当前目标实际可出现的愿力属性倍率分组；未知血脉，不代表已确认携带属性。'}
@@ -812,6 +872,12 @@ def _estimate_choices(attacker, defender, profile, spec):
               'criticalMax': max(c['criticalMax'] for c in choices)}
     for key in ('normal', 'critical', 'perHit', 'response', 'option', 'label', 'note', 'normalPct', 'criticalPct', 'maxPct'):
         result.pop(key, None)
+    references = [choice for choice in choices if choice.get('referenceMin') is not None]
+    if references:
+        result.update(referenceMin=min(q['referenceMin'] for q in references),
+                      referenceMax=max(q['referenceMax'] for q in references),
+                      referencePerHitMin=min(q['referencePerHitMin'] for q in references),
+                      referencePerHitMax=max(q['referencePerHitMax'] for q in references))
     result.update(perHitMin=low // result['hits'], perHitMax=high // result['hits'],
                   criticalPerHitMin=result['criticalMin'] // result['hits'],
                   criticalPerHitMax=result['criticalMax'] // result['hits'])

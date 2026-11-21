@@ -24,7 +24,10 @@ if (process.argv.includes('--hud-only')) {
   const huds = new Set()
   const controller = new DesktopServices(root)
   app.setName('洛克PVP')
-  app.setPath('userData', path.join(app.getPath('appData'), app.isPackaged ? 'RocoPVPDesktopRelease' : 'RocoPVPDesktop'))
+  const verificationProfile = process.argv.includes('--verify-desktop') && process.env.ROCO_VERIFY_PROFILE_ROOT
+  if (verificationProfile && !path.isAbsolute(verificationProfile)) throw Error('桌面验证目录必须为绝对路径')
+  app.setPath('userData', verificationProfile ? path.join(verificationProfile, 'electron') :
+    path.join(app.getPath('appData'), app.isPackaged ? 'RocoPVPDesktopRelease' : 'RocoPVPDesktop'))
   app.disableHardwareAcceleration()
   app.commandLine.appendSwitch('disable-gpu')
   app.commandLine.appendSwitch('in-process-gpu')

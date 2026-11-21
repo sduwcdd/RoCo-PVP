@@ -61,15 +61,24 @@ def verify_desktop(work, output):
         return
     if os.name != 'nt':
         raise RuntimeError('请在 Windows 构建机验证桌面后发布')
-    query = "@(Get-Process -Name '洛克PVP' -ErrorAction SilentlyContinue).Count"
-    active = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command', query],
-                            capture_output=True, text=True, check=True, timeout=20)
-    if active.stdout.strip() != '0':
-        raise RuntimeError('请先从托盘退出正在运行的安装版 APP，再发布；发布器不会停止用户的应用')
+    isolated = 'ROCO_VERIFY_PROFILE_ROOT' in (work / 'overlay/desktop.js').read_text(encoding='utf8')
+    if not isolated:
+        query = "@(Get-Process -Name '洛克PVP' -ErrorAction SilentlyContinue).Count"
+        active = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command', query],
+                                capture_output=True, text=True, check=True, timeout=20)
+        if active.stdout.strip() != '0':
+            raise RuntimeError('旧构建不支持独立验证目录，请先退出安装版 APP')
     with socket.socket() as sock:
         sock.bind(('127.0.0.1', 0))
         port = sock.getsockname()[1]
     env = os.environ.copy(); env['ROCO_APP_PORT'] = str(port); env.pop('ELECTRON_RUN_AS_NODE', None)
+    if isolated:
+        # Separate Electron's singleton and backend storage from the running user's APP.
+        profile = (work / 'desktop-verification-profile').resolve()
+        for folder in ('Roaming', 'Local'):
+            (profile / folder).mkdir(parents=True, exist_ok=True)
+        env.update(ROCO_VERIFY_PROFILE_ROOT=str(profile), APPDATA=str(profile / 'Roaming'),
+                   LOCALAPPDATA=str(profile / 'Local'))
     started = time.time()
     with (work / 'publish-desktop.stdout.log').open('wb') as out, (work / 'publish-desktop.stderr.log').open('wb') as err:
         child = subprocess.Popen([str(output / 'win-unpacked/洛克PVP.exe'), '--verify-desktop'],
@@ -79,12 +88,14 @@ def verify_desktop(work, output):
         except subprocess.TimeoutExpired:
             subprocess.run(['taskkill.exe', '/PID', str(child.pid), '/T', '/F'], capture_output=True, timeout=5)
             raise RuntimeError('桌面验证超时，未发布；请查看本构建验证日志') from None
-    result = Path(os.environ['LOCALAPPDATA']) / 'RocoPVP/artifacts/app/desktop-verification.json'
+    result = Path(env['LOCALAPPDATA']) / 'RocoPVP/artifacts/app/desktop-verification.json'
     if code != 0 or not result.exists() or result.stat().st_mtime < started:
         raise RuntimeError('桌面验证没有生成本次有效结果，未发布')
     verified = json.loads(result.read_text('utf-8'))
     if verified.get('server', {}).get('port') != port:
         raise RuntimeError('桌面验证端口不匹配，未发布')
+    if isolated:
+        verified['isolatedProfile'] = str(profile)
     target.write_text(json.dumps(verified, ensure_ascii=False, indent=2), encoding='utf-8')
 
 

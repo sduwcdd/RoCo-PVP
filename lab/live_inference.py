@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from .damage_inference import DIMS, _nature_directions, _selection_cases
-from .live_stat_model import WORLD_SOURCE, WORLD_SOURCE_SHA256, is_world, star_candidates, stat_candidates, npc_profile, damage_value
+from .live_stat_model import ABU_PANEL_SOURCE, WORLD_SOURCE, WORLD_SOURCE_SHA256, is_world, star_candidates, stat_candidates, npc_profile, damage_value, uses_abu_panel
 
 STAT_KEYS = {"hp": "hp", "patk": "phyAtk", "matk": "magAtk", "pdef": "phyDef", "mdef": "magDef", "spd": "spd"}
 
@@ -15,11 +15,14 @@ def _buffs():
     return json.loads((Path(__file__).resolve().parents[1] / "data/external/roco_buff_calc_map.json").read_text(encoding="utf-8"))
 
 
-def _modifier(pet, dim):
+def _modifier(pet, dim, payload=None):
     from .buff_preview import CALC_FIELDS
-    from .live_modifiers import calc_buff, _buff_layers
+    from .live_modifiers import calc_buff, _buff_layers, _guardian_attack_percent, captured_buffs
     percent, unknown = 0, []
-    for buff in pet.buffs:
+    guardian = payload and payload.get("effectiveTraitId") == 280041 and dim == "patk"
+    for buff in captured_buffs(payload) if payload is not None else pet.buffs:
+        if guardian and buff.get("id") == 23000030:
+            continue
         data = calc_buff(buff.get("id"))
         if not data:
             unknown.append(buff.get("id"))
@@ -27,6 +30,10 @@ def _modifier(pet, dim):
             field = CALC_FIELDS.get(dim)
             if field in data:
                 percent += data[field] * _buff_layers(buff)
+    if guardian:
+        percent = _guardian_attack_percent(payload, percent)
+        if percent is None:
+            raise ValueError("缺少物攻百分比面板或圣龙的守护层数")
     return 1 + percent / 100, percent, unknown
 
 
@@ -71,7 +78,7 @@ def damage_observation(caster, target, skill_id, damage, critical, turn, resolve
     dim, fixed = (defense, attack) if role == "defender" else (attack, defense)
     ally_payload, enemy_payload = (attacker, defender) if caster.side == 0 else (defender, attacker)
     fixed_values, fixed_source = live_modifiers.panel_candidates(ally_payload, STAT_KEYS[fixed], enemy_payload)
-    factor, percent, event["unmodeled_buffs"] = _modifier(enemy, dim)
+    factor, percent, event["unmodeled_buffs"] = _modifier(enemy, dim, enemy_payload)
     info = battle_data.skill_info(skill_id) or battle_data.skill_info(skill_id // 100)
     profile.update(skillId=info.get("skill_id", skill_id), kind=kind)
     selected = [m.get("slot") for m in attacker.get("moves", []) if not m.get("observedOnly")
@@ -125,7 +132,7 @@ def _protocol_selection(pet):
         raw = row.get("talent")
         if raw is not None and (type(raw) is not int or raw < 0):
             raise ValueError(f"协议{dim}原始资质字段无效")
-        if not is_world(pet) and pet.get("level") == 60 and raw is not None and raw != value * 6:
+        if not is_world(pet) and (pet.get("level") == 60 or uses_abu_panel(pet)) and raw is not None and raw != value * 6:
             raise ValueError(f"协议{dim}个体值与原始资质字段冲突")
         values[dim] = value
     return {"selected": list(values), "values": values}
@@ -167,7 +174,7 @@ def infer_configuration(pet, evidence):
     if type(level) is not int or level < 1:
         result["issues"].append("当前配置反推缺少有效等级")
         return result
-    if not world and level != 60:
+    if not world and level != 60 and not uses_abu_panel(pet):
         observed = {key: value for key, value in (pet.get("battleStats") or {}).items()
                     if key in STAT_KEYS.values() and type(value) in (int, float) and value > 0
                     and key not in (pet.get("battleStatsEstimated") or {})}
@@ -193,6 +200,9 @@ def infer_configuration(pet, evidence):
     catalog, _ = live_damage._rules()
     result["snapshot_id"] = catalog.get("snapshot_id")
     result["candidate_id"] = "captured_stat60_precision_bounds_v1+shared_live_forward_query_v2"
+    if uses_abu_panel(pet):
+        result["candidate_id"] = "captured_abu_five_star_panel_v1+shared_live_forward_query_v2"
+        result["stat_source"] = ABU_PANEL_SOURCE
     if world:
         result["candidate_id"] = "captured_world_zero_star_or_protocol_panels_v1+shared_live_forward_query_v2"
         result["stat_source"] = WORLD_SOURCE

@@ -1,0 +1,22 @@
+{
+  "source": "Windows installed replay database, 2026-11-21, Asia/Shanghai",
+  "scope": "Observed five-star PVP Abu panels. Other forms, star counts and the damage formula were not calibrated by these observations.",
+  "stat_order": ["hp", "patk", "matk", "pdef", "mdef", "spd"],
+  "species": [126, 105, 45, 122, 80, 100],
+  "raw_talents": [60, 60, 0, 0, 0, 60],
+  "common_level": 60,
+  "snapshot_level_field": "battle_inside_pet_info.field_91",
+  "delta_level_field": "sync_data.pet_sync_info[].field_40",
+  "panels": [
+    {"packet": 1139, "turn": 19, "form": 3168, "level": 82, "up": "patk", "down": "mdef", "values": [526, 276, 119, 221, 154, 232]},
+    {"packet": 1173, "turn": 23, "form": 3168, "level": 84, "up": "patk", "down": "mdef", "values": [534, 279, 120, 223, 155, 234]},
+    {"packet": 1179, "turn": 24, "form": 5068, "level": 74, "up": "patk", "down": "mdef", "values": [493, 262, 116, 211, 148, 221]},
+    {"packet": 1182, "turn": 4, "form": 3168, "level": 62, "up": "spd", "down": "matk", "values": [443, 211, 104, 197, 150, 237]}
+  ],
+  "observations": [
+    {"session_prefix": "63e0cae5", "packet": 1178, "time": "17:39:27", "turn": 23, "form_change": [3168, 5068], "level_before": 84, "level_after": 74, "skill": 7100400, "damage": 447, "target_defense_visible": false, "buff_23000030": [24, 0, 14], "buff_23000091": [24, 19], "buff_23000110": [24, 24]},
+    {"session_prefix": "63e0cae5", "packet": 1179, "time": "17:39:49", "turn": 24, "physical_percent_slot_29": 11000, "magical_percent_slot_30": 4000, "buff_stacks": {"23000030": 14, "20010010": 4, "20010020": 4}},
+    {"session_prefix": "591bb516", "packet": 1316, "time": "17:46:21", "turn": 19, "form_change": [3168, 5068], "level": 82, "buff_23000030": 22, "stat_visibility": "HP only", "later_snapshot_packets": [1320, 1323, 1329]},
+    {"session_prefix": "63e0cae5", "packet": 1139, "form": 3798, "common_level": 60, "level": 59}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "source": "Anonymized minimal field projection from local packet 1178; not an original wire capture",
+  "opcode": 4900,
+  "direction": "s2c",
+  "payload_hex": "0a201817121182020e10e0181a090a07b001cc27d805541209620712050801c0024a",
+  "expected_snapshot_level": 84,
+  "expected_sync_level": 74
+}

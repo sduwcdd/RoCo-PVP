@@ -515,3 +515,18 @@ test("HUD drag IPC moves only the sender's own window and stops on end or click-
   listener({sender},"end");listener({sender},"move");assert.equal(moves.length,moved);
   context.through();listener({sender},"start");listener({sender},"move");assert.equal(moves.length,moved);
 });
+
+
+test("reference damage appears between endpoints on both HUDs and response rows",()=>{
+  for(const side of ['my','enemy']){
+    const api=hud(side);
+    const html=api.skillRows({moves:[{name:'攻击',damageNormalMin:80,damageNormalMax:160,
+      damageReferenceMin:110,damageReferenceMax:110,damagePerHitMin:80,damagePerHitMax:160,
+      damageReferencePerHitMin:110,damageReferencePerHitMax:110,damageHits:2,
+      damageResponse:{perHitMin:150,perHitMax:250,referencePerHitMin:190,referencePerHitMax:190,hits:3}}]});
+    assert.match(html,/80 \/ <span class="damage-reference"[^>]*>110<\/span> \/ 160\)×2/);
+    assert.match(html,/150 \/ <span class="damage-reference"[^>]*>190<\/span> \/ 250\)×3/);
+    assert.match(html,/个体值未加点/);
+    assert.doesNotMatch(html,/&lt;span|暴击/);
+  }
+});

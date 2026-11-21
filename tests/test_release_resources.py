@@ -39,6 +39,18 @@ class ReleaseResourceTests(unittest.TestCase):
         self.assertNotIn("artifacts/evidence/unreferenced.json", result["resources"])
         self.assertNotIn("vendor/private.json", result["resources"])
 
+    def test_only_the_reviewed_anonymous_abu_reference_is_packaged(self):
+        self.seed()
+        approved = "data/reference/live-abu-levels-20261121.json"
+        unrelated = "data/reference/private-battle.json"
+        self.write("lab/runtime.py", f"SOURCES={[approved, unrelated]!r}\n")
+        self.write(approved, {"level": 74, "physical_percent": 110})
+        self.write(unrelated, {"private": True})
+        result = discover(self.root)
+        self.assertIn(approved, result["resources"])
+        self.assertNotIn(unrelated, result["resources"])
+        self.assertTrue(any(row["path"] == unrelated for row in result["forbidden"]))
+
     def test_source_hash_manifest_and_reviewed_rule_glob_are_followed(self):
         self.seed()
         self.write("lab/runtime.py", "VALUE=1\n")

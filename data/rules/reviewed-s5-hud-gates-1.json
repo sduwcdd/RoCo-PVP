@@ -2,7 +2,8 @@
   "schema": "bwiki-s5-hud-gates-1",
   "snapshot_id": "20261121T162937+0800",
   "real_game_verified": false,
-  "level_policy": "Use battle_common_pet_info.level as reported. Its relation to the displayed effective level and modifier ordering is not calibrated. Do not replay trait level changes.",
+  "level_policy": "For recorded forms 3168, 5068 and 3798, use the latest positive inside.field_91 or synchronized pet_sync_info.field_40. Retain common.level as the original level and fallback. Use the reported level directly without replaying trait changes.",
+  "level_evidence": "data/reference/live-abu-levels-20261121.json",
   "traits": {
     "200327": {
       "record_hash": "7b945df4f97a12973effd6a344779e6b387b302c1085c51b977e31b91d0b5c5a",
@@ -161,8 +162,8 @@
         "higher"
       ],
       "level_condition": {"below": 80, "received_damage_percent": 30,
-        "blocked_attack_kinds": ["physical", "higher"],
-        "attack_blocker": "累计升级次数和物攻加成尚未核实"},
+        "observed_attack_kinds": ["physical", "higher"],
+        "attack_blocker": "缺少物攻百分比面板或圣龙的守护层数"},
       "reason": "需要服务器下发当前等级"
     }
   },

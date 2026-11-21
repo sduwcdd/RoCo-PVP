@@ -1,9 +1,9 @@
 {
-  "version": "1.1.13",
+  "version": "1.1.14",
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
-  "file_count": 5418,
-  "bytes": 456312495,
+  "file_count": 5422,
+  "bytes": 456343568,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3145,
-      "sha256": "d0bc9bc0252f2991844a95a1cfb7d5ccdf02897b4dd4401c3cd44c7aee7e2298"
+      "bytes": 3166,
+      "sha256": "69493d978babb3c29eea61bfea96b0d8ccffc090f004486e63074d3afd160d24"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -1811,6 +1811,11 @@
       "sha256": "71a66e7ca527275ea54cc61190b45fa7dd6662dbadcfff830f33a6d7c6064869"
     },
     {
+      "path": "data/reference/live-abu-levels-20261121.json",
+      "bytes": 1920,
+      "sha256": "1ad6edf622d9a1cf5e3b91c5e5436945ff9897115915d8652918016f5467b020"
+    },
+    {
       "path": "data/reference/live-boss-forms-20261029.json",
       "bytes": 32158,
       "sha256": "5e731d7c436cc01f41803b4fb1de4d185174effcba738f2b46c461a100b4ea05"
@@ -2092,8 +2097,8 @@
     },
     {
       "path": "data/rules/reviewed-s5-hud-gates-1.json",
-      "bytes": 7245,
-      "sha256": "624c28cc0980d6fa87fe9a3fe613648825092126869fbbc208387fb4283a36ed"
+      "bytes": 7393,
+      "sha256": "31b0fede2f5b0c8b29a37536343a2476b702d94ecddbc31249756fbd623b1a75"
     },
     {
       "path": "data/rules/reviewed-skill-history-1.json",
@@ -2387,8 +2392,8 @@
     },
     {
       "path": "docs/verification/bwiki-levels-20261121.md",
-      "bytes": 5597,
-      "sha256": "04880e1767128881fe57446f266b130edc093c8cbd6b058d35393dc52d381d09"
+      "bytes": 5893,
+      "sha256": "00fd5bf6a39c2aad304d81cc0a9ef4b74f198eb89bd1b16adff309d13c457a14"
     },
     {
       "path": "docs/verification/bwiki-numeric-followup-20261025.json",
@@ -2804,6 +2809,11 @@
       "path": "docs/verification/popular-team-pool-20261029.md",
       "bytes": 5202,
       "sha256": "70f5cf17f68bc03c0854bed02a72c696f36e3365743d56e4008b841c29e60326"
+    },
+    {
+      "path": "docs/verification/reference-damage-abu-20261121.md",
+      "bytes": 4443,
+      "sha256": "c9d13fc6fa190404ef9a001ece2088f75c46069250add226b5bfe548b14c4c64"
     },
     {
       "path": "docs/verification/release-count-sources-20261026.json",
@@ -3232,8 +3242,8 @@
     },
     {
       "path": "lab/live_battle.py",
-      "bytes": 132026,
-      "sha256": "cfd6ddf0839b565709702199f2b2302a944b9972c3a67e4df6a37746083e2126"
+      "bytes": 136622,
+      "sha256": "ac67833e0cd06597fcd9c47091a8293af4c198a9c6df95a855b1d04ad9870a91"
     },
     {
       "path": "lab/live_bridge.py",
@@ -3242,18 +3252,18 @@
     },
     {
       "path": "lab/live_damage.py",
-      "bytes": 46826,
-      "sha256": "f6f9a4bc071fa162c1c9912164934125d368c0b2f2c158265a5a955cf3463ed0"
+      "bytes": 51380,
+      "sha256": "6621b67cccdbf7521d66557a5ce45b04cc8e49d98753513207da968d98a7fbe2"
     },
     {
       "path": "lab/live_inference.py",
-      "bytes": 22680,
-      "sha256": "baf78a74dd4840b6db03bb9e9b89c4c597cada22b83f489f0c112a7d6962cd8e"
+      "bytes": 23413,
+      "sha256": "411c42092e44a3b46e18372cb8a10c3693c4154046a712e8c26ebf09135244cb"
     },
     {
       "path": "lab/live_modifiers.py",
-      "bytes": 52637,
-      "sha256": "36c30893a08bca2b3609e22c90da5c1e8e84b5d96eb88b23ec2cf03ccb538029"
+      "bytes": 53518,
+      "sha256": "1064dd82a65913bbc551a41925ac9054ad40c25ea91068988479d3e45425ad1b"
     },
     {
       "path": "lab/live_power.py",
@@ -3262,8 +3272,8 @@
     },
     {
       "path": "lab/live_stat_model.py",
-      "bytes": 8690,
-      "sha256": "fdde76e604b2bda66320aec329b36f05e9a4e03219db4c27fb290609be8643ac"
+      "bytes": 9152,
+      "sha256": "a95b62287d6c04f287e918166264551e05fc20de9060a44247daa1aef7d943c0"
     },
     {
       "path": "lab/mark_runtime.py",
@@ -3307,8 +3317,8 @@
     },
     {
       "path": "lab/numeric_candidates.py",
-      "bytes": 14789,
-      "sha256": "5e91f741d175c204e065af3ce5a13fe5bd8f4c11963946fec0837161c27ef061"
+      "bytes": 15592,
+      "sha256": "0aeaaeecfc0e754c9aa5e98a1cee470e8a77762764dce16e2e1859355c2e229a"
     },
     {
       "path": "lab/offline_phase_config.py",
@@ -3578,7 +3588,7 @@
     {
       "path": "mobile/README.md",
       "bytes": 21075,
-      "sha256": "2c874de6994bd44501841253da24846cf6514c1b65c44b63c757b540c20f4eac"
+      "sha256": "c53589df77bd8688e09e991acf1ce4d77b83dbaf674876d092b9fa82c0ceb2cc"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3593,7 +3603,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2577,
-      "sha256": "9eaf034adafed7dc417cf3ca41a06568b415f6b4f279c76328a14d904a9914fb"
+      "sha256": "f6d3dc4c4795ed81358fca80297a7613f57d4279c751191158078059f0ae3ea3"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3877,8 +3887,8 @@
     },
     {
       "path": "overlay/desktop.js",
-      "bytes": 12209,
-      "sha256": "8dee2757d553e1f586e90fe56208e8e5930708e9be010a1c32a6960b8ed029ab"
+      "bytes": 12518,
+      "sha256": "0f067e93b290b36cbdc1e8af732fb4bca87bc1f43f831a06173d0964531f1a15"
     },
     {
       "path": "overlay/desktop_preload.js",
@@ -3918,12 +3928,12 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150988,
-      "sha256": "83432382182192f72d67132ca744f413acc17f46d2978f34b7dd9a1986d092c1"
+      "sha256": "86ebe0a3b321612b68040a054addbcecda234d348a658e0b66b592f7926830af"
     },
     {
       "path": "overlay/package.json",
       "bytes": 431,
-      "sha256": "fee450904b9b9c4fa43238eaf8a967b22fcf1141508bd360d19dc4f6d97ed38e"
+      "sha256": "72be58c2e40e1918bd487cd05909c89ca6cdc1464ee44c3cd94981610a1df920"
     },
     {
       "path": "overlay/preload.js",
@@ -3933,7 +3943,7 @@
     {
       "path": "overlay/update_config.json",
       "bytes": 109,
-      "sha256": "16f0694154d3806728cfd878503cdf3962c174ccdd184efb9e05106cf7e6258b"
+      "sha256": "89e2378325bbd1789ae9977200546c0805efb952a7cb46a0bad66b4442d70e96"
     },
     {
       "path": "requirements-release.txt",
@@ -4087,8 +4097,8 @@
     },
     {
       "path": "scripts/publish_app_update.py",
-      "bytes": 9696,
-      "sha256": "022ad06df8e55e38d9cb3f1c7fe2c4a908e43f225aca3f119440e5a27a136310"
+      "bytes": 10296,
+      "sha256": "4b996554784b60602f75a2ef753f7f031f573d73791f0fb1e67d6dec9cff2e87"
     },
     {
       "path": "scripts/publish_cnb_updates.py",
@@ -4112,8 +4122,8 @@
     },
     {
       "path": "scripts/release_resources.py",
-      "bytes": 17286,
-      "sha256": "432009c9914128a2a5f9b91ab96c6ec97101de4599892501d030951399557b4c"
+      "bytes": 17369,
+      "sha256": "5c22470860f7bcbfc74e5bf476a36060d2384dbc631a1a7c97fded8330214133"
     },
     {
       "path": "scripts/release_tools.package-lock.json",
@@ -4179,6 +4189,11 @@
       "path": "scripts/verify_external_data.py",
       "bytes": 4683,
       "sha256": "0c3908adcb5e2e009383ae5c429e982af5963ed97b270b2fa04e168b6fed7e37"
+    },
+    {
+      "path": "tests/fixtures/abu-level-fields-20261121.json",
+      "bytes": 306,
+      "sha256": "c4c215226bfe1faaa9e6b0fdf277163d057e2684bb1ea4d3031237de113f3c4c"
     },
     {
       "path": "tests/fixtures/six-member-mechanism-roster.json",
@@ -4277,8 +4292,8 @@
     },
     {
       "path": "tests/test_bwiki_s5_hud_gates.py",
-      "bytes": 6709,
-      "sha256": "781a54ceb7da213dd7d2600c3bf841a1a64d26c7c92acc568296226871839e51"
+      "bytes": 10685,
+      "sha256": "57930852245d27cb7e6608b7ba98ae9384df6489329495cd78f14b1be9aaecf5"
     },
     {
       "path": "tests/test_bwiki_seasons.py",
@@ -4367,8 +4382,8 @@
     },
     {
       "path": "tests/test_desktop_app.js",
-      "bytes": 19335,
-      "sha256": "b4336028ffab1af9fff0e3da12fda974a13a8b5f35c060b7b2186869bfc2a821"
+      "bytes": 19344,
+      "sha256": "7bc944bb888516fdec11fe9c862f66e6f5cc64017c4ca631b71790eb7d19fd68"
     },
     {
       "path": "tests/test_desktop_updater.js",
@@ -4467,8 +4482,8 @@
     },
     {
       "path": "tests/test_hud_duel.js",
-      "bytes": 35484,
-      "sha256": "f7527880e6663c89adc22abc8a7c2540aadc1e44ec8a8ae5026aae08879f2ce9"
+      "bytes": 36293,
+      "sha256": "fa26910c6465394c1bd68e6dcc667cb8a694bc2438f3f47bb97aa2a9ff83676c"
     },
     {
       "path": "tests/test_hud_render.js",
@@ -4686,14 +4701,19 @@
       "sha256": "a86149fb58c25c90418038e7cad789c035539f5be0f192403d555551026d558d"
     },
     {
+      "path": "tests/test_reference_damage.py",
+      "bytes": 4654,
+      "sha256": "c084818924bda52f7ddf9298b3f662fd2d714bfd5b773356adabff4cba6c08a7"
+    },
+    {
       "path": "tests/test_release_capture_control.py",
       "bytes": 8213,
       "sha256": "6f77877506d1079cd7c6e16dd02146d7c242bdd23b32274e1a2e650eec54a077"
     },
     {
       "path": "tests/test_release_resources.py",
-      "bytes": 7267,
-      "sha256": "bccc47632e9562ddf31a820c0fe410cf45e7031096689285683e2781af3d9972"
+      "bytes": 7913,
+      "sha256": "430a910ab6a5655ea4068acbe53d4062f4aef36d8b86862e71b7845dc09ecd6e"
     },
     {
       "path": "tests/test_release_runtime.py",
@@ -27062,8 +27082,8 @@
     },
     {
       "path": "web/hud_duel.html",
-      "bytes": 75038,
-      "sha256": "81ef2ea4add558377ebf272b00d12e9cab631f290b437747c678bf3739c188c3"
+      "bytes": 75862,
+      "sha256": "60ec2720b287fda9b275a63e0f842e1d8b43f5be69135b914fdcdba1552c9ce0"
     },
     {
       "path": "web/lab.html",
@@ -27103,5 +27123,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261121-bwiki-needle-final"
+  "release_build_id": "20261121-reference-abu-final"
 }

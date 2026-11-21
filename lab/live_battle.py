@@ -269,12 +269,15 @@ def _current_hp(inside):
     return value if value is not None and value >= 0 else None
 
 
-def _talent_evidence(common: dict) -> dict:
+def _talent_evidence(common: dict, *, include_panel=True) -> dict:
     info = _as_dict(common.get("attribute_info"))
     dimensions = {}
     for source_key, stat in _PANEL_STATS:
         row = _as_dict(info.get(source_key))
-        fields = {k: row[k] for k in ("talent", "talent_add_value", "base_value", "effort_add", "total_race") if k in row}
+        keys = ("talent", "talent_add_value", "total_race")
+        if include_panel:
+            keys += ("base_value", "effort_add")
+        fields = {k: row[k] for k in keys if k in row}
         if fields:
             dimensions[stat] = fields
     return {"source": "battle_common_pet_info.attribute_info", "selected_ids": info.get("break_enhance_enum"),
@@ -322,6 +325,12 @@ def _buffs(inside: dict) -> list[dict[str, Any]]:
     return out
 
 
+_LEVEL_FORMS = {3168, 3798, 5068}
+_COMMON_LEVEL = "battle_common_pet_info.level"
+_INSIDE_LEVEL = "battle_inside_pet_info.field_91"
+_SYNC_LEVEL = "pet_sync_info.field_40"
+
+
 class _Pet:
     """一只精灵在本次对局里的状态。"""
 
@@ -335,7 +344,12 @@ class _Pet:
         self.runtime_feature_id = inside.get("cur_passive_skill") if type(inside.get("cur_passive_skill")) is int and inside["cur_passive_skill"] > 0 else None
         self.conf_name = inside.get("conf_name") or common.get("conf_name") or ""
         self.nickname = _hex_name(inside.get("name")) or _hex_name(common.get("name"))
-        self.level = common.get("level")
+        self.common_level = common.get("level")
+        self.level = self.common_level
+        self.level_source = _COMMON_LEVEL
+        if self.base_conf_id in _LEVEL_FORMS and type(inside.get("field_91")) is int and inside["field_91"] > 0:
+            self.level = inside["field_91"]
+            self.level_source = _INSIDE_LEVEL
         self.energy = common.get("energy", 10)
         self.max_energy = inside.get("max_energy", 10)
         self.entered_turn = None
@@ -354,11 +368,12 @@ class _Pet:
         self.buffs = _buffs(inside)
         self._form_cute_layers = self.cute_stacks
         self.initial_buff_ids = {str(buff.get("id")) for buff in self.buffs if buff.get("id") is not None}
-        self.panel_stats = _panel_stats(common)
-        self.talent_evidence = _talent_evidence(common)
+        self.panel_stats = _panel_stats(common) if self.level == self.common_level else {}
+        self.talent_evidence = _talent_evidence(common, include_panel=self.level == self.common_level)
         self.attr_stats = _attr_stats(inside)
         self.revealed_base_stats = {k:v for k,v in self.attr_stats.items() if v > 0}
         attrs = _as_list(inside.get("battle_attr"))
+        self.guardian_attack_percent = self._guardian_attack_percent(attrs)
         self.max_hp = attrs[_ATTR_HP] if len(attrs) > _ATTR_HP and isinstance(attrs[_ATTR_HP], int) else None
         self.frozen_hp = 0
         self.apply_kill_info(inside)
@@ -437,12 +452,36 @@ class _Pet:
         self.frozen_hp = value
         return True
 
+    def _guardian_attack_percent(self, attrs):
+        # Enemy summaries zero-fill hidden slots. Only full physical panels expose the aggregate.
+        if (self.base_conf_id == 5068 and len(attrs) > 33 and type(attrs[2]) is int and attrs[2] > 0
+                and type(attrs[29]) is int and type(attrs[33]) is int):
+            return (attrs[29] - attrs[33]) / 100
+        return None
+
+    def apply_level(self, level, source):
+        if type(level) is not int or level <= 0:
+            return False
+        changed = level != self.level
+        self.level, self.level_source = level, source
+        if changed:
+            self.attr_stats = {}
+            self.panel_stats = {}
+            self.revealed_base_stats = {}
+            self.guardian_attack_percent = None
+            self.max_hp = None
+            for fields in self.talent_evidence.get("dimensions", {}).values():
+                for key in ("base_value", "effort_add"):
+                    fields.pop(key, None)
+        return changed
+
     def refresh_stats(self, inside: dict, common: dict) -> None:
         self.apply_kill_info(inside)
         base_id = inside.get("base_conf_id")
         form_changed = type(base_id) is int and base_id > 0 and base_id != self.base_conf_id
         if form_changed:
             self.base_conf_id = base_id
+            self.guardian_attack_percent = None
             self.attr_stats = {}
             self.panel_stats = {}
             self.revealed_base_stats = {}
@@ -454,24 +493,24 @@ class _Pet:
         if form_changed or "cur_passive_skill" in inside:
             self._update_form_identity()
             self.first_slot_replaced = bool(self.feature_will_type)
-        level_changed = "level" in common and common["level"] != self.level
-        if level_changed:
-            self.attr_stats = {}
-            self.panel_stats = {}
-            self.max_hp = None
-            for fields in self.talent_evidence.get("dimensions", {}).values():
-                for key in ("base_value", "effort_add"):
-                    fields.pop(key, None)
-        if (any(k in common and common[k] != getattr(self, k) for k in ("nature", "level")) or
+        if "level" in common:
+            self.common_level = common["level"]
+        if self.base_conf_id in _LEVEL_FORMS and type(inside.get("field_91")) is int and inside["field_91"] > 0:
+            self.apply_level(inside["field_91"], _INSIDE_LEVEL)
+        elif self.base_conf_id not in _LEVEL_FORMS or self.level_source == _COMMON_LEVEL:
+            self.apply_level(self.common_level, _COMMON_LEVEL)
+        if (("nature" in common and common["nature"] != self.nature) or
             any(k in common and (common[k] or 0) != getattr(self, attr) for k,attr in
                 (("changed_nature_pos_attr_type","nature_pos_override"),("changed_nature_neg_attr_type","nature_neg_override")))):
             self.revealed_base_stats = {}
         self.attr_stats.update(_attr_stats(inside))
+        if "battle_attr" in inside:
+            self.guardian_attack_percent = self._guardian_attack_percent(_as_list(inside["battle_attr"]))
         self.revealed_base_stats.update({k:v for k,v in _attr_stats(inside).items() if v > 0})
-        if common.get("base_conf_id", self.base_conf_id) == self.base_conf_id:
+        if self.common_level == self.level and common.get("base_conf_id", self.base_conf_id) == self.base_conf_id:
             self.panel_stats.update(_panel_stats(common))
         if common.get("attribute_info"):
-            fresh = _talent_evidence(common)
+            fresh = _talent_evidence(common, include_panel=self.level == self.common_level)
             dimensions = self.talent_evidence.setdefault("dimensions", {})
             for stat, fields in fresh["dimensions"].items():
                 dimensions.setdefault(stat, {}).update(fields)
@@ -484,6 +523,8 @@ class _Pet:
         if current is not None:
             self.apply_hp(current, "battle_attr[25]")
         if "buffs" in inside:
+            if "battle_attr" not in inside:
+                self.guardian_attack_percent = None
             self.buffs = _buffs(inside)
         if type(base_id) is int and base_id > 0:
             # The reported form already includes the reported cute layers.
@@ -499,7 +540,7 @@ class _Pet:
             self.skills = [slots[pos] for pos in sorted(slots)]
         if type(inside.get("max_energy")) is int and inside["max_energy"] > 0:
             self.max_energy = inside["max_energy"]
-        for key in ("nature", "level", "energy", "height", "weight", "voice", "wear_medal_conf_id"):
+        for key in ("nature", "energy", "height", "weight", "voice", "wear_medal_conf_id"):
             if key in common:
                 setattr(self, key, common[key])
         if "speciality_id" in common:
@@ -532,6 +573,8 @@ class _Pet:
                          old['polarity'] == incoming['polarity'])]
         for index, buff in enumerate(self.buffs):
             if buff.get("id") == buff_id:
+                if buff.get("layers") != count:
+                    self.guardian_attack_percent = None
                 if count <= 0:
                     self.buffs.pop(index)
                 else:
@@ -540,6 +583,7 @@ class _Pet:
                         buff["name"] = name
                 return True
         if count > 0:
+            self.guardian_attack_percent = None
             entry = {"id": buff_id, "layers": count}
             if name:
                 entry["name"] = name
@@ -698,6 +742,9 @@ class _Pet:
             "name": self.display_name(),
             "nickname": self.nickname,
             "level": self.level,
+            "commonLevel": self.common_level,
+            "levelSource": self.level_source,
+            "guardianAttackPercent": self.guardian_attack_percent,
             "currentHp": self.hp,
             "hpSource": self.hp_source,
             "maxHp": self.max_hp,
@@ -835,7 +882,7 @@ class BattleTracker:
         self.pending_pets: list[dict[str, Any]] = []
         # 由实测伤害反推出来的面板：{pet_id: {"phyDef": [样本…], …}}。
         # These remain model-conditional candidates, never observed combat panels.
-        self.learned_panel_levels: dict[str, int | None] = {}
+        self.learned_panel_levels: dict[str, tuple] = {}
         self.learned_panels: dict[str, dict[str, list[float]]] = {}
         self.learned_panel_ranges: dict[str, dict[str, list[int]]] = {}
         self.damage_evidence: dict[str, list[dict[str, Any]]] = {}
@@ -1126,7 +1173,7 @@ class BattleTracker:
             for inside, common in _walk_pet_infos(node):
                 pet = self._pet_by_id.get(str(inside.get("pet_id")))
                 if pet is not None:
-                    pet.refresh_stats(inside, common)
+                    self._refresh_pet(pet, inside, common)
                     changed = True
                     if _pos_is_field(inside.get("pos")):
                         changed = self._confirm_active(pet) or changed
@@ -1234,7 +1281,7 @@ class BattleTracker:
             if pet is not None and str(inside.get("pet_id")) == str(model_id):
                 old_id, old_name = pet.base_conf_id, pet.display_name()
                 common = _as_dict(_as_dict(model.get("pet_info")).get("battle_common_pet_info"))
-                pet.refresh_stats(inside, common)
+                self._refresh_pet(pet, inside, common)
                 changed = True
                 if old_id != pet.base_conf_id:
                     self.timeline.append({"round": self.round, "kind": "form_change", "side": pet.side,
@@ -1254,7 +1301,7 @@ class BattleTracker:
             if pet is not None:
                 for current_inside, common in _walk_pet_infos(supplied.get("pet_info")):
                     if str(current_inside.get("pet_id")) == str(pet_id):
-                        pet.refresh_stats(current_inside, common)
+                        self._refresh_pet(pet, current_inside, common)
             if pet is not None and _pos_is_field(supplied.get("pet_pos")):
                 changed = self._confirm_active(pet) or changed
         # Full server replacements carry authoritative positions too (WriteDataUpdate/WritePetInfo).
@@ -1262,7 +1309,7 @@ class BattleTracker:
             for inside, common in _walk_pet_infos(node):
                 pet = self._pet_by_id.get(str(inside.get("pet_id")))
                 if pet is not None:
-                    pet.refresh_stats(inside, common)
+                    self._refresh_pet(pet, inside, common)
                     changed = True
                     if _pos_is_field(inside.get("pos")):
                         changed = self._confirm_active(pet) or changed
@@ -1276,7 +1323,7 @@ class BattleTracker:
                 if pet is not None:
                     for inside, common in _walk_pet_infos(change.get("battle_pet_info")):
                         if str(inside.get("pet_id")) == str(incoming_id):
-                            pet.refresh_stats(inside, common)
+                            self._refresh_pet(pet, inside, common)
                     changed = self._confirm_active(pet) or changed
             else:
                 self.pending_pets.append({"round": self.round, "reason": "换人通知的入场ID缺失或与精灵信息冲突",
@@ -1478,12 +1525,25 @@ class BattleTracker:
                     if str(buff.get("id")) == str(buff_id):
                         buff["name"] = buff_name
             changed = True
-        for entry in _as_list(sync.get("pet_sync_info")):
+        sync_entries = _as_list(sync.get("pet_sync_info"))
+        # A level and its replacement HP panel can occupy separate entries in the same event.
+        for entry in sync_entries:
+            if isinstance(entry, dict) and "field_40" in entry:
+                pet = self._pet_by_id.get(str(entry.get("pet_id")))
+                if pet and pet.base_conf_id in _LEVEL_FORMS and pet.apply_level(entry["field_40"], _SYNC_LEVEL):
+                    self._clear_stale_panels(pet.pet_id)
+                    changed = True
+        for entry in sync_entries:
             entry = _as_dict(entry)
             pet = self._pet_by_id.get(str(entry.get("pet_id")))
             if pet is None:
                 continue
             changed = pet.apply_kill_info(entry) or changed
+            if pet.base_conf_id in _LEVEL_FORMS and entry.get("attr_type") == 1:
+                maximum = _signed(entry.get("attr_result"))
+                if maximum is not None and maximum > 0:
+                    pet.max_hp = pet.attr_stats["hp"] = pet.revealed_base_stats["hp"] = maximum
+                    changed = True
             if _pos_is_field(entry.get("pos")):
                 changed = self._confirm_active(pet) or changed
             hp_result = entry.get("hp_result")
@@ -1546,6 +1606,10 @@ class BattleTracker:
             if side is not None:
                 changed = self._update_party_life(side, _as_dict(update["role_simple"])) or changed
         return changed
+
+    def _refresh_pet(self, pet, inside, common):
+        pet.refresh_stats(inside, common)
+        self._clear_stale_panels(pet.pet_id)
 
     def _set_history_origin(self, pet: _Pet) -> None:
         pet.history_start_round = self.observation_start_round
@@ -1614,8 +1678,9 @@ class BattleTracker:
             if event not in bucket:
                 bucket.append(event)
                 self._configuration_cache.pop(str(pet_id), None)
-        if self.is_npc_battle:
-            return  # World constraints already use the shared level-aware forward query.
+        if self.is_npc_battle or caster.base_conf_id in _LEVEL_FORMS or target.base_conf_id in _LEVEL_FORMS:
+            # The shortcut below cannot invert level traits. Their constraints use the shared forward query above.
+            return
         try:
             from lab import live_damage
             mathinfo = live_damage.skill_math(skill_id, caster.base_conf_id, target.base_conf_id)
@@ -1673,11 +1738,11 @@ class BattleTracker:
     def _clear_stale_panels(self, pet_id: Any) -> None:
         identity = str(pet_id)
         pet = self._pet_by_id.get(identity)
-        level = pet.level if pet else None
-        if identity in self.learned_panel_levels and self.learned_panel_levels[identity] != level:
+        panel_identity = (pet.base_conf_id, pet.level) if pet else (None, None)
+        if identity in self.learned_panel_levels and self.learned_panel_levels[identity] != panel_identity:
             self.learned_panels.pop(identity, None)
             self.learned_panel_ranges.pop(identity, None)
-        self.learned_panel_levels[identity] = level
+        self.learned_panel_levels[identity] = panel_identity
 
     def _learned_for(self, pet_id: Any) -> dict[str, float]:
         """取中位数：单个样本会被 buff/暴击/多段干扰，中位数更稳。"""
@@ -1976,7 +2041,12 @@ class BattleTracker:
                 if not item.get("reason"):
                     move.update(damagePerHitMin=item["perHitMin"], damagePerHitMax=item["perHitMax"],
                                 damageHits=item["hits"], damageEffects=item.get("effects"), oneShot=item.get("oneShot", False),
-                                damageResponse=item.get("response"))
+                                damageResponse=item.get("response"),
+                                damageReferenceMin=item.get("referenceMin"), damageReferenceMax=item.get("referenceMax"),
+                                damageReferencePerHitMin=item.get("referencePerHitMin"),
+                                damageReferencePerHitMax=item.get("referencePerHitMax"),
+                                damageReferenceAssumption=item.get("referenceAssumption"),
+                                damageReferenceNote=item.get("referenceUnavailable"))
 
         # 反向：敌方**已观测**的技能打我方会掉多少血。
         # 对方攻击面板已下发 → 确定单值；没下发 → 用种族值 + 性格推最低/最高区间
@@ -2025,7 +2095,12 @@ class BattleTracker:
                     move["lethal"] = True
                 move.update(damagePerHitMin=item["perHitMin"], damagePerHitMax=item["perHitMax"],
                             damageHits=item["hits"], damageEffects=item.get("effects"), oneShot=item.get("oneShot", False),
-                            damageResponse=item.get("response"))
+                            damageResponse=item.get("response"),
+                                damageReferenceMin=item.get("referenceMin"), damageReferenceMax=item.get("referenceMax"),
+                                damageReferencePerHitMin=item.get("referencePerHitMin"),
+                                damageReferencePerHitMax=item.get("referencePerHitMax"),
+                                damageReferenceAssumption=item.get("referenceAssumption"),
+                                damageReferenceNote=item.get("referenceUnavailable"))
 
         for team, index, other, other_index in ((my_team, my_active, enemy_team, enemy_active), (enemy_team, enemy_active, my_team, my_active)):
             if not team or not other:

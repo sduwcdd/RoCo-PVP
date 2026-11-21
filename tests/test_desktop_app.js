@@ -53,7 +53,7 @@ test('tray exit awaits pending capture, preserves APP on denied stop, and waits 
     dialog:{showErrorBox(...args){errors.push(args)}}}
   const file = path.join(__dirname,'../overlay/desktop.js')
   vm.runInNewContext(fs.readFileSync(file,'utf8'), {__dirname:path.dirname(file),process:{argv:[]},
-    require(name) { if(name==='electron')return electron; if(name==='node:child_process')return {spawn(){setImmediate(()=>hudChild.stdout.emit('data',Buffer.from('[duel] ready my\n[duel] ready enemy\n[duel] ready history\n')));return hudChild}}; if(name==='./desktop_services')return {DesktopServices:Services,electronEnv,waitForHud}; if(name==='./desktop_updater')return {DesktopUpdater:class {}}; return require(name) },setTimeout,clearTimeout})
+    require(name) { if(name==='electron')return electron; if(name==='node:child_process')return {spawn(){setImmediate(()=>hudChild.stdout.emit('data',Buffer.from('[duel] ready my\n[duel] ready enemy\n[duel] ready history\n')));return hudChild}}; if(name==='./desktop_services')return {DesktopServices:Services,electronEnv,waitForHud}; if(name==='./desktop_updater')return {DesktopUpdater:class {start(){}}}; return require(name) },setTimeout,clearTimeout})
   await new Promise(resolve=>setImmediate(resolve))
   assert.equal(started.length,1); assert.equal(windows.length,1)
   assert.match(trays[0].icon,/dimo\.ico$/)

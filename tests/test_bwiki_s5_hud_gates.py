@@ -7,6 +7,8 @@ from unittest.mock import patch
 
 from lab import live_inference, live_modifiers
 from lab.live_damage import _damage_case, _rules
+from lab.live_battle import _Pet, BattleTracker
+from lab.live_stat_model import stat_candidates
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +19,65 @@ def pet(tid=0, **changes):
 
 
 class S5HUDGateTests(unittest.TestCase):
+    def test_captured_abu_panels_at_four_effective_levels(self):
+        source = json.loads((ROOT / "data/reference/live-abu-levels-20261121.json").read_bytes())
+        for row in source["panels"]:
+            subject = {"level": row["level"], "petBaseId": row["form"]}
+            for index, dim in enumerate(source["stat_order"]):
+                with self.subTest(packet=row["packet"], stat=dim):
+                    values = stat_candidates(subject, source["species"][index], dim, source["raw_talents"][index] // 6,
+                                             row["up"], row["down"], 5)
+                    self.assertEqual(values, [row["values"][index]])
+
+    def test_guardian_level_delta_full_panel_and_incremental_buffs(self):
+        attrs = [0] * 96
+        attrs[1], attrs[2], attrs[29] = 534, 279, 12000
+        common = {"level": 60, "base_conf_id": 3168, "attribute_info": {"attack": {"base_value": 198, "talent": 60}}}
+        subject = _Pet(side=0, roster_index=0, common=common, inside={
+            "pet_id": 1, "base_conf_id": 5068, "field_91": 84, "battle_attr": attrs,
+            "buffs": [{"buff_id": 23000030, "stack": 24}]})
+        tracker = BattleTracker()
+        tracker._pet_by_id["1"] = subject
+        tracker._record_panel(1, "phyAtk", 279, 278, 280)
+        tracker._apply_perform_item({"sync_data": {"pet_sync_info": [
+            {"pet_id": 1, "attr_type": 1, "attr_result": 493}, {"pet_id": 1, "field_40": 74}]}})
+        self.assertEqual((subject.level, subject.common_level, subject.max_hp), (74, 60, 493))
+        self.assertEqual(tracker._learned_for(1), {})
+        self.assertNotIn("phyAtk", subject.revealed_base_stats)
+        self.assertEqual(subject.panel_stats, {})
+        self.assertEqual(subject.talent_evidence["dimensions"]["phyAtk"], {"talent": 60})
+        attrs[1], attrs[2], attrs[29] = 493, 262, 11000
+        subject.refresh_stats({"battle_attr": attrs, "buffs": [{"buff_id": 23000030, "stack": 14},
+                              {"buff_id": 20010010, "stack": 4}]}, common)
+        payload = lambda: subject.to_payload(hide_unobserved=False, observed={})
+        self.assertEqual(payload()["levelSource"], "pet_sync_info.field_40")
+        self.assertEqual(payload()["commonLevel"], 60)
+        self.assertEqual(payload()["guardianAttackPercent"], 110)
+        self.assertAlmostEqual(live_modifiers.panel_candidates(payload(), "phyAtk", pet())[0][0], 550.2)
+        subject.set_buff(20010010, 3)
+        self.assertIsNone(payload()["guardianAttackPercent"])
+        self.assertEqual(live_modifiers.panel_candidates(payload(), "phyAtk", pet())[0], [524])
+        attrs[29] = 0
+        subject.refresh_stats({"battle_attr": attrs}, common)
+        self.assertEqual(payload()["guardianAttackPercent"], 0)
+        subject.refresh_stats({"battle_attr": attrs[:7]}, common)
+        self.assertIsNone(payload()["guardianAttackPercent"])
+        attrs[2] = 0
+        subject.refresh_stats({"battle_attr": attrs}, common)
+        self.assertIsNone(payload()["guardianAttackPercent"])
+
+    def test_shared_decoder_preserves_the_observed_battle_level_fields(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "vendor/rkpp"))
+        import rkpp_analysis as decoder
+        import rkpp_proto_core as proto
+        fixture = json.loads((ROOT / "tests/fixtures/abu-level-fields-20261121.json").read_text(encoding="utf8"))
+        record = decoder.decode_record({**fixture, "root": proto.parse_proto_message(bytes.fromhex(fixture["payload_hex"]))})
+        self.assertTrue(record["schema_found"])
+        events = record["decoded"]["perform_cmd"]["perform_info"]
+        self.assertEqual(events[0]["change_model"]["pet_info"]["battle_inside_pet_info"]["field_91"], 84)
+        self.assertEqual(events[1]["sync_data"]["pet_sync_info"][0]["field_40"], 74)
+
     @classmethod
     def setUpClass(cls):
         cls.catalog = _rules()[0]
@@ -47,7 +108,7 @@ class S5HUDGateTests(unittest.TestCase):
                     self.assertEqual(result["minimum"], 212 * factor // 100)
                     self.assertEqual(result["effects"]["reported_level_traits"]["defender"]["level"], level)
         guardian = pet(280041, petBaseId=5068, level=99, battleStats=panels)
-        with self.assertRaisesRegex(ValueError, "累计升级次数"):
+        with self.assertRaisesRegex(ValueError, "圣龙的守护层数"):
             _damage_case(guardian, target, move, "physical")
         magical = _damage_case(guardian, target, {**move, "kind": "magical"}, "magical")
         self.assertEqual(magical["minimum"], 212)

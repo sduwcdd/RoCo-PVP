@@ -4,12 +4,13 @@ import hashlib
 import json
 from pathlib import Path
 
-from .numeric_candidates import captured_stat60
+from .numeric_candidates import captured_stat60, captured_abu_panel_values
 from .trait_runtime import cached_source_query, _source_hash
 
 
 STAT_KEYS = {"hp": "hp", "patk": "phyAtk", "matk": "magAtk",
              "pdef": "phyDef", "mdef": "magDef", "spd": "spd"}
+ABU_PANEL_SOURCE = "data/reference/live-abu-levels-20261121.json"
 WORLD_SOURCE = "data/reference/world-panel-20261101.json"
 WORLD_SOURCE_SHA256 = "887c78c6e5d29fcde211d3329d3143623af8436de46fb7106dbf38b9e95f0bf4"
 NPC_CONFIG = Path(__file__).resolve().parents[1] / "data/rules/reviewed-world-npc-stats-1.json"
@@ -112,6 +113,12 @@ def _natured(pet, dim, base, effort, up, down, stars):
     return int(value)
 
 
+def uses_abu_panel(pet):
+    form = pet.get("stageBaseConfId") or pet.get("petBaseId")
+    level = pet.get("level")
+    return not is_world(pet) and form in (3168, 5068) and type(level) is int and level > 0 and level != 60
+
+
 def stat_candidates(pet, race, dim, talent, up, down, stars):
     """Return one dimension for one shared star/talent/nature hypothesis.
 
@@ -126,6 +133,8 @@ def stat_candidates(pet, race, dim, talent, up, down, stars):
     species = race.get(dim) if isinstance(race, dict) else race
     multiplier = 1.2 if dim == up else .9 if dim == down else 1
     if not is_world(pet):
+        if stars == 5 and uses_abu_panel(pet):
+            return captured_abu_panel_values(species, talent * 6, multiplier, dim, pet["level"])
         if pet.get("level") not in (None, 60):
             raise ValueError("缺少该等级面板：60级公式不能代算其他等级")
         return captured_stat60(species, talent * 6, multiplier, dim)["stat_values"]

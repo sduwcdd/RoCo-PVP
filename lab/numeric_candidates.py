@@ -109,7 +109,13 @@ def arena_stat60(base_stat, raw_iv, nature_multiplier, stat):
     """Arena published 60-level/five-star stat expression, user offset excluded."""
     inputs = _stat_inputs(base_stat, raw_iv, nature_multiplier, stat,
                           iv_name="raw_iv", max_iv=60, allow_hp=True)
-    growth_factor, constant, bonus = (170, 70, 100) if stat == "hp" else (110, 10, 50)
+    value, trace = _five_star_panel(base_stat, raw_iv, nature_multiplier, stat, 60)
+    return _result("arena_stat60_v1", inputs, _ARENA_STAT_SOURCE, trace,
+                   scope="level60_five_stars_no_user_offset", stat_value=value)
+
+
+def _five_star_panel(base_stat, raw_iv, nature_multiplier, stat, level):
+    growth_factor, constant, bonus = (2 * level + 50, level + 10, 100) if stat == "hp" else (level + 50, 10, 50)
     base_growth = base_stat * 0.01
     base_growth_f32 = _f32(base_growth)
     iv_growth = raw_iv * 0.005
@@ -129,8 +135,17 @@ def arena_stat60(base_stat, raw_iv, nature_multiplier, stat):
              "before_final_round": before_final_round, "final": value,
              "float32_casts": ["base_growth", "core_unrounded"],
              "rounding": "Math.round_nonnegative_binary64", "user_offset_included": False}
-    return _result("arena_stat60_v1", inputs, _ARENA_STAT_SOURCE, trace,
-                   scope="level60_five_stars_no_user_offset", stat_value=value)
+    return value, trace
+
+
+def captured_abu_panel_values(base_stat, raw_iv, nature_multiplier, stat, level):
+    """Five-star PVP level candidate from the November 21 Abu panels."""
+    _integer(level, "level", 1, 2**32 - 1)
+    _stat_inputs(base_stat, raw_iv, nature_multiplier, stat, iv_name="raw_iv", max_iv=60, allow_hp=True)
+    value, trace = _five_star_panel(base_stat, raw_iv, nature_multiplier, stat, level)
+    core = _js_round_nonnegative(trace["core_unrounded"])
+    alternate = _js_round_nonnegative(core * nature_multiplier + trace["five_star_bonus"])
+    return sorted({value, alternate})
 
 
 def captured_stat60(base_stat, raw_iv, nature_multiplier, stat):

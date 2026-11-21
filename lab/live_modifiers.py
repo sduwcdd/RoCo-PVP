@@ -17,7 +17,7 @@ STAT_FIELD = {"phyAtk": "phyAtkPercent", "magAtk": "magAtkPercent", "phyDef": "p
 ENTRY_BUFF_CONFIG = ROOT / "data/rules/reviewed-live-entry-buffs-1.json"
 ENTRY_BUFF_CONFIG_HASH = '391482f833c7901726bef67a03261b363936d47f1d6b46f6da9ecf31ed5be26c'
 S5_HUD_GATES = ROOT / "data/rules/reviewed-s5-hud-gates-1.json"
-S5_HUD_GATES_HASH = '624c28cc0980d6fa87fe9a3fe613648825092126869fbbc208387fb4283a36ed'
+S5_HUD_GATES_HASH = '31b0fede2f5b0c8b29a37536343a2476b702d94ecddbc31249756fbd623b1a75'
 
 
 @lru_cache(maxsize=2)
@@ -73,11 +73,12 @@ def validate_damage_support(attacker, defender, skill_id, profile):
         level = pet.get("level")
         if not condition or type(level) is not int or level <= 0 or "_simulation_actor" in pet:
             raise ValueError(f"{row['name']}：{row['reason']}；暂不用于伤害估计或伤害反推")
-        if role == "attacker" and profile["kind"] in condition.get("blocked_attack_kinds", []):
+        if (role == "attacker" and profile["kind"] in condition.get("observed_attack_kinds", [])
+                and _guardian_attack_percent(pet, 0) is None):
             raise ValueError(f"{row['name']}：{condition['attack_blocker']}")
         percent = condition["received_damage_percent"] if role == "defender" and level < condition["below"] else 0
         levels[role] = {"trait_id": int(tid), "level": level, "received_damage_percent": percent,
-                        "source": "battle_common_pet_info.level", "calibrated": False}
+                        "source": pet.get("levelSource", "battle_common_pet_info.level"), "calibrated": False}
     return levels
 
 
@@ -522,9 +523,20 @@ def _trait_powers(owner, other, pet, opponent, skill, power, first):
     return [float(trait_runtime.modify_power(owner, skill, power, opponent=other, first_attack=first))]
 
 
+def _guardian_attack_percent(pet, other_buffs):
+    total = pet.get("guardianAttackPercent")
+    if total is not None:
+        return total
+    for buff in captured_buffs(pet):
+        if buff.get("id") == 23000030:
+            return other_buffs + 5 * _buff_layers(buff)
+    return None
+
+
 def panel_candidates(pet, stat, opponent):
     from .live_damage import panel_values
-    values, source = panel_values(pet, stat)
+    reference = pet.get("_referenceBaseStats", {}).get(stat)
+    values, source = (reference, "未加点且无性格减益的参考面板") if reference is not None else panel_values(pet, stat)
     if source == "实时面板" and pet.get("battleStatsBasis", "effective") == "effective":
         return values, source  # Captured effective panels already contain their stat BUFFs.
     if source == "实时面板":
@@ -534,8 +546,13 @@ def panel_candidates(pet, stat, opponent):
         server_base = False
     member, other = actor(pet), actor(opponent)
     field = STAT_FIELD.get(stat)
+    guardian = stat == "phyAtk" and member.get("trait_id") == 280041 and "_simulation_actor" not in pet
     percent = sum(data[field] * _buff_layers(b) for b in captured_buffs(pet)
-                  if field in (data := calc_buff(b.get("id"))))
+                  if not (guardian and b.get("id") == 23000030) and field in (data := calc_buff(b.get("id"))))
+    if guardian:
+        percent = _guardian_attack_percent(pet, percent)
+        if percent is None:
+            raise ValueError("缺少物攻百分比面板或圣龙的守护层数")
     terms = [] if (_represented_trait_buffs(member, pet, [field]) or
                    _observed_entry_buffs(member, pet, [field], required=True)) else _stat_terms(member, other, pet, opponent, STAT_DIM[stat])
     if "_simulation_actor" in pet:

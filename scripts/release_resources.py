@@ -169,7 +169,8 @@ def discover(root):
             report("forbidden", relative, source, "compile_or_install_separately")
             return
         allowed = (relative.startswith(("data/rules/", "data/bwiki/", "artifacts/", "web/", TP))
-                   or relative in {"vendor/rkpp/rkpp_data.sqlite", "vendor/洛克PVP助手/app/rkpp/rkpp_data.sqlite"}
+                   or relative in {"data/reference/live-abu-levels-20261121.json",
+                                   "vendor/rkpp/rkpp_data.sqlite", "vendor/洛克PVP助手/app/rkpp/rkpp_data.sqlite"}
                    or (relative.startswith("docs/verification/") and path.suffix.lower() == ".json")
                    or (relative.startswith("data/external/") and path.name in EXTERNAL
                        and path.parent == root / "data/external"))

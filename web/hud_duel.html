@@ -119,6 +119,7 @@
   .skill-tag.feature { color: #9fe0a7; border-color: rgba(159, 224, 167, 0.45); }
   .skill-tag.observed { color: #9fc4e0; border-color: rgba(159, 196, 224, 0.45); }
   .skill-meta { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .damage-reference { color: var(--text); text-decoration: underline dotted; text-underline-offset: 3px; }
   .skill-dmg { font-size: 13px; font-weight: 900; color: var(--warm); white-space: nowrap; text-align: right; }
   .ohko { margin-left: 4px; font-weight: 900; color: #ff4545; }
   .skill.empty { opacity: 0.4; grid-template-columns: minmax(0, 1fr); }
@@ -485,6 +486,21 @@
     return html;
   }
 
+  function damageText(low, high, referenceLow, referenceHigh, hits, separator) {
+    if (low == null || high == null) return '—';
+    var text = esc(low);
+    if (low !== high) {
+      var join = separator || '–';
+      if (referenceLow != null && referenceHigh != null) {
+        var reference = referenceLow === referenceHigh ? String(referenceLow) : referenceLow + '–' + referenceHigh;
+        join = ' / ';
+        text += join + '<span class="damage-reference" aria-label="参考伤害" title="最低 / 参考 / 最高。参考假设：该项个体值未加点；忽略性格减益，保留已知加成。其他未知条件仍保留范围。">' + esc(reference) + '</span>';
+      }
+      text += join + esc(high);
+    }
+    return hits > 1 ? (low === high ? text : '(' + text + ')') + '×' + hits : text;
+  }
+
   function quoteText(quote) {
     if (!quote || quote.reason) return '<span title="' + esc(quote && quote.reason || '缺少计算条件') + '">待核实</span>';
     if (Array.isArray(quote.traitScenarios)) return quote.traitScenarios.map(function(branch) {
@@ -492,10 +508,10 @@
     }).join('');
     var low = quote.perHitMin != null ? quote.perHitMin : quote.normalMin != null ? quote.normalMin : quote.normal;
     var high = quote.perHitMax != null ? quote.perHitMax : quote.normalMax != null ? quote.normalMax : quote.normal;
-    if (low == null || high == null) return '—';
-    var text = low === high ? String(low) : low + '–' + high;
-    if (quote.hits > 1) text = '(' + text + ')×' + quote.hits;
-    return esc(text) + (quote.oneShot ? '<span class="ohko">秒！</span>' : '');
+    var referenceLow = quote.referencePerHitMin != null ? quote.referencePerHitMin : quote.referenceMin;
+    var referenceHigh = quote.referencePerHitMax != null ? quote.referencePerHitMax : quote.referenceMax;
+    return damageText(low, high, referenceLow, referenceHigh, quote.hits) +
+      (quote.oneShot ? '<span class="ohko">秒！</span>' : '');
   }
 
   function targetKey(move) {
@@ -632,7 +648,7 @@
         }
       } else if (move.damageNormalMin != null && move.damageNormalMax != null) {
         // 对方攻击面板没下发 → 按种族值 + 性格推的可能范围（个体未知，取 0~60 两端）。
-        dmg = move.damageNormalMin + " ~ " + move.damageNormalMax;
+        dmg = damageText(move.damageNormalMin, move.damageNormalMax, move.damageReferenceMin, move.damageReferenceMax, 1, " ~ ");
         dmgTitle = "攻防面板存在未知项，按相容性格、个体或观测范围计算最低/最高伤害";
         if (move.damageAtkRange && move.damageAtkRange.length === 2) {
           dmgTitle += "（对方攻击 " + move.damageAtkRange[0] + "~" + move.damageAtkRange[1] + "）";
@@ -650,9 +666,10 @@
       if (move.damageHits > 1 && (normal != null || move.damageNormalMin != null)) {
         var perMin = move.damagePerHitMin != null ? move.damagePerHitMin : (normal != null ? normal : move.damageNormalMin) / move.damageHits;
         var perMax = move.damagePerHitMax != null ? move.damagePerHitMax : (normal != null ? normal : move.damageNormalMax) / move.damageHits;
-        dmg = (perMin === perMax ? String(perMin) : "(" + perMin + "–" + perMax + ")") + "×" + move.damageHits;
+        dmg = damageText(perMin, perMax, move.damageReferencePerHitMin, move.damageReferencePerHitMax, move.damageHits);
         dmgTitle += "；每段伤害×固定连击数；合计 " + (normal != null ? normal : move.damageNormalMin + "–" + move.damageNormalMax);
       }
+      if (move.damageReferenceNote) dmgTitle += "；参考值未给出：" + move.damageReferenceNote;
       if (move.damageBasis) dmgTitle += "；依据：" + move.damageBasis;
       (move.damageEffects || []).forEach(function (effect) {
         if (effect.attacker_trait) dmgTitle += '；攻击方特性：' + effect.attacker_trait;
@@ -672,14 +689,10 @@
       }
       var response = move.damageResponse;
       if (response) {
-        var responseText = '待核实';
-        if (response.perHitMin != null && response.perHitMax != null) {
-          responseText = response.perHitMin === response.perHitMax ? String(response.perHitMin) : response.perHitMin + '–' + response.perHitMax;
-          if (response.hits > 1) responseText = '(' + responseText + ')×' + response.hits;
-        }
+        var responseText = quoteText(response);
         var responseTitle = response.reason || '仅在应对成功时成立；按当前状态独立计算，不代表对方必定选择被应对的行动';
         dmg = '<div><small>未应对 </small>' + dmg + '</div><div title="' + esc(responseTitle) + '"><small>应对 </small>' +
-          esc(responseText) + (response.oneShot ? '<span class="ohko">秒！</span>' : '') + '</div>';
+          responseText + '</div>';
       }
       if (Array.isArray(move.damageChoices) && move.damageChoices.length) {
         dmg = move.damageChoices.map(function(choice) {
