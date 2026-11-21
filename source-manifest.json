@@ -3,7 +3,7 @@
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
   "file_count": 5418,
-  "bytes": 456311205,
+  "bytes": 456312495,
   "files": [
     {
       "path": ".gitattributes",
@@ -2387,8 +2387,8 @@
     },
     {
       "path": "docs/verification/bwiki-levels-20261121.md",
-      "bytes": 5437,
-      "sha256": "171b7fefc993eef2c4fdb445fa9541c1ad8c10dbef33e9f3c852aa8cd0f96194"
+      "bytes": 5597,
+      "sha256": "04880e1767128881fe57446f266b130edc093c8cbd6b058d35393dc52d381d09"
     },
     {
       "path": "docs/verification/bwiki-numeric-followup-20261025.json",
@@ -2457,8 +2457,8 @@
     },
     {
       "path": "docs/verification/conditional-needle-20261121.md",
-      "bytes": 2208,
-      "sha256": "bbc766b3b88f009afacc8cc565907b4d2a16092cd40d5b3f5d0524eead78df63"
+      "bytes": 3338,
+      "sha256": "9152202c0961ec32871ed433bb7b3454ef1f6d47b496e7d7fc2acd42082f5104"
     },
     {
       "path": "docs/verification/conductive-and-mark-steal-20261026.md",

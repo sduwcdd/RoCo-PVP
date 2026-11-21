@@ -143,3 +143,7 @@ Windows安装包SHA-256：
 `6fd7025d9c9fc6f489be8ce565001b600f76df24043d24d47625a2f3cbfec0dd`。
 最终安卓安装包SHA-256：
 `fee2e589463189a3445634abd38f7d28a2b4d30410b29b185ba4b3e0b9f760c9`。
+
+后续绵里藏针修复已纳入最终更新。
+最终版本改为Windows1.1.13和安卓0.16.2。
+详见[专项核查](conditional-needle-20261121.md)。

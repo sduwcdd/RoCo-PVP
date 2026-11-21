@@ -63,3 +63,28 @@ BWIKI定义为60威力、2能量、龙系魔伤。
 出招后HUD按下一次决策回合预测。
 当前命中反推使用本次施放前的计数。
 3项核心检查在最终逻辑下再次通过。
+
+## 安装包核验
+
+最终桌面构建身份为 `20261121-bwiki-needle-final`。
+桌面真实渲染器和工作台验证通过。
+最终安卓身份为 `mobile-20261121-0162-bwiki-needle-final`。
+安卓包内12项检查全部通过。
+其中包括等级条件与个体值保留检查。
+三个新增形态的图片接口均返回有效PNG。
+本机核对了APK内编译后端与源码摘要。
+这些检查不等于手机真机对局校准。
+
+GitHub两端安装包发布完成。
+Windows安装包SHA-256：
+`c07d138126c46a6348a0a1aa7abbb7280785def87b1f56ab5a0db3d3834723fd`。
+安卓安装包SHA-256：
+`e33cb6aa8b9060d12ea242c3be1b3c1a0968ae39ec5bb69b424e0d3d1be6b91d`。
+安卓签名SHA-256：
+`b6a6896a62a5d84a377b064e745f4d492d551e89272db10b26894aa2289b19f2`。
+
+CNB两端安装包发布完成。
+匿名更新入口的内容校验通过。
+
+[Windows国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/v1.1.13/RocoPVP-Setup-1.1.13.exe)。
+[安卓国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/android-v0.16.2-internal/roco-mobile-android-internal-0.16.2.apk)。
