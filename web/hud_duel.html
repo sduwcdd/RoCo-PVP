@@ -439,6 +439,9 @@
       if (((info.known_talents || {})[dim] || {}).source === 'historical_npc_candidate') {
         talentTitle = 'NPC历史成长配置下的相容加点候选，尚未全面校准' + (iv == null ? '' : ' ' + iv);
       }
+      if (dim === 'spd' && info.used_speed_observations) {
+        talentTitle += '；已结合' + info.used_speed_observations + '次同先手度出手顺序，保留同速候选';
+      }
       labels += '<text x="' + lp[0].toFixed(1) + '" y="' + (lp[1] + 3).toFixed(1) +
                 '" text-anchor="' + anchor + '" font-size="11.5" fill="' + (hasTalent ? '#ffd75e' : '#c8d3e6') + '">' +
                 '<title>' + esc(talentTitle) + '</title>' + esc(ax.label) + arrow + " " + esc(shown) + "</text>";

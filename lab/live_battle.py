@@ -886,6 +886,8 @@ class BattleTracker:
         self.learned_panels: dict[str, dict[str, list[float]]] = {}
         self.learned_panel_ranges: dict[str, dict[str, list[int]]] = {}
         self.damage_evidence: dict[str, list[dict[str, Any]]] = {}
+        from lab.live_speed import SpeedOrderObserver
+        self.speed_order = SpeedOrderObserver()
         self._configuration_cache = {}
         self.party_life = {0: {}, 1: {}}
         self._party_dead_status = {}
@@ -1188,10 +1190,12 @@ class BattleTracker:
         self._cast_response_before.clear()
         self._cast_energy_before.clear()
         self._prepare_power_context(cmd)
+        self.speed_order.begin(self, cmd)
         for item in _execution_order(cmd.get("perform_info")):
             item = _as_dict(item)
             if self._apply_perform_item(item, from_round_start=True):
                 changed = True
+        self.speed_order.finish(self)
         return changed
 
     def _on_cmd_sync(self, content: dict) -> bool:
@@ -1224,9 +1228,11 @@ class BattleTracker:
         self._cast_response_before.clear()
         self._cast_energy_before.clear()
         self._prepare_power_context(cmd)
+        self.speed_order.begin(self, cmd)
         for item in _execution_order(cmd.get("perform_info")):
             item = _as_dict(item)
             changed = self._apply_perform_item(item) or changed
+        self.speed_order.finish(self)
         if changed and isinstance(round_no, int) and self._turns_seen != round_no:
             self._turns_seen = round_no
         return changed
@@ -1331,6 +1337,7 @@ class BattleTracker:
                 del self.pending_pets[:-20]
         cast = _as_dict(item.get("skill_cast"))
         if cast:
+            self.speed_order.cast(self, item)
             caster = self._pet_by_id.get(str(cast.get("caster_id")))
             skill_id = cast.get("skill_id")
             skill_name = cast.get("skill_name") or ""
@@ -1977,7 +1984,8 @@ class BattleTracker:
                 }
         for entry in my_team + enemy_team:
             entry.update(live_damage.stat_summary(entry))
-            evidence = self.damage_evidence.get(str(entry.get("petId")), [])
+            evidence = sorted([*self.damage_evidence.get(str(entry.get("petId")), []),
+                               *self.speed_order.evidence.get(str(entry.get("petId")), [])], key=lambda e: e["turn"])
             from lab.live_inference import infer_configuration
             key = json.dumps({name: entry.get(name) for name in ("petBaseId", "stageBaseConfId", "level", "nature", "natureUp", "natureDown",
                 "naturePosOverride", "natureNegOverride", "natureOverrideKnown", "maxHp", "talent_selection", "battleStats", "revealedBaseStats", "talentEvidence", "initialStats", "battleMode", "natureStatsPolicy", "worldNpc", "confId")}, sort_keys=True)

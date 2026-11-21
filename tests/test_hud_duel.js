@@ -16,6 +16,16 @@ function hud(side = "my", overrides = {}) {
   return context.hudTest;
 }
 
+test("speed order constraints narrow the radar and explain confirmed speed investment",()=>{
+  const api=hud('enemy');
+  const html=api.radarChart({configurationInference:{panel_ranges:{spd:[241,250]},
+    known_talents:{spd:{selected:true,values:[5,6,7]}},known_nature:{up:'spd'},used_speed_observations:2}});
+  assert.match(html,/241–250/);
+  assert.match(html,/已结合2次同先手度出手顺序，保留同速候选/);
+  assert.match(html,/fill="#ffd75e"[^>]*><title>已确定个体加点/);
+  assert.match(html,/速度<tspan fill="#7ee787">↑<\/tspan>/);
+});
+
 test("protocol speciality is beside nature on both sides, absent data never becomes none",()=>{
   const entry={petId:401,name:'精灵',natureName:'开朗',level:60,moves:[],
     speciality:{id:101,confirmed:true,name:'奇袭',description:'投掷背袭'}};

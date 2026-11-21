@@ -1,4 +1,4 @@
-"""Live damage constraints -> factorized nature / exactly-three-talent candidates."""
+"""Live panel, damage and action-order constraints on shared configuration candidates."""
 from functools import lru_cache
 from copy import deepcopy
 import json
@@ -99,6 +99,15 @@ def damage_observation(caster, target, skill_id, damage, critical, turn, resolve
 
 def _predicted_range(event, panel):
     calculation = event.get("calculation")
+    if event.get("kind") == "speed_order":
+        from .live_speed import speed_values
+        from .live_damage import _rules
+        if event["snapshot_id"] != _rules()[0]["snapshot_id"]:
+            raise ValueError("速度观测的数据快照已变化")
+        subject = deepcopy(calculation["subject"])
+        subject.pop("configurationInference", None)
+        values = speed_values(subject, calculation["opponent"], panel)
+        return min(values), max(values)
     if calculation:
         from .live_damage import _damage_case
         attacker, defender = deepcopy(calculation["attacker"]), deepcopy(calculation["defender"])
@@ -115,6 +124,14 @@ def _predicted_range(event, panel):
               current if event["role"] == "defender" else fixed, event["power"], event["combined"])
               for fixed in event["fixed_values"]]
     return min(values), max(values)
+
+
+def _observation_fits(event, bounds):
+    if event.get("kind") == "speed_order":
+        # A single action order cannot exclude a randomized speed tie.
+        return (bounds[1] >= event["opponent_speed"][0] if event["subject_first"]
+                else bounds[0] <= event["opponent_speed"][1])
+    return bounds[0] <= event["damage"] <= bounds[1]
 
 
 def _protocol_selection(pet):
@@ -302,7 +319,7 @@ def infer_configuration(pet, evidence):
                             if event["dimension"] != dim or event.get("blocker"):
                                 continue
                             bounds = prediction(event, panel)
-                            if bounds and not bounds[0] <= event["damage"] <= bounds[1]:
+                            if bounds and not _observation_fits(event, bounds):
                                 fits = False
                                 break
                         if fits:
@@ -348,16 +365,23 @@ def infer_configuration(pet, evidence):
             groups, panels, talents, diagnostics = current
             kept_events = retained
             result["status"] = "damage_conflict"
-            result["issues"].append(f"新伤害与已有约束冲突：保留{len(retained)}条一致伤害和已知面板的结果，冲突观测未应用，未覆盖实际配置。")
+            kind = "行动顺序/伤害" if any(e.get("kind") == "speed_order" for e in accepted) else "伤害"
+            result["issues"].append(f"新{kind}与已有约束冲突：保留{len(retained)}条一致观测和已知面板的结果，冲突观测未应用，未覆盖实际配置。")
             result["damage_conflicts"] = []
             for event in conflicts:
                 bounds = [prediction(event, value) for value in panels[event["dimension"]]]
                 bounds = [b for b in bounds if b]
-                result["damage_conflicts"].append({"turn": event["turn"], "skill_id": event["skill_id"], "damage": event["damage"],
+                result["damage_conflicts"].append({"turn": event["turn"], "skill_id": event.get("skill_id"), "damage": event.get("damage"),
+                    **({"kind": "speed_order", "opponent_speed": event["opponent_speed"]} if event.get("kind") == "speed_order" else {}),
                     "predicted_range": [min(b[0] for b in bounds), max(b[1] for b in bounds)] if bounds else None})
     result["groups"] = groups
     result["combination_count"] = sum(g["combination_count"] for g in groups)
     result["used_observations"] = len(kept_events) if not protocol and result["status"] in ("conditional", "damage_conflict") else 0
+    result["used_speed_observations"] = sum(e.get("kind") == "speed_order" for e in kept_events) if result["used_observations"] else 0
+    if result["used_speed_observations"]:
+        result["notice"] = "结合下发面板、伤害与同先手度出手顺序筛选；保留同速候选，不把先出手直接认作速度加点。"
+        result["nature_source"] = ("protocol_original_public_order_inference" if known and unknown_override else
+                                   "protocol" if known else "public_observation_model")
     result["issues"].extend(e["blocker"] for e in accepted if e.get("blocker") and e["blocker"] not in result["issues"])
     result["panel_fit"] = [{"dimension": d, "observed": v, "predicted_values": sorted(diagnostics[d]),
                             "matches": v in diagnostics[d]} for d, v in observed.items()]

@@ -1,9 +1,9 @@
 {
-  "version": "1.1.14",
+  "version": "1.1.15",
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
-  "file_count": 5422,
-  "bytes": 456344517,
+  "file_count": 5425,
+  "bytes": 456374769,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3166,
-      "sha256": "69493d978babb3c29eea61bfea96b0d8ccffc090f004486e63074d3afd160d24"
+      "bytes": 3430,
+      "sha256": "420f080aed022ddf9c46ddaa0c1617d47bf279324a336497dc89fcf237e657db"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -2896,6 +2896,11 @@
       "sha256": "0ec47593fe3eae56fc25ab650c789a4dbbd530f668c8f3857ba53cfe58132401"
     },
     {
+      "path": "docs/verification/speed-order-20261121.md",
+      "bytes": 3890,
+      "sha256": "a8351b58a4cad4d4d3a52d421b702a004e5fddca5d5fa597c24287b8f7f6ee14"
+    },
+    {
       "path": "docs/verification/state-clone-20261025.json",
       "bytes": 2792,
       "sha256": "0de0ce51423ff22de928f691a20a43bfca3452d8eb0350c64bccdd92576e0497"
@@ -3242,8 +3247,8 @@
     },
     {
       "path": "lab/live_battle.py",
-      "bytes": 136622,
-      "sha256": "ac67833e0cd06597fcd9c47091a8293af4c198a9c6df95a855b1d04ad9870a91"
+      "bytes": 137066,
+      "sha256": "12df1cc3561eb3bb6f142235278a726ad6d3a6a62b47a22909a2f395a2413d26"
     },
     {
       "path": "lab/live_bridge.py",
@@ -3257,8 +3262,8 @@
     },
     {
       "path": "lab/live_inference.py",
-      "bytes": 23413,
-      "sha256": "411c42092e44a3b46e18372cb8a10c3693c4154046a712e8c26ebf09135244cb"
+      "bytes": 25025,
+      "sha256": "44647d9760ac99b5f434bb5c5c8b839baf576c947de04ffeb0f3cfd639eec69c"
     },
     {
       "path": "lab/live_modifiers.py",
@@ -3269,6 +3274,11 @@
       "path": "lab/live_power.py",
       "bytes": 28372,
       "sha256": "267bd6e4596e6e1af147f44e19c5006ffea1dcad33b1cb63a425cfe31b864c3e"
+    },
+    {
+      "path": "lab/live_speed.py",
+      "bytes": 11986,
+      "sha256": "e82da430d7caff8daca8507bbc7b7267f841e803ac670161625621512b48d87b"
     },
     {
       "path": "lab/live_stat_model.py",
@@ -3587,8 +3597,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 21075,
-      "sha256": "c53589df77bd8688e09e991acf1ce4d77b83dbaf674876d092b9fa82c0ceb2cc"
+      "bytes": 21285,
+      "sha256": "77e9f8019bb7baa9dd09996943f9d82dd65292ad0fdc27555b6d17f5341d55b6"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3602,8 +3612,8 @@
     },
     {
       "path": "mobile/android/app/build.gradle",
-      "bytes": 2577,
-      "sha256": "f6d3dc4c4795ed81358fca80297a7613f57d4279c751191158078059f0ae3ea3"
+      "bytes": 2627,
+      "sha256": "839a09db6788f6a92d57426597c6493ecd5e135e5a6da5ab026f8a8e684a111a"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3928,12 +3938,12 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150988,
-      "sha256": "86ebe0a3b321612b68040a054addbcecda234d348a658e0b66b592f7926830af"
+      "sha256": "13e916ecd66ec0d3c31e87c2096e5e3ad8e50d14a73f9eb56f70d5a6ec9cb040"
     },
     {
       "path": "overlay/package.json",
       "bytes": 431,
-      "sha256": "72be58c2e40e1918bd487cd05909c89ca6cdc1464ee44c3cd94981610a1df920"
+      "sha256": "bc024aac92bef714d767cfd61b3e1ae0245c40341f789cf3f1fe21c0131a514e"
     },
     {
       "path": "overlay/preload.js",
@@ -3943,7 +3953,7 @@
     {
       "path": "overlay/update_config.json",
       "bytes": 109,
-      "sha256": "89e2378325bbd1789ae9977200546c0805efb952a7cb46a0bad66b4442d70e96"
+      "sha256": "a91137c7402245272b055cb9b6564fc4c9d77a1a9ea4ea7913bd88c09b8c3594"
     },
     {
       "path": "requirements-release.txt",
@@ -4482,8 +4492,8 @@
     },
     {
       "path": "tests/test_hud_duel.js",
-      "bytes": 36293,
-      "sha256": "fa26910c6465394c1bd68e6dcc667cb8a694bc2438f3f47bb97aa2a9ff83676c"
+      "bytes": 36864,
+      "sha256": "4d6732f4b3438260bb4b4d7f80b384852d4f4dc11b73356ab400944d712d7c42"
     },
     {
       "path": "tests/test_hud_render.js",
@@ -4544,6 +4554,11 @@
       "path": "tests/test_live_power.py",
       "bytes": 34497,
       "sha256": "dca262d23c89b66c861d964dd112e530629bd593cfd41c83224635284bde6809"
+    },
+    {
+      "path": "tests/test_live_speed.py",
+      "bytes": 11032,
+      "sha256": "680b4243c1f1a802d87bd357f1a6dc1e8366fe878c936775eacf1ca62984901c"
     },
     {
       "path": "tests/test_mark_integration.py",
@@ -27082,8 +27097,8 @@
     },
     {
       "path": "web/hud_duel.html",
-      "bytes": 75862,
-      "sha256": "60ec2720b287fda9b275a63e0f842e1d8b43f5be69135b914fdcdba1552c9ce0"
+      "bytes": 76055,
+      "sha256": "29472cc23d492cfcc68f545a310b5f299861ab74e5666459a2a9ae262988cf15"
     },
     {
       "path": "web/lab.html",
@@ -27123,5 +27138,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261121-reference-abu-final"
+  "release_build_id": "20261121-speed-order"
 }
