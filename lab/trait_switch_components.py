@@ -9,7 +9,7 @@ from lab.prepared_rules import prepare_rules
 from lab.ruleset import canonical_hash
 
 CONFIG = Path(__file__).resolve().parents[1] / 'data/rules/reviewed-trait-switch-components-20261030.json'
-CONFIG_SHA256 = '704203af7246615f4c78151e88c35a27499e85c8f4efd93e2c0e2fe784227d30'
+CONFIG_SHA256 = 'b2cc2bbd9e1cd395e4dc95a91fd8c00675d59916376e100b4b682598f04bdf21'
 POLICY = 'source_bound_switch_slot_components_current_first_own_wing_v2'
 
 

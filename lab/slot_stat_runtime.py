@@ -17,7 +17,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / "data/rules/reviewed-slot-stat-1.json"
-CONFIG_SHA256 = 'bea39de008947a9f38b4f495469cf017d06bdc263450c508d3676da6c9d6529b'
+CONFIG_SHA256 = '34eb90342c330fe7fc967557af977e0594425e62e470eb39cf0e5d9f641a1fd9'
 POLICY = "source_bound_positional_stat_skill_v1"
 POLICIES = {
     "position": "slot_index_0_and_2_are_the_source_one_and_three_positions",

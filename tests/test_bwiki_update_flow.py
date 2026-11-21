@@ -29,6 +29,15 @@ class BwikiUpdateFlowTests(unittest.TestCase):
         pointer = {"snapshot_id": name, "catalog_sha256": snapshot.sha((folder / "catalog.json").read_bytes())}
         return folder, catalog, pointer
 
+    def test_api_transport_posts_the_pinned_revision(self):
+        import io
+        with patch.object(snapshot.urllib.request, "urlopen", return_value=io.BytesIO(b'{"ok":true}')) as opened:
+            self.assertEqual(snapshot.read_url(snapshot.BASE + "api.php?action=query&revids=21037"), b'{"ok":true}')
+        request = opened.call_args.args[0]
+        self.assertEqual(request.get_method(), "POST")
+        self.assertEqual(request.full_url, snapshot.BASE + "api.php")
+        self.assertEqual(request.data, b"action=query&revids=21037")
+
     def test_runtime_stays_pinned_and_callers_receive_owned_data(self):
         _, _, first = self.catalog("old")
         _, _, second = self.catalog("new")

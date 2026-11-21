@@ -46,15 +46,22 @@ def npc_profile(pet):
     return profile, growth
 
 
-def damage_value(attacker, attack, defense, power, multiplier):
+def damage_at_level(level, attack, defense, power, multiplier):
     from .numeric_candidates import arena_documented_damage60, native_world_level_damage
-    if not is_world(attacker) or attacker.get("level") == 60:
-        return arena_documented_damage60(attack, defense, power, multiplier)["nominal_damage"]
+    if type(level) is int and level == 60:
+        return arena_documented_damage60(attack, defense, power, multiplier)
     data = world_npc_rules()
     source = {"path": "data/rules/reviewed-world-npc-stats-1.json", "candidate_id": data["candidate_id"],
               "calibrated": False, "sources": data["sources"]}
-    return native_world_level_damage(attack, defense, power, multiplier, attacker.get("level"),
-                                     data["level_damage"], source)["nominal_damage"]
+    return native_world_level_damage(attack, defense, power, multiplier, level, data["level_damage"], source)
+
+
+def damage_value(attacker, attack, defense, power, multiplier):
+    # Legacy simulation members omit level and use the standard arena level.
+    level = attacker.get("level")
+    if level is None and not is_world(attacker):
+        level = 60
+    return damage_at_level(level, attack, defense, power, multiplier)["nominal_damage"]
 
 
 def is_world(pet):

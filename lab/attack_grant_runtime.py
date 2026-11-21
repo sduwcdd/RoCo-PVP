@@ -10,7 +10,7 @@ from lab.prepared_rules import prepare_rules
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / 'data/rules/reviewed-attack-grants-1.json'
-CONFIG_HASH = '4920686aaf9db02c0865548f46fc9e71a8e80f6433330d586a52e8bbe30a2d6a'
+CONFIG_HASH = 'd5e6ac5872a176bc1c941d40382455f77938c31542038dd07815e26eaac1f9cb'
 POLICY = 'source_bound_attack_grants_with_historical_layers_experiment_v1'
 POLICIES = {'lifesteal': 'same_buff_add_source_layers_cap99_ten_percent_each_experiment',
     'power': 'same_buff_refresh_max1_other_buff_overlap_rejected_experiment',

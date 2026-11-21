@@ -1,0 +1,10 @@
+{
+  "method": "offline_source_bound_update",
+  "previous_phase_sha256": "7fe73b15e220a03ccdd3e7b1ac77325aaa31c69fb85c69f8f64ee128c3beb000",
+  "previous_rule_sha256": "d69752df7da1563ce4564d54b8c1cd69ee29cab97e9533f8301775184360e0bb",
+  "previous_snapshot_id": "20261105T124140+0800",
+  "real_game_calibrated": false,
+  "schema_version": "roco-phase-config-1",
+  "sha256": "3a2a6c84190c0fed3acd601395714688e7d4a5daa7e08bf15811e47a4785da11",
+  "snapshot_id": "20261121T162937+0800"
+}

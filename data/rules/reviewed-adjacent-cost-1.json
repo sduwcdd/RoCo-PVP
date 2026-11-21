@@ -1,9 +1,9 @@
 {
   "schema": "reviewed-adjacent-cost-1",
   "policy": "source_bound_adjacent_cost_aura_v1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "sources": {
-    "data/bwiki/20261105T124140+0800/catalog.json": "4f46200f8b7fa8e1a8415aa579f532c5f745b0ab08482b64d8bf55fb50e6ad15",
+    "data/bwiki/20261121T162937+0800/catalog.json": "c82eedd6b318671fd26ac44e30da5944b1d2641dd54c33ba7ddc0756596f9578",
     "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db"
   },
   "installation_sources": {

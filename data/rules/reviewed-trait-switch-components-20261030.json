@@ -1,6 +1,6 @@
 {
   "schema": "reviewed-trait-switch-components-20261030",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "policy": "source_bound_switch_slot_components_current_first_own_wing_v2",
   "policies": {
     "rounding": "existing_max_hp_ratio_floor_living_min_one",

@@ -1,6 +1,6 @@
 {
   "schema": "reviewed-user-skill-extensions-1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "policy": "source_bound_conditional_damage_with_explicit_unresolved_releases_v1",
   "sources": [
     {

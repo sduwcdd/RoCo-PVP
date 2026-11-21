@@ -1,0 +1,657 @@
+{
+  "schema": "reviewed-slot-components-1",
+  "policy": "source_bound_slot_permutation_and_bundle_transfer_v1",
+  "snapshot_id": "20261105T124140+0800",
+  "sources": {
+    "data/bwiki/20261105T124140+0800/catalog.json": "4f46200f8b7fa8e1a8415aa579f532c5f745b0ab08482b64d8bf55fb50e6ad15",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "skills": {
+    "7070160": {
+      "record": {
+        "id": 7070160,
+        "wiki_id": "skill_000483",
+        "name": {
+          "zh": "主轴"
+        },
+        "type": "机械系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，此技能位置不会改变。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%B8%BB%E8%BD%B4",
+        "source_module": "Skills",
+        "power": 75
+      },
+      "record_hash": "8e79135cb68fa038e62949705ca28eda241c0b3c5961ff933f6067554e9560e1",
+      "component": {
+        "op": "position.lock"
+      },
+      "before_operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "power": 75,
+            "type": "机械系"
+          }
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7070160,
+          "name": {
+            "localization_id": 2413,
+            "text": "主轴"
+          },
+          "desc": {
+            "localization_id": 2414,
+            "text": "造成物伤，此技能位置不会改变。"
+          },
+          "flavor_text": {
+            "localization_id": 2415,
+            "text": "主轴旋转，力量传递。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1083001,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_ZZ_106016",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106016.106016'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "effects_raw": [
+          {
+            "id": 1083001,
+            "effect_order": 83,
+            "type": 3
+          }
+        ],
+        "historical_patch2_raw": {
+          "id": 7070160,
+          "name": {
+            "localization_id": 2313,
+            "text": "主轴"
+          },
+          "desc": {
+            "localization_id": 2314,
+            "text": "造成物伤，此技能位置不会改变。"
+          },
+          "flavor_text": {
+            "localization_id": 2315,
+            "text": "主轴旋转，力量传递。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 1083001,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_ZZ_106016",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106016.106016'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "whole_buff_graph_verified": false
+      }
+    },
+    "7070230": {
+      "record": {
+        "id": 7070230,
+        "wiki_id": "skill_000488",
+        "name": {
+          "zh": "锁芯"
+        },
+        "type": "机械系",
+        "kind": "magical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成魔伤，此技能位置不会改变。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%94%81%E8%8A%AF",
+        "source_module": "Skills",
+        "power": 75
+      },
+      "record_hash": "6237eac536eda1d4f0fcca9c9c85748c6d9db96c739a04be87fbc01db2087163",
+      "component": {
+        "op": "position.lock"
+      },
+      "before_operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "power": 75,
+            "type": "机械系"
+          }
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7070230,
+          "name": {
+            "localization_id": 2434,
+            "text": "锁芯"
+          },
+          "desc": {
+            "localization_id": 2435,
+            "text": "造成魔伤，此技能位置不会改变。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1083001,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_JXFL_106030",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106030.106030'",
+          "describe_type": [
+            5
+          ]
+        },
+        "effects_raw": [
+          {
+            "id": 1083001,
+            "effect_order": 83,
+            "type": 3
+          }
+        ],
+        "historical_patch2_raw": {
+          "id": 7070230,
+          "name": {
+            "localization_id": 2334,
+            "text": "锁芯"
+          },
+          "desc": {
+            "localization_id": 2335,
+            "text": "造成魔伤，此技能位置不会改变。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            75
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 19,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 1083001,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_JXFL_106030",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106030.106030'",
+          "describe_type": [
+            5
+          ]
+        },
+        "whole_buff_graph_verified": false
+      }
+    },
+    "7070050": {
+      "record": {
+        "id": 7070050,
+        "wiki_id": "skill_000473",
+        "name": {
+          "zh": "杠杆置换"
+        },
+        "type": "机械系",
+        "kind": "status",
+        "energy": 0,
+        "desc": {
+          "zh": "自己回复2能量，交换两侧技能位置。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%9D%A0%E6%9D%86%E7%BD%AE%E6%8D%A2",
+        "source_module": "Skills"
+      },
+      "record_hash": "0bdc77db40b6f30e902ce9ff7f67fc40b7d278af4872cdcbcdbb13aa5b7f6db6",
+      "component": {
+        "op": "position.swap_neighbors"
+      },
+      "before_operations": [
+        {
+          "op": "energy.restore",
+          "params": {
+            "target": "self",
+            "amount": 2
+          }
+        }
+      ],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7070050,
+          "name": {
+            "localization_id": 2384,
+            "text": "杠杆置换"
+          },
+          "desc": {
+            "localization_id": 2385,
+            "text": "自己回复2能量，交换两侧技能位置。"
+          },
+          "flavor_text": {
+            "localization_id": 2386,
+            "text": "想得到些什么，就要付出些什么。想清楚代价是什么再行动。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1057002,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1019002,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_GGZH_206005",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/206005.206005'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "effects_raw": [
+          {
+            "id": 1057002,
+            "effect_order": 57,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": 1019002,
+            "effect_order": 19,
+            "add_des": "获得能量",
+            "add_icon": 1,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "historical_patch2_raw": {
+          "id": 7070050,
+          "name": {
+            "localization_id": 2284,
+            "text": "杠杆置换"
+          },
+          "desc": {
+            "localization_id": 2285,
+            "text": "自己回复2能量，交换两侧技能位置。"
+          },
+          "flavor_text": {
+            "localization_id": 2286,
+            "text": "想得到些什么，就要付出些什么。想清楚代价是什么再行动。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 19,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "contact_type": 2,
+          "skill_priority": 5,
+          "target_type": 9,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 1057002,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000
+            },
+            {
+              "effect_id": 1019002,
+              "result_target_type": 1,
+              "cast_moment": 11,
+              "success_rate": 10000
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_GGZH_206005",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/206005.206005'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "whole_buff_graph_verified": false
+      }
+    },
+    "7180200": {
+      "record": {
+        "id": 7180200,
+        "wiki_id": "skill_000780",
+        "name": {
+          "zh": "隐藏条款"
+        },
+        "type": "恶系",
+        "kind": "status",
+        "energy": 8,
+        "desc": {
+          "zh": "与敌方交换携带的技能。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%9A%90%E8%97%8F%E6%9D%A1%E6%AC%BE",
+        "source_module": "Skills"
+      },
+      "record_hash": "5e1d6e8e9a110da7254a8a36cdda96b4d163b88da66137f4b9ee0ea24ac99df3",
+      "component": {
+        "op": "bundle.swap_opponent"
+      },
+      "before_operations": [],
+      "evidence": {
+        "game_skill_raw": {
+          "id": 7180200,
+          "name": {
+            "localization_id": 3377,
+            "text": "隐藏条款"
+          },
+          "desc": {
+            "localization_id": 3378,
+            "text": "与敌方交换携带的技能。"
+          },
+          "flavor_text": {
+            "localization_id": 3379,
+            "text": "“条约里面的超小号字体已经把隐藏条款已经写得很清楚了”。"
+          },
+          "energy_cost": [
+            8
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1047002,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1004076,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20030330,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_YCTK_217018",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/217018.217018'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "effects_raw": [
+          {
+            "id": 1047002,
+            "effect_order": 47,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": 1004076,
+            "effect_order": 4,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  20880010,
+                  20880020,
+                  20560040,
+                  20150080,
+                  20320223,
+                  20171510
+                ]
+              },
+              {
+                "params": [
+                  99
+                ]
+              },
+              {
+                "params": [
+                  99
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "historical_patch2_raw": {
+          "id": 7180200,
+          "name": {
+            "localization_id": 3246,
+            "text": "隐藏条款"
+          },
+          "desc": {
+            "localization_id": 3247,
+            "text": "与敌方交换携带的技能。"
+          },
+          "flavor_text": {
+            "localization_id": 3248,
+            "text": "“条约里面的超小号字体已经把隐藏条款已经写得很清楚了”。"
+          },
+          "can_changed": 1,
+          "energy_cost": [
+            8
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "contact_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "target_count": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "hit_para": 10000,
+          "skill_result": [
+            {
+              "effect_id": 1047002,
+              "result_target_type": 2,
+              "cast_moment": 11,
+              "success_rate": 10000
+            },
+            {
+              "effect_id": 1004076,
+              "result_target_type": 2,
+              "cast_moment": 11,
+              "success_rate": 10000
+            },
+            {
+              "effect_id": 20030330,
+              "result_target_type": 2,
+              "cast_moment": 11,
+              "success_rate": 10000,
+              "buff_group_level": 1
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_YCTK_217018",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/217018.217018'",
+          "describe_type": [
+            12
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "whole_buff_graph_verified": false
+      }
+    }
+  }
+}

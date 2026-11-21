@@ -8,7 +8,7 @@ from lab.phase_config import fingerprint, load_phase_config
 from lab.prepared_rules import prepare_rules
 
 CONFIG = Path(__file__).resolve().parents[1] / "data/rules/reviewed-choice-components-1.json"
-CONFIG_HASH = '9217b693472ea114e69bf76517f83da658f027a756ef89887ab00812c2f44254'
+CONFIG_HASH = 'abd1e4b8290b1ac3ded4395d93aa9ed3ffe537a0ab252caefc13b3794f4b2bcb'
 POLICY = "explicit_source_order_binary_choice_before_payment_experiment_v1"
 RECOIL_POLICY = 'declared_max_hp_floor_after_skill_nonlethal_only_boundary_block_v1'
 

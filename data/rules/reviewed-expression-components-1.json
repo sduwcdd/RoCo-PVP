@@ -1,6 +1,6 @@
 {
   "schema": "reviewed-expression-components-1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "skills": {
     "7120150": {
       "rule": {
@@ -27,7 +27,7 @@
             "title": "Module:Pets/data/Skills",
             "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=20323"
           },
-          "snapshot_id": "20261105T124140+0800",
+          "snapshot_id": "20261121T162937+0800",
           "source": {
             "source_module": "Skills",
             "source_url": "https://wiki.biligame.com/nrc/%E4%BB%A5%E6%AF%92%E6%94%BB%E6%AF%92",
@@ -40,7 +40,7 @@
             ]
           },
           "source_hash": "91d3828b8aa668a2a385f946f1da7cdd29e5a1fa56ae3dbbc2ba484a0f5ac55e",
-          "source_version": "s5-2026-10-31",
+          "source_version": "s5-2026-11-19",
           "static_fields": {
             "energy": 1,
             "kind": "status",
@@ -87,7 +87,7 @@
               }
             },
             "evidence": {
-              "snapshot_id": "20261105T124140+0800",
+              "snapshot_id": "20261121T162937+0800",
               "source_hash": "91d3828b8aa668a2a385f946f1da7cdd29e5a1fa56ae3dbbc2ba484a0f5ac55e",
               "raw_text": "敌方每有1层中毒效果，自己获得魔攻+30%。",
               "module": "Skills",
@@ -239,7 +239,7 @@
             "title": "Module:Pets/data/Skills",
             "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=20323"
           },
-          "snapshot_id": "20261105T124140+0800",
+          "snapshot_id": "20261121T162937+0800",
           "source": {
             "source_module": "Skills",
             "source_url": "https://wiki.biligame.com/nrc/%E8%85%90%E5%8C%96",
@@ -252,7 +252,7 @@
             ]
           },
           "source_hash": "abac3f03c4e429d1b9fe0f46196680d4decf32bbfd556de230c53eba6c2c814f",
-          "source_version": "s5-2026-10-31",
+          "source_version": "s5-2026-11-19",
           "static_fields": {
             "energy": 1,
             "kind": "status",
@@ -300,7 +300,7 @@
               }
             },
             "evidence": {
-              "snapshot_id": "20261105T124140+0800",
+              "snapshot_id": "20261121T162937+0800",
               "source_hash": "abac3f03c4e429d1b9fe0f46196680d4decf32bbfd556de230c53eba6c2c814f",
               "raw_text": "敌方每有1层中毒效果，敌方获得双攻-30%。",
               "module": "Skills",
@@ -452,7 +452,7 @@
             "title": "Module:Pets/data/Skills",
             "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=20323"
           },
-          "snapshot_id": "20261105T124140+0800",
+          "snapshot_id": "20261121T162937+0800",
           "source": {
             "source_module": "Skills",
             "source_url": "https://wiki.biligame.com/nrc/%E5%86%B7%E5%87%9D",
@@ -465,7 +465,7 @@
             ]
           },
           "source_hash": "4be1cecde645fa5742d392328fabe4eb9571eda18549129b4551c9981c2b8f5b",
-          "source_version": "s5-2026-10-31",
+          "source_version": "s5-2026-11-19",
           "static_fields": {
             "energy": 4,
             "kind": "physical",
@@ -494,7 +494,7 @@
               "power": 95
             },
             "evidence": {
-              "snapshot_id": "20261105T124140+0800",
+              "snapshot_id": "20261121T162937+0800",
               "source_hash": "4be1cecde645fa5742d392328fabe4eb9571eda18549129b4551c9981c2b8f5b",
               "raw_text": "造成物伤，敌方每有1层冻结，自己回复1能量。",
               "module": "Skills",
@@ -522,7 +522,7 @@
               }
             },
             "evidence": {
-              "snapshot_id": "20261105T124140+0800",
+              "snapshot_id": "20261121T162937+0800",
               "source_hash": "4be1cecde645fa5742d392328fabe4eb9571eda18549129b4551c9981c2b8f5b",
               "raw_text": "造成物伤，敌方每有1层冻结，自己回复1能量。",
               "module": "Skills",
@@ -673,7 +673,7 @@
             "title": "Module:Pets/data/Skills",
             "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Skills&oldid=20323"
           },
-          "snapshot_id": "20261105T124140+0800",
+          "snapshot_id": "20261121T162937+0800",
           "source": {
             "source_module": "Skills",
             "source_url": "https://wiki.biligame.com/nrc/%E7%94%9C%E8%9C%9C%E9%99%B7%E9%98%B1",
@@ -682,7 +682,7 @@
           "source_description": "造成魔伤，自己每有1能量，本次技能威力+10。",
           "source_details": {},
           "source_hash": "2e0b08cfe04b8a6467b55b73b02a5e2584028bf7bff599b73b7732329eb7070e",
-          "source_version": "s5-2026-10-31",
+          "source_version": "s5-2026-11-19",
           "static_fields": {
             "energy": 4,
             "kind": "magical",
@@ -734,7 +734,7 @@
               }
             },
             "evidence": {
-              "snapshot_id": "20261105T124140+0800",
+              "snapshot_id": "20261121T162937+0800",
               "source_hash": "2e0b08cfe04b8a6467b55b73b02a5e2584028bf7bff599b73b7732329eb7070e",
               "raw_text": "造成魔伤，自己每有1能量，本次技能威力+10。",
               "module": "Skills",

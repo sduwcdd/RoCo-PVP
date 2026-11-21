@@ -22,7 +22,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / "data/rules/reviewed-pressure-1.json"
-CONFIG_SHA256 = 'ca7a3da3d78c6c08ddc7c0ac9373ffb8cf1f558e0cb9949f4b960a4e837aad19'
+CONFIG_SHA256 = 'f9ba430793e7bf063200c1f9c683fc4aefd2ad9b5d79a830b8e985c5ee38727a'
 POLICY = "source_bound_outgoing_power_suppression_v1"
 POLICIES = {
     "install": "use_replaces_prior_entries_with_the_source_stack_pair_before_arming_one_listener",

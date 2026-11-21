@@ -18,7 +18,7 @@ from lab.trait_runtime import cached_source_query
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "data/rules/reviewed-mark-components-1.json"
-CONFIG_HASH = '9fbec75f8d84c2f25fbc6659e731d2fcf30860883ea8f127a29eefe4c8051aa4'
+CONFIG_HASH = 'f9378240a5e0f9cbcb546a237c3c57c4ab6e1bd28fe588454f6c59011835b9e1'
 POLICY = "source_bound_marks_devotion_transmission_experiment_v1"
 TRANSMISSION_POLICY = "original_slot_order_cyclic_remove_insert_experiment_v1"
 POLICIES = {"marks": POLICY, "replacement": "different_kind_replaces_same_polarity_experiment",
@@ -29,7 +29,7 @@ POLICIES = {"marks": POLICY, "replacement": "different_kind_replaces_same_polari
 EMPTY = {"positive": None, "negative": None}
 DEVOTIONS = {"power", "hits", "poison", "cost", "lifesteal"}
 IDENTITIES = ROOT / 'data/rules/reviewed-mark-identities-1.json'
-IDENTITIES_HASH = 'b843c1876c447a0d4790f14123f87daf942cfb8fb87c461e6be57d06a89890f4'
+IDENTITIES_HASH = '1c1e0990e151c369a0e9fb94c6c37e813a38d830cf35cd673768500cef4c6e1e'
 COMPONENTS = {"attack", "mark.add", "mark.clear", "mark.increment_existing", "mark.double",
               "devotion.add", "status", "energy", "heal"}
 

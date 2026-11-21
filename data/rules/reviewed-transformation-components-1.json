@@ -10,7 +10,7 @@
     "pool": "unfiltered_distinct_current_catalog_metadata_candidates_experiment",
     "cost": "clever_output_minus_one_replaces_prior_generation_discount_experiment"
   },
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "skill_source": {
     "Index": {
       "title": "Module:Pets/data/Index",
@@ -23,10 +23,10 @@
     "Catalog": {
       "title": "Module:Pets/data/Catalog",
       "page_id": 6395,
-      "revision_id": 20330,
-      "revision_timestamp": "2026-10-31T19:43:16Z",
-      "content_sha256": "5b43a4f7285545330ac9be6f21efa50ea14f4c56afa72f2dfe934ae4c38f9498",
-      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Catalog&oldid=20330"
+      "revision_id": 21016,
+      "revision_timestamp": "2026-11-19T05:01:40Z",
+      "content_sha256": "aaa738f5e883faaee7c2be4a816b738519165a01e96f8de1990dcea4039c1f9e",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Catalog&oldid=21016"
     },
     "Skills": {
       "title": "Module:Pets/data/Skills",
@@ -39,10 +39,10 @@
     "Learnsets": {
       "title": "Module:Pets/data/Learnsets",
       "page_id": 6397,
-      "revision_id": 20320,
-      "revision_timestamp": "2026-10-31T19:43:00Z",
-      "content_sha256": "b01632daa18ed7ff030e1f221a1ff55f23fb61ca48a0ae0d82ede252913fead3",
-      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Learnsets&oldid=20320"
+      "revision_id": 20949,
+      "revision_timestamp": "2026-11-16T16:45:24Z",
+      "content_sha256": "3d9009bb810d2a14c30fadb68ba9e5a8c2a2923570839375c983da01eea12135",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Learnsets&oldid=20949"
     },
     "Terms": {
       "title": "Module:Pets/data/Terms",
@@ -63,10 +63,10 @@
     "Config": {
       "title": "Module:Pets/data/Config",
       "page_id": 6393,
-      "revision_id": 20328,
-      "revision_timestamp": "2026-10-31T19:43:12Z",
-      "content_sha256": "d9ce91d84f5c727710145cab3dbb2e5a770de5f565e7493cd009fb749131aaf0",
-      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Config&oldid=20328"
+      "revision_id": 21017,
+      "revision_timestamp": "2026-11-19T05:01:42Z",
+      "content_sha256": "2cf82c7e65e9ad38b908a93a225ab5c3462a8f4c243b7e375e018d6c34f5aeb5",
+      "url": "https://wiki.biligame.com/nrc/index.php?title=Module:Pets/data/Config&oldid=21017"
     },
     "Natures": {
       "title": "Module:Natures/data",
@@ -894,8 +894,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E5%90%8C%E9%A2%91",
           "source_module": "Skills",
@@ -1520,8 +1520,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E9%A3%9E%E7%AE%AD",
           "source_module": "Skills",
@@ -1990,8 +1990,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E5%AE%88%E6%8A%A4%E5%92%92",
           "source_module": "Skills",
@@ -2472,8 +2472,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E6%AF%92%E8%82%BD",
           "source_module": "Skills",
@@ -2631,8 +2631,8 @@
         "uncertainty": [
           "描述未明说永久时长；客户端确认收到替换数据后直接更新本局技能槽，不足以推断服务器时序或持续性。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E9%95%9C%E5%83%8F%E5%8F%8D%E5%B0%84",
           "source_module": "Skills",
@@ -2946,8 +2946,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E7%84%9A%E5%B0%BD",
           "source_module": "Skills",
@@ -3295,8 +3295,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E6%B8%85%E6%B4%97",
           "source_module": "Skills",
@@ -3596,8 +3596,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E5%81%87%E5%86%92",
           "source_module": "Skills",
@@ -3939,8 +3939,8 @@
         "uncertainty": [
           "按当前目录系别/类别筛出的候选；未证明等于当前包或服务器精确巧变池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E5%8F%A0%E5%8A%A0%E6%80%81",
           "source_module": "Skills",
@@ -4194,8 +4194,8 @@
           "当前提取的SKILLFULLY_EXCHANGE_CONF _3_P仅有id，缺skillid；无法确认当前相关技能完整池。",
           "历史_2_P精确表项只能作为历史候选参考，不能冒充当前完整池。"
         ],
-        "snapshot_id": "20261105T124140+0800",
-        "source_version": "s5-2026-10-31",
+        "snapshot_id": "20261121T162937+0800",
+        "source_version": "s5-2026-11-19",
         "source": {
           "source_url": "https://wiki.biligame.com/nrc/%E6%9D%82%E8%80%8D",
           "source_module": "Skills",

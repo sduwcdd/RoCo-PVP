@@ -1,0 +1,352 @@
+{
+  "schema": "reviewed-trait-switch-components-20261030",
+  "snapshot_id": "20261105T124140+0800",
+  "policy": "source_bound_switch_slot_components_current_first_own_wing_v2",
+  "policies": {
+    "rounding": "existing_max_hp_ratio_floor_living_min_one",
+    "grant_lifetime": "until_successor_leaves",
+    "first_slot": "current_slot_zero_at_query_or_selected_slot_zero_at_committed_cast",
+    "wing_matching": "other_members_of_own_roster_only_carried_slots_including_bench",
+    "reflection_owners": "living_departing_owner_or_opposing_active_owner_only",
+    "multiple_reflections": "explicit_block_no_unverified_order",
+    "multiple_star_replacements": "explicit_block_no_arbitrary_first",
+    "zero_energy_switch": "existing_detach_eligibility_and_switch_executor",
+    "calibrated": false
+  },
+  "skills": [
+    {
+      "trait_id": 200142,
+      "name": "瞳中倒影",
+      "raw": {
+        "id": 200142,
+        "wiki_id": "skill_000061",
+        "name": {
+          "zh": "瞳中倒影"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "自己或其他精灵离场时，自己与更换入场的精灵交换血量百分比。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%9E%B3%E4%B8%AD%E5%80%92%E5%BD%B1",
+        "source_module": "Skills",
+        "desc_notes": [
+          3009
+        ]
+      },
+      "record_hash": "4e547850e56b724f633fa95f19a4b0ddb48f183e8b620713452bf8ab62529df4",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "switch.exchange_hp_ratio"
+        }
+      ]
+    },
+    {
+      "trait_id": 200156,
+      "name": "下黑手",
+      "raw": {
+        "id": 200156,
+        "wiki_id": "skill_000073",
+        "name": {
+          "zh": "下黑手"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "敌方精灵离场后，更换入场的精灵获得5层中毒。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%B8%8B%E9%BB%91%E6%89%8B",
+        "source_module": "Skills",
+        "desc_notes": [
+          3009,
+          1001
+        ]
+      },
+      "record_hash": "e3c262531329732b52cb7bbf905bac5e7bf7c7d0168a12262bb611c95072ab12",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "enemy_entry.status",
+          "status": "poison",
+          "stacks": 5
+        }
+      ]
+    },
+    {
+      "trait_id": 200166,
+      "name": "星地善良",
+      "raw": {
+        "id": 200166,
+        "wiki_id": "skill_000082",
+        "name": {
+          "zh": "星地善良"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "回合结束时，若场上的己方精灵能量等于0，自己立即替换此精灵。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%98%9F%E5%9C%B0%E5%96%84%E8%89%AF",
+        "source_module": "Skills"
+      },
+      "record_hash": "df7228a804c1e9ca024fe162ce62db45cbba60848942b34478afc0b7662446bd",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "round_end.replace_zero_energy_ally"
+        }
+      ]
+    },
+    {
+      "trait_id": 200171,
+      "name": "贪心算法",
+      "raw": {
+        "id": 200171,
+        "wiki_id": "skill_000086",
+        "name": {
+          "zh": "贪心算法"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "1号位技能获得传动1，且使用后使敌方获得6层灼烧。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95",
+        "source_module": "Skills",
+        "desc_notes": [
+          1033,
+          1002
+        ]
+      },
+      "record_hash": "adb94a6f623a874537a2be1258434c4bd3281241487030eab83fdc04f736688a",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "current_first.transmission",
+          "amount": 1
+        },
+        {
+          "op": "current_first.after_use.status",
+          "status": "burn",
+          "stacks": 6
+        }
+      ]
+    },
+    {
+      "trait_id": 200202,
+      "name": "茶多酚",
+      "raw": {
+        "id": 200202,
+        "wiki_id": "skill_000106",
+        "name": {
+          "zh": "茶多酚"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "离场后，更换入场的精灵回复20%生命且免疫寄生。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%8C%B6%E5%A4%9A%E9%85%9A",
+        "source_module": "Skills",
+        "desc_notes": [
+          3009,
+          1008
+        ]
+      },
+      "record_hash": "19c205d010330c1160755bd8ad1dfc1d5107fcd8c0f592b1613d5201581a39c6",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "successor.heal",
+          "percent": 20
+        },
+        {
+          "op": "successor.immune",
+          "status": "leech"
+        }
+      ]
+    },
+    {
+      "trait_id": 200211,
+      "name": "飓风",
+      "raw": {
+        "id": 200211,
+        "wiki_id": "skill_000113",
+        "name": {
+          "zh": "飓风"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "对本精灵的技能，若其他翼系精灵携带相同技能，则获得迅捷。被敌方精灵击败时，自己额外损失1点魔力。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%A3%93%E9%A3%8E",
+        "source_module": "Skills",
+        "desc_notes": [
+          1005
+        ]
+      },
+      "record_hash": "bdd8ea4e8ce6a42b40145a436cf0afce7d7cdead70a27152c0b44de74ccb82c1",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "swift.shared_wing_skill"
+        },
+        {
+          "op": "victory.direct_defeat_extra",
+          "role": "target",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "trait_id": 200234,
+      "name": "翼轴",
+      "raw": {
+        "id": 200234,
+        "wiki_id": "skill_000132",
+        "name": {
+          "zh": "翼轴"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "1号位技能获得迅捷和传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%BF%BC%E8%BD%B4",
+        "source_module": "Skills",
+        "desc_notes": [
+          1005,
+          1033
+        ]
+      },
+      "record_hash": "309d9af2ce543bfc9db78a647047923e9eea90c4ac551f8fb57922d2f72c73a9",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "current_first.swift"
+        },
+        {
+          "op": "current_first.transmission",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "trait_id": 200253,
+      "name": "吉利丁片",
+      "raw": {
+        "id": 200253,
+        "wiki_id": "skill_000150",
+        "name": {
+          "zh": "吉利丁片"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "离场后，更换入场的精灵获得双防+20%且免疫冻结。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%90%89%E5%88%A9%E4%B8%81%E7%89%87",
+        "source_module": "Skills",
+        "desc_notes": [
+          3009,
+          1004
+        ]
+      },
+      "record_hash": "df97a640dcb32798905a9ac9ef8e03faa158d65aae012986d9a8ba16742c188e",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "successor.stat",
+          "attributes": [
+            "pdef",
+            "mdef"
+          ],
+          "percent": 20
+        },
+        {
+          "op": "successor.immune",
+          "status": "freeze"
+        }
+      ]
+    },
+    {
+      "trait_id": 200103,
+      "name": "刺肤",
+      "raw": {
+        "id": 200103,
+        "wiki_id": "skill_000026",
+        "name": {
+          "zh": "刺肤"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "每受到1次攻击伤害，对攻击自己的精灵造成50威力物理伤害。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%88%BA%E8%82%A4",
+        "source_module": "Skills"
+      },
+      "record_hash": "d413998d360c1ea3ac32381b6ea300493f4f24a3475fc09112ee0bd523bb6774",
+      "when": {},
+      "event": "delegated.runtime",
+      "components": [
+        {
+          "op": "received_attack.retaliation",
+          "kind": "physical",
+          "power": 50,
+          "type": "无系别",
+          "effect_id": 1001013,
+          "can_trigger_retaliation": false,
+          "per_hit": true,
+          "fatal_owner_still_retaliates": true
+        }
+      ]
+    }
+  ],
+  "superseded_experimental_scope": {
+    "first_slot": "original_carried_slot_identity_zero_follows_permutations",
+    "wing_matching": "other_members_both_rosters_carried_slots_including_bench",
+    "status": "superseded_by_explicit_user_confirmation_20261030"
+  },
+  "user_confirmation": {
+    "source": "user_latest_message_20261030_current_first_slot_and_own_wing",
+    "basis": "用户确认",
+    "current_first_slot_traits": [
+      200171,
+      200234
+    ],
+    "wing_other_team_excluded": true,
+    "selection_snapshot": "Greedy burn follows action.slot at committed selection, not post-execution slot contents",
+    "retaliation": {
+      "source": "user_confirmation_20261030_thorns_damage_details",
+      "trait_id": 200103,
+      "power": 50,
+      "kind": "physical",
+      "type": "无系别",
+      "stab": 1,
+      "type_multiplier": 1,
+      "per_actual_positive_damage_hit": true,
+      "can_trigger_retaliation": false,
+      "fatal_owner_still_retaliates_this_hit": true
+    }
+  }
+}

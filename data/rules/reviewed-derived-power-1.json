@@ -1,6 +1,6 @@
 {
   "schema": "derived-power-1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "policy": "source_base_cost_vs_final_total_cost_before_hp_conversion_nonnegative_delta_v1",
   "skills": {
     "7021150": {

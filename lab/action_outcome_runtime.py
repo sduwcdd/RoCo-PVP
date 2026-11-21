@@ -10,7 +10,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / 'data/rules/reviewed-action-outcomes-1.json'
-CONFIG_SHA256 = 'efdc05b59003e9df28e2b077e257b48b0c99d89bfb08d56a0f0a6e47983b1799'
+CONFIG_SHA256 = '08797c60e4199111a24a1a3593240ec6fa079d666d9a0197e4435e31cc1925cd'
 POLICY = 'committed_direct_attack_defeat_and_matching_pending_interrupt_v1'
 POLICIES = {'proof': 'committed_direct_damage_living_to_zero_with_actor_target_and_occurrence',
     'interrupt': 'cancel_only_matching_uncommitted_declared_skill_this_turn',

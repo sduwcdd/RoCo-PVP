@@ -11,7 +11,7 @@ from lab.prepared_rules import prepare_rules
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "data/rules/reviewed-duration-components-1.json"
-CONFIG_HASH = '5330a9ea2da4cbb6f8f09499c40cbef7694caf1f3ae3d02792f8609e5c07d095'
+CONFIG_HASH = 'a80422bf712c4a247daa6a8c8ff01d3d484f1cc10c97f7cbd809dfe7b36ee312'
 POLICY = "source_bound_absolute_turn_duration_experiment_v1"
 POLICIES = {"duration": "application_turn_counts_in_declared_duration_experiment",
     "refresh": "same_buff_kind_replaces_previous_max_one_experiment",

@@ -1,0 +1,123 @@
+{
+  "schema": "reviewed-forced-switch-traits-1",
+  "snapshot_id": "20261105T124140+0800",
+  "traits": {
+    "200092": {
+      "record": {
+        "id": 200092,
+        "wiki_id": "skill_000017",
+        "name": {
+          "zh": "警惕"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "回合结束时，若自己能量为0则脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%AD%A6%E6%83%95",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "record_hash": "9e296028b29e0083590f426a3336922c3f0b1fb0d0db08cf32db4a3e10c8d629"
+    },
+    "200105": {
+      "record": {
+        "id": 200105,
+        "wiki_id": "skill_000028",
+        "name": {
+          "zh": "奔波命"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "使用防御技能后，回合结束时脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%A5%94%E6%B3%A2%E5%91%BD",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "record_hash": "5bc0082100abcf5a1e55f0d9b2cf45a9881096d5f0bbefd7c8d66daacfb86f03"
+    },
+    "200165": {
+      "record": {
+        "id": 200165,
+        "wiki_id": "skill_000081",
+        "name": {
+          "zh": "防过载保护"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "每次行动后脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%98%B2%E8%BF%87%E8%BD%BD%E4%BF%9D%E6%8A%A4",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "record_hash": "9ff743e9ababa622e15a21c335608a992bbe20336511d25f68072d3deb51bffd"
+    },
+    "200290": {
+      "record": {
+        "id": 200290,
+        "wiki_id": "skill_000172",
+        "name": {
+          "zh": "安可"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "使用光系技能后，回合结束时自己返场。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%AE%89%E5%8F%AF",
+        "source_module": "Skills",
+        "desc_notes": [
+          1024
+        ]
+      },
+      "record_hash": "159b4f659db669fb35f8633658439edf609deea3713c9eff58fcf749bc951c6e"
+    },
+    "200262": {
+      "record": {
+        "id": 200262,
+        "wiki_id": "skill_000155",
+        "name": {
+          "zh": "哨兵"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "回合开始时若敌方技能足够击败自己，自己获得速度+50，行动后脱离。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%93%A8%E5%85%B5",
+        "source_module": "Skills",
+        "desc_notes": [
+          1003
+        ]
+      },
+      "record_hash": "3dfd807ec4f429a5c62e8732e60b7540a03aa37c1483f17c8f81a8b8770a19df"
+    }
+  },
+  "policies": {
+    "version": "source_bound_forced_trait_actions_round_end_experiment_v1",
+    "timing": "after_action_or_after_existing_turn_end_trait_hooks",
+    "selection": "explicit_before_action_replacement_slot_retained_for_same_member_turn",
+    "pending": "only_active_living_same_member_at_round_end",
+    "action": "committed_skill_recharge_or_charge_setup_counts_switch_only_original_actor_if_still_active",
+    "ordering": "a_then_b_end_round_experiment"
+  },
+  "user_confirmation_20261030": {
+    "source": "user",
+    "sentry": "current noncrit nonresponse single-hit estimate; after-action detach; encore suppressed by other automatic departures"
+  }
+}

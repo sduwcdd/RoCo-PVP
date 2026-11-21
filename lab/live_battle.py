@@ -451,6 +451,14 @@ class _Pet:
         if form_changed or "cur_passive_skill" in inside:
             self._update_form_identity()
             self.first_slot_replaced = bool(self.feature_will_type)
+        level_changed = "level" in common and common["level"] != self.level
+        if level_changed:
+            self.attr_stats = {}
+            self.panel_stats = {}
+            self.max_hp = None
+            for fields in self.talent_evidence.get("dimensions", {}).values():
+                for key in ("base_value", "effort_add", "talent_add_value"):
+                    fields.pop(key, None)
         if (any(k in common and common[k] != getattr(self, k) for k in ("nature", "level")) or
             any(k in common and (common[k] or 0) != getattr(self, attr) for k,attr in
                 (("changed_nature_pos_attr_type","nature_pos_override"),("changed_nature_neg_attr_type","nature_neg_override")))):
@@ -820,6 +828,7 @@ class BattleTracker:
         self.pending_pets: list[dict[str, Any]] = []
         # 由实测伤害反推出来的面板：{pet_id: {"phyDef": [样本…], …}}。
         # These remain model-conditional candidates, never observed combat panels.
+        self.learned_panel_levels: dict[str, int | None] = {}
         self.learned_panels: dict[str, dict[str, list[float]]] = {}
         self.learned_panel_ranges: dict[str, dict[str, list[int]]] = {}
         self.damage_evidence: dict[str, list[dict[str, Any]]] = {}
@@ -1607,7 +1616,8 @@ class BattleTracker:
             # 我方 → 对方：解对方那一项防御。
             estimate = live_damage.panel_from_hit(
                 attack=float(caster.attr_stats[atk_key]), power=mathinfo["power"],
-                combined=mathinfo["combined"], damage=per_hit, critical=critical)
+                combined=mathinfo["combined"], damage=per_hit, critical=critical,
+                attacker_level=caster.level or 60)
             value = estimate.get("defense")
             if value and value > 0:
                 import math
@@ -1617,7 +1627,8 @@ class BattleTracker:
             # 对方 → 我方：解对方那一项攻击。
             estimate = live_damage.panel_from_hit(
                 defense=float(target.attr_stats[def_key]), power=mathinfo["power"],
-                combined=mathinfo["combined"], damage=per_hit, critical=critical)
+                combined=mathinfo["combined"], damage=per_hit, critical=critical,
+                attacker_level=caster.level or 60)
             value = estimate.get("attack")
             if value and value > 0:
                 self._record_panel(caster.pet_id, atk_key, value,
@@ -1626,6 +1637,7 @@ class BattleTracker:
     def _record_panel(self, pet_id: Any, key: str, value: float, lower=None, upper=None) -> None:
         if pet_id is None:
             return
+        self._clear_stale_panels(pet_id)
         bucket = self.learned_panels.setdefault(str(pet_id), {})
         bucket.setdefault(key, []).append(float(value))
         del bucket[key][:-6]          # 只留最近 6 个样本
@@ -1633,8 +1645,18 @@ class BattleTracker:
             # Keep the latest interval; different turns may have different buffs.
             self.learned_panel_ranges.setdefault(str(pet_id), {})[key] = [lower, upper]
 
+    def _clear_stale_panels(self, pet_id: Any) -> None:
+        identity = str(pet_id)
+        pet = self._pet_by_id.get(identity)
+        level = pet.level if pet else None
+        if identity in self.learned_panel_levels and self.learned_panel_levels[identity] != level:
+            self.learned_panels.pop(identity, None)
+            self.learned_panel_ranges.pop(identity, None)
+        self.learned_panel_levels[identity] = level
+
     def _learned_for(self, pet_id: Any) -> dict[str, float]:
         """取中位数：单个样本会被 buff/暴击/多段干扰，中位数更稳。"""
+        self._clear_stale_panels(pet_id)
         bucket = self.learned_panels.get(str(pet_id)) or {}
         out: dict[str, float] = {}
         for key, samples in bucket.items():

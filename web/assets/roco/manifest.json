@@ -1218,7 +1218,10 @@
   "5066": "5066.png",
   "3819": "3819.png",
   "5067": "5067.png",
-  "5068": "5068.png"
+  "5068": "5068.png",
+  "3822": "3822.png",
+  "3823": "3823.png",
+  "3824": "3824.png"
  },
  "type_icons": {
   "光系": "光.png",
@@ -1458,6 +1461,21 @@
    "url": "https://patchwiki.biligame.com/images/nrc/2/24/oz3rw0p59i5ithijoul5wl0ma96n06p.png",
    "sha256": "d4cd1fa58c235bf7895664cc1fd6d1ce967c413c2742df2d303df0acb161e92c",
    "bytes": 366082
+  },
+  "3822": {
+   "url": "https://patchwiki.biligame.com/images/nrc/d/d4/m2paulx7gda9n7uy684bqzeytzcjvcc.png",
+   "sha256": "05d2b4962abc216994ffdd33ce35fc6f60be6792753a7f942cf54540949f8d68",
+   "bytes": 236778
+  },
+  "3823": {
+   "url": "https://patchwiki.biligame.com/images/nrc/6/64/m48t5963ucbot1wi7j5c1hut4e3te21.png",
+   "sha256": "30310d8f023cb2278a6b8a8bca457c7973f95682c5342206e4ce7bf7e128aef1",
+   "bytes": 311779
+  },
+  "3824": {
+   "url": "https://patchwiki.biligame.com/images/nrc/a/a2/he7y3g2xfazw684toaylew2edehmm4b.png",
+   "sha256": "6563c345e4031791b29099a5c63bc50b19f3d45d8b489378980d07ee6a56b980",
+   "bytes": 347806
   }
  }
 }

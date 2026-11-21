@@ -1,0 +1,195 @@
+{
+  "schema": "bwiki-s5-hud-gates-1",
+  "snapshot_id": "20261105T124140+0800",
+  "real_game_verified": false,
+  "traits": {
+    "200327": {
+      "record_hash": "7b945df4f97a12973effd6a344779e6b387b302c1085c51b977e31b91d0b5c5a",
+      "name": "恶龙的奢望",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%81%B6%E9%BE%99%E7%9A%84%E5%A5%A2%E6%9C%9B",
+      "damage_roles": [
+        "attacker",
+        "defender"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "动态等级及低于80级的受伤加成尚无原生状态归因"
+    },
+    "200328": {
+      "record_hash": "a448b0d0b916b59d45a193c95a3af6ffccc520f1313c76622a98ccb0d61fe110",
+      "name": "圣龙的心愿",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9C%A3%E9%BE%99%E7%9A%84%E5%BF%83%E6%84%BF",
+      "damage_roles": [
+        "attacker",
+        "defender"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "队伍3能耗施放次数、入场等级及低于80级的受伤加成尚未接入"
+    },
+    "200329": {
+      "record_hash": "2bf851e0e32bb5d247d1cfb9be736c41908efec117bf6802182858562f6d8982",
+      "name": "银头寸",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%93%B6%E5%A4%B4%E5%AF%B8",
+      "damage_roles": [
+        "attacker"
+      ],
+      "damage_kinds": [
+        "magical",
+        "higher"
+      ],
+      "reason": "累计能量消耗产生的回合末魔攻加成尚无核对后的BUFF归因"
+    },
+    "200330": {
+      "record_hash": "de88cb14f9083a32875cae8afb17992005c7707ab11dd068557663fcf0d5e21b",
+      "name": "储备金",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%82%A8%E5%A4%87%E9%87%91",
+      "damage_roles": [
+        "attacker"
+      ],
+      "damage_kinds": [
+        "physical",
+        "higher"
+      ],
+      "reason": "聚能次数产生的回合末物攻加成尚无核对后的BUFF归因"
+    },
+    "200331": {
+      "record_hash": "598f982795bb0985c368f320b26f10562849aad356f8a76fb8ebb2c71e1f1f85",
+      "name": "换牙",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8D%A2%E7%89%99",
+      "damage_roles": [
+        "attacker"
+      ],
+      "damage_kinds": [
+        "physical",
+        "higher"
+      ],
+      "reason": "首次驱散自身减益的永久物攻加成触发状态尚未接入"
+    },
+    "200332": {
+      "record_hash": "b6a806d43f230233cc541e9d8ea8156efca94368489050f19b2506e191d11578",
+      "name": "护犊",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8A%A4%E7%8A%8A",
+      "damage_roles": [
+        "defender"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "队伍萌化状态对应的双防加成尚未接入"
+    },
+    "200337": {
+      "record_hash": "eb8b69c83c6780ababe8a15f066ca245143e07ee224e7e106949588f2ef5655c",
+      "name": "剪影",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%89%AA%E5%BD%B1",
+      "damage_roles": [
+        "attacker"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "敌方离场次数产生的累计技能威力加成尚未接入"
+    },
+    "200338": {
+      "record_hash": "e5384b21c0b1b01b01b70f8ef5b325d2b095ce66d11db48ebd65cb3a8b71d4ee",
+      "name": "游戏的本质",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%B8%B8%E6%88%8F%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%88%E6%BB%B4%E5%BB%BF%E8%B1%9A%EF%BC%89",
+      "damage_roles": [
+        "attacker",
+        "defender"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "入场1至20点结果及双方属性、威力、连击效果尚无核对后的状态归因"
+    },
+    "200340": {
+      "record_hash": "4d6d37a8374c8214070f0f16292dde4b5e1954cc0574088e0b337e23f4b0785c",
+      "name": "游戏的本质",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%B8%B8%E6%88%8F%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%88%E6%BB%B4%E6%BA%9C%E8%B1%9A%EF%BC%89",
+      "damage_roles": [
+        "attacker",
+        "defender"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "入场1至6点结果及双方属性效果尚无核对后的状态归因"
+    },
+    "280040": {
+      "record_hash": "0c9ef657639ad8cdb18a4bd4d2b1b15d0cfcc0ae4a1fb7a28169f2aa04561dc9",
+      "name": "烈冰钻",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%83%88%E5%86%B0%E9%92%BB",
+      "damage_roles": [
+        "attacker"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "敌方携带技能总能耗对应的威力加成尚未接入"
+    },
+    "280041": {
+      "record_hash": "2fc5ca0d70d39f0c2b01b940d01d62fa5e37399263d8ac6cb70550ca83681994",
+      "name": "圣龙的守护",
+      "source_url": "https://wiki.biligame.com/nrc/%E5%9C%A3%E9%BE%99%E7%9A%84%E5%AE%88%E6%8A%A4",
+      "damage_roles": [
+        "attacker",
+        "defender"
+      ],
+      "damage_kinds": [
+        "physical",
+        "magical",
+        "higher"
+      ],
+      "reason": "战斗升级次数、物攻加成及低于80级的受伤加成尚未接入"
+    }
+  },
+  "moves": {
+    "7120310": {
+      "record_hash": "e99e303c3995d07461f4d9c4451af1007ec145d0b9e2ff1880c37e3bd820d1e4",
+      "name": "投毒",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%8A%95%E6%AF%92",
+      "reason": "累计使敌中毒次数及对中毒目标施放产生的永久威力增量尚未接入"
+    },
+    "7160440": {
+      "record_hash": "ad90add46de2031bd20050608e0309ed646df0abcafbafb2e8cb5b123cc7038a",
+      "name": "恋恋不舍",
+      "source_url": "https://wiki.biligame.com/nrc/%E6%81%8B%E6%81%8B%E4%B8%8D%E8%88%8D",
+      "reason": "使敌获得减益次数对应的永久威力增量尚未接入"
+    },
+    "7170380": {
+      "record_hash": "fc3e7c003a0f13602beb98d003b3c86412b1228927fd61cb44b5522bd143b1ac",
+      "name": "灵扰",
+      "source_url": "https://wiki.biligame.com/nrc/%E7%81%B5%E6%89%B0",
+      "reason": "偷取能量是否触发对应的3至4连击及连击结算尚未接入"
+    },
+    "7110470": {
+      "record_hash": "6407296cbda79f2a471507646e10b9cb94e2ca556bb7e25d4161a79580a4cc48",
+      "name": "过充电",
+      "source_url": "https://wiki.biligame.com/nrc/%E8%BF%87%E5%85%85%E7%94%B5",
+      "reason": "是否已聚能对应的永久威力增量尚未接入"
+    },
+    "7100390": {
+      "record_hash": "96a686abf39734f7a11026f580b41b0e786b0014f87ef331a206fd3b2a6debf2",
+      "name": "龙之爪牙",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%BE%99%E4%B9%8B%E7%88%AA%E7%89%99",
+      "reason": "蓄力完成状态及5连击结算尚未接入"
+    }
+  }
+}

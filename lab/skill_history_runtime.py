@@ -14,7 +14,7 @@ from lab.prepared_rules import prepare_rules
 from lab.trait_runtime import cached_source_query
 
 CONFIG = ROOT / 'data/rules/reviewed-skill-history-1.json'
-CONFIG_SHA256 = 'c9b0cfdf38dc75b0931c7b73e3bcc4b88b1a631f1f5942dbbe7cd25d79ea7e9b'
+CONFIG_SHA256 = 'f552ec5cc07820aff27512117ea41188fe3ce29b5da09bb39b8573327b79258f'
 POLICY = 'source_bound_original_slot_skill_history_after_committed_events_v1'
 POLICIES = {'identity': 'original_bundle_owner_and_original_slot_with_per_skill_history',
     'after_use': 'committed_successful_skill_once_before_future_uses',

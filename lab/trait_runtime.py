@@ -14,10 +14,10 @@ from lab.ruleset import canonical_hash
 
 POLICY = 'source_bound_trait_events_research_v1'
 CONFIG = Path(__file__).resolve().parents[1] / 'data/rules/reviewed-trait-events-1.json'
-CONFIG_HASH = '366a0b451fec26783e982423d2784551b2313b163aa9ae4cd69ccc0aa54b3daa'
+CONFIG_HASH = 'd1671fac491452a0c69502c782ce613c352a2ee65d33c0022ffba5eacabb4814'
 ROOT = CONFIG.parents[2]
 CONFIRMED_CONFIG = ROOT / 'data/rules/reviewed-user-traits-20261030.json'
-CONFIRMED_CONFIG_HASH = 'f8be1dcd03a268d53c0a40ad31039707221a930852278788d2980e16921211e0'
+CONFIRMED_CONFIG_HASH = 'beccca2a7f83023f89b713454d0a5c15b117b6881e96058d35040f7a3e9f55dc'
 EVENTS = {'damage.super_effective', 'member.enter', 'member.leave', 'opponent.leave', 'skill.after', 'action.after', 'charge.start', 'turn.end', 'attack.received', 'attack.skill_received', 'member.faint', 'opponent.defeated'}
 CONDITIONS = {'energy_eq', 'skill_type', 'skill_kind', 'base_cost_eq', 'response_success',
               'skill_type_not', 'base_cost_gt', 'base_cost_lte', 'skill_id', 'not_same_type', 'attack_type_carried', 'attacker_stab', 'attacker_energy_eq', 'skill_kind_in', 'entry_first_action','first_attack','first_action','energy_spent_eq'}

@@ -16,7 +16,7 @@ from lab.phase_config import fingerprint
 from lab import trait_runtime as traits
 
 CONFIG = ROOT / 'data/rules/reviewed-trait-attack-hooks-1.json'
-CONFIG_SHA256 = '75869b5477e8a2f6a355b160efbafd096d4823ba858163d8944422949138b1a8'
+CONFIG_SHA256 = '4c4f52bcdf708d10844d8777c98a693a608abe1fff8638bfb4327e727cb566f1'
 POLICY = 'trait_lifesteal_actual_damage_sum_floor_once_action_hp_snapshot_v2'
 POLICIES = {'timing': 'after_payment_before_skill_hp_snapshot_then_after_whole_skill',
     'damage_basis': 'sum_committed_opponent_direct_attack_hp_loss',

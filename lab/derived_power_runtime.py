@@ -6,7 +6,7 @@ from lab.prepared_rules import prepare_rules
 from lab.ruleset import canonical_hash
 
 CONFIG = Path(__file__).resolve().parents[1] / 'data/rules/reviewed-derived-power-1.json'
-CONFIG_HASH = '9054fc001716893555efca1a672492fb17e5081c5d89bae5c2e6ca9a81533374'
+CONFIG_HASH = '09cd58bedd3f546b8edb16f442300659e48e167863f8428fbe6d130d63550e77'
 
 
 def rules():

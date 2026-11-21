@@ -8,7 +8,7 @@ from lab.prepared_rules import prepare_rules
 from lab.ruleset import canonical_hash
 
 CONFIG = Path(__file__).resolve().parents[1] / "data/rules/reviewed-forced-switch-traits-1.json"
-CONFIG_HASH = 'ceee9970e98061fb59db260e7a0f04246107cbc8a03c07cf9806e99a503fb4f1'
+CONFIG_HASH = '4205884c4e061949497e445c02565b506f3aa9544e38f8937c15305dbc36cb56'
 
 
 def _config():

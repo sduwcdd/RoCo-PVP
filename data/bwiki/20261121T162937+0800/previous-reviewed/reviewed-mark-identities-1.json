@@ -1,0 +1,1102 @@
+{
+  "schema": "reviewed-mark-identities-1",
+  "snapshot_id": "20261105T124140+0800",
+  "confirmation": {
+    "source": "user_confirmation",
+    "date": "2026-10-31",
+    "normal": "每方最多1正面和1负面，新普通印记替换旧同极性印记",
+    "independent": "里拉鳐印记独立存储和结算，不与普通同名印记合层"
+  },
+  "trait_id": 200225,
+  "trait_hash": "84258a83a73d3116de94f42cfb53f2ea5782204a8e89b0e6201713ab9e77583e",
+  "native_trait_hash": "90d8e41fc07dd8f835859ff7e1d6066fc20b6985bfc54ea44a15396780886822",
+  "native_trait": {
+    "id": 200225,
+    "name": "吟游之弦",
+    "desc": "赋予的<desc_id=3010>印记</>不会替换其他<desc_id=3010>印记</>，而是同时生效。",
+    "energy_cost": [
+      0
+    ],
+    "dam_para": [
+      0
+    ],
+    "type": 2,
+    "skill_dam_type": 1,
+    "damage_type": 1,
+    "skill_priority": 1,
+    "target_type": 9,
+    "cd_round": [
+      0,
+      0
+    ],
+    "skill_result": [
+      {
+        "effect_id": 21430010,
+        "cast_moment": 11
+      },
+      {},
+      {},
+      {},
+      {},
+      {
+        "effect_id": 1004117,
+        "cast_moment": 11
+      }
+    ],
+    "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+    "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200225.200225'",
+    "describe_type": [
+      0
+    ],
+    "target_blood_limit": [
+      0
+    ]
+  },
+  "replacement_bases": {
+    "2143001": {
+      "id": 2143001,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20010090
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20010092
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143002": {
+      "id": 2143002,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20070011
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20070012
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143003": {
+      "id": 2143003,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20170011
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20170012
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143004": {
+      "id": 2143004,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20210040
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20210042
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143005": {
+      "id": 2143005,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20210060
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20210061
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143006": {
+      "id": 2143006,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20230020
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20230022
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143007": {
+      "id": 2143007,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20320070
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20320071
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143008": {
+      "id": 2143008,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20490020
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20490021
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143009": {
+      "id": 2143009,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20490030
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20490031
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143010": {
+      "id": 2143010,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20530070
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20530071
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143011": {
+      "id": 2143011,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20930080
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20930081
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143012": {
+      "id": 2143012,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20940010
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20940011
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143013": {
+      "id": 2143013,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20370200
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20370201
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    },
+    "2143014": {
+      "id": 2143014,
+      "buffbase_order": 143,
+      "show_letters": [
+        1
+      ],
+      "buffbase_param": [
+        {
+          "params": [
+            20490390
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            20490391
+          ]
+        },
+        {
+          "params": [
+            0
+          ]
+        },
+        {
+          "params": [
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "buff_identities": {
+    "20010090": {
+      "mark_id": 1032,
+      "polarity": "negative",
+      "independent": false,
+      "native_hash": "cab58d2bacb349d5c4541f99c8d8528d4f1ea580fbe714a999ee4fab159d075c"
+    },
+    "20010092": {
+      "mark_id": 1032,
+      "polarity": "negative",
+      "independent": true,
+      "native_hash": "226e2cb60dee15cf4f3de277287d147ae2d0156324b90f3fa1f7fd17cd550ff9"
+    },
+    "20070011": {
+      "mark_id": 1014,
+      "polarity": "negative",
+      "independent": false,
+      "native_hash": "0eedce536378f61d466c22f20a3b30871346ece79fb98835acd724b49ba0c97d"
+    },
+    "20070012": {
+      "mark_id": 1014,
+      "polarity": "negative",
+      "independent": true,
+      "native_hash": "ce559c43897071e8a214d5911f4396ac7a1ef4a9a32807bd16d46df74bc386a0"
+    },
+    "20170011": {
+      "mark_id": 1021,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "177d52f14c9b78c39b547ab3166c51504259e5a0f6c80afffbd9cc5eabd82b8a"
+    },
+    "20170012": {
+      "mark_id": 1021,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "dceeb463529b72a45bc1689522b7a48a587a74d8c0eb7c616c77794f90392780"
+    },
+    "20210040": {
+      "mark_id": 1027,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "9f35ccd5c311657d7396148bda5e7679d2c7fafb1db6fd73ac3899c6109fec07"
+    },
+    "20210042": {
+      "mark_id": 1027,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "b028482b05b0823abccc3776f6dff4eaefcf4fee8744ddfcdd5d07a08b668d38"
+    },
+    "20210060": {
+      "mark_id": 1030,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "9dc98962cb7976d9989ead2b429ece96c5a97a09820c544bc136f72618326cc8"
+    },
+    "20210061": {
+      "mark_id": 1030,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "d6f29238592e1597cb3eebffa2324f00367b74199ccad8b48036cffb40ffe142"
+    },
+    "20230020": {
+      "mark_id": 1018,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "13d1aa1f8b1c43120e625848c9f56585186ae2d7c3ea47ea2a126554ee79a0f9"
+    },
+    "20230022": {
+      "mark_id": 1018,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "4c779b535ac89db2e25ac90d4e869389a6d0ce187091a14bb8447b00b32a9d51"
+    },
+    "20320070": {
+      "mark_id": 1022,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "36788bb6ff77256c4e4c89a472901523a99a709d64bc9f0ef5b65895cede9620"
+    },
+    "20320071": {
+      "mark_id": 1022,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "30e9439a543827f0de7fc35e608c13d000bc81294db4a9044f1929d287610243"
+    },
+    "20490020": {
+      "mark_id": 1028,
+      "polarity": "negative",
+      "independent": false,
+      "native_hash": "68b7e0c644e4d09e5c3eb21bcb304ad6fc3e8647472eb31df42248ef7eb9b9a6"
+    },
+    "20490021": {
+      "mark_id": 1028,
+      "polarity": "negative",
+      "independent": true,
+      "native_hash": "c84448bda7da835df5da2c04e65f25d6382e9af4434893347650d2b4097315e2"
+    },
+    "20490030": {
+      "mark_id": 1019,
+      "polarity": "negative",
+      "independent": false,
+      "native_hash": "8f5c8171b067621acbb92791019785b53491afeff8f25f2ed6666636cc1dde81"
+    },
+    "20490031": {
+      "mark_id": 1019,
+      "polarity": "negative",
+      "independent": true,
+      "native_hash": "3d97170b87aebd8e750422d2f162d10177a5e51a7a96264ecb20ce2ca86d355a"
+    },
+    "20530070": {
+      "mark_id": 1031,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "4ae40c25798419aa3f8bacf8e4bc911f8aaaf57a9432ddfc80279801ed20e80b"
+    },
+    "20530071": {
+      "mark_id": 1031,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "8879b570689c0f276614bcda44bb3a3fdf203fbcd0cc81064382053de9f3bc3e"
+    },
+    "20930080": {
+      "mark_id": 1023,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "6e53741343d68fe7613bac65edbe1c5bea3e797cb0c1c8f74bf07321e20896b4"
+    },
+    "20930081": {
+      "mark_id": 1023,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "fbbbd430778e82e763421ef69a5fd349cbb27b6ddf0a038bfda3319bda4feffe"
+    },
+    "20940010": {
+      "mark_id": 1035,
+      "polarity": "negative",
+      "independent": false,
+      "native_hash": "e4986cdf51a6ca092969d266615cd21e4939a842e694b1a23010fbd1318b155b"
+    },
+    "20940011": {
+      "mark_id": 1035,
+      "polarity": "negative",
+      "independent": true,
+      "native_hash": "23160199220219c4c1344bf29bbf1e69f9f6273896a3534940dcea58ae0ebfda"
+    },
+    "20370200": {
+      "mark_id": 3012,
+      "polarity": "positive",
+      "independent": false,
+      "native_hash": "1bbbcdc0b355ad68deaff3ffa5cda8e701a78ba7d245830ca7059c1ef5937089"
+    },
+    "20370201": {
+      "mark_id": 3012,
+      "polarity": "positive",
+      "independent": true,
+      "native_hash": "e973693779d52048824fc951811463ce4d5d3def1b58ce9cb974df62d4c589c0"
+    },
+    "20490390": {
+      "mark_id": 3020,
+      "polarity": "negative",
+      "independent": false,
+      "native_hash": "12de665537abd0eb57e9c8dd4aed1e8d25caaac36e2b0383a27954e8954163b9"
+    },
+    "20490391": {
+      "mark_id": 3020,
+      "polarity": "negative",
+      "independent": true,
+      "native_hash": "e5e453cbc21248841c5a1e3587270a4566f8f478496d64a9eb4aa8c60d0c4a96"
+    }
+  },
+  "sources": {
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "data/external/buff.json": "c3297bf6f706c03bcdfd75524f257cb3db22bc6ef2c2a0862b7c6cf3ca526479",
+    "data/external/skill.json": "88be522f61fc73cae1e85b76bf671c70c7588302c20afa86b2207ea6aa839296"
+  },
+  "uncertainties": [
+    "未列入明确转换引用的同基础效果BUFF不自动视为印记；独立印记之间未由报文确定的触发顺序保持待核实"
+  ],
+  "non_field_buffs": {
+    "20890110": {
+      "native_hash": "777c07515384f611708ed504ab05b96b62f066810cbf3201784bc98e90927861",
+      "raw": {
+        "id": 20890110,
+        "buff_base_ids": [
+          2089011
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "type": 4,
+        "add_max": 1,
+        "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ]
+      },
+      "classification": "skill_listener_not_positive_or_negative_field_mark",
+      "basis": "原生type4但分组0，不属于场地印记分组26；透镜实验已有选择组件来源包含此监听BUFF。",
+      "source_skill_id": 7060260,
+      "source_path": "data/rules/reviewed-choice-components-1.json",
+      "installation_bases": {
+        "2017352": {
+          "id": 2017352,
+          "buffbase_order": 17,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20890110
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2017361": {
+          "id": 2017361,
+          "buffbase_order": 17,
+          "trigger_type": 60,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20890110
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2089011": {
+          "id": 2089011,
+          "buffbase_order": 89,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                20010838
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2001081": {
+          "id": 2001081,
+          "buffbase_order": 1,
+          "show_letters": [
+            3
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                29
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "uncertainty": "order89的完整监听条件未完全解码；本修复仅确认其不占普通或独立正负面印记槽，不新增结算效果。"
+    }
+  }
+}

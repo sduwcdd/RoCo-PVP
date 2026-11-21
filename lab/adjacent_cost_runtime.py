@@ -22,7 +22,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / "data/rules/reviewed-adjacent-cost-1.json"
-CONFIG_SHA256 = '35656eec1d73621e3a335b27ef1c37c8255b7a7b8e474cfd38b55d70dac95a7c'
+CONFIG_SHA256 = '7816d1d641d71a55feb86667091e76a684c9eec32011e5415a648c44214a1007'
 POLICY = "source_bound_adjacent_cost_aura_v1"
 POLICIES = {
     "adjacency": "immediate_neighbours_by_slot_index_without_wrap_edge_slots_use_existing_neighbours",

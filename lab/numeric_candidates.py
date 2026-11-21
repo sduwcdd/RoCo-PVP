@@ -181,7 +181,7 @@ def _damage_inputs(attack, defense, effective_power, multiplier):
 def _documented_level_damage(attack, defense, effective_power, multiplier, level, coefficient, source):
     """Documented Arena expression; nominal single-hit damage, never HP loss.
 
-    The expression is evaluated in binary64 as A*P*M*(37/41), then Math.round,
+    The expression is evaluated in binary64 as A*P*M*coefficient, then Math.round,
     division by D and floor. This is a stated expression candidate, not a claim
     to reproduce all code paths of Arena's current damage implementation.
     """
@@ -210,7 +210,8 @@ def arena_documented_damage60(attack, defense, effective_power, multiplier):
 
 def native_world_level_damage(attack, defense, effective_power, multiplier, level, parameters, source):
     """Native level parameters combined with the existing arithmetic candidate."""
-    _integer(level, "world level", 1, 60)
+    # PetData.level is uint32. The protocol domain is not a calibrated gameplay cap.
+    _integer(level, "battle level", 1, 2**32 - 1)
     magnitude = _number(parameters["level_magnitude"], "level magnitude", positive=True)
     addition = _number(parameters["level_add"], "level addition", positive=True)
     denominator = _number(parameters["denominator"], "level denominator", positive=True)

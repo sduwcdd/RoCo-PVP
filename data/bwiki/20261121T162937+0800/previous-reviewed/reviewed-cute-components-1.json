@@ -1,0 +1,219 @@
+{
+  "schema": "reviewed-cute-components-1",
+  "snapshot_id": "20261105T124140+0800",
+  "policy": "user_confirmed_cast_local_gain_and_alive_party_layers_20261030",
+  "source": {
+    "kind": "user_confirmation",
+    "message": "20261030_rules_6",
+    "statement": "获得萌化仅在本次施放时判定；满层不算获得，200182例外；月光合奏统计替补不统计力竭。 萌化降阶HP按百分比，能量、状态、印记、永久增益均保留。"
+  },
+  "hp_transfer_policy": "user_confirmed_percentage_existing_floor_min_one_v1",
+  "form_identity_policy": "explicit_native_predecessor_same_trait_preserve_owned_runtime_v1",
+  "unlimited_trait": {
+    "id": 200182,
+    "raw": {
+      "id": 200182,
+      "wiki_id": "skill_000094",
+      "name": {
+        "zh": "无忧无虑"
+      },
+      "type": "无系别",
+      "kind": "trait",
+      "energy": 0,
+      "desc": {
+        "zh": "可获得的萌化层数不受限制。"
+      },
+      "source_url": "https://wiki.biligame.com/nrc/%E6%97%A0%E5%BF%A7%E6%97%A0%E8%99%91",
+      "source_module": "Skills",
+      "desc_notes": [
+        1006
+      ]
+    },
+    "record_hash": "d18d21f821a8beb268d8251a8978309c366a3cc5b453ff6d2eb7ef2728ecb4e6"
+  },
+  "skills": {
+    "7020770": {
+      "record_hash": "728183c3a132c74ab46928a2b1f4481e580d5cc539665a896916a2c5d678fe82",
+      "raw": {
+        "id": 7020770,
+        "wiki_id": "skill_000286",
+        "name": {
+          "zh": "退化"
+        },
+        "type": "普通系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "敌方获得1层萌化。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%80%80%E5%8C%96",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "gain": [
+        "opponent"
+      ]
+    },
+    "7160140": {
+      "record_hash": "6b096a15eff40f00b66e23a1fcc21e8a8135a608ad106eda6ad14c690fe868ee",
+      "raw": {
+        "id": 7160140,
+        "wiki_id": "skill_000718",
+        "name": {
+          "zh": "超级糖果"
+        },
+        "type": "萌系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，自己获得萌化：本次技能威力+60。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%B6%85%E7%BA%A7%E7%B3%96%E6%9E%9C",
+        "source_module": "Skills",
+        "power": 100,
+        "desc_notes": [
+          1006
+        ]
+      },
+      "gain": [
+        "self"
+      ],
+      "bonus_power_if_gained": 60
+    },
+    "7160170": {
+      "record_hash": "63b0611190cccc58ee186fa0e0525171009b84b9c4a7fde8c27936b3e4e8abc2",
+      "raw": {
+        "id": 7160170,
+        "wiki_id": "skill_000721",
+        "name": {
+          "zh": "示弱"
+        },
+        "type": "萌系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己获得萌化：速度永久+130。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%A4%BA%E5%BC%B1",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "gain": [
+        "self"
+      ],
+      "speed_if_gained": 130
+    },
+    "7160180": {
+      "record_hash": "40c8fbde5ff3d8e0d74c20396a6028ab8e936f5dce960b0d3835b218526144af",
+      "raw": {
+        "id": 7160180,
+        "wiki_id": "skill_000722",
+        "name": {
+          "zh": "赤子之心"
+        },
+        "type": "萌系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己获得萌化：全技能能耗永久-2。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%B5%A4%E5%AD%90%E4%B9%8B%E5%BF%83",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "gain": [
+        "self"
+      ],
+      "cost_if_gained": -2
+    },
+    "7160200": {
+      "record_hash": "184ef7b56cbba30236fa7d0061c9f1079506337b0b19c04b5661932a3b0b54f1",
+      "raw": {
+        "id": 7160200,
+        "wiki_id": "skill_000724",
+        "name": {
+          "zh": "甜心续航"
+        },
+        "type": "萌系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "自己和敌方获得萌化：回复40%生命。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%94%9C%E5%BF%83%E7%BB%AD%E8%88%AA",
+        "source_module": "Skills",
+        "desc_notes": [
+          1006
+        ]
+      },
+      "gain": [
+        "self",
+        "opponent"
+      ],
+      "heal_if_gained": [
+        40,
+        100
+      ]
+    },
+    "7160250": {
+      "record_hash": "ec251ebbf207a291c579a7725276cfc8202fea3bab165b696c736d8aba0e6ec2",
+      "raw": {
+        "id": 7160250,
+        "wiki_id": "skill_000729",
+        "name": {
+          "zh": "撒娇"
+        },
+        "type": "萌系",
+        "kind": "magical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成魔伤，3连击。自己获得萌化：全技能威力永久+10。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%92%92%E5%A8%87",
+        "source_module": "Skills",
+        "power": 30,
+        "desc_notes": [
+          1006
+        ]
+      },
+      "gain": [
+        "self"
+      ],
+      "base_hits": 3,
+      "permanent_power_if_gained": 10
+    },
+    "7160280": {
+      "record_hash": "d1f048ca2ce113c2293d7c6ac1fe28f48286e1d91f3c23de3bce98a62dd0cba5",
+      "raw": {
+        "id": 7160280,
+        "wiki_id": "skill_000732",
+        "name": {
+          "zh": "月光合奏"
+        },
+        "type": "萌系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，1连击，双方携带的所有精灵每有1层萌化，本次技能连击数+1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%9C%88%E5%85%89%E5%90%88%E5%A5%8F",
+        "source_module": "Skills",
+        "power": 30,
+        "desc_notes": [
+          1006
+        ]
+      },
+      "gain": [],
+      "base_hits": 1,
+      "hits_per_alive_cute_layer": 1
+    }
+  },
+  "cast_order_policy": "cast_local_gain_before_damage_named_experiment_v1",
+  "rounding_uncertainty": "HP百分比继承沿共享版本向下取整，存活最低1；本轮未单独实战校准取整边界。"
+}

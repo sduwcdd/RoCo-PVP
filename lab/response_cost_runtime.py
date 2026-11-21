@@ -22,7 +22,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / "data/rules/reviewed-response-cost-1.json"
-CONFIG_SHA256 = 'd996cc1896a4e0f7f46bb4677f54f7d376d6b523ae55eb1c02afa4975f9ae192'
+CONFIG_SHA256 = 'a8c88549d4a45533712fb6204d0aa7bde2e3da2a14d0739cce8f34e14319862a'
 POLICY = "source_bound_response_cost_ledger_v1"
 POLICIES = {
     "discount": "minus_three_per_successful_response_for_the_owning_skill_only",

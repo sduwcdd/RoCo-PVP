@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import patch
 
 from lab import live_inference, live_modifiers
+from lab.live_damage import _damage_case, _rules
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,15 +19,10 @@ def pet(tid=0, **changes):
 class S5HUDGateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.catalog = json.loads((ROOT / "data/bwiki/20261105T124140+0800/catalog.json").read_text(encoding="utf8"))
+        cls.catalog = _rules()[0]
         cls.gates = json.loads(live_modifiers.S5_HUD_GATES.read_text(encoding="utf8"))
 
-    def setUp(self):
-        self.rules = patch("lab.live_damage._rules", return_value=(self.catalog, None))
-        self.rules.start()
-        self.addCleanup(self.rules.stop)
-
-    def test_all_eleven_source_bound_damage_traits_block_relevant_equations(self):
+    def test_missing_required_state_blocks_all_eleven_traits(self):
         self.assertEqual(len(self.gates["traits"]), 11)
         for tid, row in self.gates["traits"].items():
             for role in row["damage_roles"]:
@@ -34,6 +30,30 @@ class S5HUDGateTests(unittest.TestCase):
                     pair = (pet(int(tid)), pet()) if role == "attacker" else (pet(), pet(int(tid)))
                     with self.subTest(tid=tid, role=role, kind=kind), self.assertRaisesRegex(ValueError, row["reason"]):
                         live_modifiers.damage_profile(*pair, 7040370, {"kind": kind})
+
+    def test_reported_level_drives_damage_and_the_strict_defender_threshold(self):
+        panels = {"phyAtk": 200, "phyDef": 100, "magAtk": 200, "magDef": 100}
+        source = pet(200327, petBaseId=3798, level=99, battleStats=panels)
+        target = pet(level=60, battleStats=panels)
+        move = {"skillId": 7040370, "kind": "physical", "power": 80, "skillType": "普通系",
+                "stab": 1, "multiplier": 1, "combined": 1}
+        self.assertEqual(_damage_case(source, target, move, "physical")["minimum"], 212)
+        for tid, form, percent in ((200327, 3798, 40), (200328, 3168, 30), (280041, 5068, 30)):
+            for level in (79, 80):
+                with self.subTest(tid=tid, level=level):
+                    defender = pet(tid, petBaseId=form, level=level, battleStats=panels)
+                    result = _damage_case(source, defender, move, "physical")
+                    factor = 100 + percent if level == 79 else 100
+                    self.assertEqual(result["minimum"], 212 * factor // 100)
+                    self.assertEqual(result["effects"]["reported_level_traits"]["defender"]["level"], level)
+        guardian = pet(280041, petBaseId=5068, level=99, battleStats=panels)
+        with self.assertRaisesRegex(ValueError, "累计升级次数"):
+            _damage_case(guardian, target, move, "physical")
+        magical = _damage_case(guardian, target, {**move, "kind": "magical"}, "magical")
+        self.assertEqual(magical["minimum"], 212)
+        dragon = pet(200327, petBaseId=3798, level=79, battleStats=panels)
+        rounded = _damage_case(target, dragon, {**move, "power": 50}, "physical")
+        self.assertEqual(rounded["minimum"], 126)  # 90 × 1.4 is just below 126 in binary64.
 
     def test_only_damage_relevant_roles_and_kinds_are_blocked(self):
         safe = [(pet(200329), pet(), "physical"), (pet(), pet(200329), "magical"),

@@ -10,7 +10,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / 'data/rules/reviewed-slot-components-1.json'
-CONFIG_SHA256 = 'c264b0c2c89d30d8aef328851f6ee800b31df07c5cb4f3ba3434f6be9af61fb4'
+CONFIG_SHA256 = 'cf9db8b03f4ad588a7b3a02a45491ff655d87d273b7b61cd3357030f45808a5f'
 POLICY = 'source_bound_slot_permutation_and_bundle_transfer_v1'
 POLICIES = {'neighbors': 'interior_left_and_right_only_edge_wrap_unresolved',
     'locks': 'never_move_locked_indices_unknown_collision_blocks',

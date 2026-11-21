@@ -5,7 +5,7 @@
 应对成功单独给出条件分支；不预设对方行动，排除防御选择、其他条件连击、首领化及光合治愈。
 未知条件给出区间或具体阻断原因；公式、状态叠加和触发顺序仍未全量实战校准。
 
-数值口径（与 ``arena_documented_damage60_v1`` 相同）：
+60级数值口径（其余等级采用原包等级系数候选）：
 
     numerator = round(攻方面板 × 每段威力 × 属性倍率 × 本系倍率 × 37/41)
     damage    = floor(numerator / 守方面板)
@@ -22,7 +22,7 @@ from typing import Any
 from .pvp_rules import SAME_TYPE_MULTIPLIER, CRITICAL_MULTIPLIER
 from . import battle_data
 from .numeric_candidates import arena_documented_damage60
-from .live_stat_model import is_world, star_candidates, stat_candidates
+from .live_stat_model import damage_at_level, is_world, star_candidates, stat_candidates
 
 # skill_dam_type 数字 ↔ 属性名。battle_data 里是「草」，规则快照里是「草系」，
 # 这里统一成规则侧写法，属性倍率才查得到。
@@ -218,9 +218,6 @@ def _base_hits(catalog, skill_id):
 # 野外/NPC 对局里敌方 battle_attr 往往只下发生命（攻防全 0），所以「对方攻防未
 # 下发」时只能给出候选；裸伤害公式反解仍受未建模的增减伤影响，不能当作真实面板。
 
-_FACTOR = Fraction(37, 41)
-
-
 def skill_math(skill_id: int, attacker_base: Any, defender_base: Any) -> dict[str, Any]:
     """技能的静态部分：类型（物/魔/取高）、威力、属性倍率 × 本系倍率。
 
@@ -311,10 +308,10 @@ def _hits_of(catalog, skill_id: int, info: dict) -> int:
 
 def panel_from_hit(*, attack: float | None = None, defense: float | None = None,
                    power: float, combined: float, damage: float,
-                   critical: bool = False) -> dict[str, float]:
+                   critical: bool = False, attacker_level: int = 60) -> dict[str, float]:
     """已知一侧面板 + 一次实测伤害 → 反推另一侧面板。
 
-    结算式：``damage = floor(round(攻 × 威力 × 倍率 × 37/41) / 防)``，
+    结算式：``damage = floor(round(攻 × 威力 × 倍率 × 攻方等级系数) / 防)``，
     所以 ``防 ∈ (num/(damage+1), num/damage]``，取区间中点为估计值。
     """
     if damage is None or damage <= 0 or power <= 0 or combined <= 0:
@@ -322,7 +319,7 @@ def panel_from_hit(*, attack: float | None = None, defense: float | None = None,
     if critical:
         combined = combined * _CRIT_MULTIPLIER
     if attack and attack > 0:
-        num = arena_documented_damage60(attack, 1, power, combined)["nominal_damage"]
+        num = damage_at_level(attacker_level, attack, 1, power, combined)["nominal_damage"]
         if num <= 0:
             return {}
         low = num / (damage + 1)
@@ -330,12 +327,13 @@ def panel_from_hit(*, attack: float | None = None, defense: float | None = None,
         return {"defense": (low + high) / 2, "defenseLow": low, "defenseHigh": high}
     if defense and defense > 0:
         # Invert the same integer expression, including rounding before division.
-        upper = max(2, math.ceil((damage + 1) * defense / (power * combined * float(_FACTOR))) + 4)
+        coefficient = damage_at_level(attacker_level, 1, 1, power, combined)["trace"]["coefficient_binary64"]
+        upper = max(2, math.ceil((damage + 1) * defense / (power * combined * coefficient)) + 4)
         def first_above(threshold):
             left, right = 1, upper
             while left < right:
                 mid = (left + right) // 2
-                dealt = arena_documented_damage60(mid, defense, power, combined)["nominal_damage"]
+                dealt = damage_at_level(attacker_level, mid, defense, power, combined)["nominal_damage"]
                 if dealt >= threshold:
                     right = mid
                 else:
@@ -510,12 +508,16 @@ def _damage_case(attacker, defender, profile, kind, attack_values=None):
     if attack_values is not None:
         attack = attack_values
     defense, defense_source = panel_candidates(defender, defense_key, attacker)
+    level_ratio = profile.get("levelTraitDamageRatio")
     def hit(a, d, power, final_factor, critical=1):
         from .live_stat_model import damage_value
         nominal = damage_value(attacker, a, d, power, profile["combined"] * critical)
+        if level_ratio:
+            numerator, denominator = level_ratio
+            return nominal * Fraction(str(final_factor)) * numerator // denominator
         return math.floor(nominal * final_factor)
     low_power, high_power = profile["powerRange"]
-    low_final, high_final = profile["finalMultiplierRange"]
+    low_final, high_final = profile.get("levelTraitBaseFinalRange", profile["finalMultiplierRange"])
     critical_multiplier = 2 if is_world(attacker) else _CRIT_MULTIPLIER
     return {
         "minimum": hit(min(attack), max(defense), low_power, low_final),
@@ -581,6 +583,9 @@ def _estimate_profile(attacker, defender, profile, higher_values=None):
              "perHitMin": minimum // hits, "perHitMax": maximum // hits,
              "criticalPerHitMin": crit_low // hits, "criticalPerHitMax": crit_high // hits,
              "effects": [c["effects"] for c in cases]}
+    if (attacker.get("level") or 60) > 60:
+        entry["levelDamageCandidate"] = {"attackerLevel": attacker["level"], "calibrated": False,
+                                        "source": "data/rules/reviewed-world-npc-stats-1.json"}
     if exact:
         entry.update(normal=minimum, critical=crit_low, perHit=minimum // hits)
     hp, max_hp = defender.get("currentHp"), defender.get("maxHp")

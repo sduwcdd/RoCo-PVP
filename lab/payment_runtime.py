@@ -15,7 +15,7 @@ from lab.phase_config import fingerprint
 from lab.trait_runtime import cached_source_query
 
 CONFIG = ROOT / 'data/rules/reviewed-health-payment-1.json'
-CONFIG_SHA256 = 'ac07b2b2acee7e1f66a5caab622f9e9cb608ed048e1c65b7574ecea402bfd67a'
+CONFIG_SHA256 = '661fb93b1200d2e7812fcdca7601ad30bb8f310383e46d0aa2ce90f494f0a899'
 POLICY = 'missing_energy_five_percent_max_hp_floor_total_nonlethal_v1'
 
 

@@ -15,9 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 STAT_DIM = {"hp": "hp", "phyAtk": "patk", "magAtk": "matk", "phyDef": "pdef", "magDef": "mdef", "spd": "spd"}
 STAT_FIELD = {"phyAtk": "phyAtkPercent", "magAtk": "magAtkPercent", "phyDef": "phyDefPercent", "magDef": "magDefPercent", "spd": "speedPercent"}
 ENTRY_BUFF_CONFIG = ROOT / "data/rules/reviewed-live-entry-buffs-1.json"
-ENTRY_BUFF_CONFIG_HASH = '74c7d0fdc9261bb11a2e9d5976a0aa2f583448060b452a2364f99a9f20867382'
+ENTRY_BUFF_CONFIG_HASH = '391482f833c7901726bef67a03261b363936d47f1d6b46f6da9ecf31ed5be26c'
 S5_HUD_GATES = ROOT / "data/rules/reviewed-s5-hud-gates-1.json"
-S5_HUD_GATES_HASH = "7c56477faeb7db138f689cf54775d46044fd816719e5802e8119ad9c499fa47d"
+S5_HUD_GATES_HASH = '624c28cc0980d6fa87fe9a3fe613648825092126869fbbc208387fb4283a36ed'
 
 
 @lru_cache(maxsize=2)
@@ -29,7 +29,7 @@ def _s5_hud_gates(stamp):
 
 
 def validate_damage_support(attacker, defender, skill_id, profile):
-    """Block only source-bound S5 damage equations missing reviewed state mapping."""
+    """Validate the active rules and return conditions based on reported pet levels."""
     from .live_damage import _rules, _effective_base
     from .ruleset import canonical_hash
     gates = _s5_hud_gates(S5_HUD_GATES.stat().st_mtime_ns)
@@ -41,17 +41,18 @@ def validate_damage_support(attacker, defender, skill_id, profile):
             catalog = _rules()[0]
         return catalog
 
-    def block(group, identity, row):
+    def verify(group, identity, row):
         data = current_catalog()
         if (data.get("snapshot_id") != gates["snapshot_id"]
                 or canonical_hash(data.get(group, {}).get(str(identity))) != row["record_hash"]):
             raise ValueError(f"{row['name']}：S5伤害待接入条目与当前快照来源不符")
-        raise ValueError(f"{row['name']}：{row['reason']}；暂不用于伤害估计或伤害反推")
 
     sid = battle_data.canonical_skill(skill_id).get("skill_id", skill_id)
     row = gates["moves"].get(str(sid))
     if row:
-        block("moves", sid, row)
+        verify("moves", sid, row)
+        raise ValueError(f"{row['name']}：{row['reason']}；暂不用于伤害估计或伤害反推")
+    levels = {}
     for role, pet in (("attacker", attacker), ("defender", defender)):
         if "_simulation_actor" in pet:
             tid = pet["_simulation_actor"].get("trait_id")
@@ -65,8 +66,19 @@ def validate_damage_support(attacker, defender, skill_id, profile):
                                  if str(form_id) in (str(form.get("id")), str(form.get("game_id")))), {})
                     tid = form.get("trait_id")
         row = gates["traits"].get(str(tid))
-        if row and role in row["damage_roles"] and profile.get("kind") in row["damage_kinds"]:
-            block("traits", tid, row)
+        if not row or role not in row["damage_roles"] or profile.get("kind") not in row["damage_kinds"]:
+            continue
+        verify("traits", tid, row)
+        condition = row.get("level_condition")
+        level = pet.get("level")
+        if not condition or type(level) is not int or level <= 0 or "_simulation_actor" in pet:
+            raise ValueError(f"{row['name']}：{row['reason']}；暂不用于伤害估计或伤害反推")
+        if role == "attacker" and profile["kind"] in condition.get("blocked_attack_kinds", []):
+            raise ValueError(f"{row['name']}：{condition['attack_blocker']}")
+        percent = condition["received_damage_percent"] if role == "defender" and level < condition["below"] else 0
+        levels[role] = {"trait_id": int(tid), "level": level, "received_damage_percent": percent,
+                        "source": "battle_common_pet_info.level", "calibrated": False}
+    return levels
 
 
 @lru_cache(maxsize=2)
@@ -549,8 +561,28 @@ def panel_candidates(pet, stat, opponent):
 
 
 def damage_profile(attacker, defender, skill_id, profile):
+    levels = validate_damage_support(attacker, defender, skill_id, profile)
+    result = _base_damage_profile(attacker, defender, skill_id, profile)
+    if not levels:
+        return result
+    if isinstance(result["effects"], dict):
+        result["effects"]["reported_level_traits"] = levels
+        reviewed_ids = {entry["trait_id"] for entry in levels.values()}
+        if "unreviewed_trait_ids" in result["effects"]:
+            result["effects"]["unreviewed_trait_ids"] = [tid for tid in result["effects"]["unreviewed_trait_ids"]
+                                                        if tid not in reviewed_ids]
+    else:
+        result["effects"].append({"reported_level_traits": levels})
+    percent = levels.get("defender", {}).get("received_damage_percent", 0)
+    if percent:
+        result["levelTraitBaseFinalRange"] = result["finalMultiplierRange"]
+        result["levelTraitDamageRatio"] = [100 + percent, 100]
+        result["finalMultiplierRange"] = [factor * (100 + percent) / 100 for factor in result["levelTraitBaseFinalRange"]]
+    return result
+
+
+def _base_damage_profile(attacker, defender, skill_id, profile):
     from .live_damage import _rules, _pet_types
-    validate_damage_support(attacker, defender, skill_id, profile)
     if profile.get('retaliationTraitId') == 200103:
         from .trait_switch_components import retaliation_source
         source = retaliation_source(actor(attacker))

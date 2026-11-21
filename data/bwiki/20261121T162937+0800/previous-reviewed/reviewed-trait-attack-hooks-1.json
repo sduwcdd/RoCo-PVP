@@ -1,0 +1,611 @@
+{
+  "schema": "reviewed-trait-attack-hooks-1",
+  "policy": "trait_lifesteal_actual_damage_sum_floor_once_action_hp_snapshot_v2",
+  "snapshot_id": "20261105T124140+0800",
+  "stacking_rule": {
+    "combine": "sum_active_percentages",
+    "restore": "single",
+    "rounding": "floor_once_on_total_actual_damage_after_percentage_sum",
+    "rounding_source": "existing_simulator_floor_policy_pending_live_calibration",
+    "eligibility_source": "existing_pre_heal_hp_snapshot",
+    "hp_cap": "declared_max_hp",
+    "source": "user_instruction_20261030",
+    "status": "user_confirmed_pending_live_calibration",
+    "statement": "技能吸血和特性吸血同时生效时比例相加，统一回复；不按两个回复的先后顺序结算。",
+    "scope": [
+      "direct_skill",
+      "skill_granted_buff",
+      "trait"
+    ],
+    "excluded": [
+      "team_devotion"
+    ]
+  },
+  "sources": {
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "traits": {
+    "200139": {
+      "trait_id": 200139,
+      "record_hash": "10cd8065b59e5c8798c6b7a41dd2fa19c840668763dacc8e349bfddfddc7fe92",
+      "percent": 50,
+      "when": "entered",
+      "scope": "complete_lifesteal_component",
+      "evidence": {
+        "catalog_raw": {
+          "id": 200139,
+          "wiki_id": "skill_000058",
+          "name": {
+            "zh": "渴求"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "入场时获得50%吸血。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E6%B8%B4%E6%B1%82",
+          "source_module": "Skills",
+          "desc_notes": [
+            1029
+          ]
+        },
+        "game_skill_raw": {
+          "id": 200139,
+          "name": {
+            "localization_id": 280,
+            "text": "渴求"
+          },
+          "desc": {
+            "localization_id": 281,
+            "text": "入场时获得50%<desc_id=1029>吸血</>。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20540030,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200139.200139'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {
+          "20540030": {
+            "id": 20540030,
+            "buff_base_ids": [
+              2054003
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              3
+            ],
+            "name": "渴求",
+            "type_id": "5",
+            "type": 3,
+            "add_max": 1,
+            "desc": "造成伤害的50%转化为生命。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830106_png.830106_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "bases_raw": {
+          "2054003": {
+            "id": 2054003,
+            "buffbase_order": 54,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  5000
+                ]
+              }
+            ]
+          }
+        },
+        "opcode": 54,
+        "opcode_name": "BFT_BLOOD"
+      }
+    },
+    "280030": {
+      "trait_id": 280030,
+      "record_hash": "2bf6266b89f6b6bbdbe1b3fd73d70fca8d1024d7a5b6d82571bbd68efb8b305b",
+      "percent": 100,
+      "when": "hp_below_half",
+      "scope": "payment_module_plus_lifesteal_component",
+      "evidence": {
+        "catalog_raw": {
+          "id": 280030,
+          "wiki_id": "skill_000238",
+          "name": {
+            "zh": "盛宴"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "能量不足时，消耗5%最大生命，代替1能量。生命低于50%时，获得吸血100%。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E7%9B%9B%E5%AE%B4",
+          "source_module": "Skills"
+        },
+        "game_skill_raw": {
+          "id": 280030,
+          "name": {
+            "localization_id": 713,
+            "text": "盛宴"
+          },
+          "desc": {
+            "localization_id": 714,
+            "text": "能量不足时，消耗5%最大生命，代替1能量。生命低于50%时，获得吸血100%。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20240031,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1004110,
+              "cast_moment": 7
+            },
+            {
+              "effect_id": 21530030,
+              "cast_moment": 6
+            },
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200100.200100'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buffs_raw": {
+          "20240031": {
+            "id": 20240031,
+            "buff_base_ids": [
+              2024003
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              3
+            ],
+            "name": "盛宴",
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/820083_png.820083_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "21530030": {
+            "id": 21530030,
+            "buff_base_ids": [
+              2153003
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800035_png.800035_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 2
+          },
+          "20540012": {
+            "id": 20540012,
+            "buff_base_ids": [
+              2054001,
+              2054001,
+              2054001,
+              2054001,
+              2054001,
+              2054001,
+              2054001,
+              2054001,
+              2054001,
+              2054001
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "盛宴",
+            "type_id": "5",
+            "add_des": "吸血",
+            "add_icon": 10,
+            "type": 3,
+            "add_max": 1,
+            "desc": "造成伤害的100%转化为生命。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830115_png.830115_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          }
+        },
+        "bases_raw": {
+          "2024003": {
+            "id": 2024003,
+            "buffbase_order": 24,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  500
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "2153003": {
+            "id": 2153003,
+            "buffbase_order": 153,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  3,
+                  5000
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  20540012
+                ]
+              }
+            ]
+          },
+          "2054001": {
+            "id": 2054001,
+            "buffbase_order": 54,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1000
+                ]
+              }
+            ]
+          }
+        },
+        "opcode": 54,
+        "opcode_name": "BFT_BLOOD"
+      }
+    },
+    "280032": {
+      "trait_id": 280032,
+      "record_hash": "979f9aa2db329326cb20d30c42e1f133d45d30f5bd842479c2aa7b96defefdb2",
+      "percent": 50,
+      "when": "entered",
+      "scope": "trait_runtime_overheal_plus_lifesteal_component",
+      "evidence": {
+        "raw": {
+          "id": 280032,
+          "wiki_id": "skill_000240",
+          "name": {
+            "zh": "贪得无厌"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "入场时获得50%吸血，每过量回复5%生命转化为10%物攻。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E8%B4%AA%E5%BE%97%E6%97%A0%E5%8E%8C",
+          "source_module": "Skills",
+          "desc_notes": [
+            1029
+          ]
+        },
+        "game_skill_raw": {
+          "id": 280032,
+          "name": {
+            "localization_id": 717,
+            "text": "贪得无厌"
+          },
+          "desc": {
+            "localization_id": 718,
+            "text": "入场时获得50%<desc_id=1029>吸血</>，每过量回复5%生命转化为10%物攻。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 21510010,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20540031,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1004134,
+              "cast_moment": 6
+            },
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200139.200139'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff": {
+          "id": 20540031,
+          "buff_base_ids": [
+            2054003
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            3
+          ],
+          "name": "贪得无厌",
+          "type_id": "5",
+          "type": 3,
+          "add_max": 1,
+          "desc": "造成伤害的50%转化为生命。",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830106_png.830106_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "base": {
+          "id": 2054003,
+          "buffbase_order": 54,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2,
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                5000
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "forms": {
+    "3010": {
+      "trait_id": 200139,
+      "record_hash": "cb19776ec790ae0629aee781061538d707b17f331753368eb68f4869d8261126"
+    },
+    "3039": {
+      "trait_id": 200139,
+      "record_hash": "f386a41d3ba0eebf6205c4fe031c9f20d4537e3cbc4378e8eb599e0d9b0549fe"
+    },
+    "5053": {
+      "trait_id": 280030,
+      "record_hash": "6c3d2367e7877a3227b245b6cb72e2e196eaaa15bb9ac070094f1ef42e64746d"
+    },
+    "5055": {
+      "trait_id": 280032,
+      "record_hash": "7c0320fa2b0719aac63f998c3da07e8c96fccafc765dc2529135dccfede83b32"
+    }
+  },
+  "blocked_traits": {}
+}

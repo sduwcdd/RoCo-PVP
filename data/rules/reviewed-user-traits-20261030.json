@@ -18,7 +18,7 @@
       }
     }
   },
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "policies": {
     "fatal": "each_direct_or_indirect_hp_loss_before_clipping_idempotent_token",
     "revival": "faint_turn_plus_four_round_ends_max_hp_energy_ten_no_magic_refund",

@@ -13,9 +13,9 @@ from lab.skill_execution import execute_skill, preflight_skill
 from lab import weather_runtime as weather
 
 CONFIG = ROOT / 'data/rules/reviewed-status-skill-components-1.json'
-CONFIG_SHA256 = '2d7b020723b24ab34d89091f6b4adaa379f9efd62363dd3e112f5b47eade1a06'
+CONFIG_SHA256 = '300a4ea1e60f4814bd7f6c7169e73153de7f4beac54e0c6c1ff452054d7bd148'
 POLICY = 'source_bound_normal_status_with_shared_conductive_lifecycle_v1'
-CATALOG = ROOT / 'data/bwiki/20261105T124140+0800/catalog.json'
+CATALOG = ROOT / 'data/bwiki/20261121T162937+0800/catalog.json'
 
 
 @lru_cache(maxsize=2)

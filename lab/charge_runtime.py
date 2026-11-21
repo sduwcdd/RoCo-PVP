@@ -9,7 +9,7 @@ from lab.phase_config import fingerprint
 from lab.skill_execution import execute_skill, preflight_skill
 
 CONFIG = ROOT / 'data/rules/reviewed-charge-components-1.json'
-CONFIG_SHA256 = '02466cf6d70a197de93d7529f8c33d5a4ed45513d538ed222296c2faa7a8c059'
+CONFIG_SHA256 = 'a6c223fc2e57df1c80b5ab6bb821583b3bbb89266016a20c4b725a4d04041cac'
 POLICY = 'charge-observed-attack-and-file-layers-v1'
 
 

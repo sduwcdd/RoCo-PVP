@@ -1,9 +1,9 @@
 {
   "schema": "reviewed-skill-history-1",
   "policy": "source_bound_original_slot_skill_history_after_committed_events_v1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "sources": {
-    "data/bwiki/20261105T124140+0800/catalog.json": "4f46200f8b7fa8e1a8415aa579f532c5f745b0ab08482b64d8bf55fb50e6ad15",
+    "data/bwiki/20261121T162937+0800/catalog.json": "c82eedd6b318671fd26ac44e30da5944b1d2641dd54c33ba7ddc0756596f9578",
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",

@@ -11,7 +11,7 @@ from lab.prepared_rules import prepare_rules
 from lab import mark_runtime as marks, trait_runtime as traits
 
 CONFIG = ROOT / 'data/rules/reviewed-mark-steal-1.json'
-CONFIG_SHA256 = 'd2e8e97230a684d04eb0035d1d91ef067f52f537e0f22c638a112689a93861ef'
+CONFIG_SHA256 = '73274d37694147273aa8a1cc4f6b3f86a1bf3559541d8c8bf7710c04a248c6ba'
 POLICY = 'unique_enemy_mark_same_kind_or_empty_recipient_one_layer_transfer_v1'
 
 

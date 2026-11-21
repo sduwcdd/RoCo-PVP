@@ -1,9 +1,9 @@
 {
-  "version": "1.1.10",
+  "version": "1.1.11",
   "root": ".",
-  "snapshot_id": "20261105T124140+0800",
-  "file_count": 5332,
-  "bytes": 402573306,
+  "snapshot_id": "20261121T162937+0800",
+  "file_count": 5417,
+  "bytes": 456298200,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2928,
-      "sha256": "bac6bffbaa8e7f0230625932da4c74fa59c18f30e358608f1236e1587e5e3c95"
+      "bytes": 3145,
+      "sha256": "bb9c39aded31d143e66ff8c853bd7fba53e538ec121b0f062e8ecd866fe86ab8"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -1131,9 +1131,389 @@
       "sha256": "1a6275a30664c9185dd6d8776f31c64b7f32dd93c8ab849c51696d2087fa29d3"
     },
     {
+      "path": "data/bwiki/20261121T162937+0800/catalog.json",
+      "bytes": 24182759,
+      "sha256": "c82eedd6b318671fd26ac44e30da5944b1d2641dd54c33ba7ddc0756596f9578"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/manifest.json",
+      "bytes": 14951,
+      "sha256": "363d46c486a4c9956072494197e4ab160f03d202e2aad0959489b7967f773c88"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Catalog.json",
+      "bytes": 1539277,
+      "sha256": "1d19db92e9fa053eec09714789f982b585409bba4364c2e409a48a4053bf5218"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Config.json",
+      "bytes": 9464,
+      "sha256": "5d0be65ec49769a2c2e82f6f08f708674e91d634ae8d0b4ef610fbedb5d1bc8e"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Index.json",
+      "bytes": 151792,
+      "sha256": "2d41c31fa38130a4f8267998244f6ef117c4166c3ff042e36f0d35e7d7f2aef5"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Learnsets.json",
+      "bytes": 1167224,
+      "sha256": "552527a301b55b1741658774cf925a9dd3477531f912bdbd1932ae1cd0fc3c8e"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Natures.json",
+      "bytes": 8101,
+      "sha256": "a97a9edbb7de578581f9a593ad7915acb0e1487e7c3d3433e689a8745dba4768"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Season0Arts.json",
+      "bytes": 34797,
+      "sha256": "f66618094cccaf6ce9f93999a9587251e70c86985f2d8785a431e795d51826cc"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Season0Aux.json",
+      "bytes": 1423687,
+      "sha256": "2dbb954d65fae73833bd3c6282966a1e7663ffc0e14295adc447303c72c908e7"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Season0Gifts.json",
+      "bytes": 54855,
+      "sha256": "9d02a7de78a4c1ed854cd0be7b760c7c858b84f14f06fdd9568f21fa1de18416"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Season0Links.json",
+      "bytes": 201939,
+      "sha256": "32eb3cb2bab879688d8bbaf7577903087c9e53930390b560ffc54517c425ac06"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Season0Roster.json",
+      "bytes": 208758,
+      "sha256": "67910cebdaacc7b27dca78477b23e7f953f77f1d87a5e7fe302272d04e95249c"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/SeasonConfig.json",
+      "bytes": 43,
+      "sha256": "d45427400f85952cbbbac36c215b4b1683bffd34977ad585cf9ad5bba7da25d5"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/SeasonManifest.json",
+      "bytes": 542,
+      "sha256": "f65ada3c8f9adf7345d8c4ae604ea53f02fe76b01f268cbfb9274a7c4b4c5c5d"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Skills.json",
+      "bytes": 292657,
+      "sha256": "9157985674bb38a49eb39dc64d5e2dd0c3f398467e833d6be46969b1e16d7c7f"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Terms.json",
+      "bytes": 8008,
+      "sha256": "5161b3c7271f134db8255f6d96bf2d96c4e751e8f10370d05d0a9dc5b6e08e28"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/Types.json",
+      "bytes": 82842,
+      "sha256": "54f3c17892716236c81f51522e91e702a25574e37b9fbcea11bf0effdb3d928a"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/modules/VisibilityConfig.json",
+      "bytes": 5517,
+      "sha256": "f02d6de8c9132eca5cce2df03905cb8edf4f52b173f4b20cda07634ca0ce2d7d"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-action-fields-1.json",
+      "bytes": 27818,
+      "sha256": "f72d0c8b7891cd729be49c6ae124bd42bf0abe65d814ab2ecb7a19f37647bf57"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-action-outcomes-1.json",
+      "bytes": 173483,
+      "sha256": "efdc05b59003e9df28e2b077e257b48b0c99d89bfb08d56a0f0a6e47983b1799"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-adjacent-cost-1.json",
+      "bytes": 6893,
+      "sha256": "35656eec1d73621e3a335b27ef1c37c8255b7a7b8e474cfd38b55d70dac95a7c"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-adjacent-power-1.json",
+      "bytes": 7336,
+      "sha256": "f09f7ebafee25135a7243ae2dc60d9749ec9678529987605370cd438841275f8"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-adjacent-power-aura-1.json",
+      "bytes": 11992,
+      "sha256": "6c553f700c0edb1da594b4b440a853ddca35472eacb1a8a84ca606624a3b79e6"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-attack-grants-1.json",
+      "bytes": 38466,
+      "sha256": "baff9b4256d982f163c769a4b3701c51e826729272d1e5947bdad68c746dc3c5"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-charge-components-1.json",
+      "bytes": 49312,
+      "sha256": "02466cf6d70a197de93d7529f8c33d5a4ed45513d538ed222296c2faa7a8c059"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-choice-components-1.json",
+      "bytes": 180742,
+      "sha256": "5a41d1577dded40da05cce943d2788cb4a501c21602bb2db035bf251868b1a4a"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-cute-components-1.json",
+      "bytes": 6251,
+      "sha256": "c711a2dc9575e3cdcb28c0d35d8a81e1490369c0c4719c7b34429ebcfedc6515"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-defense-components-1.json",
+      "bytes": 1027361,
+      "sha256": "7047466594a57b31fba8714669a35dc80f721c5f9f3920fc2b6174709f088965"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-derived-power-1.json",
+      "bytes": 6045,
+      "sha256": "8b3e7707eeeb1833fa8b03e0c7030155a6affc912aedf22256795bfa5cb209e2"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-duration-components-1.json",
+      "bytes": 61629,
+      "sha256": "56c851aa108acc92a75c2a770e477b38d8b88d1cd3b28290751ae1b98e9f3ac2"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-expression-components-1.json",
+      "bytes": 27702,
+      "sha256": "e3563ba588447f8ccd8294fb07ed84c0f0595b2540f8851953ee6418aeb2bd9d"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-forced-switch-skills-1.json",
+      "bytes": 33818,
+      "sha256": "22c057b238ed2290865df2f0defdcfcfb47b6db57f0f33224ccd7bc937763d17"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-forced-switch-traits-1.json",
+      "bytes": 3744,
+      "sha256": "80e88cef71a87fefc2a8c3260d1931663363cdc7f87f65d37b5c0bc167472923"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-health-payment-1.json",
+      "bytes": 17638,
+      "sha256": "ac07b2b2acee7e1f66a5caab622f9e9cb608ed048e1c65b7574ecea402bfd67a"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-live-entry-buffs-1.json",
+      "bytes": 16352,
+      "sha256": "74c7d0fdc9261bb11a2e9d5976a0aa2f583448060b452a2364f99a9f20867382"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-live-power-1.json",
+      "bytes": 75105,
+      "sha256": "d022a6955f73c6e2a877596286663b53a3213807cbf04ff633ae50a2c951c362"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-mark-components-1.json",
+      "bytes": 209659,
+      "sha256": "87f81c0a7bac91fac3c2fbd47510ee8949c071acf029d465d9393079b52fb2b4"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-mark-identities-1.json",
+      "bytes": 21655,
+      "sha256": "04ddc14efe2ad11c95227dacc19454d4bc8a283c4da6bb751cd9c45962cb5ff2"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-mark-steal-1.json",
+      "bytes": 7323,
+      "sha256": "d2e8e97230a684d04eb0035d1d91ef067f52f537e0f22c638a112689a93861ef"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-mechanism-components-1.json",
+      "bytes": 593353,
+      "sha256": "98fd6bcf543286d51bb5dda7475fa315c0b0147d775d35fa1c240787be3f8235"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-modifier-source-units-1.json",
+      "bytes": 221508,
+      "sha256": "a70bd22218c3557b1e63d931b80db041a4094fc17a660377787dc2870fdec458"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-pressure-1.json",
+      "bytes": 11565,
+      "sha256": "ca7a3da3d78c6c08ddc7c0ac9373ffb8cf1f558e0cb9949f4b960a4e837aad19"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-random-devotion-1.json",
+      "bytes": 50703,
+      "sha256": "ce9fe6804c2c9fe11f3d236813b427a781b650c54096611e6033c8c814ff4599"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-response-cost-1.json",
+      "bytes": 8079,
+      "sha256": "d996cc1896a4e0f7f46bb4677f54f7d376d6b523ae55eb1c02afa4975f9ae192"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-s5-hud-gates-1.json",
+      "bytes": 7028,
+      "sha256": "7c56477faeb7db138f689cf54775d46044fd816719e5802e8119ad9c499fa47d"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-skill-history-1.json",
+      "bytes": 109346,
+      "sha256": "c9b0cfdf38dc75b0931c7b73e3bcc4b88b1a631f1f5942dbbe7cd25d79ea7e9b"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-slot-components-1.json",
+      "bytes": 18070,
+      "sha256": "c264b0c2c89d30d8aef328851f6ee800b31df07c5cb4f3ba3434f6be9af61fb4"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-slot-stat-1.json",
+      "bytes": 10838,
+      "sha256": "bea39de008947a9f38b4f495469cf017d06bdc263450c508d3676da6c9d6529b"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-status-skill-components-1.json",
+      "bytes": 4691,
+      "sha256": "2d7b020723b24ab34d89091f6b4adaa379f9efd62363dd3e112f5b47eade1a06"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-team-targets-1.json",
+      "bytes": 13533,
+      "sha256": "ab9c8fa8ba1a214e079e6b9665fa34d4ea181212df70cdcb97d4f5a6b7931515"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-trainer-magic-loss-1.json",
+      "bytes": 20291,
+      "sha256": "1cb43011eca7a93145a81dad6f30a850d55a73a1571fcc7af83138e1af3d79b1"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-trait-attack-hooks-1.json",
+      "bytes": 16172,
+      "sha256": "75869b5477e8a2f6a355b160efbafd096d4823ba858163d8944422949138b1a8"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-trait-events-1.json",
+      "bytes": 712684,
+      "sha256": "a6b44891887547eb73ff9c84100f76cf7c9c388a65c835f9734590c4f90b8382"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-trait-switch-components-20261030.json",
+      "bytes": 10014,
+      "sha256": "704203af7246615f4c78151e88c35a27499e85c8f4efd93e2c0e2fe784227d30"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-transformation-components-1.json",
+      "bytes": 124349,
+      "sha256": "2d361e7ab98f3021a7bd603e9d26c393ebd7214336cb0d4449d328f859763d5b"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-user-skill-extensions-1.json",
+      "bytes": 34014,
+      "sha256": "a9ae8393ada430a93e2a65be783430e863aa6cac3ded6c1ad30e53b3820792da"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/previous-reviewed/reviewed-user-traits-20261030.json",
+      "bytes": 21904,
+      "sha256": "f8be1dcd03a268d53c0a40ad31039707221a930852278788d2980e16921211e0"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Catalog.gz",
+      "bytes": 195305,
+      "sha256": "4953e9ad864185d2ec8e59c508389f27b73b540201bba196a7af684631269281"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Config.gz",
+      "bytes": 1669,
+      "sha256": "0210cf7428826f8532c5e4a97f1e6c79b53c9e8d62b534d56c0a8eb03174b487"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Index.gz",
+      "bytes": 27795,
+      "sha256": "ae5cc712c4c1b19bd7c796d5480ca4b55da63f229afcb341267385491f1a4acf"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Learnsets.gz",
+      "bytes": 39714,
+      "sha256": "0ef9f9ebb87464669c3408a71632c48a3f5734577741e5f5b374b8729c716d30"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Natures.gz",
+      "bytes": 1973,
+      "sha256": "87065964669b6dd22697a577af63dfc983ba976e15da2100741568d1d639389a"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Season0Arts.gz",
+      "bytes": 69709,
+      "sha256": "b9e886bb4172ca8adfbb8c4c3dcab7ddf09d1b6bc71ba08c0e4df42e7d2c91ab"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Season0Aux.gz",
+      "bytes": 35192,
+      "sha256": "5e1767ed1679c607e05e0fc3a8c2cb6365105b96982ae32142bfcb8264f1b63b"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Season0Gifts.gz",
+      "bytes": 2438,
+      "sha256": "06e9376a09d83355b00ffcb092f0d341abc72370e922c1149f143eccb385a6b8"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Season0Links.gz",
+      "bytes": 20445,
+      "sha256": "ae3f6dd28cf41133c05b408c2bb6a64a97d9bd2de1f094e2ec201be3d300f0b3"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Season0Roster.gz",
+      "bytes": 11356,
+      "sha256": "87e26d090225cb1f41d26391e56abdc452f01b2b2ba517b6be066037e98d71be"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/SeasonAdapter.gz",
+      "bytes": 8104,
+      "sha256": "50ea0c29449dca691155c507a99a8c7a70f2ce72ca13c7c84d278779faeaa964"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/SeasonConfig.gz",
+      "bytes": 8104,
+      "sha256": "50ea0c29449dca691155c507a99a8c7a70f2ce72ca13c7c84d278779faeaa964"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/SeasonData.gz",
+      "bytes": 8104,
+      "sha256": "50ea0c29449dca691155c507a99a8c7a70f2ce72ca13c7c84d278779faeaa964"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/SeasonManifest.gz",
+      "bytes": 524,
+      "sha256": "a579740e741573a89af1c0ef3aec1343f76db4319b779d957d3756a16c4cfc6b"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Skills.gz",
+      "bytes": 40100,
+      "sha256": "5c0d47787769c375891d021ecbcc8cdf1b1b68559e0f2e468204348faf7779a1"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Terms.gz",
+      "bytes": 2554,
+      "sha256": "b38032c400b733132df1385c3219386d23a51fac8d72c14fc610433b6aae5969"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/Types.gz",
+      "bytes": 2426,
+      "sha256": "65ef0ce5f90c2f8d0c3d882c01ff812e819da35972292a74f3acaacd49f83a27"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/VisibilityAdapter.gz",
+      "bytes": 8104,
+      "sha256": "50ea0c29449dca691155c507a99a8c7a70f2ce72ca13c7c84d278779faeaa964"
+    },
+    {
+      "path": "data/bwiki/20261121T162937+0800/raw/VisibilityConfig.gz",
+      "bytes": 1869,
+      "sha256": "9cf062409303842806d2643ebb6b751c4d5b30374b9b07c8d4c55634f5d677fd"
+    },
+    {
       "path": "data/bwiki/latest.json",
       "bytes": 131,
-      "sha256": "8ee53321ada68fbc9f00c9b85dd2e80f77647cfa3e7264d83996fedc4dcb26fc"
+      "sha256": "e721b3fb879df713fb8d08fb319ed1be34d222072b045ae60cdc29307486cf3d"
     },
     {
       "path": "data/external/buff.json",
@@ -1361,6 +1741,11 @@
       "sha256": "09a693977e88ed5efdf937e0849c7167d264c5f3884090995a01ef0cd215e4ce"
     },
     {
+      "path": "data/reference/bwiki-portraits-20261121.json.gz",
+      "bytes": 120431,
+      "sha256": "c81db3f60654ed8f536f364e6c9a6604353cdb8c07a479cf4aaa9ab561e1dc17"
+    },
+    {
       "path": "data/reference/formula-followup-20261025/arena-source-recheck.json",
       "bytes": 1000,
       "sha256": "eeac777ffc768f99d5fc45de0be322759ea933c423fed7bc8c7e7f47262b572d"
@@ -1511,6 +1896,26 @@
       "sha256": "3ccb434beedc9a7a54bbb670df51c9af74902b170f2dfd57054657cf4037a8ee"
     },
     {
+      "path": "data/rules/20261121T162937+0800/phase-config-1.json",
+      "bytes": 7885133,
+      "sha256": "3a2a6c84190c0fed3acd601395714688e7d4a5daa7e08bf15811e47a4785da11"
+    },
+    {
+      "path": "data/rules/20261121T162937+0800/phase-config-1.manifest.json",
+      "bytes": 482,
+      "sha256": "6a0fbc14f1fc28cb0cfc3528628a507f5da6900540faffb7b20e0a832ae9db54"
+    },
+    {
+      "path": "data/rules/20261121T162937+0800/rule-config-1.json",
+      "bytes": 10935627,
+      "sha256": "baceef1b386b6e8e54f8a62e73ddfc707a3f1c80c8b2baf6f39ea075f1448630"
+    },
+    {
+      "path": "data/rules/20261121T162937+0800/rule-config-1.manifest.json",
+      "bytes": 481,
+      "sha256": "278898283524a7e7c41a90ca78a5204adcc0a437533af2582f1187ac3c8c17ce"
+    },
+    {
       "path": "data/rules/adaptations/bwiki-20261105.json",
       "bytes": 28362,
       "sha256": "254cd48be47169cc91fa1a57f4c5e1395984ff4bac287dcbae78ecf6bc56545f"
@@ -1523,42 +1928,42 @@
     {
       "path": "data/rules/reviewed-action-fields-1.json",
       "bytes": 27818,
-      "sha256": "f72d0c8b7891cd729be49c6ae124bd42bf0abe65d814ab2ecb7a19f37647bf57"
+      "sha256": "a0b5c47f6989a01de164bca54a880da634f3d35baf52681a965ecf8e3111be5c"
     },
     {
       "path": "data/rules/reviewed-action-outcomes-1.json",
       "bytes": 173483,
-      "sha256": "efdc05b59003e9df28e2b077e257b48b0c99d89bfb08d56a0f0a6e47983b1799"
+      "sha256": "08797c60e4199111a24a1a3593240ec6fa079d666d9a0197e4435e31cc1925cd"
     },
     {
       "path": "data/rules/reviewed-adjacent-cost-1.json",
       "bytes": 6893,
-      "sha256": "35656eec1d73621e3a335b27ef1c37c8255b7a7b8e474cfd38b55d70dac95a7c"
+      "sha256": "7816d1d641d71a55feb86667091e76a684c9eec32011e5415a648c44214a1007"
     },
     {
       "path": "data/rules/reviewed-adjacent-power-1.json",
       "bytes": 7336,
-      "sha256": "f09f7ebafee25135a7243ae2dc60d9749ec9678529987605370cd438841275f8"
+      "sha256": "a21e613df9343d8ee24a302023701dfbd9b7604b109756047cda95cf1769b434"
     },
     {
       "path": "data/rules/reviewed-adjacent-power-aura-1.json",
       "bytes": 11992,
-      "sha256": "6c553f700c0edb1da594b4b440a853ddca35472eacb1a8a84ca606624a3b79e6"
+      "sha256": "12f4c10cbadff4b99a7cdf21df26223e8f0ae2b0acee2d509d34e340e0fe6b9d"
     },
     {
       "path": "data/rules/reviewed-attack-grants-1.json",
       "bytes": 38466,
-      "sha256": "baff9b4256d982f163c769a4b3701c51e826729272d1e5947bdad68c746dc3c5"
+      "sha256": "ec58099fb5c0a8e7316085302faab560bba1f2029775930ebb9bcbf0c7b45b99"
     },
     {
       "path": "data/rules/reviewed-charge-components-1.json",
       "bytes": 49312,
-      "sha256": "02466cf6d70a197de93d7529f8c33d5a4ed45513d538ed222296c2faa7a8c059"
+      "sha256": "a6c223fc2e57df1c80b5ab6bb821583b3bbb89266016a20c4b725a4d04041cac"
     },
     {
       "path": "data/rules/reviewed-choice-components-1.json",
       "bytes": 180742,
-      "sha256": "5a41d1577dded40da05cce943d2788cb4a501c21602bb2db035bf251868b1a4a"
+      "sha256": "be45893d8770b563aea1f2db147b57d03cdcb4bb5d3dea2ccfed760264a4ad6d"
     },
     {
       "path": "data/rules/reviewed-core-magic-1.json",
@@ -1588,7 +1993,7 @@
     {
       "path": "data/rules/reviewed-cute-components-1.json",
       "bytes": 6251,
-      "sha256": "c711a2dc9575e3cdcb28c0d35d8a81e1490369c0c4719c7b34429ebcfedc6515"
+      "sha256": "be8a7b64e01dfc7d223a44203aae9bad220942e2fa834d8950efa91c3cdd458b"
     },
     {
       "path": "data/rules/reviewed-dark-surge-1.json",
@@ -1598,72 +2003,72 @@
     {
       "path": "data/rules/reviewed-defense-components-1.json",
       "bytes": 1027361,
-      "sha256": "7047466594a57b31fba8714669a35dc80f721c5f9f3920fc2b6174709f088965"
+      "sha256": "2cabe88885904c412a99721bf4c402ea216ae80c0820b668a1c215f0e4146aa8"
     },
     {
       "path": "data/rules/reviewed-derived-power-1.json",
       "bytes": 6045,
-      "sha256": "8b3e7707eeeb1833fa8b03e0c7030155a6affc912aedf22256795bfa5cb209e2"
+      "sha256": "08d452f3823824898b76ff612f0153fb471661f600e65e7893f22e6aa93466ea"
     },
     {
       "path": "data/rules/reviewed-duration-components-1.json",
       "bytes": 61629,
-      "sha256": "56c851aa108acc92a75c2a770e477b38d8b88d1cd3b28290751ae1b98e9f3ac2"
+      "sha256": "0819229b7a70e62c8f5f409e53f35ff2abfb799becc74f0e0aa403c0d0ab8cce"
     },
     {
       "path": "data/rules/reviewed-expression-components-1.json",
       "bytes": 27702,
-      "sha256": "e3563ba588447f8ccd8294fb07ed84c0f0595b2540f8851953ee6418aeb2bd9d"
+      "sha256": "aa493b6cd1e441f1f20f951be81ef3e61e26b1bae9e637f895ca0bf90393f468"
     },
     {
       "path": "data/rules/reviewed-forced-switch-skills-1.json",
       "bytes": 33818,
-      "sha256": "22c057b238ed2290865df2f0defdcfcfb47b6db57f0f33224ccd7bc937763d17"
+      "sha256": "07cd991a30dba270b5c3551bff4e1c4e7d4418e38f3062546d1696c17234e741"
     },
     {
       "path": "data/rules/reviewed-forced-switch-traits-1.json",
       "bytes": 3744,
-      "sha256": "80e88cef71a87fefc2a8c3260d1931663363cdc7f87f65d37b5c0bc167472923"
+      "sha256": "8fc646589c1fb6d4083110c8b288ff84bdeb0e0187a9efab2c016df0f443020b"
     },
     {
       "path": "data/rules/reviewed-health-payment-1.json",
       "bytes": 17638,
-      "sha256": "ac07b2b2acee7e1f66a5caab622f9e9cb608ed048e1c65b7574ecea402bfd67a"
+      "sha256": "661fb93b1200d2e7812fcdca7601ad30bb8f310383e46d0aa2ce90f494f0a899"
     },
     {
       "path": "data/rules/reviewed-live-entry-buffs-1.json",
       "bytes": 16352,
-      "sha256": "74c7d0fdc9261bb11a2e9d5976a0aa2f583448060b452a2364f99a9f20867382"
+      "sha256": "391482f833c7901726bef67a03261b363936d47f1d6b46f6da9ecf31ed5be26c"
     },
     {
       "path": "data/rules/reviewed-live-power-1.json",
       "bytes": 75105,
-      "sha256": "d022a6955f73c6e2a877596286663b53a3213807cbf04ff633ae50a2c951c362"
+      "sha256": "aac8ee8833f1b1a05d86c57ea710ac7a7dc1d443cd48ac8610a548042e678251"
     },
     {
       "path": "data/rules/reviewed-mark-components-1.json",
       "bytes": 209659,
-      "sha256": "87f81c0a7bac91fac3c2fbd47510ee8949c071acf029d465d9393079b52fb2b4"
+      "sha256": "af260be9e4407565662361b7090f4f4715be40d605849b30f0ceef7008cfb743"
     },
     {
       "path": "data/rules/reviewed-mark-identities-1.json",
       "bytes": 21655,
-      "sha256": "04ddc14efe2ad11c95227dacc19454d4bc8a283c4da6bb751cd9c45962cb5ff2"
+      "sha256": "14b18040f0aade14a2f302d0345cff92b12b9b2234556a4127e00b6a2535dca6"
     },
     {
       "path": "data/rules/reviewed-mark-steal-1.json",
       "bytes": 7323,
-      "sha256": "d2e8e97230a684d04eb0035d1d91ef067f52f537e0f22c638a112689a93861ef"
+      "sha256": "73274d37694147273aa8a1cc4f6b3f86a1bf3559541d8c8bf7710c04a248c6ba"
     },
     {
       "path": "data/rules/reviewed-mechanism-components-1.json",
       "bytes": 593353,
-      "sha256": "98fd6bcf543286d51bb5dda7475fa315c0b0147d775d35fa1c240787be3f8235"
+      "sha256": "e35dc84b599d68c79bbccd46cd74297a86e58195e0a7060b95e54b2056c52097"
     },
     {
       "path": "data/rules/reviewed-modifier-source-units-1.json",
       "bytes": 221508,
-      "sha256": "a70bd22218c3557b1e63d931b80db041a4094fc17a660377787dc2870fdec458"
+      "sha256": "3bd26e0847e1e0d86c1f6fc5401d9f7fe88dea4320c827ac7b78dea05b79e3bb"
     },
     {
       "path": "data/rules/reviewed-power-rule-1.json",
@@ -1673,42 +2078,42 @@
     {
       "path": "data/rules/reviewed-pressure-1.json",
       "bytes": 11565,
-      "sha256": "ca7a3da3d78c6c08ddc7c0ac9373ffb8cf1f558e0cb9949f4b960a4e837aad19"
+      "sha256": "f9ba430793e7bf063200c1f9c683fc4aefd2ad9b5d79a830b8e985c5ee38727a"
     },
     {
       "path": "data/rules/reviewed-random-devotion-1.json",
       "bytes": 50703,
-      "sha256": "ce9fe6804c2c9fe11f3d236813b427a781b650c54096611e6033c8c814ff4599"
+      "sha256": "13ae13ef071cce959141898f4260d06f89f06efc29cb87d1cb7ae1871b0c03ba"
     },
     {
       "path": "data/rules/reviewed-response-cost-1.json",
       "bytes": 8079,
-      "sha256": "d996cc1896a4e0f7f46bb4677f54f7d376d6b523ae55eb1c02afa4975f9ae192"
+      "sha256": "a8c88549d4a45533712fb6204d0aa7bde2e3da2a14d0739cce8f34e14319862a"
     },
     {
       "path": "data/rules/reviewed-s5-hud-gates-1.json",
-      "bytes": 7028,
-      "sha256": "7c56477faeb7db138f689cf54775d46044fd816719e5802e8119ad9c499fa47d"
+      "bytes": 7245,
+      "sha256": "624c28cc0980d6fa87fe9a3fe613648825092126869fbbc208387fb4283a36ed"
     },
     {
       "path": "data/rules/reviewed-skill-history-1.json",
       "bytes": 109346,
-      "sha256": "c9b0cfdf38dc75b0931c7b73e3bcc4b88b1a631f1f5942dbbe7cd25d79ea7e9b"
+      "sha256": "f552ec5cc07820aff27512117ea41188fe3ce29b5da09bb39b8573327b79258f"
     },
     {
       "path": "data/rules/reviewed-slot-components-1.json",
       "bytes": 18070,
-      "sha256": "c264b0c2c89d30d8aef328851f6ee800b31df07c5cb4f3ba3434f6be9af61fb4"
+      "sha256": "cf9db8b03f4ad588a7b3a02a45491ff655d87d273b7b61cd3357030f45808a5f"
     },
     {
       "path": "data/rules/reviewed-slot-stat-1.json",
       "bytes": 10838,
-      "sha256": "bea39de008947a9f38b4f495469cf017d06bdc263450c508d3676da6c9d6529b"
+      "sha256": "34eb90342c330fe7fc967557af977e0594425e62e470eb39cf0e5d9f641a1fd9"
     },
     {
       "path": "data/rules/reviewed-status-skill-components-1.json",
       "bytes": 4691,
-      "sha256": "2d7b020723b24ab34d89091f6b4adaa379f9efd62363dd3e112f5b47eade1a06"
+      "sha256": "300a4ea1e60f4814bd7f6c7169e73153de7f4beac54e0c6c1ff452054d7bd148"
     },
     {
       "path": "data/rules/reviewed-swift-release-1.json",
@@ -1723,42 +2128,42 @@
     {
       "path": "data/rules/reviewed-team-targets-1.json",
       "bytes": 13533,
-      "sha256": "ab9c8fa8ba1a214e079e6b9665fa34d4ea181212df70cdcb97d4f5a6b7931515"
+      "sha256": "ad9f99f5f14520b357dacb230862c22d9503aa3d0880b9e1352689f7f0a6ac0b"
     },
     {
       "path": "data/rules/reviewed-trainer-magic-loss-1.json",
       "bytes": 20291,
-      "sha256": "1cb43011eca7a93145a81dad6f30a850d55a73a1571fcc7af83138e1af3d79b1"
+      "sha256": "cf4a8b06b27a4c82db9d1942cc846d5e4af9647419f02455a9ad4a712f95cb70"
     },
     {
       "path": "data/rules/reviewed-trait-attack-hooks-1.json",
       "bytes": 16172,
-      "sha256": "75869b5477e8a2f6a355b160efbafd096d4823ba858163d8944422949138b1a8"
+      "sha256": "4c4f52bcdf708d10844d8777c98a693a608abe1fff8638bfb4327e727cb566f1"
     },
     {
       "path": "data/rules/reviewed-trait-events-1.json",
       "bytes": 712684,
-      "sha256": "a6b44891887547eb73ff9c84100f76cf7c9c388a65c835f9734590c4f90b8382"
+      "sha256": "e7b275f70b7ba93d161faecda146fe8b6d4971a25d5f4976b5085e592ae4bcca"
     },
     {
       "path": "data/rules/reviewed-trait-switch-components-20261030.json",
       "bytes": 10014,
-      "sha256": "704203af7246615f4c78151e88c35a27499e85c8f4efd93e2c0e2fe784227d30"
+      "sha256": "b2cc2bbd9e1cd395e4dc95a91fd8c00675d59916376e100b4b682598f04bdf21"
     },
     {
       "path": "data/rules/reviewed-transformation-components-1.json",
       "bytes": 124349,
-      "sha256": "2d361e7ab98f3021a7bd603e9d26c393ebd7214336cb0d4449d328f859763d5b"
+      "sha256": "6a47bff3e484ea03b244efa38504ea0726fe0b2e977552423d08ba6fc4cddce6"
     },
     {
       "path": "data/rules/reviewed-user-skill-extensions-1.json",
       "bytes": 34014,
-      "sha256": "a9ae8393ada430a93e2a65be783430e863aa6cac3ded6c1ad30e53b3820792da"
+      "sha256": "2c4d7f965cbf7c9216f39589f34e8d3c9438be2d7d2d3a24401a69cc84aa65aa"
     },
     {
       "path": "data/rules/reviewed-user-traits-20261030.json",
       "bytes": 21904,
-      "sha256": "f8be1dcd03a268d53c0a40ad31039707221a930852278788d2980e16921211e0"
+      "sha256": "beccca2a7f83023f89b713454d0a5c15b117b6881e96058d35040f7a3e9f55dc"
     },
     {
       "path": "data/rules/reviewed-world-npc-stats-1.json",
@@ -1979,6 +2384,11 @@
       "path": "docs/verification/buff-percent-carry-20261028.md",
       "bytes": 3366,
       "sha256": "ea1403990db90a869124b5aebdc18b22784e3299b0cee203315f54117f3b4e57"
+    },
+    {
+      "path": "docs/verification/bwiki-levels-20261121.md",
+      "bytes": 3776,
+      "sha256": "2d790d50cc6e5f378045fbffeb94077a9dfd58c60cb12e1538b680228f384c03"
     },
     {
       "path": "docs/verification/bwiki-numeric-followup-20261025.json",
@@ -2598,7 +3008,7 @@
     {
       "path": "lab/action_field_runtime.py",
       "bytes": 6134,
-      "sha256": "57b5506f788885cb5947ab4c258b56af4499cf41e399fcf6bcb5237644f1e8ed"
+      "sha256": "78f598748ec15f4a7204874cde7daa1035ce1c803849b284513e164134d36019"
     },
     {
       "path": "lab/action_mechanics.py",
@@ -2608,7 +3018,7 @@
     {
       "path": "lab/action_outcome_runtime.py",
       "bytes": 18575,
-      "sha256": "45e8753eb5d1347cee7e00c69af0b3231ea6d7064bd656dd4f41e140e4918d46"
+      "sha256": "e484d37f01e874c2ed45da991e61656c7ca691044c65c38a956eea26ada445b5"
     },
     {
       "path": "lab/action_rules.py",
@@ -2628,22 +3038,22 @@
     {
       "path": "lab/adjacent_cost_runtime.py",
       "bytes": 13853,
-      "sha256": "02000be061745e36ec38290e90bbda100b74821e85b805e947cc050d22dc3c31"
+      "sha256": "4eaf1042ab6536f01e11833f46910cebaf972c4d3aa167e13fc43547360cda6b"
     },
     {
       "path": "lab/adjacent_power_aura_runtime.py",
       "bytes": 13671,
-      "sha256": "af332f3e213e292cbc8cd387aa7bcf500636f926c553ff99dcb670275e1fc0b6"
+      "sha256": "82ce4f7738d0c9ba6ed6fb7ad7e2270bbb8a1be57e47d42016c91cf33a693bd6"
     },
     {
       "path": "lab/adjacent_power_runtime.py",
       "bytes": 14025,
-      "sha256": "4ff18b45c6f66f4e3a5ea086f820e8e27cf48dab5a7f9f4935f6b4e206803094"
+      "sha256": "939f211c38ae05dc95efdb4031d0a13621683933b56cd720d3237c6da0726d46"
     },
     {
       "path": "lab/attack_grant_runtime.py",
       "bytes": 14385,
-      "sha256": "d936c1f9b0d0d67bf3af9e3de0be6ee775cb2e4389a409f6bb4ed0b3b4868afd"
+      "sha256": "e422ef87e05608d3231b8eb74b7d4c99608578f055388bb71e0ff15d882fbc39"
     },
     {
       "path": "lab/battle_data.py",
@@ -2688,12 +3098,12 @@
     {
       "path": "lab/charge_runtime.py",
       "bytes": 14231,
-      "sha256": "66b4a16540b2e06e92197380ba3e6d2e01c20b051dfe0436d7c354c9d16898a2"
+      "sha256": "ec387f6af12f427062306217198723afcd7b9a0db12349f81864775c9abee78a"
     },
     {
       "path": "lab/choice_runtime.py",
       "bytes": 17452,
-      "sha256": "a4948853d73bf4322aa51b7d68ac3edaa21cc0b4e9b34def06cc1a3ee88d4067"
+      "sha256": "753567d650e9a0a0367a158afabcd1eee6f8e7e09e92a87a68fd51388e79d9e4"
     },
     {
       "path": "lab/constants.py",
@@ -2728,12 +3138,12 @@
     {
       "path": "lab/defense_runtime.py",
       "bytes": 41997,
-      "sha256": "33e40a018aec75c85938bf7cc73a9d8c07d9040d6823ed9c813999f0f19ab3f9"
+      "sha256": "8bdb330d20645510e3483e0dcd92753a055702d21d0e8b2933846c80f37d3565"
     },
     {
       "path": "lab/derived_power_runtime.py",
       "bytes": 3431,
-      "sha256": "e994799f61c4a5c40bfd0a9d5af32eab90807730bb253610075e54577338dbab"
+      "sha256": "a0f310e1d7b8c1f2f79e90cb34edb97d51ac7fac3798e5c7852c91a8d616ae50"
     },
     {
       "path": "lab/dex.py",
@@ -2743,7 +3153,7 @@
     {
       "path": "lab/duration_runtime.py",
       "bytes": 14560,
-      "sha256": "3d2daa0fdf86759535d3c32e6efc425fcf3bc83dae0ceacfe4693fd85f7e2a78"
+      "sha256": "97a5c2997f5c28a24d3659853c2be641b89643ba49f30e572e42eaf41dfd3eca"
     },
     {
       "path": "lab/dynamic_skills.py",
@@ -2768,12 +3178,12 @@
     {
       "path": "lab/expression_programs.py",
       "bytes": 1107,
-      "sha256": "b8adec41d4b8a0cecaa5031a03e2f7bcb5be4a5825b07130c1023fff53781660"
+      "sha256": "62136aeb28b0772afdacaa9acfd0c987915f6671b687815763241ac3599abd4a"
     },
     {
       "path": "lab/forced_switch_programs.py",
       "bytes": 8969,
-      "sha256": "bf569450181472f6263559c294997da737244e7703d13aeb59f104041b542d2e"
+      "sha256": "72938af7f59c20aaf20a06ba293f4b2f53b54b06b1febde2af86ba12dbecb8cb"
     },
     {
       "path": "lab/forced_switch_runtime.py",
@@ -2783,7 +3193,7 @@
     {
       "path": "lab/forced_trait_runtime.py",
       "bytes": 10393,
-      "sha256": "38e7851a375688074bd64ac9088c5e9dd2b395a3144cf92530cbc23b00fa0f89"
+      "sha256": "af7d35e09a783c72cc29dd4adf5ab6280ba231937647a043df42fc53fdb25bc8"
     },
     {
       "path": "lab/game_layer_references.py",
@@ -2817,8 +3227,8 @@
     },
     {
       "path": "lab/live_battle.py",
-      "bytes": 129165,
-      "sha256": "e38bd2574eec29a8c030d9b75fccf968ab00f743afcd1eda1c95660c937d4e0a"
+      "bytes": 130267,
+      "sha256": "9cff93c529fd2196f1ae4d630e1fa08fbed1bd095f34c52bfb3588ced8958517"
     },
     {
       "path": "lab/live_bridge.py",
@@ -2827,18 +3237,18 @@
     },
     {
       "path": "lab/live_damage.py",
-      "bytes": 46181,
-      "sha256": "f7830e2e127193f34dd171996a5ca354010d38f63e473fb8d4980f9fad35c8fb"
+      "bytes": 46826,
+      "sha256": "f6f9a4bc071fa162c1c9912164934125d368c0b2f2c158265a5a955cf3463ed0"
     },
     {
       "path": "lab/live_inference.py",
-      "bytes": 21292,
-      "sha256": "9bf9fcad117737e223d0bab473380c1ae0f107c030c09d7d3cbbe04136930476"
+      "bytes": 22680,
+      "sha256": "baf78a74dd4840b6db03bb9e9b89c4c597cada22b83f489f0c112a7d6962cd8e"
     },
     {
       "path": "lab/live_modifiers.py",
-      "bytes": 50712,
-      "sha256": "94c49a355235191685b5b08474044a4270962db570ec3f1f5a2e12a5edb0d5c3"
+      "bytes": 52637,
+      "sha256": "36c30893a08bca2b3609e22c90da5c1e8e84b5d96eb88b23ec2cf03ccb538029"
     },
     {
       "path": "lab/live_power.py",
@@ -2847,18 +3257,18 @@
     },
     {
       "path": "lab/live_stat_model.py",
-      "bytes": 8465,
-      "sha256": "62af5da521d43557bc198ad44735ffe6686a4f1c9102f242578cd89dfd3b99ac"
+      "bytes": 8690,
+      "sha256": "fdde76e604b2bda66320aec329b36f05e9a4e03219db4c27fb290609be8643ac"
     },
     {
       "path": "lab/mark_runtime.py",
       "bytes": 58354,
-      "sha256": "716a13e05f5f9fb17cea60dfceda2562d00d8b29b132d5b601cd35ee8f4919b2"
+      "sha256": "61abe3893b0f8b14b1a07cbdc594354f75d0003a5e47207eb1d573213dc1f760"
     },
     {
       "path": "lab/mark_steal_runtime.py",
       "bytes": 7887,
-      "sha256": "cb2356f9a4d26d2fcf21b88673b3417a1ae8d1a14737fb3cb44f6543d32c320a"
+      "sha256": "d81e4f4139cffad70afabfb080e6bbfdc9edea1917ce8d02ee45c1938fe06803"
     },
     {
       "path": "lab/mechanism_audit.py",
@@ -2883,7 +3293,7 @@
     {
       "path": "lab/modifier_ledger.py",
       "bytes": 35480,
-      "sha256": "161cda44e6510669fc022217aad6a7d6b8d956f78cdc8e919645051e3ee80f37"
+      "sha256": "4e7a1c878fa22372c7e8cc9f1f3ff6ee932414548c441adbce9d95ce576c111d"
     },
     {
       "path": "lab/npcap_environment.py",
@@ -2892,8 +3302,8 @@
     },
     {
       "path": "lab/numeric_candidates.py",
-      "bytes": 14691,
-      "sha256": "7d7a77a033844ba0e19faea41c802519439587c4a345742306d72995cbccd8b9"
+      "bytes": 14789,
+      "sha256": "5e91f741d175c204e065af3ce5a13fe5bd8f4c11963946fec0837161c27ef061"
     },
     {
       "path": "lab/offline_phase_config.py",
@@ -2903,7 +3313,7 @@
     {
       "path": "lab/payment_runtime.py",
       "bytes": 9459,
-      "sha256": "a8bb588620c812f835fac65cf7684d86748ff2e691495b4ae58c58791b323f50"
+      "sha256": "f7a3948b6ce1f817af3287e89f15ff71638cc9993fa9d76d7106e47d59cfecb4"
     },
     {
       "path": "lab/phase_config.py",
@@ -2928,7 +3338,7 @@
     {
       "path": "lab/pressure_runtime.py",
       "bytes": 13464,
-      "sha256": "db484ebba1d4e6c610abd70c5d3614db7070f0cb12c9230f587fbbe59225e318"
+      "sha256": "1de26a99ce6aed06ab73fe762d77c631a3f3acc154d44fd1f67683803b7181b7"
     },
     {
       "path": "lab/pvp_rules.py",
@@ -2938,7 +3348,7 @@
     {
       "path": "lab/random_devotion_runtime.py",
       "bytes": 8522,
-      "sha256": "d8c9f3afb4144cc1ac8bbbbf90c637aadef082daf43a1abd80940f42507c118a"
+      "sha256": "199cad83a4433d52a8e7fff1c616f4d1d17ec1b55b2a497fc939ebc32f07b8de"
     },
     {
       "path": "lab/release_paths.py",
@@ -2978,7 +3388,7 @@
     {
       "path": "lab/response_cost_runtime.py",
       "bytes": 10552,
-      "sha256": "34621cdeee6a1ae0e8c0a5c28eba9e9124cf631efb50a71944f77ac641f55476"
+      "sha256": "bd28102ec883b566868d5f924fb6b36da4fa6a1ad7e9c32e547b83765e3d7fdc"
     },
     {
       "path": "lab/rule_config.py",
@@ -3023,7 +3433,7 @@
     {
       "path": "lab/skill_history_runtime.py",
       "bytes": 46901,
-      "sha256": "b3097639724574803ddfaf9df810962149ea5456ec8861d17c7f5f12a304d218"
+      "sha256": "e314a78e82c537a7dff04c742f1411aefa3ae649b03d447f9445e237cee83400"
     },
     {
       "path": "lab/skill_hits.py",
@@ -3038,12 +3448,12 @@
     {
       "path": "lab/slot_runtime.py",
       "bytes": 11802,
-      "sha256": "56fbf4f328149ce9b596adc47bdd1e5c05d0735ccbd3949d3dfd3eee44f39ddf"
+      "sha256": "606d9070b110f0ee85f95d180bfd16cc0f4952a01542ec83b132216014120a66"
     },
     {
       "path": "lab/slot_stat_runtime.py",
       "bytes": 6989,
-      "sha256": "a62759158027a0e475d56cc9465a57cbe24ac30cadfd0f11fa999097d2d73704"
+      "sha256": "ac6fa45f716fc5b2f6c08decf491ba91f8995f831e5d463f3aa7a869cbb838ec"
     },
     {
       "path": "lab/source_paths.py",
@@ -3063,7 +3473,7 @@
     {
       "path": "lab/status_skill_runtime.py",
       "bytes": 7031,
-      "sha256": "a5f9ae890cf965e80242c696b00d97a0275df8ca07ade6151cafc114c9e4635a"
+      "sha256": "fe4de25e344a036d9050fa0831675f7d71c58c6f794701d96b3939bce26f9fcd"
     },
     {
       "path": "lab/swift_release_runtime.py",
@@ -3098,27 +3508,27 @@
     {
       "path": "lab/team_target_programs.py",
       "bytes": 9977,
-      "sha256": "0f8430fde4e4140a6e2eef3d30357fed303018b2955c875c00a3587748b4dc8b"
+      "sha256": "18798ef75325b4da7d90699ea33652b89c6e7de466788aae0a2636b50cbaab00"
     },
     {
       "path": "lab/trait_attack_hooks.py",
       "bytes": 18181,
-      "sha256": "525a9d6a0a83067fb0ba00555f8aacd5dd514bfe4081366fb35e3ce536047cdd"
+      "sha256": "c1c95ff8006c12b5762400aa099c9a1e8bf3108c5996e581781d7db9bb1797c8"
     },
     {
       "path": "lab/trait_runtime.py",
       "bytes": 121181,
-      "sha256": "7102887fd886a39ccd9dd2a66b66cef1bcae76c387f0eca85ff6b322e4a276a5"
+      "sha256": "77991b0dec9f71c6fbae1f619b892b5abd97df028cf4c19d015a24613b7140e0"
     },
     {
       "path": "lab/trait_switch_components.py",
       "bytes": 15819,
-      "sha256": "b8c6786b9b8374286b171c85fcf97fd0d66d1db60cfbd8c426bc6a07b4c44054"
+      "sha256": "e8040964f0119f8dc61a0880190f32cd518ee9c8b62a454c779ca3382d3a1909"
     },
     {
       "path": "lab/transformation_runtime.py",
       "bytes": 22396,
-      "sha256": "309ad10c0cc4edfaf8019ac44ff6560fe46f573a225b675aac80fcbfa480fc03"
+      "sha256": "5e99a95690d32fd3e1f6562b2037b26a7d57cee26b9271a1a7fe64d2919259b9"
     },
     {
       "path": "lab/turn_plan.py",
@@ -3138,7 +3548,7 @@
     {
       "path": "lab/victory_rules.py",
       "bytes": 29536,
-      "sha256": "f6658b642b222c48c872476931e036374ebc40442d868c5994f727fc60ec8ffa"
+      "sha256": "ba6c3d13bc818ad091f93558c1252b845c381bd08d048daa1f3dc88c937e9409"
     },
     {
       "path": "lab/weather_replay.py",
@@ -3162,8 +3572,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 20909,
-      "sha256": "2e9b43090a6d6fcae0726baf8719facf247ae2f3336cfac7d95eef8028992f6d"
+      "bytes": 21073,
+      "sha256": "2f6f3228e944c9a8c43efa752c2eeb58620b7a7f7d685a9b6e41161bcd4f6ca5"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3178,7 +3588,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2575,
-      "sha256": "2d86bc3d9a54611f5e26af4035e13a4dd9df5d6b16bbba3cbc5f9da3cdc3eed0"
+      "sha256": "960a50c55eb3df6d3bb4e5aedc14b64ea56eb4c4736af4dff938ee703ea16935"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3503,12 +3913,12 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150988,
-      "sha256": "511a89ae69a769e3355fdc869a3a6e192c2cd9f5d7c8cfe8b36d9deeab8da384"
+      "sha256": "182ee1ced612e2cd063b94b14432dde0408c9c4d1554388c050d4b2d5ca892d8"
     },
     {
       "path": "overlay/package.json",
       "bytes": 431,
-      "sha256": "dbe1c245374afbc7ec0e3c2cb363126ed2b5c2eefaa05f8fe10dd859e1c46197"
+      "sha256": "9dd21f2fa554044186218760e6d413dafc19864f5f342222218836b4f882a126"
     },
     {
       "path": "overlay/preload.js",
@@ -3727,8 +4137,8 @@
     },
     {
       "path": "scripts/snapshot_bwiki.py",
-      "bytes": 26936,
-      "sha256": "08a2050888293171f325ae1369e36d6f62965849a2867d25d7bc2ffc1d243ed9"
+      "bytes": 26629,
+      "sha256": "c331777174e7e65b4378f5f83ac4d62d1b95965ae310f68190138a85af093726"
     },
     {
       "path": "scripts/snapshot_rocoduel.py",
@@ -3862,8 +4272,8 @@
     },
     {
       "path": "tests/test_bwiki_s5_hud_gates.py",
-      "bytes": 5178,
-      "sha256": "f0a0c84a75ca48965a660324d748b8cd87407b7bc4cad8d600587960a2e285b8"
+      "bytes": 6709,
+      "sha256": "781a54ceb7da213dd7d2600c3bf841a1a64d26c7c92acc568296226871839e51"
     },
     {
       "path": "tests/test_bwiki_seasons.py",
@@ -3877,8 +4287,8 @@
     },
     {
       "path": "tests/test_bwiki_update_flow.py",
-      "bytes": 12196,
-      "sha256": "3bf5ccaf9799aa1403193afaa90312f493ae0ed15becfef673aaa9cfc74cade6"
+      "bytes": 12743,
+      "sha256": "721b3d73a09527d6e6626d7572ec6a764ba63c39797cb8b94edc2a0893e2377b"
     },
     {
       "path": "tests/test_capture_service.js",
@@ -4077,8 +4487,8 @@
     },
     {
       "path": "tests/test_live_battle.py",
-      "bytes": 31696,
-      "sha256": "2b74b5ad3d0a7413897c7164c40fe3d873bea69d0470babed00d56a0770de33a"
+      "bytes": 32791,
+      "sha256": "d024340685bca5450e121f4bf3fccef12a3dacde77e523b1a88168669a4a6bfe"
     },
     {
       "path": "tests/test_live_battle_world_stars.py",
@@ -4537,8 +4947,8 @@
     },
     {
       "path": "tests/test_world_npc_damage.py",
-      "bytes": 3053,
-      "sha256": "e7ecf85634520be678c7d04a8e268b5f1e3b498af37e628c983cd512b893a3bd"
+      "bytes": 4920,
+      "sha256": "bf993f76f31a8ed27b4bf1270155e6c0176ec2b4854f4cb3ea279e742e1eb056"
     },
     {
       "path": "tests/test_world_stat_model.py",
@@ -18672,8 +19082,8 @@
     },
     {
       "path": "web/assets/roco/manifest.json",
-      "bytes": 40361,
-      "sha256": "e4fddf5a4e9d9417f4ee5b9828229585d4d1295cf2a563d0371c7a62576e7e90"
+      "bytes": 41084,
+      "sha256": "09bba0d4a04f7dd13f22db1037e61347f798132e7e8b01173c6d12866ffed956"
     },
     {
       "path": "web/assets/roco/pet-avatars/3001.png",
@@ -22796,6 +23206,21 @@
       "sha256": "0f43fc3317fe1e44c0fae8fc94fd18049a009883075a19a8fdb4db6f1cfa9f43"
     },
     {
+      "path": "web/assets/roco/pet-avatars/3822.png",
+      "bytes": 236778,
+      "sha256": "05d2b4962abc216994ffdd33ce35fc6f60be6792753a7f942cf54540949f8d68"
+    },
+    {
+      "path": "web/assets/roco/pet-avatars/3823.png",
+      "bytes": 311779,
+      "sha256": "30310d8f023cb2278a6b8a8bca457c7973f95682c5342206e4ce7bf7e128aef1"
+    },
+    {
+      "path": "web/assets/roco/pet-avatars/3824.png",
+      "bytes": 347806,
+      "sha256": "6563c345e4031791b29099a5c63bc50b19f3d45d8b489378980d07ee6a56b980"
+    },
+    {
       "path": "web/assets/roco/pet-avatars/3870.png",
       "bytes": 9806,
       "sha256": "15f1fa9ebb72d5ca1ccfb2735c32b93dab6a5038d7ac84ddb38bdd02f2c290d7"
@@ -26673,5 +27098,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261112-cnb-1110"
+  "release_build_id": "20261121-bwiki-levels"
 }

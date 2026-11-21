@@ -1,0 +1,1063 @@
+{
+  "schema": "reviewed-action-fields-1",
+  "snapshot_id": "20261105T124140+0800",
+  "skills": {
+    "7080340": {
+      "record": {
+        "id": 7080340,
+        "wiki_id": "skill_000520",
+        "name": {
+          "zh": "岩脉崩毁"
+        },
+        "type": "地系",
+        "kind": "physical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成物伤，本技能能耗固定为4。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%B2%A9%E8%84%89%E5%B4%A9%E6%AF%81",
+        "source_module": "Skills",
+        "power": 120
+      },
+      "record_hash": "1b73acca60e9fcf5633e49104736c9a961c0d84212cdb7961563db39c74f2f24",
+      "component": {
+        "fixed_cost": 4
+      },
+      "game_skill": {
+        "id": 7080340,
+        "name": {
+          "localization_id": 2538,
+          "text": "岩脉崩毁"
+        },
+        "desc": {
+          "localization_id": 2539,
+          "text": "造成物伤，本技能能耗固定为4。"
+        },
+        "energy_cost": [
+          4
+        ],
+        "dam_para": [
+          120
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 8,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1079002,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ear_YMBH_107031",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/107031.107031'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "effects": {
+        "1079002": {
+          "id": 1079002,
+          "effect_order": 79,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "buffs": {},
+      "bases": {}
+    },
+    "7070340": {
+      "record": {
+        "id": 7070340,
+        "wiki_id": "skill_000497",
+        "name": {
+          "zh": "拖拉机"
+        },
+        "type": "机械系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，位于1号位时，先手+1。传动1。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%8B%96%E6%8B%89%E6%9C%BA",
+        "source_module": "Skills",
+        "power": 85,
+        "desc_notes": [
+          1020,
+          1033
+        ]
+      },
+      "record_hash": "fb2378a4de4e59d895a05e547a663fc13e6f66399f93381305d1d78272ed7e22",
+      "component": {
+        "priority_slot": 0,
+        "priority_add": 1
+      },
+      "game_skill": {
+        "id": 7070340,
+        "name": {
+          "localization_id": 2461,
+          "text": "拖拉机"
+        },
+        "desc": {
+          "localization_id": 2462,
+          "text": "造成物伤，位于1号位时，<desc_id=1020>先手</>+1。<desc_id=1033>传动</>1。"
+        },
+        "flavor_text": {
+          "localization_id": 2463,
+          "text": "黄金时代初期是农用机械发展的巅峰，可惜那不是玛丽女王想要的巅峰。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          85
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 19,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 21170160,
+            "cast_moment": 24
+          },
+          {
+            "effect_id": 21150010,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Iron_JSCS_106032",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/106032.106032'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "effects": {},
+      "buffs": {
+        "21170160": {
+          "id": 21170160,
+          "buff_base_ids": [
+            2117016
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "21150010": {
+          "id": 21150010,
+          "buff_base_ids": [
+            2115001
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        }
+      },
+      "bases": {
+        "2117016": {
+          "id": 2117016,
+          "buffbase_order": 117,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                21080250
+              ]
+            }
+          ]
+        },
+        "2115001": {
+          "id": 2115001,
+          "buffbase_order": 115,
+          "show_letters": [
+            1
+          ]
+        }
+      }
+    },
+    "7090180": {
+      "record": {
+        "id": 7090180,
+        "wiki_id": "skill_000538",
+        "name": {
+          "zh": "雾气环绕"
+        },
+        "type": "冰系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "回复能量，回复值等于敌方技能总能耗的一半。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%9B%BE%E6%B0%94%E7%8E%AF%E7%BB%95",
+        "source_module": "Skills"
+      },
+      "record_hash": "b01c29d3e748b8b9d1f3b5968a859d49b0624aae360a00921d226e72d0bd7001",
+      "component": {
+        "restore_opponent_cost_divisor": 2
+      },
+      "game_skill": {
+        "id": 7090180,
+        "name": {
+          "localization_id": 2599,
+          "text": "雾气环绕"
+        },
+        "desc": {
+          "localization_id": 2600,
+          "text": "回复能量，回复值等于敌方技能总能耗的一半。"
+        },
+        "energy_cost": [
+          1
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 9,
+        "skill_feature": 3,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 1019029,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ice_wqhr_709007",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/709007.709007'",
+        "describe_type": [
+          12,
+          4
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "effects": {
+        "1019029": {
+          "id": 1019029,
+          "effect_order": 19,
+          "add_des": "返还能量",
+          "add_icon": 1,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                5000
+              ]
+            }
+          ]
+        }
+      },
+      "buffs": {},
+      "bases": {}
+    },
+    "7020430": {
+      "record": {
+        "id": 7020430,
+        "wiki_id": "skill_000254",
+        "name": {
+          "zh": "见招拆招"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 2,
+        "desc": {
+          "zh": "造成物伤，若上回合使用状态技能，本次技能威力+55。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%A7%81%E6%8B%9B%E6%8B%86%E6%8B%9B",
+        "source_module": "Skills",
+        "power": 65
+      },
+      "record_hash": "c02594ab132aa9a0760497e8465a944b22992d652979bdbfb0625e48cd159b34",
+      "component": {
+        "previous_turn": "status",
+        "power_add": 55
+      },
+      "game_skill": {
+        "id": 7020430,
+        "name": {
+          "localization_id": 1715,
+          "text": "见招拆招"
+        },
+        "desc": {
+          "localization_id": 1716,
+          "text": "造成物伤，若上回合使用状态技能，本次技能威力+55。"
+        },
+        "energy_cost": [
+          2
+        ],
+        "damage_rule": 14,
+        "dam_para": [
+          65,
+          2,
+          0,
+          55,
+          0,
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 2,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_JZCZ_201008",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/201008.201008'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "game_skill_hash": "da34d8ba994b51f3c3b3224d63c3124c02417ad4b47cfc77a2a1de6431bd3ba0",
+      "uncertainties": [
+        "Previous turn means the same member committed at least one matching skill on exactly turn-1; multiple uses and entry interactions use this explicit experimental policy."
+      ]
+    },
+    "7020580": {
+      "record": {
+        "id": 7020580,
+        "wiki_id": "skill_000269",
+        "name": {
+          "zh": "气势一击"
+        },
+        "type": "普通系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，若上回合应对成功，本次技能威力+180。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B0%94%E5%8A%BF%E4%B8%80%E5%87%BB",
+        "source_module": "Skills",
+        "power": 80
+      },
+      "record_hash": "36b78c916ac6e959f044cf5380123405dd8c9451a6ebdaa2a9829cd19ef45674",
+      "component": {
+        "previous_turn": "response_success",
+        "power_add": 180
+      },
+      "game_skill": {
+        "id": 7020580,
+        "name": {
+          "localization_id": 1764,
+          "text": "气势一击"
+        },
+        "desc": {
+          "localization_id": 1765,
+          "text": "造成物伤，若上回合应对成功，本次技能威力+180。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "damage_rule": 16,
+        "dam_para": [
+          80,
+          0,
+          180
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 2,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_QSYJ_301027",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/301027.301027'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "game_skill_hash": "c5fa5129b611ce1942d451293433ee02a6154857ce4418eff72c2360b29bfb6a",
+      "uncertainties": [
+        "Previous turn means the same member committed at least one matching skill on exactly turn-1; multiple uses and entry interactions use this explicit experimental policy."
+      ]
+    },
+    "7030620": {
+      "record": {
+        "id": 7030620,
+        "wiki_id": "skill_000376",
+        "name": {
+          "zh": "麦芒"
+        },
+        "type": "草系",
+        "kind": "physical",
+        "energy": 5,
+        "desc": {
+          "zh": "造成物伤，若上回合双方有精灵使用萌系技能，自己回复7能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%BA%A6%E8%8A%92",
+        "source_module": "Skills",
+        "power": 105
+      },
+      "record_hash": "c0eceffbe1a5b7da9f2806228d4ec5d979d9b78bad43de68dadbb05fb1175989",
+      "component": {
+        "previous_turn_type": "萌系",
+        "conditional_operations": [
+          {
+            "op": "energy.restore",
+            "params": {
+              "target": "self",
+              "amount": 7
+            }
+          }
+        ]
+      },
+      "operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "type": "草系",
+            "power": 105
+          }
+        }
+      ],
+      "game_skill": {
+        "id": 7030620,
+        "name": {
+          "localization_id": 2084,
+          "text": "麦芒"
+        },
+        "desc": {
+          "localization_id": 2085,
+          "text": "造成物伤，若上回合双方有精灵使用萌系技能，自己回复7能量。"
+        },
+        "energy_cost": [
+          5
+        ],
+        "dam_para": [
+          105
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 3,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 21600050,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_MM_102046",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/102046.102046'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "game_skill_hash": "6dac74581b79a7067d7c4db189e9ee75628b7a6393099b2cb8887efca38c3fed",
+      "game_buff": {
+        "id": 21600050,
+        "buff_base_ids": [
+          2160005
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "type": 3,
+        "add_max": 1,
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "game_bases": [
+        {
+          "id": 2160005,
+          "buffbase_order": 160,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                16
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3,
+                100
+              ]
+            },
+            {
+              "params": [
+                20641950
+              ]
+            }
+          ]
+        }
+      ],
+      "uncertainties": [
+        "Any committed real skill of either team on exactly the previous turn qualifies, including entry Swift; effective weather-converted type is recorded separately from the source type. This ordering is not live calibrated."
+      ]
+    },
+    "7040700": {
+      "record": {
+        "id": 7040700,
+        "wiki_id": "skill_000418",
+        "name": {
+          "zh": "星火"
+        },
+        "type": "火系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "敌方获得8层灼烧，若上回合双方有精灵使用光系技能，敌方额外获得12层灼烧。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%98%9F%E7%81%AB",
+        "source_module": "Skills",
+        "desc_notes": [
+          1002,
+          1002
+        ]
+      },
+      "record_hash": "c3b56e4aad2e9886bab0a050928468834cdbdc5baa674c323e5c4057c7575406",
+      "component": {
+        "previous_turn_type": "光系",
+        "conditional_operations": [
+          {
+            "op": "status.add",
+            "params": {
+              "target": "opponent",
+              "status": "burn",
+              "stacks": 12
+            }
+          }
+        ]
+      },
+      "operations": [
+        {
+          "op": "status.add",
+          "params": {
+            "target": "opponent",
+            "status": "burn",
+            "stacks": 8
+          }
+        }
+      ],
+      "game_skill": {
+        "id": 7040700,
+        "name": {
+          "localization_id": 2200,
+          "text": "星火"
+        },
+        "desc": {
+          "localization_id": 2201,
+          "text": "敌方获得8层<desc_id=1002>灼烧</>，若上回合双方有精灵使用光系技能，敌方额外获得12层<desc_id=1002>灼烧</>。"
+        },
+        "flavor_text": {
+          "localization_id": 2202,
+          "text": "火系部族的一种战术——烧掉自己身上的一切，包括名字和旗帜，直到只剩下战意。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 4,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 21600040,
+            "cast_moment": 24
+          },
+          {
+            "effect_id": 20070020,
+            "cast_moment": 11
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fire_LHYW_103051",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/103051.103051'",
+        "describe_type": [
+          12,
+          7
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "game_skill_hash": "506da9d1b59a0e96d6d3aec9f5bf43725852e0f14dcb1f0edd014b4f9af14d5e",
+      "game_buff": {
+        "id": 21600040,
+        "buff_base_ids": [
+          2160004
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "type": 3,
+        "add_max": 1,
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "game_bases": [
+        {
+          "id": 2160004,
+          "buffbase_order": 160,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                6
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3,
+                100
+              ]
+            },
+            {
+              "params": [
+                20641930
+              ]
+            }
+          ]
+        }
+      ],
+      "uncertainties": [
+        "Any committed real skill of either team on exactly the previous turn qualifies, including entry Swift; effective weather-converted type is recorded separately from the source type. This ordering is not live calibrated."
+      ]
+    },
+    "7170350": {
+      "record": {
+        "id": 7170350,
+        "wiki_id": "skill_000765",
+        "name": {
+          "zh": "掠影"
+        },
+        "type": "幽系",
+        "kind": "physical",
+        "energy": 3,
+        "desc": {
+          "zh": "造成物伤，若上回合双方有精灵使用火系技能，偷取敌方3能量。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%8E%A0%E5%BD%B1",
+        "source_module": "Skills",
+        "power": 65
+      },
+      "record_hash": "95cb6c6c06fae1dbe4be88c9efec7ab68c7ddc19bf5de99db794d3b07a5a41f8",
+      "component": {
+        "previous_turn_type": "火系",
+        "conditional_operations": [
+          {
+            "op": "energy.transfer",
+            "params": {
+              "target": "opponent",
+              "amount": 3
+            }
+          }
+        ]
+      },
+      "operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "type": "幽系",
+            "power": 65
+          }
+        }
+      ],
+      "game_skill": {
+        "id": 7170350,
+        "name": {
+          "localization_id": 3327,
+          "text": "掠影"
+        },
+        "desc": {
+          "localization_id": 3328,
+          "text": "造成物伤，若上回合双方有精灵使用火系技能，偷取敌方3能量。"
+        },
+        "flavor_text": {
+          "localization_id": 3329,
+          "text": "月亮在火里。它伸手探入，取回了被夺走的光。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          65
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 17,
+        "skill_feature": 4,
+        "damage_type": 2,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 21600020,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gho_LY_116031",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/116031.116031'",
+        "describe_type": [
+          5
+        ]
+      },
+      "game_skill_hash": "91f01daf68e296e7352097f06d15678744ac3d005dff1d952c05c431710f5d61",
+      "game_buff": {
+        "id": 21600020,
+        "buff_base_ids": [
+          2160002
+        ],
+        "buff_list_priority": 3,
+        "buff_groupsigns": [
+          0
+        ],
+        "type": 3,
+        "add_max": 1,
+        "buff_group_reduce": [
+          {
+            "reduce_type": 13,
+            "reduce_param": [
+              999,
+              0
+            ]
+          }
+        ],
+        "is_clean_when_rest": 1
+      },
+      "game_bases": [
+        {
+          "id": 2160002,
+          "buffbase_order": 160,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                4
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                3,
+                100
+              ]
+            },
+            {
+              "params": [
+                20641920
+              ]
+            }
+          ]
+        }
+      ],
+      "uncertainties": [
+        "Any committed real skill of either team on exactly the previous turn qualifies, including entry Swift; effective weather-converted type is recorded separately from the source type. This ordering is not live calibrated."
+      ]
+    },
+    "7090360": {
+      "record": {
+        "id": 7090360,
+        "wiki_id": "skill_000555",
+        "name": {
+          "zh": "冰锋横扫"
+        },
+        "type": "冰系",
+        "kind": "magical",
+        "energy": 4,
+        "desc": {
+          "zh": "造成魔伤，本技能威力等于敌方精灵技能总能耗的10倍。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%86%B0%E9%94%8B%E6%A8%AA%E6%89%AB",
+        "source_module": "Skills",
+        "power": 1
+      },
+      "record_hash": "3eae09713bf76b1e422f00e0dfbdefe08072c164c92704bb0281a924429becad",
+      "component": {
+        "opponent_cost_power_factor": 10
+      },
+      "game_record": {
+        "id": 7090360,
+        "name": {
+          "localization_id": 2643,
+          "text": "冰锋横扫"
+        },
+        "desc": {
+          "localization_id": 2644,
+          "text": "造成魔伤，本技能威力等于敌方精灵技能总能耗的10倍。"
+        },
+        "energy_cost": [
+          4
+        ],
+        "damage_rule": 41,
+        "dam_para": [
+          0,
+          1,
+          10
+        ],
+        "type": 1,
+        "Skill_Type": 1,
+        "skill_dam_type": 9,
+        "skill_feature": 4,
+        "damage_type": 3,
+        "skill_priority": 5,
+        "target_type": 1,
+        "cd_round": [
+          0,
+          0
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Ice_BFHS_108034",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/108034.108034'",
+        "describe_type": [
+          5
+        ],
+        "target_blood_limit": [
+          0
+        ]
+      },
+      "uncertainty": "Total current quoted costs before this attack; unknown choice costs block, zero resulting power remains uncalibrated."
+    },
+    "7140330": {
+      "record": {
+        "id": 7140330,
+        "wiki_id": "skill_000684",
+        "name": {
+          "zh": "马步"
+        },
+        "type": "武系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "本技能先手-1，选择：若自己生命低于20%，回复60%生命或若自己生命高于80%，获得物攻+150%。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%A9%AC%E6%AD%A5",
+        "source_module": "Skills",
+        "desc_notes": [
+          3019
+        ]
+      },
+      "record_hash": "7931e6d835a7ce2c0fba0ba4f1565768966cedee36a27d665cc0b6449ea1f6c4",
+      "modifier_only": true,
+      "component": {
+        "priority_all_slots": true,
+        "priority_add": -1
+      },
+      "evidence": {
+        "id": 7140330,
+        "name": {
+          "localization_id": 3072,
+          "text": "马步"
+        },
+        "desc": {
+          "localization_id": 3073,
+          "text": "本技能先手-1，<desc_id=3019>选择</>：若自己生命低于20%，回复60%生命或若自己生命高于80%，获得物攻+150%。"
+        },
+        "flavor_text": {
+          "localization_id": 3074,
+          "text": "某个擅长对决的魔法师点评此技能：能稳住心神的洛克不会被打倒。先学挨打，再学进攻。"
+        },
+        "energy_cost": [
+          3
+        ],
+        "dam_para": [
+          0
+        ],
+        "type": 1,
+        "Skill_Type": 2,
+        "skill_dam_type": 14,
+        "skill_feature": 4,
+        "damage_type": 1,
+        "skill_priority": 4,
+        "target_type": 9,
+        "cd_round": [
+          0,
+          0
+        ],
+        "skill_result": [
+          {
+            "effect_id": 21500190,
+            "cast_moment": 24
+          }
+        ],
+        "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Mar_TG_313037",
+        "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/313037.313037'",
+        "describe_type": [
+          12,
+          6
+        ]
+      }
+    }
+  },
+  "policy": "fixed_cost_final_override_slot_priority_then_weather_later_committed_action_cost_half_floor_v1",
+  "uncertainties": [
+    "Fixed cost overrides all ordinary modifiers; competing special overrides are uncalibrated.",
+    "Later attack means another side action has committed first, not positive priority or response.",
+    "Opponent cost snapshot uses actual total if already paid; otherwise current computed total. Half costs round down."
+  ]
+}

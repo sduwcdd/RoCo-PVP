@@ -11,7 +11,7 @@ from lab.ruleset import canonical_hash
 from lab.power_query import quote_damage_power
 
 CONFIG = Path(__file__).resolve().parents[1] / 'data/rules/reviewed-adjacent-power-1.json'
-CONFIG_HASH = 'bb16792164cf56dfdbad0d6fdd184b508bd0715e0784cf78b30e3bce66ee5ad4'
+CONFIG_HASH = 'd03da17e054c2c529a8abd05f72d3915886c96265fe167e66d9fc0ce4fdd7006'
 POLICY = 'interior_neighbor_current_power_before_payment_floor_exact_text_fraction_abs_difference_experiment_v1'
 
 

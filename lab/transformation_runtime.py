@@ -18,7 +18,7 @@ from lab.skill_execution import execute_skill, preflight_skill
 
 
 CONFIG = Path(__file__).resolve().parents[1] / 'data/rules/reviewed-transformation-components-1.json'
-CONFIG_HASH = '37af903edac0e8f976e55e7c65fa31c3ee9d17410331c259491daf4e30af28cd'
+CONFIG_HASH = '12e063f5dfb8bca6783f9e5afd30ac45a24dfce413087d9be7f58b5ed47e0861'
 POLICY = 'source_bound_transformations_experiment_v1'
 
 

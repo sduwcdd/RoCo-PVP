@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_CONFIG = ROOT / 'data/rules/reviewed-modifier-source-units-1.json'
-SOURCE_HASH = 'a70bd22218c3557b1e63d931b80db041a4094fc17a660377787dc2870fdec458'
+SOURCE_HASH = '3bd26e0847e1e0d86c1f6fc5401d9f7fe88dea4320c827ac7b78dea05b79e3bb'
 
 @lru_cache(maxsize=2)
 def _sources(stamp):

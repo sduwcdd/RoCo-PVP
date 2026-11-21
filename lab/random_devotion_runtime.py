@@ -10,7 +10,7 @@ from lab.phase_config import fingerprint
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "data/rules/reviewed-random-devotion-1.json"
-CONFIG_HASH = '679f1e3001832508075a8dceba566d7dc5481230f794c9141ffa7b335584af39'
+CONFIG_HASH = '744ac0581cdecd317779e2d04e998ec170773f79cc7b452186f72a8fce5ff7cf'
 POLICIES = {"sampling": "uniform_independent_with_replacement_experiment_v1",
             "pool": "complete_extracted_effect_1016003_five_candidates",
             "stacking": "team_persistent_uncapped_fixed_enhancements_experiment",

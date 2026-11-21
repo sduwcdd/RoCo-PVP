@@ -1,8 +1,8 @@
 {
   "schema": "reviewed-adjacent-power-1",
-  "snapshot_id": "20261105T124140+0800",
-  "catalog_path": "data/bwiki/20261105T124140+0800/catalog.json",
-  "catalog_file_sha256": "4f46200f8b7fa8e1a8415aa579f532c5f745b0ab08482b64d8bf55fb50e6ad15",
+  "snapshot_id": "20261121T162937+0800",
+  "catalog_path": "data/bwiki/20261121T162937+0800/catalog.json",
+  "catalog_file_sha256": "c82eedd6b318671fd26ac44e30da5944b1d2641dd54c33ba7ddc0756596f9578",
   "skills": {
     "7070030": {
       "record": {
@@ -232,5 +232,5 @@
       }
     }
   },
-  "catalog_content_hash": "4fffff75f75d5a6eebb4d549ab9e64254b1780d4bace281b365d26d547d0f51f"
+  "catalog_content_hash": "9f75ed1878ab4ecb3fb0701fe1526acee385af0a50a3f5a25db30f6a45bc1980"
 }

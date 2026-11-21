@@ -1,7 +1,7 @@
 {
   "schema": "reviewed-charge-components-1",
   "policy": "charge-observed-attack-and-file-layers-v1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "source_files": {
     "artifacts/strength_buff_probe_20261025/mirror/versions/pakchunk4-WindowsNoEditor_2_P/SKILL_CONF.json": "bdd21577da060b74d0f83fdc589e007b9dbf882a994aeaf6e9813a5e3278a5db",
     "docs/verification/game-mirror-patch2-20261025.resources.json": "5f289bbe0a625eb861f3643db1873db28a0303bde7d26e8e2d75e16d7bba4c2b"

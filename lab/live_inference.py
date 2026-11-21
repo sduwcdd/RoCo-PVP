@@ -5,7 +5,6 @@ import json
 from pathlib import Path
 
 from .damage_inference import DIMS, _nature_directions, _selection_cases
-from .numeric_candidates import arena_documented_damage60
 from .live_stat_model import WORLD_SOURCE, WORLD_SOURCE_SHA256, is_world, star_candidates, stat_candidates, npc_profile, damage_value
 
 STAT_KEYS = {"hp": "hp", "patk": "phyAtk", "matk": "magAtk", "pdef": "phyDef", "mdef": "magDef", "spd": "spd"}
@@ -37,7 +36,9 @@ def damage_observation(caster, target, skill_id, damage, critical, turn, resolve
     ally = caster if caster.side == 0 else target
     role = "defender" if caster.side == 0 else "attacker"
     form = lambda pet: (pet.lowered_form() or {}).get("base_conf_id") or pet.base_conf_id
+    subject_level = context[role].get("level") if context else enemy.level
     event = {"turn": turn, "skill_id": skill_id, "damage": damage, "role": role, "form_id": form(enemy),
+             "subject_level": subject_level,
              "critical": critical, "ally_pet_id": ally.pet_id, "unmodeled_buffs": []}
     profile = live_damage.skill_math(skill_id, form(caster), form(target))
     if profile.get("reason"):
@@ -124,20 +125,35 @@ def _protocol_selection(pet):
         raw = row.get("talent")
         if raw is not None and (type(raw) is not int or raw < 0):
             raise ValueError(f"协议{dim}原始资质字段无效")
-        if not is_world(pet) and raw is not None and raw != value * 6:
+        if not is_world(pet) and pet.get("level") == 60 and raw is not None and raw != value * 6:
             raise ValueError(f"协议{dim}个体值与原始资质字段冲突")
         values[dim] = value
     return {"selected": list(values), "values": values}
 
 
+def _observation_level(event):
+    if "subject_level" in event:
+        return event["subject_level"]
+    role = event.get("role")
+    captured = (event.get("calculation") or {}).get(role, {})
+    if "level" in captured:
+        return captured["level"]
+    if role == "attacker" and "attacker_level" in event:
+        return event["attacker_level"]
+    # Older bare arena observations were recorded against the standard level.
+    return 60 if event.get("battle_mode", "pvp") == "pvp" else None
+
+
 def infer_configuration(pet, evidence):
     from . import live_damage
     form_id = live_damage._effective_base(pet)
-    relevant = [dict(e) for e in evidence if str(e.get("form_id")) == str(form_id)]
+    level = pet.get("level")
+    relevant = [dict(e) for e in evidence if str(e.get("form_id")) == str(form_id)
+                and _observation_level(e) == level]
     accepted = [e for e in relevant if not e.get("blocker")]
     result = {"status": "unresolved", "calibrated": False, "probability_available": False,
               "observations": [{k:v for k,v in e.items() if k != "calculation"} for e in relevant],
-              "used_observations": len(accepted), "groups": [], "combination_count": 0,
+              "used_observations": 0, "groups": [], "combination_count": 0,
               "panel_ranges": {}, "talent_value_options": {}, "determined": {},
               "issues": list(dict.fromkeys(e["blocker"] for e in relevant if e.get("blocker"))),
               "notice": "先匹配下发面板，再用受击前的状态、特性和天气通过同一正算查询筛选；未知条件保留区间，未全量实战校准。"}
@@ -148,8 +164,21 @@ def infer_configuration(pet, evidence):
         result["issues"].append(str(error))
     result["protocol_selection"] = protocol
     world = is_world(pet)
-    if (not world and pet.get("level") != 60) or (world and (type(pet.get("level")) is not int or pet["level"] < 1)):
-        result["issues"].append("当前配置反推缺少有效等级；PVP仅支持60级，大世界使用独立候选")
+    if type(level) is not int or level < 1:
+        result["issues"].append("当前配置反推缺少有效等级")
+        return result
+    if not world and level != 60:
+        observed = {key: value for key, value in (pet.get("battleStats") or {}).items()
+                    if key in STAT_KEYS.values() and type(value) in (int, float) and value > 0
+                    and key not in (pet.get("battleStatsEstimated") or {})}
+        result["determined"] = observed
+        result["panel_ranges"] = {key: [value, value] for key, value in observed.items()}
+        result["used_panels"] = len(observed)
+        if protocol:
+            result["status"] = "protocol"
+            result["known_talents"] = {dim: {"selected": True, "values": [value], "source": "protocol"}
+                                       for dim, value in protocol["values"].items()}
+        result["issues"].append("该等级的PVP资质模型尚未核实，仅列下发面板和已下发资质")
         return result
     try:
         stars_to_check = star_candidates(pet)

@@ -6,7 +6,7 @@ from lab.prepared_rules import prepare_rules
 from lab.ruleset import canonical_hash
 
 CONFIG = Path(__file__).resolve().parents[1] / 'data/rules/reviewed-action-fields-1.json'
-CONFIG_HASH = '2323ce5c6bd6dd1bd08417001bff176bdb9afb55067f544100e03453f4067d4b'
+CONFIG_HASH = '753c3ab8f13b47a4c918cdae25f568b55790739b9d2c3ed166b8b2df065a9b72'
 
 
 def rules():

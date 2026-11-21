@@ -1,0 +1,664 @@
+{
+  "schema": "reviewed-health-payment-1",
+  "policy": "missing_energy_five_percent_max_hp_floor_total_nonlethal_v1",
+  "snapshot_id": "20261105T124140+0800",
+  "source_files": {
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+    "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+    "artifacts/game_logic_followup_20261025/scripts/pakchunk4-WindowsNoEditor_27_P/Enum.luac.decompiled.lua": "292b8bedc43a930cb40e5f8f8e7bd8995c2ac7b433e5059fdd21c140627900a5"
+  },
+  "forms": {
+    "3014": {
+      "trait_id": 200100,
+      "record_hash": "10e9bd22835806fa86d5003e23f18d803fad8cc06b7922346b0a40f27dc8d914"
+    },
+    "3015": {
+      "trait_id": 200100,
+      "record_hash": "fdc2df63bac261e6312e53dad003cd67e80be3e9ca97dde23cb5a7e950cb3499"
+    },
+    "3016": {
+      "trait_id": 200100,
+      "record_hash": "4f427e9e2baa0d030150052334d380ec68f682fbe22778c76439de7a3a7f2a8c"
+    },
+    "5053": {
+      "trait_id": 280030,
+      "record_hash": "6c3d2367e7877a3227b245b6cb72e2e196eaaa15bb9ac070094f1ef42e64746d"
+    }
+  },
+  "components": [
+    {
+      "source_id": 200100,
+      "kind": "trait",
+      "record_hash": "f36a0c7d3bec5466c4c89d477d0624c572f7ee468c1e29fa7e41e16a41e5a8ce",
+      "component": {
+        "op": "payment.hp_for_missing_energy",
+        "hp_ratio": [
+          5,
+          100
+        ],
+        "hp_basis": "max_hp",
+        "scope": "missing_energy_only"
+      },
+      "evidence": {
+        "catalog_raw": {
+          "id": 200100,
+          "wiki_id": "skill_000024",
+          "name": {
+            "zh": "石头大餐"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "能量不足时，消耗5%生命，代替1能量。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E7%9F%B3%E5%A4%B4%E5%A4%A7%E9%A4%90",
+          "source_module": "Skills"
+        },
+        "game_skill_raw": {
+          "id": 200100,
+          "name": {
+            "localization_id": 202,
+            "text": "石头大餐"
+          },
+          "desc": {
+            "localization_id": 203,
+            "text": "能量不足时，消耗5%生命，代替1能量。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20240030,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200100.200100'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff_raw": {
+          "id": 20240030,
+          "buff_base_ids": [
+            2024003
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            3
+          ],
+          "name": "石头大餐",
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/820083_png.820083_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "bases_raw": [
+          {
+            "id": 2024003,
+            "buffbase_order": 24,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  500
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "opcode_name": "BFT_BLOOD_TO_ENERGY",
+        "opcode": 24,
+        "parameter_operand": 500,
+        "parameter_unit_policy": "basis_points_research"
+      }
+    },
+    {
+      "source_id": 280030,
+      "kind": "trait",
+      "record_hash": "2bf6266b89f6b6bbdbe1b3fd73d70fca8d1024d7a5b6d82571bbd68efb8b305b",
+      "component": {
+        "op": "payment.hp_for_missing_energy",
+        "hp_ratio": [
+          5,
+          100
+        ],
+        "hp_basis": "max_hp",
+        "scope": "missing_energy_only"
+      },
+      "evidence": {
+        "catalog_raw": {
+          "id": 280030,
+          "wiki_id": "skill_000238",
+          "name": {
+            "zh": "盛宴"
+          },
+          "type": "无系别",
+          "kind": "trait",
+          "energy": 0,
+          "desc": {
+            "zh": "能量不足时，消耗5%最大生命，代替1能量。生命低于50%时，获得吸血100%。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E7%9B%9B%E5%AE%B4",
+          "source_module": "Skills"
+        },
+        "game_skill_raw": {
+          "id": 280030,
+          "name": {
+            "localization_id": 713,
+            "text": "盛宴"
+          },
+          "desc": {
+            "localization_id": 714,
+            "text": "能量不足时，消耗5%最大生命，代替1能量。生命低于50%时，获得吸血100%。"
+          },
+          "energy_cost": [
+            0
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 2,
+          "skill_dam_type": 1,
+          "damage_type": 1,
+          "skill_priority": 1,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20240031,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1004110,
+              "cast_moment": 7
+            },
+            {
+              "effect_id": 21530030,
+              "cast_moment": 6
+            },
+            {},
+            {},
+            {
+              "effect_id": 1004117,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/200001",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/FeatureIcon/200100.200100'",
+          "describe_type": [
+            0
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff_raw": {
+          "id": 20240031,
+          "buff_base_ids": [
+            2024003
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            3
+          ],
+          "name": "盛宴",
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/820083_png.820083_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 13,
+              "reduce_param": [
+                999,
+                0
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "bases_raw": [
+          {
+            "id": 2024003,
+            "buffbase_order": 24,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  500
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "opcode_name": "BFT_BLOOD_TO_ENERGY",
+        "opcode": 24,
+        "parameter_operand": 500,
+        "parameter_unit_policy": "basis_points_research"
+      }
+    },
+    {
+      "source_id": 7180300,
+      "kind": "skill",
+      "record_hash": "4876b7d8c070f402dd6d434c31a8fbcd8558adbb56cab2f04c61387b072b6c58",
+      "component": {
+        "op": "payment.hp_for_missing_energy",
+        "hp_ratio": [
+          5,
+          100
+        ],
+        "hp_basis": "max_hp",
+        "scope": "missing_energy_only"
+      },
+      "evidence": {
+        "catalog_raw": {
+          "id": 7180300,
+          "wiki_id": "skill_000789",
+          "name": {
+            "zh": "骗局"
+          },
+          "type": "恶系",
+          "kind": "magical",
+          "energy": 4,
+          "desc": {
+            "zh": "造成魔伤，能量不足时，消耗5%生命代替1能量。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E9%AA%97%E5%B1%80",
+          "source_module": "Skills",
+          "power": 110
+        },
+        "game_skill_raw": {
+          "id": 7180300,
+          "name": {
+            "localization_id": 3404,
+            "text": "骗局"
+          },
+          "desc": {
+            "localization_id": 3405,
+            "text": "造成魔伤，能量不足时，消耗5%生命代替1能量。"
+          },
+          "flavor_text": {
+            "localization_id": 3406,
+            "text": "你想要利息，他想要你的本金。\n这是彼得大道黑市里最公平的交易。"
+          },
+          "energy_cost": [
+            4
+          ],
+          "dam_para": [
+            110
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20240040,
+              "cast_moment": 7
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_XSZJ_217028",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/217028.217028'",
+          "describe_type": [
+            5,
+            17
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff_raw": {
+          "id": 20240040,
+          "buff_base_ids": [
+            2024004
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/820083_png.820083_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                999
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "bases_raw": [
+          {
+            "id": 2024004,
+            "buffbase_order": 24,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  500
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "opcode_name": "BFT_BLOOD_TO_ENERGY",
+        "opcode": 24,
+        "parameter_operand": 500,
+        "parameter_unit_policy": "basis_points_research"
+      }
+    },
+    {
+      "source_id": 7180330,
+      "kind": "skill",
+      "record_hash": "d3cfe304073c1e4a66dd56ea41fcbb0e8ac6cd2358e695383dbb143df6740933",
+      "component": {
+        "op": "payment.hp_for_missing_energy",
+        "hp_ratio": [
+          5,
+          100
+        ],
+        "hp_basis": "max_hp",
+        "scope": "missing_energy_only"
+      },
+      "evidence": {
+        "catalog_raw": {
+          "id": 7180330,
+          "wiki_id": "skill_000792",
+          "name": {
+            "zh": "虚假破产"
+          },
+          "type": "恶系",
+          "kind": "defense",
+          "energy": 2,
+          "desc": {
+            "zh": "减伤80%，能量不足时，消耗5%生命代替1能量，应对攻击。"
+          },
+          "source_url": "https://wiki.biligame.com/nrc/%E8%99%9A%E5%81%87%E7%A0%B4%E4%BA%A7",
+          "source_module": "Skills",
+          "desc_notes": [
+            1016
+          ]
+        },
+        "game_skill_raw": {
+          "id": 7180330,
+          "name": {
+            "localization_id": 3414,
+            "text": "虚假破产"
+          },
+          "desc": {
+            "localization_id": 3415,
+            "text": "减伤80%，能量不足时，消耗5%生命代替1能量，<desc_id=1016>应对攻击</>。"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 3,
+          "skill_dam_type": 18,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20240040,
+              "cast_moment": 7
+            },
+            {
+              "effect_id": 1031119,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620060,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20110310,
+              "cast_moment": 7
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dem_XND_117031",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/117032.117032'",
+          "describe_type": [
+            1,
+            11
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "buff_raw": {
+          "id": 20240040,
+          "buff_base_ids": [
+            2024004
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/820083_png.820083_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                999
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "bases_raw": [
+          {
+            "id": 2024004,
+            "buffbase_order": 24,
+            "show_letters": [
+              1
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  500
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "opcode_name": "BFT_BLOOD_TO_ENERGY",
+        "opcode": 24,
+        "parameter_operand": 500,
+        "parameter_unit_policy": "basis_points_research"
+      }
+    }
+  ],
+  "scope": "payment components only; does not compile unrelated skill/trait effects",
+  "unknowns": [
+    "The client does not establish the lethal-cost legality or minimum-one rounding.",
+    "Stone Feast text says HP; maxHP is an explicit research basis, corroborated by Feast maxHP text sharing the same base.",
+    "No general costHP skill field was recovered.",
+    "Feast lifesteal and health-loss hooks are separate components, not implied by payment support."
+  ]
+}

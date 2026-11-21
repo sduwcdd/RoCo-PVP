@@ -1,7 +1,7 @@
 {
   "schema": "reviewed-health-payment-1",
   "policy": "missing_energy_five_percent_max_hp_floor_total_nonlethal_v1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "source_files": {
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
@@ -11,19 +11,19 @@
   "forms": {
     "3014": {
       "trait_id": 200100,
-      "record_hash": "10e9bd22835806fa86d5003e23f18d803fad8cc06b7922346b0a40f27dc8d914"
+      "record_hash": "62e9a0cec50a245a89e36b1b2e83065d0e4005ac1875973c23969c5d1cbe1700"
     },
     "3015": {
       "trait_id": 200100,
-      "record_hash": "fdc2df63bac261e6312e53dad003cd67e80be3e9ca97dde23cb5a7e950cb3499"
+      "record_hash": "b7b3baa039962c632a8fca3bb9fc90aa35bb80267bc39416e79a67f2d4672aa5"
     },
     "3016": {
       "trait_id": 200100,
-      "record_hash": "4f427e9e2baa0d030150052334d380ec68f682fbe22778c76439de7a3a7f2a8c"
+      "record_hash": "a70e4f54516587d27ff30445e8a791e2436a2b1fea6c8c355f28fa25b2c7d15f"
     },
     "5053": {
       "trait_id": 280030,
-      "record_hash": "6c3d2367e7877a3227b245b6cb72e2e196eaaa15bb9ac070094f1ef42e64746d"
+      "record_hash": "6af761fd545f2e719fdeec7d063ee419be41da0f91098283a2bb043360ebe48e"
     }
   },
   "components": [

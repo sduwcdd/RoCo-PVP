@@ -31,7 +31,7 @@ SOURCE_HASHES = {
     BASE + "BATTLE_GLOBAL_CONFIG.json": "0e43b58db5cc6cf04771c6e17af7c5a4564b3bee671da236706c3667dd9a527e",
 }
 LOSS_CONFIG = ROOT / 'data/rules/reviewed-trainer-magic-loss-1.json'
-LOSS_CONFIG_SHA256 = '1cb43011eca7a93145a81dad6f30a850d55a73a1571fcc7af83138e1af3d79b1'
+LOSS_CONFIG_SHA256 = 'cf4a8b06b27a4c82db9d1942cc846d5e4af9647419f02455a9ad4a712f95cb70'
 LOSS_POLICY = 'source_bound_self_knockout_magic_loss_components_v1'
 RETALIATION_POLICY = 'audited_source_pet_direct_retaliation_defeat_magic_accounting_v1'
 

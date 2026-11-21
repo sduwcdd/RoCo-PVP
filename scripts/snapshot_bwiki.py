@@ -83,7 +83,10 @@ def page_for_revision(response, revision_id):
 def read_url(url):
     for attempt in range(3):
         try:
-            request = urllib.request.Request(url, headers={
+            parsed = urllib.parse.urlsplit(url)
+            body = parsed.query.encode("ascii") if parsed.path.endswith("/api.php") else None
+            address = urllib.parse.urlunsplit(parsed._replace(query="")) if body else url
+            request = urllib.request.Request(address, data=body, headers={
                 "User-Agent": "Mozilla/5.0 (RocoResearchSnapshot)", "Accept-Encoding": "identity"})
             with urllib.request.urlopen(request, timeout=30) as response:
                 raw = response.read(8_000_001)
@@ -404,30 +407,18 @@ def update(args):
             if sha(raw) != record["sha256"]:
                 raise WikiDataError(f"Retained source hash mismatch: {name}")
             return raw
-        for attempt in range(3):
-            try:
-                time.sleep(.4 + attempt)
-                request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (RocoResearchSnapshot)", "Accept-Encoding": "identity"})
-                with urllib.request.urlopen(request, timeout=30) as response:
-                    raw = response.read(8_000_001)
-                if len(raw) > 8_000_000:
-                    raise WikiDataError("Source response exceeds size limit")
-                raw_path.write_bytes(gzip.compress(raw, mtime=0))
-                manifest["pages"][name] = {"url": url, "fetched_at": now(), "sha256": sha(raw),
-                                            "bytes": len(raw), "raw_file": f"raw/{name}.gz"}
-                save(manifest_path, manifest)
-                return raw
-            except Exception:
-                if attempt == 2:
-                    raise
-        raise AssertionError("Unreachable")
+        raw = read_url(url)
+        raw_path.write_bytes(gzip.compress(raw, mtime=0))
+        manifest["pages"][name] = {"url": url, "fetched_at": now(), "sha256": sha(raw),
+                                    "bytes": len(raw), "raw_file": f"raw/{name}.gz"}
+        save(manifest_path, manifest)
+        return raw
 
     data, provenance = {}, {}
 
     def load_source(short, title):
-        params = {"action": "query", "prop": "revisions", "titles": title,
+        params = {"action": "query", "prop": "revisions", "revids": heads[short]["revision_id"],
                   "rvprop": "ids|timestamp|content", "rvslots": "main", "format": "json"}
-        # Preserve title separators; fully encoded slashes are rejected by the site's edge.
         url = BASE + "api.php?" + urllib.parse.urlencode(params, safe=":/")
         if short not in manifest["pages"]:
             reuse_module(previous, out, short, heads[short], manifest)
@@ -490,7 +481,9 @@ def update(args):
 
     portraits = {}
     try:
-        html = fetch(BASE + urllib.parse.quote("精灵图鉴"), "dex-html").decode("utf-8")
+        params = {"action": "parse", "page": "精灵图鉴", "prop": "text", "format": "json"}
+        parsed = json.loads(fetch(BASE + "api.php?" + urllib.parse.urlencode(params), "dex-parse"))
+        html = parsed["parse"]["text"]["*"]
         for pid, image in re.findall(r'class="npc-card"[^>]*data-id="([^"]+)"(?:(?!class="npc-card").)*?<img[^>]*src="([^"]+)"', html, re.S):
             if image.startswith("https://patchwiki.biligame.com/"):
                 portraits[pid] = image

@@ -17,7 +17,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / "data/rules/reviewed-adjacent-power-aura-1.json"
-CONFIG_SHA256 = '6c553f700c0edb1da594b4b440a853ddca35472eacb1a8a84ca606624a3b79e6'
+CONFIG_SHA256 = '12f4c10cbadff4b99a7cdf21df26223e8f0ae2b0acee2d509d34e340e0fe6b9d'
 POLICY = "source_bound_adjacent_power_aura_v1"
 POLICIES = {
     "adjacency": "immediate_neighbours_by_slot_index_without_wrap_edge_slots_use_existing_neighbours",

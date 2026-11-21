@@ -1,9 +1,9 @@
 {
   "schema": "reviewed-trainer-magic-loss-1",
   "policy": "source_bound_self_knockout_magic_loss_components_v1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "sources": {
-    "data/bwiki/20261105T124140+0800/catalog.json": "4f46200f8b7fa8e1a8415aa579f532c5f745b0ab08482b64d8bf55fb50e6ad15",
+    "data/bwiki/20261121T162937+0800/catalog.json": "c82eedd6b318671fd26ac44e30da5944b1d2641dd54c33ba7ddc0756596f9578",
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
     "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
@@ -295,95 +295,95 @@
   "forms": {
     "3040": {
       "trait_id": 200081,
-      "record_hash": "abeda5757f678c20c5c28a9740c13cf3174440ccc6777210196055a5cb5d2e8e"
+      "record_hash": "70c5fff524d8cfb14012f26e31fe88211121954fb744942f1a621f74ea844e72"
     },
     "3041": {
       "trait_id": 200081,
-      "record_hash": "713175d59eb60ff7220201dd3cd2038cfb70e5b986a70b598b0f4fed40defb5c"
+      "record_hash": "aaa190c11c64d403697a7bc5d849e64e82db4a42b0cce702403d5855f86ee4ca"
     },
     "3042": {
       "trait_id": 200081,
-      "record_hash": "2594de80d03cafbeea392a9a46cea443c62afd1d0a4f55b19a43f17beb453c51"
+      "record_hash": "55b9891d37daa9e2478a59c65b250d82d0639b2ce2d85bdb74bd6dc33c86c152"
     },
     "3180": {
       "trait_id": 200141,
-      "record_hash": "b6f2eef7f05eadbc63fc688750516225a838ec97cfdfa1e54b845861e0f2ece9"
+      "record_hash": "115b0393032ca35405b48bbc6f4f8b4b150841ff4a67f0e88da4411777524231"
     },
     "3181": {
       "trait_id": 200141,
-      "record_hash": "913e49c07888005c594e5d0b25b7c3021a5ba637a23d4d116e22fe931e4372cc"
+      "record_hash": "a03e2aca00c7a64e12dea4c1d494250a0a496a201bf14801f26691d5b0a351bc"
     },
     "3182": {
       "trait_id": 200141,
-      "record_hash": "b776ecadbc38ae375de9b5d6651bfcc4ce2bb80ec501dd3277db5c3aca97d023"
+      "record_hash": "ac8aadb14e0ddba9c62acff9cead8d96346278d84bfd21e08c050d311b2ea401"
     },
     "3288": {
       "trait_id": 200081,
-      "record_hash": "71c165eb74a59315584a67e69d259157b402c8527aac71207adc2dd8a252d259"
+      "record_hash": "9f569ce3082130bfaa135b5837772a67e59da01687b8b6324f1c2e12ed9c8403"
     },
     "3289": {
       "trait_id": 200081,
-      "record_hash": "c1b797549d158181172fadea5d28adbb7d367536854af5d01c255bc93ac8b31a"
+      "record_hash": "c2338acec36a7d7791573ad34f97c08f05cfcf6c7ea37ee7d978cd726d0c4a9b"
     },
     "3290": {
       "trait_id": 200081,
-      "record_hash": "27cd723b8202a32ff4f89e3742d6c667bdeb7ce667b2e1b3d50d417087d6c5be"
+      "record_hash": "1cfa8ddc69cd7998c4d5326fa996a99984623ca7f2bf0ceb6021039f8d2f329b"
     },
     "3291": {
       "trait_id": 200081,
-      "record_hash": "d4697dab8d42687bdac4025ed1c4265229c10f6c1d6b8ad1cc1f7d16a873301d"
+      "record_hash": "61f91b34fd8cefe84a94453de172ce10d8ceb0aadcf2d7f1c933bc23cbe9e1b6"
     },
     "3292": {
       "trait_id": 200081,
-      "record_hash": "f792ecf9b7114e3425b30577498b0ab662ce7c95ba5bf0fc9f9a77e4e3021fb1"
+      "record_hash": "342c5a9c7a2d0964a6cc167a2ebdfafd9f84d3bd9deeb6a846d3d4186f084de7"
     },
     "3293": {
       "trait_id": 200081,
-      "record_hash": "fcd27cbd43c313a61164e6733b1c0f765199556a1460e6c668acd7b37ad06732"
+      "record_hash": "bab20e950732d070da06e64a1725e00ff09ca4f44c8e033e4e8d52605b599033"
     },
     "3294": {
       "trait_id": 200081,
-      "record_hash": "32eee3932c84622ec9f8b19f4fdf37400f596d9aba7d9c28cc9c2544ff0193da"
+      "record_hash": "23763ac99d040e9f9c1c7a2e9c9f23153950d90bf0d2da1a73b954b1bfbde2cf"
     },
     "3295": {
       "trait_id": 200081,
-      "record_hash": "0569951adef01b09294c9f792955987783d8c00ea51e654f5c4328053b2d91bb"
+      "record_hash": "86e7f7209ec14ba085301b14db8b5c618ab386abd735fcf2fecbcaa51234c2cc"
     },
     "3296": {
       "trait_id": 200081,
-      "record_hash": "836a9d3741008b5799a072efff69d2109df61503718a9b7304ea3cc0f4f684c4"
+      "record_hash": "7b5e1c0a2dc981696c141d9414256e8051ca698c16d5059d0d34094de9c4fe58"
     },
     "5023": {
       "trait_id": 280019,
-      "record_hash": "904fc0029da1d2988e4b9d521ac3cc0581d86c7d16cc5b201145470cd54be0bd"
+      "record_hash": "c3bca0dd3755be8972fd05b863d9bd825d1e7fab4dfebe0157eebd5fb13c1965"
     },
     "5040": {
       "trait_id": 280019,
-      "record_hash": "58dee73b2c4b3f5e85977cef0a03fc8bdcc1a63491cca335ce895d6a93dd8670"
+      "record_hash": "20a67cfa6135908710f06f4a8f5d35d5ebe47b3947b0d29e57bedf6d2078eed4"
     },
     "5041": {
       "trait_id": 280019,
-      "record_hash": "e94d14d8a95dedb04577d5673bbfea0a53be7d5635bd59ae5e543f240e93216e"
+      "record_hash": "ae3e1a1edd50af2c1aad2927173bf60e601cff8586955fbbfab9ec699a1ce6f4"
     },
     "5042": {
       "trait_id": 280019,
-      "record_hash": "264592ca2f0dd5186460d419e8de0f3c8d9ce59f8fbf5f3c522ea832c3a245cb"
+      "record_hash": "731eb84bb3b3a98573ed023a6fb2869a6f208c055547fe9cf6f2e5804a48fe31"
     },
     "5043": {
       "trait_id": 280019,
-      "record_hash": "ea989cde53672c7898e24bf4a572c070d753c504f51389bed62beb2cbcbb8b06"
+      "record_hash": "41fbf14c097137d6c9a65c49c058cd24086abcbe8231e3d2aaff3983af8a4f5f"
     },
     "5044": {
       "trait_id": 280019,
-      "record_hash": "3de7a9be6b3c9f7d99e4f6f120a6e2b840f25dff2f8d12764586218e1cd7b966"
+      "record_hash": "da76e21f5479706aa9b6e63062d17376ce39629dc1f47f387275339c0839b904"
     },
     "5045": {
       "trait_id": 280019,
-      "record_hash": "6b47772df2392235c7aeec9abbe869f4ae7e4b5a2a25250941a1bfd828e27857"
+      "record_hash": "4a1304df5ba21a6584deadd422edd9de2055311a8d9aeb1091856aa4ca84a662"
     },
     "5046": {
       "trait_id": 280019,
-      "record_hash": "04d451f8d494314c39fac7ee832ec160e9e81e23309ca4e66585772686595aba"
+      "record_hash": "7ef5a1fdac6fff0c182615e49f58efd20ff045f80d9be5b3b79f6a4ccab01c1b"
     }
   },
   "unadapted_traits": {

@@ -39,7 +39,7 @@ HUILLU = "雨天的回合数延长4回合，应对防御：改为延长8回合�
 
 
 CONFIG = Path(__file__).resolve().parents[1] / "data/rules/reviewed-defense-components-1.json"
-CONFIG_HASH = '68a5ebb004017c0d5993b6e51df34ee7fb15ff50a50bbdcc212f31d0d64d7284'
+CONFIG_HASH = '353603e84793b290ffccd9400005bc8df8ef2a939ba7e51e63df68bbfbe80ad6'
 DEPARTURE_POLICY = "explicit_target_owner_replacement_after_defense_experiment_v1"
 END_RETURN_POLICY = 'source_queued_original_active_entry_after_end_effects_before_trait_departures_experiment_v1'
 

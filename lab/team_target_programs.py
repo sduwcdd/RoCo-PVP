@@ -11,7 +11,7 @@ from lab.phase_config import fingerprint
 from lab.prepared_rules import prepare_rules
 
 CONFIG = ROOT / 'data/rules/reviewed-team-targets-1.json'
-CONFIG_SHA256 = 'ab9c8fa8ba1a214e079e6b9665fa34d4ea181212df70cdcb97d4f5a6b7931515'
+CONFIG_SHA256 = 'ad9f99f5f14520b357dacb230862c22d9503aa3d0880b9e1352689f7f0a6ac0b'
 POLICY = 'whole_state_team_energy_after_committed_skill_living_targets_v1'
 POLICIES = {'timing': 'after_committed_skill_before_next_action',
     'targets': 'declared_side_and_active_or_reserve_slots_from_owned_current_roster',

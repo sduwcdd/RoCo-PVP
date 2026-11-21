@@ -7,7 +7,7 @@ from lab.rule_config import execution_program
 from lab.ruleset import canonical_hash
 
 CONFIG = Path(__file__).resolve().parents[1] / 'data/rules/reviewed-expression-components-1.json'
-CONFIG_HASH = 'e24a7e8b2d5cdabb2a41d779cd2c9de319db90253d7f063b484a109ec1e6814d'
+CONFIG_HASH = '91eb05434e970d7409637a489b3c3535d5d0c391c3dbe0c5b9bfeefeadefd9ee'
 
 
 def programs(catalog):

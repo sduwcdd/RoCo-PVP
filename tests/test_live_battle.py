@@ -505,6 +505,24 @@ class LiveBattleEvidenceTests(unittest.TestCase):
         self.assertEqual(tracker.round, 1)
         self.assertNotIn("402", tracker._pet_by_id)
 
+    def test_level_change_invalidates_old_panels_but_keeps_configuration(self):
+        tracker = BattleTracker(); enter(tracker, 100)
+        pet = tracker._pet_by_id["401"]
+        tracker._record_panel(401, "magAtk", 200, 195, 205)
+        pet.talent_evidence = {"selected_ids": [1, 2, 3], "dimensions": {
+            "magAtk": {"talent": 186, "base_value": 200, "effort_add": 10}}}
+        pet.refresh_stats({}, {"level": 99})
+        self.assertEqual(pet.level, 99)
+        self.assertEqual(pet.attr_stats, {})
+        self.assertEqual(pet.panel_stats, {})
+        self.assertIsNone(pet.max_hp)
+        self.assertEqual(pet.talent_evidence["selected_ids"], [1, 2, 3])
+        self.assertEqual(pet.talent_evidence["dimensions"]["magAtk"], {"talent": 186})
+        self.assertEqual(tracker._learned_for(401), {})
+        self.assertNotIn("401", tracker.learned_panel_ranges)
+        tracker._record_panel(401, "magAtk", 300, 295, 305)
+        self.assertEqual(tracker._learned_for(401), {"magAtk": 300})
+
     def test_unverified_inverse_is_not_used_as_a_live_panel(self):
         tracker = BattleTracker()
         enter(tracker, 100)
@@ -524,6 +542,7 @@ class LiveBattleEvidenceTests(unittest.TestCase):
         with patch("lab.live_damage.skill_math", return_value=profile), patch("lab.live_damage.panel_from_hit", return_value={}) as inverse:
             tracker._learn_panel(caster=mine, target=enemy, skill_id=7040370, damage=30, critical=False)
         self.assertEqual(inverse.call_args.kwargs["damage"], 30)
+        self.assertEqual(inverse.call_args.kwargs["attacker_level"], mine.level or 60)
 
 
 if __name__ == "__main__":

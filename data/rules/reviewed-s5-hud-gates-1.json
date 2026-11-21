@@ -1,7 +1,8 @@
 {
   "schema": "bwiki-s5-hud-gates-1",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "real_game_verified": false,
+  "level_policy": "Use battle_common_pet_info.level as reported. Its relation to the displayed effective level and modifier ordering is not calibrated. Do not replay trait level changes.",
   "traits": {
     "200327": {
       "record_hash": "7b945df4f97a12973effd6a344779e6b387b302c1085c51b977e31b91d0b5c5a",
@@ -16,7 +17,8 @@
         "magical",
         "higher"
       ],
-      "reason": "动态等级及低于80级的受伤加成尚无原生状态归因"
+      "level_condition": {"below": 80, "received_damage_percent": 40},
+      "reason": "需要服务器下发当前等级"
     },
     "200328": {
       "record_hash": "a448b0d0b916b59d45a193c95a3af6ffccc520f1313c76622a98ccb0d61fe110",
@@ -31,7 +33,8 @@
         "magical",
         "higher"
       ],
-      "reason": "队伍3能耗施放次数、入场等级及低于80级的受伤加成尚未接入"
+      "level_condition": {"below": 80, "received_damage_percent": 30},
+      "reason": "需要服务器下发当前等级"
     },
     "200329": {
       "record_hash": "2bf851e0e32bb5d247d1cfb9be736c41908efec117bf6802182858562f6d8982",
@@ -157,7 +160,10 @@
         "magical",
         "higher"
       ],
-      "reason": "战斗升级次数、物攻加成及低于80级的受伤加成尚未接入"
+      "level_condition": {"below": 80, "received_damage_percent": 30,
+        "blocked_attack_kinds": ["physical", "higher"],
+        "attack_blocker": "累计升级次数和物攻加成尚未核实"},
+      "reason": "需要服务器下发当前等级"
     }
   },
   "moves": {

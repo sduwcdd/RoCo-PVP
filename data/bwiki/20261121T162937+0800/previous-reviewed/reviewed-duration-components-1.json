@@ -1,0 +1,2404 @@
+{
+  "schema": "reviewed-duration-components-1",
+  "snapshot_id": "20261105T124140+0800",
+  "skills": {
+    "7020650": {
+      "record": {
+        "id": 7020650,
+        "wiki_id": "skill_000275",
+        "name": {
+          "zh": "聒噪"
+        },
+        "type": "普通系",
+        "kind": "status",
+        "energy": 3,
+        "desc": {
+          "zh": "敌方获得全攻击技能能耗+2，持续3回合。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%81%92%E5%99%AA",
+        "source_module": "Skills"
+      },
+      "record_hash": "1f23e3f4a012570779b6fdcebbff5a31ab2f2797a4b33346279e8c874ce2355f",
+      "operations": [],
+      "components": [
+        {
+          "kind": "attack_cost",
+          "target": "opponent",
+          "amount": 2,
+          "delay": 0,
+          "rounds": 3,
+          "clear_on_departure": true,
+          "buff_id": 20320010
+        }
+      ]
+    },
+    "7170300": {
+      "record": {
+        "id": 7170300,
+        "wiki_id": "skill_000761",
+        "name": {
+          "zh": "入梦"
+        },
+        "type": "幽系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "敌方下回合回复的能量-5，冷却2回合。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E5%85%A5%E6%A2%A6",
+        "source_module": "Skills"
+      },
+      "record_hash": "20abd4cbc5139a8ad7118abddcde5eec5e1b311134cdc8606a941dbfeccc76c9",
+      "operations": [],
+      "components": [
+        {
+          "kind": "energy_recovery",
+          "target": "opponent",
+          "amount": -5,
+          "delay": 1,
+          "rounds": 1,
+          "clear_on_departure": true,
+          "buff_id": 20173100
+        },
+        {
+          "kind": "cooldown",
+          "target": "self",
+          "amount": 0,
+          "delay": 0,
+          "rounds": 3,
+          "clear_on_departure": false,
+          "buff_id": 20620080
+        }
+      ]
+    },
+    "7040650": {
+      "record": {
+        "id": 7040650,
+        "wiki_id": "skill_000414",
+        "name": {
+          "zh": "焚身"
+        },
+        "type": "火系",
+        "kind": "physical",
+        "energy": 5,
+        "desc": {
+          "zh": "造成高额物理伤害，自己下回合获得眩晕。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%84%9A%E8%BA%AB",
+        "source_module": "Skills",
+        "power": 180
+      },
+      "record_hash": "2703779f06b38b410f36335955049d3b4981fc59de382775bdfd44e4abecd8a0",
+      "operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "physical",
+            "power": 180,
+            "type": "火系"
+          }
+        }
+      ],
+      "components": [
+        {
+          "kind": "stun",
+          "target": "self",
+          "amount": 1,
+          "delay": 1,
+          "rounds": 1,
+          "clear_on_departure": false,
+          "buff_id": 20060040
+        }
+      ]
+    },
+    "7100180": {
+      "record": {
+        "id": 7100180,
+        "wiki_id": "skill_000570",
+        "name": {
+          "zh": "架势"
+        },
+        "type": "龙系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己回复20%生命，下次技能无需蓄力。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%9E%B6%E5%8A%BF",
+        "source_module": "Skills",
+        "desc_notes": [
+          1007
+        ]
+      },
+      "record_hash": "264cc22705756a7825752036ca91b1f3fb1357f76806c12f5d70561c4651e59e",
+      "operations": [
+        {
+          "op": "hp.restore",
+          "params": {
+            "target": "self",
+            "percent": {
+              "numerator": 20,
+              "denominator": 100
+            }
+          }
+        }
+      ],
+      "components": [
+        {
+          "kind": "charge_skip",
+          "target": "self",
+          "amount": 1,
+          "delay": 0,
+          "rounds": 2,
+          "clear_on_departure": true,
+          "buff_id": 20010800,
+          "when": "always"
+        }
+      ],
+      "responses": []
+    },
+    "7100200": {
+      "record": {
+        "id": 7100200,
+        "wiki_id": "skill_000572",
+        "name": {
+          "zh": "龙息环爆"
+        },
+        "type": "龙系",
+        "kind": "magical",
+        "energy": 1,
+        "desc": {
+          "zh": "造成魔伤，应对状态：下次技能无需蓄力。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E9%BE%99%E6%81%AF%E7%8E%AF%E7%88%86",
+        "source_module": "Skills",
+        "power": 55,
+        "desc_notes": [
+          1015,
+          1007
+        ]
+      },
+      "record_hash": "ea01819090e1bd42383e362ec663ddbf33f47f84453ab973fe23f03b6e49b3ff",
+      "operations": [
+        {
+          "op": "damage",
+          "params": {
+            "target": "opponent",
+            "kind": "magical",
+            "power": 55,
+            "type": "龙系"
+          }
+        }
+      ],
+      "components": [
+        {
+          "kind": "charge_skip",
+          "target": "self",
+          "amount": 1,
+          "delay": 0,
+          "rounds": 2,
+          "clear_on_departure": true,
+          "buff_id": 20010800,
+          "when": "response.success"
+        }
+      ],
+      "responses": [
+        "status"
+      ]
+    },
+    "7140160": {
+      "record": {
+        "id": 7140160,
+        "wiki_id": "skill_000670",
+        "name": {
+          "zh": "破防"
+        },
+        "type": "武系",
+        "kind": "status",
+        "energy": 1,
+        "desc": {
+          "zh": "敌方获得双防-80%，应对防御：额外使被应对技能冷却2回合。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E7%A0%B4%E9%98%B2",
+        "source_module": "Skills",
+        "desc_notes": [
+          1017
+        ]
+      },
+      "record_hash": "70f6d87af9d54eb17557e44de398659b0390cb46fd82775d622301178ad65574",
+      "operations": [
+        {
+          "op": "stat.modify",
+          "params": {
+            "target": "opponent",
+            "attributes": [
+              "pdef",
+              "mdef"
+            ],
+            "percent": {
+              "numerator": -80,
+              "denominator": 100
+            }
+          }
+        }
+      ],
+      "components": [
+        {
+          "kind": "cooldown",
+          "target": "opponent",
+          "amount": 0,
+          "delay": 1,
+          "rounds": 2,
+          "clear_on_departure": false,
+          "buff_id": 20620020,
+          "when": "response.success",
+          "skill_selector": "opponent.declared_skill"
+        }
+      ],
+      "responses": [
+        "defense"
+      ],
+      "installation_evidence": {
+        "SKILL_CONF:7140160": {
+          "record": {
+            "id": 7140160,
+            "name": {
+              "localization_id": 3020,
+              "text": "破防"
+            },
+            "desc": {
+              "localization_id": 3021,
+              "text": "敌方获得双防-70%，<desc_id=1017>应对防御</>：额外使被应对技能冷却2回合。"
+            },
+            "energy_cost": [
+              2
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 14,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 1031105,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20010070,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20010080,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Mar_PF_213018",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/714011.714011'",
+            "describe_type": [
+              12,
+              1,
+              7
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "47e043dd0e92a9947c11d74802bd1fa298f779b4a68eac66d826453b387af78b"
+        },
+        "BUFF_CONF:20010080": {
+          "record": {
+            "id": 20010080,
+            "buff_base_ids": [
+              2001008
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              1,
+              31
+            ],
+            "name": "魔防等级降低",
+            "type_id": "2",
+            "add_des": "魔法防御",
+            "add_icon": 2,
+            "type": 2,
+            "add_max": 99,
+            "desc": "魔防-<span color=\"#c7494a\">10%</>。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800008_png.800008_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+            "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "hash": "7e414ad6581daf3dc5751ae9ccdfb366c19524af7ffe10397af6780a03bb08a4"
+        },
+        "BUFFBASE_CONF:2001008": {
+          "record": {
+            "id": 2001008,
+            "buffbase_order": 1,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  36
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1000
+                ]
+              }
+            ]
+          },
+          "hash": "cf42ff16621fec8b51847557fbf95b39848ffac0aa939fbe233831218293ce83"
+        },
+        "BUFF_CONF:20010070": {
+          "record": {
+            "id": 20010070,
+            "buff_base_ids": [
+              2001007
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              1,
+              31
+            ],
+            "name": "物防等级降低",
+            "type_id": "2",
+            "add_des": "物理防御",
+            "add_icon": 2,
+            "type": 2,
+            "add_max": 99,
+            "desc": "物防-<span color=\"#c7494a\">10%</>。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800007_png.800007_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+            "res_id_1": "/Game/ArtRes/Effects/G6Skill/Buff/800003",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "hash": "1ddcf7e01844a3334c66199f81e71912a62b1204a62d091af6d5d77b7bb0b84b"
+        },
+        "BUFFBASE_CONF:2001007": {
+          "record": {
+            "id": 2001007,
+            "buffbase_order": 1,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  35
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1000
+                ]
+              }
+            ]
+          },
+          "hash": "f78ed2f73b7f3294747cffe6e0e44c24179bb534ea5a604d706d27fa7769b216"
+        },
+        "EFFECT_CONF:1031105": {
+          "record": {
+            "id": 1031105,
+            "effect_order": 31,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  7140161
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          },
+          "hash": "80d0ee9baa41035abdd4d1ece99f62c9e7783f1a5026c1667a35c4f0c74f5e83"
+        },
+        "SKILL_CONF:7140161": {
+          "record": {
+            "id": 7140161,
+            "name": {
+              "localization_id": 3022,
+              "text": "应对！破防"
+            },
+            "desc": {
+              "localization_id": 3023,
+              "text": "敌方获得双防-70%，<desc_id=1017>应对防御</>：额外使被应对技能冷却2回合。"
+            },
+            "energy_cost": [
+              2
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 14,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 20010070,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20010080,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20620020,
+                "cast_moment": 11
+              },
+              {},
+              {},
+              {
+                "effect_id": 1019047,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Mar_PF_213019",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/714011.714011'",
+            "describe_type": [
+              12,
+              1,
+              7
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "4305388439acc282f8105a3ef701da70a870b54775af1ee669f8054cfd02787a"
+        },
+        "EFFECT_CONF:1019047": {
+          "record": {
+            "id": 1019047,
+            "effect_order": 19,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "2953e292d2f32944c079c02fc8d91a379d74189d979f99bb96114a82874c2a2b"
+        },
+        "BUFF_CONF:20620020": {
+          "record": {
+            "id": 20620020,
+            "buff_base_ids": [
+              2062004
+            ],
+            "buff_list_priority": 3,
+            "buff_groupsigns": [
+              0
+            ],
+            "type": 3,
+            "add_max": 1,
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  3,
+                  99
+                ]
+              }
+            ]
+          },
+          "hash": "e80808fdbab0eb02cc5113df1d2e9b45d8c5e5f8d569f4125bc8c7d0d4f0ac4c"
+        },
+        "BUFFBASE_CONF:2062004": {
+          "record": {
+            "id": 2062004,
+            "buffbase_order": 62,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "6b98ead637d15fe65251b9f17b8ad575ed18544659036a6aea7903cb3fd57b0d"
+        }
+      },
+      "uncertainties": [
+        "Response cooldown binds the actual declared opposing skill; two following turns are blocked as an explicit research lifetime.",
+        "Next-turn stun survives departure under the existing delayed-stun research policy; interrupt only cancels the matched uncommitted defense action."
+      ]
+    },
+    "7021160": {
+      "record": {
+        "id": 7021160,
+        "wiki_id": "skill_000332",
+        "name": {
+          "zh": "摇篮曲"
+        },
+        "type": "普通系",
+        "kind": "status",
+        "energy": 5,
+        "desc": {
+          "zh": "敌方获得全技能能耗+3，应对防御：额外造成打断，且敌方下回合获得眩晕。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%91%87%E7%AF%AE%E6%9B%B2",
+        "source_module": "Skills",
+        "desc_notes": [
+          1017,
+          1011
+        ]
+      },
+      "record_hash": "dc9c020364a254232228c0569acb08b06f313510c1dc5f6a248dc6bc2d10b2f5",
+      "operations": [
+        {
+          "op": "modifier.grant",
+          "params": {
+            "target": "opponent",
+            "component": {
+              "op": "skill.cost",
+              "target": "opponent",
+              "amount": 3,
+              "event": "after.use",
+              "skill_selector": "all"
+            }
+          }
+        }
+      ],
+      "components": [
+        {
+          "kind": "stun",
+          "target": "opponent",
+          "amount": 1,
+          "delay": 1,
+          "rounds": 1,
+          "clear_on_departure": false,
+          "buff_id": 20060040,
+          "when": "response.success"
+        }
+      ],
+      "responses": [
+        "defense"
+      ],
+      "installation_evidence": {
+        "SKILL_CONF:7021160": {
+          "record": {
+            "id": 7021160,
+            "name": {
+              "localization_id": 1932,
+              "text": "摇篮曲"
+            },
+            "desc": {
+              "localization_id": 1933,
+              "text": "敌方获得全技能能耗+3，<desc_id=1017>应对防御</>：额外造成<desc_id=1011>打断</>，且敌方下回合获得眩晕。"
+            },
+            "energy_cost": [
+              5
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 2,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 1031117,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20320240,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_YLQ_201101",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/201102.201102'",
+            "describe_type": [
+              12,
+              1,
+              7
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "59e5f825134bc1beab2128840c8990a49f8b0f6862f43d6856b7b226ab6dfc4d"
+        },
+        "BUFF_CONF:20320240": {
+          "record": {
+            "id": 20320240,
+            "buff_base_ids": [
+              2032024
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "能耗增加",
+            "type_id": "2",
+            "add_des": "能耗增加",
+            "add_icon": 5,
+            "type": 2,
+            "add_max": 10,
+            "desc": "所有技能能耗+1",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830072_png.830072_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "hash": "9608941bcbbd57ddc6971b553b6523a9b991ada4802730d796d950edb3db895f"
+        },
+        "BUFFBASE_CONF:2032024": {
+          "record": {
+            "id": 2032024,
+            "buffbase_order": 32,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "451a14fb032e37badcb35d7e72e8db6523ebab2846b63f8428ddf654f5e13107"
+        },
+        "EFFECT_CONF:1031117": {
+          "record": {
+            "id": 1031117,
+            "effect_order": 31,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  7021161
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          },
+          "hash": "24efd33563d501113f03fba51940f170019989d7fa1502805282c0708dbe80a3"
+        },
+        "SKILL_CONF:7021161": {
+          "record": {
+            "id": 7021161,
+            "name": {
+              "localization_id": 1934,
+              "text": "应对！摇篮曲"
+            },
+            "desc": {
+              "localization_id": 1935,
+              "text": "敌方获得全技能能耗+3，<desc_id=1017>应对防御</>：额外造成<desc_id=1011>打断</>，且敌方下回合获得眩晕。"
+            },
+            "energy_cost": [
+              5
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 2,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 20060040,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20320240,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 1003001,
+                "cast_moment": 11
+              },
+              {},
+              {},
+              {
+                "effect_id": 1019047,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_YLQ_201102",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/201102.201102'",
+            "describe_type": [
+              12,
+              1,
+              7
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "ff1b5e026527596c2c8a715245c7d5ac3d183b9796c1435a36265c8238fa685d"
+        },
+        "EFFECT_CONF:1019047": {
+          "record": {
+            "id": 1019047,
+            "effect_order": 19,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "2953e292d2f32944c079c02fc8d91a379d74189d979f99bb96114a82874c2a2b"
+        },
+        "EFFECT_CONF:1003001": {
+          "record": {
+            "id": 1003001,
+            "effect_order": 3,
+            "add_des": "打断！",
+            "add_icon": 2,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1004055
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              }
+            ]
+          },
+          "hash": "2022210759ce2342ebf64c6447e00ecb2c35798d09172f51bb00048cb1b7e312"
+        },
+        "BUFF_CONF:20060040": {
+          "record": {
+            "id": 20060040,
+            "buff_base_ids": [
+              2006003,
+              2017309
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              18
+            ],
+            "name": "眩晕",
+            "type_id": "3",
+            "add_des": "眩晕",
+            "add_icon": 5,
+            "type": 3,
+            "add_max": 1,
+            "desc": "无法行动。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800039_png.800039_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/20040034",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  2,
+                  1
+                ]
+              }
+            ]
+          },
+          "hash": "184a3386c8c8f0c5bf33d5947912637f681740e28c57ab1469bdc613ae2f9a3d"
+        },
+        "BUFFBASE_CONF:2017309": {
+          "record": {
+            "id": 2017309,
+            "buffbase_order": 17,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1003002
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "e873a57f88e6257bc536617f4040fa5f2e932d4e7047ce10b76f049ad846fd5b"
+        },
+        "BUFFBASE_CONF:2006003": {
+          "record": {
+            "id": 2006003,
+            "buffbase_order": 6,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2006003
+                ]
+              },
+              {
+                "params": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "hash": "ff18f7d5ec28842293fcc03f9139574811a73fe8019b3da504bb9443bce26e0e"
+        }
+      },
+      "uncertainties": [
+        "Response cooldown binds the actual declared opposing skill; two following turns are blocked as an explicit research lifetime.",
+        "Next-turn stun survives departure under the existing delayed-stun research policy; interrupt only cancels the matched uncommitted defense action."
+      ]
+    },
+    "7030270": {
+      "record": {
+        "id": 7030270,
+        "wiki_id": "skill_000350",
+        "name": {
+          "zh": "芳香诱引"
+        },
+        "type": "草系",
+        "kind": "status",
+        "energy": 2,
+        "desc": {
+          "zh": "自己获得连击数+2，应对防御：额外造成打断，且敌方下回合获得眩晕。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E8%8A%B3%E9%A6%99%E8%AF%B1%E5%BC%95",
+        "source_module": "Skills",
+        "desc_notes": [
+          3005,
+          1017,
+          1011
+        ]
+      },
+      "record_hash": "6fcb384f523cbd5d7a923e6d1d3031e0d0f79bac24984f890594ed1aa579a9c7",
+      "operations": [
+        {
+          "op": "modifier.grant",
+          "params": {
+            "target": "self",
+            "component": {
+              "op": "hits.flat",
+              "target": "self",
+              "amount": 2,
+              "event": "after.use"
+            }
+          }
+        }
+      ],
+      "components": [
+        {
+          "kind": "stun",
+          "target": "opponent",
+          "amount": 1,
+          "delay": 1,
+          "rounds": 1,
+          "clear_on_departure": false,
+          "buff_id": 20060040,
+          "when": "response.success"
+        }
+      ],
+      "responses": [
+        "defense"
+      ],
+      "installation_evidence": {
+        "SKILL_CONF:7030270": {
+          "record": {
+            "id": 7030270,
+            "name": {
+              "localization_id": 1996,
+              "text": "芳香诱引"
+            },
+            "desc": {
+              "localization_id": 1997,
+              "text": "自己获得<desc_id=3005>连击数</>+2，<desc_id=1017>应对防御</>：额外造成<desc_id=1011>打断</>，且敌方下回合获得眩晕。"
+            },
+            "energy_cost": [
+              2
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 3,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 1031052,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20450050,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_FFYY_701010",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/703010.703010'",
+            "describe_type": [
+              12,
+              1
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "d34fb384b594c688d5a7aa78695b365112ef17f8d11ac0c39f403253c512ad80"
+        },
+        "BUFF_CONF:20450050": {
+          "record": {
+            "id": 20450050,
+            "buff_base_ids": [
+              2045005
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              0
+            ],
+            "name": "连击",
+            "type_id": "1",
+            "type": 1,
+            "add_max": 99,
+            "desc": "连击次数+1",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830047_png.830047_png'",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 13,
+                "reduce_param": [
+                  999,
+                  0
+                ]
+              }
+            ],
+            "is_clean_when_rest": 1
+          },
+          "hash": "13d810b158ca11f32489020330d9186acf53c4c0fdbff994bd62251892b14ca2"
+        },
+        "BUFFBASE_CONF:2045005": {
+          "record": {
+            "id": 2045005,
+            "buffbase_order": 45,
+            "trigger_type": 12,
+            "show_letters": [
+              3
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "7f80cacf126afaa2a2723a72ff6fdd7e15c1ab2c6dca39cfc8d6f57711d571c7"
+        },
+        "EFFECT_CONF:1031052": {
+          "record": {
+            "id": 1031052,
+            "effect_order": 31,
+            "type": 1,
+            "effect_param": [
+              {
+                "params": [
+                  7030271
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  2
+                ]
+              }
+            ]
+          },
+          "hash": "7d1e10b99a624a2ac22f048d94c9462538dffdecb66dd0e823fa45d6e95ec540"
+        },
+        "SKILL_CONF:7030271": {
+          "record": {
+            "id": 7030271,
+            "name": {
+              "localization_id": 1998,
+              "text": "应对！芳香诱引"
+            },
+            "desc": {
+              "localization_id": 1999,
+              "text": "自己获得<desc_id=3005>连击数</>+2，<desc_id=1017>应对防御</>：额外造成<desc_id=1011>打断</>，且敌方下回合获得眩晕。"
+            },
+            "energy_cost": [
+              2
+            ],
+            "dam_para": [
+              0
+            ],
+            "type": 1,
+            "Skill_Type": 2,
+            "skill_dam_type": 3,
+            "skill_feature": 4,
+            "damage_type": 1,
+            "skill_priority": 5,
+            "target_type": 1,
+            "cd_round": [
+              0,
+              0
+            ],
+            "skill_result": [
+              {
+                "effect_id": 20060040,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 20450050,
+                "cast_moment": 11
+              },
+              {
+                "effect_id": 1003001,
+                "cast_moment": 11
+              },
+              {},
+              {},
+              {
+                "effect_id": 1019047,
+                "cast_moment": 11
+              }
+            ],
+            "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gra_FFYY_701010_Y",
+            "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/703010.703010'",
+            "describe_type": [
+              12,
+              1
+            ],
+            "target_blood_limit": [
+              0
+            ]
+          },
+          "hash": "0d169480528ce9cd7e5943ee4bdb3214816a59a9786a3b92aeeb6e9d190347d7"
+        },
+        "EFFECT_CONF:1019047": {
+          "record": {
+            "id": 1019047,
+            "effect_order": 19,
+            "type": 3,
+            "effect_param": [
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "2953e292d2f32944c079c02fc8d91a379d74189d979f99bb96114a82874c2a2b"
+        },
+        "EFFECT_CONF:1003001": {
+          "record": {
+            "id": 1003001,
+            "effect_order": 3,
+            "add_des": "打断！",
+            "add_icon": 2,
+            "type": 2,
+            "effect_param": [
+              {
+                "params": [
+                  1
+                ]
+              },
+              {
+                "params": [
+                  1004055
+                ]
+              },
+              {
+                "params": [
+                  3
+                ]
+              }
+            ]
+          },
+          "hash": "2022210759ce2342ebf64c6447e00ecb2c35798d09172f51bb00048cb1b7e312"
+        },
+        "BUFF_CONF:20060040": {
+          "record": {
+            "id": 20060040,
+            "buff_base_ids": [
+              2006003,
+              2017309
+            ],
+            "buff_list_priority": 1,
+            "buff_groupsigns": [
+              18
+            ],
+            "name": "眩晕",
+            "type_id": "3",
+            "add_des": "眩晕",
+            "add_icon": 5,
+            "type": 3,
+            "add_max": 1,
+            "desc": "无法行动。",
+            "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800039_png.800039_png'",
+            "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/20040034",
+            "buff_group_reduce": [
+              {
+                "reduce_type": 2,
+                "reduce_param": [
+                  2,
+                  1
+                ]
+              }
+            ]
+          },
+          "hash": "184a3386c8c8f0c5bf33d5947912637f681740e28c57ab1469bdc613ae2f9a3d"
+        },
+        "BUFFBASE_CONF:2017309": {
+          "record": {
+            "id": 2017309,
+            "buffbase_order": 17,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  1003002
+                ]
+              },
+              {
+                "params": [
+                  10000
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              }
+            ]
+          },
+          "hash": "e873a57f88e6257bc536617f4040fa5f2e932d4e7047ce10b76f049ad846fd5b"
+        },
+        "BUFFBASE_CONF:2006003": {
+          "record": {
+            "id": 2006003,
+            "buffbase_order": 6,
+            "show_letters": [
+              0
+            ],
+            "buffbase_param": [
+              {
+                "params": [
+                  3
+                ]
+              },
+              {
+                "params": [
+                  0
+                ]
+              },
+              {
+                "params": [
+                  2006003
+                ]
+              },
+              {
+                "params": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "hash": "ff18f7d5ec28842293fcc03f9139574811a73fe8019b3da504bb9443bce26e0e"
+        }
+      },
+      "uncertainties": [
+        "Response cooldown binds the actual declared opposing skill; two following turns are blocked as an explicit research lifetime.",
+        "Next-turn stun survives departure under the existing delayed-stun research policy; interrupt only cancels the matched uncommitted defense action."
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/SKILL_CONF.json",
+      "sha256": "bc725ef6f611c12c5b62966cbbc6b4dd84aa95499906ef4394155289af063f1e",
+      "rows": {
+        "7020650": {
+          "id": 7020650,
+          "name": {
+            "localization_id": 1780,
+            "text": "聒噪"
+          },
+          "desc": {
+            "localization_id": 1781,
+            "text": "敌方获得全攻击技能能耗+2，持续3回合。"
+          },
+          "flavor_text": {
+            "localization_id": 1782,
+            "text": "一种比较激进的社交行为，也是精灵对战中常用的心理战术。"
+          },
+          "energy_cost": [
+            3
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 2,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20320010,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Nor_CG_700018",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/700018.700018'",
+          "describe_type": [
+            12,
+            7
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7170300": {
+          "id": 7170300,
+          "name": {
+            "localization_id": 3315,
+            "text": "入梦"
+          },
+          "desc": {
+            "localization_id": 3316,
+            "text": "敌方下回合回复的能量-5，冷却2回合。"
+          },
+          "flavor_text": {
+            "localization_id": 3317,
+            "text": "如果在学院里看到野生的枕头，不要躺上去，它会闯入你的梦里借走一夜安眠。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 17,
+          "skill_feature": 4,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20173100,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 20620080,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Gho_RM_116028",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/116028.116028'",
+          "describe_type": [
+            12,
+            7
+          ]
+        },
+        "7040650": {
+          "id": 7040650,
+          "name": {
+            "localization_id": 2189,
+            "text": "焚身"
+          },
+          "desc": {
+            "localization_id": 2190,
+            "text": "造成高额物理伤害，自己下回合获得眩晕。"
+          },
+          "flavor_text": {
+            "localization_id": 2191,
+            "text": "\"此后无退路，此刻即终局。\""
+          },
+          "energy_cost": [
+            5
+          ],
+          "dam_para": [
+            180
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 4,
+          "skill_feature": 4,
+          "damage_type": 2,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20060040,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Fir_FYZ_203037",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/203037.203037'",
+          "describe_type": [
+            5
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7100180": {
+          "id": 7100180,
+          "name": {
+            "localization_id": 2695,
+            "text": "架势"
+          },
+          "desc": {
+            "localization_id": 2696,
+            "text": "自己回复20%生命，下次技能无需<desc_id=1007>蓄力</>。"
+          },
+          "flavor_text": {
+            "localization_id": 2697,
+            "text": "“对上眼神就放马过来吧，放别的过来也可以。”"
+          },
+          "energy_cost": [
+            2
+          ],
+          "dam_para": [
+            0
+          ],
+          "type": 1,
+          "Skill_Type": 2,
+          "skill_dam_type": 10,
+          "skill_feature": 3,
+          "damage_type": 1,
+          "skill_priority": 5,
+          "target_type": 9,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20010800,
+              "cast_moment": 11
+            },
+            {
+              "effect_id": 1005020,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_JS_309008",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/309008.309008'",
+          "describe_type": [
+            12,
+            3
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7100200": {
+          "id": 7100200,
+          "name": {
+            "localization_id": 2700,
+            "text": "龙息环爆"
+          },
+          "desc": {
+            "localization_id": 2701,
+            "text": "造成魔伤，<desc_id=1015>应对状态</>：下次技能无需<desc_id=1007>蓄力</>。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            55
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 10,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 1031155,
+              "cast_moment": 11
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_LJF_109010",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/109010.109010'",
+          "describe_type": [
+            5,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        },
+        "7100201": {
+          "id": 7100201,
+          "name": {
+            "localization_id": 2702,
+            "text": "应对！龙息环爆"
+          },
+          "desc": {
+            "localization_id": 2703,
+            "text": "造成魔伤，<desc_id=1015>应对状态</>：下次技能无需<desc_id=1007>蓄力</>。"
+          },
+          "energy_cost": [
+            1
+          ],
+          "dam_para": [
+            55
+          ],
+          "type": 1,
+          "Skill_Type": 1,
+          "skill_dam_type": 10,
+          "skill_feature": 4,
+          "damage_type": 3,
+          "skill_priority": 5,
+          "target_type": 1,
+          "cd_round": [
+            0,
+            0
+          ],
+          "skill_result": [
+            {
+              "effect_id": 20010800,
+              "cast_moment": 11
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "effect_id": 20231140,
+              "cast_moment": 6
+            }
+          ],
+          "res_id": "/Game/ArtRes/Effects/G6Skill/Jineng/G6_Dra_LJF_109010_Y",
+          "icon": "Texture2D'/Game/NewRoco/Modules/System/BattleUI/Raw/Atlas/SkillIcon/109010.109010'",
+          "describe_type": [
+            5,
+            1
+          ],
+          "target_blood_limit": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFF_CONF.json",
+      "sha256": "d80f8e2355ffd3d54f9caa27fc7d8034a8ae03720c4760af76664effc5b3e4b0",
+      "rows": {
+        "20320010": {
+          "id": 20320010,
+          "buff_base_ids": [
+            2032001
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "name": "聒噪",
+          "type_id": "3",
+          "add_des": "能耗增加",
+          "add_icon": 5,
+          "type": 3,
+          "add_max": 1,
+          "desc": "攻击类技能消耗+2",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830026_png.830026_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                3,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20173100": {
+          "id": 20173100,
+          "buff_base_ids": [
+            2017310
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/810036_png.810036_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                2,
+                999
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20340090": {
+          "id": 20340090,
+          "buff_base_ids": [
+            2034009,
+            2003046
+          ],
+          "buff_list_priority": 4,
+          "buff_groupsigns": [
+            0
+          ],
+          "name": "入梦",
+          "type_id": "2",
+          "type": 2,
+          "add_max": 1,
+          "desc": "获得的能量-5",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/830123_png.830123_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                1,
+                99
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        },
+        "20620080": {
+          "id": 20620080,
+          "buff_base_ids": [
+            2062008
+          ],
+          "buff_list_priority": 3,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800019_png.800019_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 7,
+              "reduce_param": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        "20060040": {
+          "id": 20060040,
+          "buff_base_ids": [
+            2006003,
+            2017309
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            18
+          ],
+          "name": "眩晕",
+          "type_id": "3",
+          "add_des": "眩晕",
+          "add_icon": 5,
+          "type": 3,
+          "add_max": 1,
+          "desc": "无法行动。",
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/800039_png.800039_png'",
+          "res_id_0": "/Game/ArtRes/Effects/G6Skill/Buff/20040034",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                2,
+                1
+              ]
+            }
+          ]
+        },
+        "20010800": {
+          "id": 20010800,
+          "buff_base_ids": [
+            2001080
+          ],
+          "buff_list_priority": 1,
+          "buff_groupsigns": [
+            0
+          ],
+          "type": 3,
+          "add_max": 1,
+          "icon": "PaperSprite'/Game/NewRoco/Modules/System/Common/Icon/BuffIcon/Frames/7140010_png.7140010_png'",
+          "buff_group_reduce": [
+            {
+              "reduce_type": 2,
+              "reduce_param": [
+                2,
+                1
+              ]
+            }
+          ],
+          "is_clean_when_rest": 1
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/BUFFBASE_CONF.json",
+      "sha256": "44d6db038c7e4e830a0d518f502d828294d8f2eab5c6f66bf7b0c261369dedab",
+      "rows": {
+        "2032001": {
+          "id": 2032001,
+          "buffbase_order": 32,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2,
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2017310": {
+          "id": 2017310,
+          "buffbase_order": 17,
+          "trigger_type": 60,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                20340090
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2034009": {
+          "id": 2034009,
+          "buffbase_order": 34,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                -5
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2003046": {
+          "id": 2003046,
+          "buffbase_order": 3,
+          "show_letters": [
+            1
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                1019001,
+                1019002,
+                1019003,
+                1019004,
+                1019005,
+                1019021,
+                1019022,
+                1019023,
+                1019024,
+                1019026,
+                1019032,
+                1019034,
+                1019046,
+                1019050
+              ]
+            }
+          ]
+        },
+        "2062008": {
+          "id": 2062008,
+          "buffbase_order": 62,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                7170300
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            }
+          ]
+        },
+        "2006003": {
+          "id": 2006003,
+          "buffbase_order": 6,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                3
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2006003
+              ]
+            },
+            {
+              "params": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        "2017309": {
+          "id": 2017309,
+          "buffbase_order": 17,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                1003002
+              ]
+            },
+            {
+              "params": [
+                10000
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "2001080": {
+          "id": 2001080,
+          "buffbase_order": 1,
+          "show_letters": [
+            0
+          ],
+          "buffbase_param": [
+            {
+              "params": [
+                29
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "artifacts/unpack_probe_20261025/battle_analysis/tables/parsed/EFFECT_CONF.json",
+      "sha256": "7ad5dda4d787572f6591d662ec8c9a2f1cffb1caaf6de0474357eef9cba5c4b0",
+      "rows": {
+        "1003002": {
+          "id": 1003002,
+          "effect_order": 3,
+          "type": 3,
+          "effect_param": [
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                1004055
+              ]
+            },
+            {
+              "params": [
+                3
+              ]
+            }
+          ]
+        },
+        "1005020": {
+          "id": 1005020,
+          "effect_order": 5,
+          "add_des": "恢复",
+          "add_icon": 6,
+          "type": 1,
+          "effect_param": [
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                2000
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                200
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            }
+          ]
+        },
+        "1031155": {
+          "id": 1031155,
+          "effect_order": 31,
+          "type": 2,
+          "effect_param": [
+            {
+              "params": [
+                7100201
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                0
+              ]
+            },
+            {
+              "params": [
+                1
+              ]
+            },
+            {
+              "params": [
+                2
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "trait_cooldowns": {
+    "200300": {
+      "record": {
+        "id": 200300,
+        "wiki_id": "skill_000182",
+        "name": {
+          "zh": "上锁"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "敌方本回合使用的技能，冷却1回合。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E4%B8%8A%E9%94%81",
+        "source_module": "Skills"
+      },
+      "record_hash": "e4b6b01f28e419d9496b3af25550b703e4462f8ce70d59b8c44bd6860094805c",
+      "blocked_following_turns": 1,
+      "clear_on_departure": false
+    }
+  },
+  "trait_templates": {
+    "200227": {
+      "record": {
+        "id": 200227,
+        "wiki_id": "skill_000127",
+        "name": {
+          "zh": "泛音列"
+        },
+        "type": "无系别",
+        "kind": "trait",
+        "energy": 0,
+        "desc": {
+          "zh": "使用状态技能后，敌方获得「聒噪」技能的效果，持续3回合。"
+        },
+        "source_url": "https://wiki.biligame.com/nrc/%E6%B3%9B%E9%9F%B3%E5%88%97",
+        "source_module": "Skills"
+      },
+      "record_hash": "37c97ffe71a30aedd15d452e54b745040fd74598428b5f71331ad22db130fbf0",
+      "components": [
+        {
+          "kind": "attack_cost",
+          "target": "opponent",
+          "amount": 2,
+          "delay": 0,
+          "rounds": 3,
+          "clear_on_departure": true,
+          "buff_id": 20320010
+        }
+      ]
+    }
+  }
+}

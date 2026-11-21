@@ -1,7 +1,7 @@
 {
   "schema": "reviewed-trait-attack-hooks-1",
   "policy": "trait_lifesteal_actual_damage_sum_floor_once_action_hp_snapshot_v2",
-  "snapshot_id": "20261105T124140+0800",
+  "snapshot_id": "20261121T162937+0800",
   "stacking_rule": {
     "combine": "sum_active_percentages",
     "restore": "single",
@@ -592,19 +592,19 @@
   "forms": {
     "3010": {
       "trait_id": 200139,
-      "record_hash": "cb19776ec790ae0629aee781061538d707b17f331753368eb68f4869d8261126"
+      "record_hash": "430d649c8982334570092dacf765b833c616b1351797537036f5aaeeba191d62"
     },
     "3039": {
       "trait_id": 200139,
-      "record_hash": "f386a41d3ba0eebf6205c4fe031c9f20d4537e3cbc4378e8eb599e0d9b0549fe"
+      "record_hash": "5946bd3f7c60f2aa216a7101627418866b791fb05ce2bf1f878691153d1d0dfa"
     },
     "5053": {
       "trait_id": 280030,
-      "record_hash": "6c3d2367e7877a3227b245b6cb72e2e196eaaa15bb9ac070094f1ef42e64746d"
+      "record_hash": "6af761fd545f2e719fdeec7d063ee419be41da0f91098283a2bb043360ebe48e"
     },
     "5055": {
       "trait_id": 280032,
-      "record_hash": "7c0320fa2b0719aac63f998c3da07e8c96fccafc765dc2529135dccfede83b32"
+      "record_hash": "64867e616c2e8f92d99cb46253fa258e92d58d7a2a057005690abe77bee57fe1"
     }
   },
   "blocked_traits": {}
