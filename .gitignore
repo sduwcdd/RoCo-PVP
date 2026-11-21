@@ -108,3 +108,6 @@ docs/verification/team-codes-20261025.json
 
 # Archived local release and verification workspace
 /archive/20261114_workspace暂存/
+
+# Private Android signing backup
+/archive/android-signing/

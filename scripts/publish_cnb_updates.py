@@ -185,7 +185,7 @@ def publish(desktop_build=None, apk=None):
     repository = publisher.api('GET', '')
     if repository.get('visibility_level') != 'Public':
         raise ValueError('Anonymous updates require a public CNB repository')
-    temporary_root = ROOT.parent / '.codex-tmp'
+    temporary_root = ROOT / '.tmp'
     temporary_root.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='roco-cnb-publish-', dir=temporary_root, ignore_cleanup_errors=True) as directory:
         work = Path(directory)

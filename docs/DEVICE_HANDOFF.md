@@ -2,6 +2,12 @@
 
 仓库：https://github.com/sduwcdd/RoCo-PVP ，桌面版本1.1.10。源码直接位于根目录，不再进入RoCo_PVP/source，也没有AI_try、旧APP和private-source分区。旧历史在原设备单独保留。
 
+当前安卓发布名为 `0.15-internal`。
+内部版本号为 `17`。
+该版本沿用 0.14 的原签名。
+构建已包含 GitHub 最新封装修复。
+详情见[重发记录](verification/android-015-resign-20261121.md)。
+
 ## 获取与运行
 
 ```powershell

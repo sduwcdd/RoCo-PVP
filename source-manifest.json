@@ -2,8 +2,8 @@
   "version": "1.1.10",
   "root": ".",
   "snapshot_id": "20261105T124140+0800",
-  "file_count": 5331,
-  "bytes": 402570525,
+  "file_count": 5332,
+  "bytes": 402573306,
   "files": [
     {
       "path": ".gitattributes",
@@ -12,8 +12,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 2175,
-      "sha256": "9ece6d490747f56c9afa18bf90fcca7c1e0d641b77b8fcb507e891a267a654c7"
+      "bytes": 2238,
+      "sha256": "824e3af9c3b1d4aaa6927ee7117543e370169e0aa633dddaa9dda3763505bd6a"
     },
     {
       "path": ".gitmodules",
@@ -1802,8 +1802,8 @@
     },
     {
       "path": "docs/DEVICE_HANDOFF.md",
-      "bytes": 8258,
-      "sha256": "8903bc1693f42b1fdbaafae4040c1b7f937fbfec5cea8e0db3b8b8ec4456cb93"
+      "bytes": 8484,
+      "sha256": "761a340c3a8a3a5a3d37721cd6c3f458727b1509f8d716fcf1019a8441a7fa4a"
     },
     {
       "path": "docs/GAME_FILE_RULE_ROUTE.md",
@@ -1904,6 +1904,11 @@
       "path": "docs/verification/adjacent-power-query-20261026.md",
       "bytes": 2870,
       "sha256": "ca344cbbbf1489b006bf965d00ea37d4ec136c8c4ad360a094788c18c23e4b61"
+    },
+    {
+      "path": "docs/verification/android-015-resign-20261121.md",
+      "bytes": 2037,
+      "sha256": "dea48edeeaf38639037ad1cdff0ca4fbb8ebc082e36fd122af3d1408144c96ba"
     },
     {
       "path": "docs/verification/android-dex-pve-20261114.md",
@@ -3157,8 +3162,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 20441,
-      "sha256": "2c8cbe47ea19580527b1441f9901dd2c45d9cf8e76b0b1469b1827c6997f0226"
+      "bytes": 20909,
+      "sha256": "2e9b43090a6d6fcae0726baf8719facf247ae2f3336cfac7d95eef8028992f6d"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3173,7 +3178,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2575,
-      "sha256": "5ccad75f33959d78c966ee242fe9cc2748fa332e90b9fcd762e45d0c3537a71b"
+      "sha256": "2d86bc3d9a54611f5e26af4035e13a4dd9df5d6b16bbba3cbc5f9da3cdc3eed0"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3672,8 +3677,8 @@
     },
     {
       "path": "scripts/publish_cnb_updates.py",
-      "bytes": 14840,
-      "sha256": "7e86456c8d6a1fabeef3cd9164396e78e7f7c7bbfe09661a1a5245496e04d258"
+      "bytes": 14827,
+      "sha256": "be4621da2ce1d883be77dd58be9da7860ed96710cac51d2bae82212180afc897"
     },
     {
       "path": "scripts/publish_mobile_update.py",
