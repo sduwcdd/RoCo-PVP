@@ -153,7 +153,7 @@ test('duel windows fit each side independently, clamp to the screen and retain w
   const fit = (window, height) => h.ipcMain.emit('overlay:content-height', { sender: window.webContents }, height)
   fit(my, 260.2); fit(enemy, 500)
   assert.equal(my.bounds.height, 261); assert.equal(enemy.bounds.height, 500)
-  assert.equal(my.bounds.width, 300)
+  assert.equal(my.bounds.width, 280)
   fit(my, 10000); assert.equal(my.bounds.height, 1056)
   fit(my, 180); assert.equal(my.bounds.height, 180)
   const before = { ...my.bounds }
@@ -169,7 +169,7 @@ test('duel windows fit each side independently, clamp to the screen and retain w
   h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'start')
   h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'move')
   h.ipcMain.emit('overlay:drag', { sender: my.webContents }, 'end')
-  assert.equal(my.bounds.width, 300); assert.equal(my.bounds.height, 400)
+  assert.equal(my.bounds.width, before.width); assert.equal(my.bounds.height, 400)
 })
 
 test('preload reports natural panel height after content changes and excludes the history pane', () => {

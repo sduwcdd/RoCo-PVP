@@ -230,6 +230,20 @@ def source_power(attacker, defender, sid, profile):
     if rule not in (None, 0, 15, 38) and not components:
         raise ValueError(f"动态伤害规则 {rule} 缺少可核对的当前参数，不能按首项威力代算")
     powers, factors = entry_burst_powers(attacker, sid, profile) or [profile["power"]], [1]
+    from .live_growth import additions as recovered_additions, descriptor as growth_descriptor
+    recovered = recovered_additions(attacker, sid)
+    if recovered is not None:
+        # This substitutes only the source-defined intrinsic growth component.
+        if any(c['op'] not in {'entry_history', 'carried_type_history', 'response_history',
+                              'previous_no_attack_history', 'per_use'} for c in components):
+            raise ValueError('复合累计技能尚不能独立替换历史项')
+        return sorted({power + add for power in powers for add in recovered}), factors
+    growth = growth_descriptor(sid)
+    issue = attacker.get('powerHistoryIssues', {}).get(str((growth or {}).get('skill_id')))
+    if growth and issue and attacker.get('skillUseHistoryComplete') is not True:
+        raise ValueError('累计次数尚未确认：' + issue)
+    if growth and growth['when'] == 'carried.action.first' and '_simulation_actor' not in attacker:
+        raise _missing_history(attacker, '先于敌方行动的累计')
     choices = choice_damage_parameters(attacker, defender, sid, profile)
     if choices is not None:
         from . import skill_history_runtime as history

@@ -429,7 +429,7 @@ app.on('will-quit', function () { globalShortcut.unregisterAll() })
 // 对局双窗（duel）：照着第三方原版做「左我方 / 右敌方」两条贴边竖面板。
 // 用两个独立窗口而不是一个大窗口，中间区域完全不受遮挡，也不用做区域穿透。
 // ---------------------------------------------------------------------------
-const DUEL_WIDTH = 300
+const DUEL_WIDTH = 280
 const DUEL_GAP = 10
 let duelWins = []
 let duelThrough = false
@@ -474,9 +474,9 @@ ipcMain.on('overlay:content-height', function (event, height) {
 function duelBounds (side) {
   const area = screen.getPrimaryDisplay().workArea
   if (side === 'history') {
-    const width = Math.min(640, Math.max(260, area.width - DUEL_WIDTH * 2 - 40))
+    const width = Math.min(560, Math.max(260, area.width - DUEL_WIDTH * 2 - 40))
     return { x: area.x + Math.round((area.width - width) / 2), y: area.y + 8,
-      width, height: Math.min(210, Math.max(120, Math.floor(area.height / 3))) }
+      width, height: Math.min(180, Math.max(120, Math.floor(area.height / 3))) }
   }
   const width = Math.min(DUEL_WIDTH, Math.max(200, Math.floor(area.width / 4)))
   const height = Math.max(1, area.height - 24)
@@ -492,11 +492,11 @@ function injectDuelChrome (target, side) {
   const accent = side === 'history' ? 'rgba(38,80,72,0.9)' : side === 'my' ? 'rgba(46,120,180,0.85)' : 'rgba(178,74,56,0.85)'
   const css = [
     'html, body { background: transparent !important; }',
-    '#roco-duel-strip { position: fixed; top: 0; left: 0; right: 0; height: 16px;',
-    '  display: flex; align-items: center; gap: 6px; padding: 0 6px;',
+    '#roco-duel-strip { position: fixed; top: 0; left: 0; right: 0; height: 14px;',
+    '  display: flex; align-items: center; gap: 4px; padding: 0 5px;',
     '  box-sizing: border-box; background: ' + accent + ';',
     '  border-top-left-radius: 8px; border-top-right-radius: 8px;',
-    '  color: #fff; font: 12px/1 "Microsoft YaHei", sans-serif;',
+    '  color: #fff; font: 11px/1 "Microsoft YaHei", sans-serif;',
     '  -webkit-app-region: no-drag; cursor: move; touch-action: none; z-index: 2147483000; user-select: none; }',
     '#roco-duel-strip .spacer { flex: 1; }',
     '#roco-duel-strip button { -webkit-app-region: no-drag; height: 12px; padding: 0 7px;',

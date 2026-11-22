@@ -79,6 +79,29 @@ def _process_identity(pid):
         kernel.CloseHandle(handle)
 
 
+def _receipt_identity(receipt):
+    pid, started = int(receipt['pid']), int(receipt['start_ticks'])
+    try:
+        identity = _process_identity(pid)
+    except PermissionError:
+        # Windows can reuse a capture PID for a protected process after a reboot.
+        powershell = Path(os.environ['SystemRoot']) / 'System32/WindowsPowerShell/v1.0/powershell.exe'
+        query = ("$ErrorActionPreference='Stop'; "
+                 "$boot=(Get-CimInstance Win32_OperatingSystem).LastBootUpTime.ToFileTimeUtc(); "
+                 f"$p=Get-CimInstance Win32_Process -Filter 'ProcessId={pid}'; "
+                 "@{boot=$boot; name=$p.Name} | ConvertTo-Json -Compress")
+        result = subprocess.run([str(powershell), '-NoProfile', '-NonInteractive', '-Command', query],
+                                capture_output=True, encoding='oem', timeout=15, check=True,
+                                creationflags=subprocess.CREATE_NO_WINDOW)
+        snapshot = json.loads(result.stdout)
+        name = snapshot['name']
+        expected_name = Path(receipt.get('script') or sys.executable).name
+        if snapshot['boot'] > started or (name and name.casefold() != expected_name.casefold()):
+            return None
+        raise
+    return identity if identity and identity[0] == started else None
+
+
 def _elevate(args):
     class SHELLEXECUTEINFO(ctypes.Structure):
         _fields_ = [('cbSize', wintypes.DWORD), ('fMask', wintypes.ULONG), ('hwnd', wintypes.HWND),
@@ -140,7 +163,7 @@ def _capture_control(args):
             raise ValueError('网卡名称无效')
         if parsed.mode == 'Stop':
             receipt = json.loads(receipt_path.read_text(encoding='utf8'))
-            identity = _process_identity(receipt['pid'])
+            identity = _receipt_identity(receipt)
             if identity is not None:
                 expected = (int(receipt['start_ticks']), os.path.normcase(sys.executable))
                 if identity != expected or receipt.get('kind') != 'roco-release-capture':
@@ -166,8 +189,7 @@ def _capture_control(args):
             return 0
         if receipt_path.exists():
             old = json.loads(receipt_path.read_text(encoding='utf8'))
-            identity = _process_identity(old['pid'])
-            if identity and str(identity[0]) == old.get('start_ticks'):
+            if _receipt_identity(old) is not None:
                 raise RuntimeError('本APP的采集进程已在运行')
         output = _state() / 'rkpp' / ('rkpp_opencode_server_' + time.strftime('%Y%m%d_%H%M%S'))
         output.mkdir(parents=True, exist_ok=False)

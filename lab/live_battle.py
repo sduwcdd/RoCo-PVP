@@ -355,6 +355,10 @@ class _Pet:
         self.entered_turn = None
         self.entry_action_count = None
         self.entry_count = None
+        self.observed_entry_count = 0
+        self.observed_first_actions = [0, 0]
+        self.power_history_inference = {}
+        self.power_history_issues = {}
         self.skill_use_counts = {}
         self.skill_type_use_counts = {}
         self.attack_rounds = set()
@@ -537,6 +541,10 @@ class _Pet:
                 self.entry_count = None
                 self.skill_use_history_complete = False
                 self.history_incomplete_reason = '技能槽发生变化，无法确认新技能携带前的累计历史'
+                old_ids = [battle_data.canonical_skill(s.get('skill_id')).get('skill_id') for s in self.skills]
+                new_ids = [battle_data.canonical_skill(s.get('skill_id')).get('skill_id') for s in slots.values()]
+                self.power_history_inference = {mid: row for mid, row in self.power_history_inference.items()
+                    if old_ids.count(int(mid)) == new_ids.count(int(mid)) == 1}
             self.skills = [slots[pos] for pos in sorted(slots)]
         if type(inside.get("max_energy")) is int and inside["max_energy"] > 0:
             self.max_energy = inside["max_energy"]
@@ -769,6 +777,10 @@ class _Pet:
             "enteredTurn": self.entered_turn,
             "entryActionCount": self.entry_action_count,
             "entryCount": self.entry_count,
+            "observedEntryCount": self.observed_entry_count,
+            "observedFirstActions": list(self.observed_first_actions),
+            "powerHistoryInference": deepcopy(self.power_history_inference),
+            "powerHistoryIssues": dict(self.power_history_issues),
             "entryHistoryComplete": self.entry_count is not None,
             "skillUseCounts": dict(self.skill_use_counts),
             "conditionalPowerCounts": dict(self.conditional_power_counts),
@@ -869,6 +881,13 @@ class BattleTracker:
         self._cast_conditional_before = {}
         self._cast_response_before = {}
         self._cast_energy_before = {}
+        self._cast_first_before = {}
+        self._pre_cast_first = {}
+        self._processed_performs = set()
+        self._known_round_starts = set()
+        self._first_actor_by_round = {}
+        self._first_action_seen = set()
+        self._action_packet_order_known = False
         self._pre_cast_energy = {}
         # 报文里带出来的 buff 名字（buff_trigger / show_letters），比查表更准。
         self.buff_names: dict[str, str] = {}
@@ -979,8 +998,11 @@ class BattleTracker:
         self.max_round = content.get("max_round")
         self.weather_id = content.get("weather_id")
         self.round = content.get("round") or 1
+        self._observe_weather(content)
         self.observation_start_round = self.round
         self._entry_history_complete = self.round == 1 and not _as_dict(init.get("observe_battle")).get("is_observer")
+        if self._entry_history_complete:
+            self._known_round_starts.add(self.round)
         self.is_observer = bool(_as_dict(init.get('observe_battle')).get('is_observer'))
         # 野外/NPC 对局带 npc_id；玩家对战（PVP）没有。PVP 不触发暴击，
         # 所以这条判据直接决定 HUD 要不要把暴击值摆出来。
@@ -1020,6 +1042,7 @@ class BattleTracker:
                             pet.entered_turn, pet.entry_action_count = 1, 0
                         if pet.entry_count is not None:
                             pet.entry_count += 1
+                        pet.observed_entry_count += 1
                     if pet.pet_id is not None:
                         # relay 会把 64 位整数序列化成字符串，键统一用 str，查表时也转 str。
                         self._pet_by_id[str(pet.pet_id)] = pet
@@ -1167,6 +1190,7 @@ class BattleTracker:
         round_no = state.get("round")
         if isinstance(round_no, int):
             self._set_round(round_no)
+            self._known_round_starts.add(round_no)
         changed = isinstance(round_no, int)
         # Round headers carry complete current attributes independently of perform_cmd.
         for key, node in content.items():
@@ -1183,6 +1207,8 @@ class BattleTracker:
         # 只认 0x1324 会把野外对手的出手整段漏掉（HUD 上永远是"未观测"）。
         cmd = _as_dict(content.get("perform_cmd"))
         token = _perform_token(cmd, self.round)
+        if type(cmd.get('seq_num')) is int and token in self._processed_performs:
+            return changed
         if token:
             self._pre_commands.add(token)
         self._cast_use_before.clear()
@@ -1196,6 +1222,8 @@ class BattleTracker:
             if self._apply_perform_item(item, from_round_start=True):
                 changed = True
         self.speed_order.finish(self)
+        if type(cmd.get('seq_num')) is int and token:
+            self._processed_performs.add(token)
         return changed
 
     def _on_cmd_sync(self, content: dict) -> bool:
@@ -1222,7 +1250,10 @@ class BattleTracker:
             self._pre_commands.discard(token)
             self._pre_casts = {signature for signature in self._pre_casts if signature[0] != self.round}
             self._pre_cast_energy = {signature: value for signature, value in self._pre_cast_energy.items() if signature[0] != self.round}
+            self._pre_cast_first = {signature: value for signature, value in self._pre_cast_first.items() if signature[0] != self.round}
             return False  # The complete ordered packet was already applied at round start.
+        if type(cmd.get('seq_num')) is int and token in self._processed_performs:
+            return False
         self._cast_use_before.clear()
         self._cast_conditional_before.clear()
         self._cast_response_before.clear()
@@ -1233,12 +1264,18 @@ class BattleTracker:
             item = _as_dict(item)
             changed = self._apply_perform_item(item) or changed
         self.speed_order.finish(self)
+        if type(cmd.get('seq_num')) is int and token:
+            self._processed_performs.add(token)
         if changed and isinstance(round_no, int) and self._turns_seen != round_no:
             self._turns_seen = round_no
         return changed
 
     def _prepare_power_context(self, cmd):
         self._cast_power_context.clear()
+        self._cast_first_before.clear()
+        indices = [_as_dict(item).get('exec_index') for item in _as_list(cmd.get('perform_info'))]
+        self._action_packet_order_known = (type(cmd.get('seq_num')) is int and bool(indices)
+            and all(type(i) is int and i >= 0 for i in indices) and len(set(indices)) == len(indices))
         self._consumed_power_triggers = {
             (str(trigger.get("caster_id")), trigger.get("buff_id"))
             for item in _as_list(cmd.get("perform_info"))
@@ -1279,6 +1316,10 @@ class BattleTracker:
 
     def _apply_perform_item(self, item: dict, *, from_round_start: bool = False) -> bool:
         changed = False
+        switching = _as_dict(item.get('change_pet'))
+        incoming = self._pet_by_id.get(str(switching.get('battle_pet_id')))
+        if incoming is not None and self.teams[incoming.side]:
+            self._record_first_action(self.teams[incoming.side][self.active[incoming.side]], uncertain=True)
         model = _as_dict(item.get("change_model"))
         if model:
             model_id = model.get("pet_id")
@@ -1355,11 +1396,22 @@ class BattleTracker:
                 self._pre_casts.discard(signature)
                 duplicate = True
             if caster is not None:
+                if is_move and not duplicate:
+                    self._remember_power_context(caster, cast, skill_info['skill_id'])
+                from lab.live_speed import _root
+                if _root(item) and skill_info.get('category') in (1, 4):
+                    first_key = (str(caster.pet_id), str(skill_info['skill_id']))
+                    before_first = list(caster.observed_first_actions)
+                    if duplicate:
+                        before_first = self._pre_cast_first.pop(signature, before_first)
+                    else:
+                        if from_round_start:
+                            self._pre_cast_first[signature] = before_first
+                        self._record_first_action(caster)
+                    self._cast_first_before[first_key] = before_first
                 # A delayed/borrowed cast must not override an explicit entry/switch position.
                 if is_move:
                     history_id = str(skill_info["skill_id"])
-                    if not duplicate:
-                        self._remember_power_context(caster, cast, skill_info["skill_id"])
                     energy_key = (str(caster.pet_id), history_id)
                     self._cast_energy_before[energy_key] = self._pre_cast_energy.pop(signature, caster.energy) if duplicate else caster.energy
                     if from_round_start:
@@ -1442,6 +1494,8 @@ class BattleTracker:
                         "text": f"{'我方' if caster.side == 0 else '敌方'} {caster.display_name()} 使用 {skill_name}",
                     })
                 changed = True
+        if item.get("weather_change"):
+            changed = self._observe_weather(_as_dict(item["weather_change"])) or changed
         buff_change = _as_dict(item.get("buff_change"))
         buff_target = self._pet_by_id.get(str(buff_change.get("target_id")))
         if buff_target is not None:
@@ -1463,7 +1517,7 @@ class BattleTracker:
                 for label, member in (("attacker", caster), ("defender", target)):
                     payload = member.to_payload(hide_unobserved=member.side == 1, observed={})
                     self._apply_stat_policy(payload)
-                    payload["liveContext"] = {"turn": self.round, "weather": self.live_weather,
+                    payload["liveContext"] = {"turn": self.round, "weather": self.live_weather, "weatherId": self.weather_id,
                         "rosters": {"self": roster[member.side], "opponent": roster[1 - member.side]},
                         **self._party_counts_context(member.side)}
                     if label == "attacker" and type(payload.get("entryActionCount")) is int:
@@ -1481,6 +1535,8 @@ class BattleTracker:
                         if response_before is not None:
                             payload['responseSuccessCount'] = response_before
                         energy_key = (str(member.pet_id), source_id)
+                        if energy_key in self._cast_first_before:
+                            payload['observedFirstActions'] = list(self._cast_first_before[energy_key])
                         if energy_key in self._cast_energy_before:
                             payload["energyBeforeCast"] = self._cast_energy_before[energy_key]
                         saved = self._cast_power_context.pop((str(member.pet_id), source_id, str(target.pet_id)), None)
@@ -1631,6 +1687,7 @@ class BattleTracker:
             pet.entered_turn, pet.entry_action_count = self.round, 0
             if pet.entry_count is not None:
                 pet.entry_count += 1
+            pet.observed_entry_count += 1
         if self.active[pet.side] == pet.roster_index:
             return False
         self.active[pet.side] = pet.roster_index
@@ -1639,12 +1696,40 @@ class BattleTracker:
                               "text": f"{'我方' if pet.side == 0 else '敌方'} {pet.display_name()} 上场"})
         return True
 
+    def _record_first_action(self, pet, uncertain=False):
+        signature = (self.round, str(pet.pet_id))
+        if signature in self._first_action_seen:
+            return
+        self._first_action_seen.add(signature)
+        if uncertain or not self._action_packet_order_known or self.round not in self._known_round_starts:
+            pet.observed_first_actions[1] += 1
+            self._first_actor_by_round.setdefault(self.round, None)
+        elif self.round not in self._first_actor_by_round:
+            pet.observed_first_actions[0] += 1
+            self._first_actor_by_round[self.round] = str(pet.pet_id)
+        elif self._first_actor_by_round[self.round] is None:
+            pet.observed_first_actions[1] += 1
+
+    def _observe_weather(self, source):
+        if "weather_id" not in source or type(source["weather_id"]) is not int:
+            return False
+        from lab.weather_runtime import observed_weather
+        weather_id = source["weather_id"]
+        if not (weather_id == self.weather_id and source.get("weather_expire_round") is None
+                and self.live_weather and self.live_weather.get("source", {}).get("weather_expire_round") is not None):
+            self.live_weather = observed_weather(weather_id, source.get("weather_expire_round"), self.round)
+        self.weather_id = weather_id
+        return True
+
     def _set_round(self, round_no):
         if isinstance(self.round, int) and round_no > self.round and self.live_weather:
             from lab.weather_runtime import advance_weather
             for turn in range(self.round, round_no):
+                previous = self.live_weather
                 self.live_weather, _members, _events = advance_weather(self.live_weather, {}, turn)
                 if self.live_weather is None:
+                    if 'observed_turn' in previous and previous.get('source', {}).get('weather_expire_round') is None:
+                        self.weather_id = None
                     break
         self.round = round_no
 
@@ -1672,6 +1757,22 @@ class BattleTracker:
                     bucket.append(event)
                     self._configuration_cache.pop(str(enemy.pet_id), None)
             return
+        if observation_context is not None and caster.side != target.side:
+            from lab.live_growth import recover
+            current = caster.to_payload(hide_unobserved=caster.side == 1,
+                observed=self.observed_enemy_skills.get(str(caster.pet_id), {}))
+            try:
+                anchor = recover(observation_context['attacker'], observation_context['defender'],
+                                 current, skill_id, damage_value, critical)
+                if anchor is not None:
+                    key = str(anchor['binding']['skill_id'])
+                    caster.power_history_inference[key] = anchor
+                    caster.power_history_issues.pop(key, None)
+                    observation_context['attacker']['_growthQuery'] = {
+                        **anchor['binding'], 'counts': anchor['damage_counts']}
+            except (OSError, ValueError, KeyError, TypeError) as error:
+                key = str(battle_data.canonical_skill(skill_id).get('skill_id', skill_id))
+                caster.power_history_issues[key] = str(error)
         if caster.side != target.side:
             from lab.live_inference import damage_observation
             enemy = target if caster.side == 0 else caster
@@ -1873,7 +1974,7 @@ class BattleTracker:
             return [{"member_id": str(p.get("petId")), "types": live_damage._pet_types(p), "hp": p.get("currentHp"), "cute_layers": p.get("cuteStacks")} for p in team]
         for team, other in ((my_team, enemy_team), (enemy_team, my_team)):
             side = 0 if team is my_team else 1
-            context = {"turn": self.round, "weather": self.live_weather, "rosters": {"self": roster(team), "opponent": roster(other)},
+            context = {"turn": self.round, "weather": self.live_weather, "weatherId": self.weather_id, "rosters": {"self": roster(team), "opponent": roster(other)},
                        **self._party_counts_context(side)}
             for entry in team:
                 entry["liveContext"] = context

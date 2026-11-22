@@ -1,9 +1,9 @@
 {
-  "version": "1.1.15",
+  "version": "1.1.16",
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
-  "file_count": 5425,
-  "bytes": 456375088,
+  "file_count": 5430,
+  "bytes": 456424420,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3384,
-      "sha256": "11549207cadc6c8fc0f2f6c484570c9c0fe7ffb5e021f37ffb8639c7f0669c04"
+      "bytes": 3581,
+      "sha256": "74a6c1e7ca3d7f403cb5a9f7c2a9e1abede34c4a911b361144954e8d98615777"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -2641,9 +2641,19 @@
       "sha256": "ce4b0cdb03b21f3861b3ef24bc6df6f1e33598759323c92d3251f3c8a2298091"
     },
     {
+      "path": "docs/verification/growth-capture-compact-20261122.md",
+      "bytes": 4704,
+      "sha256": "f350ec169e70936b9d508b413829cec09d78de9e655028576286ba0ab71d7492"
+    },
+    {
       "path": "docs/verification/health-payment-20261026.md",
       "bytes": 3698,
       "sha256": "6be0bdf5ae7c560590f000bc4bc76f528131104bead379f89810a42e925d3fc3"
+    },
+    {
+      "path": "docs/verification/ice-soul-weather-20261122.md",
+      "bytes": 2806,
+      "sha256": "ff5c91203bbfb628688c2f092f50b882ccedb70545c134b2176e1c8c5e52806d"
     },
     {
       "path": "docs/verification/immortality-chain-20261026.json",
@@ -3247,8 +3257,8 @@
     },
     {
       "path": "lab/live_battle.py",
-      "bytes": 137066,
-      "sha256": "12df1cc3561eb3bb6f142235278a726ad6d3a6a62b47a22909a2f395a2413d26"
+      "bytes": 143451,
+      "sha256": "a3b75a5bcb3a5f0aba920c6fa91454788b7ede55f447725ae94fa555694bb2f4"
     },
     {
       "path": "lab/live_bridge.py",
@@ -3257,8 +3267,13 @@
     },
     {
       "path": "lab/live_damage.py",
-      "bytes": 51380,
-      "sha256": "6621b67cccdbf7521d66557a5ce45b04cc8e49d98753513207da968d98a7fbe2"
+      "bytes": 51413,
+      "sha256": "3734796b392c13b9bbd51a8008e43d140ff02181c5b809abc71be87b341707c6"
+    },
+    {
+      "path": "lab/live_growth.py",
+      "bytes": 10954,
+      "sha256": "b27a0f59f44be655eba1481bfa068bc3d8b9cb67813cca5b44a19a3a4f850500"
     },
     {
       "path": "lab/live_inference.py",
@@ -3267,13 +3282,13 @@
     },
     {
       "path": "lab/live_modifiers.py",
-      "bytes": 53518,
-      "sha256": "1064dd82a65913bbc551a41925ac9054ad40c25ea91068988479d3e45425ad1b"
+      "bytes": 54315,
+      "sha256": "7e0c2d4316e1d419e0c9d9aefe1f30292af1734fd690ee2eef321c26156618be"
     },
     {
       "path": "lab/live_power.py",
-      "bytes": 28372,
-      "sha256": "267bd6e4596e6e1af147f44e19c5006ffea1dcad33b1cb63a425cfe31b864c3e"
+      "bytes": 29439,
+      "sha256": "53cd1e9034ad5e2b921a065995e12f90f3e0e4d65f0f6034ad976f355c47cf48"
     },
     {
       "path": "lab/live_speed.py",
@@ -3587,8 +3602,8 @@
     },
     {
       "path": "lab/weather_runtime.py",
-      "bytes": 22481,
-      "sha256": "485db47fd2ee32399a4819854a872d718465eae65f2cf1f4b549a064ee6fb41c"
+      "bytes": 24088,
+      "sha256": "d49fc2f6a6bea74b71c650489e83324dbcb0f51c88ee14034bda03a0e8ef980a"
     },
     {
       "path": "mobile/.gitignore",
@@ -3597,8 +3612,8 @@
     },
     {
       "path": "mobile/README.md",
-      "bytes": 21115,
-      "sha256": "a1aa074045730e1a3d317f3c407de18f2f4dc92ce82f55d64c660a7c39f37738"
+      "bytes": 21130,
+      "sha256": "21c123f090840db106a33a60e22d9dbec90e72f93aa502cea20b27b508193f97"
     },
     {
       "path": "mobile/android/.gitignore",
@@ -3613,7 +3628,7 @@
     {
       "path": "mobile/android/app/build.gradle",
       "bytes": 2577,
-      "sha256": "e687a423fd9db054ac63cfafaff42999bce6c102870582438ed4772b9b116d5c"
+      "sha256": "ca43a7e474c5927fc8562d92296f6a104e02d287ab554c02b6e32fa9f8c8df30"
     },
     {
       "path": "mobile/android/app/libs/hev-socks5-tunnel-2.19.3.aar",
@@ -3928,7 +3943,7 @@
     {
       "path": "overlay/main.js",
       "bytes": 29083,
-      "sha256": "bc2785deff706563388dc1c3d99005ee14a02fa4df26d542bed52c9a5c28355d"
+      "sha256": "f8a0f98298608e99afedd26b19ce63846255c9f53d99ab1425c813a680bca533"
     },
     {
       "path": "overlay/offline.html",
@@ -3938,12 +3953,12 @@
     {
       "path": "overlay/package-lock.json",
       "bytes": 150988,
-      "sha256": "13e916ecd66ec0d3c31e87c2096e5e3ad8e50d14a73f9eb56f70d5a6ec9cb040"
+      "sha256": "d38f14911a41d2b93c9c8a6d42e0d18e0526c61935c20cf4eee663e2586de6ef"
     },
     {
       "path": "overlay/package.json",
       "bytes": 431,
-      "sha256": "bc024aac92bef714d767cfd61b3e1ae0245c40341f789cf3f1fe21c0131a514e"
+      "sha256": "9657351198212d560d826817efd4b37ab2bc34c28049c01a7319938b9ffae2d5"
     },
     {
       "path": "overlay/preload.js",
@@ -3953,7 +3968,7 @@
     {
       "path": "overlay/update_config.json",
       "bytes": 109,
-      "sha256": "a91137c7402245272b055cb9b6564fc4c9d77a1a9ea4ea7913bd88c09b8c3594"
+      "sha256": "0ddf6eb9d11b6bb535e62a547f8653e8bce00728a9141f87ac538d4bfb2482c4"
     },
     {
       "path": "requirements-release.txt",
@@ -4122,8 +4137,8 @@
     },
     {
       "path": "scripts/release_bootstrap.py",
-      "bytes": 13337,
-      "sha256": "9e1e96a235df9959ae949a50e5e8097b40c1e23d745d2315a40cfddd0c93a429"
+      "bytes": 14576,
+      "sha256": "78fb1ca15a714ed4f2da041d7e71726394ed19fdc88ceab00d07448614a02286"
     },
     {
       "path": "scripts/release_common.py",
@@ -4492,8 +4507,8 @@
     },
     {
       "path": "tests/test_hud_duel.js",
-      "bytes": 36864,
-      "sha256": "4d6732f4b3438260bb4b4d7f80b384852d4f4dc11b73356ab400944d712d7c42"
+      "bytes": 37471,
+      "sha256": "64fb27d4ffb9a62fdbcef611ddc3a6117b385ae4b707f96507d9ba197794ebf8"
     },
     {
       "path": "tests/test_hud_render.js",
@@ -4541,14 +4556,19 @@
       "sha256": "55cab2b5ce66ebe8b05d09e2e472dd5be49e0a8aa49b121b162dca202d275b47"
     },
     {
+      "path": "tests/test_live_growth.py",
+      "bytes": 10438,
+      "sha256": "2cef2491a7c0ff06f2bd522e199bb49190c064cf511f93888db3935adc1f02b4"
+    },
+    {
       "path": "tests/test_live_inference.py",
       "bytes": 15342,
       "sha256": "1b525a5b93ef6d0b572b10128c516d8fbef0fb2da6aa247793c437ab46d71aef"
     },
     {
       "path": "tests/test_live_modifiers.py",
-      "bytes": 26002,
-      "sha256": "d0109d27d5c058f79e513b657f2b9f7c089ab644aada68ce5aa4f8dd8aba9e0e"
+      "bytes": 27646,
+      "sha256": "6983434ed20fef1a73b68d9809c2754022a2f2b8e337f67666f977b60f16c734"
     },
     {
       "path": "tests/test_live_power.py",
@@ -4559,6 +4579,11 @@
       "path": "tests/test_live_speed.py",
       "bytes": 11032,
       "sha256": "680b4243c1f1a802d87bd357f1a6dc1e8366fe878c936775eacf1ca62984901c"
+    },
+    {
+      "path": "tests/test_live_weather_capture.py",
+      "bytes": 3006,
+      "sha256": "f67360ba286a4889cf1802517d3bf1f3b95b2202207e9424bca8e488fc56e840"
     },
     {
       "path": "tests/test_mark_integration.py",
@@ -4667,8 +4692,8 @@
     },
     {
       "path": "tests/test_overlay_release_security.js",
-      "bytes": 11311,
-      "sha256": "d8a926d05d7f58c2188cb0e666eec68be72ebe0bc03276b66559ddd9210a06b6"
+      "bytes": 11320,
+      "sha256": "8c8803581dfcad77ff14c28e68524753392a3f1b4576537340c4ac555bbb9dcf"
     },
     {
       "path": "tests/test_party_fainted_live.py",
@@ -4722,8 +4747,8 @@
     },
     {
       "path": "tests/test_release_capture_control.py",
-      "bytes": 8213,
-      "sha256": "6f77877506d1079cd7c6e16dd02146d7c242bdd23b32274e1a2e650eec54a077"
+      "bytes": 10902,
+      "sha256": "fea3b4768b505d887193ab4d74f2fb2e7b5339599ddfae3560563089a8d2dc99"
     },
     {
       "path": "tests/test_release_resources.py",
@@ -4977,8 +5002,8 @@
     },
     {
       "path": "tests/test_weather_runtime.py",
-      "bytes": 14493,
-      "sha256": "61492b6c668cab3741505ec017bf132ead7637d13f84b4fbd5c3fbd0a6f50340"
+      "bytes": 15310,
+      "sha256": "51f1ac3aec35db9ca4d568bdb3c2aa5b9490a627e7891d43f87f86f15cb3fed9"
     },
     {
       "path": "tests/test_weather_ui.js",
@@ -27097,8 +27122,8 @@
     },
     {
       "path": "web/hud_duel.html",
-      "bytes": 76055,
-      "sha256": "29472cc23d492cfcc68f545a310b5f299861ab74e5666459a2a9ae262988cf15"
+      "bytes": 76373,
+      "sha256": "93266168f0fa9b8d9ad12403a73e86a28893b46ce1e969c66e011379bcc4308c"
     },
     {
       "path": "web/lab.html",
@@ -27138,5 +27163,5 @@
     }
   ],
   "privacy": "No credentials, personal captures, replay DB, teams, signing material, environments or build outputs. Regression fixtures are anonymized.",
-  "release_build_id": "20261121-speed-order"
+  "release_build_id": "20261122-hud-growth-capture"
 }

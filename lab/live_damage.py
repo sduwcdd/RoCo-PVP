@@ -525,7 +525,7 @@ def _reference_panel(pet, stat, opponent):
     return panel_candidates({**pet, "_referenceBaseStats": {stat: values}}, stat, opponent)[0]
 
 
-def _damage_case(attacker, defender, profile, kind, attack_values=None):
+def _damage_case(attacker, defender, profile, kind, attack_values=None, *, reference=True):
     from .live_modifiers import damage_profile, panel_candidates
     profile = damage_profile(attacker, defender, profile["skillId"], {**profile, "kind": kind})
     attack_key, defense_key = _PANEL_KEYS[kind]
@@ -554,7 +554,7 @@ def _damage_case(attacker, defender, profile, kind, attack_values=None):
         "atkSource": attack_source, "defSource": defense_source,
         "powerRange": profile["powerRange"], "finalMultiplierRange": profile["finalMultiplierRange"], "effects": profile["effects"],
     }
-    if (result["minimum"] != result["maximum"] or profile["kind"] == "higher") and "_simulation_actor" not in attacker:
+    if reference and (result["minimum"] != result["maximum"] or profile["kind"] == "higher") and "_simulation_actor" not in attacker:
         try:
             if attacker.get("side") == 1:
                 reference_attack = _reference_panel(attacker, attack_key, defender)

@@ -139,3 +139,43 @@ class ReleaseCaptureControlTests(unittest.TestCase):
                     kernel.TerminateProcess.assert_not_called()
                 else:
                     kernel.TerminateProcess.assert_called_once()
+
+    def test_protected_reused_pid_allows_start_and_stop_without_opening_a_kill_handle(self):
+        for mode in ('Start', 'Stop'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as folder:
+                logs = Path(folder) / 'artifacts/app'
+                logs.mkdir(parents=True)
+                receipt = logs / 'capture-owner.json'
+                receipt.write_text(json.dumps({'pid': 1932, 'start_ticks': '100', 'kind': 'roco-release-capture',
+                                               'script': 'roco_backend.exe'}), encoding='utf8')
+                child = Mock(pid=4321)
+                snapshot = Mock(stdout='{"boot":50,"name":"fontdrvhost.exe"}')
+                with patch.object(runtime, '_state', return_value=Path(folder)), \
+                     patch.object(runtime.ctypes.windll.shell32, 'IsUserAnAdmin', return_value=1), \
+                     patch.object(runtime, '_process_identity', side_effect=[PermissionError(), (200, 'roco_backend.exe')]), \
+                     patch.object(runtime.subprocess, 'run', return_value=snapshot), \
+                     patch.object(runtime.subprocess, 'Popen', return_value=child) as spawn, \
+                     patch.object(runtime, '_kernel') as kernel:
+                    self.assertEqual(runtime._capture_control(['--mode', mode]), 0)
+                kernel.assert_not_called()
+                if mode == 'Start':
+                    self.assertEqual(json.loads(receipt.read_text(encoding='utf8'))['pid'], 4321)
+                    spawn.assert_called_once()
+                else:
+                    self.assertFalse(receipt.exists())
+                    spawn.assert_not_called()
+
+    def test_receipt_expires_only_with_evidence_of_reuse_or_reboot(self):
+        receipt = {'pid': 1932, 'start_ticks': '100', 'script': 'roco_backend.exe'}
+        with patch.object(runtime, '_process_identity', return_value=(200, 'roco_backend.exe')):
+            self.assertIsNone(runtime._receipt_identity(receipt))
+        for boot, name, stale in ((101, None, True), (50, None, False), (50, 'ROCO_BACKEND.EXE', False)):
+            with self.subTest(boot=boot, name=name):
+                snapshot = Mock(stdout=json.dumps({'boot': boot, 'name': name}))
+                with patch.object(runtime, '_process_identity', side_effect=PermissionError()), \
+                     patch.object(runtime.subprocess, 'run', return_value=snapshot):
+                    if stale:
+                        self.assertIsNone(runtime._receipt_identity(receipt))
+                    else:
+                        with self.assertRaises(PermissionError):
+                            runtime._receipt_identity(receipt)

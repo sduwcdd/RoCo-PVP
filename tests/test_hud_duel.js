@@ -98,6 +98,16 @@ test("independent stars remain visible beside the snow bear combined normal-star
   assert.match(html,/星陨印记（独立）/);assert.doesNotMatch(html,/普通星陨/);
 });
 
+test("weather notes distinguish unknown expiry from known remaining rounds",()=>{
+  const api=hud();
+  const weather={name:'暴风雪',remaining_rounds:1,source:{weather_expire_round:null}};
+  const entry={liveContext:{weather}};
+  assert.match(api.extraDamageRows(entry),/暴风雪 · 到期回合未知/);
+  assert.doesNotMatch(api.extraDamageRows(entry),/剩余1回合/);
+  weather.source.weather_expire_round=7;
+  assert.match(api.extraDamageRows(entry),/暴风雪 · 剩余1回合/);
+});
+
 test("non-damaging skills are distinguished from blocked damage estimates",()=>{
   const api=hud();
   const html=api.skillRows({moves:[
@@ -230,7 +240,7 @@ test("only established talents are yellow; nature is under the name with correct
       known_talents:{hp:{selected:true,values:[10]},patk:{selected:true,values:[8]},spd:{selected:true,values:[10]}},
       groups:[{nature_name:"平和",combination_count:1210}],panel_fit:[{observed:999}],observations:[{damage:999}]}};
   const radar=api.radarChart(entry);
-  assert.equal((radar.match(/font-size="11.5" fill="#ffd75e"/g)||[]).length,3);
+  assert.equal((radar.match(/font-size="10\.5" fill="#ffd75e"/g)||[]).length,3);
   assert.match(radar,/<title>已确定个体加点 8<\/title>物攻/);
   api.render({runtime:{sessionId:"x",myTeam:[entry],active:{my:{rosterIndex:0}}}});
   assert.match(api.panel.innerHTML,/布灵布灵/);assert.match(api.panel.innerHTML,/原方向 ↑速度 ↓物防；修正后 ↑速度 ↓魔防/);
@@ -495,15 +505,17 @@ test("history reports durable local archival and never hides a write failure",()
 
 test("history window defaults to the top center and shares HUD launch lifecycle",()=>{
   const source=fs.readFileSync(path.join(__dirname,'../overlay/main.js'),'utf8');
+  const sizing=source.slice(source.indexOf('const DUEL_WIDTH'),source.indexOf('let duelWins'));
   const code=source.slice(source.indexOf('function duelBounds'),source.indexOf('function injectDuelChrome'));
-  const context={DUEL_WIDTH:300,DUEL_GAP:10,screen:{getPrimaryDisplay:()=>({workArea:{x:0,y:0,width:1600,height:900}})}};
-  vm.runInNewContext(code,context);
+  const context={screen:{getPrimaryDisplay:()=>({workArea:{x:0,y:0,width:1600,height:900}})}};
+  vm.runInNewContext(sizing+code,context);
   const bounds=context.duelBounds('history');
   assert.equal(bounds.y,8);assert.equal(bounds.x*2+bounds.width,1600);
-  assert.ok(bounds.x>context.duelBounds('my').width);assert.ok(bounds.height<=210);
+  assert.equal(bounds.width,560);assert.equal(bounds.height,180);
+  assert.ok(bounds.x>context.duelBounds('my').width);
   for(const side of ['my','enemy']){
     const pane=context.duelBounds(side);
-    assert.equal(pane.width,300);assert.equal(pane.height,876);assert.equal(pane.y,12);
+    assert.equal(pane.width,280);assert.equal(pane.height,876);assert.equal(pane.y,12);
     assert.ok(pane.y+pane.height<=900);
   }
   assert.match(source,/createDuelWindow\('my'\), createDuelWindow\('enemy'\), createDuelWindow\('history'\)/);

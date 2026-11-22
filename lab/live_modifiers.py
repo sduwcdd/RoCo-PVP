@@ -640,7 +640,14 @@ def _base_damage_profile(attacker, defender, skill_id, profile):
         source_powers = sorted({rule_power({stat: a}, {stat: d}, skill_id, profile["power"])
                                 for a in attack_values for d in defense_values})
     skip = _represented_trait_buffs(owner, attacker, ["powerPercent", "flatPowerBonus"])
-    skip |= {str(e["source_buff_id"]) for e in weather_runtime.modifiers(weather, "before_damage", skill_id, skill_type, owner) if "source_buff_id" in e}
+    observed_power_buff = None
+    if (weather is None and attacker.get("liveContext", {}).get("weatherId") is None
+            and owner.get("trait_id") == 200311 and "_simulation_actor" not in attacker):
+        observed_power_buff = next((b["id"] for b in captured_buffs(attacker)
+                                    if b.get("id") == 20231260 and type(b.get("layers")) is int and b["layers"] > 0), None)
+    weather_effects = weather_runtime.modifiers(weather, "before_damage", skill_id, skill_type, owner,
+                                               observed_power_buff=observed_power_buff)
+    skip |= {str(e["source_buff_id"]) for e in weather_effects if "source_buff_id" in e}
     mark_buff_ids = {str(b.get("id")) for b in captured_buffs(attacker) if _mark_specs({"battleBuffs": [b]})}
     flat, percent, outgoing = 0, 0, [0, 0]
     matchup = profile["multiplier"]
@@ -677,7 +684,8 @@ def _base_damage_profile(attacker, defender, skill_id, profile):
                 from .choice_runtime import current_power_factor
                 power *= current_power_factor(execution["weather_skill_id"], params, execution)
             power = mechanism_runtime.modify_power(owner, power, skill=skill)
-        power = weather_runtime.modify_power(weather, skill_type, power * choice_factor, skill_id, owner)
+        power = weather_runtime.modify_power(weather, skill_type, power * choice_factor, skill_id, owner,
+                                            observed_power_buff=observed_power_buff)
         for first in ([attacker["_resolved_first_attack"]]
                       if type(attacker.get("_resolved_first_attack")) is bool else (False, True)):
             actions = owner.get("mark_entry_actions")
@@ -715,6 +723,8 @@ def _base_damage_profile(attacker, defender, skill_id, profile):
                           "intrinsic_power_range": [min(source_powers), max(source_powers)],
                           "intrinsic_damage_factors": intrinsic_factors}}
     from .live_damage import _rules
+    if any(effect.get("source", {}).get("id") == 200311 for effect in weather_effects):
+        result["effects"]["attacker_trait"] = rules.trait(200311)["name"]["zh"]
     result["effects"]["unreviewed_trait_ids"] = [m["trait_id"] for m in (owner, other) if m.get("trait_id")
         and m["trait_id"] not in trait_runtime._rows()
         and not (m["trait_id"] in action_traits.ROWS and action_traits.source_evidence(_rules()[1], m))

@@ -295,6 +295,32 @@ class CurrentEffectPreviewTests(unittest.TestCase):
         attacker = pet(liveContext={"weather": rain}, battleBuffs=[{"id": 20230030, "layers": 1}], moves=[{"slot": 1, "skillId": 7050200}])
         self.assertEqual(quote(attacker, skillType="水系")["normal"], nominal(200, 100, 175))
 
+    def test_ice_soul_uses_reported_weather_or_installed_buff_once(self):
+        from lab.weather_runtime import observed_weather
+        snow = observed_weather(5, 9, 7)
+        rain = observed_weather(3, 9, 7)
+        buff = [{"id": 20231260, "layers": 1}]
+        attacker = pet(petBaseId=3343, effectiveTraitId=None, moves=[{"slot": 1, "skillId": 7090230}])
+        cases = [
+            ({}, [], False), ({"weather": snow}, [], True),
+            ({"weather": snow}, buff, True), ({}, buff, True),
+            ({"weather": rain}, buff, False), ({"weatherId": 0}, buff, False),
+            ({"weatherId": 9}, buff, False), ({}, [{"id": 20231260, "layers": 0}], False),
+        ]
+        for context, buffs, active in cases:
+            with self.subTest(context=context, buffs=buffs):
+                quote = estimate_moves({**attacker, "liveContext": context, "battleBuffs": buffs}, pet())[0]
+                effect = quote["effects"][0]
+                self.assertEqual(effect["power_range"], [80, 80] if active else [40, 40])
+                self.assertEqual(effect["attacker_trait"], "冰雪魂魄" if active else None)
+                self.assertEqual(quote["normal"], 360 if active else 180)
+        for changes in ({"moves": [{"slot": 1, "skillId": 7040370}]}, {"effectiveTraitId": 0}):
+            p = {**attacker, **changes}
+            baseline = estimate_moves(p, pet())[0]["normal"]
+            for context in ({"weather": snow}, {}):
+                current = {**p, "battleBuffs": buff, "liveContext": context}
+                self.assertEqual(estimate_moves(current, pet())[0]["normal"], baseline)
+
     def test_higher_attack_is_chosen_after_current_stat_modifiers(self):
         attacker = pet(battleStats={}, naturedStats={"phyAtk": 100, "magAtk": 200}, battleBuffs=[{"id": 20010010, "layers": 20}])
         defender = pet(battleStats={"phyDef": 100, "magDef": 400})

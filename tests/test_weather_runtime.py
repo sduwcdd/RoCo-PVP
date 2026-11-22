@@ -6,10 +6,24 @@ import unittest
 from lab.server import load_catalog
 from lab.simulation import DEFAULT_SETTINGS, simulation_request
 from lab.prepared_rules import PreparedRules
-from lab.weather_runtime import (set_weather, advance_weather, apply_weather_skill,
+from lab.weather_runtime import (set_weather, observed_weather, advance_weather, apply_weather_skill,
     modify_cost, modify_power, check_freeze, apply_status, on_departure)
 
 class WeatherRuntimeTests(unittest.TestCase):
+    def test_observed_weather_uses_packet_expiry_without_inventing_a_setter(self):
+        weather = observed_weather(5, 9, 7)
+        self.assertEqual((weather["kind"], weather["remaining_rounds"]), ("blizzard", 3))
+        self.assertNotIn("source_skill_id", weather)
+        self.assertNotIn("applied_turn", weather)
+        for turn in (7, 8, 9):
+            weather, _, _ = advance_weather(weather, {}, turn)
+        self.assertIsNone(weather)
+        current_turn = observed_weather(5, None, 7)
+        self.assertIsNone(current_turn["source"]["weather_expire_round"])
+        self.assertIsNone(advance_weather(current_turn, {}, 7)[0])
+        for weather_id, expire in ((5, 6), (0, 9), (9, 9), (None, 9)):
+            self.assertIsNone(observed_weather(weather_id, expire, 7))
+
     def test_eight_inclusive_rounds_and_input_isolation(self):
         weather, _ = set_weather(None, 7050250, 1)
         original = deepcopy(weather)

@@ -34,9 +34,16 @@ def validate_weather(weather):
         raise ValueError("Weather lifecycle version is not supported")
     if weather.get("rules_hash") != canonical_hash(rules()):
         raise ValueError("Weather source changed; restart or replay the battle")
-    setter = rules()["setters"].get(str(weather.get("source_skill_id")))
     spec = rules()["weather"][weather["kind"]]
-    if not setter or setter["weather"] != weather["kind"] or weather.get("name") != spec["name"]:
+    if weather.get("name") != spec["name"]:
+        raise ValueError("Weather name conflicts with its kind")
+    if "observed_turn" in weather:
+        if (type(weather["observed_turn"]) is not int or weather["observed_turn"] < 1
+                or weather.get("source", {}).get("weather_id") != spec["weather_id"]):
+            raise ValueError("Observed weather source conflicts with its kind or turn")
+        return
+    setter = rules()["setters"].get(str(weather.get("source_skill_id")))
+    if not setter or setter["weather"] != weather["kind"]:
         raise ValueError("Weather source identity conflicts with its kind")
     if type(weather.get("applied_turn")) is not int or weather["applied_turn"] < 1:
         raise ValueError("Weather creation turn is invalid")
@@ -52,6 +59,28 @@ def validate_weather_members(state):
                 if type(count) is not int or not 0 <= count <= (99 if name == "freeze" else 1):
                     raise ValueError("Weather status stacks exceed the executable range")
 
+def _weather_state(kind, remaining, source):
+    spec = rules()["weather"][kind]
+    return {"kind": kind, "name": spec["name"], "remaining_rounds": remaining,
+        "source": {**source, "weather_configuration": deepcopy(spec["source"])},
+        "effect_summary": [spec["description"]], "lifecycle_policy": POLICY,
+        "numeric_policy": NUMERIC_POLICY, "rules_hash": canonical_hash(rules())}
+
+def observed_weather(weather_id, expire_round, turn):
+    """Use the reported inclusive expiry, or the observed turn alone when omitted."""
+    if type(weather_id) is not int or weather_id <= 0 or type(turn) is not int or turn < 1:
+        return None
+    if expire_round is not None and type(expire_round) is not int:
+        return None
+    remaining = 1 if expire_round is None else expire_round - turn + 1
+    if not 1 <= remaining <= 10000:
+        return None
+    for kind, spec in rules()["weather"].items():
+        if spec["weather_id"] == weather_id:
+            source = {"weather_id": weather_id, "weather_expire_round": expire_round}
+            return {**_weather_state(kind, remaining, source), "observed_turn": turn}
+    return None
+
 def set_weather(weather, skill_id, turn):
     validate_weather(weather)
     data = rules()
@@ -59,11 +88,8 @@ def set_weather(weather, skill_id, turn):
     if setter is None:
         raise ValueError("Skill is not a source-bound weather setter")
     kind = setter["weather"]
-    spec = data["weather"][kind]
-    current = {"kind": kind, "name": spec["name"], "remaining_rounds": spec.get("duration", 8),
-        "applied_turn": turn, "source_skill_id": int(skill_id), "source": {**deepcopy(setter.get("source", {})), "weather_configuration": deepcopy(spec["source"])},
-        "effect_summary": [spec["description"]], "lifecycle_policy": POLICY,
-        "numeric_policy": NUMERIC_POLICY, "rules_hash": canonical_hash(data)}
+    current = {**_weather_state(kind, data["weather"][kind].get("duration", 8), deepcopy(setter.get("source", {}))),
+               "applied_turn": turn, "source_skill_id": int(skill_id)}
     return current, [{"op": "weather.set", "before": deepcopy(weather), "after": deepcopy(current),
                       "skill_id": int(skill_id), "source": deepcopy(current["source"]), "policy": POLICY}]
 
@@ -259,11 +285,13 @@ def execute_weather_skill(program, state, context, weather, turn):
     return {"status": "applied", "state": owned, "weather": current,
             "events": [{"op": "energy.pay", "amount": cost, "source": "caller_resolved_cost"}] + events}
 
-def _matches(effect, weather, skill_type=None, actor=None):
+def _matches(effect, weather, skill_type=None, actor=None, observed_power_buff=None):
     when = effect.get("when", {})
     kind = weather.get("kind") if weather else None
     if "weather" in when and when["weather"] != kind:
-        return False
+        if (kind or observed_power_buff is None or effect["op"] != "power_multiplier"
+                or effect.get("source_buff_id") != observed_power_buff):
+            return False
     if "skill_type" in when and when["skill_type"] != skill_type:
         return False
     if "weather_or_environment" in when:
@@ -272,13 +300,13 @@ def _matches(effect, weather, skill_type=None, actor=None):
             return False
     return True
 
-def modifiers(weather, phase, skill_id=None, skill_type=None, actor=None):
+def modifiers(weather, phase, skill_id=None, skill_type=None, actor=None, *, observed_power_buff=None):
     data, candidates = rules(), []
     if weather:
         candidates += data["weather"][weather["kind"]].get("effects", [])
     candidates += data.get("skill_modifiers", {}).get(str(skill_id), [])
     candidates += data.get("trait_modifiers", {}).get(str((actor or {}).get("weather_trait_id")), [])
-    return [e for e in candidates if e.get("phase") == phase and _matches(e, weather, skill_type, actor)]
+    return [e for e in candidates if e.get("phase") == phase and _matches(e, weather, skill_type, actor, observed_power_buff)]
 
 def resolved_skill_type(weather, skill_id, skill_type):
     for effect in rules().get("skill_modifiers", {}).get(str(skill_id), []):
@@ -298,9 +326,9 @@ def modify_cost(weather, skill_type, base_cost, skill_id=None, actor=None):
     rounded = -(-cost.numerator // cost.denominator)
     return max(0, base_cost + (cost_delta(actor, rounded - base_cost) if actor is not None else rounded - base_cost))
 
-def modify_power(weather, skill_type, power, skill_id=None, actor=None):
+def modify_power(weather, skill_type, power, skill_id=None, actor=None, *, observed_power_buff=None):
     validate_weather(weather)
-    effects = modifiers(weather, "before_damage", skill_id, skill_type, actor)
+    effects = modifiers(weather, "before_damage", skill_id, skill_type, actor, observed_power_buff=observed_power_buff)
     value = Fraction(str(power)) + sum(Fraction(str(e["value"])) for e in effects if e["op"] == "power_add")
     for effect in effects:
         if effect["op"] == "power_multiplier":
