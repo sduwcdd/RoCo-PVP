@@ -3,7 +3,7 @@
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
   "file_count": 5430,
-  "bytes": 456424420,
+  "bytes": 456424941,
   "files": [
     {
       "path": ".gitattributes",
@@ -2642,8 +2642,8 @@
     },
     {
       "path": "docs/verification/growth-capture-compact-20261122.md",
-      "bytes": 4704,
-      "sha256": "f350ec169e70936b9d508b413829cec09d78de9e655028576286ba0ab71d7492"
+      "bytes": 5225,
+      "sha256": "ec2f3e01cdc4765660d15b9c5dd577b9c504a8a341ed51846810a9b2db80b613"
     },
     {
       "path": "docs/verification/health-payment-20261026.md",

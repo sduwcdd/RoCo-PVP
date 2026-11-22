@@ -138,3 +138,16 @@ APK编译后端的34项检查通过。
 本机工作台接口返回HTTP200。
 重新启动没有自动开启抓包。
 新游戏对局与安卓真机仍待验证。
+
+## 发布
+
+GitHub已发布Windows1.1.16。
+GitHub已发布安卓0.16.5-internal。
+CNB已发布两包及对应更新指针。
+两个CNB更新指针通过匿名读取核验。
+本机安装包与发布包保持相同哈希。
+个人回放与抓包备份没有上传。
+
+[Windows国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/v1.1.16/RocoPVP-Setup-1.1.16.exe)
+
+[安卓国内下载](https://cnb.cool/sduwcgg/roco-pvp/-/releases/download/android-v0.16.5-internal/roco-mobile-android-internal-0.16.5.apk)
