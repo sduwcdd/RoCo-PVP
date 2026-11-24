@@ -2,8 +2,8 @@
   "version": "1.1.16",
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
-  "file_count": 5430,
-  "bytes": 456424941,
+  "file_count": 5432,
+  "bytes": 457199874,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3581,
-      "sha256": "74a6c1e7ca3d7f403cb5a9f7c2a9e1abede34c4a911b361144954e8d98615777"
+      "bytes": 3803,
+      "sha256": "0a34f24b78331e3020d70d4f3a62ddf22d4462ba0d813951201eac4f1ea4a67f"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
@@ -2279,6 +2279,16 @@
       "path": "docs/UPDATABLE_APP.md",
       "bytes": 4147,
       "sha256": "72743d71765740359a25dc607f1083505c2e597b4b8cb3e43c810109a9b2050b"
+    },
+    {
+      "path": "docs/images/qq-group.jpg",
+      "bytes": 585986,
+      "sha256": "8d1efa648d23e40711df4d67a738acd68b7faa269ce9d9e57faff172d56233c1"
+    },
+    {
+      "path": "docs/images/wechat-support.jpg",
+      "bytes": 188725,
+      "sha256": "f817801ce7c3d42c5fa0c71027a5561c9032fe71cf78f0bbb178017f0b853ede"
     },
     {
       "path": "docs/verification/STARFALL_PARAMETER_AUDIT_20261026.md",

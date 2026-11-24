@@ -1,47 +1,99 @@
-# 洛克 PVP 辅助工具 · 1.1.16
-本轮修复暴风雪特性、观战累计威力反推和抓包退出。HUD字号缩小1px，左右默认宽度280px。详见[核查记录](docs/verification/growth-capture-compact-20261122.md)。
-新增同先手度出手顺序约束。雷达图可据此缩窄敌方速度。确定加点后标黄，确定速度性格后显示箭头。条件与限制见[核查记录](docs/verification/speed-order-20261121.md)。
+# 洛克 PVP 辅助工具
 
-本轮适配 2026-11-21 BWIKI。图鉴包含 665 个形态。现在分开读取原始等级与战斗等级。超能阿布物攻使用下发百分比或已确认层数。详见[核查记录](docs/verification/bwiki-levels-20261121.md)。
+**让对战信息更清楚，让每次决策更有依据。**
 
+面向《洛克王国：世界》的个人辅助工具。
+你可以在游戏旁查看战况与技能伤害。
+你也可以结合观测信息判断敌方配置。
+项目以PVP为主，也提供大世界辅助功能。
 
-用于洛克王国：世界的本地Windows辅助APP，提供实时HUD、对局记录、伤害估计与配置推断。维护源码直接位于仓库根目录；源码和安装包统一在本公开仓库维护。
+[国内下载 · CNB](https://cnb.cool/sduwcgg/roco-pvp) · [GitHub下载](https://github.com/sduwcdd/RoCo-PVP/releases/latest) · [加入QQ群](#交流与反馈) · [自愿打赏](#支持项目)
 
-## 使用安装包
+## 能帮你做什么
 
-从 [国内下载](https://cnb.cool/sduwcgg/roco-pvp) 获取Windows及安卓安装包，亦可使用 [GitHub Releases](https://github.com/sduwcdd/RoCo-PVP/releases/latest)。抓包需要Npcap及Windows管理员授权。关闭窗口收起到托盘，托盘退出等待本APP的采集、HUD和工作台停止；授权取消时不会假装退出。
+|功能|用途|
+|---|---|
+|实时战况面板|查看双方精灵、生命、能量和状态。<br>悬浮面板支持拖动与收起。|
+|技能伤害估计|查看最低、参考及最高伤害。<br>区分应对、出手条件和连击。|
+|备战伤害试算|点击己方备战精灵。<br>查看四个技能对当前敌方的伤害。|
+|六维与配置推断|结合已知面板、伤害和出手顺序。<br>缩小敌方属性与加点的可能范围。|
+|敌方技能查询|查询敌方精灵可以携带的技能。<br>点击技能查看当前条件下的伤害。|
+|本局回合记录|回看双方技能、换人与具体伤害。<br>对局记录自动保存在本地。|
+|大世界精灵辅助|筛选附近精灵并手动刷新。<br>查看已获取的性格、特长及身体信息。|
+|奖牌条件提示|查看身高、体重与声音相关提示。<br>区分预计奖牌与已确认奖牌。|
 
-1.1.8修复中文日志乱码、敌方原始性格增减箭头显示，并改进HUD窗口遮挡范围；包含本机抓包环境检查，检查结果不代表游戏检测策略或账号安全结论。身高、体重、音调参数及奖牌条件预测继续提供，未确认取得的奖牌明确显示预计。当前图鉴快照为20261105T124140+0800。范围与限制见 [当前进度](docs/PROJECT_STATUS.md)。
+具体功能以所用安装包为准。
+游戏更新后，部分规则可能需要适配。
 
-Windows1.1.10与安卓0.12优先使用CNB国内更新源。Windows安装版启动自动检查更新，连接控制台提供“一键更新并重启”。安卓0.10更新引导包与0.11支持APP内检查、下载、校验及系统确认安装。安装说明见[手机版](mobile/README.md)，实际验证见[更新记录](docs/verification/in-app-update-20261112.md)。
+## 下载与使用
 
-## 从源码开发
+优先使用[CNB国内下载](https://cnb.cool/sduwcgg/roco-pvp)。
+也可使用[GitHub Releases](https://github.com/sduwcdd/RoCo-PVP/releases/latest)。
+请下载适合自己设备的安装包。
 
-```powershell
-git clone --recurse-submodules https://github.com/sduwcdd/RoCo-PVP.git
-cd RoCo-PVP
-py -3.13 -m venv .venv-rkpp
-.venv-rkpp/Scripts/python.exe -m pip install -r requirements.txt
-npm --prefix overlay ci
-npm --prefix overlay start
-```
+### Windows
 
-需要Python3.13、Node.js/npm及Git。根目录洛克PVP.exe是依赖源码和本地环境的启动入口，不能单独分发。详情见 [跨设备开发](docs/DEVICE_HANDOFF.md)。
+1. 下载并安装Windows安装包。
+2. 首次使用需安装[Npcap](https://npcap.com/#download)。
+3. 打开APP，连接服务并启动抓包。
+4. 按提示授予采集所需的管理员权限。
+5. 重新登录游戏，再显示悬浮面板。
 
-## 代码入口
+APP内提供版本检查与下载安装入口。
+关闭主窗口会收起到托盘。
+彻底退出请右键点击托盘图标。
 
-- lab/server.py：本地API、工作台与HUD。
-- lab/live_battle.py：报文、在场精灵和观测历史。
-- lab/live_damage.py、hud_damage_runtime.py、live_modifiers.py：统一伤害估计。
-- lab/live_inference.py、live_stat_model.py：属性及配置推断。
-- overlay：控制台、HUD窗口、更新与退出管理。
-- web：页面和资源；data：图鉴与规则；artifacts：必要来源证据。
-- mobile：Android/iOS在研源码，状态见 [手机版说明](mobile/README.md)，不能等同于Windows验收。
+### 手机
 
-不包含AI训练、旧保护安装包、凭据、个人队伍、真实回放或抓包。匿名化回归夹具和规则来源保留；工程检查不代表所有游戏规则已校准。
+Android目前提供内测版本。
+你可以在同一台手机运行游戏和辅助APP。
+请按APP提示开启采集与悬浮窗权限。
+手机适配情况仍需结合设备实测。
 
-## 构建与维护
+iOS目前没有可安装的正式版本。
 
-Windows使用普通打包，不使用Cython或前端混淆。见 [构建与发布](docs/UPDATABLE_APP.md) 和 [BWIKI维护](docs/BWIKI_UPDATE.md)。
+## 关于估计结果
 
-公开更新源为sduwcdd/RoCo-PVP；旧更新源的用户需手动安装一次新源1.1.6。账号、聊天、设备配置和本地数据不通过Git迁移。
+工具提供信息辅助。
+你仍需自行选择技能和换人。
+
+伤害估计会考虑已接入的状态与规则。
+未知技能和未确认配置会保留范围。
+中途观战可能缺少此前的累计信息。
+预测结果不等于游戏实际结算。
+
+## 交流与反馈
+
+**QQ群：1053823457**
+
+欢迎交流使用体验、反馈问题和提出建议。
+反馈伤害问题时，请附上版本号。
+同时说明双方精灵、技能与回合。
+如能提供对局记录，会更方便排查。
+
+扫描下方二维码加入 **ROCO PVP** 群。
+二维码失效时，可搜索QQ群号加入。
+
+<a href="docs/images/qq-group.jpg"><img src="docs/images/qq-group.jpg" alt="ROCO PVP交流群二维码，群号1053823457" width="300"></a>
+
+## 支持项目
+
+本项目由个人利用业余时间维护。
+如果工具帮到了你，欢迎自愿打赏。
+你的支持会鼓励我继续修复和适配。
+
+**打赏完全自愿，金额随心。**
+不打赏也不影响正常使用。
+你也可以通过反馈问题来支持项目。
+
+下方是作者的**微信收款码**。
+感谢每一位愿意支持项目的朋友。
+
+<a href="docs/images/wechat-support.jpg"><img src="docs/images/wechat-support.jpg" alt="作者微信收款码，自愿打赏支持项目" width="300"></a>
+
+点击二维码图片可查看原图。
+
+---
+
+本项目为个人兴趣项目。
+本项目与游戏官方无隶属关系。
