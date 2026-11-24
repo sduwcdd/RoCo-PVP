@@ -3,7 +3,7 @@
   "root": ".",
   "snapshot_id": "20261121T162937+0800",
   "file_count": 5432,
-  "bytes": 457199874,
+  "bytes": 457200175,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3803,
-      "sha256": "0a34f24b78331e3020d70d4f3a62ddf22d4462ba0d813951201eac4f1ea4a67f"
+      "bytes": 4104,
+      "sha256": "88f5109909b4aa89f869f1dc8f0b561b9e0974aa744ee226c732e3209d35715b"
     },
     {
       "path": "artifacts/action_mechanics_20261025/random_skill_pools.json",
